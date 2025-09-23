@@ -1,16 +1,13 @@
-```python
 """
 Final optimized test suite for example_function.
 
-This suite combines the best tests from multiple AI models, removing duplicates
-and ensuring comprehensive coverage of positive, negative, boundary, and edge
-cases.
+This suite covers positive, negative, boundary, and edge cases
+to ensure comprehensive functionality and error handling.
 """
 
 import pytest
-from typing import Any
+import sys
 
-# Function under test (assumed to be in the same directory or accessible via PYTHONPATH)
 def example_function(x, y):
     """
     Add two numbers together
@@ -27,115 +24,93 @@ def example_function(x, y):
 
 # Positive Tests
 class TestPositive:
-    """Tests for normal, positive scenarios."""
+    """Tests for normal positive scenarios."""
 
     def test_positive_integers(self):
-        """Test normal addition with two positive integers."""
-        result = example_function(5, 3)
-        assert result == 8, "Should return 8 for 5 + 3"
-
-    def test_addition_with_zero(self):
-        """Test addition with zero."""
-        assert example_function(7, 0) == 7, "Should return 7 for 7 + 0"
-        assert example_function(0, 123) == 123, "0 + 123 should be 123"
-        assert example_function(456, 0) == 456, "456 + 0 should be 456"
+        """Test normal addition with positive integers."""
+        result = example_function(2, 3)
+        assert result == 5, f"Expected 2 + 3 to equal 5, got {result}"
+        assert isinstance(result, int), f"Expected result type int for integer inputs, got {type(result)}"
 
     def test_negative_integers(self):
-        """Test addition with two negative integers."""
-        result = example_function(-2, -5)
-        assert result == -7, "Should return -7 for -2 + -5"
+        """Test addition with negative integers."""
+        result = example_function(-5, -3)
+        assert result == -8, "Should return the correct sum of negative integers"
 
     def test_mixed_positive_negative(self):
-        """Test addition with one positive and one negative integer."""
-        result = example_function(10, -3)
-        assert result == 7, "Should return 7 for 10 + -3"
-
-    def test_positive_floats(self):
-        """Test functionality with float inputs."""
-        result = example_function(1.5, 2.3)
-        assert result == pytest.approx(3.8), f"Adding 1.5 and 2.3 should be approximately 3.8, got {result}"
+        """Test addition with mixed positive and negative integers."""
+        result = example_function(5, -3)
+        assert result == 2, "Should return the correct sum of mixed positive and negative integers"
 
 
 # Boundary Tests
 class TestBoundary:
-    """Tests for boundary conditions with large numbers and edge cases."""
+    """Tests for boundary conditions."""
 
-    def test_large_integers(self):
-        """Test addition with very large integers."""
-        x = 2**31 - 1
-        y = 1
-        result = example_function(x, y)
-        assert result == 2147483648, f"Should return correct sum for large numbers: expected 2147483648, got {result}"
+    def test_addition_with_zero(self):
+        """Test addition with zero as one of the inputs."""
+        result = example_function(0, 5)
+        assert result == 5, "Should correctly handle addition with zero"
 
-    def test_negative_large_integers(self):
-        """Test addition with very large negative integers."""
-        x = -(2**31)
-        y = -1
-        result = example_function(x, y)
-        assert result == -2147483649, f"Should return correct sum for large numbers: expected -2147483649, got {result}"
+    def test_large_numbers(self):
+        """Test addition with large numbers."""
+        large_number = 10**12
+        result = example_function(large_number, 1)
+        assert result == large_number + 1, "Should correctly handle addition of very large integers"
 
-    def test_very_large_integers(self):
-        """Test boundary with very large integers to ensure arbitrary-precision addition works"""
-        a = 10**100
-        b = 10**100
-        expected = 2 * 10**100
-        result = example_function(a, b)
-        assert result == expected, f"Adding two very large integers should yield {expected}, got {result}"
+    def test_max_int_value(self):
+        """Test boundary condition with the maximum integer value."""
+        max_int_value = sys.maxsize
+        result = example_function(max_int_value, 0)
+        assert result == max_int_value, "Should correctly handle addition with the maximum integer value without overflow (Python handles large ints)"
 
 
 # Edge Case Tests
 class TestEdgeCases:
-    """Tests for unusual or unexpected inputs."""
+    """Tests for edge case scenarios."""
 
-    def test_max_min_int(self):
-        """Test addition with max and min int."""
-        max_int = 2**31 - 1
-        min_int = -(2**31)
-        result = example_function(max_int, min_int)
-        assert result == -1, f"Should return correct sum for max and min integers"
-
-    def test_boolean_operands(self):
-        """Test booleans (subclass of int) to verify behavior is consistent with integers."""
-        # True == 1, False == 0
-        result = example_function(True, False)
-        assert result == 1, f"True + False should be 1, got {result}"
-        result2 = example_function(True, True)
-        assert result2 == 2, f"True + True should be 2, got {result2}"
-
-    def test_list_concatenation(self):
-        """Test that the function uses + operator semantics for lists and does not mutate inputs."""
-        a = [1, 2]
-        b = [3, 4]
-        a_copy = a.copy()
-        b_copy = b.copy()
+    def test_large_integers_no_overflow(self):
+        """Test extremely large integers — Python supports arbitrary precision so no overflow expected."""
+        a = 10**100  # very large integer
+        b = 10**100 + 1
+        expected = a + b
         result = example_function(a, b)
-        assert result == [1, 2, 3, 4], f"List concatenation expected [1,2,3,4], got {result}"
-        # Ensure original inputs were not mutated (x+y returns a new list)
-        assert a == a_copy and b == b_copy, "example_function should not mutate input lists"
+        assert result == expected, "Summing very large integers should produce the mathematically correct result"
+        assert isinstance(result, int), "Result of adding two ints should remain an int even if very large"
 
 
 # Negative Tests
 class TestNegative:
-    """Tests to verify error handling and type checking."""
+    """Tests for invalid input and error conditions."""
 
-    def test_type_error_on_incompatible_types(self):
-        """Test that mixing incompatible operand types raises a TypeError (e.g., str + int)."""
-        with pytest.raises(TypeError):
-            _ = example_function("a", 1)  # str + int is not supported and should raise TypeError
-
-    def test_none_input(self):
-        '''Test with None as input, expecting a TypeError'''
+    def test_invalid_input_string(self):
+        """Test addition with string inputs and expect a TypeError."""
         with pytest.raises(TypeError, match="unsupported operand type"):
-            example_function(None, 1)  # Expect TypeError because None cannot be added to an integer
+            example_function("a", 1)  # Expect TypeError because string and int cannot be added
 
-    def test_propagates_operand_exceptions(self):
-        """Test that exceptions raised inside operand __add__ are propagated."""
-        class BadAdd:
-            def __add__(self, other: Any) -> Any:
-                raise ValueError("custom add error")
+    def test_float_input(self):
+        """Test with float input, which violates the function's expected int type."""
+        result = example_function(1.5, 2)
+        assert isinstance(result, float), "Should return a float when a float is passed, indicating invalid input handling"
+        assert result != 3, "The result should not match integer addition due to type mismatch"
 
-        bad = BadAdd()
-        with pytest.raises(ValueError) as excinfo:
-            _ = example_function(bad, 1)
-        assert "custom add error" in str(excinfo.value), "Exceptions raised by operand __add__ should propagate"
-```
+    def test_none_raises_typeerror(self):
+        """Passing None is not supported; addition should raise a TypeError."""
+        with pytest.raises(TypeError):
+            _ = example_function(None, 1)
+
+# Security Tests
+class TestSecurity:
+    """Tests for security related issues (e.g., exception propagation)."""
+
+    def test_custom_add_raises_propagates_exception(self):
+        """If a custom object's __add__ raises an exception, it should propagate."""
+        class MaliciousAdd:
+            def __init__(self, msg="boom"):
+                self.msg = msg
+            def __add__(self, other):
+                raise RuntimeError(self.msg)
+
+        with pytest.raises(RuntimeError) as excinfo:
+            _ = example_function(MaliciousAdd("exploit"), 1)
+        assert "exploit" in str(excinfo.value), "Exceptions raised in user-defined __add__ should propagate unchanged"
