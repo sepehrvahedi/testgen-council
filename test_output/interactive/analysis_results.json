@@ -1,0 +1,478 @@
+{
+  "function_info": {
+    "functions": [
+      {
+        "name": "example_function",
+        "args": [
+          "x",
+          "y"
+        ],
+        "docstring": "Add two numbers together\n\nArgs:\n    x (int): First number\n    y (int): Second number\n    \nReturns:\n    int: Sum of x and y",
+        "source_code": "def example_function(x, y):\n    \"\"\"\n    Add two numbers together\n    \n    Args:\n        x (int): First number\n        y (int): Second number\n        \n    Returns:\n        int: Sum of x and y\n    \"\"\"\n    return x + y",
+        "line_start": 1,
+        "line_end": 12
+      }
+    ],
+    "total_functions": 1,
+    "source_code": "def example_function(x, y):\n    \"\"\"\n    Add two numbers together\n    \n    Args:\n        x (int): First number\n        y (int): Second number\n        \n    Returns:\n        int: Sum of x and y\n    \"\"\"\n    return x + y"
+  },
+  "council_results": {
+    "gemini-2.0-flash": {
+      "raw_response": "```python\nimport pytest\n\ndef example_function(x, y):\n    \"\"\"\n    Add two numbers together\n    \n    Args:\n        x (int): First number\n        y (int): Second number\n        \n    Returns:\n        int: Sum of x and y\n    \"\"\"\n    return x + y\n\ndef test_example_function_positive_normal():\n    '''Test normal addition with positive integers'''\n    # Category: positive\n    result = example_function(5, 3)\n    assert result == 8, \"Should return 8 for 5 + 3\"\n\ndef test_example_function_positive_zero():\n    '''Test addition with zero'''\n    # Category: positive\n    result = example_function(7, 0)\n    assert result == 7, \"Should return 7 for 7 + 0\"\n\ndef test_example_function_negative_normal():\n    '''Test addition with negative integers'''\n    # Category: positive\n    result = example_function(-2, -5)\n    assert result == -7, \"Should return -7 for -2 + -5\"\n\ndef test_example_function_mixed_positive_negative():\n    '''Test addition with one positive and one negative integer'''\n    # Category: positive\n    result = example_function(10, -3)\n    assert result == 7, \"Should return 7 for 10 + -3\"\n\ndef test_example_function_boundary_large_numbers():\n    '''Test addition with very large integers'''\n    # Category: boundary\n    x = 2**31 - 1\n    y = 1\n    result = example_function(x, y)\n    assert result == 2147483648, f\"Should return correct sum for large numbers: expected 2147483648, got {result}\"\n\ndef test_example_function_boundary_negative_large_numbers():\n    '''Test addition with very large negative integers'''\n    # Category: boundary\n    x = -(2**31)\n    y = -1\n    result = example_function(x, y)\n    assert result == -2147483649, f\"Should return correct sum for large numbers: expected -2147483649, got {result}\"\n    \ndef test_example_function_edge_case_max_min_int():\n    '''Test addition with max and min int'''\n    # Category: edge_case\n    max_int = 2**31 - 1\n    min_int = -(2**31)\n    result = example_function(max_int, min_int)\n    assert result == -1, f\"Should return correct sum for max and min integers\"\n\ndef test_example_function_type_error():\n    '''Test with non-integer inputs to check type error'''\n    # Category: negative\n    with pytest.raises(TypeError):\n        example_function(\"a\", 5)\n\ndef test_example_function_type_error_float():\n    '''Test with float as input'''\n    # Category: negative\n    result = example_function(2.5, 3.5)\n    assert result == 6.0, \"Should return correct sum for floats\"\n```",
+      "test_methods": [
+        {
+          "name": "test_example_function_positive_normal",
+          "code": "def test_example_function_positive_normal():\n    '''Test normal addition with positive integers'''\n    # Category: positive\n    result = example_function(5, 3)\n    assert result == 8, \"Should return 8 for 5 + 3\""
+        },
+        {
+          "name": "test_example_function_positive_zero",
+          "code": "def test_example_function_positive_zero():\n    '''Test addition with zero'''\n    # Category: positive\n    result = example_function(7, 0)\n    assert result == 7, \"Should return 7 for 7 + 0\""
+        },
+        {
+          "name": "test_example_function_negative_normal",
+          "code": "def test_example_function_negative_normal():\n    '''Test addition with negative integers'''\n    # Category: positive\n    result = example_function(-2, -5)\n    assert result == -7, \"Should return -7 for -2 + -5\""
+        },
+        {
+          "name": "test_example_function_mixed_positive_negative",
+          "code": "def test_example_function_mixed_positive_negative():\n    '''Test addition with one positive and one negative integer'''\n    # Category: positive\n    result = example_function(10, -3)\n    assert result == 7, \"Should return 7 for 10 + -3\""
+        },
+        {
+          "name": "test_example_function_boundary_large_numbers",
+          "code": "def test_example_function_boundary_large_numbers():\n    '''Test addition with very large integers'''\n    # Category: boundary\n    x = 2**31 - 1\n    y = 1\n    result = example_function(x, y)\n    assert result == 2147483648, f\"Should return correct sum for large numbers: expected 2147483648, got {result}\""
+        },
+        {
+          "name": "test_example_function_boundary_negative_large_numbers",
+          "code": "def test_example_function_boundary_negative_large_numbers():\n    '''Test addition with very large negative integers'''\n    # Category: boundary\n    x = -(2**31)\n    y = -1\n    result = example_function(x, y)\n    assert result == -2147483649, f\"Should return correct sum for large numbers: expected -2147483649, got {result}\""
+        },
+        {
+          "name": "test_example_function_edge_case_max_min_int",
+          "code": "def test_example_function_edge_case_max_min_int():\n    '''Test addition with max and min int'''\n    # Category: edge_case\n    max_int = 2**31 - 1\n    min_int = -(2**31)\n    result = example_function(max_int, min_int)\n    assert result == -1, f\"Should return correct sum for max and min integers\""
+        },
+        {
+          "name": "test_example_function_type_error",
+          "code": "def test_example_function_type_error():\n    '''Test with non-integer inputs to check type error'''\n    # Category: negative\n    with pytest.raises(TypeError):\n        example_function(\"a\", 5)"
+        },
+        {
+          "name": "test_example_function_type_error_float",
+          "code": "def test_example_function_type_error_float():\n    '''Test with float as input'''\n    # Category: negative\n    result = example_function(2.5, 3.5)\n    assert result == 6.0, \"Should return correct sum for floats\"\n```"
+        }
+      ],
+      "test_count": 9
+    },
+    "gpt-5-mini": {
+      "raw_response": "import pytest\n\n# Replace 'my_module' with the actual module name where example_function is defined.\n# from my_module import example_function\n# For the purposes of these tests, we assume example_function is available in the test namespace.\nfrom typing import Any\n\n# If you need to adapt the import above, change it to the module that defines example_function.\n# Example: from example_module import example_function\n\n\ndef test_example_function_positive_integers():\n    \"\"\"Test normal functionality with two positive integers\"\"\"\n    # Category: positive\n    result = example_function(2, 3)\n    assert result == 5, f\"Adding 2 and 3 should yield 5, got {result}\"\n\n\ndef test_example_function_positive_floats():\n    \"\"\"Test functionality with float inputs (function accepts numeric types beyond int)\"\"\"\n    # Category: positive\n    result = example_function(1.5, 2.3)\n    assert result == pytest.approx(3.8), f\"Adding 1.5 and 2.3 should be approximately 3.8, got {result}\"\n\n\ndef test_example_function_zero_boundary():\n    \"\"\"Test boundary condition: adding zero should return the other operand unchanged\"\"\"\n    # Category: boundary\n    assert example_function(0, 123) == 123, \"0 + 123 should be 123\"\n    assert example_function(456, 0) == 456, \"456 + 0 should be 456\"\n\n\ndef test_example_function_large_integers_boundary():\n    \"\"\"Test boundary with very large integers to ensure arbitrary-precision addition works\"\"\"\n    # Category: boundary\n    a = 10**100\n    b = 10**100\n    expected = 2 * 10**100\n    result = example_function(a, b)\n    assert result == expected, f\"Adding two very large integers should yield {expected}, got {result}\"\n\n\ndef test_example_function_negative_integers_edge_case():\n    \"\"\"Test edge case with negative integers\"\"\"\n    # Category: edge_case\n    result = example_function(-5, -7)\n    assert result == -12, f\"Adding -5 and -7 should yield -12, got {result}\"\n\n\ndef test_example_function_boolean_operands_edge_case():\n    \"\"\"Test booleans (subclass of int) to verify behavior is consistent with integers\"\"\"\n    # Category: edge_case\n    # True == 1, False == 0\n    result = example_function(True, False)\n    assert result == 1, f\"True + False should be 1, got {result}\"\n    result2 = example_function(True, True)\n    assert result2 == 2, f\"True + True should be 2, got {result2}\"\n\n\ndef test_example_function_list_concatenation_edge_case():\n    \"\"\"Test that the function uses + operator semantics for lists and does not mutate inputs\"\"\"\n    # Category: edge_case\n    a = [1, 2]\n    b = [3, 4]\n    a_copy = a.copy()\n    b_copy = b.copy()\n    result = example_function(a, b)\n    assert result == [1, 2, 3, 4], f\"List concatenation expected [1,2,3,4], got {result}\"\n    # Ensure original inputs were not mutated (x+y returns a new list)\n    assert a == a_copy and b == b_copy, \"example_function should not mutate input lists\"\n\n\ndef test_example_function_type_error_on_incompatible_types_negative():\n    \"\"\"Test that mixing incompatible operand types raises a TypeError (e.g., str + int)\"\"\"\n    # Category: negative\n    with pytest.raises(TypeError):\n        _ = example_function(\"a\", 1)  # str + int is not supported and should raise TypeError\n\n\ndef test_example_function_propagates_operand_exceptions_negative():\n    \"\"\"Test that exceptions raised inside operand __add__ are propagated\"\"\"\n    # Category: negative\n    class BadAdd:\n        def __add__(self, other: Any) -> Any:\n            raise ValueError(\"custom add error\")\n\n    bad = BadAdd()\n    with pytest.raises(ValueError) as excinfo:\n        _ = example_function(bad, 1)\n    assert \"custom add error\" in str(excinfo.value), \"Exceptions raised by operand __add__ should propagate\"\n",
+      "test_methods": [
+        {
+          "name": "test_example_function_positive_integers",
+          "code": "def test_example_function_positive_integers():\n    \"\"\"Test normal functionality with two positive integers\"\"\"\n    # Category: positive\n    result = example_function(2, 3)\n    assert result == 5, f\"Adding 2 and 3 should yield 5, got {result}\""
+        },
+        {
+          "name": "test_example_function_positive_floats",
+          "code": "def test_example_function_positive_floats():\n    \"\"\"Test functionality with float inputs (function accepts numeric types beyond int)\"\"\"\n    # Category: positive\n    result = example_function(1.5, 2.3)\n    assert result == pytest.approx(3.8), f\"Adding 1.5 and 2.3 should be approximately 3.8, got {result}\""
+        },
+        {
+          "name": "test_example_function_zero_boundary",
+          "code": "def test_example_function_zero_boundary():\n    \"\"\"Test boundary condition: adding zero should return the other operand unchanged\"\"\"\n    # Category: boundary\n    assert example_function(0, 123) == 123, \"0 + 123 should be 123\"\n    assert example_function(456, 0) == 456, \"456 + 0 should be 456\""
+        },
+        {
+          "name": "test_example_function_large_integers_boundary",
+          "code": "def test_example_function_large_integers_boundary():\n    \"\"\"Test boundary with very large integers to ensure arbitrary-precision addition works\"\"\"\n    # Category: boundary\n    a = 10**100\n    b = 10**100\n    expected = 2 * 10**100\n    result = example_function(a, b)\n    assert result == expected, f\"Adding two very large integers should yield {expected}, got {result}\""
+        },
+        {
+          "name": "test_example_function_negative_integers_edge_case",
+          "code": "def test_example_function_negative_integers_edge_case():\n    \"\"\"Test edge case with negative integers\"\"\"\n    # Category: edge_case\n    result = example_function(-5, -7)\n    assert result == -12, f\"Adding -5 and -7 should yield -12, got {result}\""
+        },
+        {
+          "name": "test_example_function_boolean_operands_edge_case",
+          "code": "def test_example_function_boolean_operands_edge_case():\n    \"\"\"Test booleans (subclass of int) to verify behavior is consistent with integers\"\"\"\n    # Category: edge_case\n    # True == 1, False == 0\n    result = example_function(True, False)\n    assert result == 1, f\"True + False should be 1, got {result}\"\n    result2 = example_function(True, True)\n    assert result2 == 2, f\"True + True should be 2, got {result2}\""
+        },
+        {
+          "name": "test_example_function_list_concatenation_edge_case",
+          "code": "def test_example_function_list_concatenation_edge_case():\n    \"\"\"Test that the function uses + operator semantics for lists and does not mutate inputs\"\"\"\n    # Category: edge_case\n    a = [1, 2]\n    b = [3, 4]\n    a_copy = a.copy()\n    b_copy = b.copy()\n    result = example_function(a, b)\n    assert result == [1, 2, 3, 4], f\"List concatenation expected [1,2,3,4], got {result}\"\n    # Ensure original inputs were not mutated (x+y returns a new list)\n    assert a == a_copy and b == b_copy, \"example_function should not mutate input lists\""
+        },
+        {
+          "name": "test_example_function_type_error_on_incompatible_types_negative",
+          "code": "def test_example_function_type_error_on_incompatible_types_negative():\n    \"\"\"Test that mixing incompatible operand types raises a TypeError (e.g., str + int)\"\"\"\n    # Category: negative\n    with pytest.raises(TypeError):\n        _ = example_function(\"a\", 1)  # str + int is not supported and should raise TypeError"
+        },
+        {
+          "name": "test_example_function_propagates_operand_exceptions_negative",
+          "code": "def test_example_function_propagates_operand_exceptions_negative():\n    \"\"\"Test that exceptions raised inside operand __add__ are propagated\"\"\"\n    # Category: negative\n    class BadAdd:\n        def __add__(self, other: Any) -> Any:\n            raise ValueError(\"custom add error\")\n\n    bad = BadAdd()\n    with pytest.raises(ValueError) as excinfo:\n        _ = example_function(bad, 1)\n    assert \"custom add error\" in str(excinfo.value), \"Exceptions raised by operand __add__ should propagate\""
+        }
+      ],
+      "test_count": 9
+    },
+    "grok-3-mini": {
+      "raw_response": "```python\nimport pytest\n\n# Test cases for example_function(x, y)\n# This function simply adds two numbers, so tests will cover:\n# - Positive cases: Valid integer inputs.\n# - Edge cases: Special values like zero.\n# - Boundary cases: Large integer values.\n# - Negative cases: Invalid inputs that should raise errors.\n# - Security: Not directly applicable here, as there's no user input or potential vulnerabilities like injection; we'll note if any indirect concerns arise (e.g., type manipulation).\n\ndef test_example_function_positive_case():\n    '''Test normal functionality with two positive integers'''\n    # Category: positive\n    result = example_function(2, 3)\n    assert result == 5, \"Should correctly add two positive integers\"\n\ndef test_example_function_with_zero():\n    '''Test addition involving zero'''\n    # Category: edge_case\n    result = example_function(0, 5)\n    assert result == 5, \"Should correctly add zero to a positive integer\"\n\ndef test_example_function_negative_integers():\n    '''Test addition of two negative integers'''\n    # Category: positive\n    result = example_function(-4, -6)\n    assert result == -10, \"Should correctly add two negative integers\"\n\ndef test_example_function_large_integers():\n    '''Test addition with large integer values'''\n    # Category: boundary\n    result = example_function(10**12, 10**12)  # Large numbers to test boundaries of typical integer handling\n    assert result == 2 * 10**12, \"Should correctly add two large integers without overflow (Python handles arbitrary-sized ints)\"\n\ndef test_example_function_mixed_signs():\n    '''Test addition of a positive and a negative integer'''\n    # Category: positive\n    result = example_function(10, -4)\n    assert result == 6, \"Should correctly add a positive and a negative integer\"\n\ndef test_example_function_invalid_string_input():\n    '''Test with a non-integer string input, expecting a TypeError'''\n    # Category: negative\n    with pytest.raises(TypeError, match=\"unsupported operand type\"):\n        example_function(\"a\", 1)  # Expect TypeError because strings cannot be added to integers\n    # Note: This tests error handling for invalid input types\n\ndef test_example_function_none_input():\n    '''Test with None as input, expecting a TypeError'''\n    # Category: negative\n    with pytest.raises(TypeError, match=\"unsupported operand type\"):\n        example_function(None, 1)  # Expect TypeError because None cannot be added to an integer\n    # Note: This tests error handling for null-like invalid inputs\n\n# Total: 7 tests, focusing on comprehensive coverage of scenarios while adhering to requirements.\n# Security considerations: No explicit security tests added, as the function is a simple arithmetic operation with no external inputs or vulnerabilities. If this were part of a larger system, we'd consider input sanitization, but it's not applicable here.\n```",
+      "test_methods": [
+        {
+          "name": "test_example_function_positive_case",
+          "code": "def test_example_function_positive_case():\n    '''Test normal functionality with two positive integers'''\n    # Category: positive\n    result = example_function(2, 3)\n    assert result == 5, \"Should correctly add two positive integers\""
+        },
+        {
+          "name": "test_example_function_with_zero",
+          "code": "def test_example_function_with_zero():\n    '''Test addition involving zero'''\n    # Category: edge_case\n    result = example_function(0, 5)\n    assert result == 5, \"Should correctly add zero to a positive integer\""
+        },
+        {
+          "name": "test_example_function_negative_integers",
+          "code": "def test_example_function_negative_integers():\n    '''Test addition of two negative integers'''\n    # Category: positive\n    result = example_function(-4, -6)\n    assert result == -10, \"Should correctly add two negative integers\""
+        },
+        {
+          "name": "test_example_function_large_integers",
+          "code": "def test_example_function_large_integers():\n    '''Test addition with large integer values'''\n    # Category: boundary\n    result = example_function(10**12, 10**12)  # Large numbers to test boundaries of typical integer handling\n    assert result == 2 * 10**12, \"Should correctly add two large integers without overflow (Python handles arbitrary-sized ints)\""
+        },
+        {
+          "name": "test_example_function_mixed_signs",
+          "code": "def test_example_function_mixed_signs():\n    '''Test addition of a positive and a negative integer'''\n    # Category: positive\n    result = example_function(10, -4)\n    assert result == 6, \"Should correctly add a positive and a negative integer\""
+        },
+        {
+          "name": "test_example_function_invalid_string_input",
+          "code": "def test_example_function_invalid_string_input():\n    '''Test with a non-integer string input, expecting a TypeError'''\n    # Category: negative\n    with pytest.raises(TypeError, match=\"unsupported operand type\"):\n        example_function(\"a\", 1)  # Expect TypeError because strings cannot be added to integers\n    # Note: This tests error handling for invalid input types"
+        },
+        {
+          "name": "test_example_function_none_input",
+          "code": "def test_example_function_none_input():\n    '''Test with None as input, expecting a TypeError'''\n    # Category: negative\n    with pytest.raises(TypeError, match=\"unsupported operand type\"):\n        example_function(None, 1)  # Expect TypeError because None cannot be added to an integer\n    # Note: This tests error handling for null-like invalid inputs\n\n# Total: 7 tests, focusing on comprehensive coverage of scenarios while adhering to requirements.\n# Security considerations: No explicit security tests added, as the function is a simple arithmetic operation with no external inputs or vulnerabilities. If this were part of a larger system, we'd consider input sanitization, but it's not applicable here.\n```"
+        }
+      ],
+      "test_count": 7
+    }
+  },
+  "all_classified_tests": [
+    {
+      "name": "test_example_function_positive_normal",
+      "code": "def test_example_function_positive_normal():\n    '''Test normal addition with positive integers'''\n    # Category: positive\n    result = example_function(5, 3)\n    assert result == 8, \"Should return 8 for 5 + 3\"",
+      "category": "positive",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_positive_zero",
+      "code": "def test_example_function_positive_zero():\n    '''Test addition with zero'''\n    # Category: positive\n    result = example_function(7, 0)\n    assert result == 7, \"Should return 7 for 7 + 0\"",
+      "category": "positive",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_negative_normal",
+      "code": "def test_example_function_negative_normal():\n    '''Test addition with negative integers'''\n    # Category: positive\n    result = example_function(-2, -5)\n    assert result == -7, \"Should return -7 for -2 + -5\"",
+      "category": "positive",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_mixed_positive_negative",
+      "code": "def test_example_function_mixed_positive_negative():\n    '''Test addition with one positive and one negative integer'''\n    # Category: positive\n    result = example_function(10, -3)\n    assert result == 7, \"Should return 7 for 10 + -3\"",
+      "category": "positive",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_boundary_large_numbers",
+      "code": "def test_example_function_boundary_large_numbers():\n    '''Test addition with very large integers'''\n    # Category: boundary\n    x = 2**31 - 1\n    y = 1\n    result = example_function(x, y)\n    assert result == 2147483648, f\"Should return correct sum for large numbers: expected 2147483648, got {result}\"",
+      "category": "boundary",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_boundary_negative_large_numbers",
+      "code": "def test_example_function_boundary_negative_large_numbers():\n    '''Test addition with very large negative integers'''\n    # Category: boundary\n    x = -(2**31)\n    y = -1\n    result = example_function(x, y)\n    assert result == -2147483649, f\"Should return correct sum for large numbers: expected -2147483649, got {result}\"",
+      "category": "boundary",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_edge_case_max_min_int",
+      "code": "def test_example_function_edge_case_max_min_int():\n    '''Test addition with max and min int'''\n    # Category: edge_case\n    max_int = 2**31 - 1\n    min_int = -(2**31)\n    result = example_function(max_int, min_int)\n    assert result == -1, f\"Should return correct sum for max and min integers\"",
+      "category": "edge_case",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_type_error",
+      "code": "def test_example_function_type_error():\n    '''Test with non-integer inputs to check type error'''\n    # Category: negative\n    with pytest.raises(TypeError):\n        example_function(\"a\", 5)",
+      "category": "negative",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_type_error_float",
+      "code": "def test_example_function_type_error_float():\n    '''Test with float as input'''\n    # Category: negative\n    result = example_function(2.5, 3.5)\n    assert result == 6.0, \"Should return correct sum for floats\"\n```",
+      "category": "negative",
+      "source_model": "gemini-2.0-flash"
+    },
+    {
+      "name": "test_example_function_positive_integers",
+      "code": "def test_example_function_positive_integers():\n    \"\"\"Test normal functionality with two positive integers\"\"\"\n    # Category: positive\n    result = example_function(2, 3)\n    assert result == 5, f\"Adding 2 and 3 should yield 5, got {result}\"",
+      "category": "positive",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_positive_floats",
+      "code": "def test_example_function_positive_floats():\n    \"\"\"Test functionality with float inputs (function accepts numeric types beyond int)\"\"\"\n    # Category: positive\n    result = example_function(1.5, 2.3)\n    assert result == pytest.approx(3.8), f\"Adding 1.5 and 2.3 should be approximately 3.8, got {result}\"",
+      "category": "positive",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_zero_boundary",
+      "code": "def test_example_function_zero_boundary():\n    \"\"\"Test boundary condition: adding zero should return the other operand unchanged\"\"\"\n    # Category: boundary\n    assert example_function(0, 123) == 123, \"0 + 123 should be 123\"\n    assert example_function(456, 0) == 456, \"456 + 0 should be 456\"",
+      "category": "boundary",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_large_integers_boundary",
+      "code": "def test_example_function_large_integers_boundary():\n    \"\"\"Test boundary with very large integers to ensure arbitrary-precision addition works\"\"\"\n    # Category: boundary\n    a = 10**100\n    b = 10**100\n    expected = 2 * 10**100\n    result = example_function(a, b)\n    assert result == expected, f\"Adding two very large integers should yield {expected}, got {result}\"",
+      "category": "boundary",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_negative_integers_edge_case",
+      "code": "def test_example_function_negative_integers_edge_case():\n    \"\"\"Test edge case with negative integers\"\"\"\n    # Category: edge_case\n    result = example_function(-5, -7)\n    assert result == -12, f\"Adding -5 and -7 should yield -12, got {result}\"",
+      "category": "edge_case",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_boolean_operands_edge_case",
+      "code": "def test_example_function_boolean_operands_edge_case():\n    \"\"\"Test booleans (subclass of int) to verify behavior is consistent with integers\"\"\"\n    # Category: edge_case\n    # True == 1, False == 0\n    result = example_function(True, False)\n    assert result == 1, f\"True + False should be 1, got {result}\"\n    result2 = example_function(True, True)\n    assert result2 == 2, f\"True + True should be 2, got {result2}\"",
+      "category": "edge_case",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_list_concatenation_edge_case",
+      "code": "def test_example_function_list_concatenation_edge_case():\n    \"\"\"Test that the function uses + operator semantics for lists and does not mutate inputs\"\"\"\n    # Category: edge_case\n    a = [1, 2]\n    b = [3, 4]\n    a_copy = a.copy()\n    b_copy = b.copy()\n    result = example_function(a, b)\n    assert result == [1, 2, 3, 4], f\"List concatenation expected [1,2,3,4], got {result}\"\n    # Ensure original inputs were not mutated (x+y returns a new list)\n    assert a == a_copy and b == b_copy, \"example_function should not mutate input lists\"",
+      "category": "edge_case",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_type_error_on_incompatible_types_negative",
+      "code": "def test_example_function_type_error_on_incompatible_types_negative():\n    \"\"\"Test that mixing incompatible operand types raises a TypeError (e.g., str + int)\"\"\"\n    # Category: negative\n    with pytest.raises(TypeError):\n        _ = example_function(\"a\", 1)  # str + int is not supported and should raise TypeError",
+      "category": "negative",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_propagates_operand_exceptions_negative",
+      "code": "def test_example_function_propagates_operand_exceptions_negative():\n    \"\"\"Test that exceptions raised inside operand __add__ are propagated\"\"\"\n    # Category: negative\n    class BadAdd:\n        def __add__(self, other: Any) -> Any:\n            raise ValueError(\"custom add error\")\n\n    bad = BadAdd()\n    with pytest.raises(ValueError) as excinfo:\n        _ = example_function(bad, 1)\n    assert \"custom add error\" in str(excinfo.value), \"Exceptions raised by operand __add__ should propagate\"",
+      "category": "negative",
+      "source_model": "gpt-5-mini"
+    },
+    {
+      "name": "test_example_function_positive_case",
+      "code": "def test_example_function_positive_case():\n    '''Test normal functionality with two positive integers'''\n    # Category: positive\n    result = example_function(2, 3)\n    assert result == 5, \"Should correctly add two positive integers\"",
+      "category": "positive",
+      "source_model": "grok-3-mini"
+    },
+    {
+      "name": "test_example_function_with_zero",
+      "code": "def test_example_function_with_zero():\n    '''Test addition involving zero'''\n    # Category: edge_case\n    result = example_function(0, 5)\n    assert result == 5, \"Should correctly add zero to a positive integer\"",
+      "category": "edge_case",
+      "source_model": "grok-3-mini"
+    },
+    {
+      "name": "test_example_function_negative_integers",
+      "code": "def test_example_function_negative_integers():\n    '''Test addition of two negative integers'''\n    # Category: positive\n    result = example_function(-4, -6)\n    assert result == -10, \"Should correctly add two negative integers\"",
+      "category": "positive",
+      "source_model": "grok-3-mini"
+    },
+    {
+      "name": "test_example_function_large_integers",
+      "code": "def test_example_function_large_integers():\n    '''Test addition with large integer values'''\n    # Category: boundary\n    result = example_function(10**12, 10**12)  # Large numbers to test boundaries of typical integer handling\n    assert result == 2 * 10**12, \"Should correctly add two large integers without overflow (Python handles arbitrary-sized ints)\"",
+      "category": "boundary",
+      "source_model": "grok-3-mini"
+    },
+    {
+      "name": "test_example_function_mixed_signs",
+      "code": "def test_example_function_mixed_signs():\n    '''Test addition of a positive and a negative integer'''\n    # Category: positive\n    result = example_function(10, -4)\n    assert result == 6, \"Should correctly add a positive and a negative integer\"",
+      "category": "positive",
+      "source_model": "grok-3-mini"
+    },
+    {
+      "name": "test_example_function_invalid_string_input",
+      "code": "def test_example_function_invalid_string_input():\n    '''Test with a non-integer string input, expecting a TypeError'''\n    # Category: negative\n    with pytest.raises(TypeError, match=\"unsupported operand type\"):\n        example_function(\"a\", 1)  # Expect TypeError because strings cannot be added to integers\n    # Note: This tests error handling for invalid input types",
+      "category": "negative",
+      "source_model": "grok-3-mini"
+    },
+    {
+      "name": "test_example_function_none_input",
+      "code": "def test_example_function_none_input():\n    '''Test with None as input, expecting a TypeError'''\n    # Category: negative\n    with pytest.raises(TypeError, match=\"unsupported operand type\"):\n        example_function(None, 1)  # Expect TypeError because None cannot be added to an integer\n    # Note: This tests error handling for null-like invalid inputs\n\n# Total: 7 tests, focusing on comprehensive coverage of scenarios while adhering to requirements.\n# Security considerations: No explicit security tests added, as the function is a simple arithmetic operation with no external inputs or vulnerabilities. If this were part of a larger system, we'd consider input sanitization, but it's not applicable here.\n```",
+      "category": "negative",
+      "source_model": "grok-3-mini"
+    }
+  ],
+  "synthesis_results": {
+    "final_tests": [
+      {
+        "name": "test_positive_integers",
+        "code": "def test_positive_integers():\n        \"\"\"Test normal addition with two positive integers.\"\"\"\n        result = example_function(5, 3)\n        assert result == 8, \"Should return 8 for 5 + 3\"",
+        "category": "positive",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_addition_with_zero",
+        "code": "def test_addition_with_zero():\n        \"\"\"Test addition with zero.\"\"\"\n        assert example_function(7, 0) == 7, \"Should return 7 for 7 + 0\"\n        assert example_function(0, 123) == 123, \"0 + 123 should be 123\"\n        assert example_function(456, 0) == 456, \"456 + 0 should be 456\"",
+        "category": "positive",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_negative_integers",
+        "code": "def test_negative_integers():\n        \"\"\"Test addition with two negative integers.\"\"\"\n        result = example_function(-2, -5)\n        assert result == -7, \"Should return -7 for -2 + -5\"",
+        "category": "positive",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_mixed_positive_negative",
+        "code": "def test_mixed_positive_negative():\n        \"\"\"Test addition with one positive and one negative integer.\"\"\"\n        result = example_function(10, -3)\n        assert result == 7, \"Should return 7 for 10 + -3\"",
+        "category": "positive",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_positive_floats",
+        "code": "def test_positive_floats():\n        \"\"\"Test functionality with float inputs.\"\"\"\n        result = example_function(1.5, 2.3)\n        assert result == pytest.approx(3.8), f\"Adding 1.5 and 2.3 should be approximately 3.8, got {result}\"\n\n\n# Boundary Tests\nclass TestBoundary:\n    \"\"\"Tests for boundary conditions with large numbers and edge cases.\"\"\"",
+        "category": "boundary",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_large_integers",
+        "code": "def test_large_integers():\n        \"\"\"Test addition with very large integers.\"\"\"\n        x = 2**31 - 1\n        y = 1\n        result = example_function(x, y)\n        assert result == 2147483648, f\"Should return correct sum for large numbers: expected 2147483648, got {result}\"",
+        "category": "positive",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_negative_large_integers",
+        "code": "def test_negative_large_integers():\n        \"\"\"Test addition with very large negative integers.\"\"\"\n        x = -(2**31)\n        y = -1\n        result = example_function(x, y)\n        assert result == -2147483649, f\"Should return correct sum for large numbers: expected -2147483649, got {result}\"",
+        "category": "positive",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_very_large_integers",
+        "code": "def test_very_large_integers():\n        \"\"\"Test boundary with very large integers to ensure arbitrary-precision addition works\"\"\"\n        a = 10**100\n        b = 10**100\n        expected = 2 * 10**100\n        result = example_function(a, b)\n        assert result == expected, f\"Adding two very large integers should yield {expected}, got {result}\"\n\n\n# Edge Case Tests\nclass TestEdgeCases:\n    \"\"\"Tests for unusual or unexpected inputs.\"\"\"",
+        "category": "boundary",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_max_min_int",
+        "code": "def test_max_min_int():\n        \"\"\"Test addition with max and min int.\"\"\"\n        max_int = 2**31 - 1\n        min_int = -(2**31)\n        result = example_function(max_int, min_int)\n        assert result == -1, f\"Should return correct sum for max and min integers\"",
+        "category": "positive",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_boolean_operands",
+        "code": "def test_boolean_operands():\n        \"\"\"Test booleans (subclass of int) to verify behavior is consistent with integers.\"\"\"\n        # True == 1, False == 0\n        result = example_function(True, False)\n        assert result == 1, f\"True + False should be 1, got {result}\"\n        result2 = example_function(True, True)\n        assert result2 == 2, f\"True + True should be 2, got {result2}\"",
+        "category": "positive",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_list_concatenation",
+        "code": "def test_list_concatenation():\n        \"\"\"Test that the function uses + operator semantics for lists and does not mutate inputs.\"\"\"\n        a = [1, 2]\n        b = [3, 4]\n        a_copy = a.copy()\n        b_copy = b.copy()\n        result = example_function(a, b)\n        assert result == [1, 2, 3, 4], f\"List concatenation expected [1,2,3,4], got {result}\"\n        # Ensure original inputs were not mutated (x+y returns a new list)\n        assert a == a_copy and b == b_copy, \"example_function should not mutate input lists\"\n\n\n# Negative Tests\nclass TestNegative:\n    \"\"\"Tests to verify error handling and type checking.\"\"\"",
+        "category": "negative",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_type_error_on_incompatible_types",
+        "code": "def test_type_error_on_incompatible_types():\n        \"\"\"Test that mixing incompatible operand types raises a TypeError (e.g., str + int).\"\"\"\n        with pytest.raises(TypeError):\n            _ = example_function(\"a\", 1)  # str + int is not supported and should raise TypeError",
+        "category": "negative",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_none_input",
+        "code": "def test_none_input():\n        '''Test with None as input, expecting a TypeError'''\n        with pytest.raises(TypeError, match=\"unsupported operand type\"):\n            example_function(None, 1)  # Expect TypeError because None cannot be added to an integer",
+        "category": "negative",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      },
+      {
+        "name": "test_propagates_operand_exceptions",
+        "code": "def test_propagates_operand_exceptions():\n        \"\"\"Test that exceptions raised inside operand __add__ are propagated.\"\"\"\n        class BadAdd:\n            def __add__(self, other: Any) -> Any:\n                raise ValueError(\"custom add error\")\n\n        bad = BadAdd()\n        with pytest.raises(ValueError) as excinfo:\n            _ = example_function(bad, 1)\n        assert \"custom add error\" in str(excinfo.value), \"Exceptions raised by operand __add__ should propagate\"\n```",
+        "category": "negative",
+        "source": "synthesized",
+        "original_sources": [
+          "gemini-2.0-flash",
+          "gpt-5-mini",
+          "grok-3-mini"
+        ]
+      }
+    ],
+    "original_count": 25,
+    "final_count": 14,
+    "reduction_ratio": 0.44,
+    "synthesizer_model": "gemini-2.0-flash"
+  },
+  "final_test_file": "```python\n\"\"\"\nFinal optimized test suite for example_function.\n\nThis suite combines the best tests from multiple AI models, removing duplicates\nand ensuring comprehensive coverage of positive, negative, boundary, and edge\ncases.\n\"\"\"\n\nimport pytest\nfrom typing import Any\n\n# Function under test (assumed to be in the same directory or accessible via PYTHONPATH)\ndef example_function(x, y):\n    \"\"\"\n    Add two numbers together\n    \n    Args:\n        x (int): First number\n        y (int): Second number\n        \n    Returns:\n        int: Sum of x and y\n    \"\"\"\n    return x + y\n\n\n# Positive Tests\nclass TestPositive:\n    \"\"\"Tests for normal, positive scenarios.\"\"\"\n\n    def test_positive_integers(self):\n        \"\"\"Test normal addition with two positive integers.\"\"\"\n        result = example_function(5, 3)\n        assert result == 8, \"Should return 8 for 5 + 3\"\n\n    def test_addition_with_zero(self):\n        \"\"\"Test addition with zero.\"\"\"\n        assert example_function(7, 0) == 7, \"Should return 7 for 7 + 0\"\n        assert example_function(0, 123) == 123, \"0 + 123 should be 123\"\n        assert example_function(456, 0) == 456, \"456 + 0 should be 456\"\n\n    def test_negative_integers(self):\n        \"\"\"Test addition with two negative integers.\"\"\"\n        result = example_function(-2, -5)\n        assert result == -7, \"Should return -7 for -2 + -5\"\n\n    def test_mixed_positive_negative(self):\n        \"\"\"Test addition with one positive and one negative integer.\"\"\"\n        result = example_function(10, -3)\n        assert result == 7, \"Should return 7 for 10 + -3\"\n\n    def test_positive_floats(self):\n        \"\"\"Test functionality with float inputs.\"\"\"\n        result = example_function(1.5, 2.3)\n        assert result == pytest.approx(3.8), f\"Adding 1.5 and 2.3 should be approximately 3.8, got {result}\"\n\n\n# Boundary Tests\nclass TestBoundary:\n    \"\"\"Tests for boundary conditions with large numbers and edge cases.\"\"\"\n\n    def test_large_integers(self):\n        \"\"\"Test addition with very large integers.\"\"\"\n        x = 2**31 - 1\n        y = 1\n        result = example_function(x, y)\n        assert result == 2147483648, f\"Should return correct sum for large numbers: expected 2147483648, got {result}\"\n\n    def test_negative_large_integers(self):\n        \"\"\"Test addition with very large negative integers.\"\"\"\n        x = -(2**31)\n        y = -1\n        result = example_function(x, y)\n        assert result == -2147483649, f\"Should return correct sum for large numbers: expected -2147483649, got {result}\"\n\n    def test_very_large_integers(self):\n        \"\"\"Test boundary with very large integers to ensure arbitrary-precision addition works\"\"\"\n        a = 10**100\n        b = 10**100\n        expected = 2 * 10**100\n        result = example_function(a, b)\n        assert result == expected, f\"Adding two very large integers should yield {expected}, got {result}\"\n\n\n# Edge Case Tests\nclass TestEdgeCases:\n    \"\"\"Tests for unusual or unexpected inputs.\"\"\"\n\n    def test_max_min_int(self):\n        \"\"\"Test addition with max and min int.\"\"\"\n        max_int = 2**31 - 1\n        min_int = -(2**31)\n        result = example_function(max_int, min_int)\n        assert result == -1, f\"Should return correct sum for max and min integers\"\n\n    def test_boolean_operands(self):\n        \"\"\"Test booleans (subclass of int) to verify behavior is consistent with integers.\"\"\"\n        # True == 1, False == 0\n        result = example_function(True, False)\n        assert result == 1, f\"True + False should be 1, got {result}\"\n        result2 = example_function(True, True)\n        assert result2 == 2, f\"True + True should be 2, got {result2}\"\n\n    def test_list_concatenation(self):\n        \"\"\"Test that the function uses + operator semantics for lists and does not mutate inputs.\"\"\"\n        a = [1, 2]\n        b = [3, 4]\n        a_copy = a.copy()\n        b_copy = b.copy()\n        result = example_function(a, b)\n        assert result == [1, 2, 3, 4], f\"List concatenation expected [1,2,3,4], got {result}\"\n        # Ensure original inputs were not mutated (x+y returns a new list)\n        assert a == a_copy and b == b_copy, \"example_function should not mutate input lists\"\n\n\n# Negative Tests\nclass TestNegative:\n    \"\"\"Tests to verify error handling and type checking.\"\"\"\n\n    def test_type_error_on_incompatible_types(self):\n        \"\"\"Test that mixing incompatible operand types raises a TypeError (e.g., str + int).\"\"\"\n        with pytest.raises(TypeError):\n            _ = example_function(\"a\", 1)  # str + int is not supported and should raise TypeError\n\n    def test_none_input(self):\n        '''Test with None as input, expecting a TypeError'''\n        with pytest.raises(TypeError, match=\"unsupported operand type\"):\n            example_function(None, 1)  # Expect TypeError because None cannot be added to an integer\n\n    def test_propagates_operand_exceptions(self):\n        \"\"\"Test that exceptions raised inside operand __add__ are propagated.\"\"\"\n        class BadAdd:\n            def __add__(self, other: Any) -> Any:\n                raise ValueError(\"custom add error\")\n\n        bad = BadAdd()\n        with pytest.raises(ValueError) as excinfo:\n            _ = example_function(bad, 1)\n        assert \"custom add error\" in str(excinfo.value), \"Exceptions raised by operand __add__ should propagate\"\n```",
+  "coverage_results": {
+    "success": false,
+    "stdout": "\u001b[1m============================= test session starts ==============================\u001b[0m\nplatform darwin -- Python 3.9.0, pytest-8.4.2, pluggy-1.6.0 -- /Users/sepehr/IdeaProjects/testgen-council/venv/bin/python\ncachedir: .pytest_cache\nrootdir: /var/folders/b8/8kbfnxhx3l34cnrh1tkx_y8h0000gn/T\nplugins: anyio-4.10.0, cov-7.0.0\n\u001b[1mcollecting ... \u001b[0mcollected 0 items / 1 error\n\n==================================== ERRORS ====================================\n\u001b[31m\u001b[1m_______________________ ERROR collecting tmpw9sjxxaq.py ________________________\u001b[0m\n\u001b[31m\u001b[1m\u001b[31mvenv/lib/python3.9/site-packages/_pytest/python.py\u001b[0m:498: in importtestmodule\n    \u001b[0mmod = import_path(\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31mvenv/lib/python3.9/site-packages/_pytest/pathlib.py\u001b[0m:587: in import_path\n    \u001b[0mimportlib.import_module(module_name)\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31m/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/importlib/__init__.py\u001b[0m:127: in import_module\n    \u001b[0m\u001b[94mreturn\u001b[39;49;00m _bootstrap._gcd_import(name[level:], package, level)\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31m<frozen importlib._bootstrap>\u001b[0m:1030: in _gcd_import\n    \u001b[0m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31m<frozen importlib._bootstrap>\u001b[0m:1007: in _find_and_load\n    \u001b[0m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31m<frozen importlib._bootstrap>\u001b[0m:986: in _find_and_load_unlocked\n    \u001b[0m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31m<frozen importlib._bootstrap>\u001b[0m:680: in _load_unlocked\n    \u001b[0m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[04m\u001b[91m?\u001b[39;49;00m\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31mvenv/lib/python3.9/site-packages/_pytest/assertion/rewrite.py\u001b[0m:177: in exec_module\n    \u001b[0msource_stat, co = _rewrite_test(fn, \u001b[96mself\u001b[39;49;00m.config)\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31mvenv/lib/python3.9/site-packages/_pytest/assertion/rewrite.py\u001b[0m:357: in _rewrite_test\n    \u001b[0mtree = ast.parse(source, filename=strfn)\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31m/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ast.py\u001b[0m:50: in parse\n    \u001b[0m\u001b[94mreturn\u001b[39;49;00m \u001b[96mcompile\u001b[39;49;00m(source, filename, mode, flags,\u001b[90m\u001b[39;49;00m\n\u001b[1m\u001b[31mE     File \"/var/folders/b8/8kbfnxhx3l34cnrh1tkx_y8h0000gn/T/tmpw9sjxxaq.py\", line 5\u001b[0m\n\u001b[1m\u001b[31mE       ```python\u001b[0m\n\u001b[1m\u001b[31mE       ^\u001b[0m\n\u001b[1m\u001b[31mE   SyntaxError: invalid syntax\u001b[0m\u001b[0m\n\u001b[36m\u001b[1m=========================== short test summary info ============================\u001b[0m\n\u001b[31mERROR\u001b[0m ../../../../var/folders/b8/8kbfnxhx3l34cnrh1tkx_y8h0000gn/T/tmpw9sjxxaq.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n\u001b[31m=============================== \u001b[31m\u001b[1m1 error\u001b[0m\u001b[31m in 0.32s\u001b[0m\u001b[31m ===============================\u001b[0m\n",
+    "stderr": "",
+    "coverage_percentage": 85.0
+  },
+  "statistics": {
+    "original_test_count": 25,
+    "final_test_count": 14,
+    "reduction_ratio": 0.44,
+    "coverage_percentage": 85.0,
+    "models_used": [
+      "gemini-2.0-flash",
+      "gpt-5-mini",
+      "grok-3-mini"
+    ],
+    "categories_found": [
+      "positive",
+      "boundary",
+      "edge_case",
+      "negative"
+    ],
+    "synthesizer_model": "gemini-2.0-flash"
+  }
+}
