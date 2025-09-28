@@ -1,154 +1,86 @@
-"""
-Test suite for the divide_numbers function.
-
-This suite covers positive and negative test cases,
-boundary conditions, edge cases, and error handling.
-"""
-
 import pytest
+from function import divide_numbers
 import math
-from decimal import Decimal
 
-def divide_numbers(a, b):
-    """
-    Divide two numbers with error handling
+def test_divide_numbers_positive_integers():
+    """Test normal division with positive integers."""
+    # Category: positive
+    result = divide_numbers(10, 2)
+    assert result == 5.0, "Should return the correct quotient for positive integers"
 
-    Args:
-        a (float): Numerator
-        b (float): Denominator
+def test_divide_numbers_positive_floats():
+    """Test normal division with positive floats."""
+    # Category: positive
+    result = divide_numbers(7.5, 2.5)
+    assert result == 3.0, "Should return the correct quotient for positive floats"
 
-    Returns:
-        float: Result of division
+def test_divide_numbers_mixed_signs():
+    """Test division with mixed positive and negative numbers."""
+    # Category: positive
+    result1 = divide_numbers(-10, 2)
+    assert result1 == -5.0, "Should return the correct quotient for negative numerator"
+    result2 = divide_numbers(10, -2)
+    assert result2 == -5.0, "Should return the correct quotient for negative denominator"
 
-    Raises:
-        ValueError: If denominator is zero
-        TypeError: If inputs are not numeric
-    """
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("Both arguments must be numeric")
+def test_divide_numbers_fractional_result():
+    """Test division that results in a fraction."""
+    # Category: positive
+    result = divide_numbers(1, 2)
+    assert result == 0.5, "Should return the correct fractional quotient"
 
-    if b == 0:
-        raise ValueError("Cannot divide by zero")
+def test_divide_numbers_zero_numerator():
+    """Test division with zero as the numerator."""
+    # Category: edge_case
+    result = divide_numbers(0, 5)
+    assert result == 0.0, "Should return zero when the numerator is zero"
 
-    return a / b
+def test_divide_numbers_large_numbers():
+    """Test division with very large numbers."""
+    # Category: boundary
+    result = divide_numbers(1e10, 1e5)
+    assert result == 1e5, "Should handle large numbers correctly"
 
+def test_divide_numbers_very_small_over_very_large_underflow():
+    """Test handling of extreme float ratios which may underflow to 0.0."""
+    # Category: edge_case
+    tiny = 1e-308
+    huge = 1e308
+    result = divide_numbers(tiny, huge)
+    assert result == 0.0, f"Expected {tiny} / {huge} to underflow to 0.0, got {result!r}"
 
-# Positive test cases
-class TestPositiveCases:
-    """
-    Test suite for positive test cases
-    """
-    def test_divide_numbers_positive_integers(self):
-        """Test normal division with positive integers"""
-        result = divide_numbers(10, 2)
-        assert result == 5.0, "Should correctly divide positive integers"
+def test_divide_numbers_with_infinity_and_nan():
+    """Test behavior with special float values (inf and nan)."""
+    # Category: edge_case
+    result_inf = divide_numbers(123.0, float("inf"))
+    assert result_inf == 0.0, f"Expected 123.0 / inf to be 0.0, got {result_inf!r}"
 
-    def test_divide_numbers_positive_floats(self):
-        """Test normal division with positive floats"""
-        result = divide_numbers(7.5, 2.5)
-        assert result == 3.0, "Should correctly divide positive floats"
+    result_nan = divide_numbers(1.0, float("nan"))
+    assert math.isnan(result_nan), "Expected division by NaN to produce NaN"
 
-    def test_divide_numbers_negative_numerator(self):
-        """Test division with a negative numerator"""
-        result = divide_numbers(-10, 2)
-        assert result == -5.0, "Should correctly divide with negative numerator"
+def test_divide_numbers_divide_by_zero():
+    """Test division by zero, expecting a ValueError."""
+    # Category: negative
+    with pytest.raises(ValueError) as excinfo:
+        divide_numbers(10, 0)
+    assert str(excinfo.value) == "Cannot divide by zero", "Should raise ValueError when dividing by zero"
 
-    def test_divide_numbers_negative_denominator(self):
-        """Test division with a negative denominator"""
-        result = divide_numbers(10, -2)
-        assert result == -5.0, "Should correctly divide with negative denominator"
+def test_divide_numbers_non_numeric_inputs():
+    """Test division with non-numeric inputs, expecting a TypeError."""
+    # Category: negative
+    with pytest.raises(TypeError) as excinfo:
+        divide_numbers("a", 2)
+    assert str(excinfo.value) == "Both arguments must be numeric", "Should raise TypeError when numerator is not numeric"
 
-    def test_divide_numbers_negative_both(self):
-        """Test division with both arguments negative"""
-        result = divide_numbers(-10, -2)
-        assert result == 5.0, "Should correctly divide with both negative numbers"
+    with pytest.raises(TypeError) as excinfo:
+        divide_numbers(10, "b")
+    assert str(excinfo.value) == "Both arguments must be numeric", "Should raise TypeError when denominator is not numeric"
 
+def test_divide_numbers_bool_handling():
+    """Test boolean inputs (True/False)."""
+    # Category: security
+    result_true_num = divide_numbers(True, 2)
+    assert result_true_num == 0.5, f"Expected True (1) / 2 to be 0.5, got {result_true_num!r}"
 
-# Boundary test cases
-class TestBoundaryCases:
-    """
-    Test suite for boundary test cases
-    """
-    def test_divide_numbers_small_denominator(self):
-        """Test division with a very small positive denominator"""
-        result = divide_numbers(1, 1e-10)
-        assert result == 1e10, "Should handle division by a very small number"
-
-    def test_special_float_values_nan_and_inf(self):
-        """Verify behavior with NaN and Infinity inputs"""
-        result_nan = divide_numbers(1.0, float("nan"))
-        assert math.isnan(result_nan), "Expected result to be NaN when denominator is NaN"
-
-        result_inf = divide_numbers(float("inf"), 2.0)
-        assert math.isinf(result_inf) and result_inf > 0, "Expected positive infinity when numerator is +inf"
-
-        result_neg_inf = divide_numbers(float("-inf"), 2.0)
-        assert math.isinf(result_neg_inf) and result_neg_inf < 0, "Expected negative infinity when numerator is -inf"
-
-
-# Edge case test cases
-class TestEdgeCases:
-    """
-    Test suite for edge cases
-    """
-    def test_divide_numbers_zero_numerator(self):
-        """Test division with zero numerator"""
-        result = divide_numbers(0, 5)
-        assert result == 0.0, "Should correctly divide zero by a number"
-
-    def test_divide_numbers_denominator_one(self):
-        """Test division with denominator equal to one"""
-        result = divide_numbers(7, 1)
-        assert result == 7.0, "Should correctly return the numerator when denominator is one"
-
-    def test_bool_is_subclass_of_int(self):
-        """Verify behavior when using boolean values (True and False)"""
-        result_true = divide_numbers(True, 2)
-        assert result_true == 0.5, "Expected True to be treated as 1, so True/2 == 0.5"
-
-        result_false = divide_numbers(False, 3)
-        assert result_false == 0.0, "Expected False to be treated as 0, so False/3 == 0.0"
-
-        with pytest.raises(ValueError) as exc:
-            divide_numbers(1, False)
-        assert str(exc.value) == "Cannot divide by zero", "Expected ValueError when denominator is False (zero)"
-
-
-# Negative test cases
-class TestNegativeCases:
-    """
-    Test suite for negative test cases (error handling)
-    """
-    def test_divide_numbers_zero_division_error(self):
-        """Test when the denominator is zero"""
-        with pytest.raises(ValueError) as excinfo:
-            divide_numbers(10, 0)
-        assert "Cannot divide by zero" in str(excinfo.value)
-
-    def test_divide_numbers_type_error(self):
-        """Test when non-numeric arguments are passed"""
-        with pytest.raises(TypeError) as excinfo:
-            divide_numbers("10", 2)
-        assert "Both arguments must be numeric" in str(excinfo.value)
-
-    def test_non_numeric_types_raise_type_error(self):
-        """Passing non-numeric types should raise TypeError"""
-        with pytest.raises(TypeError) as exc:
-            divide_numbers(10, "2")
-        assert str(exc.value) == "Both arguments must be numeric", "Expected TypeError when denominator is a string"
-
-    def test_decimal_instances_not_accepted_type_error(self):
-        '''Decimal instances should not be automatically accepted (function only allows int/float)'''
-        with pytest.raises(TypeError) as exc:
-            divide_numbers(Decimal("3.0"), 1)
-        assert str(exc.value) == "Both arguments must be numeric", "Expected TypeError when using Decimal for numerator"
-
-    def test_object_with_float_method_not_autocoerced(self):
-        '''Ensure objects implementing __float__ are not silently accepted; explicit int/float required'''
-        class CustomNumber:
-            def __float__(self):
-                return 3.0
-
-        with pytest.raises(TypeError) as exc:
-            divide_numbers(CustomNumber(), 1)
-        assert str(exc.value) == "Both arguments must be numeric", "Expected TypeError for objects that are not int/float even if they implement __float__"
+    with pytest.raises(ValueError) as excinfo:
+        divide_numbers(1, False)
+    assert str(excinfo.value) == "Cannot divide by zero", "Using False as denominator should raise ValueError because False == 0"
