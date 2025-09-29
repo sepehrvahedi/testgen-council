@@ -6,3 +6,4 @@
 /.idea/
 /test_output/.ipynb_checkpoints/
 /test_output/interactive/.ipynb_checkpoints/
+/test_output/.coverage

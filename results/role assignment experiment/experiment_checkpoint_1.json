@@ -1,0 +1,1219 @@
+[
+  {
+    "function_name": "get_1s_count",
+    "function_category": "bit_manipulation",
+    "function_file": "Python/bit_manipulation/count_1s_brian_kernighan_method.py",
+    "total_tests_generated": 139,
+    "model_role_category_matrix": {
+      "gemini-2.0-flash": {
+        "agent_of_chaos": {
+          "negative": 5,
+          "edge_case": 1
+        },
+        "qa_engineer": {
+          "positive": 8,
+          "boundary": 1,
+          "negative": 3
+        },
+        "security_auditor": {
+          "positive": 3,
+          "negative": 3,
+          "boundary": 2,
+          "security": 4
+        },
+        "abstract_thinker": {
+          "boundary": 2,
+          "positive": 2,
+          "edge_case": 1,
+          "negative": 2
+        }
+      },
+      "qwen3-235b-a22b": {
+        "qa_engineer": {
+          "positive": 3,
+          "boundary": 3,
+          "negative": 3,
+          "edge_case": 1
+        },
+        "agent_of_chaos": {
+          "positive": 2,
+          "negative": 7,
+          "boundary": 1,
+          "edge_case": 3,
+          "security": 2
+        },
+        "abstract_thinker": {
+          "boundary": 2,
+          "positive": 5,
+          "negative": 1,
+          "edge_case": 2
+        },
+        "security_auditor": {
+          "positive": 1,
+          "negative": 3,
+          "boundary": 4,
+          "edge_case": 2,
+          "security": 13
+        }
+      },
+      "grok-3-mini": {
+        "qa_engineer": {
+          "positive": 6,
+          "boundary": 4,
+          "negative": 3
+        },
+        "agent_of_chaos": {
+          "negative": 8,
+          "boundary": 1,
+          "edge_case": 2,
+          "security": 1
+        },
+        "abstract_thinker": {
+          "positive": 2,
+          "negative": 1,
+          "boundary": 1,
+          "edge_case": 1
+        },
+        "security_auditor": {
+          "positive": 2,
+          "negative": 4,
+          "boundary": 3,
+          "edge_case": 2,
+          "security": 3
+        }
+      }
+    },
+    "model_totals": {
+      "gemini-2.0-flash": 37,
+      "qwen3-235b-a22b": 58,
+      "grok-3-mini": 44
+    },
+    "role_totals": {
+      "agent_of_chaos": 33,
+      "qa_engineer": 35,
+      "security_auditor": 49,
+      "abstract_thinker": 22
+    },
+    "category_totals": {
+      "negative": 43,
+      "edge_case": 15,
+      "positive": 34,
+      "boundary": 24,
+      "security": 23
+    },
+    "tests": [
+      {
+        "name": "test_get_1s_count_negative_number",
+        "code": "def test_get_1s_count_negative_number():\n    '''Verify ValueError raised for negative input.'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(-10)",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_float_input",
+        "code": "def test_get_1s_count_float_input():\n    '''Verify ValueError raised for float input.'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(3.14)",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_string_input",
+        "code": "def test_get_1s_count_string_input():\n    '''Verify ValueError raised for string input.'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(\"hello\")",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_list_input",
+        "code": "def test_get_1s_count_list_input():\n    '''Verify ValueError raised for list input.'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count([1, 2, 3])",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_none_input",
+        "code": "def test_get_1s_count_none_input():\n    '''Verify ValueError raised for None input.'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(None)",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_very_large_number",
+        "code": "def test_get_1s_count_very_large_number():\n    '''Verify correct behavior for a large number exceeding typical 32-bit int limits'''\n    # Category: edge_case\n    #While technically valid due to python's arbitrary precision integers, it's an unusual input\n    number = 2**100\n    expected_count = bin(number).count('1')\n    assert get_1s_count(number) == expected_count, \"Incorrect count for very large number\"\n```",
+        "category": "edge_case",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_typical_case_25",
+        "code": "def test_get_1s_count_typical_case_25():\n    \"\"\"Tests a typical case with input 25 (binary 11001), expecting 3 set bits.\"\"\"\n    # Category: positive\n    result = get_1s_count(25)\n    assert result == 3, \"Expected 3 set bits for 25\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_typical_case_37",
+        "code": "def test_get_1s_count_typical_case_37():\n    \"\"\"Tests a typical case with input 37 (binary 100101), expecting 3 set bits.\"\"\"\n    # Category: positive\n    result = get_1s_count(37)\n    assert result == 3, \"Expected 3 set bits for 37\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_typical_case_21",
+        "code": "def test_get_1s_count_typical_case_21():\n    \"\"\"Tests a typical case with input 21 (binary 10101), expecting 3 set bits.\"\"\"\n    # Category: positive\n    result = get_1s_count(21)\n    assert result == 3, \"Expected 3 set bits for 21\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_typical_case_58",
+        "code": "def test_get_1s_count_typical_case_58():\n    \"\"\"Tests a typical case with input 58 (binary 111010), expecting 4 set bits.\"\"\"\n    # Category: positive\n    result = get_1s_count(58)\n    assert result == 4, \"Expected 4 set bits for 58\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_zero",
+        "code": "def test_get_1s_count_zero():\n    \"\"\"Tests the case where the input is zero, expecting 0 set bits.\"\"\"\n    # Category: positive\n    result = get_1s_count(0)\n    assert result == 0, \"Expected 0 set bits for 0\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_power_of_two",
+        "code": "def test_get_1s_count_power_of_two():\n    \"\"\"Tests a case where the input is a power of two (256), expecting 1 set bit.\"\"\"\n    # Category: positive\n    result = get_1s_count(256)\n    assert result == 1, \"Expected 1 set bit for 256\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_max_32bit_integer",
+        "code": "def test_get_1s_count_max_32bit_integer():\n    \"\"\"Tests the maximum 32-bit integer (2**31 - 1), expecting 31 set bits. Assumes implementation handles up to 32 bit integers.\"\"\"\n    # Category: positive\n    result = get_1s_count(2**31 - 1)\n    assert result == 31, \"Expected 31 set bits for 2**31 - 1\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_boundary_one",
+        "code": "def test_get_1s_count_boundary_one():\n    \"\"\"Tests the input value of 1 (binary 1), expecting 1 set bit.\"\"\"\n    # Category: boundary\n    result = get_1s_count(1)\n    assert result == 1, \"Expected 1 set bit for 1\"",
+        "category": "boundary",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_negative_number",
+        "code": "def test_get_1s_count_negative_number():\n    \"\"\"Tests that a ValueError is raised when a negative number is provided.\"\"\"\n    # Category: negative\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(-1)\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"Expected ValueError for negative input\"",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_float_input",
+        "code": "def test_get_1s_count_float_input():\n    \"\"\"Tests that a ValueError is raised when a float is provided as input.\"\"\"\n    # Category: negative\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(0.8)\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"Expected ValueError for float input\"",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_string_input",
+        "code": "def test_get_1s_count_string_input():\n    \"\"\"Tests that a ValueError is raised when a string is provided as input.\"\"\"\n    # Category: negative\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(\"25\")\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"Expected ValueError for string input\"",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_large_number",
+        "code": "def test_get_1s_count_large_number():\n    \"\"\"Tests a larger number within the 32-bit range.\"\"\"\n    # Category: positive\n    number = 2147483647  # Maximum 32-bit signed integer\n    expected_count = 31\n    result = get_1s_count(number)\n    assert result == expected_count, f\"Expected {expected_count} set bits for {number}\"\n```",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "qa_engineer",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_typical_positive",
+        "code": "def test_get_1s_count_typical_positive():\n    '''Tests a typical positive integer input'''\n    # Category: positive\n    result = get_1s_count(25)\n    assert result == 3, \"Should return the correct count of set bits for 25\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_zero_positive",
+        "code": "def test_get_1s_count_zero_positive():\n    '''Tests the input 0'''\n    # Category: positive\n    result = get_1s_count(0)\n    assert result == 0, \"Should return 0 for the input 0\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_power_of_two_positive",
+        "code": "def test_get_1s_count_power_of_two_positive():\n    '''Tests a power of 2 input'''\n    # Category: positive\n    result = get_1s_count(256)\n    assert result == 1, \"Should return 1 for the input 256\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_negative_integer_negative",
+        "code": "def test_get_1s_count_negative_integer_negative():\n    '''Tests a negative integer input - should raise ValueError'''\n    # Category: negative\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(-1)\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"ValueError should be raised for negative input\"",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_float_negative",
+        "code": "def test_get_1s_count_float_negative():\n    '''Tests a float input - should raise ValueError'''\n    # Category: negative\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(0.8)\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"ValueError should be raised for float input\"",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_string_negative",
+        "code": "def test_get_1s_count_string_negative():\n    '''Tests a string input - should raise ValueError'''\n    # Category: negative\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(\"25\")\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"ValueError should be raised for string input\"",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_max_32bit_integer_boundary",
+        "code": "def test_get_1s_count_max_32bit_integer_boundary():\n    '''Tests the maximum 32-bit integer (2**31 - 1)'''\n    # Category: boundary\n    result = get_1s_count(2**31 - 1)\n    assert result == 31, \"Should correctly count the set bits in the maximum 32-bit integer\"",
+        "category": "boundary",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_one_boundary",
+        "code": "def test_get_1s_count_one_boundary():\n    '''Tests the input 1'''\n    # Category: boundary\n    result = get_1s_count(1)\n    assert result == 1, \"Should correctly count the set bits in the input 1\"",
+        "category": "boundary",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_large_integer_security",
+        "code": "def test_get_1s_count_large_integer_security():\n    '''Tests a large integer slightly above the 32-bit limit.  Might reveal unexpected behavior due to type conversions.'''\n    # Category: security\n    with pytest.raises(ValueError) as excinfo:\n      get_1s_count(2**32)\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"Input above max int\"",
+        "category": "security",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_integer_as_string_security",
+        "code": "def test_get_1s_count_integer_as_string_security():\n    '''Try passing a string that can be converted to integer. Input validation should not parse it.'''\n    # Category: security\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(\"12345\")\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"ValueError should be raised for string input\"",
+        "category": "security",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_unicode_string_security",
+        "code": "def test_get_1s_count_unicode_string_security():\n  '''Check for Unicode handling - potential encoding issues.  Input validation should reject it.'''\n  # Category: security\n  with pytest.raises(ValueError) as excinfo:\n      get_1s_count(\"\ud83d\ude0a\")\n  assert \"Input must be a non-negative integer\" in str(excinfo.value), \"Unicode input should raise ValueError\"",
+        "category": "security",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_int_overflow_security",
+        "code": "def test_get_1s_count_int_overflow_security():\n    '''Test with a very large integer that might lead to overflow during internal calculations.'''\n    # Category: security\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(2**100)\n    assert \"Input must be a non-negative integer\" in str(excinfo.value), \"Large int should raise ValueError\"\n```",
+        "category": "security",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_zero",
+        "code": "def test_get_1s_count_zero():\n    '''Test that the function returns 0 when the input is 0.'''\n    # Category: boundary\n    result = get_1s_count(0)\n    assert result == 0, \"The number of 1s in 0 should be 0\"\n\n@given(st.integers(min_value=0, max_value=2**16))  #Limiting the range for performance",
+        "category": "boundary",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "abstract_thinker",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_positive_integers",
+        "code": "def test_get_1s_count_positive_integers():\n    '''Test the function with a range of positive integers. This tests the general correctness across many inputs.'''\n    # Category: positive\n    result = get_1s_count(number)\n    expected = bin(number).count('1')\n    assert result == expected, f\"The number of 1s in {number} should be {expected}, but got {result}\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "abstract_thinker",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_power_of_two",
+        "code": "def test_get_1s_count_power_of_two():\n    '''Test that the function returns 1 when the input is a power of 2. This checks the function's behavior with numbers that have only one set bit.'''\n    # Category: edge_case\n    result = get_1s_count(256)\n    assert result == 1, \"The number of 1s in 256 should be 1\"\n\n@given(st.integers(min_value=1, max_value=10))",
+        "category": "edge_case",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "abstract_thinker",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_sum_of_powers_of_two",
+        "code": "def test_get_1s_count_sum_of_powers_of_two():\n    '''Test with a sum of 'n' distinct powers of two. This ensures that different bits are counted independently.'''\n    # Category: positive\n    powers_of_two = [2**i for i in range(n)]\n    number = sum(powers_of_two)\n    result = get_1s_count(number)\n    assert result == n, f\"The number of 1s in {number} (sum of {n} powers of 2) should be {n}, but got {result}\"",
+        "category": "positive",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "abstract_thinker",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_max_32bit_integer",
+        "code": "def test_get_1s_count_max_32bit_integer():\n    '''Test with the maximum 32-bit integer. This tests the function's behavior with a number where all bits are set.'''\n    # Category: boundary\n    result = get_1s_count(2**31 - 1)\n    assert result == 31, \"The number of 1s in (2**31 - 1) should be 31\"",
+        "category": "boundary",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "abstract_thinker",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_negative_input",
+        "code": "def test_get_1s_count_negative_input():\n    '''Test that the function raises a ValueError when the input is negative.'''\n    # Category: negative\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(-1)\n    assert \"Input must be a non-negative integer\" in str(excinfo.value)",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "abstract_thinker",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_non_integer_input",
+        "code": "def test_get_1s_count_non_integer_input():\n    '''Test that the function raises a ValueError when the input is not an integer.'''\n    # Category: negative\n    with pytest.raises(ValueError) as excinfo:\n        get_1s_count(0.8)\n    assert \"Input must be a non-negative integer\" in str(excinfo.value)\n```",
+        "category": "negative",
+        "source_model": "gemini-2.0-flash",
+        "source_role": "abstract_thinker",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_typical_case",
+        "code": "def test_get_1s_count_typical_case():\n    '''Verify correct count of set bits for a typical non-negative integer'''\n    result = get_1s_count(25)\n    assert result == 3, \"Should return 3 for input 25\"\n\n# Category: positive",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_another_typical_case",
+        "code": "def test_get_1s_count_another_typical_case():\n    '''Verify correct count of set bits for another typical non-negative integer'''\n    result = get_1s_count(58)\n    assert result == 4, \"Should return 4 for input 58\"\n\n# Category: boundary",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_zero",
+        "code": "def test_get_1s_count_zero():\n    '''Verify count of set bits for zero value'''\n    result = get_1s_count(0)\n    assert result == 0, \"Should return 0 for input 0\"\n\n# Category: boundary",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_power_of_two",
+        "code": "def test_get_1s_count_power_of_two():\n    '''Verify count of set bits for a power of two number'''\n    result = get_1s_count(256)\n    assert result == 1, \"Should return 1 for input 256\"\n\n# Category: positive",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_multiple_bits_set",
+        "code": "def test_get_1s_count_multiple_bits_set():\n    '''Verify count of set bits for a number with multiple bits set'''\n    result = get_1s_count(37)\n    assert result == 3, \"Should return 3 for input 37\"\n\n# Category: negative",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_negative_number",
+        "code": "def test_get_1s_count_negative_number():\n    '''Verify function raises ValueError for negative input'''\n    with pytest.raises(ValueError):\n        get_1s_count(-1)\n\n# Category: negative",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_non_integer_input",
+        "code": "def test_get_1s_count_non_integer_input():\n    '''Verify function raises ValueError for non-integer input'''\n    with pytest.raises(ValueError):\n        get_1s_count(0.8)\n\n# Category: negative",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_string_input",
+        "code": "def test_get_1s_count_string_input():\n    '''Verify function raises ValueError for string input'''\n    with pytest.raises(ValueError):\n        get_1s_count(\"25\")\n\n# Category: boundary",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_max_32bit_value",
+        "code": "def test_get_1s_count_max_32bit_value():\n    '''Verify count of set bits for the maximum 32-bit integer'''\n    result = get_1s_count(2**32 - 1)\n    assert result == 32, \"Should return 32 for maximum 32-bit integer\"\n\n# Category: edge_case",
+        "category": "edge_case",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_all_bits_set",
+        "code": "def test_get_1s_count_all_bits_set():\n    '''Verify count of set bits for a number with all bits set'''\n    result = get_1s_count((1 << 32) - 1)  # All 32 bits set\n    assert result == 32, \"Should return 32 when all 32 bits are set\"",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_valid_input_positive_integers",
+        "code": "def test_valid_input_positive_integers():\n    '''Verify correct behavior with typical positive integers'''\n    # Category: positive\n    assert get_1s_count(25) == 3, \"Should count 3 set bits in 25\"\n    assert get_1s_count(58) == 4, \"Should count 4 set bits in 58\"\n    assert get_1s_count(256) == 1, \"Should count 1 set bit in 256\"",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_zero_input",
+        "code": "def test_zero_input():\n    '''Verify behavior with zero input'''\n    # Category: positive\n    assert get_1s_count(0) == 0, \"Zero should have 0 set bits\"",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_non_integer_input",
+        "code": "def test_non_integer_input():\n    '''Verify error handling for non-integer inputs'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(\"25\")\n    with pytest.raises(ValueError):\n        get_1s_count(0.8)\n    with pytest.raises(ValueError):\n        get_1s_count([1, 2, 3])",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_negative_numbers",
+        "code": "def test_negative_numbers():\n    '''Verify error handling for negative numbers'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(-1)\n    with pytest.raises(ValueError):\n        get_1s_count(-1000)",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_none_input",
+        "code": "def test_none_input():\n    '''Verify behavior when None is passed as input'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(None)",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_large_integer_input",
+        "code": "def test_large_integer_input():\n    '''Verify behavior with very large integers'''\n    # Category: boundary\n    # 2^64 - 1 is a number with 64 set bits in binary\n    large_number = (1 << 64) - 1\n    assert get_1s_count(large_number) == 64, \"Should count 64 set bits\"",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_very_large_number_with_many_bits",
+        "code": "def test_very_large_number_with_many_bits():\n    '''Verify behavior with extremely large numbers with many bits set'''\n    # Category: edge_case\n    # Create a number with alternating 1s and 0s across 1024 bits\n    huge_number = int('10' * 512, 2)\n    assert get_1s_count(huge_number) == 512, \"Should count 512 set bits\"",
+        "category": "edge_case",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_very_large_number_with_sparse_bits",
+        "code": "def test_very_large_number_with_sparse_bits():\n    '''Verify behavior with extremely large numbers with sparse set bits'''\n    # Category: edge_case\n    # Create a number with 1s at the start and end of a 1024-bit number\n    sparse_number = (1 << 1023) | 1\n    assert get_1s_count(sparse_number) == 2, \"Should count 2 set bits\"",
+        "category": "edge_case",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_number_with_alternating_bits",
+        "code": "def test_number_with_alternating_bits():\n    '''Verify behavior with a number that has alternating 1s and 0s'''\n    # Category: edge_case\n    # 0b1010101010101010... pattern\n    alt_number = int('55555555', 16)  # This is 0b01010101... in 32 bits\n    assert get_1s_count(alt_number) == 16, \"Should count 16 set bits\"",
+        "category": "edge_case",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_invalid_type_with_custom_object",
+        "code": "def test_invalid_type_with_custom_object():\n    '''Verify error handling for custom object input'''\n    # Category: negative\n    class CustomInt:\n        def __int__(self):\n            return 42\n            \n    with pytest.raises(ValueError):\n        get_1s_count(CustomInt())",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_invalid_type_with_complex_number",
+        "code": "def test_invalid_type_with_complex_number():\n    '''Verify error handling for complex numbers'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(complex(1, 2))",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_string_representation_of_number",
+        "code": "def test_string_representation_of_number():\n    '''Verify error handling for string representations of numbers'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(\"255\")\n    with pytest.raises(ValueError):\n        get_1s_count(\"0b11111111\")",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_collection_with_numbers",
+        "code": "def test_collection_with_numbers():\n    '''Verify error handling for collections containing numbers'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count([25])\n    with pytest.raises(ValueError):\n        get_1s_count({25})\n    with pytest.raises(ValueError):\n        get_1s_count((25,))",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_extremely_large_number_dos_attempt",
+        "code": "def test_extremely_large_number_dos_attempt():\n    '''Verify behavior with extremely large numbers that could cause resource exhaustion'''\n    # Category: security\n    # Create a number with 1 million set bits (this could potentially consume significant memory)\n    try:\n        huge_number = int('1' * 1000000, 2)\n        # If we get here, at least the number was created\n        assert get_1s_count(huge_number) == 1000000, \"Should count 1,000,000 set bits\"\n    except MemoryError:\n        pytest.skip(\"System doesn't have enough memory for this test (intentional!)\")",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_invalid_integer_subclass",
+        "code": "def test_invalid_integer_subclass():\n    '''Verify error handling for a malicious integer subclass that misbehaves'''\n    # Category: security\n    class MaliciousInt(int):\n        def __sub__(self, other):\n            raise ValueError(\"I refuse to subtract!\")\n            \n    with pytest.raises(ValueError):\n        get_1s_count(MaliciousInt(42))\n```\n\n## Chaos Agent's Attack Analysis\n\nAs the Agent of Chaos, I've designed these tests to push the boundaries of the function and find every possible way it could fail:\n\n1. **Type violations** - I tested with strings, floats, complex numbers, and custom objects\n2. **Null/None inputs** - I tested with None to see if the function handles missing values\n3. **Empty collections** - While not directly applicable to this function, I tested with empty collections wrapped in other data structures\n4. **Extreme values** - I tested with very large numbers that could potentially cause resource exhaustion\n5. **Negative numbers** - I tested with negative numbers to ensure proper validation\n6. **Invalid combinations** - I tested with objects that try to masquerade as integers\n7. **Corrupted data structures** - While not directly applicable to this function, I tested with numbers that represent \"corrupted\" patterns (alternating bits)\n\nI even included a test with a malicious integer subclass that overrides subtraction to throw errors, attempting to break the core algorithm logic.\n\nThe function is quite robust, but by testing these edge cases, I've helped ensure it will behave correctly in both expected and unexpected scenarios.",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "agent_of_chaos",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_identity_property_zero",
+        "code": "def test_identity_property_zero():\n    '''Verifies that the count of 1s in 0 is 0'''\n    # Category: boundary\n    assert get_1s_count(0) == 0, \"0 has no set bits\"\n\n\n# 2. Inverse Property: For all n \u2265 0, the count of 1s must match the built-in bin(n).count('1')\n@composite\ndef non_negative_integers(draw):\n    return draw(integers(min_value=0))\n\n@given(non_negative_integers())\n@example(0)\n@example(1)\n@example(255)\n@example(2**30)",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_inverse_property_builtin",
+        "code": "def test_inverse_property_builtin():\n    '''Verifies that our function matches the built-in bin() count of 1s'''\n    # Category: positive\n    assert get_1s_count(n) == bin(n).count('1'), f\"Expected {bin(n).count('1')} for input {n}\"\n\n\n# 3. Idempotency: The count function is idempotent in the sense that calling it twice on the same input gives the same result\n@given(non_negative_integers())\n@example(0)\n@example(1)\n@example(255)\n@example(2**30)",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_idempotency_property",
+        "code": "def test_idempotency_property():\n    '''Verifies that calling get_1s_count twice on the same input yields the same result'''\n    # Category: positive\n    first = get_1s_count(n)\n    second = get_1s_count(n)\n    assert first == second, f\"Function should be deterministic: {first} != {second}\"\n\n\n# 4. Monotonicity: Adding a set bit increases the count by 1\n@given(st.integers(min_value=0, max_value=(1 << 31) - 1))\n@example(0)\n@example(1)\n@example(255)\n@example(2**30)",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_monotonicity_property",
+        "code": "def test_monotonicity_property():\n    '''Verifies that adding a new set bit increases the count by exactly 1'''\n    # Category: positive\n    original_count = get_1s_count(n)\n    \n    # Find a zero bit to flip to 1\n    if n == (1 << 32) - 1:\n        # All bits already set, cannot add another\n        return\n    \n    # Find the first zero bit\n    bit_to_flip = 1\n    while (n & bit_to_flip) != 0:\n        bit_to_flip <<= 1\n    \n    new_number = n | bit_to_flip\n    new_count = get_1s_count(new_number)\n    \n    assert new_count == original_count + 1, f\"Adding a set bit should increase count by 1: {original_count} -> {new_count}\"\n\n\n# 5. Boundary: Test at 32-bit limit",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_boundary_max_32bit",
+        "code": "def test_boundary_max_32bit():\n    '''Verifies behavior at the 32-bit unsigned integer limit'''\n    # Category: boundary\n    max_32bit = (1 << 32) - 1\n    assert get_1s_count(max_32bit) == 32, \"Max 32-bit unsigned integer should have 32 set bits\"\n\n\n# 6. Type Invariant: Function always returns an integer\n@given(non_negative_integers())\n@example(0)\n@example(1)\n@example(255)\n@example(2**30)",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_type_invariant_return_type",
+        "code": "def test_type_invariant_return_type():\n    '''Verifies that the return type is always an integer'''\n    # Category: positive\n    result = get_1s_count(n)\n    assert isinstance(result, int), f\"Expected return type int, got {type(result)}\"\n\n\n# 7. Range Property: Count is between 0 and 32 inclusive\n@given(non_negative_integers())\n@example(0)\n@example(1)\n@example(255)\n@example(2**30)\n@example((1 << 32) - 1)",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_range_property_output_range",
+        "code": "def test_range_property_output_range():\n    '''Verifies that the output is always between 0 and 32 inclusive'''\n    # Category: positive\n    count = get_1s_count(n)\n    assert 0 <= count <= 32, f\"Count must be between 0 and 32, got {count}\"\n\n\n# 8. Negative Inputs: Non-integer or negative inputs raise ValueError\n@given(st.one_of(st.floats(min_value=-1000, max_value=1000), st.text(), st.booleans(), st.lists(st.integers())))\n@example(-1)\n@example(-100)\n@example(3.14)\n@example(\"1010\")\n@example(True)\n@example([1, 2, 3])",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_negative_invalid_inputs",
+        "code": "def test_negative_invalid_inputs():\n    '''Verifies that invalid inputs raise the appropriate ValueError'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(input)\n\n\n# 9. Edge Case: Sparse bit patterns",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_edge_case_sparse_bits",
+        "code": "def test_edge_case_sparse_bits():\n    '''Verifies count for numbers with sparse set bits'''\n    # Category: edge_case\n    for power in range(32):\n        n = 1 << power\n        assert get_1s_count(n) == 1, f\"Power of two {n} should have exactly 1 set bit\"\n\n\n# 10. Edge Case: Dense bit patterns",
+        "category": "edge_case",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_edge_case_dense_bits",
+        "code": "def test_edge_case_dense_bits():\n    '''Verifies count for numbers with dense set bits'''\n    # Category: edge_case\n    for base in range(1, 32):\n        n = ((1 << base) - 1)  # All bits set up to base-1\n        expected_count = base\n        assert get_1s_count(n) == expected_count, f\"Number {n} should have {expected_count} set bits\"\n\n\n# 11. Associativity? Not applicable - count is unary operation\n# 12. Commutativity? Not applicable - count is unary operation\n# 13. Preservation of input length? Not applicable - output is scalar count",
+        "category": "edge_case",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "abstract_thinker",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_positive_normal_case",
+        "code": "def test_get_1s_count_positive_normal_case():\n    '''Verifies correct behavior with a typical positive integer input'''\n    # Category: positive\n    assert get_1s_count(25) == 3, \"Should count 3 set bits in 25 (binary: 11001)\"",
+        "category": "positive",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_negative_invalid_type_float",
+        "code": "def test_get_1s_count_negative_invalid_type_float():\n    '''Verifies function rejects float inputs with ValueError'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(0.8)",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_negative_invalid_type_string",
+        "code": "def test_get_1s_count_negative_invalid_type_string():\n    '''Verifies function rejects string inputs with ValueError'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(\"25\")",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_negative_negative_number",
+        "code": "def test_get_1s_count_negative_negative_number():\n    '''Verifies function rejects negative numbers with ValueError'''\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(-1)",
+        "category": "negative",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_boundary_min_valid_input",
+        "code": "def test_get_1s_count_boundary_min_valid_input():\n    '''Verifies function correctly handles 0, the minimum valid input'''\n    # Category: boundary\n    assert get_1s_count(0) == 0, \"0 has zero set bits\"",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_boundary_min_plus_one",
+        "code": "def test_get_1s_count_boundary_min_plus_one():\n    '''Verifies function correctly handles 1, just above minimum'''\n    # Category: boundary\n    assert get_1s_count(1) == 1, \"1 has one set bit\"",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_boundary_max_32bit",
+        "code": "def test_get_1s_count_boundary_max_32bit():\n    '''Verifies function correctly handles maximum 32-bit unsigned integer'''\n    # Category: boundary\n    # All 32 bits set to 1\n    max_32bit = (1 << 32) - 1\n    assert get_1s_count(max_32bit) == 32, \"All 32 bits should be set\"",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_boundary_large_beyond_32bit",
+        "code": "def test_get_1s_count_boundary_large_beyond_32bit():\n    '''Verifies function handles integers beyond 32 bits correctly'''\n    # Category: boundary\n    # Python supports arbitrary precision integers\n    large_number = (1 << 64) - 1  # 64 bits all set\n    assert get_1s_count(large_number) == 64, \"All 64 bits should be set\"",
+        "category": "boundary",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_edge_case_power_of_two",
+        "code": "def test_get_1s_count_edge_case_power_of_two():\n    '''Verifies function correctly handles powers of two'''\n    # Category: edge_case\n    assert get_1s_count(256) == 1, \"256 is a power of two, so only one set bit\"",
+        "category": "edge_case",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_edge_case_all_bits_set_in_32bit",
+        "code": "def test_get_1s_count_edge_case_all_bits_set_in_32bit():\n    '''Verifies function correctly counts all bits set in a 32-bit number'''\n    # Category: edge_case\n    assert get_1s_count(0xFFFFFFFF) == 32, \"32-bit mask should have 32 set bits\"",
+        "category": "edge_case",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_large_input",
+        "code": "def test_get_1s_count_security_large_input():\n    '''Tests if function can handle extremely large numbers without resource exhaustion'''\n    # Category: security\n    huge_number = 1 << 1000000  # Very large number with one set bit\n    assert get_1s_count(huge_number) == 1, \"Should handle huge numbers efficiently\"",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_malformed_object",
+        "code": "def test_get_1s_count_security_malformed_object():\n    '''Tests if function properly rejects non-integer objects like malicious pickled data'''\n    # Category: security\n    class EvilInt:\n        def __init__(self):\n            self.value = \"I am not a number\"\n            \n        def __sub__(self, other):\n            raise ValueError(\"Trying to subvert the type check\")\n            \n    with pytest.raises(ValueError):\n        get_1s_count(EvilInt())",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_unicode_number",
+        "code": "def test_get_1s_count_security_unicode_number():\n    '''Tests if function properly rejects strings with Unicode numeric characters'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count('\\u00B2')  # Superscript 2",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_byte_with_null",
+        "code": "def test_get_1s_count_security_byte_with_null():\n    '''Tests if function properly rejects bytes or strings with null bytes'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(b'\\x005')",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_large_negative",
+        "code": "def test_get_1s_count_security_large_negative():\n    '''Tests if function properly handles large negative numbers'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(-1000000000000000000000000)",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_boolean_input",
+        "code": "def test_get_1s_count_security_boolean_input():\n    '''Tests if function properly rejects boolean inputs which are subclass of int'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(True)",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_complex_number",
+        "code": "def test_get_1s_count_security_complex_number():\n    '''Tests if function properly rejects complex numbers'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(2+3j)",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_string_with_number_and_trailing_chars",
+        "code": "def test_get_1s_count_security_string_with_number_and_trailing_chars():\n    '''Tests if function properly rejects strings with numbers and other characters'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(\"25abc\")",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_string_with_unicode_escape",
+        "code": "def test_get_1s_count_security_string_with_unicode_escape():\n    '''Tests if function properly rejects strings with Unicode escape sequences'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(\"\\\\u0032\\\\u0035\")  # Unicode for \"25\"",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_string_with_embedded_code",
+        "code": "def test_get_1s_count_security_string_with_embedded_code():\n    '''Tests if function properly rejects strings with potential code injection'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(\"25; DROP TABLE users;--\")",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_string_with_path_traversal",
+        "code": "def test_get_1s_count_security_string_with_path_traversal():\n    '''Tests if function properly rejects strings with path traversal patterns'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(\"../../etc/passwd\")",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_string_with_format_specifiers",
+        "code": "def test_get_1s_count_security_string_with_format_specifiers():\n    '''Tests if function properly rejects strings with format specifiers'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(\"%s%s%s\")",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_security_string_with_html_script",
+        "code": "def test_get_1s_count_security_string_with_html_script():\n    '''Tests if function properly rejects strings with HTML/JS injection'''\n    # Category: security\n    with pytest.raises(ValueError):\n        get_1s_count(\"<script>alert('xss')</script>\")",
+        "category": "security",
+        "source_model": "qwen3-235b-a22b",
+        "source_role": "security_auditor",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_positive_example_25",
+        "code": "def test_get_1s_count_positive_example_25():\n    '''Verifies that get_1s_count correctly counts set bits for a typical positive input (25 in binary: 11001, which has 3 set bits)'''\n    # Category: positive\n    result = get_1s_count(25)\n    assert result == 3, \"Expected 3 set bits for input 25, but got {}\".format(result)",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_positive_example_37",
+        "code": "def test_get_1s_count_positive_example_37():\n    '''Verifies that get_1s_count correctly counts set bits for a typical positive input (37 in binary: 100101, which has 3 set bits)'''\n    # Category: positive\n    result = get_1s_count(37)\n    assert result == 3, \"Expected 3 set bits for input 37, but got {}\".format(result)",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_positive_example_21",
+        "code": "def test_get_1s_count_positive_example_21():\n    '''Verifies that get_1s_count correctly counts set bits for a typical positive input (21 in binary: 10101, which has 3 set bits)'''\n    # Category: positive\n    result = get_1s_count(21)\n    assert result == 3, \"Expected 3 set bits for input 21, but got {}\".format(result)",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_positive_example_58",
+        "code": "def test_get_1s_count_positive_example_58():\n    '''Verifies that get_1s_count correctly counts set bits for a typical positive input (58 in binary: 111010, which has 4 set bits)'''\n    # Category: positive\n    result = get_1s_count(58)\n    assert result == 4, \"Expected 4 set bits for input 58, but got {}\".format(result)",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_positive_example_0",
+        "code": "def test_get_1s_count_positive_example_0():\n    '''Verifies that get_1s_count correctly counts set bits for the typical positive input of zero (binary: 0, which has 0 set bits)'''\n    # Category: positive\n    result = get_1s_count(0)\n    assert result == 0, \"Expected 0 set bits for input 0, but got {}\".format(result)",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_positive_example_256",
+        "code": "def test_get_1s_count_positive_example_256():\n    '''Verifies that get_1s_count correctly counts set bits for a typical positive input (256 in binary: 100000000, which has 1 set bit)'''\n    # Category: positive\n    result = get_1s_count(256)\n    assert result == 1, \"Expected 1 set bit for input 256, but got {}\".format(result)",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_boundary_zero",
+        "code": "def test_get_1s_count_boundary_zero():\n    '''Verifies that get_1s_count handles the boundary of the smallest non-negative integer (0), which has 0 set bits'''\n    # Category: boundary\n    # Boundary: As per docstring, valid range is non-negative integers [0, infinity], so testing the lower limit (0)\n    result = get_1s_count(0)\n    assert result == 0, \"Expected 0 set bits for boundary input 0, but got {}\".format(result)",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_boundary_one",
+        "code": "def test_get_1s_count_boundary_one():\n    '''Verifies that get_1s_count handles the boundary of the smallest positive integer (1 in binary: 1, which has 1 set bit)'''\n    # Category: boundary\n    # Boundary: Testing just above the lower limit (1), as valid range starts at 0\n    result = get_1s_count(1)\n    assert result == 1, \"Expected 1 set bit for boundary input 1, but got {}\".format(result)",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_boundary_max_32bit",
+        "code": "def test_get_1s_count_boundary_max_32bit():\n    '''Verifies that get_1s_count correctly counts set bits for the boundary of a 32-bit integer maximum (4294967295 in binary: all 32 bits set, which has 32 set bits)'''\n    # Category: boundary\n    # Boundary: As per docstring for a 32-bit integer, the upper limit is 2^32 - 1 (4294967295). Testing this value and its behavior.\n    result = get_1s_count(4294967295)  # 2^32 - 1\n    assert result == 32, \"Expected 32 set bits for boundary input 4294967295, but got {}\".format(result)",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_boundary_just_below_max_32bit",
+        "code": "def test_get_1s_count_boundary_just_below_max_32bit():\n    '''Verifies that get_1s_count handles the boundary just below the 32-bit maximum (4294967294 in binary: 11111111111111111111111111111110, which has 31 set bits)'''\n    # Category: boundary\n    # Boundary: Testing b-1 where b is 2^32 - 1, to check off-by-one behavior\n    result = get_1s_count(4294967294)  # 2^32 - 2\n    assert result == 31, \"Expected 31 set bits for boundary input 4294967294, but got {}\".format(result)",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_negative_negative_integer",
+        "code": "def test_get_1s_count_negative_negative_integer():\n    '''Verifies that get_1s_count raises ValueError for a negative integer input, as explicitly promised in the docstring'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(-1)",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_negative_float_input",
+        "code": "def test_get_1s_count_negative_float_input():\n    '''Verifies that get_1s_count raises ValueError for a non-integer input (float), as explicitly promised in the docstring'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(0.8)",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_negative_string_input",
+        "code": "def test_get_1s_count_negative_string_input():\n    '''Verifies that get_1s_count raises ValueError for a non-integer input (string), as explicitly promised in the docstring'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(\"25\")\n```\n\n### Explanation of Test Design:\nAs a \"By-the-Book QA Engineer\" with 15 years of experience, I have meticulously designed these tests to systematically cover the explicit requirements outlined in the function's docstring. My focus is on verifying the promised behaviors without deviation:\n\n- **Positive tests**: These cover normal, expected usage based on the docstring examples. I included all provided examples to ensure every part of the docstring's promise for valid inputs is tested. Each test asserts the exact return value as specified.\n\n- **Boundary tests**: I identified the valid input range as non-negative integers (from 0 upwards) and explicitly tested limits related to 32-bit integers as mentioned in the docstring. This includes the minimum (0), values just above (1), the maximum 32-bit value (4294967295), and just below it (4294967294) to check for threshold behaviors and off-by-one errors.\n\n- **Negative tests**: These verify the error handling explicitly described in the docstring, such as raising ValueError for negative numbers and non-integers. I used `pytest.raises` to confirm the exact exception and message, ensuring graceful failure as promised.\n\nThis test suite is clear, maintainable, and serves as documentation by including descriptive names, docstrings, and assertions with meaningful messages. It adheres strictly to pytest best practices and my philosophy of covering only the function's explicit requirements.",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "qa_engineer",
+        "role_name": "Paranoid Security Auditor"
+      },
+      {
+        "name": "test_get_1s_count_with_string_input_chaos",
+        "code": "def test_get_1s_count_with_string_input_chaos():\n    '''Verifies that passing a string (malformed input) raises ValueError, exposing type enforcement flaws'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(\"25\")  # Sneaky string that looks like a number\u2014let's see if it crumbles\n\n# Test 2: Negative test for floating-point input",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_float_input_chaos",
+        "code": "def test_get_1s_count_with_float_input_chaos():\n    '''Verifies that passing a float (unexpected decimal) raises ValueError, testing type boundary breaches'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(0.8)  # Decimal chaos to disrupt integer-only expectations\n\n# Test 3: Negative test for negative integer input",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_negative_integer_chaos",
+        "code": "def test_get_1s_count_with_negative_integer_chaos():\n    '''Verifies that a negative integer triggers ValueError, probing for sign-related vulnerabilities'''\n    # Category: negative\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(-1)  # Negative numbers? Let's twist the sign and watch it break\n\n# Test 4: Negative test for None input",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_none_input_chaos",
+        "code": "def test_get_1s_count_with_none_input_chaos():\n    '''Verifies that passing None (null object) raises ValueError or TypeError, exploiting object nullification'''\n    # Category: negative\n    with pytest.raises((ValueError, TypeError), match=\"Input must be a non-negative integer\"):  # Could be either, depending on isinstance\n        get_1s_count(None)  # Null void\u2014injecting nothingness to shatter assumptions\n\n# Test 5: Negative test for list input (wrong type, malformed structure)",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_list_input_chaos",
+        "code": "def test_get_1s_count_with_list_input_chaos():\n    '''Verifies that passing a list (corrupted data structure) raises TypeError or ValueError, testing structural integrity'''\n    # Category: negative\n    with pytest.raises((TypeError, ValueError), match=\"Input must be a non-negative integer\"):\n        get_1s_count([1, 2, 3])  # A list pretending to be a number\u2014corrupt the input and force a collapse\n\n# Test 6: Negative test for dictionary input (empty and malformed collection)",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_empty_dict_input_chaos",
+        "code": "def test_get_1s_count_with_empty_dict_input_chaos():\n    '''Verifies that passing an empty dictionary (empty collection and wrong type) raises TypeError or ValueError'''\n    # Category: negative\n    with pytest.raises((TypeError, ValueError), match=\"Input must be a non-negative integer\"):\n        get_1s_count({})  # Empty dict as adversarial input\u2014empty vessels to sink the function\n\n# Test 7: Negative test for boolean input (subclass of int, but potentially exploitable)",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_boolean_input_chaos",
+        "code": "def test_get_1s_count_with_boolean_input_chaos():\n    '''Verifies that passing a boolean (tricky subclass of int) raises an exception if not handled, testing inheritance exploits'''\n    # Category: negative  # Even though bool is a subclass of int, we're forcing chaos to see if it breaks unexpectedly\n    with pytest.raises(ValueError):  # It might not raise if treated as 1, but we're betting on inconsistency\n        get_1s_count(True)  # Boolean bait\u2014True is 1, but let's see if this subclass slips through or shatters\n\n# Test 8: Negative test for complex number input (completely invalid type)",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_complex_input_chaos",
+        "code": "def test_get_1s_count_with_complex_input_chaos():\n    '''Verifies that passing a complex number (adversarial imaginary type) raises TypeError or ValueError'''\n    # Category: negative\n    with pytest.raises((TypeError, ValueError), match=\"Input must be a non-negative integer\"):\n        get_1s_count(1j)  # Imaginary numbers to warp reality and induce failure\n\n# Test 9: Boundary test with extremely large integer (pushing Python's limits)",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_extremely_large_integer_boundary_chaos",
+        "code": "def test_get_1s_count_with_extremely_large_integer_boundary_chaos():\n    '''Verifies that an extremely large integer (beyond typical 32-bit range) raises no exception but could cause performance issues; as Agent of Chaos, I'm probing for hidden overflows'''\n    # Category: boundary  # Testing limits like sys.maxsize and beyond to exploit potential integer overflow in the algorithm\n    large_number = sys.maxsize  # Typically a very large positive integer\n    result = get_1s_count(large_number)  # This should work, but we're watching for silent failures or long execution\n    assert result >= 0, f\"Expected non-negative count for large input {large_number}, but got {result}\u2014did it overflow in chaos?\"\n\n    # Now push further with an absurdly large number to test boundaries\n    enormous_number = 2 ** 1000  # Way beyond 32 bits\u2014could lead to excessive loop iterations\n    result_enormous = get_1s_count(enormous_number)  # Might not raise an exception, but could hang or fail subtly\n    assert result_enormous == 1, f\"Expected 1 for 2^1000 (one set bit), but got {result_enormous}\u2014boundary breach detected!\"\n\n# Test 10: Edge case test with a number having all bits set (valid but unusual for 32-bit context)",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_all_bits_set_edge_chaos",
+        "code": "def test_get_1s_count_with_all_bits_set_edge_chaos():\n    '''Verifies that a number with all 32 bits set (e.g., 2**32 - 1) works but could reveal edge inefficiencies; as Agent of Chaos, I'm luring out rare failures'''\n    # Category: edge_case  # Valid input, but unusual\u2014maximally dense bits might expose loop behavior\n    all_bits_set = 2**32 - 1  # 4294967295, a valid non-negative integer but packed with 32 ones\n    result = get_1s_count(all_bits_set)\n    assert result == 32, f\"Expected 32 set bits for {all_bits_set}, but got {result}\u2014did the chaos unset some bits?\"\n\n# Test 11: Edge case test with zero (valid but minimal input, testing unusual minimalism)",
+        "category": "edge_case",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_zero_edge_chaos",
+        "code": "def test_get_1s_count_with_zero_edge_chaos():\n    '''Verifies that zero (a valid but edge minimal value) returns 0 without issues; as Agent of Chaos, I'm checking if this trivial case hides deeper weaknesses'''\n    # Category: edge_case  # Zero is valid, but we're twisting it to see if the loop handles emptiness gracefully\n    result = get_1s_count(0)\n    assert result == 0, \"Expected 0 for zero input, but chaos might have altered it!\"\n\n# Test 12: Security test with extremely long string (adversarial input for potential DoS)",
+        "category": "edge_case",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_with_extremely_long_string_security_chaos",
+        "code": "def test_get_1s_count_with_extremely_long_string_security_chaos():\n    '''Verifies that an extremely long string (malicious input) raises ValueError; as Agent of Chaos, I'm flooding it to test for denial-of-service vulnerabilities'''\n    # Category: security  # Adversarial input to exploit string length and overwhelm the function\n    long_string = \"a\" * 10**6  # A million 'a's\u2014massive string to induce memory or processing strain\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(long_string)  # String avalanche\u2014let's see if it crashes under the weight\n```\n\n### Why These Tests Reflect My Role as \"Agent of Chaos\":\n- **If it can break, I will find a way**: I've targeted every angle\u2014type mismatches, empty structures, extremes, and even subtle subclass tricks\u2014to force exceptions and expose flaws.\n- **Negative tests dominate**: These are my chaos engines, using pytest.raises() to confirm failures and push the function's error handling to its limits.\n- **Edge and boundary twists**: I've included valid-but-weird inputs (like all-bits-set numbers) to lure out hidden bugs, and boundary values (like massive integers) to test for overflows or performance cracks.\n- **Adversarial flair**: In security tests, I've thrown in long strings not just to check validation, but to simulate real-world attacks that could bog down the system.\n- **Philosophy in action**: Every test is designed to whisper, \"Break for me,\" ensuring that no stone is left unturned. If the function survives, it's only because I haven't found the weak spot\u2014yet.\n\nAs the Agent of Chaos, I'm satisfied for now, but trust me, I'm always scheming for more ways to make it fail.",
+        "category": "security",
+        "source_model": "grok-3-mini",
+        "source_role": "agent_of_chaos",
+        "role_name": "By-the-Book QA Engineer"
+      },
+      {
+        "name": "test_get_1s_count_preserves_bit_count_invariant",
+        "code": "def test_get_1s_count_preserves_bit_count_invariant():\n    \"\"\"\n    Verifies the invariant that get_1s_count(n) equals the number of set bits in the binary representation of n,\n    ensuring mathematical consistency for typical valid inputs.\n    \"\"\"\n    # Category: positive\n    result = get_1s_count(n)\n    expected = bin(n).count('1')  # Reference: the true number of set bits\n    assert result == expected, f\"For n={n}, the bit count invariant fails: expected {expected} set bits, but got {result}\"\n\n# Category: negative\n# These tests check the domain invariant: the function raises ValueError for inputs outside the valid range,\n# ensuring logical consistency in error handling for non-non-negative integers.\n@pytest.mark.parametrize(\"invalid_input\", [-1, -100, 0.5, 3.14, \"abc\", [1, 2, 3]])",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "abstract_thinker",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_enforces_domain_invariant",
+        "code": "def test_get_1s_count_enforces_domain_invariant():\n    \"\"\"\n    Verifies the invariant that invalid inputs (non-integers or negative integers) raise ValueError,\n    testing the function's logical boundary in its domain.\n    \"\"\"\n    # Category: negative\n    with pytest.raises(ValueError):\n        get_1s_count(invalid_input)\n    # Additional assertion for meaningful message (though pytest.raises checks the exception)\n    try:\n        get_1s_count(invalid_input)\n    except ValueError as e:\n        assert \"Input must be a non-negative integer\" in str(e), f\"Error message for {invalid_input} does not match expected\"\n\n# Category: boundary\n# These tests examine the range invariant: at the limits of valid inputs, the function behaves as expected,\n# such as returning 0 for the smallest valid input and correctly counting bits for extreme values.",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "abstract_thinker",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_at_range_boundaries",
+        "code": "def test_get_1s_count_at_range_boundaries():\n    \"\"\"\n    Verifies the boundary invariant that the function correctly handles the edges of its input domain,\n    such as 0 (minimum) and very large numbers, while preserving the bit count property.\n    \"\"\"\n    # Category: boundary\n    # Test lower boundary: n=0 should have 0 set bits\n    assert get_1s_count(0) == bin(0).count('1'), \"Boundary invariant fails at lower limit: 0 should have 0 set bits\"\n    \n    # Test upper boundary: use sys.maxsize as a proxy for large integers\n    large_n = sys.maxsize  # Represents the largest practical integer\n    result = get_1s_count(large_n)\n    expected = bin(large_n).count('1')\n    assert result == expected, f\"Boundary invariant fails for large_n={large_n}: expected {expected} set bits, but got {result}\"\n    \n    # Additional boundary check: just above the minimum (e.g., 1)\n    assert get_1s_count(1) == bin(1).count('1'), \"Boundary invariant fails near lower limit: 1 should have 1 set bit\"\n\n# Category: edge_case\n# These tests probe unusual but valid scenarios, ensuring the invariant holds for rare patterns,\n# such as numbers with a single set bit or maximally dense bit patterns.",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "abstract_thinker",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_for_unusual_bit_patterns",
+        "code": "def test_get_1s_count_for_unusual_bit_patterns():\n    \"\"\"\n    Verifies the invariant that the function correctly counts set bits in edge cases like powers of two\n    (single set bit) and numbers with all bits set, maintaining mathematical consistency.\n    \"\"\"\n    # Category: edge_case\n    # Property-based check for powers of two: these should always have exactly one set bit\n    for i in range(1, 10):  # Test first 10 powers of two as unusual but valid patterns\n        n = 2 ** i  # e.g., 2, 4, 8, etc.\n        result = get_1s_count(n)\n        assert result == 1, f\"Edge case invariant fails for power of two (n={n}): should have exactly 1 set bit, but got {result}\"\n    \n    # Property-based check for numbers with all bits set: should equal the number of bits\n    for bits in range(1, 33):  # Up to 32 bits as per the function's description\n        n = (1 << bits) - 1  # e.g., for bits=3, n=7 (binary: 111)\n        result = get_1s_count(n)\n        assert result == bits, f\"Edge case invariant fails for all bits set (n={n}): should have {bits} set bits, but got {result}\"\n```\n\n### Explanation of Test Design:\n- **Alignment with \"Abstract Thinker\" Philosophy**: Each test targets a fundamental property or invariant rather than specific cases. For example:\n  - In `test_get_1s_count_preserves_bit_count_invariant`, I verify the core mathematical invariant (output equals binary set bits) using randomized inputs via parameterization, which explores the property across a general space.\n  - In `test_get_1s_count_enforces_domain_invariant`, I check the logical domain constraint (non-negative integers only) without focusing on particular invalid values.\n  - This approach ensures we're testing the \"why\" of the function (e.g., does it always preserve bit counts?) rather than the \"what\" (e.g., does it work for 25?).\n\n- **Test Categories**:\n  - **Positive**: Focuses on valid inputs to confirm the bit-counting invariant holds generally.\n  - **Negative**: Targets the invariant of error handling for invalid domains, using pytest.raises to verify graceful failure.\n  - **Boundary**: Explores the range limits (e.g., 0 and large numbers) to ensure the invariant doesn't break at thresholds.\n  - **Edge_case**: Investigates unusual valid patterns (e.g., powers of two) to uncover potential oversights in the function's logic.\n\n- **Suggestions for Enhancement with Hypothesis**:\n  To make these even more property-based, I recommend integrating the Hypothesis library for fuzzing and generative testing. For instance:\n  - In `test_get_1s_count_preserves_bit_count_invariant`, replace parameterization with `@given` from Hypothesis to generate arbitrary non-negative integers:\n    ```python\n    from hypothesis import given\n    from hypothesis.strategies import integers\n\n    @given(integers(min_value=0, max_value=1_000_000))",
+        "category": "edge_case",
+        "source_model": "grok-3-mini",
+        "source_role": "abstract_thinker",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_preserves_bit_count_invariant_with_hypothesis",
+        "code": "def test_get_1s_count_preserves_bit_count_invariant_with_hypothesis():\n        result = get_1s_count(n)\n        expected = bin(n).count('1')\n        assert result == expected, f\"Bit count invariant fails for n={n}\"\n    ```\n    This would systematically explore the invariant across a vast input space, aligning with formal methods.\n\nThis design ensures we're verifying the function's deeper truths, such as its adherence to binary arithmetic properties, while staying within the specified categories.",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "abstract_thinker",
+        "role_name": "Abstract Thinker"
+      },
+      {
+        "name": "test_get_1s_count_positive_typical_usage",
+        "code": "def test_get_1s_count_positive_typical_usage():\n    '''Verifies that the function correctly counts set bits for typical valid inputs, ensuring normal operation.'''\n    # Category: positive\n    # Assuming all inputs are hostile, even \"normal\" ones could be probes for weaknesses.\n    result = get_1s_count(25)  # Typical positive input\n    assert result == 3, \"Expected 3 set bits for 25 (binary: 00011001), but got something else.\"",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_positive_edge_of_normal_range",
+        "code": "def test_get_1s_count_positive_edge_of_normal_range():\n    '''Verifies handling of a standard positive integer at the lower end of typical usage.'''\n    # Category: positive\n    # Paranoia note: Even this could be a precursor to larger attacks, like flooding with similar values.\n    result = get_1s_count(0)  # Zero is valid and non-hostile here\n    assert result == 0, \"Expected 0 set bits for 0, indicating no bits are set.\"",
+        "category": "positive",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_negative_non_integer_input",
+        "code": "def test_get_1s_count_negative_non_integer_input():\n    '''Verifies that non-integer inputs raise ValueError, testing graceful failure against type manipulation attempts.'''\n    # Category: negative\n    # As a Paranoid Security Auditor, I suspect attackers might try to bypass type checks with strings or floats to inject exploits.\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(\"25\")  # Hostile string input attempting to mimic a number",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_negative_negative_integer_input",
+        "code": "def test_get_1s_count_negative_negative_integer_input():\n    '''Verifies that negative integers raise ValueError, preventing potential abuse of signed integers.'''\n    # Category: negative\n    # Trust nothing: Negative numbers could be an attacker's way to probe for overflows or unexpected behavior in bit operations.\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(-1)  # Hostile negative input",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_negative_float_input",
+        "code": "def test_get_1s_count_negative_float_input():\n    '''Verifies that floating-point inputs raise ValueError, blocking attempts to coerce invalid types.'''\n    # Category: negative\n    # Paranoia: Attackers might use floats with special values (e.g., NaN, inf) to cause instability or errors.\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(0.8)  # Hostile float input",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_negative_boolean_input",
+        "code": "def test_get_1s_count_negative_boolean_input():\n    '''Verifies that boolean inputs (subclass of int) raise ValueError, as they might be used in logic bombs.'''\n    # Category: negative\n    # Suspicion: Booleans are subclasses of int; attackers could exploit this for injection-like behavior in larger systems.\n    with pytest.raises(ValueError, match=\"Input must be a non-negative integer\"):\n        get_1s_count(True)  # Hostile input; True is equivalent to 1, but we treat it as an attack vector",
+        "category": "negative",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_boundary_zero",
+        "code": "def test_get_1s_count_boundary_zero():\n    '''Verifies behavior at the lower boundary (0), a critical threshold for bit counting.'''\n    # Category: boundary\n    # Formula applied: For non-negative integers [0, infinity), test: -1 (handled in negative), 0, 1.\n    # Paranoia: Zero could be a denial-of-service vector if looped in external code, so confirm exact handling.\n    result = get_1s_count(0)\n    assert result == 0, \"Expected 0 set bits at the lower boundary (0), but got something else.\"",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_boundary_32_bit_max",
+        "code": "def test_get_1s_count_boundary_32_bit_max():\n    '''Verifies behavior at the upper boundary of a 32-bit integer (2^32 - 1 = 4294967295).'''\n    # Category: boundary\n    # Formula: For 32-bit range [0, 4294967295], test: 4294967294, 4294967295, 4294967296.\n    # As a Paranoid Auditor, I suspect attackers might use values near this to cause overflows or performance spikes.\n    result = get_1s_count(4294967295)  # All 32 bits set\n    assert result == 32, \"Expected 32 set bits for 4294967295 (binary: all 1s), indicating boundary handling.\"",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_boundary_just_above_32_bit",
+        "code": "def test_get_1s_count_boundary_just_above_32_bit():\n    '''Verifies behavior for a value just above the 32-bit boundary (4294967296), testing off-by-one.'''\n    # Category: boundary\n    # Paranoia: Attackers could use this to probe for integer size limits, potentially leading to resource exhaustion.\n    result = get_1s_count(4294967296)  # 2^32, which has 1 set bit\n    assert result == 1, \"Expected 1 set bit for 4294967296 (binary: 1 followed by 32 zeros), but got something else.\"",
+        "category": "boundary",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_edge_case_power_of_two",
+        "code": "def test_get_1s_count_edge_case_power_of_two():\n    '''Verifies handling of a power of two, a rare but valid scenario that might hide bit manipulation issues.'''\n    # Category: edge_case\n    # Key: Unusual valid input; powers of two have only one set bit, which could be overlooked in adversarial contexts.\n    # Paranoia: Attackers might use this as a stepping stone for larger exploits, like binary search attacks.\n    result = get_1s_count(256)  # 2^8, binary: 100000000\n    assert result == 1, \"Expected 1 set bit for a power of two (256), but got something else.\"",
+        "category": "edge_case",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_edge_case_very_large_integer",
+        "code": "def test_get_1s_count_edge_case_very_large_integer():\n    '''Verifies handling of an unusually large valid integer, testing for unexpected behavior in bit operations.'''\n    # Category: edge_case\n    # Paranoia: Even valid large inputs could be part of a denial-of-service chain; ensure the function doesn't leak time/resources.\n    result = get_1s_count(2**64)  # A large but valid integer (2^64 has 1 set bit)\n    assert result == 1, \"Expected 1 set bit for 2^64, indicating proper handling of large valid inputs.\"",
+        "category": "edge_case",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_security_extremely_large_integer_dos",
+        "code": "def test_get_1s_count_security_extremely_large_integer_dos():\n    '''Verifies resistance to resource exhaustion by testing with an enormously large integer, simulating a denial-of-service attack.'''\n    # Category: security\n    # As a Paranoid Security Auditor, I assume this could be an attack vector: a hostile input causing excessive loop iterations.\n    # Attack vector: The while loop runs once per set bit; a number with many set bits (e.g., all bits set in a huge integer) could hang the system.\n    # Note: This test might timeout in practice; it's designed to probe for DoS vulnerabilities.\n    with pytest.raises(TimeoutError):  # Assuming pytest timeout plugin; otherwise, monitor manually\n        get_1s_count(2**1000000)  # Hostile input: An absurdly large integer, potentially causing CPU exhaustion\n    # Assertion: If it reaches here without timing out, we failed to detect the attack, but in reality, we'd log the resource usage.",
+        "category": "security",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_security_subclass_of_int_with_side_effects",
+        "code": "def test_get_1s_count_security_subclass_of_int_with_side_effects():\n    '''Verifies resistance to malicious subclasses of int that might execute code or leak data during processing.'''\n    # Category: security\n    # Paranoia: Attackers could create a subclass of int with overridden methods (e.g., __and__) to inject behavior.\n    # Example: A custom int that logs or modifies state when used in bitwise operations.\n    class MaliciousInt(int):\n        def __and__(self, other):\n            # Simulate a side-effect, like data leakage or code execution\n            print(\"Hostile operation detected!\")  # In a real attack, this could be arbitrary code\n            return super().__and__(other)\n    \n    malicious_input = MaliciousInt(25)  # Hostile input disguised as a valid int\n    with pytest.raises(ValueError):  # The function should still check and reject if not pure int, but we're probing\n        get_1s_count(malicious_input)\n    # Assertion: Primarily, ensure no exceptions beyond ValueError occur; in a real audit, we'd check for side effects.",
+        "category": "security",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      },
+      {
+        "name": "test_get_1s_count_security_integer_with_unexpected_bits",
+        "code": "def test_get_1s_count_security_integer_with_unexpected_bits():\n    '''Verifies resistance to inputs that might bypass validation and cause data leakage through bit patterns.'''\n    # Category: security\n    # Paranoia: Even though inputs are integers, attackers might use bit patterns that reveal system info if mishandled.\n    # Attack vector: Passing a number with patterns that could correlate to sensitive data, though unlikely here.\n    result = get_1s_count(sys.maxsize)  # Hostile input: Use system max to probe for platform-specific leaks\n    assert result == 63 or result == 64, f\"Expected around 63-64 set bits for sys.maxsize, but got {result}; potential leakage.\"\n    # Note: This tests if the function behaves predictably; any anomaly could indicate a vulnerability.\n```\n\n### Explanation of Test Design as Paranoid Security Auditor:\n- **Philosophy in Action**: I trust nothing. Every test assumes inputs are hostile, even in positive categories, as they could be reconnaissance for attacks. For instance, positive tests include assertions to confirm no subtle leaks occur.\n- **Security Focus**: Emphasized tests for resource exhaustion (e.g., massive integers causing loops) and potential subclass abuses, as these align with concerns like DoS and insecure object handling.\n- **Category Balance**: Included all required categories, with security tests probing for exploitation (e.g., DoS via large inputs). Negative tests focus on error handling, while boundary and edge tests explore limits with a security lens.\n- **Test Rigor**: Each test has clear assertions and docstrings. I used pytest.raises() for negative tests to ensure exceptions are handled gracefully, preventing crashes that attackers might exploit.\n- **Potential Enhancements**: In a real audit, I'd add performance monitoring (e.g., for CPU time in security tests) and integrate with tools like fuzzers for more adversarial inputs.",
+        "category": "security",
+        "source_model": "grok-3-mini",
+        "source_role": "security_auditor",
+        "role_name": "Agent of Chaos"
+      }
+    ]
+  }
+]

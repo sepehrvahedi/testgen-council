@@ -1,3 +1,3 @@
 function_name,original_tests,final_tests,reduction_ratio,coverage_percentage,models_used,categories_count,categories,synthesizer_model,success
-divide_numbers,25,9,0.64,100.0,3,5,"positive,boundary,negative,security,edge_case",gemini-2.0-flash,True
-validate_password,26,10,0.6153846153846154,100.0,3,5,"positive,negative,edge_case,boundary,security",gemini-2.0-flash,True
+divide_numbers,26,10,0.6153846153846154,100.0,3,4,"positive,edge_case,negative,boundary",gemini-2.0-flash,True
+validate_password,29,10,0.6551724137931034,100.0,3,5,"positive,negative,boundary,edge_case,security",gemini-2.0-flash,True
