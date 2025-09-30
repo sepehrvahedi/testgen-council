@@ -1,0 +1,62 @@
+{
+  "original_test_count": 107,
+  "final_test_count": 30,
+  "cluster_count": 30,
+  "reduction_ratio": 0.719626168224299,
+  "clustering_method": "vector",
+  "coverage_percentage": 0.0,
+  "test_success_rate": 0.0,
+  "total_tests_run": 0,
+  "passed_tests": 0,
+  "failed_tests": 0,
+  "skipped_tests": 0,
+  "error_tests": 0,
+  "models_used": [
+    "gemini-2.0-flash",
+    "qwen3-235b-a22b",
+    "grok-3-mini"
+  ],
+  "roles_used": [
+    "Agent of Chaos",
+    "Paranoid Security Auditor",
+    "By-the-Book QA Engineer",
+    "Abstract Thinker"
+  ],
+  "categories_found": [
+    "positive",
+    "boundary",
+    "negative",
+    "edge_case",
+    "security"
+  ],
+  "synthesizer_model": "gemini-2.0-flash",
+  "finalizer_model": "gemini-2.0-flash",
+  "tests_per_role": {
+    "By-the-Book QA Engineer": 21,
+    "Abstract Thinker": 31,
+    "Agent of Chaos": 40,
+    "Paranoid Security Auditor": 15
+  },
+  "tests_per_category": {
+    "positive": 30,
+    "boundary": 16,
+    "negative": 21,
+    "edge_case": 21,
+    "security": 19
+  },
+  "model_role_matrix": {
+    "gemini-2.0-flash": {
+      "qa_engineer": 12,
+      "agent_of_chaos": 15,
+      "abstract_thinker": 16
+    },
+    "qwen3-235b-a22b": {
+      "abstract_thinker": 20,
+      "security_auditor": 20
+    },
+    "grok-3-mini": {
+      "qa_engineer": 9,
+      "agent_of_chaos": 15
+    }
+  }
+}
