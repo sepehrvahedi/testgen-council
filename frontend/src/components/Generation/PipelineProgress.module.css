@@ -1,0 +1,324 @@
+/**
+ * PipelineProgress Styles - Minimalist Text Design
+ * Clean, professional text-based stage indicators
+ */
+
+.container {
+    width: 100%;
+    padding: var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-lg);
+}
+
+/* ==================== Current Stage Header ==================== */
+
+.currentStageHeader {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.currentStageInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.stageTitleRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.currentStageLabel {
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.currentStageDescription {
+    font-size: var(--font-sm);
+    color: var(--text-tertiary);
+    margin: 0;
+}
+
+.generatingBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 4px 12px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: var(--font-medium);
+    color: #a5b4fc;
+}
+
+.generatingIcon {
+    font-size: 12px;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==================== Progress Section ==================== */
+
+.progressSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.progressHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.progressLabel {
+    font-size: 12px;
+    font-weight: var(--font-medium);
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.progressPercentage {
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+}
+
+.progressBar {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--progress-color);
+    border-radius: var(--radius-full);
+    position: relative;
+}
+
+.progressFill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ==================== Text-Based Pipeline ==================== */
+
+.pipeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.stageText {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    position: relative;
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+}
+
+.stageNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    font-weight: var(--font-bold);
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.stageName {
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Stage States */
+
+.stagePending {
+    opacity: 0.4;
+}
+
+.stagePending .stageNumber {
+    color: var(--text-tertiary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.stagePending .stageName {
+    color: var(--text-tertiary);
+}
+
+.stageComplete {
+    opacity: 1;
+}
+
+.stageComplete .stageNumber {
+    background: var(--stage-color);
+    color: white;
+    box-shadow: 0 0 12px rgba(var(--stage-color), 0.3);
+}
+
+.stageComplete .stageName {
+    color: var(--text-secondary);
+}
+
+.stageCurrent {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stageCurrent .stageNumber {
+    background: var(--stage-color);
+    color: white;
+    box-shadow: 0 0 16px var(--stage-color);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.stageCurrent .stageName {
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 16px var(--stage-color);
+    }
+    50% {
+        box-shadow: 0 0 24px var(--stage-color);
+    }
+}
+
+/* Current Stage Indicator Dot */
+
+.currentDot {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--stage-color);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--stage-color);
+}
+
+/* Hover Effects */
+
+.stageText:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.stageCurrent:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-lg);
+    }
+
+    .progressSection {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .pipeline {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+
+    .stageText {
+        flex: 1 1 calc(50% - var(--spacing-sm));
+        min-width: 120px;
+    }
+
+    .stageName {
+        font-size: 13px;
+    }
+
+    .stageNumber {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pipeline {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .stageText {
+        width: 100%;
+        justify-content: flex-start;
+        padding: var(--spacing-sm);
+    }
+
+    .stageName {
+        font-size: 12px;
+    }
+
+    .currentStageLabel {
+        font-size: var(--font-md);
+    }
+
+    .progressPercentage {
+        font-size: var(--font-md);
+    }
+}

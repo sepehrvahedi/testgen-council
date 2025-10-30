@@ -1,0 +1,175 @@
+/**
+ * Toast Notification Styles
+ */
+
+.toast {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    min-width: 320px;
+    max-width: 420px;
+    padding: var(--spacing-md);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.toast:hover {
+    box-shadow: var(--shadow-xl);
+    border-color: var(--glass-highlight);
+}
+
+/* ==================== Type Variants ==================== */
+
+.toast.success {
+    border-left: 3px solid var(--color-success);
+}
+
+.toast.success .iconContainer {
+    color: var(--color-success);
+}
+
+.toast.error {
+    border-left: 3px solid var(--color-danger);
+}
+
+.toast.error .iconContainer {
+    color: var(--color-danger);
+}
+
+.toast.warning {
+    border-left: 3px solid var(--color-warning);
+}
+
+.toast.warning .iconContainer {
+    color: var(--color-warning);
+}
+
+.toast.info {
+    border-left: 3px solid var(--color-info);
+}
+
+.toast.info .iconContainer {
+    color: var(--color-info);
+}
+
+/* ==================== Layout ==================== */
+
+.iconContainer {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+}
+
+.message {
+    font-size: var(--font-md);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.description {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* ==================== Close Button ==================== */
+
+.closeButton {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.closeButton:hover {
+    background: var(--glass-border);
+    color: var(--text-primary);
+}
+
+.closeButton:active {
+    transform: scale(0.95);
+}
+
+/* ==================== Progress Bar ==================== */
+
+.progressBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: currentColor;
+    transform-origin: left;
+    opacity: 0.5;
+}
+
+.toast.success .progressBar {
+    background: var(--color-success);
+}
+
+.toast.error .progressBar {
+    background: var(--color-danger);
+}
+
+.toast.warning .progressBar {
+    background: var(--color-warning);
+}
+
+.toast.info .progressBar {
+    background: var(--color-info);
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 768px) {
+    .toast {
+        min-width: 280px;
+        max-width: calc(100vw - 32px);
+        padding: var(--spacing-sm);
+    }
+
+    .message {
+        font-size: var(--font-sm);
+    }
+
+    .description {
+        font-size: var(--font-xs);
+    }
+}
+
+/* ==================== Accessibility ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .toast {
+        transition: none;
+    }
+}

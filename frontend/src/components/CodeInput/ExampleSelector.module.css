@@ -1,0 +1,114 @@
+.container {
+    position: relative;
+    min-width: 220px;
+}
+
+.trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: rgba(30, 41, 59, 0.8);
+    border: 2px solid rgba(99, 102, 241, 0.4);
+    border-radius: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(20px);
+}
+
+.trigger:hover:not(:disabled) {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+}
+
+.trigger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.triggerContent {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.triggerIcon {
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    border-radius: 1rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.exampleItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.exampleItem:last-child {
+    border-bottom: none;
+}
+
+.exampleItem:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.exampleIcon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.exampleInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.exampleName {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.exampleMeta {
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    text-transform: capitalize;
+}

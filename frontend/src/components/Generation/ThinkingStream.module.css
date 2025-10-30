@@ -1,0 +1,400 @@
+.container {
+    width: 100%;
+}
+
+.stream {
+    max-height: 400px;
+    overflow-y: auto;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.content {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+.cursor {
+    color: #6366f1;
+    margin-left: 2px;
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.emptyIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #6366f1;
+    margin-bottom: 1rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.empty p {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Custom scrollbar */
+.stream::-webkit-scrollbar {
+    width: 8px;
+}
+
+.stream::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 4px;
+}
+
+.stream::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 4px;
+}
+
+.stream::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.stream {
+    height: 100%;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+.content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Code Block Styling */
+.codeBlock {
+    margin: var(--spacing-md) 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.codeBlockHeader {
+    background: #2d2d2d;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.codeBlockLang {
+    font-size: 0.75rem;
+    color: #569cd6;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.codeBlock pre {
+    margin: 0;
+    padding: var(--spacing-md);
+    overflow-x: auto;
+    background: #1e1e1e !important;
+}
+
+.codeBlock code {
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.cursor {
+    color: var(--color-primary);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: var(--color-text-secondary);
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+/**
+ * ThinkingStream Styles - FIXED
+ */
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stream {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-mono);
+    font-size: var(--font-sm);
+    line-height: 1.6;
+    max-height: 600px;
+    position: relative;
+}
+
+.stream::-webkit-scrollbar {
+    width: 8px;
+}
+
+.stream::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.stream::-webkit-scrollbar-thumb {
+    background: var(--color-primary-muted);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.stream::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+.content {
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding-bottom: var(--spacing-md);
+}
+
+/* Text Blocks */
+.textBlock {
+    margin-bottom: var(--spacing-md);
+}
+
+.textLine {
+    min-height: 1.6em;
+}
+
+/* Code Blocks */
+.codeBlock {
+    margin: var(--spacing-lg) 0;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.codeBlockHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(99, 102, 241, 0.1);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.codeBlockIcon {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+}
+
+.codeBlockLang {
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.codeBlock pre {
+    margin: 0;
+    padding: var(--spacing-md);
+    background: transparent !important;
+    overflow-x: auto;
+}
+
+.codeBlock pre::-webkit-scrollbar {
+    height: 6px;
+}
+
+.codeBlock pre::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.codeBlock pre::-webkit-scrollbar-thumb {
+    background: var(--color-primary-muted);
+    border-radius: 3px;
+}
+
+.codeBlock code {
+    font-family: var(--font-mono);
+    font-size: var(--font-sm);
+    line-height: 1.6;
+    color: #f8f8f2;
+    text-shadow: none;
+}
+
+/* Prism.js Override for Better Visibility */
+.codeBlock code .token.comment,
+.codeBlock code .token.prolog,
+.codeBlock code .token.doctype,
+.codeBlock code .token.cdata {
+    color: #6a9955;
+}
+
+.codeBlock code .token.punctuation {
+    color: #d4d4d4;
+}
+
+.codeBlock code .token.property,
+.codeBlock code .token.tag,
+.codeBlock code .token.boolean,
+.codeBlock code .token.number,
+.codeBlock code .token.constant,
+.codeBlock code .token.symbol,
+.codeBlock code .token.deleted {
+    color: #b5cea8;
+}
+
+.codeBlock code .token.selector,
+.codeBlock code .token.attr-name,
+.codeBlock code .token.string,
+.codeBlock code .token.char,
+.codeBlock code .token.builtin,
+.codeBlock code .token.inserted {
+    color: #ce9178;
+}
+
+.codeBlock code .token.operator,
+.codeBlock code .token.entity,
+.codeBlock code .token.url,
+.codeBlock code .language-css .token.string,
+.codeBlock code .style .token.string {
+    color: #d4d4d4;
+}
+
+.codeBlock code .token.atrule,
+.codeBlock code .token.attr-value,
+.codeBlock code .token.keyword {
+    color: #c586c0;
+}
+
+.codeBlock code .token.function,
+.codeBlock code .token.class-name {
+    color: #dcdcaa;
+}
+
+.codeBlock code .token.regex,
+.codeBlock code .token.important,
+.codeBlock code .token.variable {
+    color: #d16969;
+}
+
+/* Cursor */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background: var(--color-primary);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+}
+
+/* Empty State */
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    text-align: center;
+    min-height: 300px;
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-lg);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.empty p {
+    color: var(--text-tertiary);
+    font-size: var(--font-md);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stream {
+        padding: var(--spacing-md);
+        font-size: var(--font-xs);
+    }
+
+    .codeBlock {
+        margin: var(--spacing-md) 0;
+    }
+
+    .codeBlockHeader {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .codeBlock pre {
+        padding: var(--spacing-sm);
+    }
+
+    .codeBlock code {
+        font-size: var(--font-xs);
+    }
+}
