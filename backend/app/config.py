@@ -27,7 +27,14 @@ class Settings(BaseSettings):
     PORT: int = Field(default=8000, description="Server port")
     DEBUG: bool = Field(default=True, description="Debug mode")
     CORS_ORIGINS: List[str] = Field(
-        default=["http://localhost:3000", "http://localhost:5173"],
+        default=[
+            "http://localhost:3000",
+            "http://localhost:5173",
+            "http://testcouncil.com",
+            "https://testcouncil.com",
+            "http://www.testcouncil.com",
+            "https://www.testcouncil.com"
+        ],
         description="Allowed CORS origins"
     )
 

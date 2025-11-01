@@ -126,9 +126,14 @@ class TestGenerationService:
 
             cluster_map = clusterer.cluster_tests(all_tests)
 
-            # Send cluster formation events
+            # Send cluster formation events and prepare cluster data
             cluster_infos = []
+            clusters_for_synthesis = {}
+
             for cluster_id, test_indices in cluster_map.items():
+                if cluster_id == -1:  # Skip noise cluster for now
+                    continue
+
                 cluster_tests = [all_tests[i] for i in test_indices]
 
                 # Determine category
@@ -146,6 +151,11 @@ class TestGenerationService:
                     tests=cluster_tests
                 ))
 
+                # Store for synthesis
+                clusters_for_synthesis[cluster_id] = {
+                    "tests": cluster_tests,
+                    "category": most_common_category
+                }
 
                 await stream_queue.put(
                     await SSEStream.send_cluster_formed_event(
@@ -157,32 +167,37 @@ class TestGenerationService:
                     )
                 )
 
-
             clustering_duration = time.time() - clustering_start
 
             await stream_queue.put(
                 await SSEStream.send_clustering_complete_event(
-                    total_clusters=len([c for c in cluster_map.keys() if c != -1]),
+                    total_clusters=len(clusters_for_synthesis),
                     noise_tests=len(cluster_map.get(-1, [])),
                     duration=clustering_duration
                 )
             )
 
             # ====================
-            # STAGE 5: SYNTHESIS
+            # STAGE 5: SYNTHESIS (TWO-PHASE)
             # ====================
-            logger.info("Stage 5: Test Synthesis")
+            logger.info("Stage 5: Two-Phase Test Synthesis")
             synthesis_start = time.time()
 
-            # Prepare clusters for synthesis (exclude noise)
-            synthesis_clusters = {}
-            for cluster_id, test_indices in cluster_map.items():
-                if cluster_id != -1:  # Exclude noise
-                    synthesis_clusters[cluster_id] = [all_tests[i] for i in test_indices]
-
             async with TestSynthesizer(streaming_queue=stream_queue) as synthesizer:
-                final_tests = await synthesizer.synthesize_tests(
-                    clusters=synthesis_clusters,
+                # PHASE 1: Synthesize each cluster individually
+                logger.info(f"Phase 1: Synthesizing {len(clusters_for_synthesis)} clusters individually")
+
+                cluster_synthesized_tests = await synthesizer.synthesize_clusters_individually(
+                    clusters=clusters_for_synthesis,
+                    function_name=function_name,
+                    function_code=request.function_code
+                )
+
+                # PHASE 2: Create final unified test file
+                logger.info("Phase 2: Creating final unified test file")
+
+                final_tests = await synthesizer.create_final_test_file(
+                    cluster_tests=cluster_synthesized_tests,
                     function_name=function_name,
                     function_code=request.function_code
                 )
@@ -261,7 +276,7 @@ class TestGenerationService:
             # Build statistics
             statistics = Statistics(
                 total_raw_tests=len(all_tests),
-                total_clusters=len([c for c in cluster_map.keys() if c != -1]),
+                total_clusters=len(clusters_for_synthesis),
                 noise_tests=len(cluster_map.get(-1, [])),
                 final_tests=final_test_count,
                 total_duration_seconds=total_duration,

@@ -1,5 +1,6 @@
 """
 Test synthesizer for merging clustered tests using LLM
+Two-phase synthesis: cluster-level → final unification
 """
 
 import asyncio
@@ -13,7 +14,7 @@ from app.utils.streaming import StreamingQueue, SSEStream
 
 
 class TestSynthesizer:
-    """Synthesizes final tests from clusters using LLM"""
+    """Synthesizes final tests from clusters using two-phase LLM approach"""
 
     def __init__(self, streaming_queue: Optional[StreamingQueue] = None):
         self.streaming_queue = streaming_queue
@@ -31,22 +32,23 @@ class TestSynthesizer:
         if self.session:
             await self.session.close()
 
-    async def synthesize_tests(
+    async def synthesize_clusters_individually(
             self,
-            clusters: Dict[int, List[str]],
+            clusters: Dict[int, Dict[str, Any]],
             function_name: str,
             function_code: str
-    ) -> str:
+    ) -> List[str]:
         """
-        Synthesize final test suite from clusters
+        PHASE 1: Synthesize each cluster into a single high-quality test
+        ⚠️ DOES NOT STREAM - processes silently in background
 
         Args:
-            clusters: Dictionary mapping cluster_id to list of test codes
+            clusters: Dictionary mapping cluster_id to cluster data (tests, category)
             function_name: Name of the function being tested
             function_code: Source code of the function
 
         Returns:
-            Final synthesized test code
+            List of synthesized test codes, one per cluster
         """
         if not clusters:
             raise SynthesisError("No clusters provided for synthesis")
@@ -59,101 +61,277 @@ class TestSynthesizer:
                 )
             )
 
-        logger.info(f"Synthesizing tests from {len(clusters)} clusters")
+        logger.info(f"Phase 1: Synthesizing {len(clusters)} clusters individually (no streaming)")
 
-        # Build synthesis prompt
-        prompt = self._build_synthesis_prompt(clusters, function_name, function_code)
+        # Process clusters concurrently
+        tasks = []
+        for cluster_id, cluster_data in clusters.items():
+            task = self._synthesize_single_cluster(
+                cluster_id=cluster_id,
+                cluster_tests=cluster_data["tests"],
+                category=cluster_data["category"],
+                function_name=function_name,
+                function_code=function_code,
+                stream_thinking=False  # ✅ DISABLED for Phase 1
+            )
+            tasks.append(task)
 
-        # Call LLM for synthesis
-        synthesized_code = await self._call_synthesis_llm(prompt)
+        # Wait for all cluster syntheses to complete
+        synthesized_tests = await asyncio.gather(*tasks, return_exceptions=True)
 
-        # Clean and validate
-        final_code = self._clean_synthesis_output(synthesized_code, function_name)
+        # Filter out errors
+        valid_tests = []
+        for idx, result in enumerate(synthesized_tests):
+            if isinstance(result, Exception):
+                logger.error(f"Cluster {idx} synthesis failed: {result}")
+            elif result:
+                valid_tests.append(result)
 
-        return final_code
+        logger.info(f"Successfully synthesized {len(valid_tests)} out of {len(clusters)} clusters")
 
-    def _build_synthesis_prompt(
+        return valid_tests
+
+    async def _synthesize_single_cluster(
             self,
-            clusters: Dict[int, List[str]],
+            cluster_id: int,
+            cluster_tests: List[str],
+            category: str,
             function_name: str,
-            function_code: str
+            function_code: str,
+            stream_thinking: bool = False  # ✅ NEW parameter
     ) -> str:
-        """Build synthesis prompt"""
+        """
+        Synthesize a single cluster into one comprehensive test
 
-        # Prepare cluster summaries
-        cluster_summaries = []
-        for cluster_id, tests in clusters.items():
-            if cluster_id == -1:
-                continue  # Skip noise
+        Args:
+            cluster_id: Cluster identifier
+            cluster_tests: List of test codes in this cluster
+            category: Test category (positive/negative/edge/etc.)
+            function_name: Function being tested
+            function_code: Source code of the function
+            stream_thinking: Whether to stream thinking chunks
 
-            cluster_summaries.append(f"""
-### Cluster {cluster_id} ({len(tests)} similar tests)
+        Returns:
+            Synthesized test code for this cluster
+        """
+        logger.info(f"Synthesizing cluster {cluster_id} ({len(cluster_tests)} tests, category: {category})")
+
+        # Build cluster synthesis prompt
+        prompt = self._build_cluster_synthesis_prompt(
+            cluster_tests=cluster_tests,
+            category=category,
+            function_name=function_name,
+            function_code=function_code,
+            cluster_id=cluster_id
+        )
+
+        # Call LLM for this cluster
+        synthesized_test = await self._call_synthesis_llm(
+            prompt=prompt,
+            context_info=f"Cluster {cluster_id}",
+            stream_thinking=stream_thinking  # ✅ Pass the flag
+        )
+
+        # Clean the output
+        cleaned_test = self._clean_cluster_output(synthesized_test, function_name)
+
+        return cleaned_test
+
+    def _build_cluster_synthesis_prompt(
+            self,
+            cluster_tests: List[str],
+            category: str,
+            function_name: str,
+            function_code: str,
+            cluster_id: int
+    ) -> str:
+        """Build prompt for synthesizing a single cluster"""
+
+        # Format all tests in the cluster
+        tests_formatted = []
+        for idx, test in enumerate(cluster_tests, 1):
+            tests_formatted.append(f"""### Test Variant {idx}:
 ```python
-{tests[0]}
-```
-... and {len(tests) - 1} similar variations
-""")
+{test}
+```""")
 
-        clusters_text = "\n".join(cluster_summaries)
+        all_tests_text = "\n".join(tests_formatted)
 
-        prompt = f"""You are synthesizing a final, comprehensive test suite.
+        prompt = f"""You are synthesizing a SINGLE comprehensive test from similar test variants.
 
-You have received **{len(clusters)} clusters** of similar test cases generated by multiple AI models. Your task is to create a **unified, non-redundant, high-quality test suite** that:
-
-1. **Eliminates redundancy** - Merge similar tests from each cluster into one excellent test
-2. **Preserves diversity** - Keep tests that cover different scenarios
-3. **Maximizes coverage** - Ensure all edge cases, errors, and normal cases are covered
-4. **Maintains quality** - Follow pytest best practices
-
-## Function Under Test
-python
+## Function Under Test:
+```python
 {function_code}
+```
 
-## Clustered Tests
-{clusters_text}
+## Context:
+- **Cluster ID**: {cluster_id}
+- **Category**: {category}
+- **Number of variants**: {len(cluster_tests)}
 
-## Your Task
-Synthesize these clusters into a **final test suite** for `{function_name}`. 
+## Test Variants in This Cluster:
+{all_tests_text}
 
-**Guidelines:**
-- For each cluster, create ONE excellent test that represents the best aspects of all tests in that cluster
-- Ensure test names are descriptive: `test_{function_name}_<scenario>`
-- Include docstrings explaining what each test validates
-- Use proper assertions and pytest features
-- Add necessary imports at the top
-- Organize tests logically (positive → negative → edge → security → performance)
+## Your Task:
+Create ONE excellent test function that:
+1. **Preserves all unique testing insights** from the variants above
+2. **Combines the best aspects** of each variant (assertions, edge cases, error handling)
+3. **Eliminates redundancy** - don't repeat the same assertion multiple times
+4. **Maintains clarity** - the test should be readable and well-documented
+5. **Follows pytest best practices** - proper naming, fixtures, parametrization if needed
 
-**Output Format:**
-python
-import pytest
-# Add other necessary imports
+## Guidelines:
+- Test name should be: `test_{function_name}_<descriptive_scenario>`
+- Include a docstring explaining what this test validates
+- Use clear variable names and assertions
+- If variants test different inputs, consider using `@pytest.mark.parametrize`
+- Preserve any unique error handling or edge case checks
+- DO NOT include imports (they will be added later)
+- Output ONLY the test function, nothing else
 
-def test_{function_name}_scenario1():
-    \"\"\"Description of what this test validates.\"\"\"
-    # Test implementation
-    assert condition
-
-def test_{function_name}_scenario2():
-    \"\"\"Description of what this test validates.\"\"\"
-    # Test implementation
-    assert condition
-
-Generate the complete, final test suite now:
+Generate the synthesized test function now:
 """
 
         return prompt
 
-    async def _call_synthesis_llm(self, prompt: str) -> str:
+    async def create_final_test_file(
+            self,
+            cluster_tests: List[str],
+            function_name: str,
+            function_code: str
+    ) -> str:
         """
-        Call LLM for synthesis with streaming thinking
+        PHASE 2: Create final unified test file from cluster-synthesized tests
+        ✅ STREAMS the complete final code to frontend
+
+        Args:
+            cluster_tests: List of synthesized tests (one per cluster)
+            function_name: Name of the function being tested
+            function_code: Source code of the function
+
+        Returns:
+            Complete, runnable test file
+        """
+        logger.info(f"Phase 2: Creating final unified test file from {len(cluster_tests)} synthesized tests (WITH STREAMING)")
+
+        # Build final unification prompt
+        prompt = self._build_final_unification_prompt(
+            cluster_tests=cluster_tests,
+            function_name=function_name,
+            function_code=function_code
+        )
+
+        # Call LLM for final unification WITH STREAMING
+        final_code = await self._call_synthesis_llm(
+            prompt=prompt,
+            context_info="Final Unification",
+            stream_thinking=True  # ✅ ENABLED for Phase 2
+        )
+
+        # Clean and validate
+        final_code = self._clean_final_output(final_code, function_name, function_code)
+
+        return final_code
+
+    def _build_final_unification_prompt(
+            self,
+            cluster_tests: List[str],
+            function_name: str,
+            function_code: str
+    ) -> str:
+        """Build prompt for final test file unification"""
+
+        # Format all synthesized tests
+        tests_formatted = []
+        for idx, test in enumerate(cluster_tests, 1):
+            tests_formatted.append(f"""### Synthesized Test {idx}:
+```python
+{test}
+```""")
+
+        all_tests_text = "\n".join(tests_formatted)
+
+        prompt = f"""You are creating a COMPLETE, RUNNABLE test file.
+
+## Function Under Test:
+```python
+{function_code}
+```
+
+## Synthesized Tests from Clusters:
+You have {len(cluster_tests)} high-quality tests, each representing a cluster of similar test variants:
+
+{all_tests_text}
+
+## Your Task:
+Create a **complete, production-ready test file** that:
+
+1. **Includes all necessary imports** (pytest, any needed standard library modules)
+2. **Includes the function under test** in the file (copy it exactly)
+3. **Includes all synthesized tests** with any final refinements:
+   - Ensure tests don't conflict or duplicate
+   - Organize tests logically (positive → negative → edge → security → performance)
+   - Add any shared fixtures if needed
+   - Ensure consistent coding style and conventions
+4. **Compiles and runs correctly** - this must be valid Python code
+5. **Follows best practices**:
+   - Clear test names
+   - Good docstrings
+   - Proper assertions
+   - pytest conventions
+
+## Output Format:
+```python
+\"\"\"
+Test suite for {function_name}
+Auto-generated by TestGen Council
+\"\"\"
+
+import pytest
+# Add other necessary imports
+
+# ==================== Function Under Test ====================
+
+{function_code}
+
+# ==================== Test Cases ====================
+
+def test_{function_name}_scenario1():
+    \"\"\"Description of what this tests.\"\"\"
+    # Test implementation
+    assert condition
+
+def test_{function_name}_scenario2():
+    \"\"\"Description of what this tests.\"\"\"
+    # Test implementation
+    assert condition
+
+# ... more tests ...
+```
+
+Generate the complete, final test file now:
+"""
+
+        return prompt
+
+    async def _call_synthesis_llm(
+            self,
+            prompt: str,
+            context_info: str = "Synthesis",
+            stream_thinking: bool = False  # ✅ NEW parameter
+    ) -> str:
+        """
+        Call LLM for synthesis with optional streaming
 
         Args:
             prompt: Synthesis prompt
+            context_info: Context for logging (e.g., "Cluster 1" or "Final Unification")
+            stream_thinking: Whether to stream thinking chunks to frontend
 
         Returns:
-            Synthesized test code
+            Synthesized code
         """
-        # Use the best model for synthesis (gemini-2.0-flash)
+        # Use the best model for synthesis
         model_id = config.SYNTHESIS_MODEL
         model_config = config.LLM_MODELS[model_id]
         api_base = config.LLM_API_BASES[model_config["provider"]]
@@ -166,11 +344,14 @@ Generate the complete, final test suite now:
         payload = {
             "model": model_config["api_name"],
             "messages": [
-                {"role": "system", "content": "You are an expert at synthesizing high-quality test suites."},
+                {
+                    "role": "system",
+                    "content": "You are an expert at synthesizing high-quality, production-ready test suites. You write clean, maintainable, and comprehensive tests."
+                },
                 {"role": "user", "content": prompt}
             ],
-            "temperature": 0.5,  # Lower temperature for more focused synthesis
-            "max_tokens": 6000,
+            "temperature": 0.4,  # Lower temperature for focused synthesis
+            "max_tokens": 8000,
             "stream": True
         }
 
@@ -202,8 +383,8 @@ Generate the complete, final test suite now:
                                 if content:
                                     full_response += content
 
-                                    # Send thinking chunk
-                                    if self.streaming_queue:
+                                    # ✅ Only send thinking chunks if streaming is enabled
+                                    if stream_thinking and self.streaming_queue:
                                         await self.streaming_queue.put(
                                             await SSEStream.send_synthesis_thinking_event(
                                                 thinking_chunk=content
@@ -213,33 +394,91 @@ Generate the complete, final test suite now:
                         except json.JSONDecodeError:
                             continue
 
-            logger.info(f"Synthesis complete: {len(full_response)} characters")
+            logger.info(f"{context_info} complete: {len(full_response)} characters")
             return full_response
 
         except Exception as e:
-            logger.error(f"Synthesis LLM call failed: {e}", exc_info=True)
-            raise SynthesisError(f"Failed to call synthesis LLM: {str(e)}")
+            logger.error(f"{context_info} LLM call failed: {e}", exc_info=True)
+            raise SynthesisError(f"Failed to call synthesis LLM for {context_info}: {str(e)}")
 
-    def _clean_synthesis_output(self, raw_output: str, function_name: str) -> str:
+    def _clean_cluster_output(self, raw_output: str, function_name: str) -> str:
         """
-        Clean and validate synthesis output
+        Clean cluster synthesis output
 
         Args:
             raw_output: Raw LLM output
             function_name: Function name for validation
 
         Returns:
-            Cleaned test code
+            Cleaned test function code
         """
+        cleaned = raw_output.strip()
+
         # Remove markdown code fences
-        cleaned = raw_output
+        if cleaned.startswith("```python"):
+            cleaned = cleaned[9:]
+        if cleaned.startswith("```"):
+            cleaned = cleaned[3:]
+        if cleaned.endswith("```"):
+            cleaned = cleaned[:-3]
+
+        cleaned = cleaned.strip()
+
+        # Validate that we have a test function
+        if "def test_" not in cleaned:
+            logger.warning(f"Cluster output doesn't contain a test function")
+
+        return cleaned
+
+    def _clean_final_output(
+            self,
+            raw_output: str,
+            function_name: str,
+            function_code: str
+    ) -> str:
+        """
+        Clean and validate final test file output
+
+        Args:
+            raw_output: Raw LLM output
+            function_name: Function name for validation
+            function_code: Original function code
+
+        Returns:
+            Cleaned complete test file
+        """
+        cleaned = raw_output.strip()
+
+        # Remove markdown code fences
+        if cleaned.startswith("```python"):
+            cleaned = cleaned[9:]
+        if cleaned.startswith("```"):
+            cleaned = cleaned[3:]
+        if cleaned.endswith("```"):
+            cleaned = cleaned[:-3]
+
+        cleaned = cleaned.strip()
 
         # Ensure imports are present
         if "import pytest" not in cleaned:
             cleaned = "import pytest\n\n" + cleaned
 
+        # Ensure function under test is present
+        if function_code.strip() not in cleaned:
+            logger.warning("Function under test not found in final output, adding it")
+            # Insert after imports
+            import_end = cleaned.find("\n\n")
+            if import_end != -1:
+                cleaned = (
+                        cleaned[:import_end + 2] +
+                        f"# ==================== Function Under Test ====================\n\n"
+                        f"{function_code}\n\n"
+                        f"# ==================== Test Cases ====================\n\n" +
+                        cleaned[import_end + 2:]
+                )
+
         # Validate that we have test functions
         if f"def test_{function_name}" not in cleaned and "def test_" not in cleaned:
-            logger.warning("Synthesis output doesn't contain expected test functions")
+            logger.warning("Final output doesn't contain expected test functions")
 
-        return cleaned.strip()
+        return cleaned
