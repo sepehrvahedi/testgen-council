@@ -15,6 +15,8 @@ const EXAMPLES = [
         icon: '🔢',
         code: `def factorial(n):
     """Calculate factorial of n"""
+    if isinstance(n, bool) or not isinstance(n, int):
+        raise TypeError(f"Factorial requires an integer, got {type(n).__name__}")
     if n < 0:
         raise ValueError("Factorial not defined for negative numbers")
     if n <= 1:

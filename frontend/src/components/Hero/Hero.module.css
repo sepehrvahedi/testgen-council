@@ -1,74 +1,65 @@
 /**
- * Hero Component Styles - Redesigned
+ * Hero Component - Premium Professional Design (Fully Responsive)
+ * Single page fit across all devices with intelligent scaling
  */
+
+/* ==================== Container ==================== */
 
 .hero {
     position: relative;
     min-height: 100vh;
+    max-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: clamp(1rem, 3vh, 3rem) clamp(1rem, 3vw, 3rem);
     overflow: hidden;
-    background: var(--bg-primary);
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
 }
 
-/* ==================== Background Effects ==================== */
+/* ==================== Refined Background ==================== */
 
 .background {
     position: absolute;
     inset: 0;
     z-index: 0;
     overflow: hidden;
+    opacity: 0.4;
 }
 
 .gradientOrb1,
-.gradientOrb2,
-.gradientOrb3 {
+.gradientOrb2 {
     position: absolute;
     border-radius: 50%;
     filter: blur(120px);
-    opacity: 0.4;
-    animation: floatOrb 10s ease-in-out infinite;
+    opacity: 0.25;
+    pointer-events: none;
 }
 
 .gradientOrb1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, #6366f1 0%, transparent 70%);
-    top: -20%;
+    width: min(600px, 50vw);
+    height: min(600px, 50vw);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+    top: -15%;
     left: -10%;
-    animation-delay: 0s;
+    animation: subtleFloat 20s ease-in-out infinite;
 }
 
 .gradientOrb2 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
-    bottom: -10%;
+    width: min(500px, 45vw);
+    height: min(500px, 45vw);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    bottom: -15%;
     right: -10%;
-    animation-delay: 3s;
+    animation: subtleFloat 25s ease-in-out infinite reverse;
 }
 
-.gradientOrb3 {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
-    top: 40%;
-    left: 60%;
-    animation-delay: 6s;
-}
-
-@keyframes floatOrb {
+@keyframes subtleFloat {
     0%, 100% {
-        transform: translate(0, 0) scale(1);
+        transform: translate(0, 0);
     }
-    33% {
-        transform: translate(50px, -50px) scale(1.1);
-    }
-    66% {
-        transform: translate(-30px, 30px) scale(0.95);
+    50% {
+        transform: translate(20px, -20px);
     }
 }
 
@@ -76,436 +67,519 @@
     position: absolute;
     inset: 0;
     background-image:
-            linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            linear-gradient(rgba(99, 102, 241, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(99, 102, 241, 0.02) 1px, transparent 1px);
     background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 30%, transparent 100%);
 }
 
-.scanline {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-            transparent 50%,
-            rgba(99, 102, 241, 0.03) 50%
-    );
-    background-size: 100% 4px;
-    animation: scan 8s linear infinite;
-    pointer-events: none;
-}
+/* ==================== Main Content ==================== */
 
-@keyframes scan {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100vh); }
-}
-
-/* ==================== Content Wrapper ==================== */
-
-.contentWrapper {
+.mainContent {
     position: relative;
     z-index: 1;
-    max-width: 1000px;
+    max-width: min(920px, 90vw);
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 2.5vh, 2.5rem);
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
+}
+
+/* ==================== Title Block ==================== */
+
+.titleBlock {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
-    padding: 2rem 1rem;
+    gap: clamp(0.875rem, 1.5vh, 1.5rem);
 }
 
-/* ==================== Badge ==================== */
-
 .badge {
-    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.5rem;
-    background: rgba(30, 41, 59, 0.8);
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    padding: clamp(0.5rem, 1vh, 0.75rem) clamp(0.875rem, 2vw, 1.5rem);
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    border-radius: 100px;
-    font-size: 0.875rem;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 50px;
+    font-size: clamp(0.625rem, 1.2vw, 0.875rem);
     font-weight: 600;
-    color: #cbd5e1;
-    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.15);
-    letter-spacing: 0.025em;
+    color: #e2e8f0;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(15, 23, 42, 0.9);
 }
 
 .badgeDot {
-    width: 10px;
-    height: 10px;
+    width: clamp(6px, 1vw, 8px);
+    height: clamp(6px, 1vw, 8px);
     background: linear-gradient(135deg, #10b981, #06b6d4);
     border-radius: 50%;
-    box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
-    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+    animation: gentlePulse 3s ease-in-out infinite;
 }
 
-.badgePulse {
-    position: absolute;
-    left: 1.5rem;
-    width: 10px;
-    height: 10px;
-    background: #10b981;
-    border-radius: 50%;
-    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes ping {
-    0% {
-        transform: scale(1);
+@keyframes gentlePulse {
+    0%, 100% {
         opacity: 1;
+        transform: scale(1);
     }
-    75%, 100% {
-        transform: scale(2.5);
-        opacity: 0;
+    50% {
+        opacity: 0.6;
+        transform: scale(0.95);
     }
-}
-
-/* ==================== Title Section ==================== */
-
-.titleSection {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .mainTitle {
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    font-weight: 900;
+    font-size: clamp(1.75rem, 5vw + 1rem, 4.5rem);
+    font-weight: 800;
     line-height: 1.1;
-    color: #f1f5f9;
+    color: #ffffff;
     margin: 0;
-    letter-spacing: -0.03em;
-    text-shadow: 0 2px 20px rgba(99, 102, 241, 0.3);
+    letter-spacing: -0.035em;
+    text-shadow: 0 4px 24px rgba(99, 102, 241, 0.25);
 }
-
-.subTitle {
-    font-size: clamp(1.25rem, 3vw, 2rem);
-    font-weight: 600;
-    line-height: 1.3;
-    color: #cbd5e1;
-    margin: 0;
-    letter-spacing: -0.01em;
-}
-
-.gradient {
-    background: linear-gradient(
-            135deg,
-            #6366f1 0%,
-            #8b5cf6 25%,
-            #a855f7 50%,
-            #06b6d4 75%,
-            #10b981 100%
-    );
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientFlow 8s ease infinite;
-}
-
-@keyframes gradientFlow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-/* ==================== Description ==================== */
 
 .description {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.7;
-    color: #94a3b8;
-    max-width: 700px;
+    font-size: clamp(0.8125rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: min(640px, 85vw);
     margin: 0;
+    font-weight: 400;
 }
 
-/* ==================== CTA Container ==================== */
-
-.ctaContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
+/* ==================== CTA Button ==================== */
 
 .heroButton {
     position: relative;
-    padding: 1.75rem 3.5rem !important;
-    font-size: 1.25rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.025em;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
-    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    margin-top: clamp(0.25rem, 0.5vh, 0.75rem);
+    padding: clamp(0.875rem, 1.5vh, 1.25rem) clamp(1.625rem, 3vw, 2.5rem) !important;
+    font-size: clamp(0.8125rem, 1.5vw, 1rem) !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: clamp(0.625rem, 1vw, 0.875rem) !important;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     box-shadow:
-            0 0 30px rgba(99, 102, 241, 0.4),
-            0 10px 40px rgba(0, 0, 0, 0.3) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    overflow: hidden;
-}
-
-.heroButton::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.1),
-            transparent
-    );
-    opacity: 0;
-    transition: opacity 0.3s;
+            0 4px 20px rgba(99, 102, 241, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    letter-spacing: -0.01em;
 }
 
 .heroButton:hover {
-    transform: translateY(-4px) scale(1.02) !important;
+    transform: translateY(-2px) !important;
     box-shadow:
-            0 0 50px rgba(99, 102, 241, 0.6),
-            0 15px 50px rgba(0, 0, 0, 0.4) !important;
-}
-
-.heroButton:hover::before {
-    opacity: 1;
+            0 8px 30px rgba(99, 102, 241, 0.45),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .heroButton:active {
-    transform: translateY(-2px) scale(1) !important;
+    transform: translateY(0) !important;
 }
 
-.buttonContent {
+.buttonIcon {
+    font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+    transition: transform 0.35s ease;
+}
+
+.heroButton:hover .buttonIcon:last-child {
+    transform: translateX(4px);
+}
+
+/* ==================== Quick Stats ==================== */
+
+.quickStats {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    gap: clamp(0.625rem, 1.5vw, 1.25rem);
+    margin-top: clamp(0rem, 0.5vh, 0.5rem);
+    flex-wrap: wrap;
 }
 
-.buttonIconLeft {
-    font-size: 1.5rem;
-    animation: sparkle 2s ease-in-out infinite;
-}
-
-.buttonText {
-    font-weight: 700;
-}
-
-.buttonIconRight {
-    font-size: 1.5rem;
-    transition: transform 0.3s;
-}
-
-.heroButton:hover .buttonIconRight {
-    transform: translateX(5px);
-}
-
-@keyframes sparkle {
-    0%, 100% {
-        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
-    }
-    50% {
-        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
-    }
-}
-
-.ctaHint {
-    font-size: 0.875rem;
-    color: #64748b;
-    margin: 0;
+.stat {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: clamp(0.375rem, 0.8vw, 0.625rem);
+    padding: clamp(0.5rem, 1vh, 0.75rem) clamp(0.875rem, 1.5vw, 1.25rem);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 10px;
+    font-size: clamp(0.6875rem, 1.2vw, 0.875rem);
+    font-weight: 600;
+    color: #e2e8f0;
+    transition: all 0.3s ease;
 }
 
-.ctaHint::before,
-.ctaHint::after {
-    content: '•';
-    color: #475569;
+.stat:hover {
+    border-color: rgba(99, 102, 241, 0.35);
+    background: rgba(15, 23, 42, 0.75);
+    transform: translateY(-1px);
 }
 
-/* ==================== Stats Container ==================== */
-
-.statsContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
-    max-width: 700px;
-    margin-top: 1rem;
+.statIcon {
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+    color: #818cf8;
 }
 
-.statCard {
-    position: relative;
-    padding: 2rem 1.5rem;
-    background: rgba(30, 41, 59, 0.6);
-    backdrop-filter: blur(20px);
+/* ==================== Contact Bar ==================== */
+
+.contactBar {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    padding: clamp(1rem, 2vh, 1.75rem) clamp(1.5rem, 3vw, 3rem);
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(24px);
     border: 1px solid rgba(99, 102, 241, 0.2);
-    border-radius: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+
+.contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.375rem, 0.8vh, 0.75rem);
+}
+
+.contactLabel {
+    font-size: clamp(0.5rem, 1vw, 0.6875rem);
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.contactLink {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    text-decoration: none;
+    color: #f8fafc;
+    font-weight: 600;
+    font-size: clamp(0.8125rem, 1.5vw, 1rem);
+    padding: clamp(0.5rem, 1vh, 0.75rem) clamp(0.75rem, 1.5vw, 1.125rem);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.contactLink:hover {
+    background: rgba(99, 102, 241, 0.12);
+    transform: translateY(-1px);
+}
+
+.contactIcon {
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    color: #818cf8;
+    transition: transform 0.3s ease;
+}
+
+.contactLink:hover .contactIcon {
+    transform: scale(1.1);
+}
+
+.contactText {
+    color: #e2e8f0;
+    letter-spacing: -0.01em;
+}
+
+.divider {
+    width: 1px;
+    background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(99, 102, 241, 0.3) 50%,
+            transparent 100%
+    );
+    align-self: stretch;
+}
+
+/* ==================== Lab Credit ==================== */
+
+.labCredit {
     text-align: center;
-    transition: all 0.3s;
-    overflow: hidden;
+    padding: 0;
 }
 
-.statCard:hover {
-    transform: translateY(-5px);
-    border-color: rgba(99, 102, 241, 0.5);
-    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+.labLink {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.625rem, 1.2vw, 0.875rem);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: clamp(0.25rem, 0.8vh, 0.625rem) clamp(0.875rem, 2vw, 1.5rem);
+    border-radius: 10px;
 }
 
-.statNumber {
-    font-size: 3rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+.labLink:hover {
+    transform: translateY(-1px);
+    background: rgba(99, 102, 241, 0.06);
+}
+
+.poweredBy {
+    font-size: clamp(0.4375rem, 0.9vw, 0.625rem);
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.labName {
+    font-size: clamp(1.125rem, 3vw, 2.25rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1;
-    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+    animation: subtleGradient 8s ease infinite;
 }
 
-.statLabel {
-    font-size: 0.875rem;
+@keyframes subtleGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.labIcon {
+    font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+    color: #818cf8;
+    transition: transform 0.3s ease;
+}
+
+.labLink:hover .labIcon {
+    transform: translate(2px, -2px);
+}
+
+.labSubtext {
+    font-size: clamp(0.6875rem, 1.3vw, 0.875rem);
     color: #94a3b8;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.statAccent {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #6366f1, #8b5cf6);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-}
-
-.statCard:hover .statAccent {
-    transform: scaleX(1);
-}
-
-/* ==================== Features Section ==================== */
-
-.featuresSection {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 4rem;
-}
-
-.featuresGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.featureCard {
-    position: relative;
-    padding: 2rem;
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(99, 102, 241, 0.15);
-    border-radius: 1.25rem;
-    text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.featureCard:hover {
-    border-color: rgba(99, 102, 241, 0.4);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    background: rgba(30, 41, 59, 0.7);
-}
-
-.featureIcon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    margin-bottom: 1.5rem;
-    background: var(--feature-color, #6366f1);
-    border-radius: 1rem;
-    color: white;
-    font-size: 2rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.featureCard:hover .featureIcon {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.featureTitle {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #f1f5f9;
-    margin: 0 0 0.75rem;
-}
-
-.featureDescription {
-    font-size: 0.9375rem;
-    color: #94a3b8;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.featureGlow {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-            circle at center,
-            var(--feature-color, #6366f1),
-            transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.featureCard:hover .featureGlow {
-    opacity: 0.1;
+    margin: clamp(0.25rem, 0.8vh, 0.75rem) 0 0;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
 }
 
 /* ==================== Particles ==================== */
 
 .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #6366f1;
+    width: 2px;
+    height: 2px;
+    background: rgba(99, 102, 241, 0.6);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
 }
 
-/* ==================== Responsive ==================== */
+/* ==================== Responsive Breakpoints ==================== */
 
-@media (max-width: 768px) {
-    .contentWrapper {
-        gap: 2rem;
-        padding: 1rem;
+/* Large Desktop (1920px+) */
+@media (min-width: 1920px) {
+    .mainContent {
+        gap: 3rem;
     }
 
-    .badge {
-        font-size: 0.75rem;
-        padding: 0.625rem 1.25rem;
+    .titleBlock {
+        gap: 2rem;
+    }
+}
+
+/* Desktop (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .mainContent {
+        gap: 2.25rem;
+    }
+}
+
+/* Tablet Landscape (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .contactBar {
+        gap: 2rem;
+    }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .mainContent {
+        gap: 1.5rem;
+    }
+
+    .contactBar {
+        flex-direction: row;
+        padding: 1.25rem 2rem;
+    }
+
+    .divider {
+        width: 1px;
+        height: auto;
+    }
+}
+
+/* Mobile Landscape (641px - 767px) */
+@media (min-width: 641px) and (max-width: 767px) {
+    .mainContent {
+        gap: 1.25rem;
+    }
+
+    .contactBar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .contactSection {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .divider {
+        width: 60%;
+        height: 1px;
+        background: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(99, 102, 241, 0.3) 50%,
+                transparent 100%
+        );
+    }
+}
+
+/* Mobile Portrait (480px - 640px) */
+@media (max-width: 640px) {
+    .contactBar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        align-items: center;
+    }
+
+    .contactSection {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .divider {
+        width: 70%;
+        height: 1px;
+        background: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(99, 102, 241, 0.3) 50%,
+                transparent 100%
+        );
     }
 
     .heroButton {
-        padding: 1.5rem 2.5rem !important;
-        font-size: 1.125rem !important;
+        width: 100%;
+        max-width: 300px;
     }
+}
 
-    .statsContainer {
-        grid-template-columns: 1fr;
+/* Small Mobile (max 479px) */
+@media (max-width: 479px) {
+    .mainContent {
         gap: 1rem;
     }
 
-    .featuresGrid {
-        grid-template-columns: 1fr;
+    .titleBlock {
+        gap: 0.75rem;
+    }
+
+    .quickStats {
+        gap: 0.5rem;
+    }
+
+    .contactBar {
+        padding: 0.875rem 1rem;
+        gap: 0.875rem;
+    }
+}
+
+/* Height-based optimizations */
+@media (max-height: 800px) {
+    .mainContent {
+        gap: clamp(1rem, 2vh, 1.75rem);
+    }
+
+    .titleBlock {
+        gap: clamp(0.75rem, 1.2vh, 1.25rem);
+    }
+}
+
+@media (max-height: 700px) {
+    .hero {
+        padding: clamp(0.75rem, 1.5vh, 1.5rem) clamp(1rem, 2vw, 2rem);
+    }
+
+    .mainContent {
+        gap: clamp(0.875rem, 1.5vh, 1.25rem);
+    }
+
+    .titleBlock {
+        gap: clamp(0.625rem, 1vh, 1rem);
+    }
+
+    .contactBar {
+        padding: clamp(0.875rem, 1.5vh, 1.25rem) clamp(1.25rem, 2.5vw, 2rem);
+        gap: clamp(1rem, 2vw, 1.5rem);
+    }
+}
+
+@media (max-height: 600px) {
+    .mainContent {
+        gap: 0.875rem;
+    }
+
+    .titleBlock {
+        gap: 0.625rem;
+    }
+
+    .badge {
+        padding: 0.375rem 0.875rem;
+    }
+
+    .contactBar {
+        padding: 0.75rem 1.25rem;
+        gap: 1rem;
+    }
+
+    .labSubtext {
+        margin: 0.25rem 0 0;
+    }
+}
+
+/* Very short screens - allow minimal scroll */
+@media (max-height: 500px) {
+    .hero {
+        min-height: auto;
+        max-height: none;
+        padding: 0.75rem 1rem;
+    }
+
+    .mainContent {
+        gap: 0.75rem;
     }
 }
 
@@ -514,13 +588,13 @@
 @media (prefers-reduced-motion: reduce) {
     .gradientOrb1,
     .gradientOrb2,
-    .gradientOrb3,
-    .gradient,
+    .labName,
     .badgeDot,
-    .badgePulse,
-    .scanline,
-    .particle,
-    .buttonIconLeft {
+    .particle {
         animation: none;
+    }
+
+    * {
+        transition-duration: 0.01ms !important;
     }
 }

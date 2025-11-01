@@ -334,7 +334,7 @@
 
 /* ==================== High Contrast Mode ==================== */
 
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
     .section,
     .coverage {
         border-width: 2px;
@@ -345,6 +345,113 @@
     }
 
     .count {
+        border-width: 2px;
+    }
+}
+
+/* ==================== Copy Button ==================== */
+
+.copyButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 0.5rem;
+    color: #e0e7ff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.copyButton:hover:not(:disabled) {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%);
+    border-color: rgba(99, 102, 241, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.copyButton:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.copyButton:disabled {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.2) 100%);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #d1fae5;
+    cursor: default;
+}
+
+.copyIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* ==================== Responsive Design Updates ==================== */
+
+@media (max-width: 768px) {
+    .sectionHeader {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .sectionHeader h3 {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .copyButton {
+        order: 3;
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+
+    .count {
+        order: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .copyButton {
+        font-size: 0.8125rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .copyButton span {
+        display: none;
+    }
+
+    .copyIcon {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+}
+
+/* ==================== Accessibility ==================== */
+
+.copyButton:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .copyButton:hover {
+        transform: none;
+    }
+}
+
+/* ==================== High Contrast Mode ==================== */
+
+@media (prefers-contrast: more) {
+    .copyButton {
+        border-width: 2px;
+    }
+
+    .copyButton:hover:not(:disabled) {
         border-width: 2px;
     }
 }
