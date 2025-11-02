@@ -6,6 +6,22 @@ TestGen Council uses multiple AI models working in different testing roles to ge
 
 ---
 
+## 🌐 Live Demo
+
+**Try it now at [testcouncil.com](https://testcouncil.com)** 🚀
+
+Experience the power of multi-model AI test generation without any setup:
+
+1. **Paste your code** in the editor
+2. **Select AI models** (Gemini, DeepSeek, Qwen, Claude, etc.)
+3. **Choose testing roles** (QA Engineer, Agent of Chaos, Security Auditor, Abstract Thinker)
+4. **Watch in real-time** as tests are generated, clustered, and synthesized
+5. **View coverage analysis** and download your test suite
+
+> **Note:** The demo uses shared API resources. For production use or high-volume testing, consider deploying your own instance using the instructions below.
+
+---
+
 ## 🎯 Overview
 
 TestGen Council addresses the challenge of generating robust test suites by leveraging the strengths of multiple LLMs (Large Language Models), each adopting different testing philosophies. Instead of relying on a single model's perspective, the system creates a "council" of AI testers that collaborate to produce comprehensive test coverage.
