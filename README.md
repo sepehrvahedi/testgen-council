@@ -1,137 +1,366 @@
-# 🧪 Intelligent Test Council - AI-Powered Python Test Generation
+# 🧪 TestGen Council
 
-A sophisticated test generation system that uses multiple Large Language Models (LLMs) working together as a "council" to create comprehensive, high-quality test suites for Python functions. The system features intelligent duplicate removal, test classification, coverage analysis, and an interactive GUI interface.
+**AI-Powered Test Generation with Multi-Model Consensus**
 
-## 🌟 Features
-
-### 🤖 Multi-Model AI Council
-- **Collaborative Testing**: Uses multiple LLMs (GPT-4, Claude, Gemini) working together
-- **Diverse Perspectives**: Each model contributes unique test cases and edge cases
-- **Intelligent Synthesis**: Combines and refines outputs from all models
-
-### 🎯 Comprehensive Test Generation
-- **Automatic Code Analysis**: Extracts function signatures, docstrings, and complexity metrics
-- **Smart Classification**: Categorizes tests into Basic, Edge Case, Error Handling, Performance, etc.
-- **Duplicate Removal**: Uses semantic similarity to eliminate redundant tests
-- **Coverage Analysis**: Ensures comprehensive code path coverage
-
-### 🎮 Interactive GUI Interface
-- **Jupyter-Friendly**: Beautiful `ipywidgets`-based interface
-- **Dark Mode Support**: Optimized styling for both light and dark themes
-- **Real-time Progress**: Visual feedback during test generation
-- **Clean Output**: Automatically removes markdown formatting from saved files
-
-### 📊 Advanced Analytics
-- **Detailed Metrics**: Track test counts, reduction ratios, and coverage percentages
-- **Model Performance**: Compare contributions from different AI models
-- **Category Breakdown**: Understand test distribution across different types
-
-### Basic Usage
-
-2. **Run the Setup Cells** (Cells 1-12) to initialize all components
-
-3. **Use the Interactive GUI** (Cell 13):
-   - Enter your Python function code
-   - Click "Generate Tests" 
-   - View comprehensive results
-   - Save clean test files
-
-## 🔧 Core Components
-
-### 1. Configuration Management (`Config`)
-- Manages API keys and model settings
-- Supports environment variables and direct configuration
-- Handles model availability and fallbacks
-
-### 2. Code Analysis (`CodeAnalyzer`)
-- Extracts function information (name, parameters, docstring)
-- Calculates complexity metrics
-- Identifies potential test scenarios
-
-### 3. LLM Council (`LLMCouncil`)
-- Orchestrates multiple AI models
-- Generates diverse test cases
-- Handles API rate limiting and errors
-
-### 4. Test Classification (`TestClassifier`)
-- Categorizes tests by type and purpose
-- Ensures comprehensive coverage of test scenarios
-- Identifies missing test categories
-
-### 5. Test Synthesis (`TestSynthesizer`)
-- Removes semantic duplicates
-- Creates clean, executable test files
-- Maintains test diversity and coverage
-
-### 6. Coverage Analysis (`CoverageAnalyzer`)
-- Analyzes code path coverage
-- Identifies untested branches
-- Provides coverage metrics
-
-### 7. Interactive GUI (`InteractiveTestGUI`)
-- User-friendly Jupyter interface
-- Real-time progress tracking
-- Clean file output with automatic formatting
-
-## 🎯 Generated Test Categories
-
-The system automatically generates tests in these categories:
-
-- **🔵 Basic Functionality**: Core function behavior
-- **⚠️ Edge Cases**: Boundary conditions and special inputs
-- **❌ Error Handling**: Exception scenarios and invalid inputs
-- **⚡ Performance**: Efficiency and resource usage tests
-- **🔀 Integration**: Function interaction tests
-- **🧪 Regression**: Tests for known issues
-- **📊 Data Validation**: Input/output validation tests
-
-## 📊 Example Output
-
-
-🎯 GENERATION SUMMARY
-==================================================
-📊 Original tests generated: 45
-🎯 Final tests after synthesis: 23
-📉 Reduction ratio: 48.89%
-📈 Code coverage: 94.2%
-🤖 Models used: gpt-4, claude-3-sonnet, gemini-pro
-🏷️  Test categories: Basic, Edge Cases, Error Handling, Performance
-⚙️  Synthesizer: gpt-4
-
-## 📝 File Outputs
-
-### `test_generated.py`
-Clean Python test file with:
-- Proper pytest format
-- Comprehensive test coverage
-- Clear test documentation
-- No markdown artifacts
-
-### `analysis_results.json`
-Detailed analysis including:
-- Function metadata
-- Model contributions
-- Test classifications
-- Coverage metrics
-- Generation statistics
-
-## 🙏 Acknowledgments
-
-- OpenAI for GPT-4 API
-- Anthropic for Claude API  
-- Google for Gemini API
-- Jupyter Project for notebook infrastructure
-- ipywidgets for GUI components
-
-## 📞 Support
-
-For support and questions:
-- Create an issue on GitHub
-- Check the troubleshooting section
-- Review example notebooks in `/examples`
+TestGen Council uses multiple AI models working in different testing roles to generate comprehensive, high-quality unit tests for your code. The system employs a unique "council" approach where models contribute diverse test cases, which are then clustered, deduplicated, and synthesized into a final test suite.
 
 ---
 
-**Made with ❤️ and AI collaboration**
+## 🎯 Overview
 
-*Generate better tests, write better code!* 🚀
+TestGen Council addresses the challenge of generating robust test suites by leveraging the strengths of multiple LLMs (Large Language Models), each adopting different testing philosophies. Instead of relying on a single model's perspective, the system creates a "council" of AI testers that collaborate to produce comprehensive test coverage.
+
+### Key Features
+
+- **Multi-Model Architecture**: Deploy multiple AI models (Gemini, DeepSeek, Qwen, etc.)
+- **Role-Based Testing**: Each model assumes a specific testing philosophy:
+  - 🎯 **By-the-Book QA Engineer**: Systematic, requirement-focused
+  - 💥 **Agent of Chaos**: Adversarial, break-it-if-you-can approach
+  - 🔒 **Paranoid Security Auditor**: Security-focused, assumes hostile input
+  - 🧩 **Abstract Thinker**: Property-based, invariant testing
+- **Intelligent Deduplication**: AST-based clustering to remove redundant tests
+- **Real-Time Streaming**: Server-Sent Events (SSE) for live test generation feedback
+- **Coverage Analysis**: Automatic test coverage calculation
+
+---
+
+## 🏗️ Architecture
+
+### Backend (FastAPI)
+- **Python 3.11+** with FastAPI framework
+- **LiteLLM** for unified multi-provider LLM access
+- **AST Analysis** for code parsing and test clustering
+- **SSE Streaming** for real-time progress updates
+- **Vector-based DBSCAN** or structural hashing for deduplication
+
+### Frontend (React + Vite)
+- **React 18** with hooks-based architecture
+- **Context API** for global state management
+- **SSE Client** for streaming test generation
+- **Real-time UI Updates** showing thinking process and test generation
+- **Responsive Design** with smooth animations
+
+---
+
+## 📊 Methodology: Test Generation Flow
+
+The test generation pipeline consists of five main stages, each designed to maximize test quality through collaboration and intelligent deduplication.
+
+---
+
+### 🎯 Stage 1: Input & Validation
+
+![Stage 1](./flow-diagrams/1.png)
+
+**What Happens:**
+- Parse source code into Abstract Syntax Tree (AST)
+- Validate syntax and structure
+- Extract function signature, parameters, return type
+- Create execution plan for all model-role combinations
+
+---
+
+### 🤖 Stage 2: Parallel LLM Generation
+
+![Stage 1](./flow-diagrams/2.png)
+
+**What Happens:**
+- All model-role pairs execute **simultaneously** (async)
+- Each generates 5-10 tests from their unique perspective
+- Real-time streaming via SSE shows thinking process
+- Tests validated and extracted from responses
+
+**SSE Events:** `llm_start` → `llm_chunk` → `llm_complete`
+
+---
+
+### 🔍 Stage 3: Intelligent Clustering
+
+![Stage 1](./flow-diagrams/3.png)
+
+**What Happens:**
+
+**Hash Method (O(n) - Fast):**
+- Generate hash from AST structure + test type
+- Instant grouping of identical tests
+
+**Vector Method (Advanced):**
+- Extract features: assertions, edge cases, patterns
+- Generate semantic embeddings
+- DBSCAN finds density-based clusters
+- Groups similar (not just identical) tests
+
+**Result:** Tests grouped by similarity
+
+---
+
+### 🧬 Stage 4: Synthesis & Deduplication
+
+![Stage 1](./flow-diagrams/4.png)
+
+**What Happens:**
+- For each cluster, analyze all candidate tests
+- Score based on quality metrics
+- Select single best representative
+- Generate synthesis reasoning explaining choice
+- Stream thinking process to frontend
+
+**Result:** High-quality, non-redundant test suite
+
+---
+
+### 📈 Stage 5: Coverage Analysis
+
+![Stage 1](./flow-diagrams/5.png)
+
+**What Happens:**
+- Execute final test suite using `coverage.py`
+- Calculate line coverage percentage
+- Identify uncovered lines and branches
+- Categorize coverage by test type
+- Stream results to frontend in real-time
+
+**SSE Events:** `coverage_start` → `coverage_complete` → `pipeline_complete`
+
+---
+
+### 🎬 Complete Pipeline Summary
+
+![Stage 1](./flow-diagrams/summary.png)
+
+**Timeline:** ~30-120 seconds depending on code complexity and number of models
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.11+
+- Node.js 18+
+- npm or yarn
+
+### Backend Setup
+
+
+# Clone repository
+```bash
+cd backend
+```
+
+# Create virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+# Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+# Configure environment
+```bash
+cp .env.example .env
+```
+# Edit .env with your LLM API keys
+
+# Run backend
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+### Frontend Setup
+
+```bash
+cd frontend
+```
+# Install dependencies
+```bash
+npm install
+```
+
+# Configure environment
+```bash
+cp src/.env.example .env.production
+```
+# Ensure VITE_API_BASE_URL=/api/v1
+
+# Development
+```bash
+npm run dev
+```
+# Production build
+```bash
+npm run build
+```
+---
+
+## 🔧 Configuration
+
+### Backend Environment Variables
+
+# LLM Provider API Keys
+```bash
+OPENAI_API_KEY=your_openai_key
+```
+
+
+# Server Configuration
+```bash
+CORS_ORIGINS=["http://localhost:3000", "https://yourdomain.com"]
+MAX_TESTS_PER_MODEL=10
+DEFAULT_CLUSTERING_METHOD=vector
+```
+
+# LLM Settings
+```bash
+LLM_TEMPERATURE=0.7
+LLM_MAX_TOKENS=4000
+```
+
+### Frontend Environment Variables
+
+# API Configuration (use relative path for production)
+```bash
+VITE_API_BASE_URL=/api/v1
+```
+
+# Optional: Request timeout
+```bash
+VITE_REQUEST_TIMEOUT=300000
+```
+
+---
+
+## 📡 API Endpoints
+
+### `GET /api/v1/health`
+Health check endpoint
+
+### `GET /api/v1/config`
+Returns available models, roles, and clustering methods
+
+### `POST /api/v1/generate-tests`
+**Initiates test generation (SSE stream)**
+
+**Request Body:**
+```json
+{
+  "function_code": "def add(a, b): return a + b",
+  "language": "python",
+  "models": ["gemini-2.0-flash", "deepseek-chat"],
+  "roles": ["qa_engineer", "agent_of_chaos"],
+  "clustering_method": "vector",
+  "max_tests_per_model": 10,
+  "run_coverage": true
+}
+```
+
+**SSE Events:**
+- `pipeline_start`
+- `llm_start`, `llm_chunk`, `llm_complete`
+- `clustering_start`, `cluster_update`, `clustering_complete`
+- `synthesis_start`, `synthesis_chunk`, `synthesis_complete`
+- `coverage_start`, `coverage_complete`
+- `pipeline_complete`
+
+---
+
+## 🎨 Frontend Architecture
+
+### State Management (Context API)
+
+javascript
+AppContext
+├── currentPhase (hero | input | generating | results)
+├── input (code, language, models, roles)
+├── generation (isGenerating, stage, progress)
+├── modelOutputs (thinking, tests per model-role)
+├── clusters (grouped tests)
+└── synthesis (deduplicated tests, coverage)
+
+### Key Hooks
+
+- `useConfig()`: Fetches backend configuration
+- `useTestGeneration()`: Orchestrates generation pipeline
+- `useSSEStream()`: Handles Server-Sent Events
+
+---
+
+## 🛡️ Security Considerations
+
+- **CORS**: Restricted to allowed origins
+- **Input Validation**: AST-based validation before LLM processing
+- **Rate Limiting**: Prevents API abuse
+- **Timeout Protection**: Requests timeout after 5 minutes
+- **SSL/TLS**: HTTPS enforced via CDN (ArvanCloud)
+
+---
+
+## 📈 Performance Optimizations
+
+- **Parallel LLM Execution**: All model-role pairs run simultaneously
+- **Streaming Responses**: SSE for real-time feedback without blocking
+- **Fast Clustering Option**: Hash-based clustering for speed
+- **Frontend Lazy Loading**: Code-split components for faster initial load
+- **Nginx Caching**: Static assets cached at edge
+
+---
+
+## 🐛 Troubleshooting
+
+### Backend won't start
+# Check logs
+```bash
+journalctl -u testcouncil-backend.service -f
+```
+
+# Verify environment
+```bash
+python -c "from app.config import settings; print(settings.dict())"
+```
+
+### Frontend API calls fail
+# Check nginx config
+```bash
+sudo nginx -t
+```
+
+# Verify API is accessible
+```bash
+curl http://localhost:8000/api/v1/health
+```
+
+# Check CORS settings in backend .env
+
+### SSE connection drops
+- Increase nginx `proxy_read_timeout` (default: 600s)
+- Check firewall isn't blocking long-lived connections
+- Verify `Connection: keep-alive` headers
+
+---
+
+## 📝 License
+
+MIT License - See LICENSE file for details
+
+---
+
+## 🤝 Contributing
+
+Contributions welcome! Please:
+1. Fork the repository
+2. Create a feature branch
+3. Add tests for new functionality
+4. Submit a pull request
+
+---
+
+## 📧 Support
+
+For issues and questions:
+- GitHub Issues: [Create an issue](https://https://github.com/sepehrvahedi/testgen-council/issues)
+- Email: sepehr.vahedi@gmail.com
+
+---
+
+**Built with ❤️ using FastAPI, React, and the power of Multi-Model AI**
