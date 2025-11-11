@@ -3,10 +3,10 @@ Configuration module for Intelligent Test Council
 Manages API keys, model configurations, and role definitions
 """
 
-import os
 from typing import Dict, Any, List
-from pydantic_settings import BaseSettings
+
 from pydantic import Field
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
@@ -39,8 +39,8 @@ class Settings(BaseSettings):
     )
 
     # Application Settings
-    MAX_CONCURRENT_LLMS: int = Field(default=7, description="Max concurrent LLM calls")
-    REQUEST_TIMEOUT: int = Field(default=300, description="Request timeout in seconds")
+    MAX_CONCURRENT_LLMS: int = Field(default=12, description="Max concurrent LLM calls")
+    REQUEST_TIMEOUT: int = Field(default=599, description="Request timeout in seconds")
 
     class Config:
         env_file = ".env"
@@ -236,10 +236,10 @@ Generate property-based tests. You may use standard pytest format or suggest hyp
 
         # Model-Role Assignment Strategy
         self.MODEL_ROLE_ASSIGNMENTS = {
-            "gemini-2.0-flash": ["qa_engineer", "abstract_thinker", "agent_of_chaos"],
-            "deepseek-chat": ["qa_engineer", "agent_of_chaos"],
-            # "qwen3-235b-a22b": ["abstract_thinker", "security_auditor"],
-            "qwen3-235b-a22b": []
+            "gemini-2.0-flash": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"],
+            "deepseek-chat": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"],
+            "qwen3-235b-a22b": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"]
+            # "qwen3-235b-a22b": []
         }
 
         # Test categories

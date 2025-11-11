@@ -2,19 +2,18 @@
 Main test generation endpoint with SSE streaming
 """
 
-from fastapi import APIRouter, HTTPException
-from fastapi.responses import StreamingResponse
-from loguru import logger
 import asyncio
 from typing import AsyncGenerator
 
-from app.models.requests import TestGenerationRequest
-from app.models.responses import TestGenerationResponse, ErrorResponse
-from app.utils.streaming import SSEStream, StreamingQueue
-from app.utils.exceptions import TestGenerationError
-from app.config import config
-from app.core.services.test_generation_service import TestGenerationService
+from fastapi import APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
+from loguru import logger
 
+from app.core.services.test_generation_service import TestGenerationService
+from app.models.requests import TestGenerationRequest
+from app.models.responses import ErrorResponse
+from app.utils.exceptions import TestGenerationError
+from app.utils.streaming import SSEStream, StreamingQueue
 
 router = APIRouter()
 

@@ -2,13 +2,13 @@
 Health check and configuration endpoints
 """
 
-from fastapi import APIRouter
 from datetime import datetime
+
+from fastapi import APIRouter
 from loguru import logger
 
-from app.models.responses import HealthResponse, ConfigResponse
 from app.config import config
-
+from app.models.responses import HealthResponse, ConfigResponse
 
 router = APIRouter()
 

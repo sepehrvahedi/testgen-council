@@ -4,11 +4,12 @@ AST-based test clustering using hybrid vector/hash approach
 
 import ast
 import hashlib
-from typing import List, Dict, Any, Optional, Tuple
-from sklearn.cluster import DBSCAN
-from sklearn.preprocessing import StandardScaler
+from typing import List, Dict, Any, Optional
+
 import numpy as np
 from loguru import logger
+from sklearn.cluster import DBSCAN
+from sklearn.preprocessing import StandardScaler
 
 from app.utils.exceptions import ClusteringError
 

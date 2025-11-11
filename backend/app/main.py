@@ -2,16 +2,16 @@
 Main FastAPI application entry point for Intelligent Test Council
 """
 
+import sys
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from contextlib import asynccontextmanager
 from loguru import logger
-import sys
 
-from app.config import settings, config
 from app.api.routes import test_generation, health
-
+from app.config import settings, config
 
 # Configure logger
 logger.remove()

@@ -3,8 +3,8 @@ Code analysis module for extracting function metadata and generating context
 """
 
 import ast
-import inspect
 from typing import Dict, Any, Optional, List
+
 from loguru import logger
 
 from app.utils.exceptions import CodeAnalysisError
