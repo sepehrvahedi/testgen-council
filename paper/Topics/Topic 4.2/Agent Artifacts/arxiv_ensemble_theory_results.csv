@@ -1,0 +1,446 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Abstract"
+"A Unified Theory of Diversity in Ensemble Learning","https://scispace.com/paper/http://arxiv.org/abs/2301.03962v3","2023","Preprint","","Danny Wood
+Tingting Mu
+Andrew Webb
+Henry Reeve
+Mikel Luján
+Gavin Brown","","http://arxiv.org/pdf/2301.03962v3","We present a theory of ensemble diversity, explaining the nature of diversity
+for a wide range of supervised learning scenarios. This challenge has been
+referred to as the holy grail of ensemble learning, an open research issue for
+over 30 years. Our framework reveals that diversity is in fact a hidden
+dimension in the bias-variance decomposition of the ensemble loss. We prove a
+family of exact bias-variance-diversity decompositions, for a wide range of
+losses in both regression and classification, e.g., squared, cross-entropy, and
+Poisson losses. For losses where an additive bias-variance decomposition is not
+available (e.g., 0/1 loss) we present an alternative approach: quantifying the
+effects of diversity, which turn out to be dependent on the label distribution.
+Overall, we argue that diversity is a measure of model fit, in precisely the
+same sense as bias and variance, but accounting for statistical dependencies
+between ensemble members. Thus, we should not be maximising diversity as so
+many works aim to do -- instead, we have a bias/variance/diversity trade-off to
+manage."
+"Weight Ensembling Improves Reasoning in Language Models","https://scispace.com/paper/http://arxiv.org/abs/2504.10478v4","2025","Preprint","","Xingyu Dang
+Christina Baek
+Kaiyue Wen
+Zico Kolter
+Aditi Raghunathan","","http://arxiv.org/pdf/2504.10478v4","We investigate a failure mode that arises during the training of reasoning
+models, where the diversity of generations begins to collapse, leading to
+suboptimal test-time scaling. Notably, the Pass@1 rate reliably improves during
+supervised finetuning (SFT), but Pass@k rapidly deteriorates. Surprisingly, a
+simple intervention of interpolating the weights of the latest SFT checkpoint
+with an early checkpoint, otherwise known as WiSE-FT, almost completely
+recovers Pass@k while also improving Pass@1. The WiSE-FT variant achieves
+better test-time scaling (Best@k, majority vote) and achieves superior results
+with less data when tuned further by reinforcement learning. Finally, we find
+that WiSE-FT provides complementary performance gains that cannot be achieved
+only through diversity-inducing decoding strategies, like temperature scaling.
+We formalize a bias-variance tradeoff of Pass@k with respect to the expectation
+and variance of Pass@1 over the test distribution. We find that WiSE-FT can
+reduce bias and variance simultaneously, while temperature scaling inherently
+trades off between bias and variance."
+"A Unified Virtual Mixture-of-Experts Framework:Enhanced Inference and
+  Hallucination Mitigation in Single-Model System","https://scispace.com/paper/http://arxiv.org/abs/2504.03739v1","2025","Preprint","","Mingyan Liu","","http://arxiv.org/pdf/2504.03739v1","Generative models, such as GPT and BERT, have significantly improved
+performance in tasks like text generation and summarization. However,
+hallucinations ""where models generate non-factual or misleading content"" are
+especially problematic in smaller-scale architectures, limiting their
+real-world applicability.In this paper, we propose a unified Virtual
+Mixture-of-Experts (MoE) fusion strategy that enhances inference performance
+and mitigates hallucinations in a single Qwen 1.5 0.5B model without increasing
+the parameter count. Our method leverages multiple domain-specific expert
+prompts (with the number of experts being adjustable) to guide the model from
+different perspectives. We apply a statistical outlier truncation strategy
+based on the mean and standard deviation to filter out abnormally high
+probability predictions, and we inject noise into the embedding space to
+promote output diversity. To clearly assess the contribution of each module, we
+adopt a fixed voting mechanism rather than a dynamic gating network, thereby
+avoiding additional confounding factors. We provide detailed theoretical
+derivations from both statistical and ensemble learning perspectives to
+demonstrate how our method reduces output variance and suppresses
+hallucinations. Extensive ablation experiments on dialogue generation tasks
+show that our approach significantly improves inference accuracy and robustness
+in small models. Additionally, we discuss methods for evaluating the
+orthogonality of virtual experts and outline the potential for future work
+involving dynamic expert weight allocation using gating networks."
+"Ensembling over Classifiers: a Bias-Variance Perspective","https://scispace.com/paper/http://arxiv.org/abs/2206.10566v1","2022","Preprint","","Neha Gupta
+Jamie Smith
+Ben Adlam
+Zelda Mariet","","http://arxiv.org/pdf/2206.10566v1","Ensembles are a straightforward, remarkably effective method for improving
+the accuracy,calibration, and robustness of models on classification tasks;
+yet, the reasons that underlie their success remain an active area of research.
+We build upon the extension to the bias-variance decomposition by Pfau (2013)
+in order to gain crucial insights into the behavior of ensembles of
+classifiers. Introducing a dual reparameterization of the bias-variance
+tradeoff, we first derive generalized laws of total expectation and variance
+for nonsymmetric losses typical of classification tasks. Comparing conditional
+and bootstrap bias/variance estimates, we then show that conditional estimates
+necessarily incur an irreducible error. Next, we show that ensembling in dual
+space reduces the variance and leaves the bias unchanged, whereas standard
+ensembling can arbitrarily affect the bias. Empirically, standard ensembling
+reducesthe bias, leading us to hypothesize that ensembles of classifiers may
+perform well in part because of this unexpected reduction.We conclude by an
+empirical analysis of recent deep learning methods that ensemble over
+hyperparameters, revealing that these techniques indeed favor bias reduction.
+This suggests that, contrary to classical wisdom, targeting bias reduction may
+be a promising direction for classifier ensembles."
+"Utilizing Ensemble Learning for Performance and Power Modeling and
+  Improvement of Parallel Cancer Deep Learning CANDLE Benchmarks","https://scispace.com/paper/http://arxiv.org/abs/2011.06654v1","2020","Preprint","","Xingfu Wu
+Valerie Taylor","","http://arxiv.org/pdf/2011.06654v1","Machine learning (ML) continues to grow in importance across nearly all
+domains and is a natural tool in modeling to learn from data. Often a tradeoff
+exists between a model's ability to minimize bias and variance. In this paper,
+we utilize ensemble learning to combine linear, nonlinear, and tree-/rule-based
+ML methods to cope with the bias-variance tradeoff and result in more accurate
+models. Hardware performance counter values are correlated with properties of
+applications that impact performance and power on the underlying system. We use
+the datasets collected for two parallel cancer deep learning CANDLE benchmarks,
+NT3 (weak scaling) and P1B2 (strong scaling), to build performance and power
+models based on hardware performance counters using single-object and
+multiple-objects ensemble learning to identify the most important counters for
+improvement. Based on the insights from these models, we improve the
+performance and energy of P1B2 and NT3 by optimizing the deep learning
+environments TensorFlow, Keras, Horovod, and Python under the huge page size of
+8 MB on the Cray XC40 Theta at Argonne National Laboratory. Experimental
+results show that ensemble learning not only produces more accurate models but
+also provides more robust performance counter ranking. We achieve up to 61.15%
+performance improvement and up to 62.58% energy saving for P1B2 and up to
+55.81% performance improvement and up to 52.60% energy saving for NT3 on up to
+24,576 cores."
+"Optimal Expert Selection for Distributed Mixture-of-Experts at the
+  Wireless Edge","https://scispace.com/paper/http://arxiv.org/abs/2503.13421v1","2025","Preprint","","Shengling Qin
+Hai Wu
+Hongyang Du
+Kaibin Huang","","http://arxiv.org/pdf/2503.13421v1","The emergence of distributed Mixture-of-Experts (DMoE) systems, which deploy
+expert models at edge nodes, offers a pathway to achieving connected
+intelligence in sixth-generation (6G) mobile networks and edge artificial
+intelligence (AI). However, current DMoE systems lack an effective expert
+selection algorithm to address the simultaneous task-expert relevance and
+channel diversity inherent in these systems. Traditional AI or communication
+systems focus on either performance or channel conditions, and direct
+application of these methods leads to high communication overhead or low
+performance. To address this, we propose the DMoE protocol to schedule the
+expert inference and inter-expert transmission. This protocol identifies expert
+selection and subcarrier allocation as key optimization problems. We formulate
+an expert selection problem by incorporating both AI performance and channel
+conditions, and further extend it to a Joint Expert and Subcarrier Allocation
+(JESA) problem for comprehensive AI and channel management within the DMoE
+framework. For the NP-hard expert selection problem, we introduce the Dynamic
+Expert Selection (DES) algorithm, which leverages a linear relaxation as a
+bounding criterion to significantly reduce search complexity. For the JESA
+problem, we discover a unique structural property that ensures asymptotic
+optimality in most scenarios. We propose an iterative algorithm that addresses
+subcarrier allocation as a subproblem and integrates it with the DES algorithm.
+The proposed framework effectively manages the tradeoff between task relevance
+and channel conditions through a tunable importance factor, enabling flexible
+adaptation to diverse scenarios. Numerical experiments validate the dual
+benefits of the proposed expert selection algorithm: high performance and
+significantly reduced cost."
+"Evolving Ensemble Fuzzy Classifier","https://scispace.com/paper/http://arxiv.org/abs/1705.06460v2","2017","Preprint","","Mahardhika Pratama
+Witold Pedrycz
+Edwin Lughofer","10.1109/TFUZZ.2018.2796099","http://arxiv.org/pdf/1705.06460v2","The concept of ensemble learning offers a promising avenue in learning from
+data streams under complex environments because it addresses the bias and
+variance dilemma better than its single model counterpart and features a
+reconfigurable structure, which is well suited to the given context. While
+various extensions of ensemble learning for mining non-stationary data streams
+can be found in the literature, most of them are crafted under a static base
+classifier and revisits preceding samples in the sliding window for a
+retraining step. This feature causes computationally prohibitive complexity and
+is not flexible enough to cope with rapidly changing environments. Their
+complexities are often demanding because it involves a large collection of
+offline classifiers due to the absence of structural complexities reduction
+mechanisms and lack of an online feature selection mechanism. A novel evolving
+ensemble classifier, namely Parsimonious Ensemble pENsemble, is proposed in
+this paper. pENsemble differs from existing architectures in the fact that it
+is built upon an evolving classifier from data streams, termed Parsimonious
+Classifier pClass. pENsemble is equipped by an ensemble pruning mechanism,
+which estimates a localized generalization error of a base classifier. A
+dynamic online feature selection scenario is integrated into the pENsemble.
+This method allows for dynamic selection and deselection of input features on
+the fly. pENsemble adopts a dynamic ensemble structure to output a final
+classification decision where it features a novel drift detection scenario to
+grow the ensemble structure. The efficacy of the pENsemble has been numerically
+demonstrated through rigorous numerical studies with dynamic and evolving data
+streams where it delivers the most encouraging performance in attaining a
+tradeoff between accuracy and complexity."
+"A Design Framework for operationalizing Trustworthy Artificial
+  Intelligence in Healthcare: Requirements, Tradeoffs and Challenges for its
+  Clinical Adoption","https://scispace.com/paper/http://arxiv.org/abs/2504.19179v1","2025","Preprint","","Pedro A. Moreno-Sánchez
+Javier Del Ser
+Mark van Gils
+Jussi Hernesniemi","10.1016/j.inffus.2025.103812","http://arxiv.org/pdf/2504.19179v1","Artificial Intelligence (AI) holds great promise for transforming healthcare,
+particularly in disease diagnosis, prognosis, and patient care. The increasing
+availability of digital medical data, such as images, omics, biosignals, and
+electronic health records, combined with advances in computing, has enabled AI
+models to approach expert-level performance. However, widespread clinical
+adoption remains limited, primarily due to challenges beyond technical
+performance, including ethical concerns, regulatory barriers, and lack of
+trust. To address these issues, AI systems must align with the principles of
+Trustworthy AI (TAI), which emphasize human agency and oversight, algorithmic
+robustness, privacy and data governance, transparency, bias and discrimination
+avoidance, and accountability. Yet, the complexity of healthcare processes
+(e.g., screening, diagnosis, prognosis, and treatment) and the diversity of
+stakeholders (clinicians, patients, providers, regulators) complicate the
+integration of TAI principles. To bridge the gap between TAI theory and
+practical implementation, this paper proposes a design framework to support
+developers in embedding TAI principles into medical AI systems. Thus, for each
+stakeholder identified across various healthcare processes, we propose a
+disease-agnostic collection of requirements that medical AI systems should
+incorporate to adhere to the principles of TAI. Additionally, we examine the
+challenges and tradeoffs that may arise when applying these principles in
+practice. To ground the discussion, we focus on cardiovascular diseases, a
+field marked by both high prevalence and active AI innovation, and demonstrate
+how TAI principles have been applied and where key obstacles persist."
+"RouterKT: Mixture-of-Experts for Knowledge Tracing","https://scispace.com/paper/http://arxiv.org/abs/2504.08989v3","2025","Preprint","","Han Liao
+Shuaishuai Zu","","http://arxiv.org/pdf/2504.08989v3","Knowledge Tracing (KT) is a fundamental task in Intelligent Tutoring Systems
+(ITS), which aims to model the dynamic knowledge states of students based on
+their interaction histories. However, existing KT models often rely on a global
+forgetting decay mechanism for capturing learning patterns, assuming that
+students' performance is predominantly influenced by their most recent
+interactions. Such approaches fail to account for the diverse and complex
+learning patterns arising from individual differences and varying learning
+stages. To address this limitation, we propose RouterKT, a novel
+Mixture-of-Experts (MoE) architecture designed to capture heterogeneous
+learning patterns by enabling experts to specialize in different patterns
+without any handcrafted learning pattern bias such as forgetting decay.
+Specifically, RouterKT introduces a \textbf{person-wise routing mechanism} to
+effectively model individual-specific learning behaviors and employs
+\textbf{multi-heads as experts} to enhance the modeling of complex and diverse
+patterns. Comprehensive experiments on ten benchmark datasets demonstrate that
+RouterKT exhibits significant flexibility and improves the performance of
+various KT backbone models, with a maximum average AUC improvement of 3.29\%
+across different backbones and datasets, outperforming other state-of-the-art
+models. Moreover, RouterKT demonstrates consistently superior inference
+efficiency compared to existing approaches based on handcrafted learning
+pattern bias, highlighting its usability for real-world educational
+applications. The source code is available at
+https://github.com/ringotc/RouterKT.git."
+"Multi-Head Mixture-of-Experts","https://scispace.com/paper/http://arxiv.org/abs/2404.15045v1","2024","Preprint","","Xun Wu
+Shaohan Huang
+Wenhui Wang
+Furu Wei","","http://arxiv.org/pdf/2404.15045v1","Sparse Mixtures of Experts (SMoE) scales model capacity without significant
+increases in training and inference costs, but exhibits the following two
+issues: (1) Low expert activation, where only a small subset of experts are
+activated for optimization. (2) Lacking fine-grained analytical capabilities
+for multiple semantic concepts within individual tokens. We propose Multi-Head
+Mixture-of-Experts (MH-MoE), which employs a multi-head mechanism to split each
+token into multiple sub-tokens. These sub-tokens are then assigned to and
+processed by a diverse set of experts in parallel, and seamlessly reintegrated
+into the original token form. The multi-head mechanism enables the model to
+collectively attend to information from various representation spaces within
+different experts, while significantly enhances expert activation, thus deepens
+context understanding and alleviate overfitting. Moreover, our MH-MoE is
+straightforward to implement and decouples from other SMoE optimization
+methods, making it easy to integrate with other SMoE models for enhanced
+performance. Extensive experimental results across three tasks: English-focused
+language modeling, Multi-lingual language modeling and Masked multi-modality
+modeling tasks, demonstrate the effectiveness of MH-MoE."
+"A Mixture of Experts Gating Network for Enhanced Surrogate Modeling in
+  External Aerodynamics","https://scispace.com/paper/http://arxiv.org/abs/2508.21249v1","2025","Preprint","","Mohammad Amin Nabian
+Sanjay Choudhry","","http://arxiv.org/pdf/2508.21249v1","The computational cost associated with high-fidelity CFD simulations remains
+a significant bottleneck in the automotive design and optimization cycle. While
+ML-based surrogate models have emerged as a promising alternative to accelerate
+aerodynamic predictions, the field is characterized by a diverse and rapidly
+evolving landscape of specialized neural network architectures, with no single
+model demonstrating universal superiority. This paper introduces a novel
+meta-learning framework that leverages this architectural diversity as a
+strength. We propose a Mixture of Experts (MoE) model that employs a dedicated
+gating network to dynamically and optimally combine the predictions from three
+heterogeneous, state-of-the-art surrogate models: DoMINO, a decomposable
+multi-scale neural operator; X-MeshGraphNet, a scalable multi-scale graph
+neural network; and FigConvNet, a factorized implicit global convolution
+network. The gating network learns a spatially-variant weighting strategy,
+assigning credibility to each expert based on its localized performance in
+predicting surface pressure and wall shear stress fields. To prevent model
+collapse and encourage balanced expert contributions, we integrate an entropy
+regularization term into the training loss function. The entire system is
+trained and validated on the DrivAerML dataset, a large-scale, public benchmark
+of high-fidelity CFD simulations for automotive aerodynamics. Quantitative
+results demonstrate that the MoE model achieves a significant reduction in L-2
+prediction error, outperforming not only the ensemble average but also the most
+accurate individual expert model across all evaluated physical quantities. This
+work establishes the MoE framework as a powerful and effective strategy for
+creating more robust and accurate composite surrogate models by synergistically
+combining the complementary strengths of specialized architectures."
+"Diverse Weight Averaging for Out-of-Distribution Generalization","https://scispace.com/paper/http://arxiv.org/abs/2205.09739v2","2022","Preprint","","Alexandre Ramé
+Matthieu Kirchmeyer
+Thibaud Rahier
+Alain Rakotomamonjy
+Patrick Gallinari
+Matthieu Cord","","http://arxiv.org/pdf/2205.09739v2","Standard neural networks struggle to generalize under distribution shifts in
+computer vision. Fortunately, combining multiple networks can consistently
+improve out-of-distribution generalization. In particular, weight averaging
+(WA) strategies were shown to perform best on the competitive DomainBed
+benchmark; they directly average the weights of multiple networks despite their
+nonlinearities. In this paper, we propose Diverse Weight Averaging (DiWA), a
+new WA strategy whose main motivation is to increase the functional diversity
+across averaged models. To this end, DiWA averages weights obtained from
+several independent training runs: indeed, models obtained from different runs
+are more diverse than those collected along a single run thanks to differences
+in hyperparameters and training procedures. We motivate the need for diversity
+by a new bias-variance-covariance-locality decomposition of the expected error,
+exploiting similarities between WA and standard functional ensembling.
+Moreover, this decomposition highlights that WA succeeds when the variance term
+dominates, which we show occurs when the marginal distribution changes at test
+time. Experimentally, DiWA consistently improves the state of the art on
+DomainBed without inference overhead."
+"It's an Alignment, Not a Trade-off: Revisiting Bias and Variance in Deep
+  Models","https://scispace.com/paper/http://arxiv.org/abs/2310.09250v1","2023","Preprint","","Lin Chen
+Michal Lukasik
+Wittawat Jitkrittum
+Chong You
+Sanjiv Kumar","","http://arxiv.org/pdf/2310.09250v1","Classical wisdom in machine learning holds that the generalization error can
+be decomposed into bias and variance, and these two terms exhibit a
+\emph{trade-off}. However, in this paper, we show that for an ensemble of deep
+learning based classification models, bias and variance are \emph{aligned} at a
+sample level, where squared bias is approximately \emph{equal} to variance for
+correctly classified sample points. We present empirical evidence confirming
+this phenomenon in a variety of deep learning models and datasets. Moreover, we
+study this phenomenon from two theoretical perspectives: calibration and neural
+collapse. We first show theoretically that under the assumption that the models
+are well calibrated, we can observe the bias-variance alignment. Second,
+starting from the picture provided by the neural collapse theory, we show an
+approximate correlation between bias and variance."
+"Nested Mixture of Experts: Cooperative and Competitive Learning of
+  Hybrid Dynamical System","https://scispace.com/paper/http://arxiv.org/abs/2011.10605v2","2020","Preprint","","Junhyeok Ahn
+Luis Sentis","","http://arxiv.org/pdf/2011.10605v2","Model-based reinforcement learning (MBRL) algorithms can attain significant
+sample efficiency but require an appropriate network structure to represent
+system dynamics. Current approaches include white-box modeling using analytic
+parameterizations and black-box modeling using deep neural networks. However,
+both can suffer from a bias-variance trade-off in the learning process, and
+neither provides a structured method for injecting domain knowledge into the
+network. As an alternative, gray-box modeling leverages prior knowledge in
+neural network training but only for simple systems. In this paper, we devise a
+nested mixture of experts (NMOE) for representing and learning hybrid dynamical
+systems. An NMOE combines both white-box and black-box models while optimizing
+bias-variance trade-off. Moreover, an NMOE provides a structured method for
+incorporating various types of prior knowledge by training the associative
+experts cooperatively or competitively. The prior knowledge includes
+information on robots' physical contacts with the environments as well as their
+kinematic and dynamic properties. In this paper, we demonstrate how to
+incorporate prior knowledge into our NMOE in various continuous control
+domains, including hybrid dynamical systems. We also show the effectiveness of
+our method in terms of data-efficiency, generalization to unseen data, and
+bias-variance trade-off. Finally, we evaluate our NMOE using an MBRL setup,
+where the model is integrated with a model-based controller and trained online."
+"MoGU: Mixture-of-Gaussians with Uncertainty-based Gating for Time Series
+  Forecasting","https://scispace.com/paper/http://arxiv.org/abs/2510.07459v1","2025","Preprint","","Yoli Shavit
+Jacob Goldberger","","http://arxiv.org/pdf/2510.07459v1","We introduce Mixture-of-Gaussians with Uncertainty-based Gating (MoGU), a
+novel Mixture-of-Experts (MoE) framework designed for regression tasks and
+applied to time series forecasting. Unlike conventional MoEs that provide only
+point estimates, MoGU models each expert's output as a Gaussian distribution.
+This allows it to directly quantify both the forecast (the mean) and its
+inherent uncertainty (variance). MoGU's core innovation is its
+uncertainty-based gating mechanism, which replaces the traditional input-based
+gating network by using each expert's estimated variance to determine its
+contribution to the final prediction. Evaluated across diverse time series
+forecasting benchmarks, MoGU consistently outperforms single-expert models and
+traditional MoE setups. It also provides well-quantified, informative
+uncertainties that directly correlate with prediction errors, enhancing
+forecast reliability. Our code is available from:
+https://github.com/yolish/moe_unc_tsf"
+"Getting MoRE out of Mixture of Language Model Reasoning Experts","https://scispace.com/paper/http://arxiv.org/abs/2305.14628v2","2023","Preprint","","Chenglei Si
+Weijia Shi
+Chen Zhao
+Luke Zettlemoyer
+Jordan Boyd-Graber","","http://arxiv.org/pdf/2305.14628v2","While recent large language models (LLMs) improve on various question
+answering (QA) datasets, it remains difficult for a single model to generalize
+across question types that require distinct reasoning abilities. We provide
+empirical evidence that state-of-the-art LLMs suffer from poor generalizability
+on reasoning types beyond those seen in the prompt. To remedy this, we propose
+a Mixture-of-Reasoning-Experts (MoRE) framework that ensembles diverse
+specialized language models. We specialize the backbone language model with
+prompts optimized for different reasoning categories, including factual,
+multihop, mathematical, and commonsense reasoning. Our key insight is to
+leverage agreement among the specialized experts to select the best answer for
+each question, or to abstain from answering. This gives MoRE higher accuracy
+than any single specialized model on a collection of 12 QA datasets from four
+reasoning types. Beyond generalizability, the interpretable design of MoRE
+improves selective question answering results compared to baselines without
+incorporating inter-expert agreement. This framework is also more interpretable
+and useful to human consumers of QA outputs. Our human study confirms that
+presenting expert predictions and the answer selection process helps annotators
+more accurately calibrate when to trust the system's output. We release all
+code and data to facilitate future work."
+"More Is Better: A MoE-Based Emotion Recognition Framework with Human
+  Preference Alignment","https://scispace.com/paper/http://arxiv.org/abs/2508.06036v1","2025","Preprint","","Jun Xie
+Yingjian Zhu
+Feng Chen
+Zhenghao Zhang
+Xiaohui Fan
+Hongzhu Yi
+Xinming Wang
+Chen Yu
+Yue Bi
+Zhaoran Zhao
+Xiongjun Guan
+Zhepeng Wang","10.1145/3746270.3760215","http://arxiv.org/pdf/2508.06036v1","In this paper, we present our solution for the semi-supervised learning track
+(MER-SEMI) in MER2025. We propose a comprehensive framework, grounded in the
+principle that ""more is better,"" to construct a robust Mixture of Experts (MoE)
+emotion recognition system. Our approach integrates a diverse range of input
+modalities as independent experts, including novel signals such as knowledge
+from large Vision-Language Models (VLMs) and temporal Action Unit (AU)
+information. To effectively utilize unlabeled data, we introduce a
+consensus-based pseudo-labeling strategy, generating high-quality labels from
+the agreement between a baseline model and Gemini, which are then used in a
+two-stage training paradigm. Finally, we employ a multi-expert voting ensemble
+combined with a rule-based re-ranking process to correct prediction bias and
+better align the outputs with human preferences. Evaluated on the MER2025-SEMI
+challenge dataset, our method achieves an F1-score of 0.8772 on the test set,
+ranking 2nd in the track. Our code is available at
+https://github.com/zhuyjan/MER2025-MRAC25."
+"Speed-vs-Accuracy Tradeoff in Collective Estimation: An Adaptive
+  Exploration-Exploitation Case","https://scispace.com/paper/http://arxiv.org/abs/2201.07123v1","2022","Preprint","","Mohsen Raoufi
+Heiko Hamann
+Pawel Romanczuk","10.1109/MRS50823.2021.9620695","http://arxiv.org/pdf/2201.07123v1","The tradeoff between accuracy and speed is considered fundamental to
+individual and collective decision-making. In this paper, we focus on
+collective estimation as an example of collective decision-making. The task is
+to estimate the average scalar intensity of a desired feature in the
+environment. The solution we propose consists of exploration and exploitation
+phases, where the switching time is a factor dictating the balance between the
+two phases. By decomposing the total accuracy into bias and variance, we
+explain that diversity and social interactions could promote the accuracy of
+the collective decision. We also show how the exploration-vs-exploitation
+tradeoff relates to the speed-vs-accuracy tradeoff. One significant finding of
+our work is that there is an optimal duration for exploration to compromise
+between speed and accuracy. This duration cannot be determined offline for an
+unknown environment. Hence, we propose an adaptive, distributed mechanism
+enabling individual agents to decide in a decentralized manner when to switch.
+Moreover, the spatial consequence of the exploitation phase is an emergent
+collective movement, leading to the aggregation of the collective at the
+iso-contours of the mean intensity of the environmental field in the spatial
+domain. Examples of potential applications for such a fully distributed
+collective estimation model are spillage capturing and source localization."
+"Offline Reinforcement Learning for Mixture-of-Expert Dialogue Management","https://scispace.com/paper/http://arxiv.org/abs/2302.10850v2","2023","Preprint","","Dhawal Gupta
+Yinlam Chow
+Aza Tulepbergenov
+Mohammad Ghavamzadeh
+Craig Boutilier","","http://arxiv.org/pdf/2302.10850v2","Reinforcement learning (RL) has shown great promise for developing dialogue
+management (DM) agents that are non-myopic, conduct rich conversations, and
+maximize overall user satisfaction. Despite recent developments in RL and
+language models (LMs), using RL to power conversational chatbots remains
+challenging, in part because RL requires online exploration to learn
+effectively, whereas collecting novel human-bot interactions can be expensive
+and unsafe. This issue is exacerbated by the combinatorial action spaces facing
+these algorithms, as most LM agents generate responses at the word level. We
+develop a variety of RL algorithms, specialized to dialogue planning, that
+leverage recent Mixture-of-Expert Language Models (MoE-LMs) -- models that
+capture diverse semantics, generate utterances reflecting different intents,
+and are amenable for multi-turn DM. By exploiting MoE-LM structure, our methods
+significantly reduce the size of the action space and improve the efficacy of
+RL-based DM. We evaluate our methods in open-domain dialogue to demonstrate
+their effectiveness w.r.t.\ the diversity of intent in generated utterances and
+overall DM performance."
+"Understanding the bias-variance tradeoff of Bregman divergences","https://scispace.com/paper/http://arxiv.org/abs/2202.04167v2","2022","Preprint","","Ben Adlam
+Neha Gupta
+Zelda Mariet
+Jamie Smith","","http://arxiv.org/pdf/2202.04167v2","This paper builds upon the work of Pfau (2013), which generalized the bias
+variance tradeoff to any Bregman divergence loss function. Pfau (2013) showed
+that for Bregman divergences, the bias and variances are defined with respect
+to a central label, defined as the mean of the label variable, and a central
+prediction, of a more complex form. We show that, similarly to the label, the
+central prediction can be interpreted as the mean of a random variable, where
+the mean operates in a dual space defined by the loss function itself. Viewing
+the bias-variance tradeoff through operations taken in dual space, we
+subsequently derive several results of interest. In particular, (a) the
+variance terms satisfy a generalized law of total variance; (b) if a source of
+randomness cannot be controlled, its contribution to the bias and variance has
+a closed form; (c) there exist natural ensembling operations in the label and
+prediction spaces which reduce the variance and do not affect the bias."

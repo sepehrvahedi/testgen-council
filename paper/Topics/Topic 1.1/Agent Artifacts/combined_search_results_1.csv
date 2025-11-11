@@ -1,0 +1,328 @@
+Paper Title,Relevance
+ChatUniTest: A Framework for LLM-Based Test Generation,"- **Relevance Score:** 92/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Provides an LLM-driven test generation framework with adaptive prompting, thorough evaluation, open-source code, and real-world case studies, but lacks multi-model analysis."
+An empirical evaluation of using large language models for automated unit test generation,"- **Relevance Score:** 85/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses GPT‑3.5 (and others) to generate JavaScript unit tests via detailed prompts; evaluates coverage vs baselines; compares multiple LLMs, showing single‑model focus with cross‑model analysis."
+"An Empirical Evaluation of Using Large Language Models for Automated
+  Unit Test Generation","- **Relevance Score:** 85/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses GPT‑3.5 to generate JavaScript unit tests, employs few‑shot and re‑prompting, reports coverage metrics versus baselines, compares three LLMs but no ensemble."
+An initial investigation of ChatGPT unit test generation capability,"- **Relevance Score:** 83/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT to generate Java unit tests and evaluates them with coverage and mutation scores, but provides limited prompting detail and no multi‑model analysis; lacks open‑source code and real‑world case studies."
+CoverUp: Effective High Coverage Test Generation for Python,"- **Relevance Score:** 83/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses LLM‑driven iterative prompting to generate high‑coverage Python tests; achieves 80‑89% line/branch coverage; benchmarks against CodaMosa and MuTAP; evaluates on open‑source projects."
+Aster: Natural and multi-language unit test generation with llms,"- **Relevance Score:** 82/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses LLMs to generate multi‑language unit tests, designs prompting techniques, reports coverage and fault‑detection metrics, primarily a single‑model approach, mentions related tools but lacks open source, real‑world case studies, and dedicated limitation discussion."
+Adaptive Test Generation Using a Large Language Model,"- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses Codex to generate tests with detailed prompts and adaptive re‑prompting; reports coverage and assertion metrics; focuses on a single LLM without multi‑model comparison."
+ChatUniTest: a ChatGPT-based automated unit test generation tool,"- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT to generate unit tests, designs prompting techniques, reports coverage and fault‑detection results, but focuses on a single model without extensive multi‑model comparison."
+"TestART: Improving LLM-based Unit Test via Co-evolution of Automated
+  Generation and Repair Iteration","- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses LLMs with prompt injection and repair loops; reports coverage and pass rates versus baselines; mentions multiple LLM versions but no ensemble design."
+Unit test generation using generative AI: A comparative performance analysis of autogeneration tools,"- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT to generate Python unit tests, evaluates prompt engineering for coverage gains, reports quantitative coverage and correctness, and suggests combining with Pynguin, though multi‑LLM methods aren’t explored."
+ChatUniTest: a ChatGPT-based automated unit test generation tool,"- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT to generate unit tests, designs prompting techniques, reports coverage and fault‑detection results, but focuses on a single model without extensive multi‑model comparison."
+No more manual tests? evaluating and improving chatgpt for unit test generation,"- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT as the core generator (ChatTESTER); evaluates coverage, readability, and correctness; mentions iterative prompting but lacks detailed prompting methodology; focuses on a single LLM without multi‑model comparison."
+AgentTester: An LLM-Based Tool for Unit Test Generation with Automatically Generated Prompts,"- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses an LLM as the core engine for unit test generation, designs automatically generated prompts to steer test creation, evaluates coverage and fault detection, but focuses on a single model without extensive multi‑model comparison."
+An initial investigation of ChatGPT unit test generation capability,"- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses OpenAI LLM to auto‑generate Java unit tests and reports line coverage, mutation score, and execution success. Varies API parameters but lacks detailed prompting methods. Employs a single LLM without multi‑model comparison."
+"TestWeaver: Execution-aware, Feedback-driven Regression Testing Generation with Large Language Models","- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses LLM with execution‑aware prompts to generate regression tests, provides coverage and fault‑detection metrics, but does not discuss single vs multi‑model setups."
+Evaluating and improving chatgpt for unit test generation,"- **Relevance Score:** 80/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT to build ChatTester, a dedicated test generation system; provides extensive quantitative evaluation (coverage, compilation, readability) showing effectiveness. Explores prompting via iterative refinement and tests multiple LLMs, lacking deep multi‑model ensemble analysis."
+"System Test Case Design from Requirements Specifications: Insights and
+  Challenges of Using ChatGPT","- **Relevance Score:** 77/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT to generate system test cases from SRS, refines prompts, evaluates redundancy and false positives, discusses limitations; lacks multi‑model comparison and open‑source release."
+ChatUniTest: a ChatGPT-based automated unit test generation tool,"- **Relevance Score:** 75/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT to generate unit tests, designs adaptive prompts, reports coverage metrics versus EvoSuite and other LLM tools, but lacks detailed prompting methods and multi‑model analysis."
+"No More Manual Tests? Evaluating and Improving ChatGPT for Unit Test
+  Generation","- **Relevance Score:** 75/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT as the central engine for automatic unit test creation, designs prompting techniques to guide test synthesis, and reports coverage and fault‑detection metrics; does not explore multi‑model ensembles."
+Automatic Generation of Test Cases based on Bug Reports: a Feasibility Study with Large Language Models,"- **Relevance Score:** 75/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT and fine‑tuned CodeGPT to translate bug reports into Java tests; discusses basic prompt design but lacks detailed prompting methods; reports executability and statistical metrics for generated tests; mentions both ChatGPT and CodeGPT but does not explicitly compare single‑ vs multi‑model architectures."
+Automated Unit Test Generation for the Google Test Framework Using Large Language Models: An Industrial Case Study,"- **Relevance Score:** 75/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses an LLM to automatically generate Google Test unit tests and evaluates them on an industrial codebase, reporting coverage and fault detection. Mentions prompts but lacks detailed strategy. Focuses on a single LLM without explicit multi‑model comparison."
+"Improving the Readability of Automatically Generated Tests using Large
+  Language Models","- **Relevance Score:** 75/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses LLMs (ChatGPT, Codex, StarCoder) to generate Java unit tests and measures readability; reports coverage and bug detection metrics; mentions intention prompts but lacks detailed prompting methodology; evaluates multiple models without a focused single‑vs‑multi model comparison."
+Generate High-Coverage Unit Test Data Using the LLM Tool,"- **Relevance Score:** 75/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses ChatGPT to generate and iteratively refine unit tests and data, achieving higher coverage; includes coverage‑driven feedback loop and reports coverage gains, but lacks detailed prompting strategies and multi‑model analysis."
+Using GitHub Copilot for Test Generation in Python: An Empirical Study,"- **Relevance Score:** 72/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses GitHub Copilot to generate Python tests, evaluates comment‑based prompts, reports quantitative results, but lacks multi‑model analysis and open‑source release."
+Chat-like Asserts Prediction with the Support of Large Language Model,"- **Relevance Score:** 70/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLM-driven assert generation with chain‑of‑thought prompts, reports accuracy metrics, but does not address multi‑model configurations."
+CoverUp: Coverage-Guided LLM-Based Test Generation,"- **Relevance Score:** 70/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLM-driven, coverage‑guided test generation achieving 81% line coverage; provides quantitative evaluation versus CodaMosa; lacks detailed prompting methods and does not address single vs multi‑model setups."
+An Empirical Study of Unit Test Generation with Large Language Models,"- **Relevance Score:** 70/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses open-source LLMs to generate unit tests, explores prompting designs, provides coverage and fault‑detection metrics, but focuses on single‑model setups without explicit multi‑model comparison."
+Adaptive Test Generation Using a Large Language Model,"- **Relevance Score:** 65/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLM-driven test generation with empirical coverage results; mentions prompts but lacks detailed prompting methods; does not explore multi‑model setups."
+An Empirical Study of Unit Test Generation with Large Language Models,"- **Relevance Score:** 65/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Empirical study evaluates LLM-generated unit tests, detailed prompting experiments, quantitative coverage metrics, compares several LLMs but lacks a novel system or ensemble design."
+Automatic Generation of Test Cases based on Bug Reports: a Feasibility Study with Large Language Models,"- **Relevance Score:** 65/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses CodeGPT and ChatGPT to translate bug reports into Java tests; discusses basic prompt design but lacks detailed prompting methods; evaluates test executability and statistical significance; does not explore single vs multi‑model architectures."
+ChatUniTest: A Framework for LLM-Based Test Generation,"- **Relevance Score:** 65/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses an LLM‑driven framework to generate unit tests, introduces adaptive context prompting, reports coverage improvements over baselines, but does not discuss single vs multi‑model setups."
+Chatunitest: A framework for llm-based test generation,"- **Relevance Score:** 65/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLM to generate unit tests with adaptive context and repair loop; discusses prompt design but without detailed prompting techniques; reports coverage metrics outperforming baselines; does not address single vs multi‑model architecture."
+CAT-LM: Training Language Models on Aligned Code And Tests,"- **Relevance Score:** 65/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses a pretrained LLM (CAT-LM) to generate Java/Python tests and reports coverage metrics versus baselines; does not explore prompting techniques; focuses on a single-model setup without detailed multi‑model analysis."
+On the Evaluation of Large Language Models in Unit Test Generation,"- **Relevance Score:** 65/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Provides thorough empirical study of open‑source LLMs for unit test generation and detailed prompt analysis, but lacks a novel generation system and does not explore multi‑model ensembles."
+Multi-language Unit Test Generation using LLMs,"- **Relevance Score:** 60/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLMs to generate multi-language unit tests, includes basic prompting experiments and example test outputs, provides limited quantitative/qualitative evaluation, but does not discuss single vs multi‑model architectures."
+Multi-language Unit Test Generation using LLMs,"- **Relevance Score:** 60/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLMs to generate multi-language unit tests, includes basic prompting experiments and example test outputs, provides limited quantitative evaluation, but does not discuss model ensembles or specific tool integrations."
+Generative AI for Test Driven Development: Preliminary Results,"- **Relevance Score:** 60/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses ChatGPT to automate TDD, implements prompting variants, runs developer experiment, but lacks detailed prompting methods, quantitative metrics, and multi‑model discussion."
+LLM-based Unit Test Generation for Dynamically-Typed Programs,"- **Relevance Score:** 58/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLM within CodaMosa to generate unit tests, evaluates coverage, but lacks prompting details, multi‑model discussion, and open‑source or extensive case studies."
+LLM-based Unit Test Generation via Property Retrieval,"- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLM with property retrieval to generate unit tests; evaluates on 12 projects with correctness and maintainability metrics; lacks prompting methodology and model‑architecture discussion."
+"Test Wars: A Comparative Study of SBST, Symbolic Execution, and
+  LLM-Based Approaches to Unit Test Generation","- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses multiple LLMs (ChatGPT‑4o, others) to generate unit tests and reports coverage/compilation metrics, but lacks detailed prompting methods and does not explore ensemble architectures."
+"Unit test generation with GitHub Copilot, A Case Study","- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses GitHub Copilot to generate unit tests and evaluates coverage and fault detection; does not detail prompting techniques; focuses on a single LLM without multi‑model comparison."
+A system for automated unit test generation using large language models and assessment of generated test suites,"- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLMs to automatically generate class‑level Java test suites; provides a new dataset and quantitative assessment of test quality, but lacks prompting methodology details and discussion of single‑ vs multi‑model architectures."
+A large-scale empirical study on fine-tuning large language models for unit testing,"- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Provides large‑scale fine‑tuning study with extensive metrics; includes prompt engineering comparison but lacks a dedicated generation system or multi‑model design."
+CasModaTest: A cascaded and model-agnostic self-directed framework for unit test generation,"- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLMs end‑to‑end for test prefix and oracle generation; reports extensive accuracy and coverage metrics; cascade may involve multiple models, but no prompting details."
+"Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of
+  Large Language Models for Code Generation","- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLMs to auto‑generate extensive test suites for code synthesis benchmarks; evaluates their fault‑detection power quantitatively, but lacks prompting design and model‑architecture analysis."
+LLM-enhanced evolutionary test generation for untyped languages,"- **Relevance Score:** 52/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLM (Deepseek‑Coder‑V2) to drive evolutionary test generation; lacks detailed prompting methods; provides limited quantitative evaluation; mentions single‑model choice without extensive comparison; references CODAMOSA tool."
+A Tool for Test Case Scenarios Generation Using Large Language Models,"- **Relevance Score:** 50/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLM agent and prompt engineering to auto‑generate test case scenarios, but lacks detailed prompting methods, empirical metrics, multi‑model analysis, and tool or open‑source references."
+Exploring the Capability of ChatGPT in Test Generation,"- **Relevance Score:** 50/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses ChatGPT to generate tests, providing experimental comparison to manual testing; lacks detailed prompting methodology and multi‑model analysis."
+Examination of Code generated by Large Language Models,"- **Relevance Score:** 50/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Provides thorough quantitative evaluation of LLM‑generated unit tests (coverage, correctness). Uses ChatGPT and Copilot but offers no novel prompting methods or combined‑model architecture."
+"Harnessing the Power of LLMs: Automating Unit Test Generation for
+  High-Performance Computing","- **Relevance Score:** 50/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses LLMs (Davinci, ChatGPT) to automatically generate unit tests for HPC C++ code and reports mostly correct tests, but provides no detailed prompting methods or multi‑model analysis."
+Impact of Code Context and Prompting Strategies on Automated Unit Test Generation with Modern General-Purpose Large Language Models,"- **Relevance Score:** 50/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Empirical study of LLM test generation with detailed prompting analysis and quantitative metrics; lacks novel system and multi‑model comparison."
+"Test Wars: A Comparative Study of SBST, Symbolic Execution, and
+  LLM-Based Approaches to Unit Test Generation","- **Relevance Score:** 45/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Compares several LLMs for unit test generation and reports coverage/compilation metrics, but lacks novel prompting methods and does not explore model ensembles."
+Adaptive Test Generation Using a Large Language Model,"- **Relevance Score:** 45/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses LLMs (e.g., Codex) to generate unit tests and evaluates coverage/fault detection; lacks detailed prompting methods and does not discuss single vs multi‑model setups."
+"The Potential of LLMs in Automating Software Testing: From Generation to
+  Reporting","- **Relevance Score:** 45/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses multiple LLMs (GPT‑3.5, GPT‑4, CodeLlama, Llama2) to generate and execute test cases via a multi‑agent architecture; lacks detailed prompting methods and quantitative evaluation of generated tests."
+On the evaluation of large language models in unit test generation,"- **Relevance Score:** 40/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Evaluates LLM‑generated unit tests with coverage and fault‑detection metrics; does not introduce a new LLM‑based generation system, lacks prompting methodology details, and does not discuss single vs multi‑model architectures."
+"Design choices made by LLM-based test generators prevent them from
+  finding bugs","- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Analyzes existing LLM test generators and provides quantitative evaluation on buggy samples, but does not introduce new prompting techniques or discuss multi‑model architectures."
+ChatGPT and Human Synergy in Black-Box Testing: A Comparative Analysis,"- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows strong empirical coverage results; uses ChatGPT for test creation without novel method or prompting details; no multi‑model discussion."
+Comparative Analysis of Large Language Model Tools for Automated Test Data Generation from BDD,"- **Relevance Score:** 33/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides quantitative coverage and quality metrics for LLM‑generated test data (perfect). Compares several LLMs but lacks ensemble or single‑model justification (somewhat)."
+LLMs: A Game-Changer for Software Engineers?,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses Meta's TestGen-LLM to generate unit tests, making test generation the central focus. No discussion of prompting techniques, quantitative evaluation, or model architecture comparisons."
+Test smells in LLM-Generated Unit Tests,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Analyzes test smells in LLM‑generated suites; uses multiple prompts and models for data collection, but offers no new generation method or deep prompt design, and evaluates only smell metrics rather than test effectiveness."
+A Survey and Prospects on Unit Test Case Generation Techniques Based on Large Language Models,"- **Relevance Score:** 27/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides a thorough survey of LLM‑based test generation, outlines challenges and future work, but lacks original method, prompting design, empirical results, or code release."
+Comparative Study on Test Case generation using Generative AI,"- **Relevance Score:** 25/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides coverage and mutation scores for various LLMs, but lacks a novel LLM‑driven test generation method or prompting details; compares single models without ensemble discussion."
+"Unit Testing Past vs. Present: Examining LLMs' Impact on Defect
+  Detection and Efficiency","- **Relevance Score:** 15/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Shows LLM assistance improves test count and defect detection, but lacks a dedicated generation method, prompting techniques, or multi‑model analysis."
+"Design choices made by LLM-based test generators prevent them from
+  finding bugs","- **Relevance Score:** 15/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Evaluates existing LLM test generators on buggy code, reporting coverage and fault detection; does not introduce a new LLM‑based generation method, nor discuss prompting or model‑combination strategies."
+"A Multi-Agent Approach for REST API Testing with Semantic Graphs and
+  LLM-Driven Inputs","- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLMs to craft API inputs within a multi‑agent RL framework, but LLMs are not the core test generator nor are prompting techniques detailed; provides coverage and fault‑detection results, yet does not compare single‑ vs multi‑model LLM setups."
+"Learning from Red Teaming: Gender Bias Provocation and Mitigation in
+  Large Language Models","- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLMs to auto‑create gender‑bias test cases, not software tests; no prompting methodology detailed; evaluation focuses on bias detection, not test effectiveness; applies three LLMs, offering limited insight into single vs multi‑model design."
+Toward Neurosymbolic Program Comprehension,"- **Relevance Score:** 7/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on neurosymbolic program comprehension, not test generation; lacks prompting, test evaluation, or model architecture details, but cites LLM tools and discusses limitations."
+Large Language Models for Unit Testing: A Systematic Literature Review,"- **Relevance Score:** 6/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** A systematic literature review; no original LLM test‑generation method or evaluation, but cites AthenaTest and discusses field limitations and future research."
+A DSL for Testing LLMs for Fairness and Bias,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on a DSL for bias testing of LLMs, not on using LLMs to generate software tests, prompting techniques, test evaluation, or model‑selection strategies."
+A Review of Large Language Models for Automated Test Case Generation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a literature review of LLM‑based test generation; does not introduce a new LLM method, prompting technique, empirical evaluation, or model architecture."
+"A Roadmap for Software Testing in Open Collaborative Development
+  Environments","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Paper surveys LLM testing and QA for auto‑generated code but lacks a concrete LLM‑driven test generation method, prompting details, evaluation, or model architecture discussion."
+"Enhancing Education with ChatGPT 4o and Microsoft Copilot: A Review of Opportunities, Challenges, and Student Perspectives on LLM-Based Text-to-Image Generation Models","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on educational uses of ChatGPT 4o for text‑to‑image generation; does not address software test generation, prompting for tests, or related evaluation."
+Improving the Readability of Generated Tests Using GPT-4 and ChatGPT Code Interpreter,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses GPT‑4 to rewrite tests for readability; does not generate tests, discuss prompts, provide quantitative evaluation, or compare model architectures."
+Evaluating LLMs on Sequential API Call Through Automated Test Generation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on generating API‑interaction tasks, not software tests; LLMs used for task description, not test creation or prompting strategies."
+Examination of Code generated by Large Language Models,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on generating Python functions, not test cases; lacks LLM‑driven test generation, prompting methods, test evaluation, or model‑architecture discussion."
+"Software Testing with Large Language Model: Survey, Landscape, and Vision","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey reviews 52 papers; does not propose its own LLM test‑generation method, prompting technique, empirical results, or model architecture."
+"The Current Challenges of Software Engineering in the Era of Large
+  Language Models","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on LLM‑assisted code review and maintenance, not on generating software tests or related prompting/evaluation strategies."
+"""You still have to study"" -- On the Security of LLM generated code","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on security of code produced by LLMs, not on generating tests; prompts are studied for security, no test generation, evaluation, or model‑combination discussion."
+Security Weaknesses of Copilot Generated Code in GitHub,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on security flaws in Copilot‑generated code, not on using LLMs to create software tests or related prompting/evaluation methods."
+"An Empirical Study on the Potential of LLMs in Automated Software
+  Refactoring","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on LLM‑driven code refactoring, not test generation; lacks prompting methods, test evaluation, or model‑combination discussion."
+"AI-powered test automation tools: A systematic review and empirical
+  evaluation","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Reviews AI test automation tools without using LLMs for test generation, lacks prompting methods, empirical LLM test metrics, and model architecture discussion."
+"Benchmarking ChatGPT, Codeium, and GitHub Copilot: A Comparative Study
+  of AI-Driven Programming and Debugging Assistants","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Benchmarks AI coding assistants for code generation and debugging, without focusing on automated test creation, prompting for tests, or test‑specific evaluation."
+"LLM4DS: Evaluating Large Language Models for Data Science Code
+  Generation","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on data‑science code generation, not on generating software tests; no test‑generation methods, prompting techniques, test evaluation, or model‑combination discussion."
+A Review of Large Language Models for Automated Test Case Generation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Review summarizes existing LLM test generation work; does not propose its own LLM‑driven method, prompting techniques, empirical results, or model architecture comparisons."
+From Misuse to Mastery: Enhancing Code Generation with Knowledge-Driven AI Chaining,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on AI chaining and exception handling; LLMs mentioned only peripherally for test case suggestion, without dedicated method, prompting details, evaluation, or model architecture discussion."
+"Discriminating Human-authored from ChatGPT-Generated Code Via
+  Discernable Feature Analysis","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on detecting ChatGPT‑generated code, not on generating tests; no test‑generation methods, prompting for tests, or evaluation of test quality are presented."
+An Investigation into Misuse of Java Security APIs by Large Language Models,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on security API misuse by LLM‑generated code; does not propose test generation, prompting methods, or evaluate generated tests."
+Evaluating Code Generation of LLMs in Advanced Computer Science Problems,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on evaluating LLM code generation for programming assignments, not on generating or prompting tests, nor on test‑generation architectures."
+Unit test generation using large language models: A systematic literature review,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a literature review of existing LLM test‑generation work; does not introduce its own LLM‑driven method, prompting techniques, empirical results, or model architecture comparisons."
+ChatGPT for PLC/DCS Control Logic Generation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on PLC/DCS control logic generation, not software test creation; lacks test‑related prompting, evaluation, model architecture, and relevant tool discussions."
+"MedHalu: Hallucinations in Responses to Healthcare Queries by Large
+  Language Models","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on medical hallucination detection, not on LLM‑driven software test generation or related prompting, evaluation, or tool aspects."
+Where Are Large Language Models for Code Generation on GitHub?,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Analyzes LLM‑generated code on GitHub, not test generation; lacks prompting methods, test evaluation, model architecture discussion, and tool-specific implementations."
+Can ChatGPT Assess Human Personalities? A General Evaluation Framework,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on using LLMs to assess human MBTI personalities, not on generating software tests or related prompting/evaluation methods."
+Large Language Model-Based Agents for Software Engineering: A Survey,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey summarizes existing LLM‑based test agents without introducing its own test‑generation method, prompting design, empirical results, or model‑architecture analysis."
+Automated Code Review In Practice,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on LLM‑backed code review automation, not test generation; lacks prompting methods, test evaluation, or model architecture discussion."
+"Large Language Models are Zero-Shot Fuzzers: Fuzzing Deep-Learning
+  Libraries via Large Language Models","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on using LLMs for fuzzing, not for generating software tests; lacks prompting methodology, test‑specific evaluation, and discussion of single vs. multi‑model test generation."
+"Analyzing Prominent LLMs: An Empirical Study of Performance and
+  Complexity in Solving LeetCode Problems","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Benchmarks LLMs on coding problems; no test generation, prompting, or test‑evaluation components."
+Automating Bias Testing of LLMs,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on bias testing of LLMs, not software test generation; lacks detailed prompting methods, software‑test metrics, and model‑architecture discussion."
+"""Oops, Did I Just Say That?"" Testing and Repairing Unethical Suggestions
+  of Large Language Models with Suggest-Critique-Reflect Process","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on detecting/repairing unethical LLM suggestions, not on software test generation, prompting, evaluation metrics, or model ensemble strategies."
+"The GPT Surprise: Offering Large Language Model Chat in a Massive Coding
+  Class Reduced Engagement but Increased Adopters Exam Performances","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** The paper studies GPT‑4 as a classroom aid, not as a test‑generation system; it provides no test‑generation method, prompting techniques, test evaluation metrics, or model‑architecture discussion."

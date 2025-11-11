@@ -1,0 +1,132 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Snippet","Abstract"
+"Pioneering Autonomous Penetration Testing with Large Language Models through Prompt Engineering and Agentic System Design","https://scispace.com/paper/bM5w3NSWoq0J","","","","SS Antar","","https://qspace.library.queensu.ca/bitstreams/15e89303-70b1-427b-9fb0-fb02984fae24/download","… Designing structured prompts with agentic … of LLMs and prompt engineering strategies into these systems do not exist to date. This thesis introduces a novel phase-driven prompting …",""
+"Large Language Models-Based Agents in Software Development","https://scispace.com/paper/-9gGZ_GH7M4J","","","","AJ Asunmaa","","https://aaltodoc.aalto.fi/bitstreams/ab7865f2-2fbc-4a66-b161-82b9e61288fc/download","… understanding of LLMs, AI agents, and software development, … were more effective than those using advanced prompting … language models eliminate the need for prompt engineering …",""
+"From persona to personalization: A survey on role-playing language agents","https://scispace.com/paper/from-persona-to-personalization-a-survey-on-role-playing-1vnavg6e9s","2024","Preprint","","Jiangjie Chen
+Xintao Wang
+Rui Xu
+Siyu Yuan
+Yikai Zhang
+Wei Shi
+Jiancang Xie
+Shuang Li
+Ruihan Yang
+Tinghui Zhu
+Aili Chen
+Nianqi Li
+Li‐Da Chen
+Caiyu Hu
+Shuang Wu
+Shuling Ren
+Ziquan Fu
+Yanghua Xiao","10.48550/arxiv.2404.18231","https://arxiv.org/pdf/2404.18231","… Recent advancements in large language models (LLMs) … role-play involves directly prompting the language agent. For … 3) Role-based Bias: In the context of role-playing, role-based bias …","Recent advancements in large language models (LLMs) have significantly boosted the rise of Role-Playing Language Agents (RPLAs), i.e., specialized AI systems designed to simulate assigned personas. By harnessing multiple advanced abilities of LLMs, including in-context learning, instruction following, and social intelligence, RPLAs achieve a remarkable sense of human likeness and vivid role-playing performance. RPLAs can mimic a wide range of personas, ranging from historical figures and fictional characters to real-life individuals. Consequently, they have catalyzed numerous AI applications, such as emotional companions, interactive video games, personalized assistants and copilots, and digital clones. In this paper, we conduct a comprehensive survey of this field, illustrating the evolution and recent progress in RPLAs integrating with cutting-edge LLM technologies. We categorize personas into three types: 1) Demographic Persona, which leverages statistical stereotypes; 2) Character Persona, focused on well-established figures; and 3) Individualized Persona, customized through ongoing user interactions for personalized services. We begin by presenting a comprehensive overview of current methodologies for RPLAs, followed by the details for each persona type, covering corresponding data sourcing, agent construction, and evaluation. Afterward, we discuss the fundamental risks, existing limitations, and future prospects of RPLAs. Additionally, we provide a brief review of RPLAs in AI applications, which reflects practical user demands that shape and drive RPLA research. Through this work, we aim to establish a clear taxonomy of RPLA research and applications, and facilitate future research in this critical and ever-evolving field, and pave the way for a future where humans and RPLAs coexist in harmony. "
+"Large language model-based agents for software engineering: A survey","https://scispace.com/paper/large-language-model-based-agents-for-software-engineering-a-5edi77w6grl0","2024","Journal Article","","Junwei Liu
+Kaixin Wang
+Yixuan Chen
+Xin Peng
+Zhenpeng Chen
+Lingming Zhang
+Yiling Lou","10.48550/arxiv.2409.02977","https://arxiv.org/pdf/2409.02977?","… Language Models (LLMs) has shaped a new paradigm of AI … -tuning or prompting deep learning models (including LLMs). … izing LLMs with different roles, ACFIX includes a Rolebased …","The recent advance in Large Language Models (LLMs) has shaped a new paradigm of AI agents, i.e., LLM-based agents. Compared to standalone LLMs, LLM-based agents substantially extend the versatility and expertise of LLMs by enhancing LLMs with the capabilities of perceiving and utilizing external resources and tools. To date, LLM-based agents have been applied and shown remarkable effectiveness in Software Engineering (SE). The synergy between multiple agents and human interaction brings further promise in tackling complex real-world SE problems. In this work, we present a comprehensive and systematic survey on LLM-based agents for SE. We collect 106 papers and categorize them from two perspectives, i.e., the SE and agent perspectives. In addition, we discuss open challenges and future directions in this critical domain. The repository of this survey is at https://github.com/FudanSELab/Agent4SE-Paper-List. "
+"Large language model agent: A survey on methodology, applications and challenges","https://scispace.com/paper/large-language-model-agent-a-survey-on-methodology-v2xrqrrlb0ml","2025","Journal Article","arXiv.org","Junyu Luo
+Weizhi Zhang
+Ye Yuan
+Yusheng Zhao
+Junwei Yang
+Yiyang Gu
+Bohan Wu
+Binqi Chen
+Ziyue Qiao
+Qingqing Long
+Rongcheng Tu
+Xiaoming Luo
+Wei Ju
+Zhiping Xiao
+Yifan Wang
+Mengxue Xiao
+Chenwu Liu
+Jingyang Yuan
+Shichang Zhang
+Yiqiao Jin
+Fan Zhang
+Xianhong Wu
+Hanqing Zhao
+Dacheng Tao
+Philip S. Yu
+Ming Zhang","10.48550/arxiv.2503.21460","https://arxiv.org/pdf/2503.21460?","… advancements in large language models. Large … AFlow [29] showcase role-based coordination patterns. ChatDev … measure the adversarial robustness of AI agents by testing them on …",""
+"From llms to llm-based agents for software engineering: A survey of current, challenges and future","https://scispace.com/paper/from-llms-to-llm-based-agents-for-software-engineering-a-2fb63jbcpnef","2024","Journal Article","","Haolin Jin
+Li Huang
+Haipeng Cai
+Jun Yan
+Bo Li
+Huaming Chen","10.48550/arxiv.2408.02479","https://arxiv.org/pdf/2408.02479","… Abstract—With the rise of large language models (LLMs), … with input prompts, an iterative prompting mechanism, and a … This study categorizes prompt engineering into five main …","With the rise of large language models (LLMs), researchers are increasingly exploring their applications in var ious vertical domains, such as software engineering. LLMs have achieved remarkable success in areas including code generation and vulnerability detection. However, they also exhibit numerous limitations and shortcomings. LLM-based agents, a novel tech nology with the potential for Artificial General Intelligence (AGI), combine LLMs as the core for decision-making and action-taking, addressing some of the inherent limitations of LLMs such as lack of autonomy and self-improvement. Despite numerous studies and surveys exploring the possibility of using LLMs in software engineering, it lacks a clear distinction between LLMs and LLM based agents. It is still in its early stage for a unified standard and benchmarking to qualify an LLM solution as an LLM-based agent in its domain. In this survey, we broadly investigate the current practice and solutions for LLMs and LLM-based agents for software engineering. In particular we summarise six key topics: requirement engineering, code generation, autonomous decision-making, software design, test generation, and software maintenance. We review and differentiate the work of LLMs and LLM-based agents from these six topics, examining their differences and similarities in tasks, benchmarks, and evaluation metrics. Finally, we discuss the models and benchmarks used, providing a comprehensive analysis of their applications and effectiveness in software engineering. We anticipate this work will shed some lights on pushing the boundaries of LLM-based agents in software engineering for future research. "
+"Ai agents vs. agentic ai: A conceptual taxonomy, applications and challenges","https://scispace.com/paper/ai-agents-vs-agentic-ai-a-conceptual-taxonomy-applications-kag55ynihczn","2025","Journal Article","Robotics","Ranjan Sapkota
+Konstantinos I. Roumeliotis
+Manoj Karkee","10.48550/arxiv.2505.10468","https://arxiv.org/pdf/2505.10468","… Agents as modular systems driven and enabled by LLMs … -Thought prompting) and action (tool use), with LLMs alternating … , whereas AI Agents combine language models with auxiliary …",""
+"Towards Engineering LLM-Enhanced Multi-Agent Systems: A Critical Examination of Roles","https://scispace.com/paper/9x5BOCtImJ4J","","","","G Kardas","","https://emas.in.tu-clausthal.de/2025/assets/pdfs/emas2025-14.pdf","… to integrating Large Language Models (LLMs) into Multi-… a hybrid rolebased architecture where we treat roles as first-… teamwork as part of its prompting strategy. This provides a semi-…",""
+"LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision, and the Road Ahead","https://scispace.com/paper/llm-based-multi-agent-systems-for-software-engineering-3nfzqoopnexw","2025","Journal Article","ACM Transactions on Software Engineering and Methodology","Junda He
+Christoph Treude
+David Lo","10.1145/3712003","https://arxiv.org/pdf/2404.04834","… Large Language Models (LLMs) into autonomous agents … in smart contracts, focusing on Role-Based Access Control. It … the need for a specialized prompting language designed to …","Integrating Large Language Models (LLMs) into autonomous agents marks a significant shift in the research landscape by offering cognitive abilities that are competitive with human planning and reasoning. This paper explores the transformative potential of integrating Large Language Models into Multi-Agent (LMA) systems for addressing complex challenges in software engineering (SE). By leveraging the collaborative and specialized abilities of multiple agents, LMA systems enable autonomous problem-solving, improve robustness, and provide scalable solutions for managing the complexity of real-world software projects. In this paper, we conduct a systematic review of recent primary studies to map the current landscape of LMA applications across various stages of the software development lifecycle (SDLC). To illustrate current capabilities and limitations, we perform two case studies to demonstrate the effectiveness of state-of-the-art LMA frameworks. Additionally, we identify critical research gaps and propose a comprehensive research agenda focused on enhancing individual agent capabilities and optimizing agent synergy. Our work outlines a forward-looking vision for developing fully autonomous, scalable, and trustworthy LMA systems, laying the foundation for the evolution of Software Engineering 2.0. "
+"Rolellm: Benchmarking, eliciting, and enhancing role-playing abilities of large language models","https://scispace.com/paper/rolellm-benchmarking-eliciting-and-enhancing-role-playing-5djxzl2pyc","2023","Journal Article","arXiv.org","Zekun Moore Wang
+Zhongyuan Peng
+Haoran Que
+Jiaheng Liu
+Wangchunshu Zhou
+Yuhan Wu
+Hongcheng Guo
+Ruitong Gan
+Zehao Ni
+Man Zhang
+Zhaoxiang Zhang
+Wanli Ouyang
+Ke Xu
+Wenhu Chen
+Jie Fu
+Junran Peng","10.48550/arxiv.2310.00746","https://arxiv.org/pdf/2310.00746","… The advent of Large Language Models (LLMs) has paved the … role prompting methods in §2.2, namely, zero-shot prompt … -specific test split (see Appendix B); (2) Role-based splits for …","The advent of Large Language Models (LLMs) has paved the way for complex tasks such as role-playing, which enhances user interactions by enabling models to imitate various characters. However, the closed-source nature of state-of-the-art LLMs and their general-purpose training limit role-playing optimization. In this paper, we introduce RoleLLM, a framework to benchmark, elicit, and enhance role-playing abilities in LLMs. RoleLLM comprises four stages: (1) Role Profile Construction for 100 roles; (2) Context-Based Instruction Generation (Context-Instruct) for role-specific knowledge extraction; (3) Role Prompting using GPT (RoleGPT) for speaking style imitation; and (4) Role-Conditioned Instruction Tuning (RoCIT) for fine-tuning open-source models along with role customization. By Context-Instruct and RoleGPT, we create RoleBench, the first systematic and fine-grained character-level benchmark dataset for role-playing with 168,093 samples. Moreover, RoCIT on RoleBench yields RoleLLaMA (English) and RoleGLM (Chinese), significantly enhancing role-playing abilities and even achieving comparable results with RoleGPT (using GPT-4)."
+"Prompt engineering in education: A systematic review of approaches and educational applications","https://scispace.com/paper/prompt-engineering-in-education-a-systematic-review-of-nygktju0q700","2025","Journal Article","Journal of Educational Computing Research","Yufeng Qian","10.1177/07356331251365189","","… , role-based prompting is a widely used technique in prompt engineering, where the AI model is … When tailored to context and task, prompts effectively guide large language models to …","The effectiveness of generative AI tools in education depends largely on prompt engineering—the practice of designing inputs and interactions that guide AI systems to produce relevant, high-quality outputs. This systematic literature review examines empirical studies published since the release of ChatGPT in late 2022, identifying two broad approaches of prompting strategies: technique-based, which targets specific learning goals, and process-based, which supports cognitive engagement and collaborative thinking with AI. The review identifies key educational applications of prompt engineering, notably in two overarching areas: critical skills development and the automation of educational functions. It also highlights emerging trends, such as the integration of multimodal AI and the growing influence of advanced AI reasoning capabilities. By mapping this evolving landscape, the findings provide a foundational understanding of prompt engineering as both a technical skill and a pedagogical strategy in AI-supported learning environments. "
+"Responsible Agentic Reasoning and AI Agents: A Critical Survey","https://scispace.com/paper/responsible-agentic-reasoning-and-ai-agents-a-critical-j06actnsbx4p","2025","Journal Article","","Shaina Raza
+Ranjan Sapkota
+Manoj Karkee
+Christos Emmanouilidis","10.36227/techrxiv.175735299.97215847/v1","https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.175735299.97215847","… Modern Large Language Models (LLMs) already solve logic … architecture and prompting strategies to turn LLMs into … This section first reviews backbone LLMs for responsible agents…",""
+"From Language to Action: A Review of Large Language Models as Autonomous Agents and Tool Users","https://scispace.com/paper/from-language-to-action-a-review-of-large-language-models-as-mtch7xvhgl2g","2025","Journal Article","arXiv.org","Sadia Sultana Chowa
+Riasad Alvi
+Subhey Sadi Rahman
+Md. Abdur Rahman
+Mohaimenul Azam Khan Raiaan
+Md Rafiqul Islam
+Mukhtar Hussain
+Sami Azam","10.48550/arxiv.2508.17281","https://arxiv.org/pdf/2508.17281?","… in employing LLMs as autonomous agents and tool users and … ask prompting [5] demonstrated how the potential of LLMs … by generating diverse agent personas through prompt engineer…","The pursuit of human-level artificial intelligence (AI) has significantly advanced the development of autonomous agents and Large Language Models (LLMs). LLMs are now widely utilized as decision-making agents for their ability to interpret instructions, manage sequential tasks, and adapt through feedback. This review examines recent developments in employing LLMs as autonomous agents and tool users and comprises seven research questions. We only used the papers published between 2023 and 2025 in conferences of the A* and A rank and Q1 journals. A structured analysis of the LLM agents'architectural design principles, dividing their applications into single-agent and multi-agent systems, and strategies for integrating external tools is presented. In addition, the cognitive mechanisms of LLM, including reasoning, planning, and memory, and the impact of prompting methods and fine-tuning procedures on agent performance are also investigated. Furthermore, we evaluated current benchmarks and assessment protocols and have provided an analysis of 68 publicly available datasets to assess the performance of LLM-based agents in various tasks. In conducting this review, we have identified critical findings on verifiable reasoning of LLMs, the capacity for self-improvement, and the personalization of LLM-based agents. Finally, we have discussed ten future research directions to overcome these gaps."
+"Tasks people prompt: A taxonomy of LLM downstream tasks in software verification and falsification approaches","https://scispace.com/paper/tasks-people-prompt-a-taxonomy-of-llm-downstream-tasks-in-1xadiu4uhl","2024","Journal Article","arXiv.org","Victor Braberman
+Flavia Bonomo-Braberman
+Yiannis Charalambous
+Juan Gabriel Colonna
+Lucas C. Cordeiro
+Rosiane de Freitas","10.48550/arxiv.2404.09384","https://arxiv.org/pdf/2404.09384","… the most of pre-trained Language Models. By homogeneously … tasks unleashed by prompting LLMs for software analysis. … do not prompt LLMs to solve Software Engineering problems …","Prompting has become one of the main approaches to leverage emergent capabilities of Large Language Models [Brown et al. NeurIPS 2020, Wei et al. TMLR 2022, Wei et al. NeurIPS 2022]. During the last year, researchers and practitioners have been playing with prompts to see how to make the most of LLMs. By homogeneously dissecting 80 papers, we investigate in deep how software testing and verification research communities have been abstractly architecting their LLM-enabled solutions. More precisely, first, we want to validate whether downstream tasks are an adequate concept to convey the blueprint of prompt-based solutions. We also aim at identifying number and nature of such tasks in solutions. For such goal, we develop a novel downstream task taxonomy that enables pinpointing some engineering patterns in a rather varied spectrum of Software Engineering problems that encompasses testing, fuzzing, debugging, vulnerability detection, static analysis and program verification approaches."
+"When Prompt Engineering Meets Software Engineering: CNL-P as Natural and Robust"" APIs''for Human-AI Interaction","https://scispace.com/paper/7v5fC_xBNx8J","","","","Z Xing
+Y Liu
+Z Cheng
+Q Huang
+D Zhao","","https://openreview.net/pdf?id=SqoL14HDm0","… With the growing capabilities of large language models (LLMs), … tool based on LLMs, enabling users to write prompts in NL, which … dimensions based on the prompting effect of LLMs: …",""
+"Rethinking Autonomy: Preventing Failures in AI-Driven Software Engineering","https://scispace.com/paper/rethinking-autonomy-preventing-failures-in-ai-driven-rxiykw5givxx","2025","Journal Article","","Satyam Kumar Navneet
+Joydeep Chandra","10.48550/arxiv.2508.11824","https://arxiv.org/pdf/2508.11824?","… of Large Language Models (LLMs) into software engineering … Through detailed comparisons of autonomy control, prompt … and chain-of-thought prompting were explored to check how …","The integration of Large Language Models (LLMs) into software engineering has revolutionized code generation, enabling unprecedented productivity through promptware and autonomous AI agents. However, this transformation introduces significant risks, including insecure code generation, hallucinated outputs, irreversible actions, and a lack of transparency and accountability. Incidents like the Replit database deletion underscore the urgent need for robust safety and governance mechanisms. This paper comprehensively analyzes the inherent challenges of LLM-assisted code generation, such as vulnerability inheritance, overtrust, misinterpretation, and the absence of standardized validation and rollback protocols. To address these, we propose the SAFE-AI Framework, a holistic approach emphasizing Safety, Auditability, Feedback, and Explainability. The framework integrates guardrails, sandboxing, runtime verification, risk-aware logging, human-in-the-loop systems, and explainable AI techniques to mitigate risks while fostering trust and compliance. We introduce a novel taxonomy of AI behaviors categorizing suggestive, generative, autonomous, and destructive actions to guide risk assessment and oversight. Additionally, we identify open problems, including the lack of standardized benchmarks for code specific hallucinations and autonomy levels, and propose future research directions for hybrid verification, semantic guardrails, and proactive governance tools. Through detailed comparisons of autonomy control, prompt engineering, explainability, and governance frameworks, this paper provides a roadmap for responsible AI integration in software engineering, aligning with emerging regulations like the EU AI Act and Canada's AIDA to ensure safe, transparent, and accountable AI-driven development. "
+"Rolellm: benchmarking, eliciting, and enhancing role-playing abilities of large language models","https://scispace.com/paper/rolellm-benchmarking-eliciting-and-enhancing-role-playing-5djxzl2pyc","2023","Journal Article","arXiv.org","Zekun Moore Wang
+Zhongyuan Peng
+Haoran Que
+Jiaheng Liu
+Wangchunshu Zhou
+Yuhan Wu
+Hongcheng Guo
+Ruitong Gan
+Zehao Ni
+Man Zhang
+Zhaoxiang Zhang
+Wanli Ouyang
+Ke Xu
+Wenhu Chen
+Jie Fu
+Junran Peng","10.48550/arxiv.2310.00746","https://www.research-collection.ethz.ch/bitstreams/99fe3e2a-da4b-499f-bd43-d07d1b2c4bb8/download","… The advent of Large Language Models (LLMs) has paved the … ; and (2) Role-based splits for assessing role generalization, … role prompting methods in §2.2, namely, zero-shot prompt …","The advent of Large Language Models (LLMs) has paved the way for complex tasks such as role-playing, which enhances user interactions by enabling models to imitate various characters. However, the closed-source nature of state-of-the-art LLMs and their general-purpose training limit role-playing optimization. In this paper, we introduce RoleLLM, a framework to benchmark, elicit, and enhance role-playing abilities in LLMs. RoleLLM comprises four stages: (1) Role Profile Construction for 100 roles; (2) Context-Based Instruction Generation (Context-Instruct) for role-specific knowledge extraction; (3) Role Prompting using GPT (RoleGPT) for speaking style imitation; and (4) Role-Conditioned Instruction Tuning (RoCIT) for fine-tuning open-source models along with role customization. By Context-Instruct and RoleGPT, we create RoleBench, the first systematic and fine-grained character-level benchmark dataset for role-playing with 168,093 samples. Moreover, RoCIT on RoleBench yields RoleLLaMA (English) and RoleGLM (Chinese), significantly enhancing role-playing abilities and even achieving comparable results with RoleGPT (using GPT-4)."
+"The Agentic AI Mindset–A Practitioner's Guide to Architectures, Patterns, and Future Directions for Autonomy and Automation","https://scispace.com/paper/c3NAuLPTVXEJ","","","","D Horne","","https://www.researchgate.net/profile/Dwight-Horne/publication/390958865_The_Agentic_AI_Mindset_-_A_Practitioner's_Guide_to_Architectures_Patterns_and_Future_Directions_for_Autonomy_and_Automation/links/6805a1eadf0e3f544f432cad/The-Agentic-AI-Mindset-A-Practitioners-Guide-to-Architectures-Patterns-and-Future-Directions-for-Autonomy-and-Automation.pdf","… Empowered by large language models (LLMs) and advanced … LLMs, but they often instead use the persona prompting pattern … The MetaGPT tool also employed a role-based multiagent …",""
+"From llm reasoning to autonomous ai agents: A comprehensive review","https://scispace.com/paper/from-llm-reasoning-to-autonomous-ai-agents-a-comprehensive-n90pouttl643","2025","Journal Article","arXiv.org","Mohamed Amine Ferrag
+Norbert Tihanyi
+Merouane Debbah","10.48550/arxiv.2504.19678","https://arxiv.org/pdf/2504.19678?","… for agents powered by large language models (LLMs). It … open models, such as Hermes, struggle due to potential prompting … Key features of CrewAI include role-based agent specializa…",""
+"Responsible Agentic Reasoning and AI Agents: A Critical Survey: Proposal for Safe Agentic AI via Responsible Reasoning AI Agents (R2A2)","https://scispace.com/paper/t_fjMzDb09UJ","","","","S Raza
+R Sapkota
+M Karkee","","https://s-rsa.com/index.php/agi/article/download/16169/11497","… Modern Large Language Models (LLMs) already solve logic … architecture and prompting strategies to turn LLMs into … This section first reviews backbone LLMs for responsible agents…",""

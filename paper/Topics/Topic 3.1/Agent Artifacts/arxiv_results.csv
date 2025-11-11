@@ -1,0 +1,123 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Abstract"
+"Multitask Fine-Tuning and Generative Adversarial Learning for Improved
+  Auxiliary Classification","https://scispace.com/paper/http://arxiv.org/abs/2408.15265v1","2024","Preprint","","Christopher Sun
+Abishek Satish","","http://arxiv.org/pdf/2408.15265v1","In this study, we implement a novel BERT architecture for multitask
+fine-tuning on three downstream tasks: sentiment classification, paraphrase
+detection, and semantic textual similarity prediction. Our model, Multitask
+BERT, incorporates layer sharing and a triplet architecture, custom sentence
+pair tokenization, loss pairing, and gradient surgery. Such optimizations yield
+a 0.516 sentiment classification accuracy, 0.886 paraphase detection accuracy,
+and 0.864 semantic textual similarity correlation on test data. We also apply
+generative adversarial learning to BERT, constructing a conditional generator
+model that maps from latent space to create fake embeddings in
+$\mathbb{R}^{768}$. These fake embeddings are concatenated with real BERT
+embeddings and passed into a discriminator model for auxiliary classification.
+Using this framework, which we refer to as AC-GAN-BERT, we conduct
+semi-supervised sensitivity analyses to investigate the effect of increasing
+amounts of unlabeled training data on AC-GAN-BERT's test accuracy. Overall,
+aside from implementing a high-performing multitask classification system, our
+novelty lies in the application of adversarial learning to construct a
+generator that mimics BERT. We find that the conditional generator successfully
+produces rich embeddings with clear spatial correlation with class labels,
+demonstrating avoidance of mode collapse. Our findings validate the GAN-BERT
+approach and point to future directions of generator-aided knowledge
+distillation."
+"Detecting Redundant Health Survey Questions Using Language-agnostic BERT
+  Sentence Embedding (LaBSE)","https://scispace.com/paper/http://arxiv.org/abs/2412.03817v1","2024","Preprint","","Sunghoon Kang
+Hyeoneui Kim
+Hyewon Park
+Ricky Taira","","http://arxiv.org/pdf/2412.03817v1","The goal of this work was to compute the semantic similarity among publicly
+available health survey questions in order to facilitate the standardization of
+survey-based Person-Generated Health Data (PGHD). We compiled various health
+survey questions authored in both English and Korean from the NIH CDE
+Repository, PROMIS, Korean public health agencies, and academic publications.
+Questions were drawn from various health lifelog domains. A randomized question
+pairing scheme was used to generate a Semantic Text Similarity (STS) dataset
+consisting of 1758 question pairs. Similarity scores between each question pair
+were assigned by two human experts. The tagged dataset was then used to build
+three classifiers featuring: Bag-of-Words, SBERT with BERT-based embeddings,
+and SBRET with LaBSE embeddings. The algorithms were evaluated using
+traditional contingency statistics. Among the three algorithms, SBERT-LaBSE
+demonstrated the highest performance in assessing question similarity across
+both languages, achieving an Area Under the Receiver Operating Characteristic
+(ROC) and Precision-Recall Curves of over 0.99. Additionally, it proved
+effective in identifying cross-lingual semantic similarities.The SBERT-LaBSE
+algorithm excelled at aligning semantically equivalent sentences across both
+languages but encountered challenges in capturing subtle nuances and
+maintaining computational efficiency. Future research should focus on testing
+with larger multilingual datasets and on calibrating and normalizing scores
+across the health lifelog domains to improve consistency. This study introduces
+the SBERT-LaBSE algorithm for calculating semantic similarity across two
+languages, showing it outperforms BERT-based models and the Bag of Words
+approach, highlighting its potential to improve semantic interoperability of
+survey-based PGHD across language barriers."
+"BERTer: The Efficient One","https://scispace.com/paper/http://arxiv.org/abs/2407.14039v1","2024","Preprint","","Pradyumna Saligram
+Andrew Lanpouthakoun","","http://arxiv.org/pdf/2407.14039v1","We explore advanced fine-tuning techniques to boost BERT's performance in
+sentiment analysis, paraphrase detection, and semantic textual similarity. Our
+approach leverages SMART regularization to combat overfitting, improves
+hyperparameter choices, employs a cross-embedding Siamese architecture for
+improved sentence embeddings, and introduces innovative early exiting methods.
+Our fine-tuning findings currently reveal substantial improvements in model
+efficiency and effectiveness when combining multiple fine-tuning architectures,
+achieving a state-of-the-art performance score of on the test set, surpassing
+current benchmarks and highlighting BERT's adaptability in multifaceted
+linguistic tasks."
+"UiO-UvA at SemEval-2020 Task 1: Contextualised Embeddings for Lexical
+  Semantic Change Detection","https://scispace.com/paper/http://arxiv.org/abs/2005.00050v3","2020","Preprint","","Andrey Kutuzov
+Mario Giulianelli","","http://arxiv.org/pdf/2005.00050v3","We apply contextualised word embeddings to lexical semantic change detection
+in the SemEval-2020 Shared Task 1. This paper focuses on Subtask 2, ranking
+words by the degree of their semantic drift over time. We analyse the
+performance of two contextualising architectures (BERT and ELMo) and three
+change detection algorithms. We find that the most effective algorithms rely on
+the cosine similarity between averaged token embeddings and the pairwise
+distances between token embeddings. They outperform strong baselines by a large
+margin (in the post-evaluation phase, we have the best Subtask 2 submission for
+SemEval-2020 Task 1), but interestingly, the choice of a particular algorithm
+depends on the distribution of gold scores in the test set."
+"2-Tier SimCSE: Elevating BERT for Robust Sentence Embeddings","https://scispace.com/paper/http://arxiv.org/abs/2501.13758v1","2025","Preprint","","Yumeng Wang
+Ziran Zhou
+Junjin Wang","","http://arxiv.org/pdf/2501.13758v1","Effective sentence embeddings that capture semantic nuances and generalize
+well across diverse contexts are crucial for natural language processing tasks.
+We address this challenge by applying SimCSE (Simple Contrastive Learning of
+Sentence Embeddings) using contrastive learning to fine-tune the minBERT model
+for sentiment analysis, semantic textual similarity (STS), and paraphrase
+detection. Our contributions include experimenting with three different dropout
+techniques, namely standard dropout, curriculum dropout, and adaptive dropout,
+to tackle overfitting, proposing a novel 2-Tier SimCSE Fine-tuning Model that
+combines both unsupervised and supervised SimCSE on STS task, and exploring
+transfer learning potential for Paraphrase and SST tasks. Our findings
+demonstrate the effectiveness of SimCSE, with the 2-Tier model achieving
+superior performance on the STS task, with an average test score of 0.742
+across all three downstream tasks. The results of error analysis reveals
+challenges in handling complex sentiments and reliance on lexical overlap for
+paraphrase detection, highlighting areas for future research. The ablation
+study revealed that removing Adaptive Dropout in the Single-Task Unsupervised
+SimCSE Model led to improved performance on the STS task, indicating
+overfitting due to added parameters. Transfer learning from SimCSE models on
+Paraphrase and SST tasks did not enhance performance, suggesting limited
+transferability of knowledge from the STS task."
+"Fake News Detection in Spanish Using Deep Learning Techniques","https://scispace.com/paper/http://arxiv.org/abs/2110.06461v1","2021","Preprint","","Kevin Martínez-Gallego
+Andrés M. Álvarez-Ortiz
+Julián D. Arias-Londoño","","http://arxiv.org/pdf/2110.06461v1","This paper addresses the problem of fake news detection in Spanish using
+Machine Learning techniques. It is fundamentally the same problem tackled for
+the English language; however, there is not a significant amount of publicly
+available and adequately labeled fake news in Spanish to effectively train a
+Machine Learning model, similarly to those proposed for the English language.
+Therefore, this work explores different training strategies and architectures
+to establish a baseline for further research in this area. Four datasets were
+used, two in English and two in Spanish, and four experimental schemes were
+tested, including a baseline with classical Machine Learning models, trained
+and validated using a small dataset in Spanish. The remaining schemes include
+state-of-the-art Deep Learning models trained (or fine-tuned) and validated in
+English, trained and validated in Spanish, and fitted in English and validated
+with automatic translated Spanish sentences. The Deep Learning architectures
+were built on top of different pre-trained Word Embedding representations,
+including GloVe, ELMo, BERT, and BETO (a BERT version trained on a large corpus
+in Spanish). According to the results, the best strategy was a combination of a
+pre-trained BETO model and a Recurrent Neural Network based on LSTM layers,
+yielding an accuracy of up to 80%; nonetheless, a baseline model using a Random
+Forest estimator obtained similar outcomes. Additionally, the translation
+strategy did not yield acceptable results because of the propagation error;
+there was also observed a significant difference in models performance when
+trained in English or Spanish, mainly attributable to the number of samples
+available for each language."

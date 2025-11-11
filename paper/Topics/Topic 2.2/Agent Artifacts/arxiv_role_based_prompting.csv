@@ -1,0 +1,456 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Abstract"
+"Using AI for User Representation: An Analysis of 83 Persona Prompts","https://scispace.com/paper/http://arxiv.org/abs/2508.13047v1","2025","Preprint","","Joni Salminen
+Danial Amin
+Bernard Jansen","","http://arxiv.org/pdf/2508.13047v1","We analyzed 83 persona prompts from 27 research articles that used large
+language models (LLMs) to generate user personas. Findings show that the
+prompts predominantly generate single personas. Several prompts express a
+desire for short or concise persona descriptions, which deviates from the
+tradition of creating rich, informative, and rounded persona profiles. Text is
+the most common format for generated persona attributes, followed by numbers.
+Text and numbers are often generated together, and demographic attributes are
+included in nearly all generated personas. Researchers use up to 12 prompts in
+a single study, though most research uses a small number of prompts. Comparison
+and testing multiple LLMs is rare. More than half of the prompts require the
+persona output in a structured format, such as JSON, and 74% of the prompts
+insert data or dynamic variables. We discuss the implications of increased use
+of computational personas for user representation."
+"Code-Aware Prompting: A study of Coverage Guided Test Generation in
+  Regression Setting using LLM","https://scispace.com/paper/http://arxiv.org/abs/2402.00097v2","2024","Preprint","","Gabriel Ryan
+Siddhartha Jain
+Mingyue Shang
+Shiqi Wang
+Xiaofei Ma
+Murali Krishna Ramanathan
+Baishakhi Ray","","http://arxiv.org/pdf/2402.00097v2","Testing plays a pivotal role in ensuring software quality, yet conventional
+Search Based Software Testing (SBST) methods often struggle with complex
+software units, achieving suboptimal test coverage. Recent works using large
+language models (LLMs) for test generation have focused on improving generation
+quality through optimizing the test generation context and correcting errors in
+model outputs, but use fixed prompting strategies that prompt the model to
+generate tests without additional guidance. As a result LLM-generated
+testsuites still suffer from low coverage. In this paper, we present SymPrompt,
+a code-aware prompting strategy for LLMs in test generation. SymPrompt's
+approach is based on recent work that demonstrates LLMs can solve more complex
+logical problems when prompted to reason about the problem in a multi-step
+fashion. We apply this methodology to test generation by deconstructing the
+testsuite generation process into a multi-stage sequence, each of which is
+driven by a specific prompt aligned with the execution paths of the method
+under test, and exposing relevant type and dependency focal context to the
+model. Our approach enables pretrained LLMs to generate more complete test
+cases without any additional training. We implement SymPrompt using the
+TreeSitter parsing framework and evaluate on a benchmark challenging methods
+from open source Python projects. SymPrompt enhances correct test generations
+by a factor of 5 and bolsters relative coverage by 26% for CodeGen2. Notably,
+when applied to GPT-4, SymPrompt improves coverage by over 2x compared to
+baseline prompting strategies."
+"PersonaBOT: Bringing Customer Personas to Life with LLMs and RAG","https://scispace.com/paper/http://arxiv.org/abs/2505.17156v1","2025","Preprint","","Muhammed Rizwan
+Lars Carlsson
+Mohammad Loni","","http://arxiv.org/pdf/2505.17156v1","The introduction of Large Language Models (LLMs) has significantly
+transformed Natural Language Processing (NLP) applications by enabling more
+advanced analysis of customer personas. At Volvo Construction Equipment (VCE),
+customer personas have traditionally been developed through qualitative
+methods, which are time-consuming and lack scalability. The main objective of
+this paper is to generate synthetic customer personas and integrate them into a
+Retrieval-Augmented Generation (RAG) chatbot to support decision-making in
+business processes. To this end, we first focus on developing a persona-based
+RAG chatbot integrated with verified personas. Next, synthetic personas are
+generated using Few-Shot and Chain-of-Thought (CoT) prompting techniques and
+evaluated based on completeness, relevance, and consistency using McNemar's
+test. In the final step, the chatbot's knowledge base is augmented with
+synthetic personas and additional segment information to assess improvements in
+response accuracy and practical utility. Key findings indicate that Few-Shot
+prompting outperformed CoT in generating more complete personas, while CoT
+demonstrated greater efficiency in terms of response time and token usage.
+After augmenting the knowledge base, the average accuracy rating of the chatbot
+increased from 5.88 to 6.42 on a 10-point scale, and 81.82% of participants
+found the updated system useful in business contexts."
+"Are Prompts All You Need? Evaluating Prompt-Based Large Language Models
+  (LLM)s for Software Requirements Classification","https://scispace.com/paper/http://arxiv.org/abs/2509.13868v1","2025","Preprint","","Manal Binkhonain
+Reem Alfayaz","10.1007/s00766-025-00451-8","http://arxiv.org/pdf/2509.13868v1","Requirements classification assigns natural language requirements to
+predefined classes, such as functional and non functional. Accurate
+classification reduces risk and improves software quality. Most existing models
+rely on supervised learning, which needs large labeled data that are costly,
+slow to create, and domain dependent; they also generalize poorly and often
+require retraining for each task. This study tests whether prompt based large
+language models can reduce data needs. We benchmark several models and
+prompting styles (zero shot, few shot, persona, and chain of thought) across
+multiple tasks on two English datasets, PROMISE and SecReq. For each task we
+compare model prompt configurations and then compare the best LLM setups with a
+strong fine tuned transformer baseline. Results show that prompt based LLMs,
+especially with few shot prompts, can match or exceed the baseline. Adding a
+persona, or persona plus chain of thought, can yield further gains. We conclude
+that prompt based LLMs are a practical and scalable option that reduces
+dependence on large annotations and can improve generalizability across tasks."
+"Automating Prompt Leakage Attacks on Large Language Models Using Agentic
+  Approach","https://scispace.com/paper/http://arxiv.org/abs/2502.12630v1","2025","Preprint","","Tvrtko Sternak
+Davor Runje
+Dorian Granoša
+Chi Wang","","http://arxiv.org/pdf/2502.12630v1","This paper presents a novel approach to evaluating the security of large
+language models (LLMs) against prompt leakage-the exposure of system-level
+prompts or proprietary configurations. We define prompt leakage as a critical
+threat to secure LLM deployment and introduce a framework for testing the
+robustness of LLMs using agentic teams. Leveraging AG2 (formerly AutoGen), we
+implement a multi-agent system where cooperative agents are tasked with probing
+and exploiting the target LLM to elicit its prompt.
+  Guided by traditional definitions of security in cryptography, we further
+define a prompt leakage-safe system as one in which an attacker cannot
+distinguish between two agents: one initialized with an original prompt and the
+other with a prompt stripped of all sensitive information. In a safe system,
+the agents' outputs will be indistinguishable to the attacker, ensuring that
+sensitive information remains secure. This cryptographically inspired framework
+provides a rigorous standard for evaluating and designing secure LLMs.
+  This work establishes a systematic methodology for adversarial testing of
+prompt leakage, bridging the gap between automated threat modeling and
+practical LLM security.
+  You can find the implementation of our prompt leakage probing on GitHub."
+"In-Context Impersonation Reveals Large Language Models' Strengths and
+  Biases","https://scispace.com/paper/http://arxiv.org/abs/2305.14930v2","2023","Preprint","","Leonard Salewski
+Stephan Alaniz
+Isabel Rio-Torto
+Eric Schulz
+Zeynep Akata","","http://arxiv.org/pdf/2305.14930v2","In everyday conversations, humans can take on different roles and adapt their
+vocabulary to their chosen roles. We explore whether LLMs can take on, that is
+impersonate, different roles when they generate text in-context. We ask LLMs to
+assume different personas before solving vision and language tasks. We do this
+by prefixing the prompt with a persona that is associated either with a social
+identity or domain expertise. In a multi-armed bandit task, we find that LLMs
+pretending to be children of different ages recover human-like developmental
+stages of exploration. In a language-based reasoning task, we find that LLMs
+impersonating domain experts perform better than LLMs impersonating non-domain
+experts. Finally, we test whether LLMs' impersonations are complementary to
+visual information when describing different categories. We find that
+impersonation can improve performance: an LLM prompted to be a bird expert
+describes birds better than one prompted to be a car expert. However,
+impersonation can also uncover LLMs' biases: an LLM prompted to be a man
+describes cars better than one prompted to be a woman. These findings
+demonstrate that LLMs are capable of taking on diverse roles and that this
+in-context impersonation can be used to uncover their hidden strengths and
+biases."
+"LLM Agents in Interaction: Measuring Personality Consistency and
+  Linguistic Alignment in Interacting Populations of Large Language Models","https://scispace.com/paper/http://arxiv.org/abs/2402.02896v1","2024","Preprint","","Ivar Frisch
+Mario Giulianelli","","http://arxiv.org/pdf/2402.02896v1","While both agent interaction and personalisation are vibrant topics in
+research on large language models (LLMs), there has been limited focus on the
+effect of language interaction on the behaviour of persona-conditioned LLM
+agents. Such an endeavour is important to ensure that agents remain consistent
+to their assigned traits yet are able to engage in open, naturalistic
+dialogues. In our experiments, we condition GPT-3.5 on personality profiles
+through prompting and create a two-group population of LLM agents using a
+simple variability-inducing sampling algorithm. We then administer personality
+tests and submit the agents to a collaborative writing task, finding that
+different profiles exhibit different degrees of personality consistency and
+linguistic alignment to their conversational partners. Our study seeks to lay
+the groundwork for better understanding of dialogue-based interaction between
+LLMs and highlights the need for new approaches to crafting robust, more
+human-like LLM personas for interactive environments."
+"LLM Economist: Large Population Models and Mechanism Design in
+  Multi-Agent Generative Simulacra","https://scispace.com/paper/http://arxiv.org/abs/2507.15815v1","2025","Preprint","","Seth Karten
+Wenzhe Li
+Zihan Ding
+Samuel Kleiner
+Yu Bai
+Chi Jin","","http://arxiv.org/pdf/2507.15815v1","We present the LLM Economist, a novel framework that uses agent-based
+modeling to design and assess economic policies in strategic environments with
+hierarchical decision-making. At the lower level, bounded rational worker
+agents -- instantiated as persona-conditioned prompts sampled from U.S.
+Census-calibrated income and demographic statistics -- choose labor supply to
+maximize text-based utility functions learned in-context. At the upper level, a
+planner agent employs in-context reinforcement learning to propose
+piecewise-linear marginal tax schedules anchored to the current U.S. federal
+brackets. This construction endows economic simulacra with three capabilities
+requisite for credible fiscal experimentation: (i) optimization of
+heterogeneous utilities, (ii) principled generation of large, demographically
+realistic agent populations, and (iii) mechanism design -- the ultimate nudging
+problem -- expressed entirely in natural language. Experiments with populations
+of up to one hundred interacting agents show that the planner converges near
+Stackelberg equilibria that improve aggregate social welfare relative to Saez
+solutions, while a periodic, persona-level voting procedure furthers these
+gains under decentralized governance. These results demonstrate that large
+language model-based agents can jointly model, simulate, and govern complex
+economic systems, providing a tractable test bed for policy evaluation at the
+societal scale to help build better civilizations."
+"ConsistencyAI: A Benchmark to Assess LLMs' Factual Consistency When
+  Responding to Different Demographic Groups","https://scispace.com/paper/http://arxiv.org/abs/2510.13852v2","2025","Preprint","","Peter Banyas
+Shristi Sharma
+Alistair Simmons
+Atharva Vispute","","http://arxiv.org/pdf/2510.13852v2","Is an LLM telling you different facts than it's telling me? This paper
+introduces ConsistencyAI, an independent benchmark for measuring the factual
+consistency of large language models (LLMs) for different personas.
+ConsistencyAI tests whether, when users of different demographics ask identical
+questions, the model responds with factually inconsistent answers. Designed
+without involvement from LLM providers, this benchmark offers impartial
+evaluation and accountability. In our experiment, we queried 19 LLMs with
+prompts that requested 5 facts for each of 15 topics. We repeated this query
+100 times for each LLM, each time adding prompt context from a different
+persona selected from a subset of personas modeling the general population. We
+processed the responses into sentence embeddings, computed cross-persona cosine
+similarity, and computed the weighted average of cross-persona cosine
+similarity to calculate factual consistency scores. In 100-persona experiments,
+scores ranged from 0.9065 to 0.7896, and the mean was 0.8656, which we adopt as
+a benchmark threshold. xAI's Grok-3 is most consistent, while several
+lightweight models rank lowest. Consistency varies by topic: the job market is
+least consistent, G7 world leaders most consistent, and issues like vaccines or
+the Israeli-Palestinian conflict diverge by provider. These results show that
+both the provider and the topic shape the factual consistency. We release our
+code and interactive demo to support reproducible evaluation and encourage
+persona-invariant prompting strategies."
+"When Emotional Stimuli meet Prompt Designing: An Auto-Prompt Graphical
+  Paradigm","https://scispace.com/paper/http://arxiv.org/abs/2404.10500v1","2024","Preprint","","Chenggian Ma
+Xiangyu Zhao
+Chunhui Zhang
+Yanzhao Qin
+Wentao Zhang","","http://arxiv.org/pdf/2404.10500v1","With the development of Large Language Models (LLM), numerous prompts have
+been proposed, each with a rich set of features and their own merits. This
+paper summarizes the prompt words for large language models (LLMs),
+categorizing them into stimulating and framework types, and proposes an
+Auto-Prompt Graphical Paradigm(APGP) that combines both stimulating and
+framework prompts to enhance the problem-solving capabilities of LLMs across
+multiple domains, then exemplifies it with a framework that adheres to this
+paradigm. The framework involves automated prompt generation and consideration
+of emotion-stimulus factors, guiding LLMs in problem abstraction, diversified
+solutions generation, comprehensive optimization, and self-verification after
+providing answers, ensuring solution accuracy. Compared to traditional stimuli
+and framework prompts, this framework integrates the advantages of both by
+adopting automated approaches inspired by APE work, overcoming the limitations
+of manually designed prompts. Test results on the ruozhiba and BBH datasets
+demonstrate that this framework can effectively improve the efficiency and
+accuracy of LLMs in problem-solving, paving the way for new applications of
+LLMs."
+"PromptPex: Automatic Test Generation for Language Model Prompts","https://scispace.com/paper/http://arxiv.org/abs/2503.05070v1","2025","Preprint","","Reshabh K Sharma
+Jonathan De Halleux
+Shraddha Barke
+Benjamin Zorn","","http://arxiv.org/pdf/2503.05070v1","Large language models (LLMs) are being used in many applications and prompts
+for these models are integrated into software applications as code-like
+artifacts. These prompts behave much like traditional software in that they
+take inputs, generate outputs, and perform some specific function. However,
+prompts differ from traditional code in many ways and require new approaches to
+ensure that they are robust. For example, unlike traditional software the
+output of a prompt depends on the AI model that interprets it. Also, while
+natural language prompts are easy to modify, the impact of updates is harder to
+predict. New approaches to testing, debugging, and modifying prompts with
+respect to the model running them are required.
+  To address some of these issues, we developed PromptPex, an LLM-based tool to
+automatically generate and evaluate unit tests for a given prompt. PromptPex
+extracts input and output specifications from a prompt and uses them to
+generate diverse, targeted, and valid unit tests. These tests are instrumental
+in identifying regressions when a prompt is changed and also serve as a tool to
+understand how prompts are interpreted by different models. We use PromptPex to
+generate tests for eight benchmark prompts and evaluate the quality of the
+generated tests by seeing if they can cause each of four diverse models to
+produce invalid output. PromptPex consistently creates tests that result in
+more invalid model outputs than a carefully constructed baseline LLM-based test
+generator. Furthermore, by extracting concrete specifications from the input
+prompt, PromptPex allows prompt writers to clearly understand and test specific
+aspects of their prompts. The source code of PromptPex is available at
+https://github.com/microsoft/promptpex."
+"LLM Harmony: Multi-Agent Communication for Problem Solving","https://scispace.com/paper/http://arxiv.org/abs/2401.01312v1","2024","Preprint","","Sumedh Rasal","","http://arxiv.org/pdf/2401.01312v1","Large Language Models (LLMs) have revolutionized Natural Language Processing
+but exhibit limitations, particularly in autonomously addressing novel
+challenges such as reasoning and problem-solving. Traditional techniques like
+chain-of-thought prompting necessitate explicit human guidance. This paper
+introduces a novel multi-agent communication framework, inspired by the CAMEL
+model, to enhance LLMs' autonomous problem-solving capabilities. The framework
+employs multiple LLM agents, each with a distinct persona, engaged in
+role-playing communication, offering a nuanced and adaptable approach to
+diverse problem scenarios. Extensive experimentation demonstrates the
+framework's superior performance and adaptability, providing valuable insights
+into the collaborative potential of multiple agents in overcoming the
+limitations of individual models."
+"Can AI with High Reasoning Ability Replicate Human-like Decision Making
+  in Economic Experiments?","https://scispace.com/paper/http://arxiv.org/abs/2406.11426v1","2024","Preprint","","Ayato Kitadai
+Sinndy Dayana Rico Lugo
+Yudai Tsurusaki
+Yusuke Fukasawa
+Nariaki Nishino","10.1007/s10726-025-09946-9","http://arxiv.org/pdf/2406.11426v1","Economic experiments offer a controlled setting for researchers to observe
+human decision-making and test diverse theories and hypotheses; however,
+substantial costs and efforts are incurred to gather many individuals as
+experimental participants. To address this, with the development of large
+language models (LLMs), some researchers have recently attempted to develop
+simulated economic experiments using LLMs-driven agents, called generative
+agents. If generative agents can replicate human-like decision-making in
+economic experiments, the cost problem of economic experiments can be
+alleviated. However, such a simulation framework has not been yet established.
+Considering the previous research and the current evolutionary stage of LLMs,
+this study focuses on the reasoning ability of generative agents as a key
+factor toward establishing a framework for such a new methodology. A
+multi-agent simulation, designed to improve the reasoning ability of generative
+agents through prompting methods, was developed to reproduce the result of an
+actual economic experiment on the ultimatum game. The results demonstrated that
+the higher the reasoning ability of the agents, the closer the results were to
+the theoretical solution than to the real experimental result. The results also
+suggest that setting the personas of the generative agents may be important for
+reproducing the results of real economic experiments. These findings are
+valuable for the future definition of a framework for replacing human
+participants with generative agents in economic experiments when LLMs are
+further developed."
+"MapCoder: Multi-Agent Code Generation for Competitive Problem Solving","https://scispace.com/paper/http://arxiv.org/abs/2405.11403v1","2024","Preprint","","Md. Ashraful Islam
+Mohammed Eunus Ali
+Md Rizwan Parvez","","http://arxiv.org/pdf/2405.11403v1","Code synthesis, which requires a deep understanding of complex natural
+language problem descriptions, generation of code instructions for complex
+algorithms and data structures, and the successful execution of comprehensive
+unit tests, presents a significant challenge. While large language models
+(LLMs) demonstrate impressive proficiency in natural language processing, their
+performance in code generation tasks remains limited. In this paper, we
+introduce a new approach to code generation tasks leveraging multi-agent
+prompting that uniquely replicates the full cycle of program synthesis as
+observed in human developers. Our framework, MapCoder, consists of four LLM
+agents specifically designed to emulate the stages of this cycle: recalling
+relevant examples, planning, code generation, and debugging. After conducting
+thorough experiments, with multiple LLM ablations and analyses across eight
+challenging competitive problem-solving and program synthesis benchmarks,
+MapCoder showcases remarkable code generation capabilities, achieving new
+state-of-the-art results (pass@1) on HumanEval (93.9%), MBPP (83.1%), APPS
+(22.0%), CodeContests (28.5%), and xCodeEval (45.3%). Moreover, our method
+consistently delivers superior performance across various programming languages
+and varying problem difficulties. We open-source our framework at
+https://github.com/Md-Ashraful-Pramanik/MapCoder."
+"Prompt Baking","https://scispace.com/paper/http://arxiv.org/abs/2409.13697v1","2024","Preprint","","Aman Bhargava
+Cameron Witkowski
+Alexander Detkov
+Matt Thomson","","http://arxiv.org/pdf/2409.13697v1","Two primary ways to change LLM behavior are prompting and weight updates
+(e.g., fine-tuning). Prompting LLMs is simple and effective, specifying the
+desired changes explicitly in natural language, whereas weight updates provide
+more expressive and permanent behavior changes, specified implicitly via
+training on large datasets. We present a technique for ""baking"" prompts into
+the weights of an LLM. Prompt Baking converts a prompt $u$ and initial weights
+$\theta$ to a new set of weights $\theta_u$ such that new ""baked"" LLM behaves
+like the original prompted LLM. Mathematically, we minimize the KL divergence
+between $P_\theta(\cdot | u)$ and $P_{\theta_u}(\cdot)$, where $P$ is the LLM's
+probability distribution over token sequences. Across all our experiments, we
+find prompts can be readily baked into weight updates. Baking chain-of-thought
+prompts improves zero-shot performance on GSM8K, ASDiv, MBPP, ARC-Easy,
+ARC-Challenge, and CommonsenseQA benchmarks. Baking news headlines directly
+updates an LLM's knowledge. And baking instructions & personas alleviates
+""prompt forgetting"" over long sequences. Furthermore, stopping baking early
+creates ""half-baked"" models, continuously scaling prompt strength. Baked models
+retain their sensitivity to further prompting and baking, including
+re-prompting with the baked-in prompt. Surprisingly, the re-prompted models
+yield further performance gains in instruction following, as well as math
+reasoning and coding benchmarks. Taking re-prompting and re-baking to the limit
+yields a form of iterative self-improvement we call Prompt Pursuit, and
+preliminary results on instruction following exhibit dramatic performance
+gains. Finally, we discuss implications for AI safety, continuous model
+updating, enhancing real-time learning capabilities in LLM-based agents, and
+generating more stable AI personas."
+"Whose Boat Does it Float? Improving Personalization in Preference Tuning
+  via Inferred User Personas","https://scispace.com/paper/http://arxiv.org/abs/2501.11549v2","2025","Preprint","","Nishant Balepur
+Vishakh Padmakumar
+Fumeng Yang
+Shi Feng
+Rachel Rudinger
+Jordan Lee Boyd-Graber","","http://arxiv.org/pdf/2501.11549v2","LLMs are aligned to follow input instructions by learning which of two
+responses users prefer for a prompt. However, such preference data do not
+convey why users prefer responses that are chosen or rejected, so LLMs trained
+on these datasets cannot tailor responses to varied user needs. To surface
+these parameters of personalization, we apply abductive reasoning to preference
+data, inferring needs and interests of users, i.e., personas, that may prefer
+either response. We test this idea in two steps: Persona Inference (PI),
+abductively inferring personas of users who prefer chosen or rejected outputs,
+and Persona Tailoring (PT), training models to tailor outputs to personas from
+PI. We show: 1) LLMs infer personas accurately explaining why different users
+may prefer both chosen or rejected outputs; 2) Training on preference data
+augmented with PI personas via PT boosts personalization and generalizes to
+supporting user-written personas; and 3) Rejected response personas form harder
+personalization evaluations, showing PT better aids users with uncommon
+preferences versus typical alignment methods. We argue for an abductive view of
+preferences for personalization, asking not only which response is better but
+when, why, and for whom."
+"Unleashing the Emergent Cognitive Synergy in Large Language Models: A
+  Task-Solving Agent through Multi-Persona Self-Collaboration","https://scispace.com/paper/http://arxiv.org/abs/2307.05300v4","2023","Preprint","","Zhenhailong Wang
+Shaoguang Mao
+Wenshan Wu
+Tao Ge
+Furu Wei
+Heng Ji","","http://arxiv.org/pdf/2307.05300v4","Human intelligence thrives on cognitive synergy, where collaboration among
+different minds yield superior outcomes compared to isolated individuals. In
+this work, we propose Solo Performance Prompting (SPP), which transforms a
+single LLM into a cognitive synergist by engaging in multi-turn
+self-collaboration with multiple personas. A cognitive synergist is an
+intelligent agent that collaboratively combines multiple minds' strengths and
+knowledge to enhance problem-solving in complex tasks. By dynamically
+identifying and simulating different personas based on task inputs, SPP
+unleashes the potential of cognitive synergy in LLMs. Our in-depth analysis
+shows that assigning multiple fine-grained personas in LLMs improves
+problem-solving abilities compared to using a single or fixed number of
+personas. We evaluate SPP on three challenging tasks: Trivia Creative Writing,
+Codenames Collaborative, and Logic Grid Puzzle, encompassing both
+knowledge-intensive and reasoning-intensive types. Unlike previous works, such
+as Chain-of-Thought, that solely enhance the reasoning abilities in LLMs,
+experimental results demonstrate that SPP effectively reduces factual
+hallucination, and maintains strong reasoning capabilities. Additionally,
+comparative experiments show that cognitive synergy only emerges in GPT-4 and
+does not appear in less capable models, such as GPT-3.5-turbo and
+Llama2-13b-chat, which draws an interesting analogy to human development. Code,
+data, and prompts can be found at:
+https://github.com/MikeWangWZHL/Solo-Performance-Prompting.git."
+"TestForge: Feedback-Driven, Agentic Test Suite Generation","https://scispace.com/paper/http://arxiv.org/abs/2503.14713v1","2025","Preprint","","Kush Jain
+Claire Le Goues","","http://arxiv.org/pdf/2503.14713v1","Automated test generation holds great promise for alleviating the burdens of
+manual test creation. However, existing search-based techniques compromise on
+test readability, while LLM-based approaches are prohibitively expensive in
+practice. We present TestForge, an agentic unit testing framework designed to
+cost-effectively generate high-quality test suites for real-world code. Our key
+insight is to reframe LLM-based test generation as an iterative process.
+TestForge thus begins with tests generated via zero-shot prompting, and then
+continuously refines those tests based on feedback from test executions and
+coverage reports. We evaluate TestForge on TestGenEval, a real world unit test
+generation benchmark sourced from 11 large scale open source repositories; we
+show that TestForge achieves a pass@1 rate of 84.3%, 44.4% line coverage and
+33.8% mutation score on average, outperforming prior classical approaches and a
+one-iteration LLM-based baseline. TestForge produces more natural and
+understandable tests compared to state-of-the-art search-based techniques, and
+offers substantial cost savings over LLM-based techniques (at $0.63 per file).
+Finally, we release a version of TestGenEval integrated with the OpenHands
+platform, a popular open-source framework featuring a diverse set of software
+engineering agents and agentic benchmarks, for future extension and
+development."
+"Harnessing Multi-Agent LLMs for Complex Engineering Problem-Solving: A
+  Framework for Senior Design Projects","https://scispace.com/paper/http://arxiv.org/abs/2501.01205v1","2025","Preprint","","Abdullah Mushtaq
+Muhammad Rafay Naeem
+Ibrahim Ghaznavi
+Muhammad Imran Taj
+Imran Hashmi
+Junaid Qadir","","http://arxiv.org/pdf/2501.01205v1","Multi-Agent Large Language Models (LLMs) are gaining significant attention
+for their ability to harness collective intelligence in complex
+problem-solving, decision-making, and planning tasks. This aligns with the
+concept of the wisdom of crowds, where diverse agents contribute collectively
+to generating effective solutions, making it particularly suitable for
+educational settings. Senior design projects, also known as capstone or final
+year projects, are pivotal in engineering education as they integrate
+theoretical knowledge with practical application, fostering critical thinking,
+teamwork, and real-world problem-solving skills. In this paper, we explore the
+use of Multi-Agent LLMs in supporting these senior design projects undertaken
+by engineering students, which often involve multidisciplinary considerations
+and conflicting objectives, such as optimizing technical performance while
+addressing ethical, social, and environmental concerns. We propose a framework
+where distinct LLM agents represent different expert perspectives, such as
+problem formulation agents, system complexity agents, societal and ethical
+agents, or project managers, thus facilitating a holistic problem-solving
+approach. This implementation leverages standard multi-agent system (MAS)
+concepts such as coordination, cooperation, and negotiation, incorporating
+prompt engineering to develop diverse personas for each agent. These agents
+engage in rich, collaborative dialogues to simulate human engineering teams,
+guided by principles from swarm AI to efficiently balance individual
+contributions towards a unified solution. We adapt these techniques to create a
+collaboration structure for LLM agents, encouraging interdisciplinary reasoning
+and negotiation similar to real-world senior design projects. To assess the
+efficacy of this framework, we collected six proposals of engineering and
+computer science of..."
+"Persona is a Double-edged Sword: Mitigating the Negative Impact of
+  Role-playing Prompts in Zero-shot Reasoning Tasks","https://scispace.com/paper/http://arxiv.org/abs/2408.08631v2","2024","Preprint","","Junseok Kim
+Nakyeong Yang
+Kyomin Jung","","http://arxiv.org/pdf/2408.08631v2","Recent studies demonstrate that prompting a role-playing persona to an LLM
+improves reasoning capability. However, assigning an adequate persona is
+difficult since LLMs are extremely sensitive to assigned prompts; thus,
+inaccurately defined personas sometimes hinder LLMs and degrade their reasoning
+capabilities. In this paper, we first investigate the potential negative impact
+of injecting persona into language models. Furthermore, we propose a novel
+framework, Jekyll \& Hyde, which ensembles the outcomes of both role-playing
+and neutral prompts to enhance the robustness of reasoning ability.
+Specifically, Jekyll \& Hyde predicts an appropriate persona using an LLM when
+defining the role-playing prompt. Then, Jekyll \& Hyde collects two potential
+solutions from role-playing and neutral prompts and selects a better solution
+using the LLM evaluator. The experimental analysis demonstrates that
+role-playing prompts sometimes distract LLMs, degrading their reasoning
+abilities in 7 out of 12 datasets in llama3. Meanwhile, Jekyll \& Hyde improve
+reasoning capabilities by selecting better choices among the potential
+solutions on twelve widely-used natural language reasoning datasets. In
+addition, we reveal that assigning LLM-generated personas obtains more stable
+results than handcrafted personas."

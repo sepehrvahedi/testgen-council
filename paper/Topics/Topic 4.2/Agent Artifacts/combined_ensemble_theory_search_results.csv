@@ -1,0 +1,916 @@
+Paper Title,Relevance,Paper Link,Publication Year,Publication Type,Publication Title,Author Names,DOI,PDF Link,Abstract
+"Neural Network Ensembles: Theory, Training, and the Importance of Explicit Diversity","- **Relevance Score:** 53/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Provides explicit diversity‑accuracy trade‑off theory and bounds, proposes a diversity‑encouraging training algorithm, and characterises when ensembles beat single models; bias‑variance analysis is limited, and it does not cover MoE, uncertainty quantification, or multi‑agent links.",https://scispace.com/paper/neural-network-ensembles-theory-training-and-the-importance-2zmuypq65h8w,"","","","Wenjing Li
+Randy C. Paffenroth
+David Berthiaume",10.48550/arxiv.2109.14117,"","Ensemble learning is a process by which multiple base learners are strategically generated and combined into one composite learner. There are two features that are essential to an ensemble's performance, the individual accuracies of the component learners and the overall diversity in the ensemble. The right balance of learner accuracy and ensemble diversity can improve the performance of machine learning tasks on benchmark and real-world data sets, and recent theoretical and practical work has demonstrated the subtle trade-off between accuracy and diversity in an ensemble. In this paper, we extend the extant literature by providing a deeper theoretical understanding for assessing and improving the optimality of any given ensemble, including random forests and deep neural network ensembles. We also propose a training algorithm for neural network ensembles and demonstrate that our approach provides improved performance when compared to both state-of-the-art individual learners and ensembles of state-of-the-art learners trained using standard loss functions. Our key insight is that it is better to explicitly encourage diversity in an ensemble, rather than merely allowing diversity to occur by happenstance, and that rigorous theoretical bounds on the trade-off between diversity and learner accuracy allow one to know when an optimal arrangement has been achieved."
+Efficient Estimation of Generalization Error and Bias-Variance Components of Ensembles,"- **Relevance Score:** 52/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Provides bias‑variance estimators and variance‑based uncertainty, plus efficient algorithms; lacks explicit diversity‑accuracy theory, MoE treatment, and formal superiority conditions or error bounds.",https://scispace.com/paper/efficient-estimation-of-generalization-error-and-bias-1zkthukzky,2017,Posted Content,arXiv: Learning,"Dhruv Mahajan
+Vivek Gupta
+S. Sathiya Keerthi
+Sellamanickam Sundararajan
+Shravan Narayanamurthy
+Rahul Kidambi","",https://arxiv.org/pdf/1711.05482.pdf,"For many applications, an ensemble of base classifiers is an effective solution. The tuning of its parameters(number of classes, amount of data on which each classifier is to be trained on, etc.) requires G, the generalization error of a given ensemble. The efficient estimation of G is the focus of this paper. The key idea is to approximate the variance of the class scores/probabilities of the base classifiers over the randomness imposed by the training subset by normal/beta distribution at each point x in the input feature space. We estimate the parameters of the distribution using a small set of randomly chosen base classifiers and use those parameters to give efficient estimation schemes for G. We give empirical evidence for the quality of the various estimators. We also demonstrate their usefulness in making design choices such as the number of classifiers in the ensemble and the size of a subset of data used for training that is needed to achieve a certain value of generalization error. Our approach also has great potential for designing distributed ensemble classifiers."
+Balancing Selection and Diversity in Ensemble Learning with Exponential Mixture Model,"- **Relevance Score:** 48/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses exponential mixture model to balance weight concentration and diversity, proving equal balance boosts accuracy and outlines conditions for ensemble superiority; related but lacks bias‑variance, MoE details; no uncertainty analysis.",https://scispace.com/paper/balancing-selection-and-diversity-in-ensemble-learning-with-3wd3am41vs,2023,Book Chapter,Lecture Notes in Computer Science,"Kenichi Sugiyama
+Masato Uchida",10.1007/978-3-031-44213-1_26,"","In practical machine learning scenarios, there may be multiple predictors available for the same task. Ensemble learning combines these predictors to obtain a predictor with higher generalization performance. Weighted averaging is one of the most basic methods, which can be generalized by a formulation of an exponential mixture model. In this formulation, the weight optimization in ensemble learning is represented as selecting the predictors to be used by concentrating the weights and maintaining the diversity of the predictors to be used by distributing the weights. It has been theoretically shown that if the balance between these two factors is adjusted to be equal, the generalization performance improves. However, having an equal balance may not always be optimal, as there could be better alternatives. In this paper, we propose a method to obtain a predictor with higher generalization performance by adjusting the balance between selecting predictors and maintaining their diversity. Numerical experiments showed that when there is a large amount of training data and an unbiased label distribution, adjusting the balance can result in improved generalization performance. "
+Research status and prospect of ensemble learning,"- **Relevance Score:** 47/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Survey discusses ensemble concepts, mentions bias‑variance, diversity, MoE, uncertainty, and superiority conditions, but lacks formal proofs or detailed theoretical treatment.",https://scispace.com/paper/UjKttfnXPc0J,"","","","C Luo
+S Wang
+J Yin
+S Zhu
+B Lin","",http://www.journalcc.net/en/article/pdf/preview/3430192b-3c06-4798-86cd-7a9aafcf4642.pdf,""
+"Inspect, Understand, Overcome: A Survey of Practical Methods for AI Safety","- **Relevance Score:** 47/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Survey discusses ensemble types, MoE, and uncertainty uses, but lacks formal bias‑variance analysis, proven diversity‑accuracy trade‑offs, rigorous MoE theory, uncertainty bounds, or formal superiority conditions.",https://scispace.com/paper/inspect-understand-overcome-a-survey-of-practical-methods-2a0trlma,2022,Book Chapter,"","",10.1007/978-3-031-01233-4_1,https://scispace.com/pdf/inspect-understand-overcome-a-survey-of-practical-methods-2a0trlma.pdf,"Abstract Deployment of modern data-driven machine learning methods, most often realized by deep neural networks (DNNs), in safety-critical applications such as health care, industrial plant control, or autonomous driving is highly challenging due to numerous model-inherent shortcomings. These shortcomings are diverse and range from a lack of generalization over insufficient interpretability and implausible predictions to directed attacks by means of malicious inputs. Cyber-physical systems employing DNNs are therefore likely to suffer from so-called safety concerns, properties that preclude their deployment as no argument or experimental setup can help to assess the remaining risk. In recent years, an abundance of state-of-the-art techniques aiming to address these safety concerns has emerged. This chapter provides a structured and broad overview of them. We first identify categories of insufficiencies to then describe research activities aiming at their detection, quantification, or mitigation. Our work addresses machine learning experts and safety engineers alike: The former ones might profit from the broad range of machine learning topics covered and discussions on limitations of recent methods. The latter ones might gain insights into the specifics of modern machine learning methods. We hope that this contribution fuels discussions on desiderata for machine learning systems and strategies on how to help to advance existing approaches accordingly. "
+A Unified Theory of Diversity in Ensemble Learning,"- **Relevance Score:** 47/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides exact bias‑variance‑diversity decompositions, derives a trade‑off linking diversity to performance, but lacks MoE treatment, uncertainty analysis, and explicit superiority guarantees.",https://scispace.com/paper/http://arxiv.org/abs/2301.03962v3,2023,Preprint,"","Danny Wood
+Tingting Mu
+Andrew Webb
+Henry Reeve
+Mikel Luján
+Gavin Brown","",http://arxiv.org/pdf/2301.03962v3,"We present a theory of ensemble diversity, explaining the nature of diversity
+for a wide range of supervised learning scenarios. This challenge has been
+referred to as the holy grail of ensemble learning, an open research issue for
+over 30 years. Our framework reveals that diversity is in fact a hidden
+dimension in the bias-variance decomposition of the ensemble loss. We prove a
+family of exact bias-variance-diversity decompositions, for a wide range of
+losses in both regression and classification, e.g., squared, cross-entropy, and
+Poisson losses. For losses where an additive bias-variance decomposition is not
+available (e.g., 0/1 loss) we present an alternative approach: quantifying the
+effects of diversity, which turn out to be dependent on the label distribution.
+Overall, we argue that diversity is a measure of model fit, in precisely the
+same sense as bias and variance, but accounting for statistical dependencies
+between ensemble members. Thus, we should not be maximising diversity as so
+many works aim to do -- instead, we have a bias/variance/diversity trade-off to
+manage."
+A Unified Theory of Diversity in Ensemble Learning,"- **Relevance Score:** 44/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides a formal diversity‑error framework and bias‑variance decomposition for regression ensembles, but limited to squared‑loss mean combiner; lacks MoE, uncertainty, and broader algorithmic treatment.",https://scispace.com/paper/a-unified-theory-of-diversity-in-ensemble-learning-2j85kjly,2023,Posted Content,"","",10.48550/arxiv.2301.03962,https://scispace.com/pdf/a-unified-theory-of-diversity-in-ensemble-learning-2j85kjly.pdf,"We present a theory of ensemble diversity, explaining the nature and effect of diversity for a wide range of supervised learning scenarios. This challenge, of understanding ensemble diversity, has been referred to as the holy grail of ensemble learning, an open question for over 30 years. Our framework reveals that diversity is in fact a hidden dimension in the bias-variance decomposition of an ensemble. In particular, we prove a family of exact bias-variance-diversity decompositions, for both classification and regression losses, e.g., squared, and cross-entropy. The framework provides a methodology to automatically identify the combiner rule enabling such a decomposition, specific to the loss. The formulation of diversity is therefore dependent on just two design choices: the loss, and the combiner. For certain choices (e.g., 0-1 loss with majority voting) the effect of diversity is necessarily dependent on the target label. Experiments illustrate how we can use our framework to understand the diversity-encouraging mechanisms of popular ensemble methods: Bagging, Boosting, and Random Forests. "
+"Fluctuations, Bias, Variance & Ensemble of Learners: Exact Asymptotics
+  for Convex Losses in High-Dimension","- **Relevance Score:** 43/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides rigorous bias‑variance analysis for ensembles, derives variance‑based uncertainty, touches on feature correlation (diversity) and conditions like interpolation threshold, but lacks MoE treatment.",https://scispace.com/paper/fluctuations-bias-variance-ensemble-of-learners-exact-1fste2ub,2022,Posted Content,"","",10.48550/arxiv.2201.13383,https://scispace.com/pdf/fluctuations-bias-variance-ensemble-of-learners-exact-1fste2ub.pdf,"From the sampling of data to the initialisation of parameters, randomness is ubiquitous in modern Machine Learning practice. Understanding the statistical fluctuations engendered by the different sources of randomness in prediction is therefore key to understanding robust generalisation. In this manuscript we develop a quantitative and rigorous theory for the study of fluctuations in an ensemble of generalised linear models trained on different, but correlated, features in high-dimensions. In particular, we provide a complete description of the asymptotic joint distribution of the empirical risk minimiser for generic convex loss and regularisation in the high-dimensional limit. Our result encompasses a rich set of classification and regression tasks, such as the lazy regime of overparametrised neural networks, or equivalently the random features approximation of kernels. While allowing to study directly the mitigating effect of ensembling (or bagging) on the bias-variance decomposition of the test error, our analysis also helps disentangle the contribution of statistical fluctuations, and the singular role played by the interpolation threshold that are at the roots of the ""double-descent"" phenomenon. "
+A Bias-Variance Decomposition for Ensembles over Multiple Synthetic Datasets,"- **Relevance Score:** 43/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides a formal bias‑variance decomposition for ensembles of synthetic datasets; predicts when ensembles beat single models and gives a rule of thumb; mentions uncertainty benefits but without deep theory; does not address diversity‑accuracy trade‑offs or MoE frameworks.",https://scispace.com/paper/a-bias-variance-decomposition-for-ensembles-over-multiple-fp94diekqb,2024,Journal Article,arXiv.org,"Ossi Räisä
+Antti Honkela",10.48550/arxiv.2402.03985,https://scispace.compdf/a-bias-variance-decomposition-for-ensembles-over-multiple-fp94diekqb.pdf,"Recent studies have highlighted the benefits of generating multiple synthetic datasets for supervised learning, from increased accuracy to more effective model selection and uncertainty estimation. These benefits have clear empirical support, but the theoretical understanding of them is currently very light. We seek to increase the theoretical understanding by deriving bias-variance decompositions for several settings of using multiple synthetic datasets. Our theory predicts multiple synthetic datasets to be especially beneficial for high-variance downstream predictors, and yields a simple rule of thumb to select the appropriate number of synthetic datasets in the case of mean-squared error and Brier score. We investigate how our theory works in practice by evaluating the performance of an ensemble over many synthetic datasets for several real datasets and downstream predictors. The results follow our theory, showing that our insights are also practically relevant."
+Understanding the bias-variance tradeoff of Bregman divergences,"- **Relevance Score:** 43/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows ensembling reduces variance without bias change, directly tackling bias‑variance tradeoff. Variance reduction hints at diversity benefits, offers variance‑based uncertainty insight, and outlines conditions for ensemble advantage.",https://scispace.com/paper/http://arxiv.org/abs/2202.04167v2,2022,Preprint,"","Ben Adlam
+Neha Gupta
+Zelda Mariet
+Jamie Smith","",http://arxiv.org/pdf/2202.04167v2,"This paper builds upon the work of Pfau (2013), which generalized the bias
+variance tradeoff to any Bregman divergence loss function. Pfau (2013) showed
+that for Bregman divergences, the bias and variances are defined with respect
+to a central label, defined as the mean of the label variable, and a central
+prediction, of a more complex form. We show that, similarly to the label, the
+central prediction can be interpreted as the mean of a random variable, where
+the mean operates in a dual space defined by the loss function itself. Viewing
+the bias-variance tradeoff through operations taken in dual space, we
+subsequently derive several results of interest. In particular, (a) the
+variance terms satisfy a generalized law of total variance; (b) if a source of
+randomness cannot be controlled, its contribution to the bias and variance has
+a closed form; (c) there exist natural ensembling operations in the label and
+prediction spaces which reduce the variance and do not affect the bias."
+Ensembling over Classifiers: a Bias-Variance Perspective,"- **Relevance Score:** 42/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides a rigorous bias‑variance decomposition for ensembles, showing variance reduction and unexpected bias reduction; lacks explicit diversity‑accuracy formulas, MoE treatment, or uncertainty quantification.",https://scispace.com/paper/http://arxiv.org/abs/2206.10566v1,2022,Preprint,"","Neha Gupta
+Jamie Smith
+Ben Adlam
+Zelda Mariet","",http://arxiv.org/pdf/2206.10566v1,"Ensembles are a straightforward, remarkably effective method for improving
+the accuracy,calibration, and robustness of models on classification tasks;
+yet, the reasons that underlie their success remain an active area of research.
+We build upon the extension to the bias-variance decomposition by Pfau (2013)
+in order to gain crucial insights into the behavior of ensembles of
+classifiers. Introducing a dual reparameterization of the bias-variance
+tradeoff, we first derive generalized laws of total expectation and variance
+for nonsymmetric losses typical of classification tasks. Comparing conditional
+and bootstrap bias/variance estimates, we then show that conditional estimates
+necessarily incur an irreducible error. Next, we show that ensembling in dual
+space reduces the variance and leaves the bias unchanged, whereas standard
+ensembling can arbitrarily affect the bias. Empirically, standard ensembling
+reducesthe bias, leading us to hypothesize that ensembles of classifiers may
+perform well in part because of this unexpected reduction.We conclude by an
+empirical analysis of recent deep learning methods that ensemble over
+hyperparameters, revealing that these techniques indeed favor bias reduction.
+This suggests that, contrary to classical wisdom, targeting bias reduction may
+be a promising direction for classifier ensembles."
+A Unified Theory of Diversity in Ensemble Learning,"- **Relevance Score:** 41/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses bias‑variance decomposition and ambiguity term to link diversity with reduced loss; derives conditions (squared loss, mean combiner) for ensemble error ≤ individual error; does not address MoE, uncertainty quantification, or broader superiority guarantees.",https://scispace.com/paper/a-unified-theory-of-diversity-in-ensemble-learning-2j85kjly,2023,Posted Content,"","",10.48550/arxiv.2301.03962,https://scispace.com/pdf/a-unified-theory-of-diversity-in-ensemble-learning-2j85kjly.pdf,"We present a theory of ensemble diversity, explaining the nature and effect of diversity for a wide range of supervised learning scenarios. This challenge, of understanding ensemble diversity, has been referred to as the holy grail of ensemble learning, an open question for over 30 years. Our framework reveals that diversity is in fact a hidden dimension in the bias-variance decomposition of an ensemble. In particular, we prove a family of exact bias-variance-diversity decompositions, for both classification and regression losses, e.g., squared, and cross-entropy. The framework provides a methodology to automatically identify the combiner rule enabling such a decomposition, specific to the loss. The formulation of diversity is therefore dependent on just two design choices: the loss, and the combiner. For certain choices (e.g., 0-1 loss with majority voting) the effect of diversity is necessarily dependent on the target label. Experiments illustrate how we can use our framework to understand the diversity-encouraging mechanisms of popular ensemble methods: Bagging, Boosting, and Random Forests. "
+A Unified Theory of Diversity in Ensemble Learning,"- **Relevance Score:** 41/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides bias‑variance‑diversity decompositions and links diversity to performance; lacks MoE, uncertainty analysis, and explicit superiority guarantees.",https://scispace.com/paper/a-unified-theory-of-diversity-in-ensemble-learning-5eccmot6,2023,Journal Article,arXiv.org,"Danny Wood
+Tianlong Mu
+Andrew M. Webb
+Henry W. J. Reeve
+Mikel Luján
+Gavin Brown",10.48550/arXiv.2301.03962,"","We present a theory of ensemble diversity, explaining the nature and eﬀect of diversity for a wide range of supervised learning scenarios. This challenge, of understanding ensemble diversity, has been referred to as the “holy grail” of ensemble learning, an open question for over 30 years. Our framework reveals that diversity is in fact a hidden dimension in the bias-variance decomposition of an ensemble. In particular, we prove a family of exact bias-variance-diversity decompositions, for both classiﬁcation and regression losses, e.g., squared, and cross-entropy. The framework provides a methodology to automatically identify the combiner rule enabling such a decomposition, speciﬁc to the loss. The formulation of diversity is therefore dependent on just two design choices: the loss, and the combiner. For certain choices (e.g., 0-1 loss with majority voting) the eﬀect of diversity is necessarily dependent on the target label. Experiments illustrate how we can use our framework to understand the diversity-encouraging mechanisms of popular ensemble methods: Bagging, Boosting, and Random Forests."
+Towards a Systematic Approach to Design New Ensemble Learning Algorithms,"- **Relevance Score:** 41/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses bias‑variance‑diversity decomposition to analyze ensembles; derives diversity‑performance links guiding new algorithms. Discusses when ensembles outperform single models, but lacks MoE, uncertainty theory, and formal uncertainty analysis.",https://scispace.com/paper/towards-a-systematic-approach-to-design-new-ensemble-4u8yxr0xm4,2024,Journal Article,arXiv.org,"João Mendes-Moreira
+Tiago Mendes-Neves",10.48550/arxiv.2402.06818,"","Ensemble learning has been a focal point of machine learning research due to its potential to improve predictive performance. This study revisits the foundational work on ensemble error decomposition, historically confined to bias-variance-covariance analysis for regression problems since the 1990s. Recent advancements introduced a""unified theory of diversity,""which proposes an innovative bias-variance-diversity decomposition framework. Leveraging this contemporary understanding, our research systematically explores the application of this decomposition to guide the creation of new ensemble learning algorithms. Focusing on regression tasks, we employ neural networks as base learners to investigate the practical implications of this theoretical framework. This approach used 7 simple ensemble methods, we name them strategies, for neural networks that were used to generate 21 new ensemble algorithms. Among these, most of the methods aggregated with the snapshot strategy, one of the 7 strategies used, showcase superior predictive performance across diverse datasets w.r.t. the Friedman rank test with the Conover post-hoc test. Our systematic design approach contributes a suite of effective new algorithms and establishes a structured pathway for future ensemble learning algorithm development."
+Ensemble time series forecasting with applications in power systems and financial markets,"- **Relevance Score:** 41/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Discusses bias‑variance decomposition and diversity‑accuracy link, but lacks formal proofs for MoE, uncertainty, and precise superiority conditions.",https://scispace.com/paper/ensemble-time-series-forecasting-with-applications-in-power-55fvecha3r,2018,Dissertation,"",Xueheng Qiu,10.32657/10220/46281,https://scispace.com/pdf/ensemble-time-series-forecasting-with-applications-in-power-55fvecha3r.pdf,""
+Diverse Weight Averaging for Out-of-Distribution Generalization,"- **Relevance Score:** 40/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides bias‑variance‑covariance decomposition for weight averaging, identifies variance‑dominant regimes where ensembles beat single models, and links functional diversity to improved OOD performance; lacks formal MoE, uncertainty, or explicit diversity‑accuracy trade‑off proofs.",https://scispace.com/paper/http://arxiv.org/abs/2205.09739v2,2022,Preprint,"","Alexandre Ramé
+Matthieu Kirchmeyer
+Thibaud Rahier
+Alain Rakotomamonjy
+Patrick Gallinari
+Matthieu Cord","",http://arxiv.org/pdf/2205.09739v2,"Standard neural networks struggle to generalize under distribution shifts in
+computer vision. Fortunately, combining multiple networks can consistently
+improve out-of-distribution generalization. In particular, weight averaging
+(WA) strategies were shown to perform best on the competitive DomainBed
+benchmark; they directly average the weights of multiple networks despite their
+nonlinearities. In this paper, we propose Diverse Weight Averaging (DiWA), a
+new WA strategy whose main motivation is to increase the functional diversity
+across averaged models. To this end, DiWA averages weights obtained from
+several independent training runs: indeed, models obtained from different runs
+are more diverse than those collected along a single run thanks to differences
+in hyperparameters and training procedures. We motivate the need for diversity
+by a new bias-variance-covariance-locality decomposition of the expected error,
+exploiting similarities between WA and standard functional ensembling.
+Moreover, this decomposition highlights that WA succeeds when the variance term
+dominates, which we show occurs when the marginal distribution changes at test
+time. Experimentally, DiWA consistently improves the state of the art on
+DomainBed without inference overhead."
+Diversity and generalization in neural network ensembles,"- **Relevance Score:** 38/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides rigorous theory linking diversity to ensemble generalization and conditions for superiority, but does not address bias‑variance trade‑off, Mixture‑of‑Experts, or uncertainty quantification.",https://scispace.com/paper/diversity-and-generalization-in-neural-network-ensembles-3xi95qtntr,2021,Posted Content,arXiv: Learning,"Luis A. Ortega
+Rafael Cabañas
+Andrés R. Masegosa","",https://proceedings.mlr.press/v151/ortega22a/ortega22a.pdf,"Ensembles are widely used in machine learning and, usually, provide state-of-the-art performance in many prediction tasks. From the very beginning, the diversity of an ensemble has been identified as a key factor for the superior performance of these models. But the exact role that diversity plays in ensemble models is poorly understood, specially in the context of neural networks. In this work, we combine and expand previously published results in a theoretically sound framework that describes the relationship between diversity and ensemble performance for a wide range of ensemble methods. More precisely, we provide sound answers to the following questions: how to measure diversity, how diversity relates to the generalization error of an ensemble, and how diversity is promoted by neural network ensemble algorithms. This analysis covers three widely used loss functions, namely, the squared loss, the cross-entropy loss, and the 0-1 loss; and two widely used model combination strategies, namely, model averaging and weighted majority vote. We empirically validate this theoretical analysis with neural network ensembles."
+A survey on epistemic (model) uncertainty in supervised learning: Recent advances and applications,"- **Relevance Score:** 37/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Survey outlines bias‑variance and diversity impacts, discusses epistemic uncertainty via ensembles, but lacks original formal proofs, MoE treatment, or explicit superiority conditions.",https://scispace.com/paper/a-survey-on-epistemic-model-uncertainty-in-supervised-163luqqh,2022,Journal Article,Neurocomputing,"",10.1016/j.neucom.2021.10.119,https://scispace.com/pdf/a-survey-on-epistemic-model-uncertainty-in-supervised-163luqqh.pdf,""
+"On Ensembles, I-Optimality, and Active Learning","- **Relevance Score:** 37/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses variance‑minimizing weights and negative‑correlation terms to discuss ensemble bias‑variance reduction, diversity effects, and uncertainty estimation, but lacks formal MoE treatment or explicit superiority proofs.",https://scispace.com/paper/on-ensembles-i-optimality-and-active-learning-x3nj2has1v,2021,Journal Article,Journal of statistical theory and practice,William D. Heavlin,10.1007/S42519-021-00200-4,https://scispace.com/pdf/on-ensembles-i-optimality-and-active-learning-x3nj2has1v.pdf,"We consider the active learning problem for a supervised learning model: That is, after training a black box model on a given dataset, we determine which (large batch of) unlabeled candidates to label in order to improve the model further. We concentrate on the large batch case, because this is most aligned with most machine learning applications, and because it is more theoretically rich. Our approach blends three ideas: (1) We quantify model uncertainty with jackknife-like 50-per cent sub-samples (“half-samples”). (2) To select which n of C candidates to label, we consider (a rank-
+ $$(M-1)$$
+ estimate of) the associated $$C\times C$$
+ prediction covariance matrix, which has good properties. (3) Our algorithm works only indirectly with this covariance matrix, using a linear-in-C object. We illustrate by fitting a deep neural network to about 20 percent of the CIFAR-10 image dataset. The statistical efficiency we achieve is $$3\times$$
+ random selection."
+Robust quantification of prediction uncertainty by inducing heterogeneity in deep ensembles,"- **Relevance Score:** 37/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses bias‑variance intuition to guide heterogeneity; shows empirically that diversity improves accuracy and uncertainty detection, but lacks formal theory, MoE treatment, or guarantees.",https://scispace.com/paper/robust-quantification-of-prediction-uncertainty-by-inducing-1zg7dw823h,2023,Journal Article,"","Akib Mashrur
+Wei Luo
+Nayyar A. Zaidi
+Antonio Robles-Kelly",10.1109/dicta60407.2023.00072,"","Deep ensemble models have garnered attention for their capacity to yield robust predictions along with well-calibrated uncertainty estimates. Empirical evidence suggests that augmenting the number of models within deep ensembles fosters greater diversity in the functional space, enabling the exploration of multiple local optima effectively. This leads to more robust uncertainty estimates in the model. In this paper, we introduce a novel methodology to substantially enhance model diversity by inducing model heterogeneity through controlled perturbation of input images, thereby de-correlating individual models based on their local bias. Drawing inspiration from the bias-variance trade-off, our approach incorporates pre-generated masks during the training process to further refine model performance. To validate the efficacy of our technique in providing more robust estimates under dataset shift, we evaluate model diversity and predictive uncertainty on test samples from both familiar and unfamiliar distributions. Our results demonstrate that our proposed method outperforms recent approaches in detecting out-of-distribution samples, establishing its superiority within the existing literature. "
+Diversity and Generalization in Neural Network Ensembles,"- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides a solid theoretical link between diversity measures and ensemble generalization error, but lacks bias‑variance analysis, MoE treatment, and explicit uncertainty or guaranteed superiority conditions.",https://scispace.com/paper/diversity-and-generalization-in-neural-network-ensembles-3xi95qtntr,2021,Posted Content,arXiv: Learning,"Luis A. Ortega
+Rafael Cabañas
+Andrés R. Masegosa","",http://arxiv.org/pdf/2110.13786.pdf,"Ensembles are widely used in machine learning and, usually, provide state-of-the-art performance in many prediction tasks. From the very beginning, the diversity of an ensemble has been identified as a key factor for the superior performance of these models. But the exact role that diversity plays in ensemble models is poorly understood, specially in the context of neural networks. In this work, we combine and expand previously published results in a theoretically sound framework that describes the relationship between diversity and ensemble performance for a wide range of ensemble methods. More precisely, we provide sound answers to the following questions: how to measure diversity, how diversity relates to the generalization error of an ensemble, and how diversity is promoted by neural network ensemble algorithms. This analysis covers three widely used loss functions, namely, the squared loss, the cross-entropy loss, and the 0-1 loss; and two widely used model combination strategies, namely, model averaging and weighted majority vote. We empirically validate this theoretical analysis with neural network ensembles."
+"Review of: ""Diversity of Thought Elicits Stronger Reasoning Capabilities in Multi-Agent Debate Frameworks""","- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides broad review linking diversity to reasoning, but lacks formal theoretical analysis, proofs, or algorithmic details.",https://scispace.com/paper/review-of-diversity-of-thought-elicits-stronger-reasoning-6piggdt1a0e2,2024,Journal Article,"",Cristina Oana Vlas,10.32388/l7p3su,https://scispace.compdf/review-of-diversity-of-thought-elicits-stronger-reasoning-6piggdt1a0e2.pdf,"Potential competing interests: No potential competing interests to declare.The manuscript is generally clear and well-structured, focusing on enhancing the reasoning capabilities of large language models (LLMs) through a multi-agent debate framework that incorporates diverse model architectures.The topic is relevant to the field of artificial intelligence, particularly in improving mathematical reasoning tasks where current models often falter.The paper is organized logically, guiding the reader through the introduction, methodology, experiments, and conclusions.However, some sections, especially those explaining the theoretical basis for the observed phenomena, lack depth, affecting the overall clarity.Several theoretical frameworks and studies from machine learning, cognitive science, and related fields help explain why diversity among models enhances reasoning capabilities.In machine learning, ensemble learning provides a strong foundation for understanding the benefits of model diversity.Ensemble methods like bagging and boosting improve model performance by combining multiple models to reduce variance without significantly increasing bias.Diverse models tend to make uncorrelated errors, so aggregating their predictions can lead to better overall accuracy.The theoretical justification lies in the fact that the accuracy of an ensemble is higher when the individual models are both accurate and diverse.Studies by Dietterich (2000) and Kuncheva and Whitaker (2003) highlight that ensemble methods work best when individual models disagree in their errors, emphasizing the importance of diversity.The concept of the ""Wisdom of Crowds"" from social sciences also contributes to this understanding.Aggregating independent judgments from a diverse group can produce results superior to those of any individual member, as errors can cancel out.The diversity in opinions leads to a wider exploration of possible solutions, increasing the chance of finding the correct one.Surowiecki (2004) and Hong and Page (2004) illustrate how diversity, independence, and decentralization contribute to collective intelligence, demonstrating mathematically that diverse groups can outperform more homogeneous ones in problem-solving tasks.Cognitive diversity in problem-solving is another area that sheds light on this phenomenon.Page's Diversity Theorem posits that diversity in problem-solving approaches can lead to better group performance than groups composed of the best individual performers.Diverse individuals bring different heuristics and perspectives, enhancing the group's ability to explore the solution space.Page (2007) discusses how cognitive diversity drives innovation and problem-solving effectiveness.Negative correlation learning is a concept where encouraging individual models in an ensemble to specialize by penalizing "
+"Randomized Spline Trees for Functional Data Classification: Theory and
+  Application to Environmental Time Series","- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses B‑spline randomization to induce functional diversity and links diversity to accuracy gains; provides generalization error discussion but lacks formal bias‑variance trade‑off analysis, MoE treatment, or uncertainty quantification; mentions qualitative conditions for ensemble advantage.",https://scispace.com/paper/randomized-spline-trees-for-functional-data-classification-39wv1jgss96w,2024,Journal Article,"","Donato Riccio
+Fabrizio Maturo
+Elvira Romano",10.48550/arxiv.2409.07879,https://scispace.compdf/randomized-spline-trees-for-functional-data-classification-39wv1jgss96w.pdf,"Functional data analysis (FDA) and ensemble learning can be powerful tools for analyzing complex environmental time series. Recent literature has highlighted the key role of diversity in enhancing accuracy and reducing variance in ensemble methods.This paper introduces Randomized Spline Trees (RST), a novel algorithm that bridges these two approaches by incorporating randomized functional representations into the Random Forest framework. RST generates diverse functional representations of input data using randomized B-spline parameters, creating an ensemble of decision trees trained on these varied representations. We provide a theoretical analysis of how this functional diversity contributes to reducing generalization error and present empirical evaluations on six environmental time series classification tasks from the UCR Time Series Archive. Results show that RST variants outperform standard Random Forests and Gradient Boosting on most datasets, improving classification accuracy by up to 14\%. The success of RST demonstrates the potential of adaptive functional representations in capturing complex temporal patterns in environmental data. This work contributes to the growing field of machine learning techniques focused on functional data and opens new avenues for research in environmental time series analysis. "
+"Diversity, accuracy and efficiency in ensemble learning: An unexpected result","- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Derives a surprising link between diversity and accuracy, showing how varied base learners boost performance; discusses when ensembles outperform single models, but lacks bias‑variance analysis, MoE treatment, and uncertainty theory.",https://scispace.com/paper/diversity-accuracy-and-efficiency-in-ensemble-learning-an-24dygyesfu,2019,Journal Article,Intelligent Data Analysis,"Joseph Johnson
+Christophe Giraud-Carrier",10.3233/IDA-183934,"",""
+Ensembles of Semantic Spaces : On Combining Models of Distributional Semantics with Applications in Healthcare,"- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Links ensembles to collective intelligence (Condorcet theorem); offers theoretical discussion of accuracy‑diversity and ensemble superiority conditions, but lacks bias‑variance, MoE, and uncertainty analysis.",https://scispace.com/paper/ensembles-of-semantic-spaces-on-combining-models-of-2riwxk1bjt,2015,"","",Aron Henriksson,"",https://scispace.com/pdf/ensembles-of-semantic-spaces-on-combining-models-of-2riwxk1bjt.pdf,Distributional semantics allows models of linguistic meaning to be derived from observations of language use in large amounts of text. By modeling the meaning of words in semantic (vector) space on ...
+Rethinking Fano's Inequality in Ensemble Learning,"- **Relevance Score:** 33/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Offers an information‑theoretic ensemble framework with loss metrics, but lacks bias‑variance, explicit diversity‑accuracy proofs, MoE treatment, or uncertainty theory; provides limited formal conditions and bounds.",https://scispace.com/paper/rethinking-fano-s-inequality-in-ensemble-learning-28z8ldym,2022,Posted Content,"","",10.48550/arxiv.2205.12683,https://scispace.com/pdf/rethinking-fano-s-inequality-in-ensemble-learning-28z8ldym.pdf,"We propose a fundamental theory on ensemble learning that evaluates a given ensemble system by a well-grounded set of metrics. Previous studies used a variant of Fano's inequality of information theory and derived a lower bound of the classification error rate on the basis of the accuracy and diversity of models. We revisit the original Fano's inequality and argue that the studies did not take into account the information lost when multiple model predictions are combined into a final prediction. To address this issue, we generalize the previous theory to incorporate the information loss. Further, we empirically validate and demonstrate the proposed theory through extensive experiments on actual systems. The theory reveals the strengths and weaknesses of systems on each metric, which will push the theoretical understanding of ensemble learning and give us insights into designing systems. "
+Rethinking Fano's Inequality in Ensemble Learning,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides an information‑theoretic ensemble framework with metrics and bounds, but lacks bias‑variance focus, explicit diversity‑accuracy trade‑off, MoE treatment, or uncertainty analysis.",https://scispace.com/paper/rethinking-fano-s-inequality-in-ensemble-learning-28z8ldym,2022,Posted Content,"","",10.48550/arxiv.2205.12683,https://scispace.com/pdf/rethinking-fano-s-inequality-in-ensemble-learning-28z8ldym.pdf,"We propose a fundamental theory on ensemble learning that evaluates a given ensemble system by a well-grounded set of metrics. Previous studies used a variant of Fano's inequality of information theory and derived a lower bound of the classification error rate on the basis of the accuracy and diversity of models. We revisit the original Fano's inequality and argue that the studies did not take into account the information lost when multiple model predictions are combined into a final prediction. To address this issue, we generalize the previous theory to incorporate the information loss. Further, we empirically validate and demonstrate the proposed theory through extensive experiments on actual systems. The theory reveals the strengths and weaknesses of systems on each metric, which will push the theoretical understanding of ensemble learning and give us insights into designing systems. "
+Ensemble learning,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses Cauchy's inequality to bound committee error and reviews bias‑variance concepts, but lacks deep formal analysis of diversity‑accuracy, MoE, uncertainty quantification, or explicit error bounds.",https://scispace.com/paper/ensemble-learning-yxl5fp2pkn,"",Journal Article,"",G Brown,10.1002/9781118029145.ch8,https://profgavinbrown.github.io/files/brown2010encyc.pdf,"This note presents a chronological review of the literature on ensemble learning which has accumulated over the past twenty years. The idea of ensemble learning is to employ multiple learners and combine their predictions. If we have a committee of M models with uncorrelated errors, simply by averaging them the average error of a model can be reduced by a factor of M. Unfortunately, the key assumption that the errors due to the individual models are uncorrelated is unrealistic; in practice, the errors are typically highly correlated, so the reduction in overall error is generally small. However, by making use of Cauchy's inequality, it can be shown that the expected committee error will not exceed the expected error of the constituent models. In this article the literature in general is reviewed, with, where possible, an emphasis on both theory and practical advice, then a taxonomy is provided, and finally four ensemble methods are covered in greater detail: bagging, boosting (including AdaBoost), stacked generalization and the random subspace method."
+Accurate Uncertainty Estimation and Decomposition in Ensemble Learning,"- **Relevance Score:** 27/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides a Bayesian nonparametric ensemble with strong theoretical guarantees for uncertainty decomposition, but does not address bias‑variance trade‑off, diversity‑accuracy theory, MoE frameworks, or formal superiority conditions.",https://scispace.com/paper/accurate-uncertainty-estimation-and-decomposition-in-8or35dqax2w4,"","","","Jeremiah Zhe Liu
+John Paisley
+Marianthi-Anna Kioumourtzoglou
+Brent A. Coull",10.48550/arxiv.1911.04061,"","Ensemble learning is a standard approach to building machine learning systems that capture complex phenomena in real-world data. An important aspect of these systems is the complete and valid quantification of model uncertainty. We introduce a Bayesian nonparametric ensemble (BNE) approach that augments an existing ensemble model to account for different sources of model uncertainty. BNE augments a model's prediction and distribution functions using Bayesian nonparametric machinery. It has a theoretical guarantee in that it robustly estimates the uncertainty patterns in the data distribution, and can decompose its overall predictive uncertainty into distinct components that are due to different sources of noise and error. We show that our method achieves accurate uncertainty estimates under complex observational noise, and illustrate its real-world utility in terms of uncertainty decomposition and model bias detection for an ensemble in predict air pollution exposures in Eastern Massachusetts, USA."
+"Speed-vs-Accuracy Tradeoff in Collective Estimation: An Adaptive
+  Exploration-Exploitation Case","- **Relevance Score:** 27/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses bias‑variance decomposition to explain how diversity and social interactions affect collective accuracy; derives a diversity‑accuracy link for agents. Connects ensemble ideas to multi‑agent collective intelligence, but lacks formal MoE treatment, uncertainty analysis, or explicit superiority conditions.",https://scispace.com/paper/http://arxiv.org/abs/2201.07123v1,2022,Preprint,"","Mohsen Raoufi
+Heiko Hamann
+Pawel Romanczuk",10.1109/MRS50823.2021.9620695,http://arxiv.org/pdf/2201.07123v1,"The tradeoff between accuracy and speed is considered fundamental to
+individual and collective decision-making. In this paper, we focus on
+collective estimation as an example of collective decision-making. The task is
+to estimate the average scalar intensity of a desired feature in the
+environment. The solution we propose consists of exploration and exploitation
+phases, where the switching time is a factor dictating the balance between the
+two phases. By decomposing the total accuracy into bias and variance, we
+explain that diversity and social interactions could promote the accuracy of
+the collective decision. We also show how the exploration-vs-exploitation
+tradeoff relates to the speed-vs-accuracy tradeoff. One significant finding of
+our work is that there is an optimal duration for exploration to compromise
+between speed and accuracy. This duration cannot be determined offline for an
+unknown environment. Hence, we propose an adaptive, distributed mechanism
+enabling individual agents to decide in a decentralized manner when to switch.
+Moreover, the spatial consequence of the exploitation phase is an emergent
+collective movement, leading to the aggregation of the collective at the
+iso-contours of the mean intensity of the environmental field in the spatial
+domain. Examples of potential applications for such a fully distributed
+collective estimation model are spillage capturing and source localization."
+"A Unified Virtual Mixture-of-Experts Framework:Enhanced Inference and
+  Hallucination Mitigation in Single-Model System","- **Relevance Score:** 27/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses statistical variance reduction to justify virtual MoE; provides fixed‑voting ensemble analysis but lacks bias‑variance trade‑off, diversity‑accuracy, uncertainty quantification, or formal superiority conditions.",https://scispace.com/paper/http://arxiv.org/abs/2504.03739v1,2025,Preprint,"",Mingyan Liu,"",http://arxiv.org/pdf/2504.03739v1,"Generative models, such as GPT and BERT, have significantly improved
+performance in tasks like text generation and summarization. However,
+hallucinations ""where models generate non-factual or misleading content"" are
+especially problematic in smaller-scale architectures, limiting their
+real-world applicability.In this paper, we propose a unified Virtual
+Mixture-of-Experts (MoE) fusion strategy that enhances inference performance
+and mitigates hallucinations in a single Qwen 1.5 0.5B model without increasing
+the parameter count. Our method leverages multiple domain-specific expert
+prompts (with the number of experts being adjustable) to guide the model from
+different perspectives. We apply a statistical outlier truncation strategy
+based on the mean and standard deviation to filter out abnormally high
+probability predictions, and we inject noise into the embedding space to
+promote output diversity. To clearly assess the contribution of each module, we
+adopt a fixed voting mechanism rather than a dynamic gating network, thereby
+avoiding additional confounding factors. We provide detailed theoretical
+derivations from both statistical and ensemble learning perspectives to
+demonstrate how our method reduces output variance and suppresses
+hallucinations. Extensive ablation experiments on dialogue generation tasks
+show that our approach significantly improves inference accuracy and robustness
+in small models. Additionally, we discuss methods for evaluating the
+orthogonality of virtual experts and outline the potential for future work
+involving dynamic expert weight allocation using gating networks."
+Weight Ensembling Improves Reasoning in Language Models,"- **Relevance Score:** 27/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses weight interpolation to formalize bias‑variance trade‑off for Pass@k, showing reduced bias and variance; does not derive diversity‑accuracy trade‑offs or MoE theory; provides insight on when ensembling outperforms single checkpoints and links variance reduction to uncertainty estimation.",https://scispace.com/paper/http://arxiv.org/abs/2504.10478v4,2025,Preprint,"","Xingyu Dang
+Christina Baek
+Kaiyue Wen
+Zico Kolter
+Aditi Raghunathan","",http://arxiv.org/pdf/2504.10478v4,"We investigate a failure mode that arises during the training of reasoning
+models, where the diversity of generations begins to collapse, leading to
+suboptimal test-time scaling. Notably, the Pass@1 rate reliably improves during
+supervised finetuning (SFT), but Pass@k rapidly deteriorates. Surprisingly, a
+simple intervention of interpolating the weights of the latest SFT checkpoint
+with an early checkpoint, otherwise known as WiSE-FT, almost completely
+recovers Pass@k while also improving Pass@1. The WiSE-FT variant achieves
+better test-time scaling (Best@k, majority vote) and achieves superior results
+with less data when tuned further by reinforcement learning. Finally, we find
+that WiSE-FT provides complementary performance gains that cannot be achieved
+only through diversity-inducing decoding strategies, like temperature scaling.
+We formalize a bias-variance tradeoff of Pass@k with respect to the expectation
+and variance of Pass@1 over the test distribution. We find that WiSE-FT can
+reduce bias and variance simultaneously, while temperature scaling inherently
+trades off between bias and variance."
+"It's an Alignment, Not a Trade-off: Revisiting Bias and Variance in Deep
+  Models","- **Relevance Score:** 26/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides theoretical bias‑variance alignment for ensembles, linking calibration and neural collapse. Does not address diversity‑accuracy, MoE, or formal superiority conditions; variance discussion hints at uncertainty estimation.",https://scispace.com/paper/http://arxiv.org/abs/2310.09250v1,2023,Preprint,"","Lin Chen
+Michal Lukasik
+Wittawat Jitkrittum
+Chong You
+Sanjiv Kumar","",http://arxiv.org/pdf/2310.09250v1,"Classical wisdom in machine learning holds that the generalization error can
+be decomposed into bias and variance, and these two terms exhibit a
+\emph{trade-off}. However, in this paper, we show that for an ensemble of deep
+learning based classification models, bias and variance are \emph{aligned} at a
+sample level, where squared bias is approximately \emph{equal} to variance for
+correctly classified sample points. We present empirical evidence confirming
+this phenomenon in a variety of deep learning models and datasets. Moreover, we
+study this phenomenon from two theoretical perspectives: calibration and neural
+collapse. We first show theoretically that under the assumption that the models
+are well calibrated, we can observe the bias-variance alignment. Second,
+starting from the picture provided by the neural collapse theory, we show an
+approximate correlation between bias and variance."
+Differentiable Model Selection for Ensemble Learning,"- **Relevance Score:** 23/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses differentiable optimization to learn per-sample aggregation, akin to MoE gating, offering a novel algorithmic approach but lacks formal bias‑variance, diversity‑accuracy, uncertainty, or superiority analyses.",https://scispace.com/paper/differentiable-model-selection-for-ensemble-learning-27ikw8drz8,2023,Journal Article,"","James Kotary
+Vincenzo Di Vito
+Ferdinando Fioretto",10.24963/ijcai.2023/217,https://scispace.compdf/differentiable-model-selection-for-ensemble-learning-27ikw8drz8.pdf,"Model selection is a strategy aimed at creating accurate and robust models by identifying the optimal model for classifying any particular input sample. This paper proposes a novel framework for differentiable selection of groups of models by integrating machine learning and combinatorial optimization. The framework is tailored for ensemble learning with a strategy that learns to combine the predictions of appropriately selected pre-trained ensemble models. It does so by modeling the ensemble learning task as a differentiable selection program trained end-to-end over a pretrained ensemble to optimize task performance. The proposed framework demonstrates its versatility and effectiveness, outperforming conventional and advanced consensus rules across a variety of classification tasks. "
+Accurate uncertainty estimation and decomposition in ensemble learning,"- **Relevance Score:** 23/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Strong theoretical treatment of ensemble uncertainty estimation; lacks bias‑variance analysis, diversity‑accuracy trade‑off, MoE theory, and formal superiority conditions.",https://scispace.com/paper/accurate-uncertainty-estimation-and-decomposition-in-2da93dh2fl,2019,Proceedings Article,Neural Information Processing Systems,"Jeremiah Zhe Liu
+John Paisley
+Marianthi-Anna Kioumourtzoglou
+Brent A. Coull","",https://proceedings.neurips.cc/paper/2019/file/1cc8a8ea51cd0adddf5dab504a285915-Paper.pdf,"Ensemble learning is a standard approach to building machine learning systems that capture complex phenomena in real-world data. An important aspect of these systems is the complete and valid quantification of model uncertainty. We introduce a Bayesian nonparametric ensemble (BNE) approach that augments an existing ensemble model to account for different sources of model uncertainty. BNE augments a model’s prediction and distribution functions using Bayesian nonparametric machinery. It has a theoretical guarantee in that it robustly estimates the uncertainty patterns in the data distribution, and can decompose its overall predictive uncertainty into distinct components that are due to different sources of noise and error. We show that our method achieves accurate uncertainty estimates under complex observational noise, and illustrate its real-world utility in terms of uncertainty decomposition and model bias detection for an ensemble in predict air pollution exposures in Eastern Massachusetts, USA."
+Evolutionary Weights for Random Subspace Learning,"- **Relevance Score:** 23/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Offers conceptual bias‑variance discussion and evolutionary weighting for random subspaces, but provides no formal diversity‑accuracy, MoE, uncertainty, or rigorous performance guarantees.",https://scispace.com/paper/evolutionary-weights-for-random-subspace-learning-1ins97i31b,2016,"","",Andre Lobato Ramos,"",https://scispace.com/pdf/evolutionary-weights-for-random-subspace-learning-1ins97i31b.pdf,"Ensemble learning is a widely used technique in Data Mining, this method allows us to aggregate models to reduce prediction error. There are many methods on how to perform model aggregation, one of them is known as Random Subspace Learning, which consists of building subspace of the feature space where we want to create our models. The task of selecting good subspaces and in turn produce good models for better prediction can be a daunting one, so we want to propose a new method to accomplish such a task. This proposed method allows for an automated data-driven way to attribute weights to variables in the feature space in order select variables that show themselves to be important in reducing the prediction error."
+Rethinking Fano's Inequality in Ensemble Learning,"- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Derives a diversity‑accuracy bound via Fano's inequality; does not address bias‑variance, MoE, or uncertainty; hints at when ensembles help but lacks formal superiority conditions.",https://scispace.com/paper/rethinking-fano-s-inequality-in-ensemble-learning-2pptu5zk,2022,Proceedings Article,International Conference on Machine Learning,"Terufumi Morishita
+Gaku Morio
+Shota Horiguchi
+Hiroaki Ozaki
+Nobuo Nukaga",10.48550/arXiv.2205.12683,https://scispace.compdf/rethinking-fano-s-inequality-in-ensemble-learning-2pptu5zk.pdf,"We propose a fundamental theory on ensemble learning that evaluates a given ensemble system by a well-grounded set of metrics. Previous studies used a variant of Fano's inequality of information theory and derived a lower bound of the classification error rate on the basis of the accuracy and diversity of models. We revisit the original Fano's inequality and argue that the studies did not take into account the information lost when multiple model predictions are combined into a final prediction. To address this issue, we generalize the previous theory to incorporate the information loss. Further, we empirically validate and demonstrate the proposed theory through extensive experiments on actual systems. The theory reveals the strengths and weaknesses of systems on each metric, which will push the theoretical understanding of ensemble learning and give us insights into designing systems."
+A Theoretical Analysis of Why Hybrid Ensembles Work,"- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Derives a direct link between classifier diversity and accuracy, showing hybrid ensembles can outperform single models under certain heterogeneity conditions, but lacks bias‑variance, MoE, and uncertainty analyses.",https://scispace.com/paper/a-theoretical-analysis-of-why-hybrid-ensembles-work-okqe2a08o2,2017,Journal Article,Computational Intelligence and Neuroscience,Kuo-Wei Hsu,10.1155/2017/1930702,https://scispace.com/pdf/a-theoretical-analysis-of-why-hybrid-ensembles-work-okqe2a08o2.pdf,"Inspired by the group decision making process, ensembles or combinations of classifiers have been found favorable in a wide variety of application domains. Some researchers propose to use the mixture of two different types of classification algorithms to create a hybrid ensemble. Why does such an ensemble work? The question remains. Following the concept of diversity, which is one of the fundamental elements of the success of ensembles, we conduct a theoretical analysis of why hybrid ensembles work, connecting using different algorithms to accuracy gain. We also conduct experiments on classification performance of hybrid ensembles of classifiers created by decision tree and naive Bayes classification algorithms, each of which is a top data mining algorithm and often used to create non-hybrid ensembles. Therefore, through this paper, we provide a complement to the theoretical foundation of creating and using hybrid ensembles."
+When does diversity help generalization in classification ensembles?,"- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Derives a formal diversity‑accuracy link via margin theory and shows specific diversity ranges that improve generalization; does not address bias‑variance, MoE, or uncertainty; offers limited conditions for ensemble advantage.",https://scispace.com/paper/when-does-diversity-help-generalization-in-classification-1gl3yzyyuw,2021,Journal Article,"IEEE Transactions on Systems, Man, and Cybernetics","Yijun Bian
+Huanhuan Chen",10.1109/TCYB.2021.3053165,https://arxiv.org/pdf/1910.13631,"Ensembles, as a widely used and effective technique in the machine learning community, succeed within a key element--``diversity.'' The relationship between diversity and generalization, unfortunately, is not entirely understood and remains an open research issue. To reveal the effect of diversity on the generalization of classification ensembles, we investigate three issues on diversity, that is, the measurement of diversity, the relationship between the proposed diversity and the generalization error, and the utilization of this relationship for ensemble pruning. In the diversity measurement, we measure diversity by error decomposition inspired by regression ensembles, which decompose the error of classification ensembles into accuracy and diversity. Then, we formulate the relationship between the measured diversity and ensemble performance through the theorem of margin and generalization and observe that the generalization error is reduced effectively only when the measured diversity is increased in a few specific ranges, while in other ranges, larger diversity is less beneficial to increasing the generalization of an ensemble. Besides, we propose two pruning methods based on diversity management to utilize this relationship, which could increase diversity appropriately and shrink the size of the ensemble without much-decreasing performance. The empirical results validate the reasonableness of the proposed relationship between diversity and ensemble generalization error and the effectiveness of the proposed pruning methods."
+"Nested Mixture of Experts: Cooperative and Competitive Learning of
+  Hybrid Dynamical System","- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses bias‑variance discussion to motivate NMOE; introduces cooperative/competitive expert training but lacks formal diversity‑accuracy analysis, uncertainty theory, or proven superiority conditions.",https://scispace.com/paper/http://arxiv.org/abs/2011.10605v2,2020,Preprint,"","Junhyeok Ahn
+Luis Sentis","",http://arxiv.org/pdf/2011.10605v2,"Model-based reinforcement learning (MBRL) algorithms can attain significant
+sample efficiency but require an appropriate network structure to represent
+system dynamics. Current approaches include white-box modeling using analytic
+parameterizations and black-box modeling using deep neural networks. However,
+both can suffer from a bias-variance trade-off in the learning process, and
+neither provides a structured method for injecting domain knowledge into the
+network. As an alternative, gray-box modeling leverages prior knowledge in
+neural network training but only for simple systems. In this paper, we devise a
+nested mixture of experts (NMOE) for representing and learning hybrid dynamical
+systems. An NMOE combines both white-box and black-box models while optimizing
+bias-variance trade-off. Moreover, an NMOE provides a structured method for
+incorporating various types of prior knowledge by training the associative
+experts cooperatively or competitively. The prior knowledge includes
+information on robots' physical contacts with the environments as well as their
+kinematic and dynamic properties. In this paper, we demonstrate how to
+incorporate prior knowledge into our NMOE in various continuous control
+domains, including hybrid dynamical systems. We also show the effectiveness of
+our method in terms of data-efficiency, generalization to unseen data, and
+bias-variance trade-off. Finally, we evaluate our NMOE using an MBRL setup,
+where the model is integrated with a model-based controller and trained online."
+Using Stacked Generalization for Anomaly Detection,"- **Relevance Score:** 21/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** States explicit accuracy and diversity conditions for ensemble superiority, but lacks bias‑variance analysis, formal diversity‑accuracy proofs, MoE theory, or uncertainty quantification.",https://scispace.com/paper/using-stacked-generalization-for-anomaly-detection-18i605ivhu,2017,Dissertation,"",Miguel Oliveira Sandim,"",https://scispace.com/pdf/using-stacked-generalization-for-anomaly-detection-18i605ivhu.pdf,"Detecao de Anomalias e uma area de investigacao importante hoje em dia, na qual a intencao e encontrar padroes em dados que nao estejam de acordo com o comportamento esperado.As tecnicas que tem sido utilizadas nesta area sao diversas, baseadas em diferentes assuncoes sobre como as anomalias se manifestam nos dados e podem ter diferentes resultados (uma pontuacao numerica ou uma classificacao). Devido a esta heterogeneidade, cada tecnica e especializada em caracteristicas especificas dos dados e pode apenas fornecer uma visao limitada sobre as anomalias que existem num conjunto de dados especifico.Ensemble Learning e um processo que tenta incorporar as opinioes de diferentes algoritmos de modo a potenciar uma decisao mais ponderada.Este processo tem sido aplicado com sucesso em problemas de aprendizagem supervisionada e melhorias na performance foram observadas empiricamente.Stacked Generalization e um destes metodos, no qual um algoritmo de aprendizagem e usado para combinar as opinioes de diferentes algoritmos.O objetivo desta tese e o de investigar a aplicacao do metodo Stacked Generalization com as principais tecnicas de Detecao de Anomalias e determinar se este metodo pode conduzir a uma melhor performance.Este metodo sera entao avaliado com conjuntos de dados publicos e usados para validacao das tecnicas na literatura cientifica de Detecao de Anomalias."
+Differentiable Model Selection for Ensemble Learning,"- **Relevance Score:** 20/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses differentiable optimization to select ensemble members, mentions error diversity and conditional aggregation akin to MoE, but lacks formal bias‑variance, uncertainty, or superiority analyses.",https://scispace.com/paper/differentiable-model-selection-for-ensemble-learning-2ley3n3m,2022,Posted Content,"","",10.48550/arxiv.2211.00251,https://scispace.com/pdf/differentiable-model-selection-for-ensemble-learning-2ley3n3m.pdf,"Model selection is a strategy aimed at creating accurate and robust models. A key challenge in designing these algorithms is identifying the optimal model for classifying any particular input sample. This paper addresses this challenge and proposes a novel framework for differentiable model selection integrating machine learning and combinatorial optimization. The framework is tailored for ensemble learning, a strategy that combines the outputs of individually pre-trained models, and learns to select appropriate ensemble members for a particular input sample by transforming the ensemble learning task into a differentiable selection program trained end-to-end within the ensemble learning model. Tested on various tasks, the proposed framework demonstrates its versatility and effectiveness, outperforming conventional and advanced consensus rules across a variety of settings and learning tasks. "
+The diversified ensemble neural network,"- **Relevance Score:** 20/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses a diversified ensemble layer to improve accuracy and stability, offering theoretical analysis of weight directions and integration into CNN/RNN/GCN, but lacks explicit bias‑variance, diversity‑accuracy, MoE, or uncertainty theory.",https://scispace.com/paper/the-diversified-ensemble-neural-network-4fec17vkpw,2020,Proceedings Article,Neural Information Processing Systems,"Shaofeng Zhang
+Meng Liu
+Junchi Yan","",https://proceedings.neurips.cc/paper/2020/file/b86e8d03fe992d1b0e19656875ee557c-Paper.pdf,"Ensemble is a general way of improving the accuracy and stability of learning models, especially for the generalization ability on small datasets. Compared with tree-based methods, relatively less works have been devoted to an in-depth study on effective ensemble design for neural networks. In this paper, we propose a principled ensemble technique by constructing the so-called diversified ensemble layer to combine multiple networks as individual modules. Through comprehensive theoretical analysis, we show that each individual model in our ensemble layer corresponds to weights in the ensemble layer optimized in different directions. Meanwhile, the devised ensemble layer can be readily integrated into popular neural architectures, including CNNs, RNNs, and GCNs. Extensive experiments are conducted on public tabular datasets, images, and texts. By adopting weight sharing approach, the results show our method can notably improve the accuracy and stability of the original neural networks with ignorable extra time and space overhead."
+The online performance estimation framework: heterogeneous ensemble learning for data streams,"- **Relevance Score:** 20/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses heterogeneous ensembles with dynamic weighting for data streams; discusses diversity benefits and gating-like weighting but lacks formal bias‑variance, uncertainty, or superiority analyses.",https://scispace.com/paper/the-online-performance-estimation-framework-heterogeneous-k4obuc4h67,2018,Journal Article,Machine Learning,"Jan N. van Rijn
+Jan N. van Rijn
+Geoffrey Holmes
+Bernhard Pfahringer
+Joaquin Vanschoren",10.1007/S10994-017-5686-9,https://link.springer.com/content/pdf/10.1007/s10994-017-5686-9.pdf,"Ensembles of classifiers are among the best performing classifiers available in many data mining applications, including the mining of data streams. Rather than training one classifier, multiple classifiers are trained, and their predictions are combined according to a given voting schedule. An important prerequisite for ensembles to be successful is that the individual models are diverse. One way to vastly increase the diversity among the models is to build an heterogeneous ensemble, comprised of fundamentally different model types. However, most ensembles developed specifically for the dynamic data stream setting rely on only one type of base-level classifier, most often Hoeffding Trees. We study the use of heterogeneous ensembles for data streams. We introduce the Online Performance Estimation framework, which dynamically weights the votes of individual classifiers in an ensemble. Using an internal evaluation on recent training data, it measures how well ensemble members performed on this and dynamically updates their weights. Experiments over a wide range of data streams show performance that is competitive with state of the art ensemble techniques, including Online Bagging and Leveraging Bagging, while being significantly faster. All experimental results from this work are easily reproducible and publicly available online."
+Horseshoe RuleFit : Learning Rule Ensembles via Bayesian Regularization,"- **Relevance Score:** 20/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Mentions bias‑variance and Bayesian regularization for rule ensembles, offering limited theoretical insight; lacks formal diversity‑accuracy analysis, MoE treatment, or proven superiority conditions.",https://scispace.com/paper/horseshoe-rulefit-learning-rule-ensembles-via-bayesian-s6vi4at9d8,2016,"","",Malte Nalenz,"",https://scispace.com/pdf/horseshoe-rulefit-learning-rule-ensembles-via-bayesian-s6vi4at9d8.pdf,"This work proposes Hs-RuleFit, a learning method for regression and classiﬁcation, which combines rule ensemble learning based on the RuleFit algorithm with Bayesian regularization through the hors ..."
+Exploiting Uncertainties from Ensemble Learners to Improve Decision-Making in Healthcare AI,"- **Relevance Score:** 18/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a rigorous theoretical comparison of ensemble mean vs variance for uncertainty, showing when mean is preferable; touches on assumptions that imply ensemble advantage but lacks broader bias‑variance, diversity, or MoE analysis.",https://scispace.com/paper/exploiting-uncertainties-from-ensemble-learners-to-improve-9arjplyx9b4y,"","","","Yingshui Tan
+Baihong Jin
+Xiangyu Yue
+Yuxin Chen
+Alberto Sangiovanni Vincentelli",10.48550/arxiv.2007.06063,"","Ensemble learning is widely applied in Machine Learning (ML) to improve model performance and to mitigate decision risks. In this approach, predictions from a diverse set of learners are combined to obtain a joint decision. Recently, various methods have been explored in literature for estimating decision uncertainties using ensemble learning; however, determining which metrics are a better fit for certain decision-making applications remains a challenging task. In this paper, we study the following key research question in the selection of uncertainty metrics: when does an uncertainty metric outperforms another? We answer this question via a rigorous analysis of two commonly used uncertainty metrics in ensemble learning, namely ensemble mean and ensemble variance. We show that, under mild assumptions on the ensemble learners, ensemble mean is preferable with respect to ensemble variance as an uncertainty metric for decision making. We empirically validate our assumptions and theoretical results via an extensive case study: the diagnosis of referable diabetic retinopathy."
+Software Defect Prediction Using Ensemble Learning: A Systematic Literature Review,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Surveys ensemble methods for defect prediction, noting diversity and empirical superiority, but provides no formal bias‑variance, MoE, uncertainty, or theoretical guarantees.",https://scispace.com/paper/software-defect-prediction-using-ensemble-learning-a-2ya3bve8h5,2021,Journal Article,IEEE Access,"Faseeha Matloob
+Taher M. Ghazal
+Nasser Taleb
+Shabib Aftab
+Munir Ahmad
+Muhammad Adnan Khan
+Sagheer Abbas
+Tariq Rahim Soomro",10.1109/ACCESS.2021.3095559,https://scispace.com/pdf/software-defect-prediction-using-ensemble-learning-a-2ya3bve8h5.pdf,"Recent advances in the domain of software defect prediction (SDP) include the integration of multiple classification techniques to create an ensemble or hybrid approach. This technique was introduced to improve the prediction performance by overcoming the limitations of any single classification technique. This research provides a systematic literature review on the use of the ensemble learning approach for software defect prediction. The review is conducted after critically analyzing research papers published since 2012 in four well-known online libraries: ACM, IEEE, Springer Link, and Science Direct. In this study, five research questions covering the different aspects of research progress on the use of ensemble learning for software defect prediction are addressed. To extract the answers to identified questions, 46 most relevant papers are shortlisted after a thorough systematic research process. This study will provide compact information regarding the latest trends and advances in ensemble learning for software defect prediction and provide a baseline for future innovations and further reviews. Through our study, we discovered that frequently employed ensemble methods by researchers are the random forest, boosting, and bagging. Less frequently employed methods include stacking, voting and Extra Trees. Researchers proposed many promising frameworks, such as EMKCA, SMOTE-Ensemble, MKEL, SDAEsTSE, TLEL, and LRCR, using ensemble learning methods. The AUC, accuracy, F-measure, Recall, Precision, and MCC were mostly utilized to measure the prediction performance of models. WEKA was widely adopted as a platform for machine learning. Many researchers showed through empirical analysis that features selection, and data sampling was necessary pre-processing steps that improve the performance of ensemble classifiers."
+Exploring Model Learning Heterogeneity for Boosting Ensemble Robustness,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses negative‑correlation analysis to argue heterogeneous ensembles improve robustness, hinting at diversity benefits and conditions for superiority, but lacks bias‑variance, MoE, or uncertainty theory.",https://scispace.com/paper/exploring-model-learning-heterogeneity-for-boosting-ensemble-47zrfsorcp,2023,Journal Article,"","Yanzhao Wu
+Ka-Ho Chow
+Wuchang Wei
+Линг Лиу",10.1109/icdm58522.2023.00074,"","Deep neural network ensembles hold the potential of improving generalization performance for complex learning tasks. This paper presents formal analysis and empirical evaluation to show that heterogeneous deep ensembles with high ensemble diversity can effectively leverage model learning heterogeneity to boost ensemble robustness. We first show that heterogeneous DNN models trained for solving the same learning problem, e.g., object detection, can significantly strengthen the mean average precision (mAP) through our weighted bounding box ensemble consensus method. Second, we further compose ensembles of heterogeneous models for solving different learning problems, e.g., object detection and semantic segmentation, by introducing the connected component labeling (CCL) based alignment. We show that this two-tier heterogeneity driven ensemble construction method can compose an ensemble team that promotes high ensemble diversity and low negative correlation among member models of the ensemble, strengthening ensemble robustness against both negative examples and adversarial attacks. Third, we provide a formal analysis of the ensemble robustness in terms of negative correlation. Extensive experiments validate the enhanced robustness of heterogeneous ensembles in both benign and adversarial settings. The appendix and source codes are available on GitHub at https://github.com/git-disl/HeteRobust. "
+Ensemble learning methods for decision making: Status and future prospects,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses diversity importance and lack of best method, but provides no formal bias‑variance, MoE, uncertainty, or rigorous superiority conditions.",https://scispace.com/paper/ensemble-learning-methods-for-decision-making-status-and-514kgkxjm3,2015,Proceedings Article,International Conference on Machine Learning and Cybernetics,"Shahid Ali
+Sreenivas Sremath Tirumala
+Abdolhossein Sarrafzadeh",10.1109/ICMLC.2015.7340924,https://scispace.com/pdf/ensemble-learning-methods-for-decision-making-status-and-514kgkxjm3.pdf,"In real world situations every model has some weaknesses and will make errors on training data. Given the fact that each model has certain limitations, the aim of ensemble learning is to supervise their strengths and weaknesses, leading to best possible decision in general. Ensemble based machine learning is a solution of minimizing risk in decision making. Bagging, boosting, stacked generalization and mixture of expert methods are the most popular techniques to construct ensemble systems. For the purpose of combining outputs of class labels, weighted majority voting, behaviour knowledge space and border count methods are used to construct independent classifiers and to achieve diversity among the classifiers which is important in ensemble learning. It was found that an ideal ensemble method should work on the principal of achieving six paramount characteristics of ensemble learning; accuracy, scalability, computational cost, usability, compactness and speed of classification. In addition, the ideal ensemble method would be able to handle large huge image size and long term historical data particularly of spatial and temporal. In this paper we reveal that ensemble models have obtained high acceptability in terms of accuracy than single models. Further, we present an analogy of various ensemble techniques, their applicability, measuring the solution diversity, challenges and proposed methods to overcome these challenges without diverting from the original concepts."
+Adaptive and Calibrated Ensemble Learning with Dependent Tail-free Process.,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses dependent tail‑free process as adaptive, probabilistic ensemble weights, providing Bayesian uncertainty and a variational inference algorithm; lacks bias‑variance, diversity‑accuracy, formal MoE, or superiority condition analyses.",https://scispace.com/paper/adaptive-and-calibrated-ensemble-learning-with-dependent-6ghho1tjqr,2018,Posted Content,arXiv: Learning,"Jeremiah Zhe Liu
+John Paisley
+Marianthi-Anna Kioumourtzoglou
+Brent A. Coull","",https://arxiv.org/pdf/1812.03350,"Ensemble learning is a mainstay in modern data science practice. Conventional ensemble algorithms assigns to base models a set of deterministic, constant model weights that (1) do not fully account for variations in base model accuracy across subgroups, nor (2) provide uncertainty estimates for the ensemble prediction, which could result in mis-calibrated (i.e. precise but biased) predictions that could in turn negatively impact the algorithm performance in real-word applications. In this work, we present an adaptive, probabilistic approach to ensemble learning using dependent tail-free process as ensemble weight prior. Given input feature $\mathbf{x}$, our method optimally combines base models based on their predictive accuracy in the feature space $\mathbf{x} \in \mathcal{X}$, and provides interpretable uncertainty estimates both in model selection and in ensemble prediction. To encourage scalable and calibrated inference, we derive a structured variational inference algorithm that jointly minimize KL objective and the model's calibration score (i.e. Continuous Ranked Probability Score (CRPS)). We illustrate the utility of our method on both a synthetic nonlinear function regression task, and on the real-world application of spatio-temporal integration of particle pollution prediction models in New England."
+Collective Iterative Learning Control: Exploiting Diversity in Multi-Agent Systems for Reference Tracking Tasks,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses heterogeneous learning laws to show collective performance gains, hinting at diversity benefits and conditions for ensemble advantage, but lacks formal bias‑variance, MoE, or uncertainty analysis.",https://scispace.com/paper/collective-iterative-learning-control-exploiting-diversity-3ll089o0,2022,Journal Article,"","",10.1109/tcst.2021.3109646,http://arxiv.org/pdf/2104.07620,"Multi-agent systems (MASs) can autonomously learn to solve previously unknown tasks by means of each agent's individual intelligence as well as by collaborating and exploiting collective intelligence. This article considers a group of autonomous agents learning to track the same given reference trajectory in a possibly small number of trials. We propose a novel collective learning control method that combines iterative learning control (ILC) with a collective update strategy. We derive conditions for desirable convergence properties of such systems. We show that the proposed method allows the collective to combine the advantages of the agents' individual learning strategies and thereby overcomes trade-offs and limitations of single-agent ILC. This benefit is achieved by designing a heterogeneous collective, i.e., a different learning law is assigned to each agent. All theoretical results are confirmed in simulations and experiments with two-wheeled-inverted-pendulum robots (TWIPRs) that jointly learn to perform the desired maneuver. "
+"Deep neural network ensembles against deception: Ensemble diversity, accuracy and robustness","- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses diversity measures and consensus algorithms to boost accuracy and robustness, but lacks formal bias‑variance analysis, MoE theory, or uncertainty quantification; only loosely characterises when ensembles outperform single models.",https://scispace.com/paper/deep-neural-network-ensembles-against-deception-ensemble-3bnhgk6e8w,2019,Posted Content,arXiv: Learning,"Ling Liu
+Wenqi Wei
+Ka-Ho Chow
+Margaret Loper
+Emre Gursoy
+Stacey Truex
+Yanzhao Wu","",https://arxiv.org/pdf/1908.11091,"Ensemble learning is a methodology that integrates multiple DNN learners for improving prediction performance of individual learners. Diversity is greater when the errors of the ensemble prediction is more uniformly distributed. Greater diversity is highly correlated with the increase in ensemble accuracy. Another attractive property of diversity optimized ensemble learning is its robustness against deception: an adversarial perturbation attack can mislead one DNN model to misclassify but may not fool other ensemble DNN members consistently. In this paper we first give an overview of the concept of ensemble diversity and examine the three types of ensemble diversity in the context of DNN classifiers. We then describe a set of ensemble diversity measures, a suite of algorithms for creating diversity ensembles and for performing ensemble consensus (voted or learned) for generating high accuracy ensemble output by strategically combining outputs of individual members. This paper concludes with a discussion on a set of open issues in quantifying ensemble diversity for robust deep learning."
+"MoGU: Mixture-of-Gaussians with Uncertainty-based Gating for Time Series
+  Forecasting","- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses a variance‑based gating mechanism in a MoE for forecasting, providing empirical uncertainty estimates but lacks formal bias‑variance, diversity‑accuracy, or superiority analyses.",https://scispace.com/paper/http://arxiv.org/abs/2510.07459v1,2025,Preprint,"","Yoli Shavit
+Jacob Goldberger","",http://arxiv.org/pdf/2510.07459v1,"We introduce Mixture-of-Gaussians with Uncertainty-based Gating (MoGU), a
+novel Mixture-of-Experts (MoE) framework designed for regression tasks and
+applied to time series forecasting. Unlike conventional MoEs that provide only
+point estimates, MoGU models each expert's output as a Gaussian distribution.
+This allows it to directly quantify both the forecast (the mean) and its
+inherent uncertainty (variance). MoGU's core innovation is its
+uncertainty-based gating mechanism, which replaces the traditional input-based
+gating network by using each expert's estimated variance to determine its
+contribution to the final prediction. Evaluated across diverse time series
+forecasting benchmarks, MoGU consistently outperforms single-expert models and
+traditional MoE setups. It also provides well-quantified, informative
+uncertainties that directly correlate with prediction errors, enhancing
+forecast reliability. Our code is available from:
+https://github.com/yolish/moe_unc_tsf"
+Mixture of Experts with Uncertainty Voting for Imbalanced Deep Regression Problems,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses MoE with uncertainty voting for regression; provides empirical gains but lacks formal bias‑variance, diversity‑accuracy, or ensemble superiority analysis.",https://scispace.com/paper/mixture-of-experts-with-uncertainty-voting-for-imbalanced-1uns67x0,2023,Journal Article,arXiv.org,"Yuchang Jiang
+Vivien Sainte Fare Garnot
+Konrad Schindler
+Jan Dirk Wegner",10.48550/arXiv.2305.15178,https://scispace.compdf/mixture-of-experts-with-uncertainty-voting-for-imbalanced-1uns67x0.pdf,"Data imbalance is ubiquitous when applying machine learning to real-world problems, particularly regression problems. If training data are imbalanced, the learning is dominated by the densely covered regions of the target distribution, consequently, the learned regressor tends to exhibit poor performance in sparsely covered regions. Beyond standard measures like over-sampling or re-weighting, there are two main directions to handle learning from imbalanced data. For regression, recent work relies on the continuity of the distribution; whereas for classification there has been a trend to employ mixture-of-expert models and let some ensemble members specialize in predictions for the sparser regions. Here, we adapt the mixture-of-experts approach to the regression setting. A main question when using this approach is how to fuse the predictions from multiple experts into one output. Drawing inspiration from recent work on probabilistic deep learning, we propose to base the fusion on the aleatoric uncertainties of individual experts, thus obviating the need for a separate aggregation module. In our method, dubbed MOUV, each expert predicts not only an output value but also its uncertainty, which in turn serves as a statistically motivated criterion to rely on the right experts. We compare our method with existing alternatives on multiple public benchmarks and show that MOUV consistently outperforms the prior art, while at the same time producing better calibrated uncertainty estimates. Our code is available at link-upon-publication."
+Batchensemble: an alternative approach to efficient ensemble and lifelong learning,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Introduces BatchEnsemble, an efficient ensemble technique with empirical gains in accuracy and uncertainty, but provides no formal bias‑variance, diversity, MoE, or superiority analyses; only limited theoretical connection to multi‑model aggregation and uncertainty.",https://scispace.com/paper/batchensemble-an-alternative-approach-to-efficient-ensemble-2incwg8i1t,2020,Proceedings Article,International Conference on Learning Representations,"Yeming Wen
+Dustin Tran
+Jimmy Ba","",https://arxiv.org/pdf/2002.06715,"Ensembles, where multiple neural networks are trained individually and their predictions are averaged, have been shown to be widely successful for improving both the accuracy and predictive uncertainty of single neural networks. However, an ensemble's cost for both training and testing increases linearly with the number of networks. In this paper, we propose BatchEnsemble, an ensemble method whose computational and memory costs are significantly lower than typical ensembles. BatchEnsemble achieves this by defining each weight matrix to be the Hadamard product of a shared weight among all ensemble members and a rank-one matrix per member. Unlike ensembles, BatchEnsemble is not only parallelizable across devices, where one device trains one member, but also parallelizable within a device, where multiple ensemble members are updated simultaneously for a given mini-batch. Across CIFAR-10, CIFAR-100, WMT14 EN-DE/EN-FR translation, and contextual bandits tasks, BatchEnsemble yields competitive accuracy and uncertainties as typical ensembles; the speedup at test time is 3X and memory reduction is 3X at an ensemble of size 4. We also apply BatchEnsemble to lifelong learning, where on Split-CIFAR-100, BatchEnsemble yields comparable performance to progressive neural networks while having a much lower computational and memory costs. We further show that BatchEnsemble can easily scale up to lifelong learning on Split-ImageNet which involves 100 sequential learning tasks."
+"Deep Neural Network Ensembles against Deception: Ensemble Diversity, Accuracy and Robustness","- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Examines diversity‑accuracy correlation, noting higher diversity often yields better accuracy, but without formal proofs. Discusses error decorrelation as a factor for ensemble advantage, yet lacks rigorous condition statements. No bias‑variance analysis, MoE treatment, or uncertainty‑theory components are presented.",https://scispace.com/paper/deep-neural-network-ensembles-against-deception-ensemble-3bnhgk6e8w,2019,Posted Content,arXiv: Learning,"Ling Liu
+Wenqi Wei
+Ka-Ho Chow
+Margaret Loper
+Emre Gursoy
+Stacey Truex
+Yanzhao Wu","",https://arxiv.org/pdf/1908.11091,"Ensemble learning is a methodology that integrates multiple DNN learners for improving prediction performance of individual learners. Diversity is greater when the errors of the ensemble prediction is more uniformly distributed. Greater diversity is highly correlated with the increase in ensemble accuracy. Another attractive property of diversity optimized ensemble learning is its robustness against deception: an adversarial perturbation attack can mislead one DNN model to misclassify but may not fool other ensemble DNN members consistently. In this paper we first give an overview of the concept of ensemble diversity and examine the three types of ensemble diversity in the context of DNN classifiers. We then describe a set of ensemble diversity measures, a suite of algorithms for creating diversity ensembles and for performing ensemble consensus (voted or learned) for generating high accuracy ensemble output by strategically combining outputs of individual members. This paper concludes with a discussion on a set of open issues in quantifying ensemble diversity for robust deep learning."
+Improving adversarial robustness via promoting ensemble diversity,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Defines adversarial diversity metric and ADP regularizer to improve ensemble robustness; lacks bias‑variance, MoE, and uncertainty theory; only empirical superiority conditions.",https://scispace.com/paper/improving-adversarial-robustness-via-promoting-ensemble-magb6npz5o,2019,Proceedings Article,International Conference on Machine Learning,"Tianyu Pang
+Kun Xu
+Chao Du
+Ning Chen
+Jun Zhu","",http://proceedings.mlr.press/v97/pang19a/pang19a.pdf,"Though deep neural networks have achieved significant progress on various tasks, often enhanced by model ensemble, existing high-performance models can be vulnerable to adversarial attacks. Many efforts have been devoted to enhancing the robustness of individual networks and then constructing a straightforward ensemble, e.g., by directly averaging the outputs, which ignores the interaction among networks. This paper presents a new method that explores the interaction among individual networks to improve robustness for ensemble models. Technically, we define a new notion of ensemble diversity in the adversarial setting as the diversity among non-maximal predictions of individual members, and present an adaptive diversity promoting (ADP) regularizer to encourage the diversity, which leads to globally better robustness for the ensemble by making adversarial examples difficult to transfer among individual members. Our method is computationally efficient and compatible with the defense methods acting on individual networks. Empirical results on various datasets verify that our method can improve adversarial robustness while maintaining state-of-the-art accuracy on normal examples."
+Exploring Model Learning Heterogeneity for Boosting Ensemble Robustness,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Shows heterogeneous ensembles boost robustness via diversity and negative correlation, but lacks bias‑variance, MoE, and uncertainty theory.",https://scispace.com/paper/exploring-model-learning-heterogeneity-for-boosting-ensemble-4m0zkengt8,2023,Journal Article,arXiv.org,"Yanzhao Wu
+Ka-Ho Chow
+Wenqi Wei
+Ling Liu",10.48550/arxiv.2310.02237,https://scispace.compdf/exploring-model-learning-heterogeneity-for-boosting-ensemble-4m0zkengt8.pdf,"Deep neural network ensembles hold the potential of improving generalization performance for complex learning tasks. This paper presents formal analysis and empirical evaluation to show that heterogeneous deep ensembles with high ensemble diversity can effectively leverage model learning heterogeneity to boost ensemble robustness. We first show that heterogeneous DNN models trained for solving the same learning problem, e.g., object detection, can significantly strengthen the mean average precision (mAP) through our weighted bounding box ensemble consensus method. Second, we further compose ensembles of heterogeneous models for solving different learning problems, e.g., object detection and semantic segmentation, by introducing the connected component labeling (CCL) based alignment. We show that this two-tier heterogeneity driven ensemble construction method can compose an ensemble team that promotes high ensemble diversity and low negative correlation among member models of the ensemble, strengthening ensemble robustness against both negative examples and adversarial attacks. Third, we provide a formal analysis of the ensemble robustness in terms of negative correlation. Extensive experiments validate the enhanced robustness of heterogeneous ensembles in both benign and adversarial settings. The source codes are available on GitHub at https://github.com/git-disl/HeteRobust."
+Class imbalance ensemble learning based on the margin theory,"- **Relevance Score:** 14/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses margin‑based ensemble learning for imbalanced data and proposes an algorithm, but does not address bias‑variance, diversity‑accuracy, MoE, or uncertainty theory; offers limited theoretical conditions and error insights.",https://scispace.com/paper/class-imbalance-ensemble-learning-based-on-the-margin-theory-ldeg1wt5g9,2018,Journal Article,Applied Sciences,"Wei Feng
+Wenjiang Huang
+Jinchang Ren",10.3390/APP8050815,"","The proportion of instances belonging to each class in a data-set plays an important role in machine learning. However, the real world data often suffer from class imbalance. Dealing with multi-class tasks with different misclassification costs of classes is harder than dealing with two-class ones. Undersampling and oversampling are two of the most popular data preprocessing techniques dealing with imbalanced data-sets. Ensemble classifiers have been shown to be more effective than data sampling techniques to enhance the classification performance of imbalanced data. Moreover, the combination of ensemble learning with sampling methods to tackle the class imbalance problem has led to several proposals in the literature, with positive results. The ensemble margin is a fundamental concept in ensemble learning. Several studies have shown that the generalization performance of an ensemble classifier is related to the distribution of its margins on the training examples. In this paper, we propose a novel ensemble margin based algorithm, which handles imbalanced classification by employing more low margin examples which are more informative than high margin samples. This algorithm combines ensemble learning with undersampling, but instead of balancing classes randomly such as UnderBagging, our method pays attention to constructing higher quality balanced sets for each base classifier. In order to demonstrate the effectiveness of the proposed method in handling class imbalanced data, UnderBagging and SMOTEBagging are used in a comparative analysis. In addition, we also compare the performances of different ensemble margin definitions, including both supervised and unsupervised margins, in class imbalance learning."
+Neural diversity is key to collective artificial learning,"- **Relevance Score:** 13/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Shows that behavioral diversity improves team performance, but lacks formal bias‑variance, MoE, uncertainty, or guarantee analyses; offers empirical diversity‑accuracy insights and links to collective learning concepts.",https://scispace.com/paper/neural-diversity-is-key-to-collective-artificial-learning-25pad17z1q8m,2024,Journal Article,"","Matteo Bettini
+Ryan Kortvelesy
+Amanda Prorok",10.48550/arxiv.2412.16244,https://scispace.compdf/neural-diversity-is-key-to-collective-artificial-learning-25pad17z1q8m.pdf,"Many of the world's most pressing issues, such as climate change and global peace, require complex collective problem-solving skills. Recent studies indicate that diversity in individuals' behaviors is key to developing such skills and increasing collective performance. Yet behavioral diversity in collective artificial learning is understudied, with today's machine learning paradigms commonly favoring homogeneous agent strategies over heterogeneous ones, mainly due to computational considerations. In this work, we employ novel diversity measurement and control paradigms to study the impact of behavioral heterogeneity in several facets of collective artificial learning. Through experiments in team play and other cooperative tasks, we show the emergence of unbiased behavioral roles that improve team outcomes; how neural diversity synergizes with morphological diversity; how diverse agents are more effective at finding cooperative solutions in sparse reward settings; and how behaviorally heterogeneous teams learn and retain latent skills to overcome repeated disruptions. Overall, our results indicate that, by controlling diversity, we can obtain non-trivial benefits over homogeneous training paradigms, demonstrating that diversity is a fundamental component of collective artificial learning, an insight thus far overlooked. "
+Evolving Ensemble Fuzzy Classifier,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Mentions bias‑variance motivation but lacks formal analysis; otherwise provides no theoretical treatment of diversity, MoE, uncertainty, or superiority conditions.",https://scispace.com/paper/http://arxiv.org/abs/1705.06460v2,2017,Preprint,"","Mahardhika Pratama
+Witold Pedrycz
+Edwin Lughofer",10.1109/TFUZZ.2018.2796099,http://arxiv.org/pdf/1705.06460v2,"The concept of ensemble learning offers a promising avenue in learning from
+data streams under complex environments because it addresses the bias and
+variance dilemma better than its single model counterpart and features a
+reconfigurable structure, which is well suited to the given context. While
+various extensions of ensemble learning for mining non-stationary data streams
+can be found in the literature, most of them are crafted under a static base
+classifier and revisits preceding samples in the sliding window for a
+retraining step. This feature causes computationally prohibitive complexity and
+is not flexible enough to cope with rapidly changing environments. Their
+complexities are often demanding because it involves a large collection of
+offline classifiers due to the absence of structural complexities reduction
+mechanisms and lack of an online feature selection mechanism. A novel evolving
+ensemble classifier, namely Parsimonious Ensemble pENsemble, is proposed in
+this paper. pENsemble differs from existing architectures in the fact that it
+is built upon an evolving classifier from data streams, termed Parsimonious
+Classifier pClass. pENsemble is equipped by an ensemble pruning mechanism,
+which estimates a localized generalization error of a base classifier. A
+dynamic online feature selection scenario is integrated into the pENsemble.
+This method allows for dynamic selection and deselection of input features on
+the fly. pENsemble adopts a dynamic ensemble structure to output a final
+classification decision where it features a novel drift detection scenario to
+grow the ensemble structure. The efficacy of the pENsemble has been numerically
+demonstrated through rigorous numerical studies with dynamic and evolving data
+streams where it delivers the most encouraging performance in attaining a
+tradeoff between accuracy and complexity."
+"Utilizing Ensemble Learning for Performance and Power Modeling and
+  Improvement of Parallel Cancer Deep Learning CANDLE Benchmarks","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Mentions bias‑variance trade‑off but lacks formal analysis; uses ensembles to improve performance/power prediction accuracy.",https://scispace.com/paper/http://arxiv.org/abs/2011.06654v1,2020,Preprint,"","Xingfu Wu
+Valerie Taylor","",http://arxiv.org/pdf/2011.06654v1,"Machine learning (ML) continues to grow in importance across nearly all
+domains and is a natural tool in modeling to learn from data. Often a tradeoff
+exists between a model's ability to minimize bias and variance. In this paper,
+we utilize ensemble learning to combine linear, nonlinear, and tree-/rule-based
+ML methods to cope with the bias-variance tradeoff and result in more accurate
+models. Hardware performance counter values are correlated with properties of
+applications that impact performance and power on the underlying system. We use
+the datasets collected for two parallel cancer deep learning CANDLE benchmarks,
+NT3 (weak scaling) and P1B2 (strong scaling), to build performance and power
+models based on hardware performance counters using single-object and
+multiple-objects ensemble learning to identify the most important counters for
+improvement. Based on the insights from these models, we improve the
+performance and energy of P1B2 and NT3 by optimizing the deep learning
+environments TensorFlow, Keras, Horovod, and Python under the huge page size of
+8 MB on the Cray XC40 Theta at Argonne National Laboratory. Experimental
+results show that ensemble learning not only produces more accurate models but
+also provides more robust performance counter ranking. We achieve up to 61.15%
+performance improvement and up to 62.58% energy saving for P1B2 and up to
+55.81% performance improvement and up to 52.60% energy saving for NT3 on up to
+24,576 cores."
+Accurate Uncertainty Estimation and Decomposition in Ensemble Learning.,"- **Relevance Score:** 11/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a Bayesian nonparametric framework with theoretical guarantees for accurate uncertainty estimation and decomposition in ensembles; lacks bias‑variance, diversity, MoE, or superiority condition analyses.",https://scispace.com/paper/accurate-uncertainty-estimation-and-decomposition-in-3u9fiw229i,2019,Posted Content,arXiv: Learning,"Jeremiah Zhe Liu
+John Paisley
+Marianthi-Anna Kioumourtzoglou
+Brent A. Coull","",https://arxiv.org/pdf/1911.04061.pdf,"Ensemble learning is a standard approach to building machine learning systems that capture complex phenomena in real-world data. An important aspect of these systems is the complete and valid quantification of model uncertainty. We introduce a Bayesian nonparametric ensemble (BNE) approach that augments an existing ensemble model to account for different sources of model uncertainty. BNE augments a model's prediction and distribution functions using Bayesian nonparametric machinery. It has a theoretical guarantee in that it robustly estimates the uncertainty patterns in the data distribution, and can decompose its overall predictive uncertainty into distinct components that are due to different sources of noise and error. We show that our method achieves accurate uncertainty estimates under complex observational noise, and illustrate its real-world utility in terms of uncertainty decomposition and model bias detection for an ensemble in predict air pollution exposures in Eastern Massachusetts, USA."
+Accurate Uncertainty Estimation and Decomposition in Ensemble Learning,"- **Relevance Score:** 11/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a Bayesian nonparametric framework that theoretically quantifies and decomposes ensemble uncertainty, but does not address bias‑variance, diversity‑accuracy trade‑offs, MoE theory, or formal superiority conditions.",https://scispace.com/paper/accurate-uncertainty-estimation-and-decomposition-in-2da93dh2fl,2019,Proceedings Article,Neural Information Processing Systems,"Jeremiah Zhe Liu
+John Paisley
+Marianthi-Anna Kioumourtzoglou
+Brent A. Coull","",https://scispace.com/pdf/accurate-uncertainty-estimation-and-decomposition-in-2da93dh2fl.pdf,"Ensemble learning is a standard approach to building machine learning systems that capture complex phenomena in real-world data. An important aspect of these systems is the complete and valid quantification of model uncertainty. We introduce a Bayesian nonparametric ensemble (BNE) approach that augments an existing ensemble model to account for different sources of model uncertainty. BNE augments a model’s prediction and distribution functions using Bayesian nonparametric machinery. It has a theoretical guarantee in that it robustly estimates the uncertainty patterns in the data distribution, and can decompose its overall predictive uncertainty into distinct components that are due to different sources of noise and error. We show that our method achieves accurate uncertainty estimates under complex observational noise, and illustrate its real-world utility in terms of uncertainty decomposition and model bias detection for an ensemble in predict air pollution exposures in Eastern Massachusetts, USA."
+Novel Meta-Learning Techniques for the Multiclass Image Classification Problem,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses MoE and ensemble combos for image classification, but focuses on empirical meta‑learning designs; lacks formal bias‑variance, diversity, uncertainty, or superiority analyses.",https://scispace.com/paper/novel-meta-learning-techniques-for-the-multiclass-image-6abiujjz,2022,Journal Article,Sensors,"Anton Vogiatzis
+S. Orfanoudakis
+Georgios Chalkiadakis
+Konstantia Moirogiorgou
+Michalis Zervakis",10.3390/s23010009,https://scispace.com/pdf/novel-meta-learning-techniques-for-the-multiclass-image-6abiujjz.pdf,"Multiclass image classification is a complex task that has been thoroughly investigated in the past. Decomposition-based strategies are commonly employed to address it. Typically, these methods divide the original problem into smaller, potentially simpler problems, allowing the application of numerous well-established learning algorithms that may not apply directly to the original task. This work focuses on the efficiency of decomposition-based methods and proposes several improvements to the meta-learning level. In this paper, four methods for optimizing the ensemble phase of multiclass classification are introduced. The first demonstrates that employing a mixture of experts scheme can drastically reduce the number of operations in the training phase by eliminating redundant learning processes in decomposition-based techniques for multiclass problems. The second technique for combining learner-based outcomes relies on Bayes’ theorem. Combining the Bayes rule with arbitrary decompositions reduces training complexity relative to the number of classifiers even further. Two additional methods are also proposed for increasing the final classification accuracy by decomposing the initial task into smaller ones and ensembling the output of the base learners along with that of a multiclass classifier. Finally, the proposed novel meta-learning techniques are evaluated on four distinct datasets of varying classification difficulty. In every case, the proposed methods present a substantial accuracy improvement over existing traditional image classification techniques."
+Universal Genetic Programming: a Meta Learning Approach based on Semantics,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses ensemble classifications and diversity types, but lacks formal bias‑variance analysis, MoE theory, uncertainty quantification, or proven superiority conditions.",https://scispace.com/paper/universal-genetic-programming-a-meta-learning-approach-based-47k2iuovn6,2019,Dissertation,"",Alessandro Re,"",https://scispace.com/pdf/universal-genetic-programming-a-meta-learning-approach-based-47k2iuovn6.pdf,A thesis submitted in partial fulfillment of the requirements for the degree of Doctor in Information Management
+Why m heads are better than one: Training a diverse ensemble of deep networks,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses diversity‑encouraging losses to improve ensembles, but lacks formal bias‑variance analysis, MoE theory, uncertainty quantification, or proven superiority conditions.",https://scispace.com/paper/why-m-heads-are-better-than-one-training-a-diverse-ensemble-1cewbbgow1,2015,Posted Content,arXiv: Computer Vision and Pattern Recognition,"Stefan Lee
+Senthil Purushwalkam
+Michael Cogswell
+David J. Crandall
+Dhruv Batra","",https://arxiv.org/pdf/1511.06314,"Convolutional Neural Networks have achieved state-of-the-art performance on a wide range of tasks. Most benchmarks are led by ensembles of these powerful learners, but ensembling is typically treated as a post-hoc procedure implemented by averaging independently trained models with model variation induced by bagging or random initialization. In this paper, we rigorously treat ensembling as a first-class problem to explicitly address the question: what are the best strategies to create an ensemble? We first compare a large number of ensembling strategies, and then propose and evaluate novel strategies, such as parameter sharing (through a new family of models we call TreeNets) as well as training under ensemble-aware and diversity-encouraging losses. We demonstrate that TreeNets can improve ensemble performance and that diverse ensembles can be trained end-to-end under a unified loss, achieving significantly higher ""oracle"" accuracies than classical ensembles."
+Domain adaptive ensemble learning,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses multiple domain‑specific classifier heads as experts, but provides no formal bias‑variance, diversity‑accuracy, uncertainty, or superiority analysis; only empirical domain adaptation results.",https://scispace.com/paper/domain-adaptive-ensemble-learning-4i5cx32ntm,2020,Journal Article,arXiv: Computer Vision and Pattern Recognition,"Kaiyang Zhou
+Yongxin Yang
+Yu Qiao
+Tao Xiang",10.1109/TIP.2021.3112012,https://arxiv.org/pdf/2003.07325,"The problem of generalizing deep neural networks from multiple source domains to a target one is studied under two settings: When unlabeled target data is available, it is a multi-source unsupervised domain adaptation (UDA) problem, otherwise a domain generalization (DG) problem. We propose a unified framework termed domain adaptive ensemble learning (DAEL) to address both problems. A DAEL model is composed of a CNN feature extractor shared across domains and multiple classifier heads each trained to specialize in a particular source domain. Each such classifier is an expert to its own domain and a non-expert to others. DAEL aims to learn these experts collaboratively so that when forming an ensemble, they can leverage complementary information from each other to be more effective for an unseen target domain. To this end, each source domain is used in turn as a pseudo-target-domain with its own expert providing supervisory signal to the ensemble of non-experts learned from the other sources. For unlabeled target data under the UDA setting where real expert does not exist, DAEL uses pseudo-label to supervise the ensemble learning. Extensive experiments on three multi-source UDA datasets and two DG datasets show that DAEL improves the state of the art on both problems, often by significant margins. The code is released at \url{this https URL}."
+Multi-Head Mixture-of-Experts,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Introduces MH-MoE architecture, but provides mainly empirical results; lacks formal ensemble theory, bias‑variance analysis, diversity‑accuracy trade‑offs, or uncertainty bounds. Offers a novel MoE variant without rigorous theoretical treatment.",https://scispace.com/paper/http://arxiv.org/abs/2404.15045v1,2024,Preprint,"","Xun Wu
+Shaohan Huang
+Wenhui Wang
+Furu Wei","",http://arxiv.org/pdf/2404.15045v1,"Sparse Mixtures of Experts (SMoE) scales model capacity without significant
+increases in training and inference costs, but exhibits the following two
+issues: (1) Low expert activation, where only a small subset of experts are
+activated for optimization. (2) Lacking fine-grained analytical capabilities
+for multiple semantic concepts within individual tokens. We propose Multi-Head
+Mixture-of-Experts (MH-MoE), which employs a multi-head mechanism to split each
+token into multiple sub-tokens. These sub-tokens are then assigned to and
+processed by a diverse set of experts in parallel, and seamlessly reintegrated
+into the original token form. The multi-head mechanism enables the model to
+collectively attend to information from various representation spaces within
+different experts, while significantly enhances expert activation, thus deepens
+context understanding and alleviate overfitting. Moreover, our MH-MoE is
+straightforward to implement and decouples from other SMoE optimization
+methods, making it easy to integrate with other SMoE models for enhanced
+performance. Extensive experimental results across three tasks: English-focused
+language modeling, Multi-lingual language modeling and Masked multi-modality
+modeling tasks, demonstrate the effectiveness of MH-MoE."
+Offline Reinforcement Learning for Mixture-of-Expert Dialogue Management,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses MoE-LMs to shrink dialogue action space, but offers no formal ensemble bias‑variance analysis, diversity‑accuracy trade‑offs, uncertainty theory, or proven superiority conditions.",https://scispace.com/paper/http://arxiv.org/abs/2302.10850v2,2023,Preprint,"","Dhawal Gupta
+Yinlam Chow
+Aza Tulepbergenov
+Mohammad Ghavamzadeh
+Craig Boutilier","",http://arxiv.org/pdf/2302.10850v2,"Reinforcement learning (RL) has shown great promise for developing dialogue
+management (DM) agents that are non-myopic, conduct rich conversations, and
+maximize overall user satisfaction. Despite recent developments in RL and
+language models (LMs), using RL to power conversational chatbots remains
+challenging, in part because RL requires online exploration to learn
+effectively, whereas collecting novel human-bot interactions can be expensive
+and unsafe. This issue is exacerbated by the combinatorial action spaces facing
+these algorithms, as most LM agents generate responses at the word level. We
+develop a variety of RL algorithms, specialized to dialogue planning, that
+leverage recent Mixture-of-Expert Language Models (MoE-LMs) -- models that
+capture diverse semantics, generate utterances reflecting different intents,
+and are amenable for multi-turn DM. By exploiting MoE-LM structure, our methods
+significantly reduce the size of the action space and improve the efficacy of
+RL-based DM. We evaluate our methods in open-domain dialogue to demonstrate
+their effectiveness w.r.t.\ the diversity of intent in generated utterances and
+overall DM performance."
+Modeling task relationships in multi-task learning with multi-gate mixture-of-experts,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses Multi‑gate Mixture‑of‑Experts to empirically improve multi‑task performance; provides limited theoretical treatment of MoE gating, but lacks formal ensemble, bias‑variance, diversity, uncertainty, or superiority analyses.",https://scispace.com/paper/modeling-task-relationships-in-multi-task-learning-with-33ubyolnt2,2018,Proceedings Article,Knowledge Discovery and Data Mining,"Jiaqi Ma
+Zhe Zhao
+Xinyang Yi
+Jilin Chen
+Lichan Hong
+Ed H. Chi",10.1145/3219819.3220007,https://dl.acm.org/doi/pdf/10.1145/3219819.3220007,"Neural-based multi-task learning has been successfully used in many real-world large-scale applications such as recommendation systems. For example, in movie recommendations, beyond providing users movies which they tend to purchase and watch, the system might also optimize for users liking the movies afterwards. With multi-task learning, we aim to build a single model that learns these multiple goals and tasks simultaneously. However, the prediction quality of commonly used multi-task models is often sensitive to the relationships between tasks. It is therefore important to study the modeling tradeoffs between task-specific objectives and inter-task relationships. In this work, we propose a novel multi-task learning approach, Multi-gate Mixture-of-Experts (MMoE), which explicitly learns to model task relationships from data. We adapt the Mixture-of-Experts (MoE) structure to multi-task learning by sharing the expert submodels across all tasks, while also having a gating network trained to optimize each task. To validate our approach on data with different levels of task relatedness, we first apply it to a synthetic dataset where we control the task relatedness. We show that the proposed approach performs better than baseline methods when the tasks are less related. We also show that the MMoE structure results in an additional trainability benefit, depending on different levels of randomness in the training data and model initialization. Furthermore, we demonstrate the performance improvements by MMoE on real tasks including a binary classification benchmark, and a large-scale content recommendation system at Google."
+"Optimal Expert Selection for Distributed Mixture-of-Experts at the
+  Wireless Edge","- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses MoE architecture to schedule expert inference and subcarrier allocation, but provides optimization algorithms rather than theoretical analysis of bias‑variance, diversity, uncertainty, or superiority conditions.",https://scispace.com/paper/http://arxiv.org/abs/2503.13421v1,2025,Preprint,"","Shengling Qin
+Hai Wu
+Hongyang Du
+Kaibin Huang","",http://arxiv.org/pdf/2503.13421v1,"The emergence of distributed Mixture-of-Experts (DMoE) systems, which deploy
+expert models at edge nodes, offers a pathway to achieving connected
+intelligence in sixth-generation (6G) mobile networks and edge artificial
+intelligence (AI). However, current DMoE systems lack an effective expert
+selection algorithm to address the simultaneous task-expert relevance and
+channel diversity inherent in these systems. Traditional AI or communication
+systems focus on either performance or channel conditions, and direct
+application of these methods leads to high communication overhead or low
+performance. To address this, we propose the DMoE protocol to schedule the
+expert inference and inter-expert transmission. This protocol identifies expert
+selection and subcarrier allocation as key optimization problems. We formulate
+an expert selection problem by incorporating both AI performance and channel
+conditions, and further extend it to a Joint Expert and Subcarrier Allocation
+(JESA) problem for comprehensive AI and channel management within the DMoE
+framework. For the NP-hard expert selection problem, we introduce the Dynamic
+Expert Selection (DES) algorithm, which leverages a linear relaxation as a
+bounding criterion to significantly reduce search complexity. For the JESA
+problem, we discover a unique structural property that ensures asymptotic
+optimality in most scenarios. We propose an iterative algorithm that addresses
+subcarrier allocation as a subproblem and integrates it with the DES algorithm.
+The proposed framework effectively manages the tradeoff between task relevance
+and channel conditions through a tunable importance factor, enabling flexible
+adaptation to diverse scenarios. Numerical experiments validate the dual
+benefits of the proposed expert selection algorithm: high performance and
+significantly reduced cost."
+"A Mixture of Experts Gating Network for Enhanced Surrogate Modeling in
+  External Aerodynamics","- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses MoE gating to blend three heterogeneous CFD surrogates, but provides only empirical validation; lacks formal bias‑variance, diversity, uncertainty, or superiority analyses.",https://scispace.com/paper/http://arxiv.org/abs/2508.21249v1,2025,Preprint,"","Mohammad Amin Nabian
+Sanjay Choudhry","",http://arxiv.org/pdf/2508.21249v1,"The computational cost associated with high-fidelity CFD simulations remains
+a significant bottleneck in the automotive design and optimization cycle. While
+ML-based surrogate models have emerged as a promising alternative to accelerate
+aerodynamic predictions, the field is characterized by a diverse and rapidly
+evolving landscape of specialized neural network architectures, with no single
+model demonstrating universal superiority. This paper introduces a novel
+meta-learning framework that leverages this architectural diversity as a
+strength. We propose a Mixture of Experts (MoE) model that employs a dedicated
+gating network to dynamically and optimally combine the predictions from three
+heterogeneous, state-of-the-art surrogate models: DoMINO, a decomposable
+multi-scale neural operator; X-MeshGraphNet, a scalable multi-scale graph
+neural network; and FigConvNet, a factorized implicit global convolution
+network. The gating network learns a spatially-variant weighting strategy,
+assigning credibility to each expert based on its localized performance in
+predicting surface pressure and wall shear stress fields. To prevent model
+collapse and encourage balanced expert contributions, we integrate an entropy
+regularization term into the training loss function. The entire system is
+trained and validated on the DrivAerML dataset, a large-scale, public benchmark
+of high-fidelity CFD simulations for automotive aerodynamics. Quantitative
+results demonstrate that the MoE model achieves a significant reduction in L-2
+prediction error, outperforming not only the ensemble average but also the most
+accurate individual expert model across all evaluated physical quantities. This
+work establishes the MoE framework as a powerful and effective strategy for
+creating more robust and accurate composite surrogate models by synergistically
+combining the complementary strengths of specialized architectures."
+Sparse moes meet efficient ensembles,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides an empirical architecture combining ensembles and sparse MoEs, but lacks formal bias‑variance, diversity, uncertainty, or superiority analyses; only loosely touches MoE theory.",https://scispace.com/paper/sparse-moes-meet-efficient-ensembles-1yimfe4xdz,2021,Posted Content,arXiv: Learning,"James Urquhart Allingham
+Florian Wenzel
+Zelda Mariet
+Basil Mustafa
+Joan Puigcerver
+Neil Houlsby
+Ghassen Jerfel
+Vincent Fortuin
+Balaji Lakshminarayanan
+Jasper Snoek
+Dustin Tran
+Carlos Riquelme Ruiz
+Rodolphe Jenatton","",https://arxiv.org/pdf/2110.03360,"Machine learning models based on the aggregated outputs of submodels, either at the activation or prediction levels, lead to strong performance. We study the interplay of two popular classes of such models: ensembles of neural networks and sparse mixture of experts (sparse MoEs). First, we show that these two approaches have complementary features whose combination is beneficial. Then, we present partitioned batch ensembles, an efficient ensemble of sparse MoEs that takes the best of both classes of models. Extensive experiments on fine-tuned vision transformers demonstrate the accuracy, log-likelihood, few-shot learning, robustness, and uncertainty calibration improvements of our approach over several challenging baselines. Partitioned batch ensembles not only scale to models with up to 2.7B parameters, but also provide larger performance gains for larger models."
+"Multi-View Ensemble Learning With Missing Data: Computational Framework
+  and Evaluations using Novel Data from the Safe Autonomous Driving Domain","- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a practical multi‑view ensemble framework with Bayesian averaging; lacks formal bias‑variance, diversity, MoE theory, or rigorous superiority conditions.",https://scispace.com/paper/multi-view-ensemble-learning-with-missing-data-computational-3h77gzee,2023,Posted Content,"","",10.48550/arxiv.2301.12592,https://scispace.com/pdf/multi-view-ensemble-learning-with-missing-data-computational-3h77gzee.pdf,"Real-world applications with multiple sensors observing an event are expected to make continuously-available predictions, even in cases where information may be intermittently missing. We explore methods in ensemble learning and sensor fusion to make use of redundancy and information shared between four camera views, applied to the task of hand activity classification for autonomous driving. In particular, we show that a late-fusion approach between parallel convolutional neural networks can outperform even the best-placed single camera model. To enable this approach, we propose a scheme for handling missing information, and then provide comparative analysis of this late-fusion approach to additional methods such as weighted majority voting and model combination schemes. "
+Ensemble learning from crowds,"- **Relevance Score:** 6/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on a practical bootstrapped ensemble for crowdsourced labels; lacks theoretical analysis of bias‑variance, diversity, MoE, uncertainty, or formal superiority conditions.",https://scispace.com/paper/ensemble-learning-from-crowds-4dsbhlj74s,2019,Journal Article,IEEE Transactions on Knowledge and Data Engineering,"Jing Zhang
+Ming Wu
+Victor S. Sheng",10.1109/TKDE.2018.2860992,"","Traditional learning from crowdsourced labeled data consists of two stages: inferring true labels for instances from their multiple noisy labels and building a learning model using these instances with the inferred labels. This straightforward two-stage learning scheme suffers from two weaknesses: (1) the accuracy of inference may be very low; (2) useful information may be lost during inference. In this paper, we proposed a novel ensemble method for learning from crowds. Our proposed method is a meta-learning scheme. It first uses a bootstrapping process to create $M$M sub-datasets from an original crowdsourced labeled dataset. For each sub-dataset, each instance is duplicated with different weights according to the distribution and class memberships of its multiple noisy labels. A base classifier is then trained from this extended sub-dataset. Finally, unlabeled instances are predicted by aggregating the outputs of these $M$M base classifiers. Because the proposed method gets rid of the inference procedure and uses the full dataset to train learning models, it preserves the useful information for learning as much as possible. Experimental results on nine simulated and two real-world crowdsourcing datasets consistently show that the proposed ensemble learning method significantly outperforms five state-of-the-art methods."
+Leveraging Uncertainty in Collective Opinion Dynamics with Heterogeneity,"- **Relevance Score:** 5/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on collective opinion dynamics and uncertainty, not on ensemble learning or MoE; only aligns with multi‑agent/collective intelligence criterion.",https://scispace.com/paper/leveraging-uncertainty-in-collective-opinion-dynamics-with-1r7p1nw9fk,2024,Journal Article,arXiv.org,"Vito Mengers
+Mohsen Raoufi
+Oliver Brock
+Heiko Hamann
+Pawel Romanczuk",10.48550/arxiv.2402.03354,https://scispace.compdf/leveraging-uncertainty-in-collective-opinion-dynamics-with-1r7p1nw9fk.pdf,"Natural and artificial collectives exhibit heterogeneities across different dimensions, contributing to the complexity of their behavior. We investigate the effect of two such heterogeneities on collective opinion dynamics: heterogeneity of the quality of agents' prior information and of centrality in the network, i.e., the number of immediate neighbors. To study these heterogeneities, we not only consider them in our model, proposing a novel network generator with heterogeneous centrality, but also introduce uncertainty as an additional dimension. By quantifying the uncertainty of each agent, we provide a mechanism for agents to adaptively weigh their individual against social information. As uncertainties develop according to the interactions between agents, they capture information on heterogeneities. Therefore, uncertainty is a relevant additional observable in the study of complex collective opinion dynamics that we use to show the bidirectional relationship of heterogeneous centrality and information. Furthermore, we demonstrate that uncertainty-driven adaptive weighting leads to increased accuracy and speed of consensus, especially under heterogeneity, and provide guidelines for avoiding performance-decreasing errors in uncertainty modeling. These opportunities for improved performance and observability suggest the importance of uncertainty both for the study of natural and the design of artificial heterogeneous systems."
+"Ensemble Learning, Social Choice and Collective Intelligence","- **Relevance Score:** 3/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses social‑choice aggregation methods to compare ensemble performance experimentally; lacks formal bias‑variance analysis, diversity theory, MoE treatment, uncertainty quantification, or proven superiority conditions. Briefly connects to collective intelligence concepts.",https://scispace.com/paper/ensemble-learning-social-choice-and-collective-intelligence-509fza09cd,2020,Book Chapter,Modeling Decisions for Artificial Intelligence,"Andrea Campagner
+Davide Ciucci
+Federico Cabitza",10.1007/978-3-030-57524-3_5,"","Ensemble learning provides a theoretically well-founded approach to address the bias-variance trade-off by combining many learners to obtain an aggregated model with reduced bias or variance. This same idea of extracting knowledge from the predictions or choices of individuals has been also studied under different perspectives in the domains of social choice theory and collective intelligence. Despite this similarity, there has been little research comparing and relating the aggregation strategies proposed in these different domains. In this article, we aim to bridge the gap between these disciplines by means of an experimental evaluation, done on a set of standard datasets, of different aggregation criteria in the context of the training of ensembles of decision trees. We show that a social-science method known as surprisingly popular decision and the three-way reduction, achieve the best performance, while both bagging and boosting outperform social choice-based Borda and Copeland methods."
+Ensemble learning in machine learning: Integrating multiple models for improved predictions,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a broad overview of bagging, boosting, stacking, and applications, but lacks formal analysis, proofs, or theoretical treatment of bias‑variance, diversity, MoE, uncertainty, or superiority conditions.",https://scispace.com/paper/ensemble-learning-in-machine-learning-integrating-multiple-e4ydzpjt48,2018,Journal Article,International journal of applied research,"DK Sharma
+Arun Garg
+Anup Kumar",10.22271/allresearch.2018.v4.i7a.11443,"","In the rapidly evolving landscape of machine learning, the pursuit of enhancing predictive accuracy and robustness has led to the prominence of ensemble learning methodologies. This paper explores the paradigm of ensemble learning, a sophisticated approach that amalgamates diverse predictive models to yield superior and more reliable outcomes than individual models. The fundamental premise behind ensemble learning lies in the synergistic integration of multiple models, each possessing unique strengths and perspectives, to collectively outperform the limitations inherent in standalone models. Ensemble learning operates on the principle that the aggregation of predictions from diverse models can mitigate individual biases and uncertainties, ultimately resulting in a more accurate and stable predictive framework. This paper provides a comprehensive overview of various ensemble learning techniques, including bagging, boosting, and stacking, elucidating their underlying mechanisms and showcasing their efficacy in different scenarios. The discussion encompasses the theoretical underpinnings of ensemble methods, shedding light on how diversity among constituent models contributes to the overall ensemble's superior predictive performance. The exploration extends to real-world applications of ensemble learning across diverse domains, emphasizing instances where conventional single-model approaches fall short. Through case studies and empirical evidence, the paper underscores the versatility of ensemble learning in addressing complex challenges, from classification and regression problems to outlier detection and pattern recognition. Moreover, the paper delves into the intricacies of model selection, highlighting the importance of carefully curating an ensemble of models with complementary strengths. The concept of model diversity, both in terms of algorithmic variance and data representation, emerges as a pivotal factor influencing the success of ensemble learning endeavors. "
+Adaptive Multi-Layer Ensemble Learning (AMEL) for Robust and Accurate Predictive Modelling in Big Data Analytics,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Paper focuses on empirical performance of AMEL, lacking formal bias‑variance analysis, diversity‑accuracy theory, MoE foundations, uncertainty quantification, or proven superiority conditions.",https://scispace.com/paper/adaptive-multi-layer-ensemble-learning-amel-for-robust-and-7nn6sdy1xp3v,2024,Journal Article,"",P. Saminathan,10.1109/icicec62498.2024.10808711,"","The rapid expansion of data in various domains necessitates advanced analytics techniques to derive meaningful insights and make informed decisions. This paper presents a novel approach named Adaptive Multi-Layer Ensemble Learning (AMEL) for improving the accuracy and robustness of predictive models in big data analytics. AMEL leverages a multi-layer architecture that dynamically integrates diverse machine learning algorithms through adaptive weighting mechanisms to address issues of model bias and variance. Our approach is evaluated on three large-scale datasets from healthcare, finance, and social media domains. The experimental results demonstrate that AMEL achieves a 5-10% improvement in prediction accuracy compared to traditional ensemble methods such as Bagging and Boosting. Furthermore, AMEL exhibits enhanced stability and robustness in the presence of noisy and imbalanced data, as evidenced by a 15% reduction in prediction variance and a 20% improvement in F1 scores on average across the datasets. The proposed AMEL framework not only advances the state-of-the-art in ensemble learning but also provides a scalable and adaptable solution for complex data analytics tasks. These findings underscore the potential of AMEL to significantly improve decision-making processes in various high-impact sectors."
+Mixtures of Heterogeneous Experts,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides empirical evaluation of heterogeneous expert ensembles without formal bias‑variance analysis, diversity‑accuracy theory, MoE gating theory, uncertainty quantification, or proven superiority conditions.",https://scispace.com/paper/mixtures-of-heterogeneous-experts-rgrn3fn25e,2020,Proceedings Article,International Conference on Intelligent Systems,"Callum Parton
+Andries P. Engelbrecht",10.1145/3396474.3396484,"","No single machine learning algorithm is most accurate for all problems due to the effect of an algorithm's inductive bias. Research has shown that a combination of experts of the same type, referred to as a mixture of homogeneous experts, can increase the accuracy of ensembles by reducing the adverse effect of an algorithm's inductive bias. However, the predictive power of a mixture of homogeneous experts is still limited by the inductive bias of the algorithm that makes up the mixture. For this reason, combinations of different machine learning algorithms, referred to as a mixture of heterogeneous experts, has been proposed to take advantage of the strengths of different machine learning algorithms and to reduce the adverse effects of the inductive biases of these algorithms. This paper presents a mixture of heterogeneous experts, and evaluates its performance to that of a number of mixtures of homogeneous experts on a set of classification problems. The results indicate that a mixture of heterogeneous experts aggregates the advantages of experts, increasing the accuracy of predictions. The mixture of heterogeneous experts not only outperformed all homogeneous ensembles on two of the datasets, but also achieved the best overall accuracy rank across the various datasets."
+Empirical Assessment of Ensemble based Approaches to Classify Imbalanced Data in Binary Classification,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Empirical study of ensemble methods for imbalanced binary data; focuses on experimental performance and statistical tests, lacking formal theory, proofs, or uncertainty analysis.",https://scispace.com/paper/empirical-assessment-of-ensemble-based-approaches-to-1fh7kkqqyx,2019,Journal Article,International Journal of Advanced Computer Science and Applications,"Prabhjot Kaur
+Anjana Gosain",10.14569/IJACSA.2019.0100307,https://scispace.com/pdf/empirical-assessment-of-ensemble-based-approaches-to-1fh7kkqqyx.pdf,"Classifying imbalanced data with traditional classifiers is a huge challenge now-a-days. Imbalance data is a situation wherein the ratio of data within classes is not same. Many real life situations deal with such problems e.g. Web spam detection, Credit card frauds, and Fraudulent telephone calls. The problem exists everywhere when our objective is to identify exceptional cases. The problem is handled by researchers either by modifying the existing classifications methods or by developing new methods. This paper review ensemble based approaches (Boosting and Bagging based) designed to address imbalance in classes by focusing on binary classification. We compared 6 Boosting based, 7 Bagging based and 2 hybrid ensembles for their performance in imbalance domain. We use KEEL tool to evaluate the performance of these methods by implementing the methods on seven imbalance data having class imbalance ratio from 1.82 to as high as 129.44. Area Under the curve (AUC) parameter is recorded as the performance metric. We also statistically analyzed the methods using Friedman rank test and Wilcoxon Matched Pair signed rank test to strengthen the visual interpretations. After analysis, it is proved that RusBoost ensemble outperformed every other ensemble in the imbalanced data situations."
+imDC: an ensemble learning method for imbalanced classification with miRNA data.,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on practical ensemble for imbalanced miRNA data; lacks formal bias‑variance analysis, diversity‑accuracy theory, MoE treatment, uncertainty quantification, or proven superiority conditions.",https://scispace.com/paper/imdc-an-ensemble-learning-method-for-imbalanced-1tboi5cmue,2015,Journal Article,Genetics and Molecular Research,"Chunyu Wang
+L.L. Hu
+Meng Guo
+Xiangrong Liu
+Quan Zou",10.4238/2015.JANUARY.15.15,https://scispace.com/pdf/imdc-an-ensemble-learning-method-for-imbalanced-1tboi5cmue.pdf,"Imbalances typically exist in bioinformatics and are also common in other areas. A drawback of traditional machine learning methods is the relatively little attention given to small sample classification. Thus, we developed imDC, which uses an ensemble learning concept in combination with weights and sample misclassification information to effectively classify imbalanced data. Our method showed better results when compared to other algorithms with UCI machine learning datasets and microRNA data."
+Ensemble feature selection for high-dimensional data: a stability analysis across multiple domains,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on empirical stability gains of feature‑selection ensembles; lacks formal bias‑variance, diversity‑accuracy, MoE, uncertainty, or superiority condition analyses.",https://scispace.com/paper/ensemble-feature-selection-for-high-dimensional-data-a-2weq7ug4x4,2020,Journal Article,Neural Computing and Applications,Barbara Pes,10.1007/S00521-019-04082-3,https://scispace.com/pdf/ensemble-feature-selection-for-high-dimensional-data-a-2weq7ug4x4.pdf,"Selecting a subset of relevant features is crucial to the analysis of high-dimensional datasets coming from a number of application domains, such as biomedical data, document and image analysis. Since no single selection algorithm seems to be capable of ensuring optimal results in terms of both predictive performance and stability (i.e. robustness to changes in the input data), researchers have increasingly explored the effectiveness of “ensemble” approaches involving the combination of different selectors. While interesting proposals have been reported in the literature, most of them have been so far evaluated in a limited number of settings (e.g. with data from a single domain and in conjunction with specific selection approaches), leaving unanswered important questions about the large-scale applicability and utility of ensemble feature selection. To give a contribution to the field, this work presents an empirical study which encompasses different kinds of selection algorithms (filters and embedded methods, univariate and multivariate techniques) and different application domains. Specifically, we consider 18 classification tasks with heterogeneous characteristics (in terms of number of classes and instances-to-features ratio) and experimentally evaluate, for feature subsets of different cardinalities, the extent to which an ensemble approach turns out to be more robust than a single selector, thus providing useful insight for both researchers and practitioners."
+Multi-layer heterogeneous ensemble with classifier and feature selection,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on designing a multi‑layer heterogeneous ensemble and empirical comparisons; lacks formal bias‑variance analysis, diversity‑accuracy theory, MoE treatment, uncertainty quantification, or proven superiority conditions.",https://scispace.com/paper/multi-layer-heterogeneous-ensemble-with-classifier-and-14mm4tw7v7,2020,Proceedings Article,Genetic and Evolutionary Computation Conference,"Tien Thanh Nguyen
+Nang Van Pham
+Manh Truong Dang
+Anh Vu Luong
+John McCall
+Alan Wee-Chung Liew",10.1145/3377930.3389832,https://scispace.com/pdf/multi-layer-heterogeneous-ensemble-with-classifier-and-14mm4tw7v7.pdf,"Deep Neural Networks have achieved many successes when applying to visual, text, and speech information in various domains The crucial reasons behind these successes are the multi-layer architecture and the in-model feature transformation of deep learning models These design principles have inspired other sub-fields of machine learning including ensemble learning In recent years, there are some deep homogenous ensemble models introduced with a large number of classifiers in each layer These models, thus, require a costly computational classification Moreover, the existing deep ensemble models use all classifiers including unnecessary ones which can reduce the predictive accuracy of the ensemble In this study, we propose a multi-layer ensemble learning framework called MUlti-Layer heterogeneous Ensemble System (MULES) to solve the classification problem The proposed system works with a small number of heterogeneous classifiers to obtain ensemble diversity, therefore being efficiency in resource usage We also propose an Evolutionary Algorithm-based selection method to select the subset of suitable classifiers and features at each layer to enhance the predictive performance of MULES The selection method uses NSGA-II algorithm to optimize two objectives concerning classification accuracy and ensemble diversity Experiments on 33 datasets confirm that MULES is better than a number of well-known benchmark algorithms"
+Ensemble learning methods for decision making: Status and future prospects,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Review discusses ensemble challenges, diversity importance, and lack of formal definitions, but provides no theoretical analysis, proofs, or formal conditions for bias‑variance, MoE, uncertainty, or superiority.",https://scispace.com/paper/ensemble-learning-methods-for-decision-making-status-and-514kgkxjm3,2015,Proceedings Article,International Conference on Machine Learning and Cybernetics,"Shahid Ali
+Sreenivas Sremath Tirumala
+Abdolhossein Sarrafzadeh",10.1109/ICMLC.2015.7340924,https://scispace.com/pdf/ensemble-learning-methods-for-decision-making-status-and-514kgkxjm3.pdf,"In real world situations every model has some weaknesses and will make errors on training data. Given the fact that each model has certain limitations, the aim of ensemble learning is to supervise their strengths and weaknesses, leading to best possible decision in general. Ensemble based machine learning is a solution of minimizing risk in decision making. Bagging, boosting, stacked generalization and mixture of expert methods are the most popular techniques to construct ensemble systems. For the purpose of combining outputs of class labels, weighted majority voting, behaviour knowledge space and border count methods are used to construct independent classifiers and to achieve diversity among the classifiers which is important in ensemble learning. It was found that an ideal ensemble method should work on the principal of achieving six paramount characteristics of ensemble learning; accuracy, scalability, computational cost, usability, compactness and speed of classification. In addition, the ideal ensemble method would be able to handle large huge image size and long term historical data particularly of spatial and temporal. In this paper we reveal that ensemble models have obtained high acceptability in terms of accuracy than single models. Further, we present an analogy of various ensemble techniques, their applicability, measuring the solution diversity, challenges and proposed methods to overcome these challenges without diverting from the original concepts."
+Heterogeneous Ensemble Deep Learning Model for Enhanced Arabic Sentiment Analysis,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on applying a heterogeneous deep‑learning ensemble to Arabic sentiment analysis; lacks formal theory, bias‑variance analysis, diversity‑accuracy proofs, MoE treatment, uncertainty quantification, or conditions guaranteeing ensemble superiority.",https://scispace.com/paper/heterogeneous-ensemble-deep-learning-model-for-enhanced-23imgmi4,2022,Journal Article,Sensors,"Hager Saleh
+Sherif Mostafa
+Abdullah I. Alharbi
+Shaker El-Sappagh
+Tamim Alkhalifah",10.3390/s22103707,https://scispace.com/pdf/heterogeneous-ensemble-deep-learning-model-for-enhanced-23imgmi4.pdf,"Sentiment analysis was nominated as a hot research topic a decade ago for its increasing importance in analyzing the people’s opinions extracted from social media platforms. Although the Arabic language has a significant share of the content shared across social media platforms, its content’s sentiment analysis is still limited due to its complex morphological structures and the varieties of dialects. Traditional machine learning and deep neural algorithms have been used in a variety of studies to predict sentiment analysis. Therefore, a need of changing current mechanisms is required to increase the accuracy of sentiment analysis prediction. This paper proposed an optimized heterogeneous stacking ensemble model for enhancing the performance of Arabic sentiment analysis. The proposed model combines three different of pre-trained Deep Learning (DL) models: Recurrent Neural Network (RNN), Long Short-Term Memory (LSTM), Gated Recurrent Unit (GRU) in conjunction with three meta-learners Logistic Regression (LR), Random Forest (RF), and Support Vector Machine (SVM) in order to enhance model’s performance for predicting Arabic sentiment analysis. The performance of the proposed model with RNN, LSTM, GRU, and the five regular ML techniques: Decision Tree (DT), LR, K-Nearest Neighbor (KNN), RF, and Naive Bayes (NB) are compared using three benchmarks Arabic dataset. Parameters of Machine Learning (ML) and DL are optimized using Grid search and KerasTuner, respectively. Accuracy, precision, recall, and f1-score were applied to evaluate the performance of the models and validate the results. The results show that the proposed ensemble model has achieved the best performance for each dataset compared with other models."
+Learning How to Learn: Meta Learning Approach to Improve Deep Learning,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses meta‑learning discussion and describes ensemble methods like bagging, but lacks formal bias‑variance analysis, diversity‑accuracy theory, MoE treatment, uncertainty bounds, or proven superiority conditions.",https://scispace.com/paper/learning-how-to-learn-meta-learning-approach-to-improve-deep-46urk6czdz,2020,Journal Article,International journal of engineering research and technology,"Ashish Kr. Chakraverti
+Sugandha Chakraverti
+Yashpal Singh","",https://scispace.com/pdf/learning-how-to-learn-meta-learning-approach-to-improve-deep-46urk6czdz.pdf,"Meta-Learning describes the abstraction to designing more elevated level components associated with preparing Deep Neural Networks. The expression \""MetaLearning\"" is tossed around in Deep Learning writing often referencing \""AutoML\"", \""Few-Shot Learning\"", or \""Neural Architecture Search\"" when in reference to the robotized design of neural system architectures. Rising up out of entertainingly titled papers such as \""Figuring out how to learn by inclination descent by slope descent\"", the success of OpenAI's rubik's solid shape mechanical hand demonstrates the development of the thought. Meta-Learning is the most promising worldview to propel the state-of-the-craft of Deep Learning and Artificial"
+Metalearning in Ensemble Methods,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Descriptive overview of metalearning for ensemble selection; lacks formal bias‑variance analysis, diversity‑accuracy proofs, MoE theory, uncertainty quantification, or rigorous conditions for ensemble advantage.",https://scispace.com/paper/metalearning-in-ensemble-methods-1vo4dyah,2022,Book Chapter,"","Pavel Brazdil
+Jan N. van Rijn
+Carlos Soares
+Joaquin Vanschoren",10.1007/978-3-030-67024-5_10,https://scispace.com/pdf/metalearning-in-ensemble-methods-1vo4dyah.pdf,"Abstract This chapter discusses some approaches that exploit metalearning methods in ensemble learning. It starts by presenting a set of issues, such as the ensemble method used, which affect the process of ensemble learning and the resulting ensemble. In this chapter we discuss various lines of research that were followed. Some approaches seek an ensemble-based solution for the whole dataset, others for individual instances. Regarding the first group, we focus on metalearning in the construction, pruning and integration phase. Modeling the interdependence of models plays an important part in this process. In the second group, the dynamic selection of models is carried out for each instance. A separate section is dedicated to hierarchical ensembles and some methods used in their design. As this area involves potentially very large configuration spaces, recourse to advanced methods, including metalearning, is advantageous. It can be exploited to define the competence regions of different models and the dependencies between them. "
+Ensemble multifeatured deep learning models and applications: A survey,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey summarizes applications and challenges but lacks formal analyses, proofs, or theoretical derivations required by the criteria.",https://scispace.com/paper/ensemble-multifeatured-deep-learning-models-and-applications-330auaidmd,"",Journal Article,IEEE Access,"Satheesh Abimannan
+El-Sayed M. El-Alfy
+Yue-Shan Chang
+Shahid Hussain
+Saurabh Shukla
+Dhivyadharsini Satheesh",10.1109/access.2023.3320042,https://ieeexplore.ieee.org/iel7/6287639/6514899/10265042.pdf,"Ensemble multifeatured deep learning methodology has emerged as a powerful approach to overcome the limitations of single deep learning models in terms of generalization, robustness, and performance. This survey provides an extended review of ensemble multifeatured deep learning models, and their applications, challenges, and future directions. We explore potential applications of these models across various domains, including computer vision, medical imaging, natural language processing, and speech recognition. By combining the strengths of multiple models and features, ensemble multifeatured deep learning models have demonstrated improved performance and adaptability in diverse problem settings. We also discuss the challenges associated with these models, such as model interpretability, computational complexity, ensemble model selection, adversarial robustness, and personalized and federated learning. This survey highlights recent advancements in addressing these challenges and emphasizes the importance of continued research in tackling these issues to enable widespread adoption of ensemble multifeatured deep learning models. It provides an outlook on future research directions, focusing on the development of new algorithms, frameworks, and hardware architectures that can efficiently handle the large-scale computations required by these models. Moreover, it underlines the need for a better understanding of the trade-offs between model complexity, accuracy, and computational resources to optimize the design and deployment of ensemble multifeatured deep learning models. "
+"Addressing Complexities of Machine Learning in Big Data: Principles, Trends and Challenges from Systematical Perspectives","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey discusses ensemble concepts and practical tools (e.g., XGBoost, Auto-sklearn) but lacks formal bias‑variance analysis, diversity‑accuracy proofs, MoE theory, uncertainty quantification, or rigorous conditions for ensemble superiority.",https://scispace.com/paper/addressing-complexities-of-machine-learning-in-big-data-49fu3ye639,2017,Posted Content,"","Wang Q
+Zhao X
+Huang J
+Yanghe Feng
+Liu Z
+Su J
+Luo Z
+Cheng G",10.20944/PREPRINTS201710.0076.V1,https://scispace.com/pdf/addressing-complexities-of-machine-learning-in-big-data-49fu3ye639.pdf,"The concept of ‘big data’ has been widely discussed, and its value has been illuminated throughout a variety of domains. To quickly mine potential values and alleviate the ever-increasing volume of information, machine learning is playing an increasingly important role and faces more challenges than ever. Because few studies exist regarding how to modify machine learning techniques to accommodate big data environments, we provide a comprehensive overview of the history of the evolution of big data, the foundations of machine learning, and the bottlenecks and trends of machine learning in the big data era. More specifically, based on learning principals, we discuss regularization to enhance generalization. The challenges of quality in big data are reduced to the curse of dimensionality, class imbalances, concept drift and label noise, and the underlying reasons and mainstream methodologies to address these challenges are introduced. Learning model development has been driven by domain specifics, dataset complexities, and the presence or absence of human involvement. In this paper, we propose a robust learning paradigm by aggregating the aforementioned factors. Over the next few decades, we believe that these perspectives will lead to novel ideas and encourage more studies aimed at incorporating knowledge and establishing data-driven learning systems that involve both data quality considerations and human interactions."
+Getting MoRE out of Mixture of Language Model Reasoning Experts,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Empirical MoRE framework with no formal bias‑variance analysis, diversity‑accuracy proofs, theoretical MoE treatment, uncertainty quantification, or proven ensemble superiority conditions.",https://scispace.com/paper/http://arxiv.org/abs/2305.14628v2,2023,Preprint,"","Chenglei Si
+Weijia Shi
+Chen Zhao
+Luke Zettlemoyer
+Jordan Boyd-Graber","",http://arxiv.org/pdf/2305.14628v2,"While recent large language models (LLMs) improve on various question
+answering (QA) datasets, it remains difficult for a single model to generalize
+across question types that require distinct reasoning abilities. We provide
+empirical evidence that state-of-the-art LLMs suffer from poor generalizability
+on reasoning types beyond those seen in the prompt. To remedy this, we propose
+a Mixture-of-Reasoning-Experts (MoRE) framework that ensembles diverse
+specialized language models. We specialize the backbone language model with
+prompts optimized for different reasoning categories, including factual,
+multihop, mathematical, and commonsense reasoning. Our key insight is to
+leverage agreement among the specialized experts to select the best answer for
+each question, or to abstain from answering. This gives MoRE higher accuracy
+than any single specialized model on a collection of 12 QA datasets from four
+reasoning types. Beyond generalizability, the interpretable design of MoRE
+improves selective question answering results compared to baselines without
+incorporating inter-expert agreement. This framework is also more interpretable
+and useful to human consumers of QA outputs. Our human study confirms that
+presenting expert predictions and the answer selection process helps annotators
+more accurately calibrate when to trust the system's output. We release all
+code and data to facilitate future work."
+"More Is Better: A MoE-Based Emotion Recognition Framework with Human
+  Preference Alignment","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on practical MoE system, pseudo‑labeling, voting ensemble; lacks formal analysis, proofs, or theoretical treatment of bias‑variance, diversity, uncertainty, or ensemble superiority.",https://scispace.com/paper/http://arxiv.org/abs/2508.06036v1,2025,Preprint,"","Jun Xie
+Yingjian Zhu
+Feng Chen
+Zhenghao Zhang
+Xiaohui Fan
+Hongzhu Yi
+Xinming Wang
+Chen Yu
+Yue Bi
+Zhaoran Zhao
+Xiongjun Guan
+Zhepeng Wang",10.1145/3746270.3760215,http://arxiv.org/pdf/2508.06036v1,"In this paper, we present our solution for the semi-supervised learning track
+(MER-SEMI) in MER2025. We propose a comprehensive framework, grounded in the
+principle that ""more is better,"" to construct a robust Mixture of Experts (MoE)
+emotion recognition system. Our approach integrates a diverse range of input
+modalities as independent experts, including novel signals such as knowledge
+from large Vision-Language Models (VLMs) and temporal Action Unit (AU)
+information. To effectively utilize unlabeled data, we introduce a
+consensus-based pseudo-labeling strategy, generating high-quality labels from
+the agreement between a baseline model and Gemini, which are then used in a
+two-stage training paradigm. Finally, we employ a multi-expert voting ensemble
+combined with a rule-based re-ranking process to correct prediction bias and
+better align the outputs with human preferences. Evaluated on the MER2025-SEMI
+challenge dataset, our method achieves an F1-score of 0.8772 on the test set,
+ranking 2nd in the track. Our code is available at
+https://github.com/zhuyjan/MER2025-MRAC25."
+A survey on ensemble learning for data stream classification,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey catalogues ensemble methods for data streams without formal bias‑variance analysis, diversity‑accuracy theory, MoE treatment, uncertainty quantification, or proven superiority conditions.",https://scispace.com/paper/a-survey-on-ensemble-learning-for-data-stream-classification-52qb7hgjto,2017,Journal Article,ACM Computing Surveys,"Heitor Murilo Gomes
+Jean Paul Barddal
+Fabrício Enembreck
+Albert Bifet",10.1145/3054925,https://www.researchgate.net/profile/Heitor-Murilo-Gomes/publication/315698712_A_Survey_on_Ensemble_Learning_for_Data_Stream_Classification/links/5a295dc2a6fdccfbbf814ef6/A-Survey-on-Ensemble-Learning-for-Data-Stream-Classification.pdf,"Ensemble-based methods are among the most widely used techniques for data stream classification. Their popularity is attributable to their good performance in comparison to strong single learners while being relatively easy to deploy in real-world applications. Ensemble algorithms are especially useful for data stream learning as they can be integrated with drift detection algorithms and incorporate dynamic updates, such as selective removal or addition of classifiers. This work proposes a taxonomy for data stream ensemble learning as derived from reviewing over 60 algorithms. Important aspects such as combination, diversity, and dynamic updates, are thoroughly discussed. Additional contributions include a listing of popular open-source tools and a discussion about current data stream research challenges and how they relate to ensemble learning (big data streams, concept evolution, feature drifts, temporal dependencies, and others)."
+Ensemble deep learning: A review,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Review surveys ensemble types, stresses diversity and base‑model quality, but provides no formal bias‑variance, MoE, uncertainty analysis or rigorous superiority proofs.",https://scispace.com/paper/ensemble-deep-learning-a-review-16rga6gz,2022,Journal Article,Engineering Applications of Artificial Intelligence,"",10.1016/j.engappai.2022.105151,https://scispace.com/pdf/ensemble-deep-learning-a-review-16rga6gz.pdf,""
+RouterKT: Mixture-of-Experts for Knowledge Tracing,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Paper focuses on an empirical MoE architecture for knowledge tracing, lacking formal ensemble theory, bias‑variance analysis, diversity‑accuracy proofs, uncertainty quantification, or conditions guaranteeing ensemble superiority.",https://scispace.com/paper/http://arxiv.org/abs/2504.08989v3,2025,Preprint,"","Han Liao
+Shuaishuai Zu","",http://arxiv.org/pdf/2504.08989v3,"Knowledge Tracing (KT) is a fundamental task in Intelligent Tutoring Systems
+(ITS), which aims to model the dynamic knowledge states of students based on
+their interaction histories. However, existing KT models often rely on a global
+forgetting decay mechanism for capturing learning patterns, assuming that
+students' performance is predominantly influenced by their most recent
+interactions. Such approaches fail to account for the diverse and complex
+learning patterns arising from individual differences and varying learning
+stages. To address this limitation, we propose RouterKT, a novel
+Mixture-of-Experts (MoE) architecture designed to capture heterogeneous
+learning patterns by enabling experts to specialize in different patterns
+without any handcrafted learning pattern bias such as forgetting decay.
+Specifically, RouterKT introduces a \textbf{person-wise routing mechanism} to
+effectively model individual-specific learning behaviors and employs
+\textbf{multi-heads as experts} to enhance the modeling of complex and diverse
+patterns. Comprehensive experiments on ten benchmark datasets demonstrate that
+RouterKT exhibits significant flexibility and improves the performance of
+various KT backbone models, with a maximum average AUC improvement of 3.29\%
+across different backbones and datasets, outperforming other state-of-the-art
+models. Moreover, RouterKT demonstrates consistently superior inference
+efficiency compared to existing approaches based on handcrafted learning
+pattern bias, highlighting its usability for real-world educational
+applications. The source code is available at
+https://github.com/ringotc/RouterKT.git."
+"A Design Framework for operationalizing Trustworthy Artificial
+  Intelligence in Healthcare: Requirements, Tradeoffs and Challenges for its
+  Clinical Adoption","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on Trustworthy AI design for healthcare; does not address ensemble learning theory, diversity, MoE, uncertainty, or related ensemble conditions.",https://scispace.com/paper/http://arxiv.org/abs/2504.19179v1,2025,Preprint,"","Pedro A. Moreno-Sánchez
+Javier Del Ser
+Mark van Gils
+Jussi Hernesniemi",10.1016/j.inffus.2025.103812,http://arxiv.org/pdf/2504.19179v1,"Artificial Intelligence (AI) holds great promise for transforming healthcare,
+particularly in disease diagnosis, prognosis, and patient care. The increasing
+availability of digital medical data, such as images, omics, biosignals, and
+electronic health records, combined with advances in computing, has enabled AI
+models to approach expert-level performance. However, widespread clinical
+adoption remains limited, primarily due to challenges beyond technical
+performance, including ethical concerns, regulatory barriers, and lack of
+trust. To address these issues, AI systems must align with the principles of
+Trustworthy AI (TAI), which emphasize human agency and oversight, algorithmic
+robustness, privacy and data governance, transparency, bias and discrimination
+avoidance, and accountability. Yet, the complexity of healthcare processes
+(e.g., screening, diagnosis, prognosis, and treatment) and the diversity of
+stakeholders (clinicians, patients, providers, regulators) complicate the
+integration of TAI principles. To bridge the gap between TAI theory and
+practical implementation, this paper proposes a design framework to support
+developers in embedding TAI principles into medical AI systems. Thus, for each
+stakeholder identified across various healthcare processes, we propose a
+disease-agnostic collection of requirements that medical AI systems should
+incorporate to adhere to the principles of TAI. Additionally, we examine the
+challenges and tradeoffs that may arise when applying these principles in
+practice. To ground the discussion, we focus on cardiovascular diseases, a
+field marked by both high prevalence and active AI innovation, and demonstrate
+how TAI principles have been applied and where key obstacles persist."
+A survey on ensemble learning,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey summarizes ensemble methods but provides no original formal analysis of bias‑variance, diversity, MoE, uncertainty, or superiority conditions.",https://scispace.com/paper/a-survey-on-ensemble-learning-5f4ppd7hzs,2020,Journal Article,Frontiers of Computer Science,"Xibin Dong
+Zhiwen Yu
+Wenming Cao
+Yifan Shi
+Qianli Ma",10.1007/S11704-019-8208-Z,"","Despite significant successes achieved in knowledge discovery, traditional machine learning methods may fail to obtain satisfactory performances when dealing with complex data, such as imbalanced, high-dimensional, noisy data, etc. The reason behind is that it is difficult for these methods to capture multiple characteristics and underlying structure of data. In this context, it becomes an important topic in the data mining field that how to effectively construct an efficient knowledge discovery and mining model. Ensemble learning, as one research hot spot, aims to integrate data fusion, data modeling, and data mining into a unified framework. Specifically, ensemble learning firstly extracts a set of features with a variety of transformations. Based on these learned features, multiple learning algorithms are utilized to produce weak predictive results. Finally, ensemble learning fuses the informative knowledge from the above results obtained to achieve knowledge discovery and better predictive performance via voting schemes in an adaptive way. In this paper, we review the research progress of the mainstream approaches of ensemble learning and classify them based on different characteristics. In addition, we present challenges and possible research directions for each mainstream approach of ensemble learning, and we also give an extra introduction for the combination of ensemble learning with other machine learning hot spots such as deep learning, reinforcement learning, etc."
+Ensemble Learning Approach for Weapon Recognition Using Images of Wound Patterns: A Forensic Perspective,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Applies stacking ensemble empirically for weapon recognition; provides no formal bias‑variance, diversity, MoE, uncertainty, or superiority analysis.",https://scispace.com/paper/ensemble-learning-approach-for-weapon-recognition-using-2mvhhgnkix,2018,Journal Article,"International Journal of Image, Graphics and Signal Processing","Dayanand G. Savakar
+Anil Kannur",10.5815/IJIGSP.2018.11.01,https://scispace.com/pdf/ensemble-learning-approach-for-weapon-recognition-using-2mvhhgnkix.pdf,"This paper presents a forensic perspective way of recognizing the weapons by processing wound patterns using ensemble learning that gives an effective forensic computational approach for the distinguished weapons used in most of crime cases. This will be one of the computational and effective substitutes to investigate the weapons used in crime, the methodology uses the collective wound patterns images from the human body for the recognition. The ensemble learning used in this proposed methodology improves the accuracy of machine learning methods by combining several methods and predicting the final accuracy by meta-classifier. It has given better recognition process compared to single individual model and the traditional method. Ensemble learning is more flexible in function and is better in the wound pattern recognition and their respective weapons as it overcomes the issue to overfit training data. The result achieved for weapon recognition based on wound patterns is 98.34%, from existing database of 800 images of pattern consisting of wounds of stabbed and gunshots. The authenticated experiments out-turns the preeminence of projected method over the widespread feature extraction approach considered in the work and also compares and suggest the false positive recognition verses false negative recognition. The proposed methodology has given better results compared to traditional method and will be helpful in forensic and crime investigation."
+"Neural Network Ensembles: Theory, Training, and the Importance of Explicit Diversity.","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Derives explicit diversity‑accuracy bounds and a training algorithm that enforces diversity; offers theoretical trade‑off analysis and conditions for ensemble advantage, but lacks bias‑variance focus, MoE, uncertainty quantification, and multi‑agent connections.",https://scispace.com/paper/neural-network-ensembles-theory-training-and-the-importance-1iiswiv7h9,2021,Posted Content,arXiv: Learning,"Wenjing Li
+Randy Paffenroth
+David Berthiaume","",http://arxiv.org/pdf/2109.14117.pdf,"Ensemble learning is a process by which multiple base learners are strategically generated and combined into one composite learner. There are two features that are essential to an ensemble's performance, the individual accuracies of the component learners and the overall diversity in the ensemble. The right balance of learner accuracy and ensemble diversity can improve the performance of machine learning tasks on benchmark and real-world data sets, and recent theoretical and practical work has demonstrated the subtle trade-off between accuracy and diversity in an ensemble. In this paper, we extend the extant literature by providing a deeper theoretical understanding for assessing and improving the optimality of any given ensemble, including random forests and deep neural network ensembles. We also propose a training algorithm for neural network ensembles and demonstrate that our approach provides improved performance when compared to both state-of-the-art individual learners and ensembles of state-of-the-art learners trained using standard loss functions. Our key insight is that it is better to explicitly encourage diversity in an ensemble, rather than merely allowing diversity to occur by happenstance, and that rigorous theoretical bounds on the trade-off between diversity and learner accuracy allow one to know when an optimal arrangement has been achieved."

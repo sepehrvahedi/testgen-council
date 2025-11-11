@@ -1,0 +1,483 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Abstract"
+"ChatUniTest: A Framework for LLM-Based Test Generation","https://scispace.com/paper/http://arxiv.org/abs/2305.04764v2","2023","Preprint","","Yinghao Chen
+Zehao Hu
+Chen Zhi
+Junxiao Han
+Shuiguang Deng
+Jianwei Yin","","http://arxiv.org/pdf/2305.04764v2","Unit testing is an essential yet frequently arduous task. Various automated
+unit test generation tools have been introduced to mitigate this challenge.
+Notably, methods based on large language models (LLMs) have garnered
+considerable attention and exhibited promising results in recent years.
+Nevertheless, LLM-based tools encounter limitations in generating accurate unit
+tests. This paper presents ChatUniTest, an LLM-based automated unit test
+generation framework. ChatUniTest incorporates an adaptive focal context
+mechanism to encompass valuable context in prompts and adheres to a
+generation-validation-repair mechanism to rectify errors in generated unit
+tests. Subsequently, we have developed ChatUniTest Core, a common library that
+implements core workflow, complemented by the ChatUniTest Toolchain, a suite of
+seamlessly integrated tools enhancing the capabilities of ChatUniTest. Our
+effectiveness evaluation reveals that ChatUniTest outperforms TestSpark and
+EvoSuite in half of the evaluated projects, achieving the highest overall line
+coverage. Furthermore, insights from our user study affirm that ChatUniTest
+delivers substantial value to various stakeholders in the software testing
+domain. ChatUniTest is available at
+https://github.com/ZJU-ACES-ISE/ChatUniTest, and the demo video is available at
+https://www.youtube.com/watch?v=GmfxQUqm2ZQ."
+"ChatGPT for PLC/DCS Control Logic Generation","https://scispace.com/paper/http://arxiv.org/abs/2305.15809v1","2023","Preprint","","Heiko Koziolek
+Sten Gruener
+Virendra Ashiwal","","http://arxiv.org/pdf/2305.15809v1","Large language models (LLMs) providing generative AI have become popular to
+support software engineers in creating, summarizing, optimizing, and
+documenting source code. It is still unknown how LLMs can support control
+engineers using typical control programming languages in programming tasks.
+Researchers have explored GitHub CoPilot or DeepMind AlphaCode for source code
+generation but did not yet tackle control logic programming. The contribution
+of this paper is an exploratory study, for which we created 100 LLM prompts in
+10 representative categories to analyze control logic generation for of PLCs
+and DCS from natural language. We tested the prompts by generating answers with
+ChatGPT using the GPT-4 LLM. It generated syntactically correct IEC 61131-3
+Structured Text code in many cases and demonstrated useful reasoning skills
+that could boost control engineer productivity. Our prompt collection is the
+basis for a more formal LLM benchmark to test and compare such models for
+control logic generation."
+"Where Are Large Language Models for Code Generation on GitHub?","https://scispace.com/paper/http://arxiv.org/abs/2406.19544v3","2024","Preprint","","Xiao Yu
+Lei Liu
+Xing Hu
+Jin Liu
+Xin Xia","","http://arxiv.org/pdf/2406.19544v3","The increasing use of Large Language Models (LLMs) in software development
+has garnered significant attention from researchers assessing the quality of
+the code they generate. However, much of the research focuses on controlled
+datasets such as HumanEval, which fail to adequately represent how developers
+actually utilize LLMs' code generation capabilities or clarify the
+characteristics of LLM-generated code in real-world development scenarios. To
+bridge this gap, our study investigates the characteristics of LLM-generated
+code and its corresponding projects hosted on GitHub. Our findings reveal
+several key insights: (1) ChatGPT and Copilot are the most frequently utilized
+for generating code on GitHub. In contrast, there is very little code generated
+by other LLMs on GitHub. (2) Projects containing ChatGPT/Copilot-generated code
+are often small and less known, led by individuals or small teams. Despite
+this, most projects are continuously evolving and improving. (3)
+ChatGPT/Copilot is mainly utilized for generating Python, Java, and TypeScript
+scripts for data processing and transformation. C/C++ and JavaScript code
+generation focuses on algorithm and data structure implementation and user
+interface code. Most ChatGPT/Copilot-generated code snippets are relatively
+short and exhibit low complexity. (4) Compared to human-written code,
+ChatGPT/Copilot-generated code exists in a small proportion of projects and
+generally undergoes fewer modifications. Additionally, modifications due to
+bugs are even fewer, ranging from just 3% to 8% across different languages. (5)
+Most comments on ChatGPT/Copilot-generated code lack detailed information,
+often only stating the code's origin without mentioning prompts, human
+modifications, or testing status. Based on these findings, we discuss the
+implications for researchers and practitioners."
+"Unit Testing Past vs. Present: Examining LLMs' Impact on Defect
+  Detection and Efficiency","https://scispace.com/paper/http://arxiv.org/abs/2502.09801v1","2025","Preprint","","Rudolf Ramler
+Philipp Straubinger
+Reinhold Plösch
+Dietmar Winkler","","http://arxiv.org/pdf/2502.09801v1","The integration of Large Language Models (LLMs), such as ChatGPT and GitHub
+Copilot, into software engineering workflows has shown potential to enhance
+productivity, particularly in software testing. This paper investigates whether
+LLM support improves defect detection effectiveness during unit testing.
+Building on prior studies comparing manual and tool-supported testing, we
+replicated and extended an experiment where participants wrote unit tests for a
+Java-based system with seeded defects within a time-boxed session, supported by
+LLMs. Comparing LLM supported and manual testing, results show that LLM support
+significantly increases the number of unit tests generated, defect detection
+rates, and overall testing efficiency. These findings highlight the potential
+of LLMs to improve testing and defect detection outcomes, providing empirical
+insights into their practical application in software testing."
+"LLM4DS: Evaluating Large Language Models for Data Science Code
+  Generation","https://scispace.com/paper/http://arxiv.org/abs/2411.11908v1","2024","Preprint","","Nathalia Nascimento
+Everton Guimaraes
+Sai Sanjna Chintakunta
+Santhosh Anitha Boominathan","","http://arxiv.org/pdf/2411.11908v1","The adoption of Large Language Models (LLMs) for code generation in data
+science offers substantial potential for enhancing tasks such as data
+manipulation, statistical analysis, and visualization. However, the
+effectiveness of these models in the data science domain remains underexplored.
+This paper presents a controlled experiment that empirically assesses the
+performance of four leading LLM-based AI assistants-Microsoft Copilot (GPT-4
+Turbo), ChatGPT (o1-preview), Claude (3.5 Sonnet), and Perplexity Labs
+(Llama-3.1-70b-instruct)-on a diverse set of data science coding challenges
+sourced from the Stratacratch platform. Using the Goal-Question-Metric (GQM)
+approach, we evaluated each model's effectiveness across task types
+(Analytical, Algorithm, Visualization) and varying difficulty levels. Our
+findings reveal that all models exceeded a 50% baseline success rate,
+confirming their capability beyond random chance. Notably, only ChatGPT and
+Claude achieved success rates significantly above a 60% baseline, though none
+of the models reached a 70% threshold, indicating limitations in higher
+standards. ChatGPT demonstrated consistent performance across varying
+difficulty levels, while Claude's success rate fluctuated with task complexity.
+Hypothesis testing indicates that task type does not significantly impact
+success rate overall. For analytical tasks, efficiency analysis shows no
+significant differences in execution times, though ChatGPT tended to be slower
+and less predictable despite high success rates. This study provides a
+structured, empirical evaluation of LLMs in data science, delivering insights
+that support informed model selection tailored to specific task demands. Our
+findings establish a framework for future AI assessments, emphasizing the value
+of rigorous evaluation beyond basic accuracy measures."
+"ChatGPT and Human Synergy in Black-Box Testing: A Comparative Analysis","https://scispace.com/paper/http://arxiv.org/abs/2401.13924v1","2024","Preprint","","Hiroyuki Kirinuki
+Haruto Tanno","","http://arxiv.org/pdf/2401.13924v1","In recent years, large language models (LLMs), such as ChatGPT, have been
+pivotal in advancing various artificial intelligence applications, including
+natural language processing and software engineering. A promising yet
+underexplored area is utilizing LLMs in software testing, particularly in
+black-box testing. This paper explores the test cases devised by ChatGPT in
+comparison to those created by human participants. In this study, ChatGPT
+(GPT-4) and four participants each created black-box test cases for three
+applications based on specifications written by the authors. The goal was to
+evaluate the real-world applicability of the proposed test cases, identify
+potential shortcomings, and comprehend how ChatGPT could enhance human testing
+strategies. ChatGPT can generate test cases that generally match or slightly
+surpass those created by human participants in terms of test viewpoint
+coverage. Additionally, our experiments demonstrated that when ChatGPT
+cooperates with humans, it can cover considerably more test viewpoints than
+each can achieve alone, suggesting that collaboration between humans and
+ChatGPT may be more effective than human pairs working together. Nevertheless,
+we noticed that the test cases generated by ChatGPT have certain issues that
+require addressing before use."
+"Examination of Code generated by Large Language Models","https://scispace.com/paper/http://arxiv.org/abs/2408.16601v1","2024","Preprint","","Robin Beer
+Alexander Feix
+Tim Guttzeit
+Tamara Muras
+Vincent Müller
+Maurice Rauscher
+Florian Schäffler
+Welf Löwe","","http://arxiv.org/pdf/2408.16601v1","Large language models (LLMs), such as ChatGPT and Copilot, are transforming
+software development by automating code generation and, arguably, enable rapid
+prototyping, support education, and boost productivity. Therefore, correctness
+and quality of the generated code should be on par with manually written code.
+To assess the current state of LLMs in generating correct code of high quality,
+we conducted controlled experiments with ChatGPT and Copilot: we let the LLMs
+generate simple algorithms in Java and Python along with the corresponding unit
+tests and assessed the correctness and the quality (coverage) of the generated
+(test) codes. We observed significant differences between the LLMs, between the
+languages, between algorithm and test codes, and over time. The present paper
+reports these results together with the experimental methods allowing repeated
+and comparable assessments for more algorithms, languages, and LLMs over time."
+"An Empirical Evaluation of Using Large Language Models for Automated
+  Unit Test Generation","https://scispace.com/paper/http://arxiv.org/abs/2302.06527v4","2023","Preprint","","Max Schäfer
+Sarah Nadi
+Aryaz Eghbali
+Frank Tip","","http://arxiv.org/pdf/2302.06527v4","Unit tests play a key role in ensuring the correctness of software. However,
+manually creating unit tests is a laborious task, motivating the need for
+automation. Large Language Models (LLMs) have recently been applied to this
+problem, utilizing additional training or few-shot learning on examples of
+existing tests. This paper presents a large-scale empirical evaluation on the
+effectiveness of LLMs for automated unit test generation without additional
+training or manual effort, providing the LLM with the signature and
+implementation of the function under test, along with usage examples extracted
+from documentation. We also attempt to repair failed generated tests by
+re-prompting the model with the failing test and error message. We implement
+our approach in TestPilot, a test generation tool for JavaScript that
+automatically generates unit tests for all API functions in an npm package. We
+evaluate TestPilot using OpenAI's gpt3.5-turbo LLM on 25 npm packages with a
+total of 1,684 API functions. The generated tests achieve a median statement
+coverage of 70.2% and branch coverage of 52.8%, significantly improving on
+Nessie, a recent feedback-directed JavaScript test generation technique, which
+achieves only 51.3% statement coverage and 25.6% branch coverage. We also find
+that 92.8% of TestPilot's generated tests have no more than 50% similarity with
+existing tests (as measured by normalized edit distance), with none of them
+being exact copies. Finally, we run TestPilot with two additional LLMs,
+OpenAI's older code-cushman-002 LLM and the open LLM StarCoder. Overall, we
+observed similar results with the former (68.2% median statement coverage), and
+somewhat worse results with the latter (54.0% median statement coverage),
+suggesting that the effectiveness of the approach is influenced by the size and
+training set of the LLM, but does not fundamentally depend on the specific
+model."
+"The GPT Surprise: Offering Large Language Model Chat in a Massive Coding
+  Class Reduced Engagement but Increased Adopters Exam Performances","https://scispace.com/paper/http://arxiv.org/abs/2407.09975v2","2024","Preprint","","Allen Nie
+Yash Chandak
+Miroslav Suzara
+Ali Malik
+Juliette Woodrow
+Matt Peng
+Mehran Sahami
+Emma Brunskill
+Chris Piech","","http://arxiv.org/pdf/2407.09975v2","Large language models (LLMs) are quickly being adopted in a wide range of
+learning experiences, especially via ubiquitous and broadly accessible chat
+interfaces like ChatGPT and Copilot. This type of interface is readily
+available to students and teachers around the world, yet relatively little
+research has been done to assess the impact of such generic tools on student
+learning. Coding education is an interesting test case, both because LLMs have
+strong performance on coding tasks, and because LLM-powered support tools are
+rapidly becoming part of the workflow of professional software engineers. To
+help understand the impact of generic LLM use on coding education, we conducted
+a large-scale randomized control trial with 5,831 students from 146 countries
+in an online coding class in which we provided some students with access to a
+chat interface with GPT-4. We estimate positive benefits on exam performance
+for adopters, the students who used the tool, but over all students, the
+advertisement of GPT-4 led to a significant average decrease in exam
+participation. We observe similar decreases in other forms of course
+engagement. However, this decrease is modulated by the student's country of
+origin. Offering access to LLMs to students from low human development index
+countries increased their exam participation rate on average. Our results
+suggest there may be promising benefits to using LLMs in an introductory coding
+class, but also potential harms for engagement, which makes their longer term
+impact on student success unclear. Our work highlights the need for additional
+investigations to help understand the potential impact of future adoption and
+integration of LLMs into classrooms."
+"""Oops, Did I Just Say That?"" Testing and Repairing Unethical Suggestions
+  of Large Language Models with Suggest-Critique-Reflect Process","https://scispace.com/paper/http://arxiv.org/abs/2305.02626v1","2023","Preprint","","Pingchuan Ma
+Zongjie Li
+Ao Sun
+Shuai Wang","","http://arxiv.org/pdf/2305.02626v1","As the popularity of large language models (LLMs) soars across various
+applications, ensuring their alignment with human values has become a paramount
+concern. In particular, given that LLMs have great potential to serve as
+general-purpose AI assistants in daily life, their subtly unethical suggestions
+become a serious and real concern. Tackling the challenge of automatically
+testing and repairing unethical suggestions is thus demanding.
+  This paper introduces the first framework for testing and repairing unethical
+suggestions made by LLMs. We first propose ETHICSSUITE, a test suite that
+presents complex, contextualized, and realistic moral scenarios to test LLMs.
+We then propose a novel suggest-critic-reflect (SCR) process, serving as an
+automated test oracle to detect unethical suggestions. We recast deciding if
+LLMs yield unethical suggestions (a hard problem; often requiring human
+expertise and costly to decide) into a PCR task that can be automatically
+checked for violation. Moreover, we propose a novel on-the-fly (OTF) repairing
+scheme that repairs unethical suggestions made by LLMs in real-time. The OTF
+scheme is applicable to LLMs in a black-box API setting with moderate cost.
+With ETHICSSUITE, our study on seven popular LLMs (e.g., ChatGPT, GPT-4)
+uncovers in total 109,824 unethical suggestions. We apply our OTF scheme on two
+LLMs (Llama-13B and ChatGPT), which generates valid repair to a considerable
+amount of unethical ones, paving the way for more ethically conscious LLMs."
+"CoverUp: Effective High Coverage Test Generation for Python","https://scispace.com/paper/http://arxiv.org/abs/2403.16218v4","2024","Preprint","","Juan Altmayer Pizzorno
+Emery D. Berger","10.1145/3729398","http://arxiv.org/pdf/2403.16218v4","Testing is an essential part of software development. Test generation tools
+attempt to automate the otherwise labor-intensive task of test creation, but
+generating high-coverage tests remains challenging. This paper proposes
+CoverUp, a novel approach to driving the generation of high-coverage Python
+regression tests. CoverUp combines coverage analysis, code context, and
+feedback in prompts that iteratively guide the LLM to generate tests that
+improve line and branch coverage. We evaluate our prototype CoverUp
+implementation across a benchmark of challenging code derived from open-source
+Python projects and show that CoverUp substantially improves on the state of
+the art. Compared to CodaMosa, a hybrid search/LLM-based test generator,
+CoverUp achieves a per-module median line+branch coverage of 80% (vs. 47%).
+Compared to MuTAP, a mutation- and LLM-based test generator, CoverUp achieves
+an overall line+branch coverage of 89% (vs. 77%). We also demonstrate that
+CoverUp's performance stems not only from the LLM used but from the combined
+effectiveness of its components."
+"Evaluating Code Generation of LLMs in Advanced Computer Science Problems","https://scispace.com/paper/http://arxiv.org/abs/2504.14964v1","2025","Preprint","","Emir Catir
+Robin Claesson
+Rodothea Myrsini Tsoupidi","","http://arxiv.org/pdf/2504.14964v1","Large Language Models (LLMs), such as GitHub Copilot and ChatGPT have become
+popular among programming students. Students use LLMs to assist them in
+programming courses, including generating source code. Previous work has
+evaluated the ability of LLMs in solving introductory-course programming
+assignments. The results have shown that LLMs are highly effective in
+generating code for introductory Computer Science (CS) courses. However, there
+is a gap in research on evaluating LLMs' ability to generate code that solves
+advanced programming assignments. In this work, we evaluate the ability of four
+LLM tools to solve programming assignments from advanced CS courses in three
+popular programming languages, Java, Python, and C. We manually select 12
+problems, three problems from introductory courses as the baseline and nine
+programming assignments from second- and third-year CS courses. To evaluate the
+LLM-generated code, we generate a test suite of 1000 test cases per problem and
+analyze the program output. Our evaluation shows that although LLMs are highly
+effective in generating source code for introductory programming courses,
+solving advanced programming assignments is more challenging. Nonetheless, in
+many cases, LLMs identify the base problem and provide partial solutions that
+may be useful to CS students. Furthermore, our results may provide useful
+guidance for teachers of advanced programming courses on how to design
+programming assignments."
+"Can ChatGPT Assess Human Personalities? A General Evaluation Framework","https://scispace.com/paper/http://arxiv.org/abs/2303.01248v3","2023","Preprint","","Haocong Rao
+Cyril Leung
+Chunyan Miao","","http://arxiv.org/pdf/2303.01248v3","Large Language Models (LLMs) especially ChatGPT have produced impressive
+results in various areas, but their potential human-like psychology is still
+largely unexplored. Existing works study the virtual personalities of LLMs but
+rarely explore the possibility of analyzing human personalities via LLMs. This
+paper presents a generic evaluation framework for LLMs to assess human
+personalities based on Myers Briggs Type Indicator (MBTI) tests. Specifically,
+we first devise unbiased prompts by randomly permuting options in MBTI
+questions and adopt the average testing result to encourage more impartial
+answer generation. Then, we propose to replace the subject in question
+statements to enable flexible queries and assessments on different subjects
+from LLMs. Finally, we re-formulate the question instructions in a manner of
+correctness evaluation to facilitate LLMs to generate clearer responses. The
+proposed framework enables LLMs to flexibly assess personalities of different
+groups of people. We further propose three evaluation metrics to measure the
+consistency, robustness, and fairness of assessment results from
+state-of-the-art LLMs including ChatGPT and GPT-4. Our experiments reveal
+ChatGPT's ability to assess human personalities, and the average results
+demonstrate that it can achieve more consistent and fairer assessments in spite
+of lower robustness against prompt biases compared with InstructGPT."
+"Analyzing Prominent LLMs: An Empirical Study of Performance and
+  Complexity in Solving LeetCode Problems","https://scispace.com/paper/http://arxiv.org/abs/2508.03931v1","2025","Preprint","","Everton Guimaraes
+Nathalia Nascimento
+Chandan Shivalingaiah
+Asish Nelapati","","http://arxiv.org/pdf/2508.03931v1","Large Language Models (LLMs) like ChatGPT, Copilot, Gemini, and DeepSeek are
+transforming software engineering by automating key tasks, including code
+generation, testing, and debugging. As these models become integral to
+development workflows, a systematic comparison of their performance is
+essential for optimizing their use in real world applications. This study
+benchmarks these four prominent LLMs on one hundred and fifty LeetCode problems
+across easy, medium, and hard difficulties, generating solutions in Java and
+Python. We evaluate each model based on execution time, memory usage, and
+algorithmic complexity, revealing significant performance differences. ChatGPT
+demonstrates consistent efficiency in execution time and memory usage, while
+Copilot and DeepSeek show variability as task complexity increases. Gemini,
+although effective on simpler tasks, requires more attempts as problem
+difficulty rises. Our findings provide actionable insights into each model's
+strengths and limitations, offering guidance for developers selecting LLMs for
+specific coding tasks and providing insights on the performance and complexity
+of GPT-like generated solutions."
+"On the Evaluation of Large Language Models in Unit Test Generation","https://scispace.com/paper/http://arxiv.org/abs/2406.18181v2","2024","Preprint","","Lin Yang
+Chen Yang
+Shutao Gao
+Weijing Wang
+Bo Wang
+Qihao Zhu
+Xiao Chu
+Jianyi Zhou
+Guangtai Liang
+Qianxiang Wang
+Junjie Chen","","http://arxiv.org/pdf/2406.18181v2","Unit testing is an essential activity in software development for verifying
+the correctness of software components. However, manually writing unit tests is
+challenging and time-consuming. The emergence of Large Language Models (LLMs)
+offers a new direction for automating unit test generation. Existing research
+primarily focuses on closed-source LLMs (e.g., ChatGPT and CodeX) with fixed
+prompting strategies, leaving the capabilities of advanced open-source LLMs
+with various prompting settings unexplored. Particularly, open-source LLMs
+offer advantages in data privacy protection and have demonstrated superior
+performance in some tasks. Moreover, effective prompting is crucial for
+maximizing LLMs' capabilities. In this paper, we conduct the first empirical
+study to fill this gap, based on 17 Java projects, five widely-used open-source
+LLMs with different structures and parameter sizes, and comprehensive
+evaluation metrics. Our findings highlight the significant influence of various
+prompt factors, show the performance of open-source LLMs compared to the
+commercial GPT-4 and the traditional Evosuite, and identify limitations in
+LLM-based unit test generation. We then derive a series of implications from
+our study to guide future research and practical use of LLM-based unit test
+generation."
+"Test smells in LLM-Generated Unit Tests","https://scispace.com/paper/http://arxiv.org/abs/2410.10628v1","2024","Preprint","","Wendkûuni C. Ouédraogo
+Yinghua Li
+Kader Kaboré
+Xunzhu Tang
+Anil Koyuncu
+Jacques Klein
+David Lo
+Tegawendé F. Bissyandé","","http://arxiv.org/pdf/2410.10628v1","The use of Large Language Models (LLMs) in automated test generation is
+gaining popularity, with much of the research focusing on metrics like
+compilability rate, code coverage and bug detection. However, an equally
+important quality metric is the presence of test smells design flaws or anti
+patterns in test code that hinder maintainability and readability. In this
+study, we explore the diffusion of test smells in LLM generated unit test
+suites and compare them to those found in human written ones. We analyze a
+benchmark of 20,500 LLM-generated test suites produced by four models (GPT-3.5,
+GPT-4, Mistral 7B, and Mixtral 8x7B) across five prompt engineering techniques,
+alongside a dataset of 780,144 human written test suites from 34,637 projects.
+Leveraging TsDetect, a state of the art tool capable of detecting 21 different
+types of test smells, we identify and analyze the prevalence and co-occurrence
+of various test smells in both human written and LLM-generated test suites. Our
+findings reveal new insights into the strengths and limitations of LLMs in test
+generation. First, regarding prevalence, we observe that LLMs frequently
+generate tests with common test smells, such as Magic Number Test and Assertion
+Roulette. Second, in terms of co occurrence, certain smells, like Long Test and
+Useless Test, tend to co occur in LLM-generated suites, influenced by specific
+prompt techniques. Third, we find that project complexity and LLM specific
+factors, including model size and context length, significantly affect the
+prevalence of test smells. Finally, the patterns of test smells in
+LLM-generated tests often mirror those in human-written tests, suggesting
+potential data leakage from training datasets. These insights underscore the
+need to refine LLM-based test generation for cleaner code and suggest
+improvements in both LLM capabilities and software testing practices."
+"Learning from Red Teaming: Gender Bias Provocation and Mitigation in
+  Large Language Models","https://scispace.com/paper/http://arxiv.org/abs/2310.11079v1","2023","Preprint","","Hsuan Su
+Cheng-Chu Cheng
+Hua Farn
+Shachi H Kumar
+Saurav Sahay
+Shang-Tse Chen
+Hung-yi Lee","","http://arxiv.org/pdf/2310.11079v1","Recently, researchers have made considerable improvements in dialogue systems
+with the progress of large language models (LLMs) such as ChatGPT and GPT-4.
+These LLM-based chatbots encode the potential biases while retaining
+disparities that can harm humans during interactions. The traditional biases
+investigation methods often rely on human-written test cases. However, these
+test cases are usually expensive and limited. In this work, we propose a
+first-of-its-kind method that automatically generates test cases to detect
+LLMs' potential gender bias. We apply our method to three well-known LLMs and
+find that the generated test cases effectively identify the presence of biases.
+To address the biases identified, we propose a mitigation strategy that uses
+the generated test cases as demonstrations for in-context learning to
+circumvent the need for parameter fine-tuning. The experimental results show
+that LLMs generate fairer responses with the proposed approach."
+"MedHalu: Hallucinations in Responses to Healthcare Queries by Large
+  Language Models","https://scispace.com/paper/http://arxiv.org/abs/2409.19492v2","2024","Preprint","","Vibhor Agarwal
+Yiqiao Jin
+Mohit Chandra
+Munmun De Choudhury
+Srijan Kumar
+Nishanth Sastry","","http://arxiv.org/pdf/2409.19492v2","Large language models (LLMs) are starting to complement traditional
+information seeking mechanisms such as web search. LLM-powered chatbots like
+ChatGPT are gaining prominence among the general public. AI chatbots are also
+increasingly producing content on social media platforms. However, LLMs are
+also prone to hallucinations, generating plausible yet factually incorrect or
+fabricated information. This becomes a critical problem when laypeople start
+seeking information about sensitive issues such as healthcare. Existing works
+in LLM hallucinations in the medical domain mainly focus on testing the medical
+knowledge of LLMs through standardized medical exam questions which are often
+well-defined and clear-cut with definitive answers. However, these approaches
+may not fully capture how these LLMs perform during real-world interactions
+with patients. This work conducts a pioneering study on hallucinations in
+LLM-generated responses to real-world healthcare queries from patients.We
+introduce MedHalu, a novel medical hallucination benchmark featuring diverse
+health-related topics and hallucinated responses from LLMs, with detailed
+annotation of the hallucination types and text spans. We also propose
+MedHaluDetect, a comprehensive framework for evaluating LLMs' abilities to
+detect hallucinations. Furthermore, we study the vulnerability to medical
+hallucinations among three groups -- medical experts, LLMs, and laypeople.
+Notably, LLMs significantly underperform human experts and, in some cases, even
+laypeople in detecting medical hallucinations. To improve hallucination
+detection, we propose an expert-in-the-loop approach that integrates expert
+reasoning into LLM inputs, significantly improving hallucination detection for
+all LLMs, including a 6.3% macro-F1 improvement for GPT-4."
+"Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of
+  Large Language Models for Code Generation","https://scispace.com/paper/http://arxiv.org/abs/2305.01210v3","2023","Preprint","","Jiawei Liu
+Chunqiu Steven Xia
+Yuyao Wang
+Lingming Zhang","","http://arxiv.org/pdf/2305.01210v3","Program synthesis has been long studied with recent approaches focused on
+directly using the power of Large Language Models (LLMs) to generate code.
+Programming benchmarks, with curated synthesis problems and test-cases, are
+used to measure the performance of various LLMs on code synthesis. However,
+these test-cases can be limited in both quantity and quality for fully
+assessing the functional correctness of the generated code. Such limitation in
+the existing benchmarks begs the following question: In the era of LLMs, is the
+code generated really correct? To answer this, we propose EvalPlus -- a code
+synthesis evaluation framework to rigorously benchmark the functional
+correctness of LLM-synthesized code. EvalPlus augments a given evaluation
+dataset with large amounts of test-cases newly produced by an automatic test
+input generator, powered by both LLM- and mutation-based strategies. While
+EvalPlus is general, we extend the test-cases of the popular HumanEval
+benchmark by 80x to build HumanEval+. Our extensive evaluation across 26
+popular LLMs (e.g., GPT-4 and ChatGPT) demonstrates that HumanEval+ is able to
+catch significant amounts of previously undetected wrong code synthesized by
+LLMs, reducing the pass@k by up-to 19.3-28.9%. We also surprisingly found that
+test insufficiency can lead to mis-ranking. For example, both
+WizardCoder-CodeLlama and Phind-CodeLlama now outperform ChatGPT on HumanEval+,
+while none of them could on HumanEval. Our work not only indicates that prior
+popular code synthesis evaluation results do not accurately reflect the true
+performance of LLMs for code synthesis, but also opens up a new direction to
+improve such programming benchmarks through automated testing. We have
+open-sourced our tools, enhanced datasets as well as all LLM-generated code at
+https://github.com/evalplus/evalplus to facilitate and accelerate future
+LLM-for-code research."
+"Toward Neurosymbolic Program Comprehension","https://scispace.com/paper/http://arxiv.org/abs/2502.01806v1","2025","Preprint","","Alejandro Velasco
+Aya Garryyeva
+David N. Palacio
+Antonio Mastropaolo
+Denys Poshyvanyk","","http://arxiv.org/pdf/2502.01806v1","Recent advancements in Large Language Models (LLMs) have paved the way for
+Large Code Models (LCMs), enabling automation in complex software engineering
+tasks, such as code generation, software testing, and program comprehension,
+among others. Tools like GitHub Copilot and ChatGPT have shown substantial
+benefits in supporting developers across various practices. However, the
+ambition to scale these models to trillion-parameter sizes, exemplified by
+GPT-4, poses significant challenges that limit the usage of Artificial
+Intelligence (AI)-based systems powered by large Deep Learning (DL) models.
+These include rising computational demands for training and deployment and
+issues related to trustworthiness, bias, and interpretability. Such factors can
+make managing these models impractical for many organizations, while their
+""black-box'' nature undermines key aspects, including transparency and
+accountability. In this paper, we question the prevailing assumption that
+increasing model parameters is always the optimal path forward, provided there
+is sufficient new data to learn additional patterns. In particular, we advocate
+for a Neurosymbolic research direction that combines the strengths of existing
+DL techniques (e.g., LLMs) with traditional symbolic methods--renowned for
+their reliability, speed, and determinism. To this end, we outline the core
+features and present preliminary results for our envisioned approach, aimed at
+establishing the first Neurosymbolic Program Comprehension (NsPC) framework to
+aid in identifying defective code components."

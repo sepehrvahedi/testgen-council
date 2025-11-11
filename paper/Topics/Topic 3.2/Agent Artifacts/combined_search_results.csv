@@ -1,0 +1,1014 @@
+Paper Title,Relevance,Paper Link,Publication Year,Publication Type,Publication Title,Author Names,DOI,PDF Link,Abstract
+"RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement
+  Learning","- **Relevance Score:** 70/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses multiple test sets and iterative code drafts to guide generation, preserves correctness via held‑out tests, resolves limited conflicts through feedback loops, and refines code across several LLM attempts.",https://scispace.com/paper/rlef-grounding-code-llms-in-execution-feedback-with-23ffednt2yja,2024,Journal Article,"","Jonas Gehring
+Kangfeng Zheng
+Jade Copet
+Vegard Mella
+Tal Cohen
+Gabriel Synnaeve",10.48550/arxiv.2410.02089,https://scispace.compdf/rlef-grounding-code-llms-in-execution-feedback-with-23ffednt2yja.pdf,"Large language models (LLMs) deployed as agents solve user-specified tasks over multiple steps while keeping the required manual engagement to a minimum. Crucially, such LLMs need to ground their generations in any feedback obtained to reliably achieve desired outcomes. We propose an end-to-end reinforcement learning method for teaching models to leverage execution feedback in the realm of code synthesis, where state-of-the-art LLMs struggle to improve code iteratively compared to independent sampling. We benchmark on competitive programming tasks, where we achieve new start-of-the art results with both small (8B parameters) and large (70B) models while reducing the amount of samples required by an order of magnitude. Our analysis of inference-time behavior demonstrates that our method produces LLMs that effectively leverage automatic feedback over multiple steps. "
+MapCoder: Multi-Agent Code Generation for Competitive Problem Solving,"- **Relevance Score:** 70/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses retrieval, planning, coding, and debugging agents to combine multiple LLM outputs; ensures generated code passes original sample I/O, preserving intent; limited explicit conflict‑resolution mechanisms; iteratively refines drafts via LLM agents.",https://scispace.com/paper/mapcoder-multi-agent-code-generation-for-competitive-problem-3l9olvmis9,2024,Preprint,"","M.A. Islam
+Mohammed Eunus Ali
+Md Rizwan Parvez",10.48550/arxiv.2405.11403,https://scispace.compdf/mapcoder-multi-agent-code-generation-for-competitive-problem-3l9olvmis9.pdf,"Code synthesis, which requires a deep understanding of complex natural language problem descriptions, generation of code instructions for complex algorithms and data structures, and the successful execution of comprehensive unit tests, presents a significant challenge. While large language models (LLMs) demonstrate impressive proficiency in natural language processing, their performance in code generation tasks remains limited. In this paper, we introduce a new approach to code generation tasks leveraging multi-agent prompting that uniquely replicates the full cycle of program synthesis as observed in human developers. Our framework, MapCoder, consists of four LLM agents specifically designed to emulate the stages of this cycle: recalling relevant examples, planning, code generation, and debugging. After conducting thorough experiments, with multiple LLM ablations and analyses across eight challenging competitive problem-solving and program synthesis benchmarks, MapCoder showcases remarkable code generation capabilities, achieving new state-of-the-art results (pass@1) on HumanEval (93.9%), MBPP (83.1%), APPS (22.0%), CodeContests (28.5%), and xCodeEval (45.3%). Moreover, our method consistently delivers superior performance across various programming languages and varying problem difficulties. We open-source our framework at https://github.com/Md-Ashraful-Pramanik/MapCoder. "
+"Seed-CTS: Unleashing the Power of Tree Search for Superior Performance
+  in Competitive Coding Tasks","- **Relevance Score:** 68/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses token-level MCTS to explore many LLM drafts, selects consistent paths, refines code iteratively, and checks correctness via tests, though intent preservation is implicit.",https://scispace.com/paper/seed-cts-unleashing-the-power-of-tree-search-for-superior-7lnxcuypu9h2,2024,Journal Article,"","Hao Wang
+Boyi Liu
+Yufeng Zhang
+Jie Chen",10.48550/arxiv.2412.12544,https://scispace.compdf/seed-cts-unleashing-the-power-of-tree-search-for-superior-7lnxcuypu9h2.pdf,"Competition-level code generation tasks pose significant challenges for current state-of-the-art large language models (LLMs). For example, on the LiveCodeBench-Hard dataset, models such as O1-Mini and O1-Preview achieve pass@1 rates of only 0.366 and 0.143, respectively. While tree search techniques have proven effective in domains like mathematics and general coding, their potential in competition-level code generation remains under-explored. In this work, we propose a novel token-level tree search method specifically designed for code generation. Leveraging Qwen2.5-Coder-32B-Instruct, our approach achieves a pass rate of 0.305 on LiveCodeBench-Hard, surpassing the pass@100 performance of GPT4o-0513 (0.245). Furthermore, by integrating Chain-of-Thought (CoT) prompting, we improve our method's performance to 0.351, approaching O1-Mini's pass@1 rate. To ensure reproducibility, we report the average number of generations required per problem by our tree search method on the test set. Our findings underscore the potential of tree search to significantly enhance performance on competition-level code generation tasks. This opens up new possibilities for large-scale synthesis of challenging code problems supervised fine-tuning (SFT) data, advancing competition-level code generation tasks. "
+Improving Code Refinement for Code Review Via Input Reconstruction and Ensemble Learning,"- **Relevance Score:** 67/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses multiple LLM-generated code drafts and ensemble selection, directly matching multi-source synthesis and LLM refinement; retains functionality but lacks explicit intent preservation or conflict resolution mechanisms.",https://scispace.com/paper/improving-code-refinement-for-code-review-via-input-1w2khr5z0l,2023,Proceedings Article,"","Jiawei Lu
+Zhijie Tang
+Zhongxin Liu",10.1109/apsec60848.2023.00026,"","Code review is crucial for ensuring the quality of source code in software development. Automating the code review process is essential to save time and reduce costs, as manually reviewing code can be time-consuming and challenging for developers. Code refinement, an important task for automating code review, aims to automatically modify the code under review to address reviewers' comments. Previous research has fine-tuned pre-trained models like CodeT5 and CodeReviewer for code refinement, showing promising results. However, fine-tuning these models can make them forget the knowledge learned during pre-training and lead to suboptimal performance. To overcome this challenge, we employ an information retrieval method to enable the model to recall its learned knowledge. Furthermore, we propose using prompt templates to reconstruct the input and align the formats of the input data used during fine-tuning and pre-training, thus alleviating knowledge forgetting. Multiple models are created using the retrieval reconstruction and prompt reconstruction methods mentioned above, which are highly complementary. An ensemble learning method is employed to identify the most promising output from the outputs of these models. Our ensemble model achieves an Exact Match (EM) score of 36.32, surpassing the state-of-the-art CodeReviewer model by 19.3% and the popular GPT-3.5-Turbo model by 49.6%."
+"Can Pre-trained Language Models be Used to Resolve Textual and Semantic
+  Merge Conflicts?","- **Relevance Score:** 66/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses few‑shot prompts with multiple examples to guide LM fixes; ensures semantic correctness of merged code; directly tackles detection and resolution of merge conflicts; does not refine multiple AI‑generated drafts, only single‑prompt generation.",https://scispace.com/paper/http://arxiv.org/abs/2111.11904v1,2021,Preprint,"","Jialu Zhang
+Todd Mytkowicz
+Mike Kaufman
+Ruzica Piskac
+Shuvendu K. Lahiri","",http://arxiv.org/pdf/2111.11904v1,"Program merging is standard practice when developers integrate their
+individual changes to a common code base. When the merge algorithm fails, this
+is called a merge conflict. The conflict either manifests in textual merge
+conflicts where the merge fails to produce code, or semantic merge conflicts
+where the merged code results in compiler or test breaks. Resolving these
+conflicts for large code projects is expensive because it requires developers
+to manually identify the sources of conflict and correct them.
+  In this paper, we explore the feasibility of automatically repairing merge
+conflicts (both textual and semantic) using k-shot learning with large neural
+language models (LM) such as GPT-3. One of the challenges in leveraging such
+language models is to fit the examples and the queries within a small prompt
+(2048 tokens). We evaluate LMs and k-shot learning for two broad applications:
+(a) textual and semantic merge conflicts for a divergent fork Microsoft Edge,
+and (b) textual merge conflicts for a large number of JavaScript projects in
+GitHub. Our results are mixed: one one-hand, LMs provide the state-of-the-art
+(SOTA) performance on semantic merge conflict resolution for Edge compared to
+earlier symbolic approaches; on the other hand, LMs do not yet obviate the
+benefits of fine-tuning neural models (when sufficient data is available) or
+the design of special purpose domain-specific languages (DSL) for restricted
+patterns for program synthesis."
+"Software Testing with Large Language Model: Survey, Landscape, and Vision","- **Relevance Score:** 64/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses search‑based test generation plus LLM suggestions to fuse multiple test sources, aims to keep coverage and assertions, iteratively fixes compilation conflicts, and applies LLM refinement on generated tests, though not explicitly handling multiple draft versions.",https://scispace.com/paper/software-testing-with-large-language-model-survey-landscape-3tu90ids,2023,Peer Review,"","Junjie Wang
+Yuchao Huang
+Chunyang Chen
+Zhe Liu
+Song Wang
+Qing Wang","",https://scispace.compdf/software-testing-with-large-language-model-survey-landscape-3tu90ids.pdf,"Pre-trained large language models (LLMs) have recently emerged as a breakthrough technology in natural language processing and artificial intelligence, with the ability to handle large-scale datasets and exhibit remarkable performance across a wide range of tasks. Meanwhile, software testing is a crucial undertaking that serves as a cornerstone for ensuring the quality and reliability of software products. As the scope and complexity of software systems continue to grow, the need for more effective software testing techniques becomes increasingly urgent, and making it an area ripe for innovative approaches such as the use of LLMs. This paper provides a comprehensive review of the utilization of LLMs in software testing. It analyzes 52 relevant studies that have used LLMs for software testing, from both the software testing and LLMs perspectives. The paper presents a detailed discussion of the software testing tasks for which LLMs are commonly used, among which test case preparation and program repair are the most representative ones. It also analyzes the commonly used LLMs, the types of prompt engineering that are employed, as well as the accompanied techniques with these LLMs. It also summarizes the key challenges and potential opportunities in this direction. This work can serve as a roadmap for future research in this area, highlighting potential avenues for exploration, and identifying gaps in our current understanding of the use of LLMs in software testing."
+Autocoderover: Autonomous program improvement,"- **Relevance Score:** 62/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Highly relevant: merges LLM‑generated patches with code‑search results and test‑based fault localization, preserving intent via test suites and evaluating on SWE‑bench. Somewhat relevant: offers limited conflict handling, no explicit resolution.",https://scispace.com/paper/autocoderover-autonomous-program-improvement-4rn0me1lkw,2024,Journal Article,arXiv.org,"Yuntong Zhang
+Haifeng Ruan
+Zhiyu Fan
+Abhik Roychoudhury",10.48550/arxiv.2404.05427,https://dl.acm.org/doi/pdf/10.1145/3650212.3680384,"Researchers have made significant progress in automating the software development process in the past decades. Recent progress in Large Language Models (LLMs) has significantly impacted the development process, where developers can use LLM-based programming assistants to achieve automated coding. Nevertheless software engineering involves the process of program improvement apart from coding, specifically to enable software maintenance (e.g. bug fixing) and software evolution (e.g. feature additions). In this paper, we propose an automated approach for solving GitHub issues to autonomously achieve program improvement. In our approach called AutoCodeRover, LLMs are combined with sophisticated code search capabilities, ultimately leading to a program modification or patch. In contrast to recent LLM agent approaches from AI researchers and practitioners, our outlook is more software engineering oriented. We work on a program representation (abstract syntax tree) as opposed to viewing a software project as a mere collection of files. Our code search exploits the program structure in the form of classes/methods to enhance LLM's understanding of the issue's root cause, and effectively retrieve a context via iterative search. The use of spectrum based fault localization using tests, further sharpens the context, as long as a test-suite is available. Experiments on SWE-bench-lite which consists of 300 real-life GitHub issues show increased efficacy in solving GitHub issues (22-23% on SWE-bench-lite). On the full SWE-bench consisting of 2294 GitHub issues, AutoCodeRover solved around 16% of issues, which is higher than the efficacy of the recently reported AI software engineer Devin from Cognition Labs, while taking time comparable to Devin. We posit that our workflow enables autonomous software engineering, where, in future, auto-generated code from LLMs can be autonomously improved."
+"ASSERTIFY: Utilizing Large Language Models to Generate Assertions for
+  Production Code","- **Relevance Score:** 54/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses retrieved similar tests as multiple inputs and adapts them with LLMs, ensuring compiled, semantically aligned assertions; adapts token discrepancies but lacks explicit multi‑draft LLM refinement.",https://scispace.com/paper/assertify-utilizing-large-language-models-to-generate-1z8xm7j9j875,2024,Journal Article,"","Mohammad Jalili Torkamani
+Akshat Raj Sharma
+Nikita Mehrotra
+Rahul Purandare",10.48550/arxiv.2411.16927,https://scispace.compdf/assertify-utilizing-large-language-models-to-generate-1z8xm7j9j875.pdf,"Production assertions are statements embedded in the code to help developers validate their assumptions about the code. They assist developers in debugging, provide valuable documentation, and enhance code comprehension. Current research in this area primarily focuses on assertion generation for unit tests using techniques, such as static analysis and deep learning. While these techniques have shown promise, they fall short when it comes to generating production assertions, which serve a different purpose. This preprint addresses the gap by introducing Assertify, an automated end-to-end tool that leverages Large Language Models (LLMs) and prompt engineering with few-shot learning to generate production assertions. By creating context-rich prompts, the tool emulates the approach developers take when creating production assertions for their code. To evaluate our approach, we compiled a dataset of 2,810 methods by scraping 22 mature Java repositories from GitHub. Our experiments demonstrate the effectiveness of few-shot learning by producing assertions with an average ROUGE-L score of 0.526, indicating reasonably high structural similarity with the assertions written by developers. This research demonstrates the potential of LLMs in automating the generation of production assertions that resemble the original assertions. "
+RLTF: Reinforcement Learning from Unit Test Feedback,"- **Relevance Score:** 53/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses RL with fine-grained unit test feedback to improve code generation and preserve functional intent; lacks explicit multi‑source synthesis, draft aggregation, and conflict‑resolution mechanisms.",https://scispace.com/paper/http://arxiv.org/abs/2307.04349v2,2023,Preprint,"","Jiate Liu
+Yiqin Zhu
+Kaiwen Xiao
+Qiang Fu
+Xiao Han
+Wei Yang
+Deheng Ye","",http://arxiv.org/pdf/2307.04349v2,"The goal of program synthesis, or code generation, is to generate executable
+code based on given descriptions. Recently, there has been an increasing number
+of studies employing reinforcement learning (RL) to improve the performance of
+large language models (LLMs) for code. However, current representative works
+either rely solely on offline frameworks, limiting the exploration of new
+sample spaces, or fall short in the utilization of unit test signals, not
+accounting for specific error locations within the code. To address these
+issues, we propose RLTF, i.e., Reinforcement Learning from Unit Test Feedback,
+a novel online RL framework with unit test feedback of multi-granularity for
+refining code LLMs. Our approach generates data in real-time during training
+and simultaneously utilizes fine-grained feedback signals to guide the model
+towards producing higher-quality code. Extensive experiments show that RLTF
+achieves state-of-the-art performance on the APPS and the MBPP benchmarks. Our
+code is available at: https://github.com/Zyq-scut/RLTF."
+"A Strategic Coordination Framework of Small LLMs Matches Large LLMs in
+  Data Synthesis","- **Relevance Score:** 51/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses coordinated small LLMs to aggregate outputs and resolve conflicts via an Adjudicator, but does not preserve original input intent, lacks SE benchmark tests, and offers no formal analysis.",https://scispace.com/paper/http://arxiv.org/abs/2504.12322v2,2025,Preprint,"","Xin Gao
+Qizhi Pei
+Zinan Tang
+Yu Li
+Honglin Lin
+Jiang Wu
+Lijun Wu
+Conghui He","",http://arxiv.org/pdf/2504.12322v2,"While data synthesis and distillation are promising strategies to enhance
+small language models, current approaches heavily rely on Large Language Models
+(LLMs), which suffer from high computational costs, environmental inefficiency,
+and potential biases inherited from monolithic architectures. In contrast,
+smaller LLMs are more accessible and sustainable, but their individual
+capabilities often fall short in generating high-quality, diverse, and reliable
+data. Inspired by collaborative human processes (e.g., peer review), we propose
+a multiple small LLMs involved framework, GRA, that aggregates specialized
+roles across small LLMs to iterative refinement and quality control typically
+achieved by a single large LLM. In this collaborative framework, multiple small
+LLMs assume distinct roles-Generator, Reviewer, and Adjudicator-to simulate a
+peer-review-inspired data synthesis pipeline. The Generator proposes initial
+data samples, the Reviewer critiques their quality and diversity, and the
+Adjudicator resolves conflicts to finalize the output. By decomposing the
+synthesis process into specialized sub-tasks, collaborative small LLMs can
+achieve data-level parity with large LLM-based distillation. Through
+experiments across multiple benchmarks, we demonstrate that GRA-produced data
+matches or exceeds the quality of single large LLM outputs, e.g.,
+Qwen-2.5-72B-Instruct. Our results challenge the necessity of monolithic large
+models for high-quality data synthesis, advocating instead for strategic
+coordination of smaller agents. Our datasets, models, and code are publicly
+available at https://github.com/GX-XinGao/GRA."
+An empirical evaluation of using large language models for automated unit test generation,"- **Relevance Score:** 48/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Combines function signatures, implementations, and documentation examples to prompt LLMs; targets coverage but does not explicitly preserve original test intent; lacks conflict‑resolution mechanisms; uses re‑prompting to refine failing tests, showing limited multi‑draft refinement.",https://scispace.com/paper/an-empirical-evaluation-of-using-large-language-models-for-4u07o39c3f,2024,Journal Article,IEEE Transactions on Software Engineering,"Max Schäfer
+Sarah Nadi
+Aryaz Eghbali
+Frank Tip",10.1109/tse.2023.3334955,https://arxiv.org/pdf/2302.06527,"Unit tests play a key role in ensuring the correctness of software. However, manually creating unit tests is a laborious task, motivating the need for automation. Large Language Models (LLMs) have recently been applied to various aspects of software development, including their suggested use for automated generation of unit tests, but while requiring additional training or few-shot learning on examples of existing tests. This paper presents a large-scale empirical evaluation on the effectiveness of LLMs for automated unit test generation without requiring additional training or manual effort. Concretely, we consider an approach where the LLM is provided with prompts that include the signature and implementation of a function under test, along with usage examples extracted from documentation. Furthermore, if a generated test fails, our approach attempts to generate a new test that fixes the problem by re-prompting the model with the failing test and error message. We implement our approach in T <sc xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">est</small> P <sc xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">ilot</small> , an adaptive LLM-based test generation tool for JavaScript that automatically generates unit tests for the methods in a given project’s API. We evaluate T <sc xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">est</small> P <sc xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">ilot</small> using OpenAI’s <italic xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">gpt3.5-turbo</i> LLM on 25 npm packages with a total of 1,684 API functions. The generated tests achieve a median statement coverage of 70.2% and branch coverage of 52.8%. In contrast, the state-of-the feedback-directed JavaScript test generation technique, Nessie, achieves only 51.3% statement coverage and 25.6% branch coverage. Furthermore, experiments with excluding parts of the information included in the prompts show that all components contribute towards the generation of effective test suites. We also find that 92.8% of T <sc xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">est</small> P <sc xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">ilot</small> ’s generated tests have ≤ 50% similarity with existing tests (as measured by normalized edit distance), with none of them being exact copies. Finally, we run T <sc xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">est</small> P <sc xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">ilot</small> with two additional LLMs, OpenAI’s older <italic xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">code-cushman-002</i> LLM and <italic xmlns:mml=""http://www.w3.org/1998/Math/MathML"" xmlns:xlink=""http://www.w3.org/1999/xlink"">StarCoder</i> , an LLM for which the training process is publicly documented. Overall, we observed similar results with the former (68.2% median statement coverage), and somewhat worse results with the latter (54.0% median statement coverage), suggesting that the effectiveness of the approach is influenced by the size and training set of the LLM, but does not fundamentally depend on the specific model. "
+LLM4TDD: Best Practices for Test Driven Development Using Large Language Models,"- **Relevance Score:** 46/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Guides LLMs via TDD, preserving test intent, but lacks explicit multi‑source aggregation, conflict handling, and formal ensemble analysis; evaluates on LeetCode rather than SE benchmarks.",https://scispace.com/paper/llm4tdd-best-practices-for-test-driven-development-using-7a6yyryndj,2023,Journal Article,arXiv.org,"Sanyogita Piya
+Allison Sullivan",10.48550/arxiv.2312.04687,https://scispace.compdf/llm4tdd-best-practices-for-test-driven-development-using-7a6yyryndj.pdf,"In today's society, we are becoming increasingly dependent on software systems. However, we also constantly witness the negative impacts of buggy software. Program synthesis aims to improve software correctness by automatically generating the program given an outline of the expected behavior. For decades, program synthesis has been an active research field, with recent approaches looking to incorporate Large Language Models to help generate code. This paper explores the concept of LLM4TDD, where we guide Large Language Models to generate code iteratively using a test-driven development methodology. We conduct an empirical evaluation using ChatGPT and coding problems from LeetCode to investigate the impact of different test, prompt and problem attributes on the efficacy of LLM4TDD."
+"Software Testing with Large Language Model: Survey, Landscape, and Vision","- **Relevance Score:** 46/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Ensures test coverage and assertion preservation; combines search‑based tests with LLM outputs; uses iterative fix to resolve compilation conflicts; lacks multi‑draft LLM refinement.",https://scispace.com/paper/software-testing-with-large-language-model-survey-landscape-3tu90ids,2023,Peer Review,"","Junjie Wang
+Yuchao Huang
+Chunyang Chen
+Zhe Liu
+Song Wang
+Qing Wang","",https://scispace.compdf/software-testing-with-large-language-model-survey-landscape-3tu90ids.pdf,"Pre-trained large language models (LLMs) have recently emerged as a breakthrough technology in natural language processing and artificial intelligence, with the ability to handle large-scale datasets and exhibit remarkable performance across a wide range of tasks. Meanwhile, software testing is a crucial undertaking that serves as a cornerstone for ensuring the quality and reliability of software products. As the scope and complexity of software systems continue to grow, the need for more effective software testing techniques becomes increasingly urgent, and making it an area ripe for innovative approaches such as the use of LLMs. This paper provides a comprehensive review of the utilization of LLMs in software testing. It analyzes 52 relevant studies that have used LLMs for software testing, from both the software testing and LLMs perspectives. The paper presents a detailed discussion of the software testing tasks for which LLMs are commonly used, among which test case preparation and program repair are the most representative ones. It also analyzes the commonly used LLMs, the types of prompt engineering that are employed, as well as the accompanied techniques with these LLMs. It also summarizes the key challenges and potential opportunities in this direction. This work can serve as a roadmap for future research in this area, highlighting potential avenues for exploration, and identifying gaps in our current understanding of the use of LLMs in software testing."
+"Structured Program Synthesis using LLMs: Results and Insights from the
+  IPARC Challenge","- **Relevance Score:** 46/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows strong focus on preserving task intent via LLM-generated code; partially combines inputs and refines drafts, but lacks explicit multi-source aggregation and conflict resolution.",https://scispace.com/paper/http://arxiv.org/abs/2506.13820v1,2025,Preprint,"","Shraddha Surana
+Ashwin Srinivasan
+Michael Bain","",http://arxiv.org/pdf/2506.13820v1,"The IPARC Challenge, inspired by ARC, provides controlled program synthesis
+tasks over synthetic images to evaluate automatic program construction,
+focusing on sequence, selection, and iteration. This set of 600 tasks has
+resisted automated solutions. This paper presents a structured inductive
+programming approach with LLMs that successfully solves tasks across all IPARC
+categories. The controlled nature of IPARC reveals insights into LLM-based code
+generation, including the importance of prior structuring, LLMs' ability to aid
+structuring (requiring human refinement), the need to freeze correct code, the
+efficiency of code reuse, and how LLM-generated code can spark human
+creativity. These findings suggest valuable mechanisms for human-LLM
+collaboration in tackling complex program synthesis."
+"An Empirical Study on the Potential of LLMs in Automated Software
+  Refactoring","- **Relevance Score:** 46/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows LLM‑driven refactoring that keeps semantic equivalence (preserves intent). Uses few‑shot examples as multiple hints (multi‑source). No conflict resolution; refinement not tied to multiple drafts.",https://scispace.com/paper/an-empirical-study-on-the-potential-of-llms-in-automated-3lf6qy1wudrl,2024,Journal Article,"","Bo Liu
+Yanjie Jiang
+Yuxia Zhang
+Nan Niu
+Guangjie Li
+Hui Liu",10.48550/arxiv.2411.04444,https://scispace.compdf/an-empirical-study-on-the-potential-of-llms-in-automated-3lf6qy1wudrl.pdf,"Recent advances in large language models (LLMs), make it potentially feasible to automatically refactor source code with LLMs. However, it remains unclear how well LLMs perform compared to human experts in conducting refactorings automatically and accurately. To fill this gap, in this paper, we conduct an empirical study to investigate the potential of LLMs in automated software refactoring, focusing on the identification of refactoring opportunities and the recommendation of refactoring solutions. We first construct a high-quality refactoring dataset comprising 180 real-world refactorings from 20 projects, and conduct the empirical study on the dataset. With the to-be-refactored Java documents as input, ChatGPT and Gemini identified only 28 and 7 respectively out of the 180 refactoring opportunities. However, explaining the expected refactoring subcategories and narrowing the search space in the prompts substantially increased the success rate of ChatGPT from 15.6% to 86.7%. Concerning the recommendation of refactoring solutions, ChatGPT recommended 176 refactoring solutions for the 180 refactorings, and 63.6% of the recommended solutions were comparable to (even better than) those constructed by human experts. However, 13 out of the 176 solutions suggested by ChatGPT and 9 out of the 137 solutions suggested by Gemini were unsafe in that they either changed the functionality of the source code or introduced syntax errors, which indicate the risk of LLM-based refactoring. To this end, we propose a detect-and-reapply tactic, called RefactoringMirror, to avoid such unsafe refactorings. By reapplying the identified refactorings to the original code using thoroughly tested refactoring engines, we can effectively mitigate the risks associated with LLM-based automated refactoring while still leveraging LLM's intelligence to obtain valuable refactoring recommendations. "
+"Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of
+  Large Language Models for Code Generation","- **Relevance Score:** 46/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** No perfect matches. Highly relevant: evaluation on HumanEval+ and aggregates LLM‑ and mutation‑generated tests. Somewhat relevant: seeks to preserve functional intent. Not relevant: no conflict resolution, multi‑draft refinement, or theory.",https://scispace.com/paper/http://arxiv.org/abs/2305.01210v3,2023,Preprint,"","Jiawei Liu
+Chunqiu Steven Xia
+Yuyao Wang
+Lingming Zhang","",http://arxiv.org/pdf/2305.01210v3,"Program synthesis has been long studied with recent approaches focused on
+directly using the power of Large Language Models (LLMs) to generate code.
+Programming benchmarks, with curated synthesis problems and test-cases, are
+used to measure the performance of various LLMs on code synthesis. However,
+these test-cases can be limited in both quantity and quality for fully
+assessing the functional correctness of the generated code. Such limitation in
+the existing benchmarks begs the following question: In the era of LLMs, is the
+code generated really correct? To answer this, we propose EvalPlus -- a code
+synthesis evaluation framework to rigorously benchmark the functional
+correctness of LLM-synthesized code. EvalPlus augments a given evaluation
+dataset with large amounts of test-cases newly produced by an automatic test
+input generator, powered by both LLM- and mutation-based strategies. While
+EvalPlus is general, we extend the test-cases of the popular HumanEval
+benchmark by 80x to build HumanEval+. Our extensive evaluation across 26
+popular LLMs (e.g., GPT-4 and ChatGPT) demonstrates that HumanEval+ is able to
+catch significant amounts of previously undetected wrong code synthesized by
+LLMs, reducing the pass@k by up-to 19.3-28.9%. We also surprisingly found that
+test insufficiency can lead to mis-ranking. For example, both
+WizardCoder-CodeLlama and Phind-CodeLlama now outperform ChatGPT on HumanEval+,
+while none of them could on HumanEval. Our work not only indicates that prior
+popular code synthesis evaluation results do not accurately reflect the true
+performance of LLMs for code synthesis, but also opens up a new direction to
+improve such programming benchmarks through automated testing. We have
+open-sourced our tools, enhanced datasets as well as all LLM-generated code at
+https://github.com/evalplus/evalplus to facilitate and accelerate future
+LLM-for-code research."
+The Program Testing Ability of Large Language Models for Code,"- **Relevance Score:** 38/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows LLMs generate and use multiple test cases to boost code synthesis, improving pass rates, but lacks explicit multi‑draft refinement, intent preservation guarantees, or conflict‑resolution mechanisms.",https://scispace.com/paper/http://arxiv.org/abs/2310.05727v1,2023,Preprint,"","Weimin Xiong
+Yiwen Guo
+Hao Chen","",http://arxiv.org/pdf/2310.05727v1,"Recent development of large language models (LLMs) for code like CodeX and
+CodeT5+ demonstrates tremendous promise in achieving code intelligence. Their
+ability of synthesizing code that completes a program for performing a
+pre-defined task has been intensively tested and verified on benchmark datasets
+including HumanEval and MBPP. Yet, evaluation of these LLMs from more
+perspectives (than just program synthesis) is also anticipated, considering
+their broad scope of applications in software engineering. In this paper, we
+explore the ability of LLMs for testing programs/code. By performing thorough
+analyses of recent LLMs for code in program testing, we show a series of
+intriguing properties of these models and demonstrate how program testing
+ability of LLMs can be improved. Following recent work which utilizes generated
+test cases to enhance program synthesis, we further leverage our findings in
+improving the quality of the synthesized programs and show +11.77% and +4.22%
+higher code pass rates on HumanEval+ comparing with the GPT-3.5-turbo baseline
+and the recent state-of-the-art, respectively."
+Retrieval-Augmented Test Generation: How Far Are We?,"- **Relevance Score:** 38/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses API docs, GitHub issues, and StackOverflow to generate unit tests via RAG, but does not explicitly enforce coverage preservation, resolve source conflicts, or refine multiple LLM drafts.",https://scispace.com/paper/retrieval-augmented-test-generation-how-far-are-we-38egrsjc2uy2,2024,Journal Article,arXiv.org,"Jiho Shin
+Reem Aleithan
+Hadi Hemmati
+Song Wang",10.48550/arxiv.2409.12682,https://export.arxiv.org/pdf/2409.12682v1.pdf,"Retrieval Augmented Generation (RAG) has shown notable advancements in software engineering tasks. Despite its potential, RAG's application in unit test generation remains under-explored. To bridge this gap, we take the initiative to investigate the efficacy of RAG-based LLMs in test generation. As RAGs can leverage various knowledge sources to enhance their performance, we also explore the impact of different sources of RAGs' knowledge bases on unit test generation to provide insights into their practical benefits and limitations. Specifically, we examine RAG built upon three types of domain knowledge: 1) API documentation, 2) GitHub issues, and 3) StackOverflow Q&As. Each source offers essential knowledge for creating tests from different perspectives, i.e., API documentations provide official API usage guidelines, GitHub issues offer resolutions of issues related to the APIs from the library developers, and StackOverflow Q&As present community-driven solutions and best practices. For our experiment, we focus on five widely used and typical Python-based machine learning (ML) projects, i.e., TensorFlow, PyTorch, Scikit-learn, Google JAX, and XGBoost to build, train, and deploy complex neural networks efficiently. We conducted experiments using the top 10% most widely used APIs across these projects, involving a total of 188 APIs. We investigate the effectiveness of four state-of-the-art LLMs (open and closed-sourced), i.e., GPT-3.5-Turbo, GPT-4o, Mistral MoE 8x22B, and Llamma 3.1 405B. Additionally, we compare three prompting strategies in generating unit test cases for the experimental APIs, i.e., zero-shot, a Basic RAG, and an API-level RAG on the three external sources. Finally, we compare the cost of different sources of knowledge used for the RAG."
+Large Language Model-Based Agents for Software Engineering: A Survey,"- **Relevance Score:** 37/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses LLM agents to iteratively refine test drafts, improving correctness and coverage; however, does not explicitly combine multiple distinct sources or detail conflict‑resolution mechanisms.",https://scispace.com/paper/large-language-model-based-agents-for-software-engineering-a-5edi77w6grl0,2024,Journal Article,"","Junwei Liu
+Kaixin Wang
+Yixuan Chen
+Xin Peng
+Zhenpeng Chen
+Lingming Zhang
+Yiling Lou",10.48550/arxiv.2409.02977,https://scispace.compdf/large-language-model-based-agents-for-software-engineering-a-5edi77w6grl0.pdf,"The recent advance in Large Language Models (LLMs) has shaped a new paradigm of AI agents, i.e., LLM-based agents. Compared to standalone LLMs, LLM-based agents substantially extend the versatility and expertise of LLMs by enhancing LLMs with the capabilities of perceiving and utilizing external resources and tools. To date, LLM-based agents have been applied and shown remarkable effectiveness in Software Engineering (SE). The synergy between multiple agents and human interaction brings further promise in tackling complex real-world SE problems. In this work, we present a comprehensive and systematic survey on LLM-based agents for SE. We collect 106 papers and categorize them from two perspectives, i.e., the SE and agent perspectives. In addition, we discuss open challenges and future directions in this critical domain. The repository of this survey is at https://github.com/FudanSELab/Agent4SE-Paper-List. "
+The Program Testing Ability of Large Language Models for Code,"- **Relevance Score:** 37/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows strong empirical results on HumanEval+ and MBPP; loosely combines multiple LLMs and test settings, measuring coverage; lacks conflict resolution, multi‑draft refinement, and theoretical analysis.",https://scispace.com/paper/the-program-testing-ability-of-large-language-models-for-2mp73zyvhg,2023,Journal Article,arXiv.org,"Weimin Xiong
+Yiwen Guo
+Hao Chen",10.48550/arxiv.2310.05727,https://scispace.compdf/the-program-testing-ability-of-large-language-models-for-2mp73zyvhg.pdf,"Recent development of large language models (LLMs) for code like CodeX and CodeT5+ demonstrates tremendous promise in achieving code intelligence. Their ability of synthesizing code that completes a program for performing a pre-defined task has been intensively tested and verified on benchmark datasets including HumanEval and MBPP. Yet, evaluation of these LLMs from more perspectives (than just program synthesis) is also anticipated, considering their broad scope of applications in software engineering. In this paper, we explore the ability of LLMs for testing programs/code. By performing thorough analyses of recent LLMs for code in program testing, we show a series of intriguing properties of these models and demonstrate how program testing ability of LLMs can be improved. Following recent work which utilizes generated test cases to enhance program synthesis, we further leverage our findings in improving the quality of the synthesized programs and show +11.77% and +4.22% higher code pass rates on HumanEval+ comparing with the GPT-3.5-turbo baseline and the recent state-of-the-art, respectively."
+Code Repair with LLMs gives an Exploration-Exploitation Tradeoff,"- **Relevance Score:** 36/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Ensures functional intent via test coverage; uses multiple test cases but not multiple drafts; lacks explicit conflict resolution or multi‑draft aggregation.",https://scispace.com/paper/http://arxiv.org/abs/2405.17503v3,2024,Preprint,"","Hao Tang
+Keya Hu
+Jin Peng Zhou
+Sicheng Zhong
+Wei-Long Zheng
+Xujie Si
+Kevin Ellis","",http://arxiv.org/pdf/2405.17503v3,"Iteratively improving and repairing source code with large language models
+(LLMs), known as refinement, has emerged as a popular way of generating
+programs that would be too complex to construct in one shot. Given a bank of
+test cases, together with a candidate program, an LLM can improve that program
+by being prompted with failed test cases. But it remains an open question how
+to best iteratively refine code, with prior work employing simple greedy or
+breadth-first strategies. We show here that refinement exposes an
+explore-exploit tradeoff: exploit by refining the program that passes the most
+test cases, or explore by refining a lesser considered program. We frame this
+as an arm-acquiring bandit problem, which we solve with Thompson Sampling. The
+resulting LLM-based program synthesis algorithm is broadly applicable: Across
+loop invariant synthesis, visual reasoning puzzles, and competition programming
+problems, we find that our new method can solve more problems using fewer
+language model calls."
+Test-case-driven programming understanding in large language models for better code generation,"- **Relevance Score:** 36/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses test cases alongside specifications to guide generation, preserving functional intent via immediate correctness checks; lacks explicit conflict handling or multi‑draft LLM refinement.",https://scispace.com/paper/test-case-driven-programming-understanding-in-large-language-4c3bo9otte,2023,Journal Article,arXiv.org,"Zhao Tian
+Junjie Chen",10.48550/arxiv.2309.16120,https://arxiv.org/pdf/2309.16120,"Code generation is to automatically generate source code conforming to a given programming specification, which has received extensive attention especially with the development of large language models (LLMs). Due to the inherent difficulty of code generation, the code generated by LLMs may be also not aligned with the specification. To improve the perfor mance of LLMs in code generation, some Chain of Thought (CoT) techniques have been proposed to guide LLMs for programming understanding before code generation. However, they are still hard to figure out complicated programming logic according to the (concise) specification, leadingto unsatisfactory code generation performance. In this work, we propose the first test-case-driven CoT technique, called TCoT, to further enhance the ability of LLMs in code generation. It understands the programming specification from the novel perspective of test cases, which is aligned with human practice by using examples to understand complicated problems. Due to the existence of the expected output specified in a test case, TCoT can instantly check the correctness of the programming understanding and then refine it to be as correct as possible before code generation. In this way, it is more likely to generate correct code. Our evaluation on 6 datasets and 14 baselines demonstrates the effectiveness of TCoT. For example, TCoT improves ChatGPT by 13.93%~69.44% in terms of Pass@1 (measuring the ratio of programming problems for which the generated code passes all test cases), and outperforms the existing CoT technique with the improvement of 12.14%~53.72% in terms of Pass@1."
+ALGO: Synthesizing Algorithmic Programs with Generated Oracle Verifiers,"- **Relevance Score:** 36/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses LLM‑generated programs plus oracle verifiers to synthesize tests, ensuring correctness, but lacks explicit multi‑draft refinement and conflict‑resolution mechanisms.",https://scispace.com/paper/algo-synthesizing-algorithmic-programs-with-generated-oracle-1i86s245,2023,Posted Content,"","",10.48550/arxiv.2305.14591,https://scispace.com/pdf/algo-synthesizing-algorithmic-programs-with-generated-oracle-1i86s245.pdf,"Large language models (LLMs) excel at implementing code from functionality descriptions, but struggle with algorithmic problems that require not only implementation but also identification of the suitable algorithm. Moreover, LLM-generated programs lack guaranteed correctness and require human verification. To address these challenges, we propose ALGO, a framework that synthesizes Algorithmic programs with LLM-Generated Oracles to guide the creation and verify their correctness. ALGO first generates a probably correct but possibly slow reference oracle by prompting an LLM to exhaustively enumerate all the combinations of relevant variables. This oracle is then utilized to guide an arbitrary search strategy in exploring the algorithm space and to verify the algorithms synthesized. Our study shows that the LLM-generated oracles are correct for 88% of the cases. With the oracles as verifiers, ALGO can be integrated with any existing code generation model in a model-agnostic manner to enhance its performance. Experiments show that when equipped with ALGO, we achieve an 8x better one-submission pass rate over the Codex model and a 2.6x better one-submission pass rate over CodeT, the current state-of-the-art model on CodeContests. We can also get 1.3x better pass rate over the ChatGPT Code Interpreter on unseen problems. "
+AI-Driven Testing: Unleashing Autonomous Systems for Superior Software Quality Using Generative AI,"- **Relevance Score:** 36/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses multiple LLMs to generate test cases, targeting 80‑100% coverage, but lacks explicit multi‑source merging, conflict handling, or draft‑refinement mechanisms.",https://scispace.com/paper/ai-driven-testing-unleashing-autonomous-systems-for-superior-2217de3haxvw,2024,Journal Article,"","Mona Helmy
+Omar Sobhy
+Farida ElHusseiny",10.1109/itc-egypt61547.2024.10620598,"","In software development, achieving comprehensive code coverage is imperative for ensuring the reliability and robustness of programs. This paper presents a novel approach to attaining between 80% and 100% code coverage in C programs by leveraging Large Language Models (LLMS) for test case generation and subsequently measuring the coverage using the GCOV tool. The methodology outlined in this research harnesses the capabilities of LLMS, such as GPT-3.5-turbo, Code llama, and llama-2 to autonomously generate diverse and complex test cases tailored to the intricacies of C code. Through empirical experimentation and case studies, we demonstrate the feasibility and efficacy of our approach in achieving from 80%-100% code coverage in a variety of C programs across different domains. Furthermore, we discuss the implications of our methodology in enhancing software quality, reducing the likelihood of undiscovered defects, and ultimately improving the reliability and maintainability of C codebases."
+"The Fusion of Large Language Models and Formal Methods for Trustworthy
+  AI Agents: A Roadmap","- **Relevance Score:** 36/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Ensures generated code meets formal properties, preserving intent. Mentions combining LLM output with various formal tools, but lacks explicit multi‑source fusion, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/the-fusion-of-large-language-models-and-formal-methods-for-69760tmemcej,2024,Journal Article,"","Yedi Zhang
+Yufan Cai
+Xinyue Zuo
+Xiaokun Luan
+Kailong Wang
+Zhe Hou
+Yifan Zhang
+Zhiyuan Wei
+Meng Sun
+Jun Sun
+Jing Sun
+Jin Song Dong",10.48550/arxiv.2412.06512,https://scispace.compdf/the-fusion-of-large-language-models-and-formal-methods-for-69760tmemcej.pdf,"Large Language Models (LLMs) have emerged as a transformative AI paradigm, profoundly influencing daily life through their exceptional language understanding and contextual generation capabilities. Despite their remarkable performance, LLMs face a critical challenge: the propensity to produce unreliable outputs due to the inherent limitations of their learning-based nature. Formal methods (FMs), on the other hand, are a well-established computation paradigm that provides mathematically rigorous techniques for modeling, specifying, and verifying the correctness of systems. FMs have been extensively applied in mission-critical software engineering, embedded systems, and cybersecurity. However, the primary challenge impeding the deployment of FMs in real-world settings lies in their steep learning curves, the absence of user-friendly interfaces, and issues with efficiency and adaptability. This position paper outlines a roadmap for advancing the next generation of trustworthy AI systems by leveraging the mutual enhancement of LLMs and FMs. First, we illustrate how FMs, including reasoning and certification techniques, can help LLMs generate more reliable and formally certified outputs. Subsequently, we highlight how the advanced learning capabilities and adaptability of LLMs can significantly enhance the usability, efficiency, and scalability of existing FM tools. Finally, we show that unifying these two computation paradigms -- integrating the flexibility and intelligence of LLMs with the rigorous reasoning abilities of FMs -- has transformative potential for the development of trustworthy AI software systems. We acknowledge that this integration has the potential to enhance both the trustworthiness and efficiency of software engineering practices while fostering the development of intelligent FM tools capable of addressing complex yet real-world challenges. "
+Test-driven multi-task learning with functionally equivalent code transformation for neural code generation,"- **Relevance Score:** 36/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Ensures generated code retains functional intent via test‑driven discrimination; uses multiple transformed code variants as training inputs, but lacks explicit multi‑source synthesis, conflict handling, or LLM‑based draft refinement.",https://scispace.com/paper/test-driven-multi-task-learning-with-functionally-equivalent-2a8qeyrs,2022,Proceedings Article,International Conference on Automated Software Engineering,"Xin Wang
+Xiao Xiao Liu
+Pingyi Zhou
+Qixia Liu
+Jin Liu
+Hao Wu
+Xiao-bin Cui",10.1145/3551349.3559549,"","Automated code generation is a longstanding challenge in both communities of software engineering and artificial intelligence. Currently, some works have started to investigate the functional correctness of code generation, where a code snippet is considered correct if it passes a set of test cases. However, most existing works still model code generation as text generation without considering program-specific information, such as functionally equivalent code snippets and test execution feedback. To address the above limitations, this paper proposes a method combining program analysis with deep learning for neural code generation, where functionally equivalent code snippets and test execution feedback will be considered at the training stage. Concretely, we firstly design several code transformation heuristics to produce different variants of the code snippet satisfying the same functionality. In addition, we employ the test execution feedback and design a test-driven discriminative task to train a novel discriminator, aiming to let the model distinguish whether the generated code is correct or not. The preliminary results on a newly published dataset demonstrate the effectiveness of our proposed framework for code generation. Particularly, in terms of the pass@1 metric, we achieve 8.81 and 11.53 gains compared with CodeGPT and CodeT5, respectively."
+Program Synthesis via Test-Time Transduction,"- **Relevance Score:** 33/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Ensures functional correctness by discarding hypotheses inconsistent with LLM-predicted outputs; resolves conflicts via hypothesis elimination; does not combine multiple drafts or sources.",https://scispace.com/paper/http://arxiv.org/abs/2509.17393v3,2025,Preprint,"","Kang-il Lee
+Jahyun Koo
+Seunghyun Yoon
+Minbeom Kim
+Hyukhun Koh
+Dongryeol Lee
+Kyomin Jung","",http://arxiv.org/pdf/2509.17393v3,"We introduce transductive program synthesis, a new formulation of the program
+synthesis task that explicitly leverages test inputs during synthesis. While
+prior approaches to program synthesis--whether based on natural language
+descriptions or input-output examples--typically aim to generalize from
+training examples, they often struggle with robustness, especially in
+real-world settings where training examples are limited and test inputs involve
+various edge cases. To address this, we propose a novel framework that improves
+robustness by treating synthesis as an active learning over a finite hypothesis
+class defined by programs' outputs. We use an LLM to predict outputs for
+selected test inputs and eliminate inconsistent hypotheses, where the inputs
+are chosen via a greedy maximin algorithm to minimize the number of LLM queries
+required. We evaluate our approach on four benchmarks: Playgol, MBPP+, 1D-ARC,
+and programmatic world modeling on MiniGrid. We demonstrate that our method
+significantly improves program synthesis in both accuracy and efficiency. We
+release our code at https://github.com/klee972/SYNTRA."
+A Case Study on Test Case Construction with Large Language Models: Unveiling Practical Insights and Challenges,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows LLM‑driven test case generation using specification prompts, combining model output with human‑crafted templates, but lacks explicit multi‑source merging, conflict handling, or benchmark evaluation.",https://scispace.com/paper/a-case-study-on-test-case-construction-with-large-language-irczq1ilxb,2024,Journal Article,"","Roberto Lima
+Luiz Fernando P. B. Presta
+Lucca Santos Borborema
+V. Silva
+Márcio Dahia
+Anderson Carlos Sousa e Santos",10.5753/cibse.2024.28465,https://scispace.compdf/a-case-study-on-test-case-construction-with-large-language-irczq1ilxb.pdf,"This study delves into the integration of Large Language Models (LLMs) in test case construction within software engineering, exploring their potential to enhance efficiency and effectiveness in test generation. Leveraging LLMs, known for their sophisticated natural language processing abilities, this research conducts a detailed case study on a representative software application to evaluate the practicality of LLMs in creating detailed and accurate test scenarios. The investigation focuses on the challenges and advantages of LLMs in test case development, assessing their impact on test comprehensiveness, accuracy, and the formulation process. By providing a nuanced understanding of LLMs’ role in software testing, this paper aims to inform practitioners and researchers about their potential and limitations, offering insights into their application in real-world testing environments and their contribution to advancing software testing methodologies. "
+Improving the learning of code review successive tasks with cross-task knowledge distillation,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Combines three code‑review tasks via cross‑task distillation, improving comment generation and refinement, but lacks explicit multi‑source aggregation, intent‑preserving guarantees, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/improving-the-learning-of-code-review-successive-tasks-with-46qiohgphc,2024,Journal Article,arXiv.org,"Oussama Ben Sghaier
+Houari Sahraoui",10.48550/arxiv.2402.02063,https://dl.acm.org/doi/pdf/10.1145/3643775,"Code review is a fundamental process in software development that plays a pivotal role in ensuring code quality and reducing the likelihood of errors and bugs. However, code review can be complex, subjective, and time-consuming. Quality estimation, comment generation, and code refinement constitute the three key tasks of this process, and their automation has traditionally been addressed separately in the literature using different approaches. In particular, recent efforts have focused on fine-tuning pre-trained language models to aid in code review tasks, with each task being considered in isolation. We believe that these tasks are interconnected, and their fine-tuning should consider this interconnection. In this paper, we introduce a novel deep-learning architecture, named DISCOREV, which employs cross-task knowledge distillation to address these tasks simultaneously. In our approach, we utilize a cascade of models to enhance both comment generation and code refinement models. The fine-tuning of the comment generation model is guided by the code refinement model, while the fine-tuning of the code refinement model is guided by the quality estimation model. We implement this guidance using two strategies: a feedback-based learning objective and an embedding alignment objective. We evaluate DISCOREV by comparing it to state-of-the-art methods based on independent training and fine-tuning. Our results show that our approach generates better review comments, as measured by the BLEU score, as well as more accurate code refinement according to the CodeBLEU score"
+A Case Study on Test Case Construction with Large Language Models: Unveiling Practical Insights and Challenges,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses LLM prompts and templates to generate test cases, hinting at multi-source input and intent preservation, but lacks explicit multi‑draft refinement, conflict handling, benchmark tests, or theory.",https://scispace.com/paper/a-case-study-on-test-case-construction-with-large-language-irczq1ilxb,2024,Journal Article,"","Roberto Lima
+Luiz Fernando P. B. Presta
+Lucca Santos Borborema
+V. Silva
+Márcio Dahia
+Anderson Carlos Sousa e Santos",10.5753/cibse.2024.28465,https://scispace.compdf/a-case-study-on-test-case-construction-with-large-language-irczq1ilxb.pdf,"This study delves into the integration of Large Language Models (LLMs) in test case construction within software engineering, exploring their potential to enhance efficiency and effectiveness in test generation. Leveraging LLMs, known for their sophisticated natural language processing abilities, this research conducts a detailed case study on a representative software application to evaluate the practicality of LLMs in creating detailed and accurate test scenarios. The investigation focuses on the challenges and advantages of LLMs in test case development, assessing their impact on test comprehensiveness, accuracy, and the formulation process. By providing a nuanced understanding of LLMs’ role in software testing, this paper aims to inform practitioners and researchers about their potential and limitations, offering insights into their application in real-world testing environments and their contribution to advancing software testing methodologies. "
+Automatic Unit Test Data Generation and Actor-Critic Reinforcement Learning for Code Synthesis,"- **Relevance Score:** 23/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on RL‑driven code synthesis with unit‑test rewards, preserving functional intent but lacks multi‑source merging, conflict handling, or LLM‑draft refinement; limited benchmark evaluation.",https://scispace.com/paper/automatic-unit-test-data-generation-and-actor-critic-305wdklha4,2023,Journal Article,"","Philip John Gorinski
+Matthieu Zimmer
+Γεράσιμος Λάμπουρας
+Derrick Goh Xin Deik
+Ignacio Iacobacci",10.18653/v1/2023.findings-emnlp.28,https://scispace.compdf/automatic-unit-test-data-generation-and-actor-critic-305wdklha4.pdf,"The advent of large pre-trained language models in the domain of Code Synthesis has shown remarkable performance on various benchmarks, treating the problem of Code Generation in a fashion similar to Natural Language Generation, trained with a Language Modelling (LM) objective. In addition, the property of programming language code being precisely evaluable with respect to its semantics – through the use of Unit Tests to check its functional correctness – lends itself to using Reinforcement Learning (RL) as a further training paradigm. Previous work has shown that RL can be applied as such to improve models’ coding capabilities; however, such RL-based methods rely on a reward signal based on defined Unit Tests, which are much harder to obtain compared to the huge crawled code datasets used in LM objectives. In this work, we present a novel approach to automatically obtain data consisting of function signatures and associated Unit Tests, suitable for RL training of Code Synthesis models. We also introduce a straightforward, simple yet effective Actor-Critic RL training scheme and show that it, in conjunction with automatically generated training data, leads to improvement of a pre-trained code language model’s performance by up to 9.9% improvement over the original underlying code synthesis LM, and up to 4.3% over RL-based models trained with standard PPO or CodeRL. "
+Towards Automated Verification of LLM-Synthesized C Programs,"- **Relevance Score:** 23/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLM to generate C programs from specs and verifies them, preserving intent; lacks multi-source merging, conflict resolution, or multi-draft refinement; evaluates on synthesis benchmarks.",https://scispace.com/paper/towards-automated-verification-of-llm-synthesized-c-programs-6ebaeaznwlto,2024,Journal Article,"","Prasita Mukherjee
+Benjamin Delaware",10.48550/arxiv.2410.14835,https://scispace.compdf/towards-automated-verification-of-llm-synthesized-c-programs-6ebaeaznwlto.pdf,"We present \synver{}, a novel synthesis and verification framework for C programs, that deploys a Large Language Model (LLM) to search for a candidate program that satisfies the given specification. Our key idea is to impose syntactic and semantic biases on programs generated by LLMs, such that the synthesized program is more amenable to automated verification. Based on this idea, we propose a novel specification-verification tool, built on top of Verified Software Toolchain, that help automate the process. Our experiments on a diverse set of benchmarks drawn from the deductive program synthesis community, shows that this approach is scalable and extensible. The benchmarks constitute of specifications comprising of basic coding examples, Separation Logic based assertions, and API specifications. "
+"Self-Improving Language Models for Evolutionary Program Synthesis: A
+  Case Study on ARC-AGI","- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses evolutionary search with LLM sampling to iteratively improve programs, preserving task correctness but without explicit multi‑source merging or conflict handling; LLM refines candidates generated across iterations.",https://scispace.com/paper/http://arxiv.org/abs/2507.14172v1,2025,Preprint,"","Julien Pourcel
+Cédric Colas
+Pierre-Yves Oudeyer","",http://arxiv.org/pdf/2507.14172v1,"Many program synthesis tasks prove too challenging for even state-of-the-art
+language models to solve in single attempts. Search-based evolutionary methods
+offer a promising alternative by exploring solution spaces iteratively, but
+their effectiveness remain limited by the fixed capabilities of the underlying
+generative model.
+  We propose SOAR, a method that learns program synthesis by integrating
+language models into a self-improving evolutionary loop.
+  SOAR alternates between (1) an evolutionary search that uses an LLM to sample
+and refine candidate solutions, and (2) a hindsight learning phase that
+converts search attempts into valid problem-solution pairs used to fine-tune
+the LLM's sampling and refinement capabilities\, -- \,enabling increasingly
+effective search in subsequent iterations.
+  On the challenging ARC-AGI benchmark, SOAR achieves significant performance
+gains across model scales and iterations, leveraging positive transfer between
+the sampling and refinement finetuning tasks. These improvements carry over to
+test-time adaptation, enabling SOAR to solve 52\% of the public test set. Our
+code is open-sourced at: https://github.com/flowersteam/SOAR"
+Creating Thorough Tests for AI-Generated Code is Hard,"- **Relevance Score:** 20/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Evaluates test suites for LLM‑generated code and offers empirical insights, but lacks multi‑source synthesis, conflict handling, or LLM‑based refinement mechanisms.",https://scispace.com/paper/creating-thorough-tests-for-ai-generated-code-is-hard-2uzrsoyb7m,2023,Journal Article,"","Shreya Singhal
+Viraj Kumar",10.1145/3627217.3627238,"","Before implementing a function, programmers are encouraged to write a suite of test cases that specify its intended behaviour on several inputs. A suite of tests is thorough if any buggy implementation fails at least one of these tests. We posit that as the proportion of code generated by Large Language Models (LLMs) grows, so must the ability of students to create test suites that are thorough enough to detect subtle bugs in such code. Our paper makes two contributions. First, we demonstrate how difficult it can be to create thorough tests for LLM-generated code by evaluating 27 test suites from a public dataset (EvalPlus). Second, by identifying deficiencies in these test suites, we propose strategies for improving the ability of students to develop thorough test suites for LLM-generated code."
+A new approach for automatic test case generation from use case diagram using LLMs and prompt engineering,"- **Relevance Score:** 18/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Ensures test cases reflect use‑case intent and coverage via LLM prompts, but lacks multi‑source synthesis, conflict handling, draft refinement, or benchmark evaluation.",https://scispace.com/paper/a-new-approach-for-automatic-test-case-generation-from-use-71hnb5l1b5fq,2024,Proceedings Article,"","Lahbib Naimi
+El Mahi Bouziane
+Mohamed Manaouch
+Abdeslam Jakim",10.1109/iccsc62074.2024.10616548,"","The automation of test case generation from UML diagrams is a growing field that aims to make the software development process smoother. This paper suggests a new framework that uses generative artificial intelligence (AI) to turn use case diagrams into test cases that can be executed. By getting information from the XML representation of use case diagrams, we can create detailed instructions that guide a generative AI model to make test cases for each use case scenario. This method not only makes test case creation easier but also ensures we cover everything well and accurately, which could make software products get to market faster. this approach shows how traditional software engineering methods and new AI techniques can work well together, giving us an idea of what automated software testing might look like in the future."
+Large Language Models are Few-shot Testers: Exploring LLM-based General Bug Reproduction,"- **Relevance Score:** 18/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLM to generate tests from single bug reports, preserving reported behavior; lacks multiple input sources, conflict handling, or multi‑draft refinement.",https://scispace.com/paper/large-language-models-are-few-shot-testers-exploring-llm-3g7t5qe60b,2023,Journal Article,"","Sungmin Kang
+Juyeon Yoon
+Shin Yoo",10.1109/icse48619.2023.00194,https://scispace.compdf/large-language-models-are-few-shot-testers-exploring-llm-3g7t5qe60b.pdf,"Many automated test generation techniques have been developed to aid developers with writing tests. To facilitate full automation, most existing techniques aim to either increase coverage, or generate exploratory inputs. However, existing test generation techniques largely fall short of achieving more semantic objectives, such as generating tests to reproduce a given bug report. Reproducing bugs is nonetheless important, as our empirical study shows that the number of tests added in open source repositories due to issues was about 28% of the corresponding project test suite size. Meanwhile, due to the difficulties of transforming the expected program semantics in bug reports into test oracles, existing failure reproduction techniques tend to deal exclusively with program crashes, a small subset of all bug reports. To automate test generation from general bug reports, we propose Libro, a framework that uses Large Language Models (LLMs), which have been shown to be capable of performing code-related tasks. Since LLMs themselves cannot execute the target buggy code, we focus on post-processing steps that help us discern when LLMs are effective, and rank the produced tests according to their validity. Our evaluation of Libro shows that, on the widely studied Defects4J benchmark, Libro can generate failure reproducing test cases for 33% of all studied cases (251 out of 750), while suggesting a bug reproducing test in first place for 149 bugs. To mitigate data contamination (i.e., the possibility of the LLM simply remembering the test code either partially or in whole), we also evaluate Libro against 31 bug reports submitted after the collection of the LLM training data terminated: Libro produces bug reproducing tests for 32% of the studied bug reports. Overall, our results show Libro has the potential to significantly enhance developer efficiency by automatically generating tests from bug reports. "
+Test-driven development and llm-based code generation,"- **Relevance Score:** 18/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Ensures functional intent by using test‑driven validation of LLM‑generated code; does not combine multiple sources, resolve conflicts, or refine multiple drafts.",https://scispace.com/paper/test-driven-development-and-llm-based-code-generation-4dnmdhdo3d14,2024,Proceedings Article,"","Noble Saji Mathews
+Mei Nagappan",10.1145/3691620.3695527,"",""
+N-Version Assessment and Enhancement of Generative AI,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses multiple AI‑generated code versions for comparative evaluation, but does not fuse artifacts, preserve intent, resolve conflicts, or perform LLM‑based refinement.",https://scispace.com/paper/n-version-assessment-and-enhancement-of-generative-ai-1ozj5elgkpqq,2024,Journal Article,IEEE Software,"Marcus Kessel
+Colin Atkinson",10.1109/ms.2024.3469388,https://scispace.compdf/n-version-assessment-and-enhancement-of-generative-ai-1ozj5elgkpqq.pdf,"Generative AI (GAI) holds great potential to improve software engineering productivity, but its untrustworthy outputs, particularly in code synthesis, pose significant challenges. The need for extensive verification and validation (V&V) of GAI-generated artifacts may undermine the potential productivity gains. This paper proposes a way of mitigating these risks by exploiting GAI's ability to generate multiple versions of code and tests to facilitate comparative analysis across versions. Rather than relying on the quality of a single test or code module, this ""differential GAI"" (D-GAI) approach promotes more reliable quality evaluation through version diversity. We introduce the Large-Scale Software Observatorium (LASSO), a platform that supports D-GAI by executing and analyzing large sets of code versions and tests. We discuss how LASSO enables rigorous evaluation of GAI-generated artifacts and propose its application in both software development and GAI research. "
+Improving the Learning of Code Review Successive Tasks with Cross-Task Knowledge Distillation,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Preserves intent via quality‑estimation guided refinement; offers practical distillation strategies but lacks explicit multi‑source synthesis, conflict handling, multi‑draft LLM refinement, and standard benchmark tests.",https://scispace.com/paper/improving-the-learning-of-code-review-successive-tasks-with-46qiohgphc,2024,Journal Article,arXiv.org,"Oussama Ben Sghaier
+Houari Sahraoui",10.48550/arxiv.2402.02063,"","Code review is a fundamental process in software development that plays a pivotal role in ensuring code quality and reducing the likelihood of errors and bugs. However, code review can be complex, subjective, and time-consuming. Quality estimation, comment generation, and code refinement constitute the three key tasks of this process, and their automation has traditionally been addressed separately in the literature using different approaches. In particular, recent efforts have focused on fine-tuning pre-trained language models to aid in code review tasks, with each task being considered in isolation. We believe that these tasks are interconnected, and their fine-tuning should consider this interconnection. In this paper, we introduce a novel deep-learning architecture, named DISCOREV, which employs cross-task knowledge distillation to address these tasks simultaneously. In our approach, we utilize a cascade of models to enhance both comment generation and code refinement models. The fine-tuning of the comment generation model is guided by the code refinement model, while the fine-tuning of the code refinement model is guided by the quality estimation model. We implement this guidance using two strategies: a feedback-based learning objective and an embedding alignment objective. We evaluate DISCOREV by comparing it to state-of-the-art methods based on independent training and fine-tuning. Our results show that our approach generates better review comments, as measured by the BLEU score, as well as more accurate code refinement according to the CodeBLEU score"
+FIXR: Mining and Understanding Bug Fixes to Address Application Framework Protocol Defects,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Aggregates many bug-fix examples to infer protocol defect patterns, enabling automated fix suggestions; however, it does not explicitly preserve original test intent, resolve input conflicts, or use LLMs.",https://scispace.com/paper/fixr-mining-and-understanding-bug-fixes-to-address-2f1854bx58,2020,"","","Bor-Yuh E Chang
+Pavol Cern
+Kenneth M. Anderson
+Sriram Sankaranarayanan
+Tom Yeh
+Sergio Mover","",https://scispace.com/pdf/fixr-mining-and-understanding-bug-fixes-to-address-2f1854bx58.pdf,framework models
+Automatic Programming: Large Language Models and Beyond,"- **Relevance Score:** 17/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses code generation from specs, examples, and NL, but lacks explicit multi‑source combination, intent preservation, conflict handling, or LLM‑driven multi‑draft refinement.",https://scispace.com/paper/automatic-programming-large-language-models-and-beyond-3uk39gqw7d,2024,Preprint,"","Michael R. Lyu
+Baishakhi Ray
+Abhik Roychoudhury
+Shin Hwei Tan
+Patanamon Thongtanunam",10.48550/arxiv.2405.02213,https://scispace.compdf/automatic-programming-large-language-models-and-beyond-3uk39gqw7d.pdf,"Automatic programming has seen increasing popularity due to the emergence of tools like GitHub Copilot which rely on Large Language Models (LLMs). At the same time, automatically generated code faces challenges during deployment due to concerns around quality and trust. In this article, we study automated coding in a general sense and study the concerns around code quality, security and related issues of programmer responsibility. These are key issues for organizations while deciding on the usage of automatically generated code. We discuss how advances in software engineering such as program repair and analysis can enable automatic programming. We conclude with a forward looking view, focusing on the programming environment of the near future, where programmers may need to switch to different roles to fully utilize the power of automatic programming. Automated repair of automatically generated programs from LLMs, can help produce higher assurance code from LLMs, along with evidence of assurance "
+“No Free Lunch” when using Large Language Models to Verify Self-Generated Programs,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses a single LLM to generate code and its own tests, so no multi‑source aggregation or conflict handling. Evaluates whether generated tests preserve intended functionality, offering limited relevance to intent preservation.",https://scispace.com/paper/no-free-lunch-when-using-large-language-models-to-verify-4k5ey5lc6cs0,2024,Journal Article,"","Sol Zilberman
+H. C. Betty Cheng",10.1109/icstw60967.2024.00018,"","Large Language Models (LLMs) have shown great success in a wide range of text-generation tasks including the synthesis of code from natural language descriptions. As LLMbased techniques continue to grow in popularity, especially amongst entry-level developers, LLM-generated code has the potential to be deployed in a diverse set of application domains. While LLMs can generate syntactically correct code output, recent work has shown the presence of nonsensical and faulty reasoning in LLM-generated text. As such, overreliance on LLMs for software generation may potentially result in the deployment of faulty software leading to critical system failures. This study explores the capabilities of a single LLM to generate both software and corresponding test suites from the same initial program descriptions, which can be considered analogous to an individual developer coding and unit testing for a given piece of software. We present an empirical framework and evaluation methodology to assess the usefulness of LLM-generated test cases for verifying programs generated by the same LLM. Our findings indicate that LLMs frequently generate irrelevant tests that suffer from numerous quality concerns."
+"APRIL: API Synthesis with Automatic Prompt Optimization and
+  Reinforcement Learning","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses verifiable rewards to enforce functional correctness, loosely aligning with intent preservation, but lacks multi-source inputs, conflict handling, draft refinement, benchmark evaluation, or theoretical analysis.",https://scispace.com/paper/http://arxiv.org/abs/2509.25196v1,2025,Preprint,"","Hua Zhong
+Shan Jiang
+Sarfraz Khurshid","",http://arxiv.org/pdf/2509.25196v1,"APIs are central to modern software development, yet composing new APIs from
+large libraries is difficult due to the exponential search space; traditional
+component-based synthesis relies on costly exploration and hand-crafted
+specifications. While large language models (LLMs) can generate implementations
+from natural language, hallucinations and limited access to up-to-date
+contextual information often yield incorrect code. In this paper, we present
+APRIL, an approach that combines LLM-based synthesis with Automatic Prompt
+Optimization (APO) and Reinforcement Learning from Verifiable Rewards (RLVR):
+APO iteratively refines prompts for a frozen model, while RLVR fine-tunes the
+policy toward functional correctness, producing an efficient synthesis
+pipeline. Evaluated on 81 real-world APIs from widely used scientific Python
+libraries and benchmarked against instruction-tuned but unfine-tuned LLMs
+guided by expert prompts, APRIL achieves substantial improvements. These
+results indicate that integrating APO and RLVR provides a robust, scalable path
+for component-based API synthesis in large libraries."
+A Case Study on Test Case Construction with Large Language Models: Unveiling Practical Insights and Challenges,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLMs to generate test cases, but does not combine multiple sources, resolve conflicts, or refine from several drafts; only loosely addresses intent preservation through evaluation of coverage and accuracy.",https://scispace.com/paper/a-case-study-on-test-case-construction-with-large-language-1t3adub9lf,2023,Journal Article,arXiv.org,"Roberto Francisco de Lima Junior
+Luiz Fernando Paes de Barros Presta
+Lucca Santos Borborema
+Vanderson Nogueira da Silva
+Marcio Leal de Melo Dahia
+Anderson Carlos Sousa e Santos",10.48550/arxiv.2312.12598,"","This paper presents a detailed case study examining the application of Large Language Models (LLMs) in the construction of test cases within the context of software engineering. LLMs, characterized by their advanced natural language processing capabilities, are increasingly garnering attention as tools to automate and enhance various aspects of the software development life cycle. Leveraging a case study methodology, we systematically explore the integration of LLMs in the test case construction process, aiming to shed light on their practical efficacy, challenges encountered, and implications for software quality assurance. The study encompasses the selection of a representative software application, the formulation of test case construction methodologies employing LLMs, and the subsequent evaluation of outcomes. Through a blend of qualitative and quantitative analyses, this study assesses the impact of LLMs on test case comprehensiveness, accuracy, and efficiency. Additionally, delves into challenges such as model interpretability and adaptation to diverse software contexts. The findings from this case study contributes with nuanced insights into the practical utility of LLMs in the domain of test case construction, elucidating their potential benefits and limitations. By addressing real-world scenarios and complexities, this research aims to inform software practitioners and researchers alike about the tangible implications of incorporating LLMs into the software testing landscape, fostering a more comprehensive understanding of their role in optimizing the software development process."
+"BigCodeBench: Benchmarking Code Generation with Diverse Function Calls
+  and Complex Instructions","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLM to generate single-task programs from seed examples; ensures intent via human‑in‑the‑loop checks but lacks multi‑source merging, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/bigcodebench-benchmarking-code-generation-with-diverse-awmso2cx5h,2024,Preprint,"","Terry Yue Zhuo
+Minh Chien Vu
+Jenny Chim
+Han Hu
+Wenhao Yu
+Ratnadira Widyasari
+Imam Nur Bani Yusuf
+Haolan Zhan
+Junda He
+Indraneil Paul
+S. Brunner
+Chen Gong
+Thong Hoang
+Armel Zebaze
+Hong Xia
+Wen-Ding Li
+Jean Kaddour
+Ming Xu
+Zhihan Zhang
+Ajay Kumar Yadav
+Naman Jain
+Alex Gu
+Zhipeng Cheng
+Jiawei Liu
+Ling Qian
+Zijian Wang
+David Lo
+Binyuan Hui
+Niklas Muennighoff
+Daniel Fried
+Xianfeng Du
+Harm de Vries
+Leandro Von Werra",10.48550/arxiv.2406.15877,https://scispace.compdf/bigcodebench-benchmarking-code-generation-with-diverse-awmso2cx5h.pdf,"Automated software engineering has been greatly empowered by the recent advances in Large Language Models (LLMs) for programming. While current benchmarks have shown that LLMs can perform various software engineering tasks like human developers, the majority of their evaluations are limited to short and self-contained algorithmic tasks. Solving challenging and practical programming tasks requires the capability of utilizing diverse function calls as tools to efficiently implement functionalities like data analysis and web development. In addition, using multiple tools to solve a task needs compositional reasoning by accurately understanding complex instructions. Fulfilling both of these characteristics can pose a great challenge for LLMs. To assess how well LLMs can solve challenging and practical programming tasks, we introduce Bench, a benchmark that challenges LLMs to invoke multiple function calls as tools from 139 libraries and 7 domains for 1,140 fine-grained programming tasks. To evaluate LLMs rigorously, each programming task encompasses 5.6 test cases with an average branch coverage of 99%. In addition, we propose a natural-language-oriented variant of Bench, Benchi, that automatically transforms the original docstrings into short instructions only with essential information. Our extensive evaluation of 60 LLMs shows that LLMs are not yet capable of following complex instructions to use function calls precisely, with scores up to 60%, significantly lower than the human performance of 97%. The results underscore the need for further advancements in this area. "
+Cycle: Learning to self-refine the code generation,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses execution feedback to self‑refine a single generation, preserving functional intent via tests, but lacks multiple input sources, conflict handling, or multi‑draft refinement.",https://scispace.com/paper/cycle-learning-to-self-refine-the-code-generation-5a4pmy5mfr,2024,Journal Article,arXiv.org,"Yangruibo Ding
+Marcus J. Min
+Gail E. Kaiser
+Baishakhi Ray",10.48550/arxiv.2403.18746,https://dl.acm.org/doi/pdf/10.1145/3649825,"Pre-trained code language models have achieved promising performance in code generation and improved the programming efficiency of human developers. However, their self-refinement capability is typically overlooked by the existing evaluations of code LMs, which focus only on the accuracy of the one-time prediction. For the cases when code LMs fail to implement the correct program, developers actually find it hard to debug and fix the faulty prediction since it is not written by the developers themselves. Unfortunately, our study reveals that code LMs cannot efficiently self-refine their faulty generations as well. In this paper, we propose CYCLE framework, learning to self-refine the faulty generation according to the available feedback, such as the execution results reported by the test suites. We evaluate CYCLE on three popular code generation benchmarks, HumanEval, MBPP, and APPS. The results reveal that CYCLE successfully maintains, sometimes improves, the quality of one-time code generation, while significantly improving the self-refinement capability of code LMs. We implement four variants of CYCLE with varied numbers of parameters across 350M, 1B, 2B, and 3B, and the experiments show that CYCLE consistently boosts the code generation performance, by up to 63.5%, across benchmarks and varied model sizes. We also notice that CYCLE outperforms code LMs that have 3$\times$ more parameters in self-refinement."
+"The Potential of LLMs in Automating Software Testing: From Generation to
+  Reporting","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLMs to generate and run tests, but does not combine multiple input sources, resolve conflicts, or refine from several drafts; only loosely ensures coverage.",https://scispace.com/paper/the-potential-of-llms-in-automating-software-testing-from-6r8f7i375vyv,2024,Journal Article,"","Betim Sherifi
+Khaled Slhoub
+Fitzroy Nembhard",10.48550/arxiv.2501.00217,https://scispace.compdf/the-potential-of-llms-in-automating-software-testing-from-6r8f7i375vyv.pdf,"Having a high quality software is essential in software engineering, which requires robust validation and verification processes during testing activities. Manual testing, while effective, can be time consuming and costly, leading to an increased demand for automated methods. Recent advancements in Large Language Models (LLMs) have significantly influenced software engineering, particularly in areas like requirements analysis, test automation, and debugging. This paper explores an agent-oriented approach to automated software testing, using LLMs to reduce human intervention and enhance testing efficiency. The proposed framework integrates LLMs to generate unit tests, visualize call graphs, and automate test execution and reporting. Evaluations across multiple applications in Python and Java demonstrate the system's high test coverage and efficient operation. This research underscores the potential of LLM-powered agents to streamline software testing workflows while addressing challenges in scalability and accuracy. "
+"LogoMotion: Visually Grounded Code Generation for Content-Aware
+  Animation","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses visual diff‑based self‑refinement to keep animation intent, but lacks multiple input sources, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/logomotion-visually-grounded-code-generation-for-content-5648w3hm89,2024,Preprint,"","Vivian Liu
+Rubaiat Habib Kazi
+Li-Yi Wei
+Matthew C. Fisher
+Timothy Langlois
+Seth G. Walker
+Lydia B. Chilton",10.48550/arxiv.2405.07065,https://scispace.compdf/logomotion-visually-grounded-code-generation-for-content-5648w3hm89.pdf,"Animated logos are a compelling and ubiquitous way individuals and brands represent themselves online. Manually authoring these logos can require significant artistic skill and effort. To help novice designers animate logos, design tools currently offer templates and animation presets. However, these solutions can be limited in their expressive range. Large language models have the potential to help novice designers create animated logos by generating animation code that is tailored to their content. In this paper, we introduce LogoMotion, an LLM-based system that takes in a layered document and generates animated logos through visually-grounded program synthesis. We introduce techniques to create an HTML representation of a canvas, identify primary and secondary elements, synthesize animation code, and visually debug animation errors. When compared with an industry standard tool, we find that LogoMotion produces animations that are more content-aware and are on par in terms of quality. We conclude with a discussion of the implications of LLM-generated animation for motion design. "
+"PaD: Program-aided Distillation Can Teach Small Models Reasoning Better
+  than Chain-of-thought Fine-tuning","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses program‑aided verification to improve distilled reasoning data, but does not combine multiple sources or resolve conflicts; limited to single‑draft LLM outputs.",https://scispace.com/paper/http://arxiv.org/abs/2305.13888v2,2023,Preprint,"","Xuekai Zhu
+Biqing Qi
+Kaiyan Zhang
+Xinwei Long
+Zhouhan Lin
+Bowen Zhou","",http://arxiv.org/pdf/2305.13888v2,"While large language models (LLMs) excel in various natural language
+processing tasks, their huge size and the inaccessibility of parameters present
+challenges for practical deployment. Previous studies try to distill
+task-specific ability from LLMs to smaller models, using data synthesis and
+chain-of-thought (CoT) fine-tuning. However, synthetic CoT data often contains
+faulty reasoning, which deteriorates the quality of distillation, especially in
+reasoning capabilities. In this work, we propose Program-aided Distillation
+(PaD), which introduces reasoning programs to suppress the errors in distilled
+data, and thus achieves better distillation quality for reasoning tasks. In
+PaD, we utilize the reasoning program to substitute the CoT, allowing automated
+error checking of synthetic data. Further, through error injecting and further
+training, the small distilling model could iteratively self-refine the
+reasoning. Moreover, we conduct a step-wise beam search by step-by-step
+verifying to acquire more exact reasoning chains. We evaluate PaD on arithmetic
+reasoning, symbolic reasoning, and general ability. Experimental results
+demonstrate that smaller models using PaD can not only outperform certain
+LLMs~(e.g., LLaMA-1 13B) but also achieve strong improvement over baselines
+with a significantly smaller scale of parameters and data. The source code is
+publicly available at https://github.com/Xuekai-Zhu/pad."
+A Tool for Test Case Scenarios Generation Using Large Language Models,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Generates tests from requirements via LLMs; modest intent preservation, but lacks multi‑source merging, conflict handling, draft refinement, and benchmark evaluation.",https://scispace.com/paper/a-tool-for-test-case-scenarios-generation-using-large-32uvl70be1,2024,Preprint,"","Abdul Sami
+Zeeshan Rasheed
+Muhammad Waseem
+Zheying Zhang
+Herda Tomas
+Pekka Abrahamsson",10.48550/arxiv.2406.07021,https://scispace.compdf/a-tool-for-test-case-scenarios-generation-using-large-32uvl70be1.pdf,"Large Language Models (LLMs) are widely used in Software Engineering (SE) for various tasks, including generating code, designing and documenting software, adding code comments, reviewing code, and writing test scripts. However, creating test scripts or automating test cases demands test suite documentation that comprehensively covers functional requirements. Such documentation must enable thorough testing within a constrained scope and timeframe, particularly as requirements and user demands evolve. This article centers on generating user requirements as epics and high-level user stories and crafting test case scenarios based on these stories. It introduces a web-based software tool that employs an LLM-based agent and prompt engineering to automate the generation of test case scenarios against user requirements. "
+Six-Tier Architecture for AI-Generated Software Development: A Large Language Models Approach,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLMs for iterative refinement across development stages, but does not combine multiple input sources, preserve original intent, or resolve conflicts explicitly.",https://scispace.com/paper/six-tier-architecture-for-ai-generated-software-development-3rik5z4h,2023,Posted Content,"","",10.21203/rs.3.rs-3086026/v1,https://scispace.com/pdf/six-tier-architecture-for-ai-generated-software-development-3rik5z4h.pdf,"Abstract In the intersection of Artificial Intelligence (AI) and automated software engineering , there is an abundant potential to reimagine traditional practices and enhance operational efficiency. This paper presents the Six-Tier Architecture for AI-Generated Software Development, an innovative framework built upon the theoretical foundations of automated software engineering. This framework leverages large language models (LLMs) to perform tasks across the software development lifecycle, from high-level abstraction to detailed code generation, thereby systematically improving the automation level of software development. A key aspect of this architecture is the integrated iterative refinement process, which ensures system consistency and enables effective modifications in response to emerging changes. By utilizing the capabilities of LLMs in automated code generation , the Six-Tier Architecture offers a robust, flexible, and dynamic approach to AI-assisted software engineering, illustrating a substantial resilience to the intrinsic changes in software development requirements and processes. "
+Large Language Models Synergize with Automated Machine Learning,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLM to generate separate ML workflow parts and autoML to select best candidates; tests compatibility between parts, but no multi‑source merging, intent preservation, or multi‑draft LLM refinement.",https://scispace.com/paper/http://arxiv.org/abs/2405.03727v3,2024,Preprint,"","Jinglue Xu
+Jialong Li
+Zhen Liu
+Nagar Anthel Venkatesh Suryanarayanan
+Guoyuan Zhou
+Jia Guo
+Hitoshi Iba
+Kenji Tei","",http://arxiv.org/pdf/2405.03727v3,"Recently, program synthesis driven by large language models (LLMs) has become
+increasingly popular. However, program synthesis for machine learning (ML)
+tasks still poses significant challenges. This paper explores a novel form of
+program synthesis, targeting ML programs, by combining LLMs and automated
+machine learning (autoML). Specifically, our goal is to fully automate the
+generation and optimization of the code of the entire ML workflow, from data
+preparation to modeling and post-processing, utilizing only textual
+descriptions of the ML tasks. To manage the length and diversity of ML
+programs, we propose to break each ML program into smaller, manageable parts.
+Each part is generated separately by the LLM, with careful consideration of
+their compatibilities. To ensure compatibilities, we design a testing technique
+for ML programs. Unlike traditional program synthesis, which typically relies
+on binary evaluations (i.e., correct or incorrect), evaluating ML programs
+necessitates more than just binary judgments. Our approach automates the
+numerical evaluation and optimization of these programs, selecting the best
+candidates through autoML techniques. In experiments across various ML tasks,
+our method outperforms existing methods in 10 out of 12 tasks for generating ML
+programs. In addition, autoML significantly improves the performance of the
+generated ML programs. In experiments, given the textual task description, our
+method, Text-to-ML, generates the complete and optimized ML program in a fully
+autonomous process. The implementation of our method is available at
+https://github.com/JLX0/llm-automl."
+A systematic study in intelligent software engineering based on Large Language Model,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey paper reviews LLM applications; lacks concrete multi-source synthesis, conflict handling, intent preservation, or empirical/theoretical contributions required by criteria.",https://scispace.com/paper/a-systematic-study-in-intelligent-software-engineering-based-2ocfbtp3fx,2024,Journal Article,Applied and Computational Engineering,Xiang Li,10.54254/2755-2721/73/20240408,"","The application and research of Large Language Model (LLM) in intelligent software engineering have become a hot topic, offering strong theoretical significance and practical value. Researchers in this field have covered various stages of software engineering. However, there is still a lack of comprehensive and holistic research analysis that unifies the current research findings, which hinders the technological development of this field. Addressing this issue, this paper conducts a comprehensive survey of LLM research in the domain of software engineering. We summarize and extract five specific subfields, including LLM and prompts, code analysis, human-computer interaction, fault prediction, and other software engineering aspects. For these representative research directions, it examines significant research works, traces their research context, and discusses their development trends. This work provides a research foundation and contextual support for subsequent software engineering development based on large models. "
+Democratizing Code: How GPT and Large Language Models Are Reshaping the Landscape of Software Creation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on GPT-driven code generation and productivity, without explicit multi-source merging, intent preservation, conflict handling, or multi‑draft refinement.",https://scispace.com/paper/democratizing-code-how-gpt-and-large-language-models-are-10pnouwmwnw2,2024,Journal Article,"International journal of scientific research in computer science, engineering and information technology",Prakash Raj Ojha,10.32628/cseit241051031,"","This article examines the transformative impact of Generative Pre-trained Transformers (GPT) and Large Language Models (LLMs) on software development practices. Through a comprehensive analysis of current literature and industry applications, we investigate how these AI-driven technologies are revolutionizing code generation, debugging, and overall development workflows. Our findings indicate that GPT and LLMs significantly enhance programmer productivity by automating routine tasks, providing real-time code suggestions, and facilitating rapid prototyping. Moreover, these models demonstrate potential in democratizing software development by lowering entry barriers for non-experts. However, the integration of AI in development processes also raises important ethical considerations and challenges, including potential biases in code generation and the changing nature of programming skills. This research contributes to the growing body of knowledge on AI-assisted software engineering and provides insights into the future trajectory of the field, suggesting that the symbiosis between human developers and AI models will likely define the next era of software development. "
+Unit Test Generation Using Large Language Models: A Systematic Literature Review,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a systematic review of LLM‑based unit test generation but does not propose multi‑source synthesis, intent preservation, conflict resolution, multi‑draft refinement, benchmark experiments, or theoretical analysis.",https://scispace.com/paper/unit-test-generation-using-large-language-models-a-3z8x4culm7,2024,Journal Article,Vilnius University open series,"Dovydas Marius Zapkus
+Asta Slotkiene",10.15388/lmitt.2024.20,"","Unit testing is a fundamental aspect of software development, ensuring the correctness and robustness of code implementations. Traditionally, unit tests are manually crafted by developers based on their understanding of the code and its requirements. However, this process can be time-consuming, errorprone, and may overlook certain edge cases. In recent years, there has been growing interest in leveraging large language models (LLMs) for automating the generation of unit tests. LLMs, such as GPT (Generative Pre-trained Transformer), CodeT5, StarCoder, LLaMA, have demonstrated remarkable capabilities in natural language understanding and code generation tasks. By using LLMs, researchers aim to develop techniques that automatically generate unit tests from code snippets or specifications, thus optimizing the software testing process. This paper presents a literature review of articles that use LLMs for unit test generation tasks. It also discusses the history of the most commonly used large language models and their parameters, including the first time they have been used for code generation tasks. The result of this study presents the large language models for code and unit test generation tasks and their increasing popularity in code generation domain, indicating a great promise for the future of unit test generation using LLMs."
+"Software Testing with Large Language Models: Survey, Landscape, and Vision","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey reviews many LLM‑testing studies but does not itself propose multi‑source synthesis, intent preservation, conflict resolution, or LLM‑refinement methods, nor provides empirical or theoretical analysis.",https://scispace.com/paper/software-testing-with-large-language-models-survey-landscape-3ada3cam7j,2023,Preprint,"","Junjie Wang
+Yuchao Huang
+Chunyang Chen
+Zhe Liu
+Song Wang
+Qing Wang",10.48550/arxiv.2307.07221,"","Pre-trained large language models (LLMs) have recently emerged as a breakthrough technology in natural language processing and artificial intelligence, with the ability to handle large-scale datasets and exhibit remarkable performance across a wide range of tasks. Meanwhile, software testing is a crucial undertaking that serves as a cornerstone for ensuring the quality and reliability of software products. As the scope and complexity of software systems continue to grow, the need for more effective software testing techniques becomes increasingly urgent, making it an area ripe for innovative approaches such as the use of LLMs. This paper provides a comprehensive review of the utilization of LLMs in software testing. It analyzes 102 relevant studies that have used LLMs for software testing, from both the software testing and LLMs perspectives. The paper presents a detailed discussion of the software testing tasks for which LLMs are commonly used, among which test case preparation and program repair are the most representative. It also analyzes the commonly used LLMs, the types of prompt engineering that are employed, as well as the accompanied techniques with these LLMs. It also summarizes the key challenges and potential opportunities in this direction. This work can serve as a roadmap for future research in this area, highlighting potential avenues for exploration, and identifying gaps in our current understanding of the use of LLMs in software testing. "
+The Use of AI in Software Engineering: Synthetic Knowledge Synthesis of Recent Research Literature,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a literature synthesis of AI in software engineering; does not propose a multi‑source synthesis method, preservation guarantees, conflict handling, LLM refinement, benchmark experiments, or theoretical analysis.",https://scispace.com/paper/the-use-of-ai-in-software-engineering-synthetic-knowledge-cnkshgybka,2024,Preprint,"",Peter Kokol,10.20944/preprints202403.0556.v1,"","Artificial intelligence (AI) has witnessed an exponential increase in its use in various applications. Recently, the academic community started to research and inject new AI-based approaches to provide solutions to traditional software engineering problems. However, a comprehensive and holistic understanding of the current status is missing. To close the above gap, synthetic knowledge synthesis was used to induce a research landscape of the contemporary research literature on the use of AI in software engineering. The synthesis resulted in 15 research categories and five themes, namely natural language processing in software engineering, use of artificial intelligence in the management of software development life cycle, use of machine learning in fault/defect prediction and effort estimation, employment of deep learning in intelligent software engineering and code management, and mining software repositories to improve software quality. The most productive country was China (n=2042), followed by the United States (n=1193), India (n=934), Germany (n=445), and Canada (n=381). A high percentage (n=47.4%) of papers were funded, showing a strong interest in this research topic. The convergence of AI and software engineering can significantly reduce needed resources, improve quality, increase user experience, and improve the well-being of software developers. "
+Generative AI for Software Development: A Family of Studies on Code Generation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a broad overview of generative AI applications in software development without presenting a concrete multi‑source synthesis method, intent preservation, conflict handling, or LLM‑driven multi‑draft refinement.",https://scispace.com/paper/generative-ai-for-software-development-a-family-of-studies-19l9c0q1go,2024,Book Chapter,"","Arghavan Moradi Dakhel
+Amin Nikanjam
+Foutse Khomh
+Michel C. Desmarais
+Hironori Washizaki",10.1007/978-3-031-55642-5_7,"","The rapid advancements in generative artificial intelligence (AI) offer multiple opportunities for its application in various domains, including software engineering (SE). This chapter explores the benefits and challenges of utilizing generative AI for different activities in the software development cycle that involve code generation. We review different approaches leveraging generative AI, either independently or in combination with traditional SE techniques, to complete a diverse set of tasks including feature implementation, generating test cases, and repairing programs. Additionally, we discuss the potential pitfalls of using generative AI to perform such SE tasks, as well as the quality of the code generated by these models. Finally, we explore research opportunities in harnessing generative AI, with a particular emphasis on tasks that require code generation. "
+Generative software engineering,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses generative programming and MDE concepts but lacks any multi-source synthesis, intent preservation, conflict handling, LLM refinement, benchmark evaluation, or theoretical ensemble analysis.",https://scispace.com/paper/generative-software-engineering-43swu20qey,2007,"","",Jean-Marc Jézéquel,"",https://arxiv.org/pdf/2403.02583,"Researching evermore abstract and powerful ways of composing programs is the meat of software engineering for half a century. Important early steps were subroutines (to encapsulate actions) and records (to encapsulate data). A large step forward came with the introduction of the object-oriented concepts (classes, subclasses and virtual methods) where classes can encapsulate both data and behaviors in a very powerful, but still flexible, way. For a long time, these concepts dominated the scene, but eventually the need for additional concepts became apparent. In this chapter, we focus on model driven engineering MDE, which complement and leverage other mechanism such generic constructs, aspect oriented programming AOP, component based software development CBSE, generative programming, domain specific languages."
+A survey on large language models for software engineering,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey summarizes LLM applications but does not propose a method that combines multiple inputs, preserve intent, resolve conflicts, or refine multi‑draft artifacts.",https://scispace.com/paper/a-survey-on-large-language-models-for-software-engineering-2xlyafsndz,2023,Journal Article,arXiv.org,"Quanjun Zhang
+Chunrong Fang
+Yang Xie
+Yaxin Zhang
+Yun Yang
+Weisong Sun
+Shengchen Yu
+Zhenyu Chen",10.48550/arxiv.2312.15223,https://arxiv.org/pdf/2312.15223,"Software Engineering (SE) is the systematic design, development, and maintenance of software applications, underpinning the digital infrastructure of our modern mainworld. Very recently, the SE community has seen a rapidly increasing number of techniques employing Large Language Models (LLMs) to automate a broad range of SE tasks. Nevertheless, existing information of the applications, effects, and possible limitations of LLMs within SE is still not well-studied. In this paper, we provide a systematic survey to summarize the current state-of-the-art research in the LLM-based SE community. We summarize 30 representative LLMs of Source Code across three model architectures, 15 pre-training objectives across four categories, and 16 downstream tasks across five categories. We then present a detailed summarization of the recent SE studies for which LLMs are commonly utilized, including 155 studies for 43 specific code-related tasks across four crucial phases within the SE workflow. Besides, we summarize existing attempts to empirically evaluate LLMs in SE, such as benchmarks, empirical studies, and exploration of SE education. We also discuss several critical aspects of optimization and applications of LLMs in SE, such as security attacks, model tuning, and model compression. Finally, we highlight several challenges and potential opportunities on applying LLMs for future SE studies, such as exploring domain LLMs and constructing clean evaluation datasets. Overall, our work can help researchers gain a comprehensive understanding about the achievements of the existing LLM-based SE studies and promote the practical application of these techniques. Our artifacts are publicly available and will continuously updated at the living repository: \url{https://github.com/iSEngLab/AwesomeLLM4SE}."
+Breaking the Silence: the Threats of Using LLMs in Software Engineering,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses validity threats, reproducibility, and guidelines for LLM research; does not propose multi‑source synthesis, intent preservation, conflict resolution, or multi‑draft LLM refinement.",https://scispace.com/paper/breaking-the-silence-the-threats-of-using-llms-in-software-4sgrgd092s,2023,Preprint,"","June Sallou
+Thomas Durieux
+Annibale Panichella",10.48550/arxiv.2312.08055,"","Large Language Models (LLMs) have gained considerable traction within the Software Engineering (SE) community, impacting various SE tasks from code completion to test generation, from program repair to code summarization. Despite their promise, researchers must still be careful as numerous intricate factors can influence the outcomes of experiments involving LLMs. This paper initiates an open discussion on potential threats to the validity of LLM-based research including issues such as closed-source models, possible data leakage between LLM training data and research evaluation, and the reproducibility of LLM-based findings. In response, this paper proposes a set of guidelines tailored for SE researchers and Language Model (LM) providers to mitigate these concerns. The implications of the guidelines are illustrated using existing good practices followed by LLM providers and a practical example for SE researchers in the context of test case generation. "
+The Transformative Influence of Large Language Models on Software Development,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey discusses LLM adoption and challenges but provides no method for multi‑source synthesis, intent preservation, conflict resolution, or LLM‑driven refinement; lacks empirical or theoretical contributions.",https://scispace.com/paper/the-transformative-influence-of-large-language-models-on-5c93azd5f9,2023,Journal Article,arXiv.org,Sajed Jalil,10.48550/arxiv.2311.16429,https://scispace.compdf/the-transformative-influence-of-large-language-models-on-5c93azd5f9.pdf,"The increasing adoption and commercialization of generalized Large Language Models (LLMs) have profoundly impacted various aspects of our daily lives. Initially embraced by the computer science community, the versatility of LLMs has found its way into diverse domains. In particular, the software engineering realm has witnessed the most transformative changes. With LLMs increasingly serving as AI Pair Programming Assistants spurred the development of specialized models aimed at aiding software engineers. Although this new paradigm offers numerous advantages, it also presents critical challenges and open problems. To identify the potential and prevailing obstacles, we systematically reviewed contemporary scholarly publications, emphasizing the perspectives of software developers and usability concerns. Preliminary findings underscore pressing concerns about data privacy, bias, and misinformation. Additionally, we identified several usability challenges, including prompt engineering, increased cognitive demands, and mistrust. Finally, we introduce 12 open problems that we have identified through our survey, covering these various domains."
+Quality Assurance for LLM-Generated Test Cases: A Systematic Literature Review,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Reviews QA challenges for LLM‑generated test cases; does not present a multi‑source synthesis method, preservation guarantees, conflict resolution, LLM refinement, benchmark experiments, or theoretical ensemble analysis.",https://scispace.com/paper/quality-assurance-for-llm-generated-test-cases-a-systematic-4aqe98j7it1p,2024,Journal Article,"","Hasali Edirisinghe
+Dilani Wickramaarachchi",10.1109/slaai-icai63667.2024.10844968,"","The rapid advancements in artificial intelligence have transformed software testing, with Large Language Models (LLMs) emerging as powerful tools for automating test case generation. This paper explores Quality Assurance (QA) for LLM-generated test cases in black-box testing through a systematic literature review. Though LLMs are increasingly used for test case generation, challenges in ensuring their quality remain. Following PRISMA guidelines, relevant studies were selected from databases focusing on critical quality attributes, QA frameworks, metrics, and challenges. LLMs demonstrate high efficiency but face numerous issues. A recommendation for future research is given on addressing standardized metrics and improving human-AI collaboration for enhanced testing outcomes."
+Improving the Learning of Code Review Successive Tasks with Cross-Task Knowledge Distillation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on cross‑task distillation between quality estimation, comment generation, and code refinement; no explicit multi‑source merging, intent preservation, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/improving-the-learning-of-code-review-successive-tasks-with-3jvul9td2p,2024,Journal Article,"","Oussama Ben Sghaier
+Houari Sahraoui",10.1145/3643775,https://arxiv.org/pdf/2402.02063,"Code review is a fundamental process in software development that plays a pivotal role in ensuring code quality and reducing the likelihood of errors and bugs. However, code review can be complex, subjective, and time-consuming. Quality estimation , comment generation , and code refinement constitute the three key tasks of this process, and their automation has traditionally been addressed separately in the literature using different approaches. In particular, recent efforts have focused on fine-tuning pre-trained language models to aid in code review tasks, with each task being considered in isolation. We believe that these tasks are interconnected, and their fine-tuning should consider this interconnection. In this paper, we introduce a novel deep-learning architecture, named DISCOREV, which employs cross-task knowledge distillation to address these tasks simultaneously. In our approach, we utilize a cascade of models to enhance both comment generation and code refinement models. The fine-tuning of the comment generation model is guided by the code refinement model, while the fine-tuning of the code refinement model is guided by the quality estimation model. We implement this guidance using two strategies: a feedback-based learning objective and an embedding alignment objective. We evaluate DISCOREV by comparing it to state-of-the-art methods based on independent training and fine-tuning. Our results show that our approach generates better review comments, as measured by the BLEU score, as well as more accurate code refinement according to the CodeBLEU score. "
+"The Current Challenges of Software Engineering in the Era of Large
+  Language Models","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey discusses individual LLM applications (code generation, specification generation) but lacks a method that combines multiple inputs, preserves intent, resolves conflicts, or refines multi‑draft artifacts.",https://scispace.com/paper/the-current-challenges-of-software-engineering-in-the-era-of-5g622yz876kd,2024,Journal Article,"","Cuiyun Gao
+Xing Hu
+Shan Gao
+Xin Xia
+Zhi Jin",10.48550/arxiv.2412.14554,https://scispace.compdf/the-current-challenges-of-software-engineering-in-the-era-of-5g622yz876kd.pdf,"With the advent of large language models (LLMs) in the artificial intelligence (AI) area, the field of software engineering (SE) has also witnessed a paradigm shift. These models, by leveraging the power of deep learning and massive amounts of data, have demonstrated an unprecedented capacity to understand, generate, and operate programming languages. They can assist developers in completing a broad spectrum of software development activities, encompassing software design, automated programming, and maintenance, which potentially reduces huge human efforts. Integrating LLMs within the SE landscape (LLM4SE) has become a burgeoning trend, necessitating exploring this emergent landscape's challenges and opportunities. The paper aims at revisiting the software development life cycle (SDLC) under LLMs, and highlighting challenges and opportunities of the new paradigm. The paper first summarizes the overall process of LLM4SE, and then elaborates on the current challenges based on a through discussion. The discussion was held among more than 20 participants from academia and industry, specializing in fields such as software engineering and artificial intelligence. Specifically, we achieve 26 key challenges from seven aspects, including software requirement & design, coding assistance, testing code generation, code review, code maintenance, software vulnerability management, and data, training, and evaluation. We hope the achieved challenges would benefit future research in the LLM4SE field. "
+The Use of AI in Software Engineering: A Synthetic Knowledge Synthesis of the Recent Research Literature,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a high‑level survey of AI applications in software engineering; does not describe a concrete multi‑source synthesis method, intent preservation, conflict handling, LLM refinement, benchmark experiments, or theoretical ensemble analysis.",https://scispace.com/paper/the-use-of-ai-in-software-engineering-a-synthetic-knowledge-3943uvb59a,2024,Journal Article,Information,Peter Kokol,10.3390/info15060354,"","Artificial intelligence (AI) has witnessed an exponential increase in use in various applications. Recently, the academic community started to research and inject new AI-based approaches to provide solutions to traditional software-engineering problems. However, a comprehensive and holistic understanding of the current status needs to be included. To close the above gap, synthetic knowledge synthesis was used to induce the research landscape of the contemporary research literature on the use of AI in software engineering. The synthesis resulted in 15 research categories and 5 themes—namely, natural language processing in software engineering, use of artificial intelligence in the management of the software development life cycle, use of machine learning in fault/defect prediction and effort estimation, employment of deep learning in intelligent software engineering and code management, and mining software repositories to improve software quality. The most productive country was China (n = 2042), followed by the United States (n = 1193), India (n = 934), Germany (n = 445), and Canada (n = 381). A high percentage (n = 47.4%) of papers were funded, showing the strong interest in this research topic. The convergence of AI and software engineering can significantly reduce the required resources, improve the quality, enhance the user experience, and improve the well-being of software developers. "
+Type-driven Neural Programming by Example,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on type‑driven neural program synthesis from single input‑output examples; does not combine multiple sources, resolve conflicts, or use LLMs for multi‑draft refinement.",https://scispace.com/paper/type-driven-neural-programming-by-example-48qa96gyvj,2020,Posted Content,arXiv: Software Engineering,Kiara Grouwstra,"",https://scispace.compdf/type-driven-neural-programming-by-example-48qa96gyvj.pdf,"In this thesis we look into programming by example (PBE), which is about finding a program mapping given inputs to given outputs. PBE has traditionally seen a split between formal versus neural approaches, where formal approaches typically involve deductive techniques such as SAT solvers and types, while the neural approaches involve training on sample input-outputs with their corresponding program, typically using sequence-based machine learning techniques such as LSTMs [41]. As a result of this split, programming types had yet to be used in neural program synthesis techniques. 
+We propose a way to incorporate programming types into a neural program synthesis approach for PBE. We introduce the Typed Neuro-Symbolic Program Synthesis (TNSPS) method based on this idea, and test it in the functional programming context to empirically verify type information may help improve generalization in neural synthesizers on limited-size datasets. 
+Our TNSPS model builds upon the existing Neuro-Symbolic Program Synthesis (NSPS), a tree-based neural synthesizer combining info from input-output examples plus the current program, by further exposing information on types of those input-output examples, of the grammar production rules, as well as of the hole that we wish to expand in the program. 
+We further explain how we generated a dataset within our domain, which uses a limited subset of Haskell as the synthesis language. Finally we discuss several topics of interest that may help take these ideas further. For reproducibility, we release our code publicly."
+Adopting Program Synthesis for Test Amplification.,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Paper focuses on using program synthesis and type inference for test amplification, without combining multiple sources, preserving original test intent, resolving conflicts, or employing LLMs.",https://scispace.com/paper/adopting-program-synthesis-for-test-amplification-bb8y39r9a1,2019,"","","Mehrdad Abdi
+Henrique Rocha
+Serge Demeyer","",https://scispace.com/pdf/adopting-program-synthesis-for-test-amplification-bb8y39r9a1.pdf,"Program synthesis is the task of enabling a computer system to automatically write program code based on user intent. Test amplification on the other hand is an emerging research area, where the goal is to generate new test cases from manually written ones. From this perspective, test amplification is awfully similar to program synthesis. Therefore, in this short paper, we explore the benefits of using program synthesis for test amplification."
+"System Test Case Design from Requirements Specifications: Insights and
+  Challenges of Using ChatGPT","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on single‑prompt test case generation from SRS with ChatGPT; lacks multi‑source fusion, explicit intent preservation, conflict handling, multi‑draft refinement, benchmark evaluation, or theoretical ensemble analysis.",https://scispace.com/paper/system-test-case-design-from-requirements-specifications-5olbeufd2mva,2024,Journal Article,"","S. N. Bhatia
+Tarushi Gandhi
+Dhruv Kumar
+Pankaj Jalote",10.48550/arxiv.2412.03693,https://scispace.compdf/system-test-case-design-from-requirements-specifications-5olbeufd2mva.pdf,"System testing is essential in any software development project to ensure that the final products meet the requirements. Creating comprehensive test cases for system testing from requirements is often challenging and time-consuming. This paper explores the effectiveness of using Large Language Models (LLMs) to generate test case designs from Software Requirements Specification (SRS) documents. In this study, we collected the SRS documents of five software engineering projects containing functional and non-functional requirements, which were implemented, tested, and delivered by respective developer teams. For generating test case designs, we used ChatGPT-4o Turbo model. We employed prompt-chaining, starting with an initial context-setting prompt, followed by prompts to generate test cases for each use case. We assessed the quality of the generated test case designs through feedback from the same developer teams as mentioned above. Our experiments show that about 87 percent of the generated test cases were valid, with the remaining 13 percent either not applicable or redundant. Notably, 15 percent of the valid test cases were previously not considered by developers in their testing. We also tasked ChatGPT with identifying redundant test cases, which were subsequently validated by the respective developers to identify false positives and to uncover any redundant test cases that may have been missed by the developers themselves. This study highlights the potential of leveraging LLMs for test generation from the Requirements Specification document and also for assisting developers in quickly identifying and addressing redundancies, ultimately improving test suite quality and efficiency of the testing procedure. "
+Analysis on LLMs Performance for Code Summarization,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on evaluating LLMs for code summarization, not on multi‑source synthesis, intent preservation, conflict resolution, or multi‑draft refinement.",https://scispace.com/paper/analysis-on-llms-performance-for-code-summarization-39g5vxghfblv,2024,Journal Article,"","Md. Ahnaf Akib
+Md. Muktadir Mazumder
+Salman Ahsan",10.48550/arxiv.2412.17094,https://scispace.compdf/analysis-on-llms-performance-for-code-summarization-39g5vxghfblv.pdf,"Code summarization aims to generate concise natural language descriptions for source code. Deep learning has been used more and more recently in software engineering, particularly for tasks like code creation and summarization. Specifically, it appears that the most current Large Language Models with coding perform well on these tasks. Large Language Models (LLMs) have significantly advanced the field of code summarization, providing sophisticated methods for generating concise and accurate summaries of source code. This study aims to perform a comparative analysis of several open-source LLMs, namely LLaMA-3, Phi-3, Mistral, and Gemma. These models' performance is assessed using important metrics such as BLEU\textsubscript{3.1} and ROUGE\textsubscript{3.2}. Through this analysis, we seek to identify the strengths and weaknesses of each model, offering insights into their applicability and effectiveness in code summarization tasks. Our findings contribute to the ongoing development and refinement of LLMs, supporting their integration into tools that enhance software development and maintenance processes. "
+SWT-bench: Testing and validating real-world bug-fixes with code agents,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on using code agents to generate tests for bug‑fixes without leveraging multiple input sources, intent preservation, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/RetoVDQoT64J,"","","","N Mündler
+M Müller
+J He","",https://proceedings.neurips.cc/paper_files/paper/2024/file/94f093b41fc2666376fb1f667fe282f3-Paper-Conference.pdf,""
+Unitsyn: A large-scale dataset capable of enhancing the prowess of large language models for program testing,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on building a large unit‑test dataset; does not combine multiple sources, preserve merged intent, resolve conflicts, or refine multi‑draft outputs.",https://scispace.com/paper/unitsyn-a-large-scale-dataset-capable-of-enhancing-the-52x4bvfv3n,2024,Journal Article,arXiv.org,"Yifeng He
+Jiabo Huang
+Yuyang Rong
+Yiwen Guo
+Ethan Wang
+Hao Chen",10.48550/arxiv.2402.03396,https://arxiv.org/pdf/2402.03396,"The remarkable capability of large language models (LLMs) in generating high-quality code has drawn increasing attention in the software testing community. However, existing code LLMs often demonstrate unsatisfactory capabilities in generating accurate and complete tests since they were trained on code snippets collected without differentiating between code for testing purposes and other code. In this paper, we present a large-scale dataset UniTSyn, which is capable of enhancing the prowess of LLMs for Unit Test Synthesis. Associating tests with the tested functions is crucial for LLMs to infer the expected behavior and the logic paths to be verified. By leveraging Language Server Protocol, UniTSyn achieves the challenging goal of collecting focal-test pairs without per-project execution setups or per-language heuristics that tend to be fragile and difficult to scale. It contains 2.7 million focal-test pairs across five mainstream programming languages, making it possible to be utilized for enhancing the test generation ability of LLMs. The details of UniTSyn can be found in Table 1. Our experiments demonstrate that, by building an autoregressive model based on UniTSyn, we can achieve significant benefits in learning and understanding unit test representations, resulting in improved generation accuracy and code coverage across all evaluated programming languages. Code and data will be publicly available."
+Seleção de Dados de Teste com Base na Aplicação de Testes de Mutação a Modelos de Árvore de Decisão,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on mutation testing for test selection using decision‑tree models; does not involve multi‑source synthesis, LLM refinement, conflict resolution, or benchmark evaluation.",https://scispace.com/paper/selecao-de-dados-de-teste-com-base-na-aplicacao-de-testes-de-4xyebizg9z,2024,Dissertation,"",Beatriz Nogueira Carvalho da Silveira,10.11606/d.55.2024.tde-10062024-105606,https://scispace.compdf/selecao-de-dados-de-teste-com-base-na-aplicacao-de-testes-de-4xyebizg9z.pdf,""
+Synthetic Knowledge Ingestion: Towards Knowledge Refinement and Injection for Enhancing Large Language Models,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on generating QA pairs to inject knowledge into LLMs, without code/test synthesis, intent preservation, conflict handling, or multi‑draft refinement.",https://scispace.com/paper/synthetic-knowledge-ingestion-towards-knowledge-refinement-5hadwf5to9xr,2024,Proceedings Article,"","Jiaxin Zhang
+Wendi Cui
+Yiran Huang
+Kamalika Das
+Sricharan Kumar",10.18653/v1/2024.emnlp-main.1196,https://arxiv.org/pdf/2410.09629,""
+Test suite optimization using machine learning techniques: A comprehensive study,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Reviews ML test suite optimization; no multi‑source synthesis, intent preservation, conflict handling, or LLM‑driven multi‑draft refinement. Lacks benchmark experiments and theoretical ensemble analysis.",https://scispace.com/paper/test-suite-optimization-using-machine-learning-techniques-a-2l3lkuhpymgy,2024,Journal Article,IEEE Access,"Abid Mehmood
+Qazi Mudassar Ilyas
+Muneer Ahmad
+Zhongliang Shi",10.1109/access.2024.3490453,https://ieeexplore.ieee.org/iel8/6287639/6514899/10741285.pdf,"Software testing is an essential yet costly phase of the software development lifecycle. While machine learning-based test suite optimization techniques have shown promise in reducing testing costs and improving fault detection, a comprehensive evaluation of their effectiveness across different environments is still lacking. This paper reviews 43 studies published between 2018 and 2023, covering various test case selection, prioritization, and reduction techniques using machine learning. The findings reveal that conventional machine learning techniques, particularly supervised learning methods, have been widely adopted for test case prioritization and selection. Recent advancements, such as deep learning and hybrid models, show potential in improving fault detection rates and scalability, though challenges remain in adapting these techniques to large-scale and dynamic environments. Additionally, Generative AI and large language models (LLMs) are emerging as promising tools for automating aspects of test case generation and prioritization, offering new avenues for future research in enhancing test suite optimization. The study identifies recent trends, challenges, and opportunities for further research, with a focus on both conventional and emerging methods, including deep learning, hybrid approaches, and Generative AI models. By systematically analyzing these techniques, this work contributes to the understanding of how machine learning and Generative AI can enhance test suite optimization and highlights future directions for improving the scalability and real-world applicability of these methods."
+AMR-evol: Adaptive modular response evolution elicits better knowledge distillation for large language models in code generation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on modular decomposition and adaptive evolution of a single teacher response, without combining multiple inputs, preserving intent across sources, or resolving conflicts.",https://scispace.com/paper/amr-evol-adaptive-modular-response-evolution-elicits-better-4mjcjb98etxp,2024,Journal Article,"","Ziyang Luo
+Xin Li
+Hongzhan Lin
+Jing Ma
+Li Bing",10.48550/arxiv.2410.00558,https://arxiv.org/pdf/2410.00558?,"The impressive performance of proprietary LLMs like GPT4 in code generation has led to a trend to replicate these capabilities in open-source models through knowledge distillation (e.g. Code Evol-Instruct). However, these efforts often neglect the crucial aspect of response quality, relying heavily on teacher models for direct response distillation. This paradigm, especially for complex instructions, can degrade the quality of synthesized data, compromising the knowledge distillation process. To this end, our study introduces the Adaptive Modular Response Evolution (AMR-Evol) framework, which employs a two-stage process to refine response distillation. The first stage, modular decomposition, breaks down the direct response into more manageable sub-modules. The second stage, adaptive response evolution, automatically evolves the response with the related function modules. Our experiments with three popular code benchmarks—HumanEval, MBPP, and EvalPlus—attests to the superiority of the AMR-Evol framework over baseline response distillation methods. By comparing with the open-source Code LLMs trained on a similar scale of data, we observed performance enhancements: more than +3.0 points on HumanEval-Plus and +1.0 points on MBPP-Plus, which underscores the effectiveness of our framework. Our codes are available at https://github.com/ChiYeungLaw/AMR-Evol."
+"Rethinking All Evidence: Enhancing Trustworthy Retrieval-Augmented
+  Generation via Conflict-Driven Summarization","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on retrieval‑augmented generation for QA, not on code/test synthesis, intent preservation, or software‑engineering benchmarks.",https://scispace.com/paper/http://arxiv.org/abs/2507.01281v1,2025,Preprint,"","Juan Chen
+Baolong Bi
+Wei Zhang
+Jingyan Sui
+Xiaofei Zhu
+Yuanzhuo Wang
+Lingrui Mei
+Shenghua Liu","",http://arxiv.org/pdf/2507.01281v1,"Retrieval-Augmented Generation (RAG) enhances large language models (LLMs) by
+integrating their parametric knowledge with external retrieved content.
+However, knowledge conflicts caused by internal inconsistencies or noisy
+retrieved content can severely undermine the generation reliability of RAG
+systems.In this work, we argue that LLMs should rethink all evidence, including
+both retrieved content and internal knowledge, before generating responses.We
+propose CARE-RAG (Conflict-Aware and Reliable Evidence for RAG), a novel
+framework that improves trustworthiness through Conflict-Driven Summarization
+of all available evidence.CARE-RAG first derives parameter-aware evidence by
+comparing parameter records to identify diverse internal perspectives. It then
+refines retrieved evidences to produce context-aware evidence, removing
+irrelevant or misleading content. To detect and summarize conflicts, we distill
+a 3B LLaMA3.2 model to perform conflict-driven summarization, enabling reliable
+synthesis across multiple sources.To further ensure evaluation integrity, we
+introduce a QA Repair step to correct outdated or ambiguous benchmark
+answers.Experiments on revised QA datasets with retrieval data show that
+CARE-RAG consistently outperforms strong RAG baselines, especially in scenarios
+with noisy or conflicting evidence."
+Enhancing code generation performance of smaller models by distilling the reasoning ability of llms,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLM reasoning distillation to improve smaller models; does not combine multiple sources, preserve intent across merges, resolve conflicts, or refine multiple drafts.",https://scispace.com/paper/enhancing-code-generation-performance-of-smaller-models-by-4552x5e4cp,2024,Journal Article,arXiv.org,"Zhihong Sun
+Chen Lyu
+Bolun Li
+Yao Wan
+Hongyu Zhang
+Ge Li
+Zhi Jin",10.48550/arxiv.2403.13271,https://arxiv.org/pdf/2403.13271,"Large Language Models (LLMs) have recently made significant advances in code generation through the 'Chain-of-Thought' prompting technique. This technique empowers the model to autonomously devise""solution plans""to tackle intricate programming challenges, thereby improving its performance in code generation. Nevertheless, smaller models have been struggling to keep up with LLMs in deducing these plans, adversely affecting their code generation capabilities. Given the considerable size and associated deployment costs, along with concerns about data security, many teams opt for deploying smaller models for code generation. Consequently, there arises a compelling need for transferring LLMs' code generation reasoning abilities to the smaller models. In this paper, we propose the CodePLAN framework, which aims to transfer LLMs' reasoning capabilities to smaller models through distillation. We adopt a multi-task learning approach, jointly undertaking code generation and solution plan generation tasks, to enhance the code generation capabilities of the smaller model. To ensure the superior quality of the solution plans, we advocate for the utilization of backward reasoning and plan sampling strategies. Our experiments show that in comparison to the conventional fine-tuning approach, our approach improves the smaller model's code generation performance (measured in pass@1 metric) by over 130% on the challenging APPS benchmark."
+TritonRL: Training LLMs to Think and Code Triton Without Cheating,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on RL‑based training of a Triton‑specific LLM, not on merging multiple code sources, preserving intent, conflict resolution, or multi‑draft refinement.",https://scispace.com/paper/http://arxiv.org/abs/2510.17891v1,2025,Preprint,"","Jiin Woo
+Shaowei Zhu
+Allen Nie
+Zhen Jia
+Yida Wang
+Youngsuk Park","",http://arxiv.org/pdf/2510.17891v1,"With the rapid evolution of large language models (LLMs), the demand for
+automated, high-performance system kernels has emerged as a key enabler for
+accelerating development and deployment. We introduce TritonRL, a
+domain-specialized LLM for Triton kernel generation, trained with a novel
+training framework that enables robust and automated kernel synthesis. Unlike
+general-purpose programming languages, Triton kernel generation faces unique
+challenges due to data scarcity and incomplete evaluation criteria, vulnerable
+to reward hacking. Our approach addresses these challenges end-to-end by
+distilling Triton-specific knowledge through supervised fine-tuning on curated
+datasets, and further improving code quality via reinforcement learning (RL)
+with robust, verifiable rewards and hierarchical reward assignment. Our RL
+framework robustly detects reward hacking and guides both reasoning traces and
+code tokens through fine-grained verification and hierarchical reward
+decomposition, enabling the model to generate high-quality Triton kernels that
+can truly replace existing modules. With robust and fine-grained evaluation,
+our experiments on KernelBench demonstrate that TritonRL achieves
+state-of-the-art correctness and speedup, surpassing all other Triton-specific
+models and underscoring the effectiveness of our RL-based training paradigm."
+"VeriMind: Agentic LLM for Automated Verilog Generation with a Novel
+  Evaluation Metric","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses a single prompt and single LLM pass; no combination of multiple inputs, no explicit intent preservation, no conflict handling, and no multi‑draft refinement.",https://scispace.com/paper/http://arxiv.org/abs/2503.16514v3,2025,Preprint,"","Bardia Nadimi
+Ghali Omar Boutaib
+Hao Zheng","",http://arxiv.org/pdf/2503.16514v3,"Designing Verilog modules requires meticulous attention to correctness,
+efficiency, and adherence to design specifications. However, manually writing
+Verilog code remains a complex and time-consuming task that demands both expert
+knowledge and iterative refinement. Leveraging recent advancements in large
+language models (LLMs) and their structured text generation capabilities, we
+propose VeriMind, an agentic LLM framework for Verilog code generation that
+significantly automates and optimizes the synthesis process. Unlike traditional
+LLM-based code generators, VeriMind employs a structured reasoning approach:
+given a user-provided prompt describing design requirements, the system first
+formulates a detailed train of thought before the final Verilog code is
+generated. This multi-step methodology enhances interpretability, accuracy, and
+adaptability in hardware design. In addition, we introduce a novel evaluation
+metric-pass@ARC-which combines the conventional pass@k measure with Average
+Refinement Cycles (ARC) to capture both success rate and the efficiency of
+iterative refinement. Experimental results on diverse hardware design tasks
+demonstrated that our approach achieved up to $8.3\%$ improvement on pass@k
+metric and $8.1\%$ on pass@ARC metric. These findings underscore the
+transformative potential of agentic LLMs in automated hardware design, RTL
+development, and digital system synthesis."
+On the interaction between software engineers and data scientists when building machine learning-enabled systems,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on collaboration between engineers and data scientists for ML systems; does not address multi‑source code/test synthesis, intent preservation, conflict resolution, LLM refinement, benchmark evaluation, or theoretical ensemble analysis.",https://scispace.com/paper/on-the-interaction-between-software-engineers-and-data-j1wy3illnw,2024,Dissertation,"",Gabriel Busquim,10.17771/pucrio.acad.67085,https://scispace.compdf/on-the-interaction-between-software-engineers-and-data-j1wy3illnw.pdf,""
+Personalised distillation: Empowering open-sourced llms with adaptive learning for code generation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses teacher LLM to refine a single student attempt; no combination of multiple sources, intent preservation, conflict handling, or multi‑draft refinement.",https://scispace.com/paper/personalised-distillation-empowering-open-sourced-llms-with-mwzlwsh2zk,2023,Journal Article,arXiv.org,"Hailin Chen
+Amrita Saha
+Steven Hoi
+Shafiq Joty",10.48550/arxiv.2310.18628,https://arxiv.org/pdf/2310.18628,"With the rise of powerful closed-sourced LLMs (ChatGPT, GPT-4), there are increasing interests in distilling the capabilies of close-sourced LLMs to smaller open-sourced LLMs. Previous distillation methods usually prompt ChatGPT to generate a set of instructions and answers, for the student model to learn. However, such standard distillation approach neglects the merits and conditions of the student model. Inspired by modern teaching principles, we design a personalised distillation process, in which the student attempts to solve a task first, then the teacher provides an adaptive refinement for the student to improve. Instead of feeding the student with teacher's prior, personalised distillation enables personalised learning for the student model, as it only learns on examples it makes mistakes upon and learns to improve its own solution. On code generation, personalised distillation consistently outperforms standard distillation with only one third of the data. With only 2.5-3K personalised examples that incur a data-collection cost of 4-6$, we boost CodeGen-mono-16B by 7% to achieve 36.4% pass@1 and StarCoder by 12.2% to achieve 45.8% pass@1 on HumanEval. "
+Automatic Unit Test Data Generation and Actor-Critic Reinforcement Learning for Code Synthesis,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses RL to generate unit tests and code from single descriptions; no multi‑source merging, intent preservation, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/automatic-unit-test-data-generation-and-actor-critic-4mnidp7uiw,2023,Journal Article,arXiv.org,"Philip John Gorinski
+Matthieu Zimmer
+Gerasimos Lampouras
+Derrick-Goh-Xin Deik
+Ignacio Iacobacci",10.48550/arxiv.2310.13669,https://scispace.compdf/automatic-unit-test-data-generation-and-actor-critic-4mnidp7uiw.pdf,"The advent of large pre-trained language models in the domain of Code Synthesis has shown remarkable performance on various benchmarks, treating the problem of Code Generation in a fashion similar to Natural Language Generation, trained with a Language Modelling (LM) objective. In addition, the property of programming language code being precisely evaluable with respect to its semantics -- through the use of Unit Tests to check its functional correctness -- lends itself to using Reinforcement Learning (RL) as a further training paradigm. Previous work has shown that RL can be applied as such to improve models' coding capabilities; however, such RL-based methods rely on a reward signal based on defined Unit Tests, which are much harder to obtain compared to the huge crawled code datasets used in LM objectives. In this work, we present a novel approach to automatically obtain data consisting of function signatures and associated Unit Tests, suitable for RL training of Code Synthesis models. We also introduce a straightforward, simple yet effective Actor-Critic RL training scheme and show that it, in conjunction with automatically generated training data, leads to improvement of a pre-trained code language model's performance by up to 9.9% improvement over the original underlying code synthesis LM, and up to 4.3% over RL-based models trained with standard PPO or CodeRL."
+LUNA: A Model-Based Universal Analysis Framework for Large Language Models,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on model‑based analysis of Transformers and LLMs, not on multi‑source code/test synthesis, conflict handling, or LLM‑driven refinement of multiple drafts.",https://scispace.com/paper/luna-a-model-based-universal-analysis-framework-for-large-58kpz1nsul,2023,Journal Article,arXiv.org,"Da Song
+Xuan Xie
+Jiayang Song
+Derui Zhu
+Yuheng Huang
+Felix Juefei-Xu
+Lei Ma",10.48550/arxiv.2310.14211,https://scispace.compdf/luna-a-model-based-universal-analysis-framework-for-large-58kpz1nsul.pdf,"Over the past decade, Artificial Intelligence (AI) has had great success recently and is being used in a wide range of academic and industrial fields. More recently, LLMs have made rapid advancements that have propelled AI to a new level, enabling even more diverse applications and industrial domains with intelligence, particularly in areas like software engineering and natural language processing. Nevertheless, a number of emerging trustworthiness concerns and issues exhibited in LLMs have already recently received much attention, without properly solving which the widespread adoption of LLMs could be greatly hindered in practice. The distinctive characteristics of LLMs, such as the self-attention mechanism, extremely large model scale, and autoregressive generation schema, differ from classic AI software based on CNNs and RNNs and present new challenges for quality analysis. Up to the present, it still lacks universal and systematic analysis techniques for LLMs despite the urgent industrial demand. Towards bridging this gap, we initiate an early exploratory study and propose a universal analysis framework for LLMs, LUNA, designed to be general and extensible, to enable versatile analysis of LLMs from multiple quality perspectives in a human-interpretable manner. In particular, we first leverage the data from desired trustworthiness perspectives to construct an abstract model as an auxiliary analysis asset, which is empowered by various abstract model construction methods. To assess the quality of the abstract model, we collect and define a number of evaluation metrics, aiming at both abstract model level and the semantics level. Then, the semantics, which is the degree of satisfaction of the LLM w.r.t. the trustworthiness perspective, is bound to and enriches the abstract model with semantics, which enables more detailed analysis applications for diverse purposes."
+"Knowledge-Aware Artifact Image Synthesis with LLM-Enhanced Prompting and
+  Multi-Source Supervision","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on image generation for archaeological artifacts using diffusion models and LLM‑derived prompts; no code, test, or software‑engineering synthesis involved.",https://scispace.com/paper/http://arxiv.org/abs/2312.08056v1,2023,Preprint,"","Shengguang Wu
+Zhenglun Chen
+Qi Su","",http://arxiv.org/pdf/2312.08056v1,"Ancient artifacts are an important medium for cultural preservation and
+restoration. However, many physical copies of artifacts are either damaged or
+lost, leaving a blank space in archaeological and historical studies that calls
+for artifact image generation techniques. Despite the significant advancements
+in open-domain text-to-image synthesis, existing approaches fail to capture the
+important domain knowledge presented in the textual description, resulting in
+errors in recreated images such as incorrect shapes and patterns. In this
+paper, we propose a novel knowledge-aware artifact image synthesis approach
+that brings lost historical objects accurately into their visual forms. We use
+a pretrained diffusion model as backbone and introduce three key techniques to
+enhance the text-to-image generation framework: 1) we construct prompts with
+explicit archaeological knowledge elicited from large language models (LLMs);
+2) we incorporate additional textual guidance to correlated historical
+expertise in a contrastive manner; 3) we introduce further visual-semantic
+constraints on edge and perceptual features that enable our model to learn more
+intricate visual details of the artifacts. Compared to existing approaches, our
+proposed model produces higher-quality artifact images that align better with
+the implicit details and historical knowledge contained within written
+documents, thus achieving significant improvements across automatic metrics and
+in human evaluation. Our code and data are available at
+https://github.com/danielwusg/artifact_diffusion."
+"Redefining Crowdsourced Test Report Prioritization: An Innovative
+  Approach with Large Language Model","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on clustering and prioritizing test reports, not on merging multiple code/test inputs or preserving their intent; lacks conflict resolution, multi‑draft refinement, benchmark evaluation, or theoretical ensemble analysis.",https://scispace.com/paper/redefining-crowdsourced-test-report-prioritization-an-4nvjgh0xhaw3,2024,Journal Article,"","Yuchen Ling
+Shengcheng Yu
+Chunrong Fang
+Guoqing Pan
+Jun Wang
+Jia Liu",10.48550/arxiv.2411.17045,https://scispace.compdf/redefining-crowdsourced-test-report-prioritization-an-4nvjgh0xhaw3.pdf,"Context: Crowdsourced testing has gained popularity in software testing, especially for mobile app testing, due to its ability to bring diversity and tackle fragmentation issues. However, the openness of crowdsourced testing presents challenges, particularly in the manual review of numerous test reports, which is time-consuming and labor-intensive. Objective: The primary goal of this research is to improve the efficiency of review processes in crowdsourced testing. Traditional approaches to test report prioritization lack a deep understanding of semantic information in textual descriptions of these reports. This paper introduces LLMPrior, a novel approach for prioritizing crowdsourced test reports using large language models (LLMs). Method: LLMPrior leverages LLMs for the analysis and clustering of crowdsourced test reports based on the types of bugs revealed in their textual descriptions. This involves using prompt engineering techniques to enhance the performance of LLMs. Following the clustering, a recurrent selection algorithm is applied to prioritize the reports. Results: Empirical experiments are conducted to evaluate the effectiveness of LLMPrior. The findings indicate that LLMPrior not only surpasses current state-of-the-art approaches in terms of performance but also proves to be more feasible, efficient, and reliable. This success is attributed to the use of prompt engineering techniques and the cluster-based prioritization strategy. Conclusion: LLMPrior represents a significant advancement in crowdsourced test report prioritization. By effectively utilizing large language models and a cluster-based strategy, it addresses the challenges in traditional prioritization approaches, offering a more efficient and reliable solution for app developers dealing with crowdsourced test reports. "
+The integration of machine learning into automated test generation: A systematic mapping study,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a systematic mapping of ML applications in test generation; does not propose a multi‑source synthesis method, conflict handling, LLM refinement, or benchmark evaluation.",https://scispace.com/paper/the-integration-of-machine-learning-into-automated-test-1a04w6sf,2022,Journal Article,"Software Testing, Verification & Reliability","Afonso Fontes
+Gregory Gay",10.1002/stvr.1845,https://onlinelibrary.wiley.com/doi/pdf/10.1002/stvr.1845,"Machine learning (ML) may enable effective automated test generation. We characterize emerging research, examining testing practices, researcher goals, ML techniques applied, evaluation, and challenges in this intersection by performing. We perform a systematic mapping study on a sample of 124 publications. ML generates input for system, GUI, unit, performance, and combinatorial testing or improves the performance of existing generation methods. ML is also used to generate test verdicts, property‐based, and expected output oracles. Supervised learning—often based on neural networks—and reinforcement learning—often based on Q‐learning—are common, and some publications also employ unsupervised or semi‐supervised learning. (Semi‐/Un‐)Supervised approaches are evaluated using both traditional testing metrics and ML‐related metrics (e.g., accuracy), while reinforcement learning is often evaluated using testing metrics tied to the reward function. The work‐to‐date shows great promise, but there are open challenges regarding training data, retraining, scalability, evaluation complexity, ML algorithms employed—and how they are applied—benchmarks, and replicability. Our findings can serve as a roadmap and inspiration for researchers in this field."
+SynthesizRR: Generating Diverse Datasets with Retrieval Augmentation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on NLP dataset generation via retrieval‑augmented prompting, not on code/test synthesis, intent preservation, conflict handling, or software‑engineering benchmarks.",https://scispace.com/paper/http://arxiv.org/abs/2405.10040v3,2024,Preprint,"","Abhishek Divekar
+Greg Durrett","",http://arxiv.org/pdf/2405.10040v3,"It is often desirable to distill the capabilities of large language models
+(LLMs) into smaller student models due to compute and memory constraints. One
+way to do this for classification tasks is via dataset synthesis, which can be
+accomplished by generating examples of each label from the LLM. Prior
+approaches to synthesis use few-shot prompting, which relies on the LLM's
+parametric knowledge to generate usable examples. However, this leads to issues
+of repetition, bias towards popular entities, and stylistic differences from
+human text. In this work, we propose Synthesize by Retrieval and Refinement
+(SynthesizRR), which uses retrieval augmentation to introduce variety into the
+dataset synthesis process: as retrieved passages vary, the LLM is seeded with
+different content to generate its examples. We empirically study the synthesis
+of six datasets, covering topic classification, sentiment analysis, tone
+detection, and humor, requiring complex synthesis strategies. We find that
+SynthesizRR greatly improves lexical and semantic diversity, similarity to
+human-written text, and distillation performance, when compared to 32-shot
+prompting and four prior approaches. We release our code to perform all steps
+at https://github.com/amazon-science/synthesizrr"
+Exedec: Execution decomposition for compositional generalization in neural program synthesis,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on execution‑guided decomposition of single‑example tasks; does not combine multiple inputs, preserve merged intent, resolve conflicts, or refine multi‑draft LLM outputs.",https://scispace.com/paper/exedec-execution-decomposition-for-compositional-e2oitkr3zr,2023,Journal Article,arXiv.org,"Kensen Shi
+Joey Hong
+Manzil Zaheer
+Peng Yin
+Charles Sutton",10.48550/arxiv.2307.13883,https://arxiv.org/pdf/2307.13883,"When writing programs, people have the ability to tackle a new complex task by decomposing it into smaller and more familiar subtasks. While it is difficult to measure whether neural program synthesis methods have similar capabilities, we can measure whether they compositionally generalize, that is, whether a model that has been trained on the simpler subtasks is subsequently able to solve more complex tasks. In this paper, we characterize several different forms of compositional generalization that are desirable in program synthesis, forming a meta-benchmark which we use to create generalization tasks for two popular datasets, RobustFill and DeepCoder. We then propose ExeDec, a novel decomposition-based synthesis strategy that predicts execution subgoals to solve problems step-by-step informed by program execution at each step. When used with Transformer models trained from scratch, ExeDec has better synthesis performance and greatly improved compositional generalization ability compared to baselines. Finally, we use our benchmarks to demonstrate that LLMs struggle to compositionally generalize when asked to do programming-by-example in a few-shot setting, but an ExeDec-style prompting approach can improve the generalization ability and overall performance."
+"CodeARC: Benchmarking Reasoning Capabilities of LLM Agents for Inductive
+  Program Synthesis","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on interactive inductive synthesis via querying a hidden function; does not combine multiple sources, preserve original intent, resolve conflicts, or refine multiple drafts.",https://scispace.com/paper/http://arxiv.org/abs/2503.23145v2,2025,Preprint,"","Anjiang Wei
+Tarun Suresh
+Jiannan Cao
+Naveen Kannan
+Yuheng Wu
+Kai Yan
+Thiago S. F. X. Teixeira
+Ke Wang
+Alex Aiken","",http://arxiv.org/pdf/2503.23145v2,"Inductive program synthesis, or programming by example, requires synthesizing
+functions from input-output examples that generalize to unseen inputs. While
+large language model agents have shown promise in programming tasks guided by
+natural language, their ability to perform inductive program synthesis is
+underexplored. Existing evaluation protocols rely on static sets of examples
+and held-out tests, offering no feedback when synthesized functions are
+incorrect and failing to reflect real-world scenarios such as reverse
+engineering. We propose CodeARC, the Code Abstraction and Reasoning Challenge,
+a new evaluation framework where agents interact with a hidden target function
+by querying it with new inputs, synthesizing candidate functions, and
+iteratively refining their solutions using a differential testing oracle. This
+interactive setting encourages agents to perform function calls and
+self-correction based on feedback. We construct the first large-scale benchmark
+for general-purpose inductive program synthesis, featuring 1114 functions.
+Among 18 models evaluated, o3-mini performs best with a success rate of 52.7%,
+highlighting the difficulty of this task. Fine-tuning LLaMA-3.1-8B-Instruct on
+curated synthesis traces yields up to a 31% relative performance gain. CodeARC
+provides a more realistic and challenging testbed for evaluating LLM-based
+program synthesis and inductive reasoning. Our code, data, and models are
+publicly available at https://github.com/Anjiang-Wei/CodeARC"
+A Survey on Data Synthesis and Augmentation for Large Language Models,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey focuses on data synthesis and annotation strategies for LLMs, without addressing multi‑source code/test merging, intent preservation, conflict handling, or SE benchmark evaluation.",https://scispace.com/paper/a-survey-on-data-synthesis-and-augmentation-for-large-3m9ltmhkelkj,2024,Journal Article,"","Ke Wang
+Jiahui Zhu
+Min Ren
+Zeming Liu
+Shiwei Li
+Z. B. Zhang
+C. Zhang
+Xiao-Yu Wu
+Qiqi Zhan
+Qing-Jie Liu
+Yunhong Wang",10.48550/arxiv.2410.12896,https://scispace.compdf/a-survey-on-data-synthesis-and-augmentation-for-large-3m9ltmhkelkj.pdf,"The success of Large Language Models (LLMs) is inherently linked to the availability of vast, diverse, and high-quality data for training and evaluation. However, the growth rate of high-quality data is significantly outpaced by the expansion of training datasets, leading to a looming data exhaustion crisis. This underscores the urgent need to enhance data efficiency and explore new data sources. In this context, synthetic data has emerged as a promising solution. Currently, data generation primarily consists of two major approaches: data augmentation and synthesis. This paper comprehensively reviews and summarizes data generation techniques throughout the lifecycle of LLMs, including data preparation, pre-training, fine-tuning, instruction-tuning, preference alignment, and applications. Furthermore, We discuss the current constraints faced by these methods and investigate potential pathways for future development and research. Our aspiration is to equip researchers with a clear understanding of these methodologies, enabling them to swiftly identify appropriate data generation strategies in the construction of LLMs, while providing valuable insights for future exploration. "
+"Context-Adaptive Synthesis and Compression for Enhanced
+  Retrieval-Augmented Generation in Complex Domains","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on scientific document retrieval and context compression for QA, not on code/test synthesis, intent preservation, or software‑engineering benchmarks.",https://scispace.com/paper/http://arxiv.org/abs/2508.19357v1,2025,Preprint,"","Peiran Zhou
+Junnan Zhu
+Yichen Shen
+Ruoxi Yu","",http://arxiv.org/pdf/2508.19357v1,"Large Language Models (LLMs) excel in language tasks but are prone to
+hallucinations and outdated knowledge. Retrieval-Augmented Generation (RAG)
+mitigates these by grounding LLMs in external knowledge. However, in complex
+domains involving multiple, lengthy, or conflicting documents, traditional RAG
+suffers from information overload and inefficient synthesis, leading to
+inaccurate and untrustworthy answers. To address this, we propose CASC
+(Context-Adaptive Synthesis and Compression), a novel framework that
+intelligently processes retrieved contexts. CASC introduces a Context Analyzer
+& Synthesizer (CAS) module, powered by a fine-tuned smaller LLM, which performs
+key information extraction, cross-document consistency checking and conflict
+resolution, and question-oriented structured synthesis. This process transforms
+raw, scattered information into a highly condensed, structured, and
+semantically rich context, significantly reducing the token count and cognitive
+load for the final Reader LLM. We evaluate CASC on SciDocs-QA, a new
+challenging multi-document question answering dataset designed for complex
+scientific domains with inherent redundancies and conflicts. Our extensive
+experiments demonstrate that CASC consistently outperforms strong baselines."
+Towards an Understanding of Large Language Models in Software Engineering Tasks,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey discusses LLM capabilities for code generation and summarization, but does not present multi‑source synthesis, intent preservation, conflict resolution, or LLM‑driven refinement of multiple drafts.",https://scispace.com/paper/towards-an-understanding-of-large-language-models-in-32tr86xw42,2023,Journal Article,arXiv.org,"Zibin Zheng
+Kai-Chun Ning
+Jiachi Chen
+Yanlin Wang
+Wenqing Chen
+Lianghong Guo
+Weicheng Wang",10.48550/arxiv.2308.11396,https://scispace.compdf/towards-an-understanding-of-large-language-models-in-32tr86xw42.pdf,"Large Language Models (LLMs) have drawn widespread attention and research due to their astounding performance in tasks such as text generation and reasoning. Derivative products, like ChatGPT, have been extensively deployed and highly sought after. Meanwhile, the evaluation and optimization of LLMs in software engineering tasks, such as code generation, have become a research focus. However, there is still a lack of systematic research on the application and evaluation of LLMs in the field of software engineering. Therefore, this paper is the first to comprehensively investigate and collate the research and products combining LLMs with software engineering, aiming to answer two questions: (1) What are the current integrations of LLMs with software engineering? (2) Can LLMs effectively handle software engineering tasks? To find the answers, we have collected related literature as extensively as possible from seven mainstream databases, and selected 123 papers for analysis. We have categorized these papers in detail and reviewed the current research status of LLMs from the perspective of seven major software engineering tasks, hoping this will help researchers better grasp the research trends and address the issues when applying LLMs. Meanwhile, we have also organized and presented papers with evaluation content to reveal the performance and effectiveness of LLMs in various software engineering tasks, providing guidance for researchers and developers to optimize. "
+Exploring the Role of Large Language Models in Automated Code Review and Software Quality Enhancement,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on LLM‑driven code review, not on merging multiple code/test sources, preserving intent, conflict resolution, or multi‑draft refinement; lacks benchmark experiments or theoretical ensemble analysis.",https://scispace.com/paper/exploring-the-role-of-large-language-models-in-automated-oj12sl5rve9s,2023,Journal Article,"International Journal of Innovative Research in Science, Engineering and Technology",Gopinath Kathiresan,10.15680/ijirset.2023.1209004,"","As the newest, most savvy technology domain, Large Language Models (LLMs) are the technological force which is now revolutionizing Automated Code Review and Software Quality Assurance, making the context aware analysis, adaptive learning, and the intelligent recommendations. However, traditional code review methods are not only time consuming, but also prone to human error and are not scalable. The use of LLMs in software engineering allows for the detection of defects, optimization of performance and the maintenance of improve mental quality. In this study, we examine the path of automated code review, LLM capabilities and the effect they have on software quality. LLMs clearly have great advantages, but accuracy is still a concern, false positives abound, biases lurk, and computation can be a constraint. The research also identifies areas of future advancement on the hybrid AI-human review systems as well as improved LLM architectures that understand the code significantly better for more robust reviews. "
+Breaking the Silence: the Threats of Using LLMs in Software Engineering,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on validity threats, reproducibility, and guidelines for LLM use in SE; does not propose multi‑source synthesis, intent preservation, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/breaking-the-silence-the-threats-of-using-llms-in-software-1bdld4tno6,2024,Journal Article,"","June Sallou
+Thomas Durieux
+Annibale Panichella",10.1145/3639476.3639764,"","Large Language Models (LLMs) have gained considerable traction within the Software Engineering (SE) community, impacting various SE tasks from code completion to test generation, from program repair to code summarization.Despite their promise, researchers must still be careful as numerous intricate factors can influence the outcomes of experiments involving LLMs.This paper initiates an open discussion on potential threats to the validity of LLM-based research including issues such as closed-source models, possible data leakage between LLM training data and research evaluation, and the reproducibility of LLM-based findings.In response, this paper proposes a set of guidelines tailored for SE researchers and Language Model (LM) providers to mitigate these concerns.The implications of the guidelines are illustrated using existing good practices followed by LLM providers and a practical example for SE researchers in the context of test case generation. "
+The use of generative artificial intelligence in software testing,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses generative AI for test creation, but lacks multi‑source combination, intent preservation, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/the-use-of-generative-artificial-intelligence-in-software-402xhckkvy,2024,Journal Article,Sistemi ta tehnologìï,"Hnatushenko V.V.
+Pavlenko I.V.",10.34185/1562-9945-2-151-2024-10,https://scispace.compdf/the-use-of-generative-artificial-intelligence-in-software-402xhckkvy.pdf,"This article explores the potential of using generative artificial intelligence (AI) for software testing, reflecting on both the advantages and potential drawbacks of this emerging technology. Considering the vital role of rigorous testing in software production, the authors ponder whether generative AI could make the testing process more efficient and comprehen-sive, without the need to increase resources. The article delves into the current limitations of this technology, emphasizing the need for continuous exploration and adaptation. It con-cludes with a summation of potential innovative solutions and avenues for future investiga-tion. The paper encourages discussions surrounding the question of fully automated testing and the role of human specialists in the future of QA. It ultimately provides a thought-provoking reflection on the intersection of emerging technologies, and their societal impacts"
+Artificial Intelligence in System and Software Engineering for Auto Code Generation,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on AI‑driven code generation but lacks multi‑source input, intent preservation, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/artificial-intelligence-in-system-and-software-engineering-dadu7izr50nv,2024,Journal Article,"","Anupriya Sharma
+Vandna Rawat
+Vishan Kumar Gupta
+Kapil Ghai",10.1109/iceect61758.2024.10738945,"","Artificial Intelligence has profoundly impacted system and software engineering by facilitating the automation of complicated tasks, reducing errors, and accelerating the development process. AI-driven tools help enhance efficiency, improve code quality, and promote the generation of more adaptive and innovative software solutions. The present research uses AI-generated tools to explore how AI transforms code synthesis. The study will include a comparative analysis of the performance of manual coding and other automated methods to explore how AI can accelerate code synthesis and make modern web development more competent or effective. It is suggested in the research that with algorithmic and contextual consideration, the quality of code developed by the AI would be higher in most cases than by people due to lower error rates and shorter synthesis. Overall, the central conclusion of the research is that AI plays a crucial role in transforming systems and software engineering. The paper also includes information on ethical dilemmas, robust validation mechanisms, conservative modes, and current research."
+"Software testing with large language models: Survey, landscape, and vision","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey of LLM testing; discusses ensemble and refinement but lacks original method, intent preservation, conflict resolution, or multi‑draft refinement implementation.",https://scispace.com/paper/software-testing-with-large-language-models-survey-landscape-1e8o1s1vz4,2024,Journal Article,IEEE Transactions on Software Engineering,"Junjie Wang
+Yuchao Huang
+Chunyang Chen
+Zhe Liu
+Song Wang
+Qing Wang",10.1109/tse.2024.3368208,https://arxiv.org/pdf/2307.07221,""
+A survey on llm-based code generation for low-resource and domain-specific programming languages,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey discusses LLM code generation for niche languages; lacks a concrete multi‑source synthesis method, intent preservation, conflict handling, or multi‑draft LLM refinement.",https://scispace.com/paper/_Ztr9nroSmQJ,"","","","S Joel
+J Wu
+F Fard","",https://dl.acm.org/doi/pdf/10.1145/3770084,""
+Dataset Distillation via Curriculum Data Synthesis in Large Data Era,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on image dataset distillation, not code/test synthesis; lacks multi-source merging, intent preservation, conflict handling, or LLM‑based refinement.",https://scispace.com/paper/http://arxiv.org/abs/2311.18838v2,2023,Preprint,"","Zeyuan Yin
+Zhiqiang Shen","",http://arxiv.org/pdf/2311.18838v2,"Dataset distillation or condensation aims to generate a smaller but
+representative subset from a large dataset, which allows a model to be trained
+more efficiently, meanwhile evaluating on the original testing data
+distribution to achieve decent performance. Previous decoupled methods like
+SRe$^2$L simply use a unified gradient update scheme for synthesizing data from
+Gaussian noise, while, we notice that the initial several update iterations
+will determine the final outline of synthesis, thus an improper gradient update
+strategy may dramatically affect the final generation quality. To address this,
+we introduce a simple yet effective global-to-local gradient refinement
+approach enabled by curriculum data augmentation ($\texttt{CDA}$) during data
+synthesis. The proposed framework achieves the current published highest
+accuracy on both large-scale ImageNet-1K and 21K with 63.2% under IPC (Images
+Per Class) 50 and 36.1% under IPC 20, using a regular input resolution of
+224$\times$224 with faster convergence speed and less synthetic time. The
+proposed model outperforms the current state-of-the-art methods like SRe$^2$L,
+TESLA, and MTT by more than 4% Top-1 accuracy on ImageNet-1K/21K and for the
+first time, reduces the gap to its full-data training counterparts to less than
+absolute 15%. Moreover, this work represents the inaugural success in dataset
+distillation on the larger-scale ImageNet-21K dataset under the standard
+224$\times$224 resolution. Our code and distilled ImageNet-21K dataset of 20
+IPC, 2K recovery budget are available at
+https://github.com/VILA-Lab/SRe2L/tree/main/CDA."

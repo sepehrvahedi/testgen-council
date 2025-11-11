@@ -1,0 +1,1094 @@
+Paper Title,Relevance,Paper Link,Publication Year,Publication Type,Publication Title,Author Names,DOI,PDF Link,Abstract
+Synergistic minds: A collaborative multi-agent framework for integrated AI tool development using diverse large language models,"- **Relevance Score:** 85/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses multi-agent LLM orchestration with specialized models; outperforms single-model baselines; evaluates code generation/unit tests; notes complementary agents; discusses scalability; no diversity theory.",https://scispace.com/paper/synergistic-minds-a-collaborative-multi-agent-framework-for-xiglxbpb9nn1,2025,Journal Article,World Journal Of Advanced Research and Reviews,Arpan Shaileshbhai Korat,10.30574/wjarr.2025.27.2.1806,"","This paper introduces an innovative multi-agent framework for integrated AI tool development that unifies diverse large language models (LLMs) into a cohesive system capable of addressing multifaceted tasks. Unlike conventional monolithic AI systems, our approach dynamically decomposes complex queries and routes them to specialized agents, including models fine-tuned for summarization, translation, code generation, and domain-specific analysis, that collaborate through a centralized orchestration layer. This orchestration not only coordinates inter- agent communication via a shared memory module but also integrates user feedback via a reinforcement learning loop for continuous system improvement. A comprehensive case study in research assistance demonstrates that our system outperforms single-model baselines in both quantitative metrics (e.g., ROUGE, BLEU, unit test accuracy) and qualitative user satisfaction. In addition, we discuss technical challenges, scalability issues, and future directions. "
+XUAT-Copilot: Multi-Agent Collaborative System for Automated User Acceptance Testing with Large Language Model,"- **Relevance Score:** 75/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** Uses three LLM agents for collaborative UAT test script generation, shows significant Pass@1 gains over a single-agent baseline, provides quantitative software‑engineering results, mentions modest improvement reasons but lacks deep analysis of complementary strengths, diversity, or formal scalability discussion.",https://scispace.com/paper/xuat-copilot-multi-agent-collaborative-system-for-automated-4axckyawm5,2024,Journal Article,arXiv.org,"Zhitao Wang
+Wei Wang
+Zirao Li
+Long Wang
+Can Yi
+Xinjie Xu
+Luyang Cao
+Hanjing Su
+Shouzhi Chen
+Jun Zhou",10.48550/arxiv.2401.02705,"","In past years, we have been dedicated to automating user acceptance testing (UAT) process of WeChat Pay, one of the most influential mobile payment applications in China. A system titled XUAT has been developed for this purpose. However, there is still a human-labor-intensive stage, i.e, test scripts generation, in the current system. Therefore, in this paper, we concentrate on methods of boosting the automation level of the current system, particularly the stage of test scripts generation. With recent notable successes, large language models (LLMs) demonstrate significant potential in attaining human-like intelligence and there has been a growing research area that employs LLMs as autonomous agents to obtain human-like decision-making capabilities. Inspired by these works, we propose an LLM-powered multi-agent collaborative system, named XUAT-Copilot, for automated UAT. The proposed system mainly consists of three LLM-based agents responsible for action planning, state checking and parameter selecting, respectively, and two additional modules for state sensing and case rewriting. The agents interact with testing device, make human-like decision and generate action command in a collaborative way. The proposed multi-agent system achieves a close effectiveness to human testers in our experimental studies and gains a significant improvement of Pass@1 accuracy compared with single-agent architecture. More importantly, the proposed system has launched in the formal testing environment of WeChat Pay mobile app, which saves a considerable amount of manpower in the daily development work."
+MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision,"- **Relevance Score:** 75/100
+- **Relevance Tag:** Highly Relevant
+- **Reasoning:** MAS-ZERO offers a self‑evolving multi‑agent LLM system with strong software‑engineering results and cost‑efficiency, but lacks detailed analysis of complementary strengths or test‑generation gains.",https://scispace.com/paper/mas-zero-designing-multi-agent-systems-with-zero-supervision-u986mpai53wh,2025,Journal Article,"","Zixuan Ke
+Austin Xu
+Yifei Ming
+Xuan-Phi Nguyen
+Caiming Xiong
+Shafiq Joty",10.48550/arxiv.2505.14996,"","Multi-agent systems (MAS) leveraging the impressive capabilities of Large Language Models (LLMs) hold significant potential for tackling complex tasks. However, most current MAS depend on manually designed agent roles and communication protocols. These manual designs often fail to align with the underlying LLMs' strengths and struggle to adapt to novel tasks. Recent automatic MAS approaches attempt to mitigate these limitations but typically necessitate a validation set for tuning and yield static MAS designs lacking adaptability during inference. We introduce MAS-ZERO, the first self-evolved, inference-time framework for automatic MAS design. MAS-ZERO employs meta-level design to iteratively generate, evaluate, and refine MAS configurations tailored to each problem instance, without requiring a validation set. Critically, it enables dynamic agent composition and problem decomposition through meta-feedback on solvability and completeness. Experiments across math, graduate-level QA, and software engineering benchmarks, using both closed-source and open-source LLM backbones of varying sizes, demonstrate that MAS-ZERO outperforms both manual and automatic MAS baselines, achieving a 7.44% average accuracy improvement over the next strongest baseline while maintaining cost-efficiency. These findings underscore the promise of meta-level self-evolved design for creating effective and adaptive MAS. "
+"Diversity Empowers Intelligence: Integrating Expertise of Software
+  Engineering Agents","- **Relevance Score:** 73/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Shows diverse SWE agents improve bug-fixing on SWE‑Bench via hierarchical collaboration and ensemble, but lacks explicit complementary strength analysis, test‑generation results, and scalability discussion.",https://scispace.com/paper/diversity-empowers-intelligence-integrating-expertise-of-1o7imaudjbdd,2024,Journal Article,"","Kexun Zhang
+Weiran Yao
+Zuxin Liu
+Yihao Feng
+Zhi‐Wei Liu
+Rithesh Murthy
+Tian Lan
+Lei Li
+Renze Lou
+Jiacheng Xu
+Pang Bo
+Yingbo Zhou
+Shelby Heinecke
+Silvio Savarese
+Huan Wang
+Caiming Xiong",10.48550/arxiv.2408.07060,https://scispace.compdf/diversity-empowers-intelligence-integrating-expertise-of-1o7imaudjbdd.pdf,"Large language model (LLM) agents have shown great potential in solving real-world software engineering (SWE) problems. The most advanced open-source SWE agent can resolve over 27% of real GitHub issues in SWE-Bench Lite. However, these sophisticated agent frameworks exhibit varying strengths, excelling in certain tasks while underperforming in others. To fully harness the diversity of these agents, we propose DEI (Diversity Empowered Intelligence), a framework that leverages their unique expertise. DEI functions as a meta-module atop existing SWE agent frameworks, managing agent collectives for enhanced problem-solving. Experimental results show that a DEI-guided committee of agents is able to surpass the best individual agent's performance by a large margin. For instance, a group of open-source SWE agents, with a maximum individual resolve rate of 27.3% on SWE-Bench Lite, can achieve a 34.3% resolve rate with DEI, making a 25% improvement and beating most closed-source solutions. Our best-performing group excels with a 55% resolve rate, securing the highest ranking on SWE-Bench Lite. Our findings contribute to the growing body of research on collaborative AI systems and their potential to solve complex software engineering challenges. "
+Automated Summarization of Software Documents: An LLM-based Multi-Agent Approach,"- **Relevance Score:** 72/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses a Teacher‑Student multi‑agent LLM to summarize software docs, outperforming single‑model baselines; evaluates on SE documentation tasks; mentions complementary agent roles and diversity but lacks detailed analysis of heterogeneity, test‑generation, theory, or deep scalability discussion.",https://scispace.com/paper/automated-summarization-of-software-documents-an-llm-based-4o1kygxeu7ff,2025,Journal Article,"","Dan Phuoc Nguyen
+Minh T. Nguyen
+Phuong T. Nguyen
+Juri Di Rocco
+Davide Di Ruscio",10.21203/rs.3.rs-7539426/v1,https://scispace.compdf/automated-summarization-of-software-documents-an-llm-based-4o1kygxeu7ff.pdf,"<title>Abstract</title> Large Language Models (LLMs) and LLM-based Multi-Agent Sys-tems (MAS) are revolutionizing software engineering (SE) by advancing automation, decision-making, and knowledge processing. Their recent application to SE tasks has already shown promising results. In this paper, we focus on summarization as a key application area. We present Metagente, an LLM-based MAS designed to generate concise and accurate summaries ofsoftware documentation. Metagente employs a Teacher–Student architecture where multiple LLM agents collaborate to enhance relevance and precision of produced summaries. An empirical evaluation on real-world datasets demonstrates Metagente’s effectiveness in streamlining workflows, outperforming theconsidered baselines. The evaluation provides evidence that Metagente improves summarization for requirements analysis and technical documentation. Our findings underscore the transformative potential of these technologies inSE, while identifying challenges and future research directions for their seamless integration. "
+"Ensemble Learning for Large Language Models in Text and Code Generation:
+  A Survey","- **Relevance Score:** 71/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Surveys LLM ensemble methods, detailing multi‑model collaboration, performance gains, and diversity concepts; lacks original software‑engineering experiments or formal theory.",https://scispace.com/paper/http://arxiv.org/abs/2503.13505v2,2025,Preprint,"","Mari Ashiga
+Wei Jie
+Fan Wu
+Vardan Voskanyan
+Fateme Dinmohammadi
+Paul Brookes
+Jingzhi Gong
+Zheng Wang","",http://arxiv.org/pdf/2503.13505v2,"Generative Pretrained Transformers (GPTs) are foundational Large Language
+Models (LLMs) for text generation. However, individual LLMs often produce
+inconsistent outputs and exhibit biases, limiting their representation of
+diverse language patterns. The closed-source nature of many powerful LLMs
+further restricts industry applications due to data privacy concerns. Inspired
+by successes in text generation, LLM ensemble techniques are now increasingly
+explored for code generation. This article reviews these emerging ensemble
+approaches to enhance understanding, encourage further research, and promote
+practical implementation in both text and code generation. We categorize LLM
+ensembles into seven main methods - weight merging, knowledge fusion,
+mixture-of-experts, reward ensemble, output ensemble, routing, and cascading -
+analyzing capabilities of those approaches. Our findings highlight key benefits
+such as improved diversity representation, enhanced output quality, and greater
+application flexibility. These insights aid model selection for real-world
+tasks and crucially, lay groundwork for extending ensemble strategies to
+multimodal LLMs."
+Trae agent: An llm-based agent for software engineering with test-time scaling,"- **Relevance Score:** 71/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Highly Relevant: Demonstrates ensemble outperforms single LLMs on software‑engineering benchmarks, especially test generation, and details complementary strengths of each model. Somewhat Relevant: Employs multiple LLMs as agents but collaboration is limited; discusses diversity without deep wisdom‑of‑crowds validation; mentions scalability but lacks formal resource analysis.",https://scispace.com/paper/wNl-NIdTw1wJ,"","","","Y Xiong
+C Peng
+X Liu
+Trae Research Team","",https://arxiv.org/pdf/2507.23370?,""
+Multi-Agent Software Development through Cross-Team Collaboration,"- **Relevance Score:** 56/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Introduces a cross‑team LLM framework that improves software generation quality and discusses scalability, but does not address model‑specific complementarity or test‑generation benchmarks.",https://scispace.com/paper/multi-agent-software-development-through-cross-team-26op4rp0h3,2024,Preprint,"","Zhuoyun Du
+Chen Qian
+Wei Liu
+Zihao Xie
+Yifei Wang
+Yalong Dang
+Weize Chen
+Cheng Yang",10.48550/arxiv.2406.08979,https://scispace.compdf/multi-agent-software-development-through-cross-team-26op4rp0h3.pdf,"The latest breakthroughs in Large Language Models (LLMs), eg., ChatDev, have catalyzed profound transformations, particularly through multi-agent collaboration for software development. LLM agents can collaborate in teams like humans, and follow the waterfall model to sequentially work on requirements analysis, development, review, testing, and other phases to perform autonomous software generation. However, for an agent team, each phase in a single development process yields only one possible outcome. This results in the completion of only one development chain, thereby losing the opportunity to explore multiple potential decision paths within the solution space. Consequently, this may lead to obtaining suboptimal results. To address this challenge, we introduce Cross-Team Collaboration (CTC), a scalable multi-team framework that enables orchestrated teams to jointly propose various decisions and communicate with their insights in a cross-team collaboration environment for superior content generation. Experimental results in software development reveal a notable increase in quality compared to state-of-the-art baselines, underscoring the efficacy of our framework. The significant improvements in story generation demonstrate the promising generalization ability of our framework across various domains. We anticipate that our work will guide LLM agents towards a cross-team paradigm and contribute to their significant growth in but not limited to software development. The code and data will be available at https://github.com/OpenBMB/ChatDev. "
+Large Language Models-Based Agents in Software Development,"- **Relevance Score:** 56/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses multi-agent LLMs to support requirements, coding, and testing phases, showing collaborative workflows and software‑engineering experiments. Mentions combining agents and complementary abilities, but lacks concrete ensemble benchmarks, test‑generation results, formal diversity theory, or detailed scalability analysis.",https://scispace.com/paper/-9gGZ_GH7M4J,"","","",AJ Asunmaa,"",https://aaltodoc.aalto.fi/bitstreams/ab7865f2-2fbc-4a66-b161-82b9e61288fc/download,""
+"Diversity Empowers Intelligence: Integrating Expertise of Software
+  Engineering Agents","- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses diverse SWE agents and hierarchical ensembling to improve bug‑fixing on SWE‑Bench, showing some ensemble gains and diversity analysis, but lacks multiple distinct LLMs, test‑generation results, and detailed scalability discussion.",https://scispace.com/paper/diversity-empowers-intelligence-integrating-expertise-of-1o7imaudjbdd,2024,Journal Article,"","Kexun Zhang
+Weiran Yao
+Zuxin Liu
+Yihao Feng
+Zhi‐Wei Liu
+Rithesh Murthy
+Tian Lan
+Lei Li
+Renze Lou
+Jiacheng Xu
+Pang Bo
+Yingbo Zhou
+Shelby Heinecke
+Silvio Savarese
+Huan Wang
+Caiming Xiong",10.48550/arxiv.2408.07060,https://scispace.compdf/diversity-empowers-intelligence-integrating-expertise-of-1o7imaudjbdd.pdf,"Large language model (LLM) agents have shown great potential in solving real-world software engineering (SWE) problems. The most advanced open-source SWE agent can resolve over 27% of real GitHub issues in SWE-Bench Lite. However, these sophisticated agent frameworks exhibit varying strengths, excelling in certain tasks while underperforming in others. To fully harness the diversity of these agents, we propose DEI (Diversity Empowered Intelligence), a framework that leverages their unique expertise. DEI functions as a meta-module atop existing SWE agent frameworks, managing agent collectives for enhanced problem-solving. Experimental results show that a DEI-guided committee of agents is able to surpass the best individual agent's performance by a large margin. For instance, a group of open-source SWE agents, with a maximum individual resolve rate of 27.3% on SWE-Bench Lite, can achieve a 34.3% resolve rate with DEI, making a 25% improvement and beating most closed-source solutions. Our best-performing group excels with a 55% resolve rate, securing the highest ranking on SWE-Bench Lite. Our findings contribute to the growing body of research on collaborative AI systems and their potential to solve complex software engineering challenges. "
+Diversity empowers intelligence: Integrating expertise of software engineering agents,"- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses diverse SWE agents and hierarchical ensembling to boost bug‑fixing on SWE‑Bench, showing ensemble gains; discusses intra/inter diversity but lacks distinct model types, test‑generation results, deep theory, or scalability analysis.",https://scispace.com/paper/diversity-empowers-intelligence-integrating-expertise-of-1o7imaudjbdd,2024,Journal Article,"","Kexun Zhang
+Weiran Yao
+Zuxin Liu
+Yihao Feng
+Zhi‐Wei Liu
+Rithesh Murthy
+Tian Lan
+Lei Li
+Renze Lou
+Jiacheng Xu
+Pang Bo
+Yingbo Zhou
+Shelby Heinecke
+Silvio Savarese
+Huan Wang
+Caiming Xiong",10.48550/arxiv.2408.07060,https://arxiv.org/pdf/2408.07060?,"Large language model (LLM) agents have shown great potential in solving real-world software engineering (SWE) problems. The most advanced open-source SWE agent can resolve over 27% of real GitHub issues in SWE-Bench Lite. However, these sophisticated agent frameworks exhibit varying strengths, excelling in certain tasks while underperforming in others. To fully harness the diversity of these agents, we propose DEI (Diversity Empowered Intelligence), a framework that leverages their unique expertise. DEI functions as a meta-module atop existing SWE agent frameworks, managing agent collectives for enhanced problem-solving. Experimental results show that a DEI-guided committee of agents is able to surpass the best individual agent's performance by a large margin. For instance, a group of open-source SWE agents, with a maximum individual resolve rate of 27.3% on SWE-Bench Lite, can achieve a 34.3% resolve rate with DEI, making a 25% improvement and beating most closed-source solutions. Our best-performing group excels with a 55% resolve rate, securing the highest ranking on SWE-Bench Lite. Our findings contribute to the growing body of research on collaborative AI systems and their potential to solve complex software engineering challenges. "
+Self-evolving multi-agent collaboration networks for software development,"- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses a self‑evolving multi‑agent LLM network for software development and evaluates on function‑ and software‑level coding benchmarks; shows overall performance gains but lacks explicit heterogeneous ensembles, complementary strength analysis, or test‑generation focus.",https://scispace.com/paper/self-evolving-multi-agent-collaboration-networks-for-3eouucz3wlh0,2024,Journal Article,"","Hu Yue
+Yuanfang Cai
+Yi Du
+Xinyu Zhu
+Xiaowei Liu
+Zhiqiang Yu
+Y. Thomas Hou
+Shuo Tang
+Sixuan CHEN",10.48550/arxiv.2410.16946,https://arxiv.org/pdf/2410.16946?,"LLM-driven multi-agent collaboration (MAC) systems have demonstrated impressive capabilities in automatic software development at the function level. However, their heavy reliance on human design limits their adaptability to the diverse demands of real-world software development. To address this limitation, we introduce EvoMAC, a novel self-evolving paradigm for MAC networks. Inspired by traditional neural network training, EvoMAC obtains text-based environmental feedback by verifying the MAC network's output against a target proxy and leverages a novel textual backpropagation to update the network. To extend coding capabilities beyond function-level tasks to more challenging software-level development, we further propose rSDE-Bench, a requirement-oriented software development benchmark, which features complex and diverse software requirements along with automatic evaluation of requirement correctness. Our experiments show that: i) The automatic requirement-aware evaluation in rSDE-Bench closely aligns with human evaluations, validating its reliability as a software-level coding benchmark. ii) EvoMAC outperforms previous SOTA methods on both the software-level rSDE-Bench and the function-level HumanEval benchmarks, reflecting its superior coding capabilities. The benchmark can be downloaded at https://yuzhu-cai.github.io/rSDE-Bench/. "
+Enabling Ensemble Learning for Heterogeneous Large Language Models with Deep Parallel Collaboration,"- **Relevance Score:** 55/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Training‑free DEEPEN ensembles heterogeneous LLMs, showing benchmark gains; lacks software‑engineering, test‑generation experiments, and deep collaborative agent mechanisms.",https://scispace.com/paper/enabling-ensemble-learning-for-heterogeneous-large-language-1gzhyo5jm2,2024,Journal Article,arXiv.org,"Yi-Chong Huang
+Xiaocheng Feng
+Baohang Li
+Yang Xiang
+Hui Wang
+Bing Qin
+Ting Liu",10.48550/arxiv.2404.12715,https://scispace.compdf/enabling-ensemble-learning-for-heterogeneous-large-language-1gzhyo5jm2.pdf,"Large language models (LLMs) have shown complementary strengths in various tasks and instances, motivating the research of ensembling LLMs to push the frontier leveraging the wisdom of the crowd. Existing work achieves this objective via training the extra reward model or fusion model to select or fuse all candidate answers. However, these methods pose a great challenge to the generalizability of the trained models. Besides, existing methods use the textual responses as communication media, ignoring the rich information in the inner representations of neural networks. Therefore, we propose a training-free ensemble framework DEEPEN, averaging the probability distributions outputted by different LLMs. A key challenge in this paradigm is the vocabulary discrepancy between heterogeneous LLMs, which hinders the operation of probability distribution averaging. To address this challenge, DEEPEN maps the probability distribution of each model from the probability space to a universe relative space based on the relative representation theory, and performs aggregation. Then, the result of aggregation is mapped back to the probability space of one LLM via a search-based inverse transformation to determine the generated token. We conduct experiments on the ensemble of various LLMs of 6B to 70B. Experimental results show that DEEPEN achieves consistent improvements across six popular benchmarks involving subject examination, reasoning and knowledge-QA, proving the effectiveness of our approach."
+HyperAgent: Generalist Software Engineering Agents to Solve Coding Tasks at Scale,"- **Relevance Score:** 53/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** HyperAgent is a collaborative multi‑agent system evaluated on several SE benchmarks, achieving strong gains over single‑model baselines, but it does not explore heterogeneous models or test‑generation ensembles.",https://scispace.com/paper/hyperagent-generalist-software-engineering-agents-to-solve-j74jybomct3v,2024,Journal Article,arXiv.org,"H. N. Phan
+Phong X. Nguyen
+Nghi D. Q. Bui",10.48550/arxiv.2409.16299,https://scispace.compdf/hyperagent-generalist-software-engineering-agents-to-solve-j74jybomct3v.pdf,"Large Language Models (LLMs) have revolutionized software engineering (SE), demonstrating remarkable capabilities in various coding tasks. While recent efforts have produced autonomous software agents based on LLMs for end-to-end development tasks, these systems are typically designed for specific SE tasks. We introduce HyperAgent, a novel generalist multi-agent system designed to address a wide spectrum of SE tasks across different programming languages by mimicking human developers' workflows. Comprising four specialized agents - Planner, Navigator, Code Editor, and Executor. HyperAgent manages the full lifecycle of SE tasks, from initial conception to final verification. Through extensive evaluations, HyperAgent achieves state-of-the-art performance across diverse SE tasks: it attains a 25.01% success rate on SWE-Bench-Lite and 31.40% on SWE-Bench-Verified for GitHub issue resolution, surpassing existing methods. Furthermore, HyperAgent demonstrates SOTA performance in repository-level code generation (RepoExec), and in fault localization and program repair (Defects4J), often outperforming specialized systems. This work represents a significant advancement towards versatile, autonomous agents capable of handling complex, multi-step SE tasks across various domains and languages, potentially transforming AI-assisted software development practices."
+"Harnessing Multi-Agent LLMs for Complex Engineering Problem-Solving: A
+  Framework for Senior Design Projects","- **Relevance Score:** 52/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Uses multi-agent LLM collaboration to mentor senior design projects; shows MAS outperforms single-agent with 89% accuracy; lacks software‑engineering tasks, test‑generation, formal diversity theory, or scalability analysis.",https://scispace.com/paper/harnessing-multi-agent-llms-for-complex-engineering-problem-2q2r0hrm0klk,2025,Journal Article,"","A. Mushtaq
+Muhammad Naeem
+Ibrahim Ghaznavi
+Muhammad Taj
+Imran Hashmi
+Junaid Qadir",10.48550/arxiv.2501.01205,https://scispace.compdf/harnessing-multi-agent-llms-for-complex-engineering-problem-2q2r0hrm0klk.pdf,"Multi-Agent Large Language Models (LLMs) are gaining significant attention for their ability to harness collective intelligence in complex problem-solving, decision-making, and planning tasks. This aligns with the concept of the wisdom of crowds, where diverse agents contribute collectively to generating effective solutions, making it particularly suitable for educational settings. Senior design projects, also known as capstone or final year projects, are pivotal in engineering education as they integrate theoretical knowledge with practical application, fostering critical thinking, teamwork, and real-world problem-solving skills. In this paper, we explore the use of Multi-Agent LLMs in supporting these senior design projects undertaken by engineering students, which often involve multidisciplinary considerations and conflicting objectives, such as optimizing technical performance while addressing ethical, social, and environmental concerns. We propose a framework where distinct LLM agents represent different expert perspectives, such as problem formulation agents, system complexity agents, societal and ethical agents, or project managers, thus facilitating a holistic problem-solving approach. This implementation leverages standard multi-agent system (MAS) concepts such as coordination, cooperation, and negotiation, incorporating prompt engineering to develop diverse personas for each agent. These agents engage in rich, collaborative dialogues to simulate human engineering teams, guided by principles from swarm AI to efficiently balance individual contributions towards a unified solution. We adapt these techniques to create a collaboration structure for LLM agents, encouraging interdisciplinary reasoning and negotiation similar to real-world senior design projects. To assess the efficacy of this framework, we collected six proposals of engineering and computer science of... "
+Ensemble Debates with Local Large Language Models for AI Alignment,"- **Relevance Score:** 51/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Shows ensemble debates improve alignment scores over single models; uses multiple LLMs that interact. Mentions varied model configs and reasoning vs. factual gains, but no software or test‑generation tasks, nor deep theory or scalability analysis.",https://scispace.com/paper/http://arxiv.org/abs/2509.00091v1,2025,Preprint,"",Ephraiem Sarabamoun,"",http://arxiv.org/pdf/2509.00091v1,"As large language models (LLMs) take on greater roles in high-stakes
+decisions, alignment with human values is essential. Reliance on proprietary
+APIs limits reproducibility and broad participation. We study whether local
+open-source ensemble debates can improve alignmentoriented reasoning. Across
+150 debates spanning 15 scenarios and five ensemble configurations, ensembles
+outperform single-model baselines on a 7-point rubric (overall: 3.48 vs. 3.13),
+with the largest gains in reasoning depth (+19.4%) and argument quality
+(+34.1%). Improvements are strongest for truthfulness (+1.25 points) and human
+enhancement (+0.80). We provide code, prompts, and a debate data set, providing
+an accessible and reproducible foundation for ensemble-based alignment
+evaluation."
+Optimizing Collaboration of LLM based Agents for Finite Element Analysis,"- **Relevance Score:** 50/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Shows multi-agent AutoGen system (Engineer, Executor, Expert) boosting FEA code generation; demonstrates ensemble gains but lacks diverse models, SE test tasks, or theoretical diversity analysis.",https://scispace.com/paper/optimizing-collaboration-of-llm-based-agents-for-finite-7jjqajzhwcp0,2024,Journal Article,"","Chuan Tian
+Yilei Zhang",10.48550/arxiv.2408.13406,https://scispace.compdf/optimizing-collaboration-of-llm-based-agents-for-finite-7jjqajzhwcp0.pdf,"This paper investigates the interactions between multiple agents within Large Language Models (LLMs) in the context of programming and coding tasks. We utilize the AutoGen framework to facilitate communication among agents, evaluating different configurations based on the success rates from 40 random runs for each setup. The study focuses on developing a flexible automation framework for applying the Finite Element Method (FEM) to solve linear elastic problems. Our findings emphasize the importance of optimizing agent roles and clearly defining their responsibilities, rather than merely increasing the number of agents. Effective collaboration among agents is shown to be crucial for addressing general FEM challenges. This research demonstrates the potential of LLM multi-agent systems to enhance computational automation in simulation methodologies, paving the way for future advancements in engineering and artificial intelligence. "
+A survey on code generation with llm-based agents,"- **Relevance Score:** 50/100
+- **Relevance Tag:** Somewhat Relevant
+- **Reasoning:** Surveys multi‑agent LLM architectures, ensemble results, and SE benchmarks, offering broad context but no original experiments or formal diversity analysis; test‑generation gains not covered.",https://scispace.com/paper/a-survey-on-code-generation-with-llm-based-agents-ud6w79v0z4mv,2025,Journal Article,arXiv.org,"Yihong Dong
+Xue Jiang
+Jiaru Qian
+Tian Wang
+Kechi Zhang
+Zhi Jin
+Ge Li",10.48550/arxiv.2508.00083,https://arxiv.org/pdf/2508.00083?,"Code generation agents powered by large language models (LLMs) are revolutionizing the software development paradigm. Distinct from previous code generation techniques, code generation agents are characterized by three core features. 1) Autonomy: the ability to independently manage the entire workflow, from task decomposition to coding and debugging. 2) Expanded task scope: capabilities that extend beyond generating code snippets to encompass the full software development lifecycle (SDLC). 3) Enhancement of engineering practicality: a shift in research emphasis from algorithmic innovation toward practical engineering challenges, such as system reliability, process management, and tool integration. This domain has recently witnessed rapid development and an explosion in research, demonstrating significant application potential. This paper presents a systematic survey of the field of LLM-based code generation agents. We trace the technology's developmental trajectory from its inception and systematically categorize its core techniques, including both single-agent and multi-agent architectures. Furthermore, this survey details the applications of LLM-based agents across the full SDLC, summarizes mainstream evaluation benchmarks and metrics, and catalogs representative tools. Finally, by analyzing the primary challenges, we identify and propose several foundational, long-term research directions for the future work of the field."
+"The Potential of LLMs in Automating Software Testing: From Generation to
+  Reporting","- **Relevance Score:** 49/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses a multi‑agent architecture with GPT‑4, GPT‑3.5, CodeLlama, Llama2 collaborating to design, generate, and execute tests; shows some performance gains but lacks detailed ensemble analysis or diversity theory.",https://scispace.com/paper/the-potential-of-llms-in-automating-software-testing-from-6r8f7i375vyv,2024,Journal Article,"","Betim Sherifi
+Khaled Slhoub
+Fitzroy Nembhard",10.48550/arxiv.2501.00217,https://scispace.compdf/the-potential-of-llms-in-automating-software-testing-from-6r8f7i375vyv.pdf,"Having a high quality software is essential in software engineering, which requires robust validation and verification processes during testing activities. Manual testing, while effective, can be time consuming and costly, leading to an increased demand for automated methods. Recent advancements in Large Language Models (LLMs) have significantly influenced software engineering, particularly in areas like requirements analysis, test automation, and debugging. This paper explores an agent-oriented approach to automated software testing, using LLMs to reduce human intervention and enhance testing efficiency. The proposed framework integrates LLMs to generate unit tests, visualize call graphs, and automate test execution and reporting. Evaluations across multiple applications in Python and Java demonstrate the system's high test coverage and efficient operation. This research underscores the potential of LLM-powered agents to streamline software testing workflows while addressing challenges in scalability and accuracy. "
+AgentCoder: Multi-Agent-based Code Generation with Iterative Testing and Optimisation,"- **Relevance Score:** 48/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses a three‑agent LLM loop to generate and test code, showing strong SE benchmarks; lacks distinct model ensembles, complementary analysis, or diversity theory.",https://scispace.com/paper/agentcoder-multi-agent-based-code-generation-with-iterative-558wka9wmg,2023,Journal Article,arXiv.org,"Dong Huang
+Qi Bu
+Jie M. Zhang
+Michael Luck
+Heming Cui",10.48550/arxiv.2312.13010,"","The advancement of natural language processing (NLP) has been significantly boosted by the development of transformer-based large language models (LLMs). These models have revolutionized NLP tasks, particularly in code generation, aiding developers in creating software with enhanced efficiency. Despite their advancements, challenges in balancing code snippet generation with effective test case generation and execution persist. To address these issues, this paper introduces Multi-Agent Assistant Code Generation (AgentCoder), a novel solution comprising a multi-agent framework with specialized agents: the programmer agent, the test designer agent, and the test executor agent. During the coding procedure, the programmer agent will focus on the code generation and refinement based on the test executor agent's feedback. The test designer agent will generate test cases for the generated code, and the test executor agent will run the code with the test cases and write the feedback to the programmer. This collaborative system ensures robust code generation, surpassing the limitations of single-agent models and traditional methodologies. Our extensive experiments on 9 code generation models and 12 enhancement approaches showcase AgentCoder's superior performance over existing code generation models and prompt engineering techniques across various benchmarks. For example, AgentCoder achieves 77.4% and 89.1% pass@1 in HumanEval-ET and MBPP-ET with GPT-3.5, while SOTA baselines obtain only 69.5% and 63.0%."
+CodePori: Large Scale Model for Autonomous Software Development by Using Multi-Agents,"- **Relevance Score:** 48/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses coordinated multi‑agent LLMs for full software development, shows strong HumanEval/MBPP results; claims ensemble gains but lacks detailed combination; mentions low cost; no diversity or test‑gen analysis.",https://scispace.com/paper/codepori-large-scale-model-for-autonomous-software-z06gtxxf36,2024,Journal Article,arXiv.org,"Zeeshan Rasheed
+Muhammad Waseem
+Mika Saari
+Kari Systä
+Pekka Abrahamsson",10.48550/arxiv.2402.01411,"","Large Language Models (LLMs) and Generative Pre-trained Transformers (GPTs) are reshaping the field of Software Engineering (SE). Existing LLM-based multi-agent systems have successfully resolved simple dialogue tasks. However, the potential of LLMs for more complex tasks, such as automated code generation for large and complex projects, have been explored in only a few existing works. This paper introduces CodePori, a novel model designed to automate code generation for extensive and complex software projects based on natural language prompts. We employ LLM-based multi-AI agents to handle creative and challenging tasks in autonomous software development. Each agent engages with a specific task, including system design, code development, code review, code verification, and test engineering. We show in the paper that CodePori is able to generate running code for large-scale projects, completing the entire software development process in minutes rather than hours, and at a cost of a few dollars. It identifies and mitigates potential security vulnerabilities and corrects errors while maintaining a solid code performance level. We also conducted an evaluation of CodePori against existing solutions using HumanEval and the Massively Multitask Benchmark for Python (MBPP) benchmark. The results indicate that CodePori improves upon the benchmarks in terms of code accuracy, efficiency, and overall performance. For example, CodePori improves the pass@1 metric on HumanEval to 87.5% and on MBPP to 86.5%, representing a clear improvement over the existing models. We also assessed CodePori's performance through practitioner evaluations, with 91% expressing satisfaction with the model's performance."
+MoA is All You Need: Building LLM Research Team using Mixture of Agents,"- **Relevance Score:** 46/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses a Mixture of Agents to coordinate multiple LLMs, cites ensemble benefits, notes diverse agent designs, but lacks empirical SE or test‑generation results and formal diversity theory; mentions cost and latency concerns.",https://scispace.com/paper/moa-is-all-you-need-building-llm-research-team-using-mixture-3liedcuy0h39,2024,Journal Article,"","Sandy Chen
+Lili Zeng
+Abhinav Raghunathan
+Flora Huang
+Terrence C. Kim",10.48550/arxiv.2409.07487,https://scispace.compdf/moa-is-all-you-need-building-llm-research-team-using-mixture-3liedcuy0h39.pdf,"Large Language Models (LLMs) research in the financial domain is particularly complex due to the sheer number of approaches proposed in literature. Retrieval-Augmented Generation (RAG) has emerged as one of the leading methods in the sector due to its inherent groundedness and data source variability. In this work, we introduce a RAG framework called Mixture of Agents (MoA) and demonstrate its viability as a practical, customizable, and highly effective approach for scaling RAG applications. MoA is essentially a layered network of individually customized small language models (Hoffmann et al., 2022) collaborating to answer questions and extract information. While there are many theoretical propositions for such an architecture and even a few libraries for generally applying the structure in practice, there are limited documented studies evaluating the potential of this framework considering real business constraints such as cost and speed. We find that the MoA framework, consisting of small language models (Hoffmann et al., 2022), produces higher quality and more grounded responses across various financial domains that are core to Vanguard's business while simultaneously maintaining low costs. "
+"A survey on LLM-based multi-agent systems: workflow, infrastructure, and challenges","- **Relevance Score:** 44/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Survey outlines collaborative LLM agents and discusses diversity, complementary strengths, and scalability, but lacks original empirical results on software engineering or test generation.",https://scispace.com/paper/a-survey-on-llm-based-multi-agent-systems-workflow-3ibrdtwmubt2,2024,Journal Article,"","Xinyi Li
+S. Wang
+S. Zeng
+Yu Wu
+Yi Yang",10.1007/s44336-024-00009-2,https://scispace.compdf/a-survey-on-llm-based-multi-agent-systems-workflow-3ibrdtwmubt2.pdf,"Abstract The pursuit of more intelligent and credible autonomous systems, akin to human society, has been a long-standing endeavor for humans. Leveraging the exceptional reasoning and planning capabilities of large language models (LLMs), LLM-based agents have been proposed and have achieved remarkable success across a wide array of tasks. Notably, LLM-based multi-agent systems (MAS) are considered a promising pathway towards realizing general artificial intelligence that is equivalent to or surpasses human-level intelligence. In this paper, we present a comprehensive survey of these studies, offering a systematic review of LLM-based MAS. Adhering to the workflow of LLM-based multi-agent systems, we synthesize a general structure encompassing five key components: profile, perception, self-action, mutual interaction, and evolution. This unified framework encapsulates much of the previous work in the field. Furthermore, we illuminate the extensive applications of LLM-based MAS in two principal areas: problem-solving and world simulation. Finally, we discuss in detail several contemporary challenges and provide insights into potential future directions in this domain. "
+"When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM
+  Ensembling","- **Relevance Score:** 42/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows strong token-level ensembling gains and efficiency, but lacks multi-agent collaboration, software engineering tests, and deep diversity analysis.",https://scispace.com/paper/http://arxiv.org/abs/2510.15346v1,2025,Preprint,"","Heecheol Yun
+Kwangmin Ki
+Junghyun Lee
+Eunho Yang","",http://arxiv.org/pdf/2510.15346v1,"Ensembling Large Language Models (LLMs) has gained attention as a promising
+approach to surpass the performance of individual models by leveraging their
+complementary strengths. In particular, aggregating models' next-token
+probability distributions to select the next token has been shown to be
+effective in various tasks. However, while successful for short-form answers,
+its application to long-form generation remains underexplored. In this paper,
+we show that using existing ensemble methods in long-form generation requires a
+careful choice of ensembling positions, since the standard practice of
+ensembling at every token often degrades performance. We identify two key
+factors for determining these positions: tokenization mismatch across models
+and consensus in their next-token probability distributions. Based on this, we
+propose SAFE, (Stable And Fast LLM Ensembling), a framework that selectively
+ensembles by jointly considering these factors. To further improve stability,
+we introduce a probability sharpening strategy that consolidates probabilities
+spread across multiple sub-word tokens representing the same word into a single
+representative token. Our experiments on diverse benchmarks, including MATH500
+and BBH, demonstrate that SAFE outperforms existing methods in both accuracy
+and efficiency, with gains achieved even when ensembling fewer than 1% of
+tokens."
+"Harnessing Multi-Agent LLMs for Complex Engineering Problem-Solving: A
+  Framework for Senior Design Projects","- **Relevance Score:** 41/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses a multi‑agent LLM framework to support senior design projects, showing higher accuracy than a single‑agent baseline. Evaluates educational outcomes, not software‑engineering tasks, and offers limited analysis of complementary agent abilities.",https://scispace.com/paper/harnessing-multi-agent-llms-for-complex-engineering-problem-2q2r0hrm0klk,2025,Journal Article,"","A. Mushtaq
+Muhammad Naeem
+Ibrahim Ghaznavi
+Muhammad Taj
+Imran Hashmi
+Junaid Qadir",10.48550/arxiv.2501.01205,https://scispace.compdf/harnessing-multi-agent-llms-for-complex-engineering-problem-2q2r0hrm0klk.pdf,"Multi-Agent Large Language Models (LLMs) are gaining significant attention for their ability to harness collective intelligence in complex problem-solving, decision-making, and planning tasks. This aligns with the concept of the wisdom of crowds, where diverse agents contribute collectively to generating effective solutions, making it particularly suitable for educational settings. Senior design projects, also known as capstone or final year projects, are pivotal in engineering education as they integrate theoretical knowledge with practical application, fostering critical thinking, teamwork, and real-world problem-solving skills. In this paper, we explore the use of Multi-Agent LLMs in supporting these senior design projects undertaken by engineering students, which often involve multidisciplinary considerations and conflicting objectives, such as optimizing technical performance while addressing ethical, social, and environmental concerns. We propose a framework where distinct LLM agents represent different expert perspectives, such as problem formulation agents, system complexity agents, societal and ethical agents, or project managers, thus facilitating a holistic problem-solving approach. This implementation leverages standard multi-agent system (MAS) concepts such as coordination, cooperation, and negotiation, incorporating prompt engineering to develop diverse personas for each agent. These agents engage in rich, collaborative dialogues to simulate human engineering teams, guided by principles from swarm AI to efficiently balance individual contributions towards a unified solution. We adapt these techniques to create a collaboration structure for LLM agents, encouraging interdisciplinary reasoning and negotiation similar to real-world senior design projects. To assess the efficacy of this framework, we collected six proposals of engineering and computer science of... "
+Multi-Agent Collaboration: Harnessing the Power of Intelligent LLM Agents,"- **Relevance Score:** 40/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Introduces collaborative multi‑agent LLM framework; demonstrates software‑dev scenarios but lacks quantitative ensemble benchmarks or detailed diversity analysis.",https://scispace.com/paper/multi-agent-collaboration-harnessing-the-power-of-2cixpjyx,2023,Journal Article,arXiv.org,Amirhossein Nadiri,10.48550/arXiv.2306.03314,"","In this paper, we present a novel framework for enhancing the capabilities of large language models (LLMs) by leveraging the power of multi-agent systems. Our framework introduces a collaborative environment where multiple intelligent agent components, each with distinctive attributes and roles, work together to handle complex tasks more efficiently and effectively. We demonstrate the practicality and versatility of our framework through case studies in artificial general intelligence (AGI), specifically focusing on the Auto-GPT and BabyAGI models. We also examine the""Gorilla""model, which integrates external APIs into the LLM. Our framework addresses limitations and challenges such as looping issues, security risks, scalability, system evaluation, and ethical considerations. By modeling various domains such as courtroom simulations and software development scenarios, we showcase the potential applications and benefits of our proposed multi-agent system. Our framework provides an avenue for advancing the capabilities and performance of LLMs through collaboration and knowledge exchange among intelligent agents."
+MetaGPT: Meta Programming for Multi-Agent Collaborative Framework,"- **Relevance Score:** 38/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses multi-agent SOP-driven framework for software engineering, but relies on a single LLM type; no ensemble of distinct models, complementary strength analysis, or test‑generation focus; mentions assembly‑line efficiency.",https://scispace.com/paper/metagpt-meta-programming-for-multi-agent-collaborative-557x8qhz78,2023,Journal Article,arXiv.org,"Sirui Hong
+Xiawu Zheng
+Jonathan P. Chen
+Yuheng Cheng
+Ceyao Zhang
+Zili Wang
+Steven Ka Shing Yau
+Z. Lin
+Liyang Zhou
+Chenyu Ran
+Lingfeng Xiao
+Chenglin Wu",10.48550/arxiv.2308.00352,"","Remarkable progress has been made on automated problem solving through societies of agents based on large language models (LLMs). Existing LLM-based multi-agent systems can already solve simple dialogue tasks. Solutions to more complex tasks, however, are complicated through logic inconsistencies due to cascading hallucinations caused by naively chaining LLMs. Here we introduce MetaGPT, an innovative meta-programming framework incorporating efficient human workflows into LLM-based multi-agent collaborations. MetaGPT encodes Standardized Operating Procedures (SOPs) into prompt sequences for more streamlined workflows, thus allowing agents with human-like domain expertise to verify intermediate results and reduce errors. MetaGPT utilizes an assembly line paradigm to assign diverse roles to various agents, efficiently breaking down complex tasks into subtasks involving many agents working together. On collaborative software engineering benchmarks, MetaGPT generates more coherent solutions than previous chat-based multi-agent systems. Our project can be found at https://github.com/geekan/MetaGPT "
+AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors in Agents,"- **Relevance Score:** 38/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows multi-agent LLM collaboration with performance gains and software engineering case studies, but lacks heterogeneous models, detailed ensemble analysis, and diversity theory.",https://scispace.com/paper/agentverse-facilitating-multi-agent-collaboration-and-2lfcj6cgc2,2023,Journal Article,arXiv.org,"Weize Chen
+Yusheng Su
+Jingwei Zuo
+Cheng Yang
+Chenfei Yuan
+Cheng Qian
+Chi-Min Chan
+Yujia Qin
+Ya-Ting Lu
+Ruobing Xie
+Zhiyuan Liu
+Maosong Sun
+Jie Zhou",10.48550/arxiv.2308.10848,https://scispace.compdf/agentverse-facilitating-multi-agent-collaboration-and-2lfcj6cgc2.pdf,.
+"Ensembling Large Language Models with Process Reward-Guided Tree Search
+  for Better Complex Reasoning","- **Relevance Score:** 37/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses MCTS to ensemble multiple LLMs, achieving higher math reasoning scores than any single model; lacks software engineering experiments, explicit agent communication, and analysis of complementary strengths or test‑generation gains.",https://scispace.com/paper/http://arxiv.org/abs/2412.15797v1,2024,Preprint,"","Sungjin Park
+Xiao Liu
+Yeyun Gong
+Edward Choi","",http://arxiv.org/pdf/2412.15797v1,"Despite recent advances in large language models, open-source models often
+struggle to consistently perform well on complex reasoning tasks. Existing
+ensemble methods, whether applied at the token or output levels, fail to
+address these challenges. In response, we present Language model Ensemble with
+Monte Carlo Tree Search (LE-MCTS), a novel framework for process-level
+ensembling of language models. LE-MCTS formulates step-by-step reasoning with
+an ensemble of language models as a Markov decision process. In this framework,
+states represent intermediate reasoning paths, while actions consist of
+generating the next reasoning step using one of the language models selected
+from a predefined pool. Guided by a process-based reward model, LE-MCTS
+performs a tree search over the reasoning steps generated by different language
+models, identifying the most accurate reasoning chain. Experimental results on
+five mathematical reasoning benchmarks demonstrate that our approach
+outperforms both single language model decoding algorithms and language model
+ensemble methods. Notably, LE-MCTS improves performance by 3.6% and 4.3% on the
+MATH and MQA datasets, respectively, highlighting its effectiveness in solving
+complex reasoning problems."
+AgentCDM: Enhancing Multi-Agent Collaborative Decision-Making via ACH-Inspired Structured Reasoning,"- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses ACH-inspired structured reasoning to coordinate multiple LLM agents, showing overall CDM gains; reports ensemble-like improvements but without heterogeneous models or software‑engineering benchmarks.",https://scispace.com/paper/agentcdm-enhancing-multi-agent-collaborative-decision-making-hbwi5p0qe2cg,2025,Journal Article,"","Xinxu Zhao
+Shiwan Zhao
+Hualong Yu
+Liting Zhang
+Qiaowei Li",10.48550/arxiv.2508.11995,https://scispace.compdf/agentcdm-enhancing-multi-agent-collaborative-decision-making-hbwi5p0qe2cg.pdf,"Multi-agent systems (MAS) powered by large language models (LLMs) hold significant promise for solving complex decision-making tasks. However, the core process of collaborative decision-making (CDM) within these systems remains underexplored. Existing approaches often rely on either ``dictatorial"" strategies that are vulnerable to the cognitive biases of a single agent, or ``voting-based"" methods that fail to fully harness collective intelligence. To address these limitations, we propose \textbf{AgentCDM}, a structured framework for enhancing collaborative decision-making in LLM-based multi-agent systems. Drawing inspiration from the Analysis of Competing Hypotheses (ACH) in cognitive science, AgentCDM introduces a structured reasoning paradigm that systematically mitigates cognitive biases and shifts decision-making from passive answer selection to active hypothesis evaluation and construction. To internalize this reasoning process, we develop a two-stage training paradigm: the first stage uses explicit ACH-inspired scaffolding to guide the model through structured reasoning, while the second stage progressively removes this scaffolding to encourage autonomous generalization. Experiments on multiple benchmark datasets demonstrate that AgentCDM achieves state-of-the-art performance and exhibits strong generalization, validating its effectiveness in improving the quality and robustness of collaborative decisions in MAS. "
+Multi-Agent AI Collaboration: Advancing Software Engineering with Autonomous LLMs,"- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses a multi-agent LLM framework for software engineering tasks like code generation and debugging, but lacks empirical ensemble comparisons, complementary strength analysis, diversity effects, test‑generation results, theoretical diversity discussion, or scalability evaluation.",https://scispace.com/paper/d8dCgiGeaRUJ,"","","","I Zahid
+I Hussain","",https://www.researchgate.net/profile/Ijaz-Hussain-23/publication/388835227_Multi-Agent_AI_Collaboration_Advancing_Software_Engineering_with_Autonomous_LLMs/links/67a8fabd645ef274a478ae49/Multi-Agent-AI-Collaboration-Advancing-Software-Engineering-with-Autonomous-LLMs.pdf,""
+"Merge, ensemble, and cooperate! a survey on collaborative strategies in the era of large language models","- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Survey categorizes merging, ensemble, and cooperation methods, discusses complementary strengths and diversity concepts, but lacks concrete multi-agent system, empirical ensemble gains, software‑engineering experiments, test‑generation results, and detailed scalability analysis.",https://scispace.com/paper/merge-ensemble-and-cooperate-a-survey-on-collaborative-4jruy8g79z,2024,Journal Article,"","Jinliang Lu
+Ziliang Pang
+Min Xiao
+Yaochen Zhu
+Rui Xia
+Jiajun Zhang",10.48550/arxiv.2407.06089,https://arxiv.org/pdf/2407.06089,"The remarkable success of Large Language Models (LLMs) has ushered natural language processing (NLP) research into a new era. Despite their diverse capabilities, LLMs trained on different corpora exhibit varying strengths and weaknesses, leading to challenges in maximizing their overall efficiency and versatility. To address these challenges, recent studies have explored collaborative strategies for LLMs. This paper provides a comprehensive overview of this emerging research area, highlighting the motivation behind such collaborations. Specifically, we categorize collaborative strategies into three primary approaches: Merging, Ensemble, and Cooperation. Merging involves integrating multiple LLMs in the parameter space. Ensemble combines the outputs of various LLMs. Cooperation} leverages different LLMs to allow full play to their diverse capabilities for specific tasks. We provide in-depth introductions to these methods from different perspectives and discuss their potential applications. Additionally, we outline future research directions, hoping this work will catalyze further studies on LLM collaborations and paving the way for advanced NLP applications. "
+"Determine-Then-Ensemble: Necessity of Top-k Union for Large Language
+  Model Ensembling","- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses top‑k union to efficiently ensemble LLMs, showing clear gains over single models and reduced compute. Highlights model compatibility and diverse response styles, but lacks agent collaboration, software‑engineering experiments, test‑generation focus, and formal diversity theory.",https://scispace.com/paper/http://arxiv.org/abs/2410.03777v2,2024,Preprint,"","Yuxuan Yao
+Han Wu
+Mingyang Liu
+Sichun Luo
+Xiongwei Han
+Jie Liu
+Zhijiang Guo
+Linqi Song","",http://arxiv.org/pdf/2410.03777v2,"Large language models (LLMs) exhibit varying strengths and weaknesses across
+different tasks, prompting recent studies to explore the benefits of ensembling
+models to leverage their complementary advantages. However, existing LLM
+ensembling methods often overlook model compatibility and struggle with
+inefficient alignment of probabilities across the entire vocabulary. In this
+study, we empirically investigate the factors influencing ensemble performance,
+identifying model performance, vocabulary size, and response style as key
+determinants, revealing that compatibility among models is essential for
+effective ensembling. This analysis leads to the development of a simple yet
+effective model selection strategy that identifies compatible models.
+Additionally, we introduce the \textsc{Uni}on \textsc{T}op-$k$
+\textsc{E}nsembling (\textsc{UniTE}), a novel approach that efficiently
+combines models by focusing on the union of the top-k tokens from each model,
+thereby avoiding the need for full vocabulary alignment and reducing
+computational overhead. Extensive evaluations across multiple benchmarks
+demonstrate that \textsc{UniTE} significantly enhances performance compared to
+existing methods, offering a more efficient framework for LLM ensembling."
+LLM-Based Multi-Agent Systems for Software Engineering: Vision and the Road Ahead,"- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Vision paper outlines LLM multi‑agent concepts for software engineering but lacks concrete systems, experiments, or performance data; relevance is mainly conceptual.",https://scispace.com/paper/llm-based-multi-agent-systems-for-software-engineering-33ujtrmbmv,2024,Journal Article,arXiv.org,"Junda He
+Christoph Treude
+David Lo",10.48550/arxiv.2404.04834,"","Integrating Large Language Models(LLMs) into autonomous agents marks a significant shift in the research landscape by offering cognitive abilities competitive to human planning and reasoning. This paper envisions the evolution of LLM-based Multi-Agent (LMA) systems in addressing complex and multi-faceted software engineering challenges. LMA systems introduce numerous benefits, including enhanced robustness through collaborative cross-examination, autonomous problem-solving, and scalable solutions to complex software projects. By examining the role of LMA systems in future software engineering practices, this vision paper highlights the potential applications and emerging challenges. We further point to specific opportunities for research and conclude with a research agenda with a set of research questions to guide future research directions."
+"LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead","- **Relevance Score:** 35/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Review paper outlines multi‑agent LLM concepts and diversity ideas but provides no concrete system, experiments, or performance gains, limiting direct relevance.",https://scispace.com/paper/llm-based-multi-agent-systems-for-software-engineering-3nfzqoopnexw,2025,Journal Article,ACM Transactions on Software Engineering and Methodology,"Junda He
+Christoph Treude
+David Lo",10.1145/3712003,https://scispace.compdf/llm-based-multi-agent-systems-for-software-engineering-3nfzqoopnexw.pdf,"Integrating Large Language Models (LLMs) into autonomous agents marks a significant shift in the research landscape by offering cognitive abilities that are competitive with human planning and reasoning. This paper explores the transformative potential of integrating Large Language Models into Multi-Agent (LMA) systems for addressing complex challenges in software engineering (SE). By leveraging the collaborative and specialized abilities of multiple agents, LMA systems enable autonomous problem-solving, improve robustness, and provide scalable solutions for managing the complexity of real-world software projects. In this paper, we conduct a systematic review of recent primary studies to map the current landscape of LMA applications across various stages of the software development lifecycle (SDLC). To illustrate current capabilities and limitations, we perform two case studies to demonstrate the effectiveness of state-of-the-art LMA frameworks. Additionally, we identify critical research gaps and propose a comprehensive research agenda focused on enhancing individual agent capabilities and optimizing agent synergy. Our work outlines a forward-looking vision for developing fully autonomous, scalable, and trustworthy LMA systems, laying the foundation for the evolution of Software Engineering 2.0. "
+"Exploring large language model based intelligent agents: Definitions, methods, and prospects","- **Relevance Score:** 32/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Survey outlines multi-agent LLM concepts and deployment issues but lacks original experiments, ensembles, or performance gains, limiting direct relevance to criteria.",https://scispace.com/paper/exploring-large-language-model-based-intelligent-agents-4q4jcs8sjq,2024,Journal Article,arXiv.org,"Yuheng Cheng
+Ceyao Zhang
+Zhengwen Zhang
+Xiangrui Meng
+Sirui Hong
+Wenhao Li
+Zihao Wang
+Zekai Wang
+Feng Yin
+Junhua Zhao
+Xiuqiang He",10.48550/arxiv.2401.03428,https://arxiv.org/pdf/2401.03428,"Intelligent agents stand out as a potential path toward artificial general intelligence (AGI). Thus, researchers have dedicated significant effort to diverse implementations for them. Benefiting from recent progress in large language models (LLMs), LLM-based agents that use universal natural language as an interface exhibit robust generalization capabilities across various applications -- from serving as autonomous general-purpose task assistants to applications in coding, social, and economic domains, LLM-based agents offer extensive exploration opportunities. This paper surveys current research to provide an in-depth overview of LLM-based intelligent agents within single-agent and multi-agent systems. It covers their definitions, research frameworks, and foundational components such as their composition, cognitive and planning methods, tool utilization, and responses to environmental feedback. We also delve into the mechanisms of deploying LLM-based agents in multi-agent systems, including multi-role collaboration, message passing, and strategies to alleviate communication issues between agents. The discussions also shed light on popular datasets and application scenarios. We conclude by envisioning prospects for LLM-based agents, considering the evolving landscape of AI and natural language processing."
+MetaAgents: Simulating Interactions of Human Behaviors for LLM-based Task-oriented Coordination via Collaborative Generative Agents,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses a multi‑agent framework to study coordination in a job‑fair simulation, showing collaborative behaviors. No ensemble of distinct LLMs, software tasks, or complementary model analysis. Briefly notes coordination challenges as agent count grows, hinting at scalability concerns.",https://scispace.com/paper/metaagents-simulating-interactions-of-human-behaviors-for-5cq64hm4kn,2023,Journal Article,arXiv.org,"Yuan Li
+Yixuan Zhang
+Lichao Sun",10.48550/arxiv.2310.06500,https://scispace.compdf/metaagents-simulating-interactions-of-human-behaviors-for-5cq64hm4kn.pdf,"Significant advancements have occurred in the application of Large Language Models (LLMs) for various tasks and social simulations. Despite this, their capacities to coordinate within task-oriented social contexts are under-explored. Such capabilities are crucial if LLMs are to effectively mimic human-like social behavior and produce meaningful results. To bridge this gap, we introduce collaborative generative agents, endowing LLM-based Agents with consistent behavior patterns and task-solving abilities. We situate these agents in a simulated job fair environment as a case study to scrutinize their coordination skills. We propose a novel framework that equips collaborative generative agents with human-like reasoning abilities and specialized skills. Our evaluation demonstrates that these agents show promising performance. However, we also uncover limitations that hinder their effectiveness in more complex coordination tasks. Our work provides valuable insights into the role and evolution of LLMs in task-oriented social simulations."
+Prompt Engineering Through the Lens of Optimal Control,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses optimal control to formalize ensemble and multi-agent prompt engineering, proposing adaptive ensemble strategies. Lacks concrete software‑engineering experiments or diversity‑wise empirical validation, but provides a strong theoretical framework for ensemble benefits.",https://scispace.com/paper/prompt-engineering-through-the-lens-of-optimal-control-3eb8xmboep,2023,Journal Article,Journal of Machine Learning,"Ying Luo
+Yuanyan Tang
+Chengfeng Shen
+Zhenan Zhou null
+Bin Dong",10.4208/jml.231023,https://scispace.compdf/prompt-engineering-through-the-lens-of-optimal-control-3eb8xmboep.pdf,""
+Advancements in Multi-Agent Large Language Model Systems for Next-Generation AI,"- **Relevance Score:** 30/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Provides a conceptual overview of multi‑agent LLM integration, discussing collaboration and complementary strengths, but lacks concrete systems, empirical ensembles, software‑engineering evaluations, or performance data.",https://scispace.com/paper/advancements-in-multi-agent-large-language-model-systems-for-3mo2z2t1lw0w,2025,Journal Article,Advances in computational intelligence and robotics book series,"Rajeshwari Sissodia
+Vinay Dwivedi
+Tikesh Verma",10.4018/979-8-3373-1419-8.ch001,"","The integration of Multi-Agent Systems (MAS) with Large Language Models (LLMs) represents a significant advancement in the field of artificial intelligence, enabling the development of intelligent, autonomous systems capable of solving complex tasks and enhancing decision-making. MAS, composed of multiple interacting agents with autonomous decision-making abilities, and LLMs, which leverage vast amounts of textual data to understand and generate human-like language, can work synergistically to create more robust AI systems. This chapter explores the fundamentals of MAS and LLMs, their individual and combined strengths, and their potential to address complex challenges in various fields, such as robotics, healthcare, and business. We discuss key features of both MAS and LLMs, including agent collaboration, reinforcement learning, and contextual understanding in language models. The chapter also examines the integration of these two domains, highlighting their potential for collaborative problem-solving, decision support, and knowledge extraction. "
+"Two Heads Are Better Than One: A Multi-Agent System Has the Potential to
+  Improve Scientific Idea Generation","- **Relevance Score:** 28/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses a multi‑agent LLM system to mimic scientific collaboration, showing overall idea‑generation gains; lacks software‑engineering tasks, explicit complementary analysis, diversity studies, test‑generation results, and detailed scalability or theoretical discussion.",https://scispace.com/paper/two-heads-are-better-than-one-a-multi-agent-system-has-the-76cjdjzy7y2p,2024,Journal Article,"","Haoyang Su
+Renqi Chen
+Shixiang Tang
+Xi Zheng
+Jingzhe Li
+Zhenfei Yin
+Wanli Ouyang
+Nanqing Dong",10.48550/arxiv.2410.09403,https://scispace.compdf/two-heads-are-better-than-one-a-multi-agent-system-has-the-76cjdjzy7y2p.pdf,"The rapid advancement of scientific progress requires innovative tools that can accelerate discovery. While recent AI methods, particularly large language models (LLMs), have shown promise in tasks such as hypothesis generation and experimental design, they fall short in replicating the collaborative nature of real-world scientific practices, where diverse teams of experts work together to tackle complex problems. To address the limitation, we propose an LLM-based multi-agent system, i.e., Virtual Scientists (VirSci), designed to mimic the teamwork inherent in scientific research. VirSci organizes a team of agents to collaboratively generate, evaluate, and refine research ideas. Through comprehensive experiments, we demonstrate that this multi-agent approach outperforms the state-of-the-art method in producing novel and impactful scientific ideas, showing potential in aligning with key insights in the Science of Science field. Our findings suggest that integrating collaborative agents can lead to more innovative scientific outputs, offering a robust system for autonomous scientific discovery. "
+Ensemble of Task-Specific Language Models for Brain Encoding,"- **Relevance Score:** 27/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Ensembles diverse language models for brain encoding, showing performance gains, but lacks agent collaboration, software engineering tasks, and detailed analysis of complementary strengths or scalability.",https://scispace.com/paper/http://arxiv.org/abs/2310.15720v2,2023,Preprint,"","Arvindh Arun
+Jerrin John
+Sanjai Kumaran","",http://arxiv.org/pdf/2310.15720v2,"Language models have been shown to be rich enough to encode fMRI activations
+of certain Regions of Interest in our Brains. Previous works have explored
+transfer learning from representations learned for popular natural language
+processing tasks for predicting brain responses. In our work, we improve the
+performance of such encoders by creating an ensemble model out of 10 popular
+Language Models (2 syntactic and 8 semantic). We beat the current baselines by
+10% on average across all ROIs through our ensembling methods."
+Bridging the Gap between Different Vocabularies for LLM Ensemble,"- **Relevance Score:** 27/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Shows token‑level ensemble with performance gains across reasoning and translation tasks; leverages different LLM vocabularies but lacks multi‑agent interaction, software‑engineering experiments, and theoretical or scalability analysis.",https://scispace.com/paper/http://arxiv.org/abs/2404.09492v1,2024,Preprint,"","Yangyifan Xu
+Jinliang Lu
+Jiajun Zhang","",http://arxiv.org/pdf/2404.09492v1,"Ensembling different large language models (LLMs) to unleash their
+complementary potential and harness their individual strengths is highly
+valuable. Nevertheless, vocabulary discrepancies among various LLMs have
+constrained previous studies to either selecting or blending completely
+generated outputs. This limitation hinders the dynamic correction and
+enhancement of outputs during the generation process, resulting in a limited
+capacity for effective ensemble. To address this issue, we propose a novel
+method to Ensemble LLMs via Vocabulary Alignment (EVA). EVA bridges the lexical
+gap among various LLMs, enabling meticulous ensemble at each generation step.
+Specifically, we first learn mappings between the vocabularies of different
+LLMs with the assistance of overlapping tokens. Subsequently, these mappings
+are employed to project output distributions of LLMs into a unified space,
+facilitating a fine-grained ensemble. Finally, we design a filtering strategy
+to exclude models that generate unfaithful tokens. Experimental results on
+commonsense reasoning, arithmetic reasoning, machine translation, and
+data-to-text generation tasks demonstrate the superiority of our approach
+compared with individual LLMs and previous ensemble methods conducted on
+complete outputs. Further analyses confirm that our approach can leverage
+knowledge from different language models and yield consistent improvement."
+"CAMERO: Consistency Regularized Ensemble of Perturbed Language Models
+  with Weight Sharing","- **Relevance Score:** 27/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses weight sharing and perturbations to boost ensemble accuracy while cutting memory; shows strong GLUE gains versus single BERT. No multi-agent collaboration, software‑engineering tasks, or heterogeneous models. Briefly discusses diversity regularization but lacks formal theory. Emphasizes resource‑efficient scaling.",https://scispace.com/paper/http://arxiv.org/abs/2204.06625v2,2022,Preprint,"","Chen Liang
+Pengcheng He
+Yelong Shen
+Weizhu Chen
+Tuo Zhao","",http://arxiv.org/pdf/2204.06625v2,"Model ensemble is a popular approach to produce a low-variance and
+well-generalized model. However, it induces large memory and inference costs,
+which are often not affordable for real-world deployment. Existing work has
+resorted to sharing weights among models. However, when increasing the
+proportion of the shared weights, the resulting models tend to be similar, and
+the benefits of using model ensemble diminish. To retain ensemble benefits
+while maintaining a low memory cost, we propose a consistency-regularized
+ensemble learning approach based on perturbed models, named CAMERO.
+Specifically, we share the weights of bottom layers across all models and apply
+different perturbations to the hidden representations for different models,
+which can effectively promote the model diversity. Meanwhile, we apply a
+prediction consistency regularizer across the perturbed models to control the
+variance due to the model diversity. Our experiments using large language
+models demonstrate that CAMERO significantly improves the generalization
+performance of the ensemble model. Specifically, CAMERO outperforms the
+standard ensemble of 8 BERT-base models on the GLUE benchmark by 0.7 with a
+significantly smaller model size (114.2M vs. 880.6M)."
+Towards Collaborative Intelligence: Propagating Intentions and Reasoning for Multi-Agent Coordination with Large Language Models,"- **Relevance Score:** 25/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Uses multiple LLM agents that broadcast intentions for coordinated MARL, but lacks ensembles, software‑engineering tasks, complementary strength analysis, diversity effects, test‑generation experiments, theoretical diversity models, or scalability discussion.",https://scispace.com/paper/towards-collaborative-intelligence-propagating-intentions-7h5clepnepe8,2024,Journal Article,arXiv.org,"Xihe Qiu
+Haoyu Wang
+Xiaoyu Tan
+Chao Qu
+Yujie Xiong
+Yuan Cheng
+Yinghui Xu
+Wei Chu
+Yuan Qi",10.48550/arxiv.2407.12532,"","Effective collaboration in multi-agent systems requires communicating goals and intentions between agents. Current agent frameworks often suffer from dependencies on single-agent execution and lack robust inter-module communication, frequently leading to suboptimal multi-agent reinforcement learning (MARL) policies and inadequate task coordination. To address these challenges, we present a framework for training large language models (LLMs) as collaborative agents to enable coordinated behaviors in cooperative MARL. Each agent maintains a private intention consisting of its current goal and associated sub-tasks. Agents broadcast their intentions periodically, allowing other agents to infer coordination tasks. A propagation network transforms broadcast intentions into teammate-specific communication messages, sharing relevant goals with designated teammates. The architecture of our framework is structured into planning, grounding, and execution modules. During execution, multiple agents interact in a downstream environment and communicate intentions to enable coordinated behaviors. The grounding module dynamically adapts comprehension strategies based on emerging coordination patterns, while feedback from execution agents influnces the planning module, enabling the dynamic re-planning of sub-tasks. Results in collaborative environment simulation demonstrate intention propagation reduces miscoordination errors by aligning sub-task dependencies between agents. Agents learn when to communicate intentions and which teammates require task details, resulting in emergent coordinated behaviors. This demonstrates the efficacy of intention sharing for cooperative multi-agent RL based on LLMs."
+Decentralized control of automatic guided vehicles: applying multi-agent systems in practice,"- **Relevance Score:** 25/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Focuses on AGV multi-agent control, not LLM ensembles; only indirect relevance to software engineering and agent diversity.",https://scispace.com/paper/decentralized-control-of-automatic-guided-vehicles-applying-2czxzqqzm5,2008,Proceedings Article,"Conference on Object-Oriented Programming Systems, Languages, and Applications","Danny Weyns
+Tom Holvoet
+Kurt Schelfthout
+Jan Wielemans",10.1145/1449814.1449819,https://scispace.com/pdf/decentralized-control-of-automatic-guided-vehicles-applying-2czxzqqzm5.pdf,"An automatic guided vehicle (AGV) transportation system is a fully automated system that provides logistic services in an industrial environment such as a warehouse or a factory. Traditionally, the AGVs that execute the transportation tasks are controlled by a central server via wireless communication. In a joint effort between Egemin, an industrial manufacturer of AGV transportation systems, and DistriNet Labs research at the Katholieke Universiteit Leuven, we developed an innovative decentralized architecture for controlling AGVs. The driving motivations behind decentralizing the control of AGVs were new and future quality requirements such as flexibility and openness. At the software architectural level, the AGV control system is structured as a multi-agent system; the detailed design and implementation is object-oriented. In this paper, we report our experiences with developing the agent-based control system for AGVs. Starting from system requirements, we give an overview of the software architecture and we zoom in on a number of concrete functionalities. We reflect on our experiences and report lessons learned from applying multi-agent systems for real-world AGV control."
+Short-answer scoring with ensembles of pretrained language models,"- **Relevance Score:** 25/100
+- **Relevance Tag:** Marginally Relevant
+- **Reasoning:** Ensembles of transformer models achieve state‑of‑the‑art short‑answer scoring, outperforming any single model. Notes production infeasibility of large ensembles, hinting at scalability concerns.",https://scispace.com/paper/http://arxiv.org/abs/2202.11558v1,2022,Preprint,"",Christopher Ormerod,"",http://arxiv.org/pdf/2202.11558v1,"We investigate the effectiveness of ensembles of pretrained transformer-based
+language models on short answer questions using the Kaggle Automated Short
+Answer Scoring dataset. We fine-tune a collection of popular small, base, and
+large pretrained transformer-based language models, and train one feature-base
+model on the dataset with the aim of testing ensembles of these models. We used
+an early stopping mechanism and hyperparameter optimization in training. We
+observe that generally that the larger models perform slightly better, however,
+they still fall short of state-of-the-art results one their own. Once we
+consider ensembles of models, there are ensembles of a number of large networks
+that do produce state-of-the-art results, however, these ensembles are too
+large to realistically be put in a production environment."
+Can Large Language Models Serve as Data Analysts? A Multi-Agent Assisted Approach for Qualitative Data Analysis,"- **Relevance Score:** 23/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses a multi‑agent LLM setup to automate qualitative SE data analysis, showing speed and scalability gains, but lacks ensemble comparisons, SE‑specific tasks, or diversity analyses.",https://scispace.com/paper/can-large-language-models-serve-as-data-analysts-a-multi-49qsfj4177,2024,Journal Article,arXiv.org,"Zeeshan Rasheed
+Muhammad Waseem
+Aakash Ahmad
+Kai-Kristian Kemell
+Xiaofeng Wang
+Anh Nguyen Duc
+Pekka Abrahamsson",10.48550/arxiv.2402.01386,"","Recent advancements in Large Language Models (LLMs) have enabled collaborative human-bot interactions in Software Engineering (SE), similar to many other professions. However, the potential benefits and implications of incorporating LLMs into qualitative data analysis in SE have not been completely explored. For instance, conducting qualitative data analysis manually can be a time-consuming, effort-intensive, and error-prone task for researchers. LLM-based solutions, such as generative AI models trained on massive datasets, can be utilized to automate tasks in software development as well as in qualitative data analysis. To this end, we utilized LLMs to automate and expedite the qualitative data analysis processes. We employed a multi-agent model, where each agent was tasked with executing distinct, individual research related activities. Our proposed model interpreted large quantities of textual documents and interview transcripts to perform several common tasks used in qualitative analysis. The results show that this technical assistant speeds up significantly the data analysis process, enabling researchers to manage larger datasets much more effectively. Furthermore, this approach introduces a new dimension of scalability and accuracy in qualitative research, potentially transforming data interpretation methodologies in SE."
+Large Language Model based Multi-Agents: A Survey of Progress and Challenges,"- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey outlines LLM multi‑agent concepts and discusses diversity and complementary abilities, but provides no original system, empirical ensemble gains, or software‑engineering evaluations.",https://scispace.com/paper/large-language-model-based-multi-agents-a-survey-of-progress-4xiklwolkq,2024,Journal Article,arXiv.org,"Taicheng Guo
+Xiuying Chen
+Yaqi Wang
+Ruidi Chang
+Shichao Pei
+Nitesh V. Chawla
+Olaf Wiest
+Xiangliang Zhang",10.48550/arxiv.2402.01680,"","Large Language Models (LLMs) have achieved remarkable success across a wide array of tasks. Due to the impressive planning and reasoning abilities of LLMs, they have been used as autonomous agents to do many tasks automatically. Recently, based on the development of using one LLM as a single planning or decision-making agent, LLM-based multi-agent systems have achieved considerable progress in complex problem-solving and world simulation. To provide the community with an overview of this dynamic field, we present this survey to offer an in-depth discussion on the essential aspects of multi-agent systems based on LLMs, as well as the challenges. Our goal is for readers to gain substantial insights on the following questions: What domains and environments do LLM-based multi-agents simulate? How are these agents profiled and how do they communicate? What mechanisms contribute to the growth of agents' capacities? For those interested in delving into this field of study, we also summarize the commonly used datasets or benchmarks for them to have convenient access. To keep researchers updated on the latest studies, we maintain an open-source GitHub repository, dedicated to outlining the research on LLM-based multi-agent systems."
+"Agents in software engineering: Survey, landscape, and vision","- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey outlines LLM‑based agent framework and discusses diverse agents and complementary abilities, but lacks original multi‑model system, empirical ensemble results, or task‑specific experiments.",https://scispace.com/paper/agents-in-software-engineering-survey-landscape-and-vision-olqq19h52l9g,2024,Journal Article,"","Yanlin Wang
+Wanjun Zhong
+Yanxian Huang
+Ensheng Shi
+Min Yang
+Jiachi Chen
+Huijun Li
+Yuchi Ma
+Qianxiang Wang
+Zibin Zheng",10.48550/arxiv.2409.09030,https://arxiv.org/pdf/2409.09030?,"In recent years, Large Language Models (LLMs) have achieved remarkable success and have been widely used in various downstream tasks, especially in the tasks of the software engineering (SE) field. We find that many studies combining LLMs with SE have employed the concept of agents either explicitly or implicitly. However, there is a lack of an in-depth survey to sort out the development context of existing works, analyze how existing works combine the LLM-based agent technologies to optimize various tasks, and clarify the framework of LLM-based agents in SE. In this paper, we conduct the first survey of the studies on combining LLM-based agents with SE and present a framework of LLM-based agents in SE which includes three key modules: perception, memory, and action. We also summarize the current challenges in combining the two fields and propose future opportunities in response to existing challenges. We maintain a GitHub repository of the related papers at: https://github.com/DeepSoftwareAnalytics/Awesome-Agent4SE. "
+Hit the Sweet Spot! Span-Level Ensemble for Large Language Models,"- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses span-level ensemble to boost generation quality, showing clear gains over single models. Mentions complementary model info for span selection but lacks agent collaboration, software engineering tasks, diversity analysis, or scalability discussion.",https://scispace.com/paper/http://arxiv.org/abs/2409.18583v1,2024,Preprint,"","Yangyifan Xu
+Jianghao Chen
+Junhong Wu
+Jiajun Zhang","",http://arxiv.org/pdf/2409.18583v1,"Ensembling various LLMs to unlock their complementary potential and leverage
+their individual strengths is highly valuable. Previous studies typically focus
+on two main paradigms: sample-level and token-level ensembles. Sample-level
+ensemble methods either select or blend fully generated outputs, which hinders
+dynamic correction and enhancement of outputs during the generation process. On
+the other hand, token-level ensemble methods enable real-time correction
+through fine-grained ensemble at each generation step. However, the information
+carried by an individual token is quite limited, leading to suboptimal
+decisions at each step. To address these issues, we propose SweetSpan, a
+span-level ensemble method that effectively balances the need for real-time
+adjustments and the information required for accurate ensemble decisions. Our
+approach involves two key steps: First, we have each candidate model
+independently generate candidate spans based on the shared prefix. Second, we
+calculate perplexity scores to facilitate mutual evaluation among the candidate
+models and achieve robust span selection by filtering out unfaithful scores. To
+comprehensively evaluate ensemble methods, we propose a new challenging setting
+(ensemble models with significant performance gaps) in addition to the standard
+setting (ensemble the best-performing models) to assess the performance of
+model ensembles in more realistic scenarios. Experimental results in both
+standard and challenging settings across various language generation tasks
+demonstrate the effectiveness, robustness, and versatility of our approach
+compared with previous ensemble methods."
+The Wisdom of the Crowd: Reliable Deep Reinforcement Learning Through Ensembles of Q-Functions.,"- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses ensemble of Q‑functions to boost RL performance; discusses diversity, crowd wisdom, and simple averaging, but focuses on RL, not LLMs or software tasks.",https://scispace.com/paper/the-wisdom-of-the-crowd-reliable-deep-reinforcement-learning-16wgbe5ie8,2021,Journal Article,IEEE Transactions on Neural Networks,"Daniel L. Elliott
+Charles W. Anderson",10.1109/TNNLS.2021.3089425,https://scispace.com/pdf/the-wisdom-of-the-crowd-reliable-deep-reinforcement-learning-16wgbe5ie8.pdf,Reinforcement learning (RL) agents learn by exploring the environment and then exploiting what they have learned. This frees the human trainers from having to know the preferred action or intrinsic value of each encountered state. The cost of this freedom is that RL is slower and more unstable than supervised learning. We explore the possibility that ensemble methods can remedy these shortcomings by investigating a novel technique which harnesses the wisdom of crowds by combining Q-function approximator estimates utilizing a simple combination scheme similar to the supervised learning approach known as bagging. Bagging approaches have not yet found widespread adoption in the RL literature nor has a comprehensive look at its performance been performed. Our results show that the proposed approach improves all three tasks and RL approaches attempted. The primary contribution of this work is a demonstration that the improvement is a direct result of the increased stability of the action portion of the state-action-value function. Subsequent experimentation demonstrates that the stability in learning allows an actor-critic method to find more efficient solutions. Finally we show that this approach can be used to decrease the amount of time necessary to solve problems which require a deep Q-learning (DQN) approach.
+Agents: An Open-source Framework for Autonomous Language Agents,"- **Relevance Score:** 22/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Provides a framework for multi‑agent interaction and a software‑company scenario, but lacks distinct LLM ensembles, performance comparisons, or diversity analyses.",https://scispace.com/paper/agents-an-open-source-framework-for-autonomous-language-48atieeln9,2023,Journal Article,arXiv.org,"Wangchunshu Zhou
+Yuchen Jiang
+Long Li
+Jialong Wu
+Tiannan Wang
+Shi Qiu
+Jintian Zhang
+Jing Chen
+Ruipu Wu
+Shuai Wang
+Shiding Zhu
+Jiyu Chen
+Wentao Zhang
+Qingyu Zhang
+Huajun Chen
+Peng Cui
+Mrinmaya Sachan",10.48550/arxiv.2309.07870,https://scispace.compdf/agents-an-open-source-framework-for-autonomous-language-48atieeln9.pdf,"Recent advances on large language models (LLMs) enable researchers and developers to build autonomous language agents that can automatically solve various tasks and interact with environments, humans, and other agents using natural language interfaces. We consider language agents as a promising direction towards artificial general intelligence and release Agents, an open-source library with the goal of opening up these advances to a wider non-specialist audience. Agents is carefully engineered to support important features including planning, memory, tool usage, multi-agent communication, and fine-grained symbolic control. Agents is user-friendly as it enables non-specialists to build, customize, test, tune, and deploy state-of-the-art autonomous language agents without much coding. The library is also research-friendly as its modularized design makes it easily extensible for researchers. Agents is available at https://github.com/aiwaves-cn/agents."
+AutoGenesisAgent: Self-Generating Multi-Agent Systems for Complex Tasks,"- **Relevance Score:** 18/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses multiple specialized LLM agents that coordinate to design and deploy new multi‑agent systems, but provides no empirical ensemble gains, software‑engineering experiments, or analysis of diversity benefits.",https://scispace.com/paper/autogenesisagent-self-generating-multi-agent-systems-for-4jpl96hxlm,2024,Preprint,"",J. S. Harper,10.48550/arxiv.2404.17017,https://scispace.compdf/autogenesisagent-self-generating-multi-agent-systems-for-4jpl96hxlm.pdf,"The proliferation of large language models (LLMs) and their integration into multi-agent systems has paved the way for sophisticated automation in various domains. This paper introduces AutoGenesisAgent, a multi-agent system that autonomously designs and deploys other multi-agent systems tailored for specific tasks. AutoGenesisAgent comprises several specialized agents including System Understanding, System Design, Agent Generator, and several others that collectively manage the lifecycle of creating functional multi-agent systems from initial concept to deployment. Each agent in AutoGenesisAgent has distinct responsibilities ranging from interpreting input prompts to optimizing system performance, culminating, in the deployment of a ready-to-use system. This proof-of-concept study discusses the design, implementation, and lessons learned from developing AutoGenesisAgent, highlighting its capability to generate and refine multi-agent systems autonomously, thereby reducing the need for extensive human oversight in the initial stages of system design. Keywords: multi-agent systems, large language models, system design automation, agent architecture, autonomous systems, software deployment "
+Enabling Synergistic Knowledge Sharing and Reasoning in Large Language Models with Collaborative Multi-Agents,"- **Relevance Score:** 18/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses a collaborative multi-agent framework to enhance LLM reasoning, but lacks empirical ensemble gains, software‑engineering experiments, diversity analysis, or test‑generation results.",https://scispace.com/paper/enabling-synergistic-knowledge-sharing-and-reasoning-in-5fk3mn6rbn,2023,Proceedings Article,"","Shu-Ching Chen
+Mei-Ling Shyu
+Saad Sadiq",10.1109/cic58953.2023.00021,"","Despite the significant advancements in the field of Natural Language Processing (NLP), Large Language Models (LLMs) have shown limitations in performing complex tasks that require arithmetic, commonsense, and symbolic reasoning. Reasoning frameworks like ReAct, Chain-of-thought (CoT), Tree-of-thoughts (ToT), etc. have shown success but with limitations in solving long-form complex tasks. To address this, we pro-pose a knowledge-sharing and collaborative multi-agent assisted framework on LLMs that leverages the capabilities of existing reasoning frameworks and the collaborative skills of multi-agent systems (MASs). The objectives of the proposed framework are to overcome the limitations of LLMs, enhance their reasoning capabilities, and improve their performance in complex tasks. It involves generating natural language rationales and in-context few-shot learning via prompting, and integrates the reasoning techniques with efficient knowledge-sharing and communication-driven agent networks. The potential benefits of the proposed framework include saving time and money, improved efficiency for computationally intensive reasoning, and the ability to incor-porate multiple collaboration strategies for dynamically changing environments."
+Multi-Agent Consensus Seeking via Large Language Models,"- **Relevance Score:** 18/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses LLM-driven agents to negotiate consensus, demonstrating multi-agent collaboration, but does not combine different models, target software engineering tasks, or analyze heterogeneous strengths, diversity benefits, or scalability.",https://scispace.com/paper/multi-agent-consensus-seeking-via-large-language-models-1727jcrgin,2023,Journal Article,arXiv.org,"Huaben Chen
+Wenkang Ji
+Lufeng Xu
+Shiyu Zhao",10.48550/arxiv.2310.20151,"","Multi-agent systems driven by large language models (LLMs) have shown promising abilities for solving complex tasks in a collaborative manner. This work considers a fundamental problem in multi-agent collaboration: consensus seeking. When multiple agents work together, we are interested in how they can reach a consensus through inter-agent negotiation. To that end, this work studies a consensus-seeking task where the state of each agent is a numerical value and they negotiate with each other to reach a consensus value. It is revealed that when not explicitly directed on which strategy should be adopted, the LLM-driven agents primarily use the average strategy for consensus seeking although they may occasionally use some other strategies. Moreover, this work analyzes the impact of the agent number, agent personality, and network topology on the negotiation process. The findings reported in this work can potentially lay the foundations for understanding the behaviors of LLM-driven multi-agent systems for solving more complex tasks. Furthermore, LLM-driven consensus seeking is applied to a multi-robot aggregation task. This application demonstrates the potential of LLM-driven agents to achieve zero-shot autonomous planning for multi-robot collaboration tasks. Project website: westlakeintelligentrobotics.github.io/ConsensusLLM/. "
+Agent-Driven Automatic Software Improvement,"- **Relevance Score:** 18/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses multi-agent LLM framework with single and multiple agents, but lacks empirical ensemble results, software‑engineering experiments, or analysis of complementary strengths and diversity effects.",https://scispace.com/paper/agent-driven-automatic-software-improvement-2fh94f6osd,2024,Preprint,"",Fernando Vallecillos Ruiz,10.1145/3661167.3661171,https://scispace.compdf/agent-driven-automatic-software-improvement-2fh94f6osd.pdf,"With software maintenance accounting for 50% of the cost of developing software, enhancing code quality and reliability has become more critical than ever. In response to this challenge, this doctoral research proposal aims to explore innovative solutions by focusing on the deployment of agents powered by Large Language Models (LLMs) to perform software maintenance tasks. The iterative nature of agents, which allows for continuous learning and adaptation, can help surpass common challenges in code generation. One distinct challenge is the last-mile problems, errors at the final stage of producing functionally and contextually relevant code. Furthermore, this project aims to surpass the inherent limitations of current LLMs in source code through a collaborative framework where agents can correct and learn from each other's errors. We aim to use the iterative feedback in these systems to further fine-tune the LLMs underlying the agents, becoming better aligned to the task of automated software improvement. Our main goal is to achieve a leap forward in the field of automatic software improvement by developing new tools and frameworks that can enhance the efficiency and reliability of software development. "
+"LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses vision for multi-agent LLM collaboration in software engineering, but provides no concrete system, experiments, or performance data; mainly a literature review.",https://scispace.com/paper/llm-based-multi-agent-systems-for-software-engineering-3nfzqoopnexw,2025,Journal Article,ACM Transactions on Software Engineering and Methodology,"Junda He
+Christoph Treude
+David Lo",10.1145/3712003,https://scispace.compdf/llm-based-multi-agent-systems-for-software-engineering-3nfzqoopnexw.pdf,"Integrating Large Language Models (LLMs) into autonomous agents marks a significant shift in the research landscape by offering cognitive abilities that are competitive with human planning and reasoning. This paper explores the transformative potential of integrating Large Language Models into Multi-Agent (LMA) systems for addressing complex challenges in software engineering (SE). By leveraging the collaborative and specialized abilities of multiple agents, LMA systems enable autonomous problem-solving, improve robustness, and provide scalable solutions for managing the complexity of real-world software projects. In this paper, we conduct a systematic review of recent primary studies to map the current landscape of LMA applications across various stages of the software development lifecycle (SDLC). To illustrate current capabilities and limitations, we perform two case studies to demonstrate the effectiveness of state-of-the-art LMA frameworks. Additionally, we identify critical research gaps and propose a comprehensive research agenda focused on enhancing individual agent capabilities and optimizing agent synergy. Our work outlines a forward-looking vision for developing fully autonomous, scalable, and trustworthy LMA systems, laying the foundation for the evolution of Software Engineering 2.0. "
+Deploying Foundation Model Powered Agent Services: A Survey,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey outlines multi-agent LLM frameworks and mentions software‑dev roles, but lacks empirical ensemble results, performance gains, or analysis of complementary strengths and diversity.",https://scispace.com/paper/deploying-foundation-model-powered-agent-services-a-survey-45ut1be4m67t,2024,Journal Article,"","Wenchao Xu
+J. C. Chen
+Peirong Zheng
+Xianfeng Yi
+Tianyi Tian
+Weidong Zhu
+Quan Wan
+Haozhao Wang
+Yimin Fan
+Qinliang Su
+Xiaofeng Shen",10.48550/arxiv.2412.13437,https://scispace.compdf/deploying-foundation-model-powered-agent-services-a-survey-45ut1be4m67t.pdf,"Foundation model (FM) powered agent services are regarded as a promising solution to develop intelligent and personalized applications for advancing toward Artificial General Intelligence (AGI). To achieve high reliability and scalability in deploying these agent services, it is essential to collaboratively optimize computational and communication resources, thereby ensuring effective resource allocation and seamless service delivery. In pursuit of this vision, this paper proposes a unified framework aimed at providing a comprehensive survey on deploying FM-based agent services across heterogeneous devices, with the emphasis on the integration of model and resource optimization to establish a robust infrastructure for these services. Particularly, this paper begins with exploring various low-level optimization strategies during inference and studies approaches that enhance system scalability, such as parallelism techniques and resource scaling methods. The paper then discusses several prominent FMs and investigates research efforts focused on inference acceleration, including techniques such as model compression and token reduction. Moreover, the paper also investigates critical components for constructing agent services and highlights notable intelligent applications. Finally, the paper presents potential research directions for developing real-time agent services with high Quality of Service (QoS). "
+Prompt Engineering Through the Lens of Optimal Control,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses optimal‑control framing to model multi‑agent prompt engineering, but provides no empirical ensemble results, software‑engineering experiments, or analysis of diversity and scalability.",https://scispace.com/paper/prompt-engineering-through-the-lens-of-optimal-control-27qzluinpf,2023,Journal Article,arXiv.org,"Yifan Luo
+Yiming Tang
+Chengfeng Shen
+Zhennan Zhou
+Bin Dong",10.48550/arxiv.2310.14201,https://scispace.compdf/prompt-engineering-through-the-lens-of-optimal-control-27qzluinpf.pdf,"Prompt Engineering (PE) has emerged as a critical technique for guiding Large Language Models (LLMs) in solving intricate tasks. Its importance is highlighted by its potential to significantly enhance the efficiency and effectiveness of human-machine interaction. As tasks grow increasingly complex, recent advanced PE methods have extended beyond the limitations of single-round interactions to embrace multi-round interactions, which allows for a deeper and more nuanced engagement with LLMs. In this paper, we propose an optimal control framework tailored for multi-round interactions with LLMs. This framework provides a unified mathematical structure that not only systematizes the existing PE methods but also sets the stage for rigorous analytical improvements. Furthermore, we extend this framework to include PE via ensemble methods and multi-agent collaboration, thereby enlarging the scope of applicability. By adopting an optimal control perspective, we offer fresh insights into existing PE methods and highlight theoretical challenges that warrant future research. Besides, our work lays a foundation for the development of more effective and interpretable PE methods."
+"LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision, and the Road Ahead","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses vision for multi-agent LLM collaboration in software engineering, but provides no concrete system, experiments, or performance data; mainly a literature review.",https://scispace.com/paper/llm-based-multi-agent-systems-for-software-engineering-3nfzqoopnexw,2025,Journal Article,ACM Transactions on Software Engineering and Methodology,"Junda He
+Christoph Treude
+David Lo",10.1145/3712003,https://arxiv.org/pdf/2404.04834,"Integrating Large Language Models (LLMs) into autonomous agents marks a significant shift in the research landscape by offering cognitive abilities that are competitive with human planning and reasoning. This paper explores the transformative potential of integrating Large Language Models into Multi-Agent (LMA) systems for addressing complex challenges in software engineering (SE). By leveraging the collaborative and specialized abilities of multiple agents, LMA systems enable autonomous problem-solving, improve robustness, and provide scalable solutions for managing the complexity of real-world software projects. In this paper, we conduct a systematic review of recent primary studies to map the current landscape of LMA applications across various stages of the software development lifecycle (SDLC). To illustrate current capabilities and limitations, we perform two case studies to demonstrate the effectiveness of state-of-the-art LMA frameworks. Additionally, we identify critical research gaps and propose a comprehensive research agenda focused on enhancing individual agent capabilities and optimizing agent synergy. Our work outlines a forward-looking vision for developing fully autonomous, scalable, and trustworthy LMA systems, laying the foundation for the evolution of Software Engineering 2.0. "
+Reasoning based on symbolic and parametric knowledge bases: a survey,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses survey of multi-agent LLM collaboration concepts, but lacks concrete system, empirical ensemble gains, software‑engineering experiments, or diversity analyses.",https://scispace.com/paper/reasoning-based-on-symbolic-and-parametric-knowledge-bases-a-1wc51qkzkkhg,2025,Journal Article,"","M. Xu
+Yang Ning
+Yongqi Li
+Jianhao Chen
+Wen Jiang
+Yao Xiao
+Shen Zhou
+Bailin Pan
+Zhi-Fan Bao
+Xin Miao
+Hyun Kang
+Ke Sun
+Tieyun Qian",10.48550/arxiv.2501.01030,https://scispace.compdf/reasoning-based-on-symbolic-and-parametric-knowledge-bases-a-1wc51qkzkkhg.pdf,"Reasoning is fundamental to human intelligence, and critical for problem-solving, decision-making, and critical thinking. Reasoning refers to drawing new conclusions based on existing knowledge, which can support various applications like clinical diagnosis, basic education, and financial analysis. Though a good number of surveys have been proposed for reviewing reasoning-related methods, none of them has systematically investigated these methods from the viewpoint of their dependent knowledge base. Both the scenarios to which the knowledge bases are applied and their storage formats are significantly different. Hence, investigating reasoning methods from the knowledge base perspective helps us better understand the challenges and future directions. To fill this gap, this paper first classifies the knowledge base into symbolic and parametric ones. The former explicitly stores information in human-readable symbols, and the latter implicitly encodes knowledge within parameters. Then, we provide a comprehensive overview of reasoning methods using symbolic knowledge bases, parametric knowledge bases, and both of them. Finally, we identify the future direction toward enhancing reasoning capabilities to bridge the gap between human and machine intelligence. "
+"Large language model agent: A survey on methodology, applications and challenges","- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey outlines multi-agent LLM concepts but lacks original experiments, performance data, or detailed analyses of diversity, software engineering tasks, or scalability.",https://scispace.com/paper/large-language-model-agent-a-survey-on-methodology-v2xrqrrlb0ml,2025,Journal Article,arXiv.org,"Junyu Luo
+Weizhi Zhang
+Ye Yuan
+Yusheng Zhao
+Junwei Yang
+Yiyang Gu
+Bohan Wu
+Binqi Chen
+Ziyue Qiao
+Qingqing Long
+Rongcheng Tu
+Xiaoming Luo
+Wei Ju
+Zhiping Xiao
+Yifan Wang
+Mengxue Xiao
+Chenwu Liu
+Jingyang Yuan
+Shichang Zhang
+Yiqiao Jin
+Fan Zhang
+Xianhong Wu
+Hanqing Zhao
+Dacheng Tao
+Philip S. Yu
+Ming Zhang",10.48550/arxiv.2503.21460,https://arxiv.org/pdf/2503.21460?,""
+Large language model-based agents for software engineering: A survey,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey describes multi-agent LLM concepts for software engineering but provides no original ensemble experiments, performance data, or theoretical analysis; thus only loosely matches the collaborative multi-agent criterion.",https://scispace.com/paper/large-language-model-based-agents-for-software-engineering-a-5edi77w6grl0,2024,Journal Article,"","Junwei Liu
+Kaixin Wang
+Yixuan Chen
+Xin Peng
+Zhenpeng Chen
+Lingming Zhang
+Yiling Lou",10.48550/arxiv.2409.02977,https://arxiv.org/pdf/2409.02977?,"The recent advance in Large Language Models (LLMs) has shaped a new paradigm of AI agents, i.e., LLM-based agents. Compared to standalone LLMs, LLM-based agents substantially extend the versatility and expertise of LLMs by enhancing LLMs with the capabilities of perceiving and utilizing external resources and tools. To date, LLM-based agents have been applied and shown remarkable effectiveness in Software Engineering (SE). The synergy between multiple agents and human interaction brings further promise in tackling complex real-world SE problems. In this work, we present a comprehensive and systematic survey on LLM-based agents for SE. We collect 106 papers and categorize them from two perspectives, i.e., the SE and agent perspectives. In addition, we discuss open challenges and future directions in this critical domain. The repository of this survey is at https://github.com/FudanSELab/Agent4SE-Paper-List. "
+Large Language Model-Based Agents for Software Engineering: A Survey,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey outlines multi-agent concepts and roles, but provides no original ensemble experiments, performance data, or theoretical/efficiency analyses for software engineering tasks.",https://scispace.com/paper/large-language-model-based-agents-for-software-engineering-a-5edi77w6grl0,2024,Journal Article,"","Junwei Liu
+Kaixin Wang
+Yixuan Chen
+Xin Peng
+Zhenpeng Chen
+Lingming Zhang
+Yiling Lou",10.48550/arxiv.2409.02977,https://scispace.compdf/large-language-model-based-agents-for-software-engineering-a-5edi77w6grl0.pdf,"The recent advance in Large Language Models (LLMs) has shaped a new paradigm of AI agents, i.e., LLM-based agents. Compared to standalone LLMs, LLM-based agents substantially extend the versatility and expertise of LLMs by enhancing LLMs with the capabilities of perceiving and utilizing external resources and tools. To date, LLM-based agents have been applied and shown remarkable effectiveness in Software Engineering (SE). The synergy between multiple agents and human interaction brings further promise in tackling complex real-world SE problems. In this work, we present a comprehensive and systematic survey on LLM-based agents for SE. We collect 106 papers and categorize them from two perspectives, i.e., the SE and agent perspectives. In addition, we discuss open challenges and future directions in this critical domain. The repository of this survey is at https://github.com/FudanSELab/Agent4SE-Paper-List. "
+Large language models empowered agent-based modeling and simulation: A survey and perspectives,"- **Relevance Score:** 12/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey outlines LLM‑driven agents for simulation, but lacks concrete multi‑LLM ensembles, software‑engineering experiments, or quantitative diversity analyses.",https://scispace.com/paper/large-language-models-empowered-agent-based-modeling-and-2alj1dx3i6,2023,Journal Article,arXiv.org,"Chen Gao
+Xiaochong Lan
+Nian Li
+Yuan Yuan
+Jingtao Ding
+Zhi Zhou
+Fengli Xu
+Yong Li",10.48550/arxiv.2312.11970,https://www.nature.com/articles/s41599-024-03611-3.pdf,"Agent-based modeling and simulation has evolved as a powerful tool for modeling complex systems, offering insights into emergent behaviors and interactions among diverse agents. Integrating large language models into agent-based modeling and simulation presents a promising avenue for enhancing simulation capabilities. This paper surveys the landscape of utilizing large language models in agent-based modeling and simulation, examining their challenges and promising future directions. In this survey, since this is an interdisciplinary field, we first introduce the background of agent-based modeling and simulation and large language model-empowered agents. We then discuss the motivation for applying large language models to agent-based simulation and systematically analyze the challenges in environment perception, human alignment, action generation, and evaluation. Most importantly, we provide a comprehensive overview of the recent works of large language model-empowered agent-based modeling and simulation in multiple scenarios, which can be divided into four domains: cyber, physical, social, and hybrid, covering simulation of both real-world and virtual environments. Finally, since this area is new and quickly evolving, we discuss the open problems and promising future directions."
+Transforming Software Development: A Study on the Integration of Multi-Agent Systems and Large Language Models for Automatic Code Generation,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Uses MAS+LLM integration to automate code generation; includes a case study on software development but lacks multiple distinct LLM agents, ensemble comparisons, or detailed diversity analysis.",https://scispace.com/paper/transforming-software-development-a-study-on-the-integration-6lf467yygi78,2024,Journal Article,"","Rolando Ramírez-Rueda
+Edgard Benítez–Guerrero
+Carmen Mezura-Godoy
+Everardo Bárcenas",10.1109/conisoft63288.2024.00013,"","This paper explores the integration of Multi-Agent Systems (MAS) and Large Language Models (LLMs) for auto-matic code generation, addressing the limitations of traditional manual coding. By conducting a comprehensive review of existing literature and analyzing a practical case study, we demonstrate how MAS and LLMs can collaboratively enhance software development processes. The research focuses on the technical and theoretical challenges of this integration, highlighting the potential for improved productivity, adaptability, and quality in code generation. The findings contribute to AI-based software engineering by revealing new research directions in collective intelligence and automated programming."
+Large language models for software engineering: A systematic literature review,"- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Reviews 229 LLM‑for‑SE papers, categorizing models and tasks; provides broad SE task overview but lacks original multi‑agent or ensemble experiments, diversity analysis, or scalability discussion.",https://scispace.com/paper/large-language-models-for-software-engineering-a-systematic-1j69c9384z,2023,Preprint,"","Xinyi Hou
+Yanjie Zhao
+Yue Liu
+Yang Zhou
+Kailong Wang
+Li Li
+Xiapu Luo
+David Lo
+John Grundy
+Haoyu Wang",10.48550/arxiv.2308.10620,https://arxiv.org/pdf/2308.10620,"Large Language Models (LLMs) have significantly impacted numerous domains, including Software Engineering (SE). Many recent publications have explored LLMs applied to various SE tasks. Nevertheless, a comprehensive understanding of the application, effects, and possible limitations of LLMs on SE is still in its early stages. To bridge this gap, we conducted a systematic literature review on LLM4SE, with a particular focus on understanding how LLMs can be exploited to optimize processes and outcomes. We collect and analyze 229 research papers from 2017 to 2023 to answer four key research questions (RQs). In RQ1, we categorize different LLMs that have been employed in SE tasks, characterizing their distinctive features and uses. In RQ2, we analyze the methods used in data collection, preprocessing, and application highlighting the role of well-curated datasets for successful LLM for SE implementation. RQ3 investigates the strategies employed to optimize and evaluate the performance of LLMs in SE. Finally, RQ4 examines the specific SE tasks where LLMs have shown success to date, illustrating their practical contributions to the field. From the answers to these RQs, we discuss the current state-of-the-art and trends, identifying gaps in existing research, and flagging promising areas for future study. "
+"From llms to llm-based agents for software engineering: A survey of current, challenges and future","- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey summarizes LLM and agent applications in software engineering but provides no new multi‑agent system, ensemble experiments, or diversity analysis; only discusses existing tasks.",https://scispace.com/paper/from-llms-to-llm-based-agents-for-software-engineering-a-2fb63jbcpnef,2024,Journal Article,"","Haolin Jin
+Li Huang
+Haipeng Cai
+Jun Yan
+Bo Li
+Huaming Chen",10.48550/arxiv.2408.02479,https://arxiv.org/pdf/2408.02479,"With the rise of large language models (LLMs), researchers are increasingly exploring their applications in var ious vertical domains, such as software engineering. LLMs have achieved remarkable success in areas including code generation and vulnerability detection. However, they also exhibit numerous limitations and shortcomings. LLM-based agents, a novel tech nology with the potential for Artificial General Intelligence (AGI), combine LLMs as the core for decision-making and action-taking, addressing some of the inherent limitations of LLMs such as lack of autonomy and self-improvement. Despite numerous studies and surveys exploring the possibility of using LLMs in software engineering, it lacks a clear distinction between LLMs and LLM based agents. It is still in its early stage for a unified standard and benchmarking to qualify an LLM solution as an LLM-based agent in its domain. In this survey, we broadly investigate the current practice and solutions for LLMs and LLM-based agents for software engineering. In particular we summarise six key topics: requirement engineering, code generation, autonomous decision-making, software design, test generation, and software maintenance. We review and differentiate the work of LLMs and LLM-based agents from these six topics, examining their differences and similarities in tasks, benchmarks, and evaluation metrics. Finally, we discuss the models and benchmarks used, providing a comprehensive analysis of their applications and effectiveness in software engineering. We anticipate this work will shed some lights on pushing the boundaries of LLM-based agents in software engineering for future research. "
+"Helping or Herding? Reward Model Ensembles Mitigate but do not Eliminate
+  Reward Hacking","- **Relevance Score:** 10/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Studies reward‑model ensembles for alignment, not LLM collaboration or software tasks; only modest relevance to model diversity and ensemble benefits.",https://scispace.com/paper/http://arxiv.org/abs/2312.09244v3,2023,Preprint,"","Jacob Eisenstein
+Chirag Nagpal
+Alekh Agarwal
+Ahmad Beirami
+Alex D'Amour
+DJ Dvijotham
+Adam Fisch
+Katherine Heller
+Stephen Pfohl
+Deepak Ramachandran
+Peter Shaw
+Jonathan Berant","",http://arxiv.org/pdf/2312.09244v3,"Reward models play a key role in aligning language model applications towards
+human preferences. However, this setup creates an incentive for the language
+model to exploit errors in the reward model to achieve high estimated reward, a
+phenomenon often termed \emph{reward hacking}. A natural mitigation is to train
+an ensemble of reward models, aggregating over model outputs to obtain a more
+robust reward estimate. We explore the application of reward ensembles to
+alignment at both training time (through reinforcement learning) and inference
+time (through reranking). First, we show that reward models are
+\emph{underspecified}: reward models that perform similarly in-distribution can
+yield very different rewards when used in alignment, due to distribution shift.
+Second, underspecification results in overoptimization, where alignment to one
+reward model does not improve reward as measured by another reward model
+trained on the same data. Third, overoptimization is mitigated by the use of
+reward ensembles, and ensembles that vary by their \emph{pretraining} seeds
+lead to better generalization than ensembles that differ only by their
+\emph{fine-tuning} seeds, with both outperforming individual reward models.
+However, even pretrain reward ensembles do not eliminate reward hacking: we
+show several qualitative reward hacking phenomena that are not mitigated by
+ensembling because all reward models in the ensemble exhibit similar error
+patterns."
+AgentsNet: Coordination and Collaborative Reasoning in Multi-Agent LLMs,"- **Relevance Score:** 5/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Introduces a benchmark for multi-agent reasoning, evaluates scaling to 100 agents, but does not present a collaborative system, ensembles, software engineering tasks, or diversity analyses.",https://scispace.com/paper/agentsnet-coordination-and-collaborative-reasoning-in-multi-upxy5ayxu7zw,2025,Journal Article,arXiv.org,"F. Grötschla
+Luis Müller
+Jan Tönshoff
+Mikhail Galkin
+Bryan Perozzi",10.48550/arxiv.2507.08616,https://scispace.compdf/agentsnet-coordination-and-collaborative-reasoning-in-multi-upxy5ayxu7zw.pdf,"Large-language models (LLMs) have demonstrated powerful problem-solving capabilities, in particular when organized in multi-agent systems. However, the advent of such systems also raises several questions on the ability of a complex network of agents to effectively self-organize and collaborate. While measuring performance on standard reasoning benchmarks indicates how well multi-agent systems can solve reasoning tasks, it is unclear whether these systems are able to leverage their topology effectively. Here, we propose AgentsNet, a new benchmark for multi-agent reasoning. By drawing inspiration from classical problems in distributed systems and graph theory, AgentsNet measures the ability of multi-agent systems to collaboratively form strategies for problem-solving, self-organization, and effective communication given a network topology. We evaluate a variety of baseline methods on AgentsNet including homogeneous networks of agents which first have to agree on basic protocols for organization and communication. We find that some frontier LLMs are already demonstrating strong performance for small networks but begin to fall off once the size of the network scales. While existing multi-agent benchmarks cover at most 2-5 agents, AgentsNet is practically unlimited in size and can scale with new generations of LLMs. As such, we also probe frontier models in a setup with up to 100 agents."
+Research on the role of LLM in multi-agent systems: A survey,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey reviews LLM‑based agents and challenges but provides no concrete multi‑LLM system, experiments, or performance data for software engineering or test generation tasks.",https://scispace.com/paper/research-on-the-role-of-llm-in-multi-agent-systems-a-survey-2xvqjswlpoga,2024,Journal Article,Applied and Computational Engineering,Jianxiang Ma,10.54254/2755-2721/71/20241674,"","In recent years, the rapid development of large language model (LLM) has demonstrated superior performance in language understanding, text generation, planning, reasoning, and knowledge integration. This has led to the emergence of intelligent agents based on LLM. By leveraging the capabilities of LLM, these agents can effectively make decisions based on given objectives and possess certain learning and adaptation abilities. However, single-agent systems are generally suited to solving relatively simple problems and are limited in handling complex tasks that require coordination. For instance, in fields such as power grid management or traffic control systems, relying solely on a single agent is often insufficient for effective decision-making. In this context, adopting multi-agent systems proves to be more effective: through collaboration among multiple agents, each undertaking specific tasks, complex problems can be efficiently managed through interaction and coordination. This survey will analyze the role of LLM in multi-agent collaboration, discuss and analyze the current research challenges and key issues, and explore potential directions for future development. "
+Large Language Model Based Multi-agents: A Survey of Progress and Challenges,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey summarizes existing LLM‑multi‑agent research; does not present original collaborative system, ensemble experiments, software‑engineering evaluations, or analyses of diversity and scalability.",https://scispace.com/paper/large-language-model-based-multi-agents-a-survey-of-progress-598f8qtz93,2024,Journal Article,"","Taicheng Guo
+Yanjiao Chen
+Yaqi Wang
+Rui Chang
+Shichao Pei
+Nitesh V. Chawla
+Olaf Wiest
+Xiangliang Zhang",10.24963/ijcai.2024/890,https://scispace.compdf/large-language-model-based-multi-agents-a-survey-of-progress-598f8qtz93.pdf,"Large Language Models (LLMs) have achieved remarkable success across a wide array of tasks. Due to their notable capabilities in planning and reasoning, LLMs have been utilized as autonomous agents for the automatic execution of various tasks. Recently, LLM-based agent systems have rapidly evolved from single-agent planning or decision-making to operating as multi-agent systems, enhancing their ability in complex problem-solving and world simulation. To offer an overview of this dynamic field, we present this survey to offer an in-depth discussion on the essential aspects and challenges of LLM-based multi-agent (LLM-MA) systems. Our objective is to provide readers with an in-depth understanding of these key points: the domains and settings where LLM-MA systems operate or simulate; the profiling and communication methods of these agents; and the means by which these agents develop their skills. For those interested in delving into this field, we also summarize the commonly used datasets or benchmarks. To keep researchers updated on the latest studies, we maintain an open-source GitHub repository (github.com/taichengguo/LLM_MultiAgents_Survey_Papers), dedicated to outlining the research of LLM-MA research. "
+Large Language Model Applied in Multi-agent SystemA Survey,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey reviews LLM use in MAS without presenting new collaborative systems, ensembles, software‑engineering experiments, or empirical analyses of diversity or scalability.",https://scispace.com/paper/large-language-model-applied-in-multi-agent-systema-survey-40i6jj60c2ky,2024,Journal Article,Applied and Computational Engineering,Kaiwen Dong,10.54254/2755-2721/109/20241330,https://scispace.compdf/large-language-model-applied-in-multi-agent-systema-survey-40i6jj60c2ky.pdf,"Abstract. The application of large language models (LLMs) in single-agent systems within complex environments has proven successful, prompting a growing interest in their use within multi-agent systems (MAS). Despite the impressive capabilities of LLMs, it remains unclear how they can be optimally integrated and utilized to empower agents in MAS. Understanding how to effectively leverage the advantages of LLMs to enhance agent performance is crucial. This survey provides a comprehensive overview of the application of LLMs in MAS, focusing on their impact on agent cooperation, reasoning, and adaptive abilities. Finally, we discuss future directions and open questions in this evolving field. "
+Software engineering for large-scale multi-agent systems: SELMAS 2003: workshop report,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** The paper focuses on software engineering methodologies for large-scale multi-agent systems, predating LLMs and lacking any discussion of language models, ensembles, or test generation.",https://scispace.com/paper/software-engineering-for-large-scale-multi-agent-systems-31z5c6x40i,2003,Journal Article,ACM Sigsoft Software Engineering Notes,"Alessandro Garcia
+José Alberto R. P. Sardinha
+Carlos José Pereira de Lucena
+Jaelson Castro
+Julio Cesar Sampaio do Prado Leite
+Ruy Luiz Milidiú
+Alexander Romanovsky
+Martin Griss
+Rogério de Lemos
+Anna Perini",10.1145/966221.966223,https://scispace.com/pdf/software-engineering-for-large-scale-multi-agent-systems-31z5c6x40i.pdf,"This paper is intended to sum up the results of the Second International Workshop on Software Engineering for Large-Scale Multi-Agent Systems (SELMAS'03) held in Portland, Oregon, USA, May 3--4, 2003, as part of the International Conference on Software Engineering (ICSE'03). The main purpose of this workshop was to share and pool the collective experience of people, both academics and practitioners, who are actively working on software engineering for large-scale multi-agent systems. The call for papers elicited some 26 submissions, of which 19 papers were accepted for presentation. A selected set of the workshop papers and invited papers are to appear in the 2nd edition of the book Software Engineering for Large-Scale Multi-Agent Systems (LNCS, Springer, 2003). The workshop consisted of an opening presentation, several paper presentations organized into five sessions, and three panels. During the workshop we informally reviewed ongoing and previous work and debated a number of important issues. The SELMAS'03 Web page, including the papers and the electronic version of this report, can be found at . We begin by presenting an overview of our goals and the workshop structure, and then focus on the workshop technical program."
+Advancements in Multi-Agent Large Language Model Systems for Next-Generation AI,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on medical diagnostics, EHR integration, and explainable AI; no software engineering tasks, ensemble performance data, or diversity analysis presented.",https://scispace.com/paper/advancements-in-multi-agent-large-language-model-systems-for-toq5g9kgsdig,2025,Journal Article,Advances in computational intelligence and robotics book series,"Abinaya Gopalakrishnan
+G. Ramya
+Preethiya Thandapani
+R. Nithya Paranthaman
+S. Ashwini
+R. Dhwarithaa",10.4018/979-8-3373-1419-8.ch002,"","Large Language Models (LLMs) have enabled AI research. Their easier design of new ways to handle challenges across a wide range of applications has increased this discipline's influence. Multi-agent LLM systems in diagnostics and healthcare can revolutionize clinical decision-making, precision medicine, and patient care. This chapter examines multi-agent LLMs' medical concepts, designs, and applications.Multi-agent systems can scale, modularize, and specialize and integrate several medical specializations and contextual knowledge. This chapters covers the technical implementation of these systems, including advanced Large Language Models, quality control measures, guardrails, self-reflection, integration with EHRs, and explainable AI for decision transparency. We discuss possible benefits with future directions, like integrating IoT devices and creating advanced natural language interfaces. "
+"Efficient Test Time Adapter Ensembling for Low-resource Language
+  Varieties","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on adapter ensembling for low‑resource languages, not LLM agents, software engineering, or diversity analyses, so it does not meet any listed criteria.",https://scispace.com/paper/http://arxiv.org/abs/2109.04877v1,2021,Preprint,"","Xinyi Wang
+Yulia Tsvetkov
+Sebastian Ruder
+Graham Neubig","",http://arxiv.org/pdf/2109.04877v1,"Adapters are light-weight modules that allow parameter-efficient fine-tuning
+of pretrained models. Specialized language and task adapters have recently been
+proposed to facilitate cross-lingual transfer of multilingual pretrained models
+(Pfeiffer et al., 2020b). However, this approach requires training a separate
+language adapter for every language one wishes to support, which can be
+impractical for languages with limited data. An intuitive solution is to use a
+related language adapter for the new language variety, but we observe that this
+solution can lead to sub-optimal performance. In this paper, we aim to improve
+the robustness of language adapters to uncovered languages without training new
+adapters. We find that ensembling multiple existing language adapters makes the
+fine-tuned model significantly more robust to other language varieties not
+included in these adapters. Building upon this observation, we propose Entropy
+Minimized Ensemble of Adapters (EMEA), a method that optimizes the ensemble
+weights of the pretrained language adapters for each test sentence by
+minimizing the entropy of its predictions. Experiments on three diverse groups
+of language varieties show that our method leads to significant improvements on
+both named entity recognition and part-of-speech tagging across all languages."
+Plataforma de simulação em Repast Simphony para análise da divulgação de novas ideias em mercado,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on simulating idea diffusion with Repast; no LLMs, ensembles, software‑engineering tasks, or diversity analyses are addressed.",https://scispace.com/paper/plataforma-de-simulacao-em-repast-simphony-para-analise-da-30x3kiq42u,2013,"","",Joaquim Margarido Passos de Sousa,"",https://scispace.com/pdf/plataforma-de-simulacao-em-repast-simphony-para-analise-da-30x3kiq42u.pdf,""
+Software Engineering for Large-Scale Multi-Agent Systems SELMAS 2002: Workshop Report,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on MAS software engineering workshops, not on LLM ensembles, evaluations, or diversity analyses.",https://scispace.com/paper/software-engineering-for-large-scale-multi-agent-systems-3njyy582wc,2002,"","","Alessandro Garcia
+Carlos José Pereira de Lucena
+Jaelson Castro
+Andrea Omicini
+Franco Zambonelli","",https://scispace.com/pdf/software-engineering-for-large-scale-multi-agent-systems-3njyy582wc.pdf,"This paper reports on the First International Workshop on Software Engineering for Large-Scale Multi-Agent Systems (SELMAS 2002) held in Orlando, Florida, USA, May 19, 2002, as part of the International Conference on Software Engineering (ICSE 2002). The main purpose behind this workshop is to share and pool the collective experience of people, both academics and practitioners, who are actively working on software engineering for large-scale multi-agent systems. The call for papers elicited about 20 submissions of which 17 papers were accepted for publication in the workshop proceedings and 12 papers were accepted for pre sentation. A selected set of workshop papers and invited papers are going to appear in the book Software Engineering for Large-Scale MultiAgent Systems (LNCS, Springer, 2002). The workshop consisted of an opening presentation, several paper presentations that were organized into three distinct sessions, and a panel. During the workshop we informally reviewed ongoing and previous work and debated a number of i mportant issues. The SELMAS’02 Web page, including the papers and the electronic version of this report, can be found at . We begin by presenting an overview of our goals and the workshop structure, and then focus on the workshop’s technical program."
+Relating Agent Technology and Component Models,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on software component models and agent technology from 2001, with no mention of LLMs, ensembles, or software‑engineering LLM tasks.",https://scispace.com/paper/relating-agent-technology-and-component-models-2uyegm9n98,2001,"","",Jürgen Lind,"",https://scispace.com/pdf/relating-agent-technology-and-component-models-2uyegm9n98.pdf,"In this paper, I will discuss some conceptual and technical similarities and differences between component models and agent technology. To this end, I will briefly introduce three component platforms and relate conceptual and technical aspects to the agent world with respect to the entities, interactions and problem solving capabilities that are characteristic for either technology. From this comparison, I will finally derive some ideas on where agent technology could extend the component approach to make it easier to build complex and distributed systems."
+What do you mean by collaborative learning,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Discusses human/agent collaborative learning concepts, not LLM ensembles, software engineering tasks, or performance evaluations.",https://scispace.com/paper/what-do-you-mean-by-collaborative-learning-4yh17cjr7v,1999,"","",Pierre Dillenbourg,"",https://scispace.com/pdf/what-do-you-mean-by-collaborative-learning-4yh17cjr7v.pdf,"This book arises from a series of workshops on collaborative learning, that gathered together 20 scholars from the disciplines of psychology, education and computer science. The series was part of a research program entitled 'Learning in Humans and Machines' (LHM), launched by Peter Reimann and Hans Spada, and funded by the European Science Foundation. This program aimed to develop a multidisciplinary dialogue on learning, involving mainly scholars from cognitive psychology, educational science, and artificial intelligence (including machine learning). During the preparation of the program, Agnes Blaye, Claire O'Malley, Michael Baker and I developed a theme on collaborative learning. When the program officially began, 12 members were selected to work on this theme and formed the so-called 'task force 5'. I became the coordinator of the group. This group organised two workshops, in Sitges (Spain, 1994) and Aix-en-Provence (France, 1995). In 1996, the group was enriched with new members to reach its final size. Around 20 members met in the subsequent workshops, at Samoens (France, 1996), Houthalen (Belgium, 1996) and Mannheim (Germany, 1997). Several individuals joined the group for some time but have not written a chapter. I would nevertheless like to acknowledge their contributions to our activities: George Bilchev, Stevan Harnad, Calle Jansson and Claire O'Malley."
+Software agents as next generation software components,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on traditional software agents, emergent behavior, and component flexibility; no mention of LLMs, ensembles, or software‑engineering LLM evaluations.",https://scispace.com/paper/software-agents-as-next-generation-software-components-28ot4e5pgv,2001,Proceedings Article,Component-Based Software Engineering,Martin L. Griss,"",https://scispace.com/pdf/software-agents-as-next-generation-software-components-28ot4e5pgv.pdf,"The increasing volume of Business-to-Consumer (B2C) and Business-to-Business (B2B) Internet traffic provides great opportunity to delegate information search, analysis, and negotiation to automated assistants. These new classes of applications demand flexible, intelligent solutions. Distributed software agents offer great promise, building on increasingly pervasive message-based middleware and component technology, Java, the Extensible Markup Language (XML), and the Hypertext Transfer Protocol (HTTP). Agents are specialized kinds of components, offering greater flexibility than traditional components. As will be explained, agents use dynamically adaptable rich message-based interaction, and flexible knowledge-based techniques to make it much easier to build and evolve systems as requirement and technologies change. At HP Laboratories, our E-commerce research focuses on simulation, agent communication, mobile appliances and personal agents, and multi-agent systems (Griss, 2000b; Chen, 1999). We are interested in how agents are defined and constructed, how they communicate, and how collaborations between groups of agents can be established and controlled. We combine agents and workflow to provide significant benefits beyond those traditionally associated with components and scripting. There are many kinds of software agents, with differing characteristics such as mobility, autonomy, collaboration, persistence and intelligence. This chapter surveys some of these agent capabilities. More details can be found in books (Huhns, 1998; Jennings, 1998; Bradshaw, 1997), papers (Genesereth, 1994; Maes, 1999; Griss, 1999, 2000) and web sites (http://agents.umbc.edu/, http://www.hpl.hp.com/reuse/agents/, http://www.agent.com/)."
+Agent-Environment Interaction in MAS - Introduction and Survey,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on general multi-agent system modeling and simulations; does not involve LLMs, software engineering tasks, or ensemble performance analyses.",https://scispace.com/paper/agent-environment-interaction-in-mas-introduction-and-survey-41b83mepoo,2011,Book Chapter,"","Joonas Kesäniemi
+Vagan Terziyan",10.5772/15145,https://scispace.com/pdf/agent-environment-interaction-in-mas-introduction-and-survey-41b83mepoo.pdf,"Although agent and its environment have been inseparable concepts since the beginningof agent related research, there are quite a few opinions what the concept ”environment”actually comprises in the context of multi-agent systems. Environment is often treated eitherin an implicit or ad hoc way, by referring basically anything outside the boundaries of anindividual agent as the environment. Only recently environment has been considered as aﬁrst class abstraction with its own clear cut responsibilities apart from agents (Weyns et al.,2005). Thisprogresshasbeenmadeaspartoftheagent-orientedsoftwareengineering(AOSE)ﬁeld, which aims at incorporating agent-oriented concepts into the disciplined processes ofsoftware engineering.InthelayeredviewofMASwithenvironment-basedsupportsbyVirolietal. Virolietal.(2007)the application level environmental abstractions are supported by specialized platform levelinfrastructure. Using this infrastructure, the environmental abstraction can interact with eachother and with the agents. According to the classic deﬁnition of agenthood by Russell andNorvig [4], agents can receive information from the environment through sensors and affectit via actuators. This agent-environment interface will be the focal point of this chapter.The goal of this chapter is two fold. First of all, we want to give an introductionto the relationship between agent and its environment. This age-old issue is coveredfrom the perspective of individual agent and multi-agent system. Second, we focus onthe agent-environment interface and survey the different aspects of agent-environmentinteraction. Survey emphasizes the engineering side of the multi-agent systems, as we gothrough the meta-models, methodologiesand infrastructures presented in the recent researchliterature. However, details of any application-speciﬁc environmental infrastructures oragent’s inner workings are out of the scope of this paper. We limit ourselves to the actionand observation related issues that make it possible for an agent to perceive and affect itsenvironment.By turning the attention to the design and implementation details of agent-oriented systems,AOSE approach offers results that pave the way for turning agent systems from researchprototypesinto seriousalternatives formainstream softwaredevelopment. Inorderforthis tohappen,itiscrucialtounderstandthedifferentrolesthatagentrelatedconcepts,suchasagent,environment and agent-environment interaction, play in the context of multi-agent systems."
+Multi-agent collaboration mechanisms: A survey of llms,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey paper reviews concepts; does not present a concrete multi‑LLM system, experiments, or performance data for software engineering or test generation tasks.",https://scispace.com/paper/multi-agent-collaboration-mechanisms-a-survey-of-llms-gxsw03fw1w2m,2025,Journal Article,arXiv.org,"Khanh-Tung Tran
+Dung Dao
+Minh-Duong Nguyen
+Quoc-Viet Pham
+Barry O’Sullivan
+Hoang D. Nguyen",10.48550/arxiv.2501.06322,https://arxiv.org/pdf/2501.06322,""
+Editorial: Understanding and engineering cyber-physical collectives,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on cyber‑physical collectives, macro‑level abstractions, and robotics; contains no LLMs, ensembles, software‑engineering experiments, or diversity analyses.",https://scispace.com/paper/editorial-understanding-and-engineering-cyber-physical-3v4952cstx,2024,Journal Article,Frontiers in Robotics and AI,"Roberto Casadei
+Lukas Esterle
+Rose Gamble
+Paul Harvey
+Elizabeth F. Wanner",10.3389/frobt.2024.1407421,https://scispace.compdf/editorial-understanding-and-engineering-cyber-physical-3v4952cstx.pdf,"EDITORIAL article Front. Robot. AI, 06 May 2024Sec. Multi-Robot Systems Volume 11 - 2024 | https://doi.org/10.3389/frobt.2024.1407421 "
+Computational experiments meet large language model based agents: A survey and perspective,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey discusses conceptual integration of LLM agents with computational experiments, lacking concrete multi‑LLM systems, empirical ensembles, software‑engineering evaluations, or diversity analyses.",https://scispace.com/paper/computational-experiments-meet-large-language-model-based-3gsp2b7g9r,2024,Journal Article,arXiv.org,"Qun Ma
+Xiao Xue
+Deyu Zhou
+Xiangning Yu
+Donghua Liu
+Xuwen Zhang
+Zihan Zhao
+Yifan Shen
+Peilin Ji
+Juanjuan Li
+Gang Wang
+Wanpeng Ma",10.48550/arxiv.2402.00262,https://arxiv.org/pdf/2402.00262,"Computational experiments have emerged as a valuable method for studying complex systems, involving the algorithmization of counterfactuals. However, accurately representing real social systems in Agent-based Modeling (ABM) is challenging due to the diverse and intricate characteristics of humans, including bounded rationality and heterogeneity. To address this limitation, the integration of Large Language Models (LLMs) has been proposed, enabling agents to possess anthropomorphic abilities such as complex reasoning and autonomous learning. These agents, known as LLM-based Agent, offer the potential to enhance the anthropomorphism lacking in ABM. Nonetheless, the absence of explicit explainability in LLMs significantly hinders their application in the social sciences. Conversely, computational experiments excel in providing causal analysis of individual behaviors and complex phenomena. Thus, combining computational experiments with LLM-based Agent holds substantial research potential. This paper aims to present a comprehensive exploration of this fusion. Primarily, it outlines the historical development of agent structures and their evolution into artificial societies, emphasizing their importance in computational experiments. Then it elucidates the advantages that computational experiments and LLM-based Agents offer each other, considering the perspectives of LLM-based Agent for computational experiments and vice versa. Finally, this paper addresses the challenges and future trends in this research domain, offering guidance for subsequent related studies."
+"UCAM Biomedical translation at WMT19: Transfer learning multi-domain
+  ensembles","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on biomedical translation ensembles, not LLM agents, software engineering, or diversity analyses; no relevance to any listed criteria.",https://scispace.com/paper/http://arxiv.org/abs/1906.05786v1,2019,Preprint,"","Danielle Saunders
+Felix Stahlberg
+Bill Byrne","",http://arxiv.org/pdf/1906.05786v1,"The 2019 WMT Biomedical translation task involved translating Medline
+abstracts. We approached this using transfer learning to obtain a series of
+strong neural models on distinct domains, and combining them into multi-domain
+ensembles. We further experiment with an adaptive language-model ensemble
+weighting scheme. Our submission achieved the best submitted results on both
+directions of English-Spanish."
+Multi-Layer Ensembling Techniques for Multilingual Intent Classification,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on multi-layer ensembling for multilingual intent classification, not LLM agents, software engineering tasks, or related theoretical/scalability analyses.",https://scispace.com/paper/http://arxiv.org/abs/1806.07914v1,2018,Preprint,"","Charles Costello
+Ruixi Lin
+Vishwas Mruthyunjaya
+Bettina Bolla
+Charles Jankowski","",http://arxiv.org/pdf/1806.07914v1,"In this paper we determine how multi-layer ensembling improves performance on
+multilingual intent classification. We develop a novel multi-layer ensembling
+approach that ensembles both different model initializations and different
+model architectures. We also introduce a new banking domain dataset and compare
+results against the standard ATIS dataset and the Chinese SMP2017 dataset to
+determine ensembling performance in multilingual and multi-domain contexts. We
+run ensemble experiments across all three datasets, and conclude that
+ensembling provides significant performance increases, and that multi-layer
+ensembling is a no-risk way to improve performance on intent classification. We
+also find that a diverse ensemble of simple models can reach perform comparable
+to much more sophisticated state-of-the-art models. Our best F 1 scores on
+ATIS, Banking, and SMP are 97.54%, 91.79%, and 93.55% respectively, which
+compare well with the state-of-the-art on ATIS and best submission to the
+SMP2017 competition. The total ensembling performance increases we achieve are
+0.23%, 1.96%, and 4.04% F 1 respectively."
+The Wisdom of the Crowd: Reliable Deep Reinforcement Learning Through Ensembles of Q-Functions,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on Q‑function ensembles for reinforcement learning, not on LLMs, software engineering tasks, or related diversity analyses.",https://scispace.com/paper/the-wisdom-of-the-crowd-reliable-deep-reinforcement-learning-3fokgsix,2023,Journal Article,"","",10.1109/tnnls.2021.3089425,https://scispace.com/pdf/the-wisdom-of-the-crowd-reliable-deep-reinforcement-learning-3fokgsix.pdf,Reinforcement learning (RL) agents learn by exploring the environment and then exploiting what they have learned. This frees the human trainers from having to know the preferred action or intrinsic value of each encountered state. The cost of this freedom is that RL is slower and more unstable than supervised learning. We explore the possibility that ensemble methods can remedy these shortcomings by investigating a novel technique which harnesses the wisdom of crowds by combining Q-function approximator estimates utilizing a simple combination scheme similar to the supervised learning approach known as bagging. Bagging approaches have not yet found widespread adoption in the RL literature nor has a comprehensive look at its performance been performed. Our results show that the proposed approach improves all three tasks and RL approaches attempted. The primary contribution of this work is a demonstration that the improvement is a direct result of the increased stability of the action portion of the state-action-value function. Subsequent experimentation demonstrates that the stability in learning allows an actor-critic method to find more efficient solutions. Finally we show that this approach can be used to decrease the amount of time necessary to solve problems which require a deep Q-learning (DQN) approach. 
+From Single Agent to Multi-Agent: Improving Traffic Signal Control,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on traffic signal control using multiple agents; no large language models, software engineering tasks, or ensemble analyses are involved.",https://scispace.com/paper/http://arxiv.org/abs/2406.13693v1,2024,Preprint,"","Maksim Tislenko
+Dmitrii Kisilev","",http://arxiv.org/pdf/2406.13693v1,"Due to accelerating urbanization, the importance of solving the signal
+control problem increases. This paper analyzes various existing methods and
+suggests options for increasing the number of agents to reduce the average
+travel time. Experiments were carried out with 2 datasets. The results show
+that in some cases, the implementation of multiple agents can improve existing
+methods. For a fine-tuned large language model approach there is small
+enhancement on all metrics."
+"A survey of large language models for code: Evolution, benchmarking, and future trends","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey reviews individual Code LLMs and benchmarks; does not propose or evaluate multi‑model/agent systems, ensembles, or diversity‑related analyses.",https://scispace.com/paper/a-survey-of-large-language-models-for-code-evolution-271s255nqo,2023,Journal Article,arXiv.org,"Zibin Zheng
+Kaiwen Ning
+Yanlin Wang
+Jingwen Zhang
+Dewu Zheng
+Mingxi Ye
+Jiachi Chen",10.48550/arxiv.2311.10372,https://arxiv.org/pdf/2311.10372,"General large language models (LLMs), represented by ChatGPT, have demonstrated significant potential in tasks such as code generation in software engineering. This has led to the development of specialized LLMs for software engineering, known as Code LLMs. A considerable portion of Code LLMs is derived from general LLMs through model fine-tuning. As a result, Code LLMs are often updated frequently and their performance can be influenced by the base LLMs. However, there is currently a lack of systematic investigation into Code LLMs and their performance. In this study, we conduct a comprehensive survey and analysis of the types of Code LLMs and their differences in performance compared to general LLMs. We aim to address three questions: (1) What LLMs are specifically designed for software engineering tasks, and what is the relationship between these Code LLMs? (2) Do Code LLMs really outperform general LLMs in software engineering tasks? (3) Which LLMs are more proficient in different software engineering tasks? To answer these questions, we first collect relevant literature and work from five major databases and open-source communities, resulting in 134 works for analysis. Next, we categorize the Code LLMs based on their publishers and examine their relationships with general LLMs and among themselves. Furthermore, we investigate the performance differences between general LLMs and Code LLMs in various software engineering tasks to demonstrate the impact of base models and Code LLMs. Finally, we comprehensively maintained the performance of LLMs across multiple mainstream benchmarks to identify the best-performing LLMs for each software engineering task. Our research not only assists developers of Code LLMs in choosing base models for the development of more advanced LLMs but also provides insights for practitioners to better understand key improvement directions for Code LLMs."
+Diverse Lottery Tickets Boost Ensemble from a Single Pretrained Model,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on subnetworks (lottery tickets) from a single pretrained model, not LLMs, no software‑engineering tasks, no multi‑LLM collaboration or diversity analysis.",https://scispace.com/paper/http://arxiv.org/abs/2205.11833v1,2022,Preprint,"","Sosuke Kobayashi
+Shun Kiyono
+Jun Suzuki
+Kentaro Inui","",http://arxiv.org/pdf/2205.11833v1,"Ensembling is a popular method used to improve performance as a last resort.
+However, ensembling multiple models finetuned from a single pretrained model
+has been not very effective; this could be due to the lack of diversity among
+ensemble members. This paper proposes Multi-Ticket Ensemble, which finetunes
+different subnetworks of a single pretrained model and ensembles them. We
+empirically demonstrated that winning-ticket subnetworks produced more diverse
+predictions than dense networks, and their ensemble outperformed the standard
+ensemble on some tasks."
+"Are Pre-trained Language Models Useful for Model Ensemble in Chinese
+  Grammatical Error Correction?","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on Chinese GEC ensemble using PLM perplexity; finds no performance gain, no multi-agent collaboration, no software engineering tasks, and lacks diversity or scalability analysis.",https://scispace.com/paper/http://arxiv.org/abs/2305.15183v1,2023,Preprint,"","Chenming Tang
+Xiuyu Wu
+Yunfang Wu","",http://arxiv.org/pdf/2305.15183v1,"Model ensemble has been in widespread use for Grammatical Error Correction
+(GEC), boosting model performance. We hypothesize that model ensemble based on
+the perplexity (PPL) computed by pre-trained language models (PLMs) should
+benefit the GEC system. To this end, we explore several ensemble strategies
+based on strong PLMs with four sophisticated single models. However, the
+performance does not improve but even gets worse after the PLM-based ensemble.
+This surprising result sets us doing a detailed analysis on the data and coming
+up with some insights on GEC. The human references of correct sentences is far
+from sufficient in the test data, and the gap between a correct sentence and an
+idiomatic one is worth our attention. Moreover, the PLM-based ensemble
+strategies provide an effective way to extend and improve GEC benchmark data.
+Our source code is available at
+https://github.com/JamyDon/PLM-based-CGEC-Model-Ensemble."
+Large language model based multi-agents: A survey of progress and challenges,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey summarizes existing LLM multi‑agent work; provides no original system, experiments, or empirical analysis for the listed criteria.",https://scispace.com/paper/large-language-model-based-multi-agents-a-survey-of-progress-4xiklwolkq,2024,Journal Article,arXiv.org,"Taicheng Guo
+Xiuying Chen
+Yaqi Wang
+Ruidi Chang
+Shichao Pei
+Nitesh V. Chawla
+Olaf Wiest
+Xiangliang Zhang",10.48550/arxiv.2402.01680,https://arxiv.org/pdf/2402.01680,"Large Language Models (LLMs) have achieved remarkable success across a wide array of tasks. Due to the impressive planning and reasoning abilities of LLMs, they have been used as autonomous agents to do many tasks automatically. Recently, based on the development of using one LLM as a single planning or decision-making agent, LLM-based multi-agent systems have achieved considerable progress in complex problem-solving and world simulation. To provide the community with an overview of this dynamic field, we present this survey to offer an in-depth discussion on the essential aspects of multi-agent systems based on LLMs, as well as the challenges. Our goal is for readers to gain substantial insights on the following questions: What domains and environments do LLM-based multi-agents simulate? How are these agents profiled and how do they communicate? What mechanisms contribute to the growth of agents' capacities? For those interested in delving into this field of study, we also summarize the commonly used datasets or benchmarks for them to have convenient access. To keep researchers updated on the latest studies, we maintain an open-source GitHub repository, dedicated to outlining the research on LLM-based multi-agent systems."
+Harnessing Multiple Large Language Models: A Survey on LLM Ensemble,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey paper catalogs LLM ensemble methods but provides no original multi-agent system, empirical performance data, software‑engineering experiments, or analysis of diversity and scalability.",https://scispace.com/paper/http://arxiv.org/abs/2502.18036v5,2025,Preprint,"","Zhijun Chen
+Jingzheng Li
+Pengpeng Chen
+Zhuoran Li
+Kai Sun
+Yuankai Luo
+Qianren Mao
+Ming Li
+Likang Xiao
+Dingqi Yang
+Yikun Ban
+Hailong Sun
+Philip S. Yu","",http://arxiv.org/pdf/2502.18036v5,"LLM Ensemble -- which involves the comprehensive use of multiple large
+language models (LLMs), each aimed at handling user queries during downstream
+inference, to benefit from their individual strengths -- has gained substantial
+attention recently. The widespread availability of LLMs, coupled with their
+varying strengths and out-of-the-box usability, has profoundly advanced the
+field of LLM Ensemble. This paper presents the first systematic review of
+recent developments in LLM Ensemble. First, we introduce our taxonomy of LLM
+Ensemble and discuss several related research problems. Then, we provide a more
+in-depth classification of the methods under the broad categories of
+""ensemble-before-inference, ensemble-during-inference,
+ensemble-after-inference'', and review all relevant methods. Finally, we
+introduce related benchmarks and applications, summarize existing studies, and
+suggest several future research directions. A curated list of papers on LLM
+Ensemble is available at https://github.com/junchenzhi/Awesome-LLM-Ensemble."
+"Software testing with large language models: Survey, landscape, and vision","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey summarizes existing work; it does not propose or evaluate its own multi‑agent or ensemble system, nor provide original empirical or theoretical analysis.",https://scispace.com/paper/software-testing-with-large-language-models-survey-landscape-1e8o1s1vz4,2024,Journal Article,IEEE Transactions on Software Engineering,"Junjie Wang
+Yuchao Huang
+Chunyang Chen
+Zhe Liu
+Song Wang
+Qing Wang",10.1109/tse.2024.3368208,https://arxiv.org/pdf/2307.07221,""
+"Improving Reinforcement Learning from Human Feedback with Efficient
+  Reward Model Ensemble","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on reward model ensembles for RLHF, not on multi‑LLM collaboration, software tasks, or diversity analyses; no relevant experiments or discussions.",https://scispace.com/paper/http://arxiv.org/abs/2401.16635v3,2024,Preprint,"","Shun Zhang
+Zhenfang Chen
+Sunli Chen
+Yikang Shen
+Zhiqing Sun
+Chuang Gan","",http://arxiv.org/pdf/2401.16635v3,"Reinforcement Learning from Human Feedback (RLHF) is a widely adopted
+approach for aligning large language models with human values. However, RLHF
+relies on a reward model that is trained with a limited amount of human
+preference data, which could lead to inaccurate predictions. As a result, RLHF
+may produce outputs that are misaligned with human values. To mitigate this
+issue, we contribute a reward ensemble method that allows the reward model to
+make more accurate predictions. As using an ensemble of large language
+model-based reward models can be computationally and resource-expensive, we
+explore efficient ensemble methods including linear-layer ensemble and
+LoRA-based ensemble. Empirically, we run Best-of-$n$ and Proximal Policy
+Optimization with our ensembled reward models, and verify that our ensemble
+methods help improve the alignment performance of RLHF outputs."
+Regularized Neural Ensemblers,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Focuses on regularized neural networks for ensembling across vision, NLP, and tabular data; no LLM agents, software‑engineering tasks, or diversity analyses.",https://scispace.com/paper/http://arxiv.org/abs/2410.04520v2,2024,Preprint,"","Sebastian Pineda Arango
+Maciej Janowski
+Lennart Purucker
+Arber Zela
+Frank Hutter
+Josif Grabocka","",http://arxiv.org/pdf/2410.04520v2,"Ensemble methods are known for enhancing the accuracy and robustness of
+machine learning models by combining multiple base learners. However, standard
+approaches like greedy or random ensembling often fall short, as they assume a
+constant weight across samples for the ensemble members. This can limit
+expressiveness and hinder performance when aggregating the ensemble
+predictions. In this study, we explore employing regularized neural networks as
+ensemble methods, emphasizing the significance of dynamic ensembling to
+leverage diverse model predictions adaptively. Motivated by the risk of
+learning low-diversity ensembles, we propose regularizing the ensembling model
+by randomly dropping base model predictions during the training. We demonstrate
+this approach provides lower bounds for the diversity within the ensemble,
+reducing overfitting and improving generalization capabilities. Our experiments
+showcase that the regularized neural ensemblers yield competitive results
+compared to strong baselines across several modalities such as computer vision,
+natural language processing, and tabular data."
+Engineering Multi-Agent Systems: State of Affairs and the Road Ahead,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Survey of multi‑agent system engineering; lacks LLM focus, ensembles, or software‑engineering experiments, making it irrelevant to all listed criteria.",https://scispace.com/paper/engineering-multi-agent-systems-state-of-affairs-and-the-d0k4q0irth,2019,Journal Article,ACM Sigsoft Software Engineering Notes,"Viviana Mascardi
+Danny Weyns
+Alessandro Ricci
+Clara Benac Earle
+Arthur Casals
+Moharram Challenger
+Amit K. Chopra
+Andrei Ciortea
+Louise A. Dennis
+Álvaro Fernández Díaz
+Amal El Fallah-Seghrouchni
+Angelo Ferrando
+Lars-Åke Fredlund
+Eleonora Giunchiglia
+Zahia Guessoum
+Akın Günay
+Koen V. Hindriks
+Carlos A. Iglesias
+Brian Logan
+Timotheus Kampik
+Geylani Kardas
+Vincent J. Koeman
+John Bruntse Larsen
+Simon Mayer
+Tasio Méndez
+Juan Carlos Nieves
+Valeria Seidita
+Baris Tekin Teze
+László Zsolt Varga
+Michael Winikoff",10.1145/3310013.3322175,https://scispace.com/pdf/engineering-multi-agent-systems-state-of-affairs-and-the-d0k4q0irth.pdf,"The continuous integration of software-intensive systems together with the ever-increasing computing power offer a breeding ground for intelligent agents and multi-agent systems (MAS) more than ever before Over the past two decades, a wide variety of languages, models, techniques and methodologies have been proposed to engineer agents and MAS Despite this substantial body of knowledge and expertise, the systematic engineering of large-scale and open MAS still poses many challenges Researchers and engineers still face fundamental questions regarding theories, architectures, languages, processes, and platforms for designing, implementing, running, maintaining, and evolving MAS This paper reports on the results of the 6th International Workshop on Engineering Multi-Agent Systems (EMAS 2018, 14th-15th of July, 2018, Stockholm, Sweden), where participants discussed the issues above focusing on the state of affairs and the road ahead for researchers and engineers in this area"
+"A Concise Overview of Software Agent Research, Modeling, and Development","- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** The paper is a literature review of software agents and multi‑agent systems, lacking any LLMs, empirical ensembles, software‑engineering experiments, or diversity analyses.",https://scispace.com/paper/a-concise-overview-of-software-agent-research-modeling-and-40nsftwyhw,2017,"","","Salama A. Mostafa
+Mohd Sharifuddin Ahmad
+Aida Mustapha
+Mazin Abed Mohammed",10.11648/J.SE.20170501.12,https://scispace.com/pdf/a-concise-overview-of-software-agent-research-modeling-and-40nsftwyhw.pdf,"Software agent technology has been intensively explored in the past three decades. It is explicitly or implicitly applied in many systems. Software agent research covers a wide range of area which makes it challenging for new researchers to comprehend the peculiarities and complexities of the technology. Consequently, this paper provides a concise overview of software agent research, modeling, and development. It summarizes and analyzes more than 100 sources of publication including research papers, articles, and books. The aim of the paper is to provide a quick start to new researchers in software agent and multi-agent systems. The paper offers the following contributions: (1) it determines the milestone achievements of software agent conceptualization, modeling and development platforms, (2) it defines the related terminologies of the field and reveals their redundancies, (3) it summarizes the multi-agent systems technology and finally, (4) it explores the current active research topics in software agent and multi-agent systems."
+Multi-Agent based Functional Testing in the Distributed Environment,"- **Relevance Score:** 0/100
+- **Relevance Tag:** Not Relevant
+- **Reasoning:** Paper discusses multi‑agent functional testing, not large language models; it lacks LLM ensembles, complementary strengths, diversity analysis, or LLM‑based test generation, making it irrelevant to all criteria.",https://scispace.com/paper/multi-agent-based-functional-testing-in-the-distributed-3cxu84b3ml,2017,Journal Article,International Journal of Advanced Computer Science and Applications,"Muhammad Fraz Malik
+Mukhtyar Khan
+Uzma Bibi
+Muhammad Malik Ayaz",10.14569/IJACSA.2017.080818,https://scispace.com/pdf/multi-agent-based-functional-testing-in-the-distributed-3cxu84b3ml.pdf,"Verification and testing are two formal techniques of defect reduction applied on designing and development phases of SDLC to rationalize quality assurance activities. The process of testing applications in the distributed environment becomes too complex. This study discusses a distributed testing framework that consists of many parallel tester components. The idea is based on utilizing client server environment to conduct software testing efficiently and in a short span of time. It is pertinent to mention that this study is restricted to testing of functional aspects of the software while testing of performance and other quality-of-service aspects are outside the scope of the study. An important factor influencing the use of agent technology in software testing is the dynamic nature of events. Since agents are characterized by intelligence and autonomy, their ability to interact with the environment offers added functionality to make decisions based on the needs of the scenarios that are dynamic in nature. This study shows that the use of agents to build a dynamic model for software testing in the distributed environment results in a more robust and efficient design. The proposed framework is based on distribution of test cases among multiple agents deployed across a distributed system which collaborate with each other to perform testing in an efficient manner. The proposed framework also provides an in-depth visibility into the software quality by providing the defect statistics on-the-fly. The experiments have been conducted using Selenium test automation tool. The test cases along with their test scripts and the test run results are described herein."

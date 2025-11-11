@@ -1,0 +1,87 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Abstract"
+"Certified Self-Consistency: Statistical Guarantees and Test-Time
+  Training for Reliable Reasoning in LLMs","https://scispace.com/paper/http://arxiv.org/abs/2510.17472v2","2025","Preprint","","Paula Cordero-Encinar
+Andrew B. Duncan","","http://arxiv.org/pdf/2510.17472v2","Recent advances such as self-consistency and test-time reinforcement learning
+(TTRL) improve the reliability of large language models (LLMs) without
+additional supervision, yet their underlying mechanisms and statistical
+guarantees remain poorly understood. We present a unified framework for
+certifiable inference in LLMs, showing that majority voting provides a
+statistical certificate of self-consistency: under mild assumptions, the
+aggregated answer coincides with the mode of the model's terminal distribution
+with high probability. We derive finite-sample and anytime-valid concentration
+bounds that quantify this confidence, and introduce the Martingale Majority
+Certificate (MMC), a sequential stopping rule that adaptively determines when
+sufficient samples have been drawn. We further prove that label-free
+post-training methods such as TTRL implicitly sharpen the answer distribution
+by exponentially tilting it toward its mode, thereby reducing the number of
+samples required for certification. Building on this insight, we propose new
+post-training objectives that explicitly optimise this trade-off between
+sharpness and bias. Together, these results explain and connect two central
+test-time scaling strategies, self-consistency and TTRL, within a single
+statistical framework for label-free, certifiable reliability in reasoning
+LLMs."
+"Semantic Self-Consistency: Enhancing Language Model Reasoning via
+  Semantic Weighting","https://scispace.com/paper/http://arxiv.org/abs/2410.07839v2","2024","Preprint","","Tim Knappe
+Ryan Li
+Ayush Chauhan
+Kaylee Chhua
+Kevin Zhu
+Sean O'Brien","","http://arxiv.org/pdf/2410.07839v2","While large language models (LLMs) have rapidly improved their performance on
+a broad number of tasks, they still often fall short on reasoning tasks. As
+LLMs become more integrated in diverse real-world tasks, advancing their
+reasoning capabilities is crucial to their effectiveness in nuanced, complex
+problems. Wang et al.'s self-consistency framework reveals that sampling
+multiple rationales before taking a majority vote reliably improves model
+performance across various closed-answer reasoning tasks. Standard methods
+based on this framework aggregate the final decisions of these rationales but
+fail to utilize the semantic information detailed in the step-by-step reasoning
+paths. Our work introduces semantic self-consistency, enhancing this approach
+by incorporating and analyzing both the reasoning paths of these rationales in
+addition to their final decisions before taking a majority vote. These methods
+not only improve the reliability of reasoning paths but also cause more robust
+performance on complex reasoning tasks."
+"Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for
+  Efficient LLM Sampling","https://scispace.com/paper/http://arxiv.org/abs/2408.17017v3","2024","Preprint","","Guangya Wan
+Yuqi Wu
+Jie Chen
+Sheng Li","","http://arxiv.org/pdf/2408.17017v3","Self-Consistency mitigates hallucinations in Large Language Models (LLMs) by
+sampling multiple reasoning paths,but it lacks a systematic approach to
+determine the optimal number of samples or select the most faithful rationale.
+To address this limitation, we introduce Reasoning-Aware Self-Consistency
+(RASC), a novel framework that enhances sampling efficiency and reasoning
+faithfulness by dynamically evaluating both outputs and rationales. RASC
+assesses the quality of reasoning and the consistency of answers for each
+generated sample, using these assessments to guide early stopping decisions and
+rationale selection. The framework employs criteria-based stopping and weighted
+majority voting, enabling more informed choices on when to halt sampling and
+which rationale to select. Our comprehensive experiments across diverse
+question-answering datasets demonstrate that RASC outperforms existing methods,
+reducing sample usage by approximately 70% while maintaining accuracy.
+Moreover, RASC facilitates the selection of high-fidelity rationales, thereby
+improving the faithfulness of LLM outputs. Our approach effectively addresses
+the efficiency-accuracy trade-off in LLM reasoning tasks, offering a new
+perspective for more nuanced, faithful, and effective utilization of LLMs in
+resource-constrained environments."
+"Beyond Self-Consistency: Ensemble Reasoning Boosts Consistency and
+  Accuracy of LLMs in Cancer Staging","https://scispace.com/paper/http://arxiv.org/abs/2404.13149v1","2024","Preprint","","Chia-Hsuan Chang
+Mary M. Lucas
+Yeawon Lee
+Christopher C. Yang
+Grace Lu-Yao","10.1007/978-3-031-66538-7_23","http://arxiv.org/pdf/2404.13149v1","Advances in large language models (LLMs) have encouraged their adoption in
+the healthcare domain where vital clinical information is often contained in
+unstructured notes. Cancer staging status is available in clinical reports, but
+it requires natural language processing to extract the status from the
+unstructured text. With the advance in clinical-oriented LLMs, it is promising
+to extract such status without extensive efforts in training the algorithms.
+Prompting approaches of the pre-trained LLMs that elicit a model's reasoning
+process, such as chain-of-thought, may help to improve the trustworthiness of
+the generated responses. Using self-consistency further improves model
+performance, but often results in inconsistent generations across the multiple
+reasoning paths. In this study, we propose an ensemble reasoning approach with
+the aim of improving the consistency of the model generations. Using an open
+access clinical large language model to determine the pathologic cancer stage
+from real-world pathology reports, we show that the ensemble reasoning approach
+is able to improve both the consistency and performance of the LLM in
+determining cancer stage, thereby demonstrating the potential to use these
+models in clinical or other domains where reliability and trustworthiness are
+critical."

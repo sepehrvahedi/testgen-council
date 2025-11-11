@@ -1,0 +1,231 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Abstract"
+"Testing Deep Learning Models: A First Comparative Study of Multiple
+  Testing Techniques","https://scispace.com/paper/http://arxiv.org/abs/2202.12139v1","2022","Preprint","","Mohit Kumar Ahuja
+Arnaud Gotlieb
+Helge Spieker","10.1109/ICSTW55395.2022.00035","http://arxiv.org/pdf/2202.12139v1","Deep Learning (DL) has revolutionized the capabilities of vision-based
+systems (VBS) in critical applications such as autonomous driving, robotic
+surgery, critical infrastructure surveillance, air and maritime traffic
+control, etc. By analyzing images, voice, videos, or any type of complex
+signals, DL has considerably increased the situation awareness of these
+systems. At the same time, while relying more and more on trained DL models,
+the reliability and robustness of VBS have been challenged and it has become
+crucial to test thoroughly these models to assess their capabilities and
+potential errors. To discover faults in DL models, existing software testing
+methods have been adapted and refined accordingly. In this article, we provide
+an overview of these software testing methods, namely differential,
+metamorphic, mutation, and combinatorial testing, as well as adversarial
+perturbation testing and review some challenges in their deployment for
+boosting perception systems used in VBS. We also provide a first experimental
+comparative study on a classical benchmark used in VBS and discuss its results."
+"Machine Learning Techniques for Software Quality Assurance: A Survey","https://scispace.com/paper/http://arxiv.org/abs/2104.14056v1","2021","Preprint","","Safa Omri
+Carsten Sinz","","http://arxiv.org/pdf/2104.14056v1","Over the last years, machine learning techniques have been applied to more
+and more application domains, including software engineering and, especially,
+software quality assurance. Important application domains have been, e.g.,
+software defect prediction or test case selection and prioritization. The
+ability to predict which components in a large software system are most likely
+to contain the largest numbers of faults in the next release helps to better
+manage projects, including early estimation of possible release delays, and
+affordably guide corrective actions to improve the quality of the software.
+However, developing robust fault prediction models is a challenging task and
+many techniques have been proposed in the literature. Closely related to
+estimating defect-prone parts of a software system is the question of how to
+select and prioritize test cases, and indeed test case prioritization has been
+extensively researched as a means for reducing the time taken to discover
+regressions in software. In this survey, we discuss various approaches in both
+fault prediction and test case prioritization, also explaining how in recent
+studies deep learning algorithms for fault prediction help to bridge the gap
+between programs' semantics and fault prediction features. We also review
+recently proposed machine learning methods for test case prioritization (TCP),
+and their ability to reduce the cost of regression testing without negatively
+affecting fault detection capabilities."
+"Utilizing Deep Learning to Optimize Software Development Processes","https://scispace.com/paper/http://arxiv.org/abs/2404.13630v2","2024","Preprint","","Keqin Li
+Armando Zhu
+Peng Zhao
+Jintong Song
+Jiabei Liu","10.5281/zenodo.11004006","http://arxiv.org/pdf/2404.13630v2","This study explores the application of deep learning technologies in software
+development processes, particularly in automating code reviews, error
+prediction, and test generation to enhance code quality and development
+efficiency. Through a series of empirical studies, experimental groups using
+deep learning tools and control groups using traditional methods were compared
+in terms of code error rates and project completion times. The results
+demonstrated significant improvements in the experimental group, validating the
+effectiveness of deep learning technologies. The research also discusses
+potential optimization points, methodologies, and technical challenges of deep
+learning in software development, as well as how to integrate these
+technologies into existing software development workflows."
+"Differential testing for machine learning: an analysis for
+  classification algorithms beyond deep learning","https://scispace.com/paper/http://arxiv.org/abs/2207.11976v1","2022","Preprint","","Steffen Herbold
+Steffen Tunkel","","http://arxiv.org/pdf/2207.11976v1","Context: Differential testing is a useful approach that uses different
+implementations of the same algorithms and compares the results for software
+testing. In recent years, this approach was successfully used for test
+campaigns of deep learning frameworks.
+  Objective: There is little knowledge on the application of differential
+testing beyond deep learning. Within this article, we want to close this gap
+for classification algorithms.
+  Method: We conduct a case study using Scikit-learn, Weka, Spark MLlib, and
+Caret in which we identify the potential of differential testing by considering
+which algorithms are available in multiple frameworks, the feasibility by
+identifying pairs of algorithms that should exhibit the same behavior, and the
+effectiveness by executing tests for the identified pairs and analyzing the
+deviations.
+  Results: While we found a large potential for popular algorithms, the
+feasibility seems limited because often it is not possible to determine
+configurations that are the same in other frameworks. The execution of the
+feasible tests revealed that there is a large amount of deviations for the
+scores and classes. Only a lenient approach based on statistical significance
+of classes does not lead to a huge amount of test failures.
+  Conclusions: The potential of differential testing beyond deep learning seems
+limited for research into the quality of machine learning libraries.
+Practitioners may still use the approach if they have deep knowledge about
+implementations, especially if a coarse oracle that only considers significant
+differences of classes is sufficient."
+"Automated Performance Testing Based on Active Deep Learning","https://scispace.com/paper/http://arxiv.org/abs/2104.02102v1","2021","Preprint","","Ali Sedaghatbaf
+Mahshid Helali Moghadam
+Mehrdad Saadatmand","","http://arxiv.org/pdf/2104.02102v1","Generating tests that can reveal performance issues in large and complex
+software systems within a reasonable amount of time is a challenging task. On
+one hand, there are numerous combinations of input data values to explore. On
+the other hand, we have a limited test budget to execute tests. What makes this
+task even more difficult is the lack of access to source code and the internal
+details of these systems. In this paper, we present an automated test
+generation method called ACTA for black-box performance testing. ACTA is based
+on active learning, which means that it does not require a large set of
+historical test data to learn about the performance characteristics of the
+system under test. Instead, it dynamically chooses the tests to execute using
+uncertainty sampling. ACTA relies on a conditional variant of generative
+adversarial networks,and facilitates specifying performance requirements in
+terms of conditions and generating tests that address those conditions.We have
+evaluated ACTA on a benchmark web application, and the experimental results
+indicate that this method is comparable with random testing, and two other
+machine learning methods,i.e. PerfXRL and DN."
+"Deep Learning-based Software Engineering: Progress, Challenges, and
+  Opportunities","https://scispace.com/paper/http://arxiv.org/abs/2410.13110v1","2024","Preprint","","Xiangping Chen
+Xing Hu
+Yuan Huang
+He Jiang
+Weixing Ji
+Yanjie Jiang
+Yanyan Jiang
+Bo Liu
+Hui Liu
+Xiaochen Li
+Xiaoli Lian
+Guozhu Meng
+Xin Peng
+Hailong Sun
+Lin Shi
+Bo Wang
+Chong Wang
+Jiayi Wang
+Tiantian Wang
+Jifeng Xuan
+Xin Xia
+Yibiao Yang
+Yixin Yang
+Li Zhang
+Yuming Zhou
+Lu Zhang","10.1007/s11432-023-4127-5","http://arxiv.org/pdf/2410.13110v1","Researchers have recently achieved significant advances in deep learning
+techniques, which in turn has substantially advanced other research
+disciplines, such as natural language processing, image processing, speech
+recognition, and software engineering. Various deep learning techniques have
+been successfully employed to facilitate software engineering tasks, including
+code generation, software refactoring, and fault localization. Many papers have
+also been presented in top conferences and journals, demonstrating the
+applications of deep learning techniques in resolving various software
+engineering tasks. However, although several surveys have provided overall
+pictures of the application of deep learning techniques in software
+engineering, they focus more on learning techniques, that is, what kind of deep
+learning techniques are employed and how deep models are trained or fine-tuned
+for software engineering tasks. We still lack surveys explaining the advances
+of subareas in software engineering driven by deep learning techniques, as well
+as challenges and opportunities in each subarea. To this end, in this paper, we
+present the first task-oriented survey on deep learning-based software
+engineering. It covers twelve major software engineering subareas significantly
+impacted by deep learning techniques. Such subareas spread out the through the
+whole lifecycle of software development and maintenance, including requirements
+engineering, software development, testing, maintenance, and developer
+collaboration. As we believe that deep learning may provide an opportunity to
+revolutionize the whole discipline of software engineering, providing one
+survey covering as many subareas as possible in software engineering can help
+future research push forward the frontier of deep learning-based software
+engineering more systematically."
+"A Survey of Malware Detection Using Deep Learning","https://scispace.com/paper/http://arxiv.org/abs/2407.19153v1","2024","Preprint","","Ahmed Bensaoud
+Jugal Kalita
+Mahmoud Bensaoud","10.1016/j.mlwa.2024.100546","http://arxiv.org/pdf/2407.19153v1","The problem of malicious software (malware) detection and classification is a
+complex task, and there is no perfect approach. There is still a lot of work to
+be done. Unlike most other research areas, standard benchmarks are difficult to
+find for malware detection. This paper aims to investigate recent advances in
+malware detection on MacOS, Windows, iOS, Android, and Linux using deep
+learning (DL) by investigating DL in text and image classification, the use of
+pre-trained and multi-task learning models for malware detection approaches to
+obtain high accuracy and which the best approach if we have a standard
+benchmark dataset. We discuss the issues and the challenges in malware
+detection using DL classifiers by reviewing the effectiveness of these DL
+classifiers and their inability to explain their decisions and actions to DL
+developers presenting the need to use Explainable Machine Learning (XAI) or
+Interpretable Machine Learning (IML) programs. Additionally, we discuss the
+impact of adversarial attacks on deep learning models, negatively affecting
+their generalization capabilities and resulting in poor performance on unseen
+data. We believe there is a need to train and test the effectiveness and
+efficiency of the current state-of-the-art deep learning models on different
+malware datasets. We examine eight popular DL approaches on various datasets.
+This survey will help researchers develop a general understanding of malware
+recognition using deep learning."
+"Enriching the Machine Learning Workloads in BigBench","https://scispace.com/paper/http://arxiv.org/abs/2406.10843v1","2024","Preprint","","Matthias Polag
+Todor Ivanov
+Timo Eichhorn","","http://arxiv.org/pdf/2406.10843v1","In the era of Big Data and the growing support for Machine Learning, Deep
+Learning and Artificial Intelligence algorithms in the current software
+systems, there is an urgent need of standardized application benchmarks that
+stress test and evaluate these new technologies. Relying on the standardized
+BigBench (TPCx-BB) benchmark, this work enriches the improved BigBench V2 with
+three new workloads and expands the coverage of machine learning algorithms.
+Our workloads utilize multiple algorithms and compare different implementations
+for the same algorithm across several popular libraries like MLlib, SystemML,
+Scikit-learn and Pandas, demonstrating the relevance and usability of our
+benchmark extension."
+"On Testing Machine Learning Programs","https://scispace.com/paper/http://arxiv.org/abs/1812.02257v1","2018","Preprint","","Houssem Ben Braiek
+Foutse Khomh","","http://arxiv.org/pdf/1812.02257v1","Nowadays, we are witnessing a wide adoption of Machine learning (ML) models
+in many safety-critical systems, thanks to recent breakthroughs in deep
+learning and reinforcement learning. Many people are now interacting with
+systems based on ML every day, e.g., voice recognition systems used by virtual
+personal assistants like Amazon Alexa or Google Home. As the field of ML
+continues to grow, we are likely to witness transformative advances in a wide
+range of areas, from finance, energy, to health and transportation. Given this
+growing importance of ML-based systems in our daily life, it is becoming
+utterly important to ensure their reliability. Recently, software researchers
+have started adapting concepts from the software testing domain (e.g., code
+coverage, mutation testing, or property-based testing) to help ML engineers
+detect and correct faults in ML programs. This paper reviews current existing
+testing practices for ML programs. First, we identify and explain challenges
+that should be addressed when testing ML programs. Next, we report existing
+solutions found in the literature for testing ML programs. Finally, we identify
+gaps in the literature related to the testing of ML programs and make
+recommendations of future research directions for the scientific community. We
+hope that this comprehensive review of software testing practices will help ML
+engineers identify the right approach to improve the reliability of their
+ML-based systems. We also hope that the research community will act on our
+proposed research directions to advance the state of the art of testing for ML
+programs."
+"PETScML: Second-order solvers for training regression problems in
+  Scientific Machine Learning","https://scispace.com/paper/http://arxiv.org/abs/2403.12188v1","2024","Preprint","","Stefano Zampini
+Umberto Zerbinati
+George Turkiyyah
+David Keyes","","http://arxiv.org/pdf/2403.12188v1","In recent years, we have witnessed the emergence of scientific machine
+learning as a data-driven tool for the analysis, by means of deep-learning
+techniques, of data produced by computational science and engineering
+applications. At the core of these methods is the supervised training algorithm
+to learn the neural network realization, a highly non-convex optimization
+problem that is usually solved using stochastic gradient methods. However,
+distinct from deep-learning practice, scientific machine-learning training
+problems feature a much larger volume of smooth data and better
+characterizations of the empirical risk functions, which make them suited for
+conventional solvers for unconstrained optimization. We introduce a lightweight
+software framework built on top of the Portable and Extensible Toolkit for
+Scientific computation to bridge the gap between deep-learning software and
+conventional solvers for unconstrained minimization. We empirically demonstrate
+the superior efficacy of a trust region method based on the Gauss-Newton
+approximation of the Hessian in improving the generalization errors arising
+from regression tasks when learning surrogate models for a wide range of
+scientific machine-learning techniques and test cases. All the conventional
+second-order solvers tested, including L-BFGS and inexact Newton with
+line-search, compare favorably, either in terms of cost or accuracy, with the
+adaptive first-order methods used to validate the surrogate models."

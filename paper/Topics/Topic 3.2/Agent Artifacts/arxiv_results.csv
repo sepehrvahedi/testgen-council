@@ -1,0 +1,456 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Abstract"
+"A Strategic Coordination Framework of Small LLMs Matches Large LLMs in
+  Data Synthesis","https://scispace.com/paper/http://arxiv.org/abs/2504.12322v2","2025","Preprint","","Xin Gao
+Qizhi Pei
+Zinan Tang
+Yu Li
+Honglin Lin
+Jiang Wu
+Lijun Wu
+Conghui He","","http://arxiv.org/pdf/2504.12322v2","While data synthesis and distillation are promising strategies to enhance
+small language models, current approaches heavily rely on Large Language Models
+(LLMs), which suffer from high computational costs, environmental inefficiency,
+and potential biases inherited from monolithic architectures. In contrast,
+smaller LLMs are more accessible and sustainable, but their individual
+capabilities often fall short in generating high-quality, diverse, and reliable
+data. Inspired by collaborative human processes (e.g., peer review), we propose
+a multiple small LLMs involved framework, GRA, that aggregates specialized
+roles across small LLMs to iterative refinement and quality control typically
+achieved by a single large LLM. In this collaborative framework, multiple small
+LLMs assume distinct roles-Generator, Reviewer, and Adjudicator-to simulate a
+peer-review-inspired data synthesis pipeline. The Generator proposes initial
+data samples, the Reviewer critiques their quality and diversity, and the
+Adjudicator resolves conflicts to finalize the output. By decomposing the
+synthesis process into specialized sub-tasks, collaborative small LLMs can
+achieve data-level parity with large LLM-based distillation. Through
+experiments across multiple benchmarks, we demonstrate that GRA-produced data
+matches or exceeds the quality of single large LLM outputs, e.g.,
+Qwen-2.5-72B-Instruct. Our results challenge the necessity of monolithic large
+models for high-quality data synthesis, advocating instead for strategic
+coordination of smaller agents. Our datasets, models, and code are publicly
+available at https://github.com/GX-XinGao/GRA."
+"SynthesizRR: Generating Diverse Datasets with Retrieval Augmentation","https://scispace.com/paper/http://arxiv.org/abs/2405.10040v3","2024","Preprint","","Abhishek Divekar
+Greg Durrett","","http://arxiv.org/pdf/2405.10040v3","It is often desirable to distill the capabilities of large language models
+(LLMs) into smaller student models due to compute and memory constraints. One
+way to do this for classification tasks is via dataset synthesis, which can be
+accomplished by generating examples of each label from the LLM. Prior
+approaches to synthesis use few-shot prompting, which relies on the LLM's
+parametric knowledge to generate usable examples. However, this leads to issues
+of repetition, bias towards popular entities, and stylistic differences from
+human text. In this work, we propose Synthesize by Retrieval and Refinement
+(SynthesizRR), which uses retrieval augmentation to introduce variety into the
+dataset synthesis process: as retrieved passages vary, the LLM is seeded with
+different content to generate its examples. We empirically study the synthesis
+of six datasets, covering topic classification, sentiment analysis, tone
+detection, and humor, requiring complex synthesis strategies. We find that
+SynthesizRR greatly improves lexical and semantic diversity, similarity to
+human-written text, and distillation performance, when compared to 32-shot
+prompting and four prior approaches. We release our code to perform all steps
+at https://github.com/amazon-science/synthesizrr"
+"CodeARC: Benchmarking Reasoning Capabilities of LLM Agents for Inductive
+  Program Synthesis","https://scispace.com/paper/http://arxiv.org/abs/2503.23145v2","2025","Preprint","","Anjiang Wei
+Tarun Suresh
+Jiannan Cao
+Naveen Kannan
+Yuheng Wu
+Kai Yan
+Thiago S. F. X. Teixeira
+Ke Wang
+Alex Aiken","","http://arxiv.org/pdf/2503.23145v2","Inductive program synthesis, or programming by example, requires synthesizing
+functions from input-output examples that generalize to unseen inputs. While
+large language model agents have shown promise in programming tasks guided by
+natural language, their ability to perform inductive program synthesis is
+underexplored. Existing evaluation protocols rely on static sets of examples
+and held-out tests, offering no feedback when synthesized functions are
+incorrect and failing to reflect real-world scenarios such as reverse
+engineering. We propose CodeARC, the Code Abstraction and Reasoning Challenge,
+a new evaluation framework where agents interact with a hidden target function
+by querying it with new inputs, synthesizing candidate functions, and
+iteratively refining their solutions using a differential testing oracle. This
+interactive setting encourages agents to perform function calls and
+self-correction based on feedback. We construct the first large-scale benchmark
+for general-purpose inductive program synthesis, featuring 1114 functions.
+Among 18 models evaluated, o3-mini performs best with a success rate of 52.7%,
+highlighting the difficulty of this task. Fine-tuning LLaMA-3.1-8B-Instruct on
+curated synthesis traces yields up to a 31% relative performance gain. CodeARC
+provides a more realistic and challenging testbed for evaluating LLM-based
+program synthesis and inductive reasoning. Our code, data, and models are
+publicly available at https://github.com/Anjiang-Wei/CodeARC"
+"Rethinking All Evidence: Enhancing Trustworthy Retrieval-Augmented
+  Generation via Conflict-Driven Summarization","https://scispace.com/paper/http://arxiv.org/abs/2507.01281v1","2025","Preprint","","Juan Chen
+Baolong Bi
+Wei Zhang
+Jingyan Sui
+Xiaofei Zhu
+Yuanzhuo Wang
+Lingrui Mei
+Shenghua Liu","","http://arxiv.org/pdf/2507.01281v1","Retrieval-Augmented Generation (RAG) enhances large language models (LLMs) by
+integrating their parametric knowledge with external retrieved content.
+However, knowledge conflicts caused by internal inconsistencies or noisy
+retrieved content can severely undermine the generation reliability of RAG
+systems.In this work, we argue that LLMs should rethink all evidence, including
+both retrieved content and internal knowledge, before generating responses.We
+propose CARE-RAG (Conflict-Aware and Reliable Evidence for RAG), a novel
+framework that improves trustworthiness through Conflict-Driven Summarization
+of all available evidence.CARE-RAG first derives parameter-aware evidence by
+comparing parameter records to identify diverse internal perspectives. It then
+refines retrieved evidences to produce context-aware evidence, removing
+irrelevant or misleading content. To detect and summarize conflicts, we distill
+a 3B LLaMA3.2 model to perform conflict-driven summarization, enabling reliable
+synthesis across multiple sources.To further ensure evaluation integrity, we
+introduce a QA Repair step to correct outdated or ambiguous benchmark
+answers.Experiments on revised QA datasets with retrieval data show that
+CARE-RAG consistently outperforms strong RAG baselines, especially in scenarios
+with noisy or conflicting evidence."
+"Self-Improving Language Models for Evolutionary Program Synthesis: A
+  Case Study on ARC-AGI","https://scispace.com/paper/http://arxiv.org/abs/2507.14172v1","2025","Preprint","","Julien Pourcel
+Cédric Colas
+Pierre-Yves Oudeyer","","http://arxiv.org/pdf/2507.14172v1","Many program synthesis tasks prove too challenging for even state-of-the-art
+language models to solve in single attempts. Search-based evolutionary methods
+offer a promising alternative by exploring solution spaces iteratively, but
+their effectiveness remain limited by the fixed capabilities of the underlying
+generative model.
+  We propose SOAR, a method that learns program synthesis by integrating
+language models into a self-improving evolutionary loop.
+  SOAR alternates between (1) an evolutionary search that uses an LLM to sample
+and refine candidate solutions, and (2) a hindsight learning phase that
+converts search attempts into valid problem-solution pairs used to fine-tune
+the LLM's sampling and refinement capabilities\, -- \,enabling increasingly
+effective search in subsequent iterations.
+  On the challenging ARC-AGI benchmark, SOAR achieves significant performance
+gains across model scales and iterations, leveraging positive transfer between
+the sampling and refinement finetuning tasks. These improvements carry over to
+test-time adaptation, enabling SOAR to solve 52\% of the public test set. Our
+code is open-sourced at: https://github.com/flowersteam/SOAR"
+"Code Repair with LLMs gives an Exploration-Exploitation Tradeoff","https://scispace.com/paper/http://arxiv.org/abs/2405.17503v3","2024","Preprint","","Hao Tang
+Keya Hu
+Jin Peng Zhou
+Sicheng Zhong
+Wei-Long Zheng
+Xujie Si
+Kevin Ellis","","http://arxiv.org/pdf/2405.17503v3","Iteratively improving and repairing source code with large language models
+(LLMs), known as refinement, has emerged as a popular way of generating
+programs that would be too complex to construct in one shot. Given a bank of
+test cases, together with a candidate program, an LLM can improve that program
+by being prompted with failed test cases. But it remains an open question how
+to best iteratively refine code, with prior work employing simple greedy or
+breadth-first strategies. We show here that refinement exposes an
+explore-exploit tradeoff: exploit by refining the program that passes the most
+test cases, or explore by refining a lesser considered program. We frame this
+as an arm-acquiring bandit problem, which we solve with Thompson Sampling. The
+resulting LLM-based program synthesis algorithm is broadly applicable: Across
+loop invariant synthesis, visual reasoning puzzles, and competition programming
+problems, we find that our new method can solve more problems using fewer
+language model calls."
+"Structured Program Synthesis using LLMs: Results and Insights from the
+  IPARC Challenge","https://scispace.com/paper/http://arxiv.org/abs/2506.13820v1","2025","Preprint","","Shraddha Surana
+Ashwin Srinivasan
+Michael Bain","","http://arxiv.org/pdf/2506.13820v1","The IPARC Challenge, inspired by ARC, provides controlled program synthesis
+tasks over synthetic images to evaluate automatic program construction,
+focusing on sequence, selection, and iteration. This set of 600 tasks has
+resisted automated solutions. This paper presents a structured inductive
+programming approach with LLMs that successfully solves tasks across all IPARC
+categories. The controlled nature of IPARC reveals insights into LLM-based code
+generation, including the importance of prior structuring, LLMs' ability to aid
+structuring (requiring human refinement), the need to freeze correct code, the
+efficiency of code reuse, and how LLM-generated code can spark human
+creativity. These findings suggest valuable mechanisms for human-LLM
+collaboration in tackling complex program synthesis."
+"Program Synthesis via Test-Time Transduction","https://scispace.com/paper/http://arxiv.org/abs/2509.17393v3","2025","Preprint","","Kang-il Lee
+Jahyun Koo
+Seunghyun Yoon
+Minbeom Kim
+Hyukhun Koh
+Dongryeol Lee
+Kyomin Jung","","http://arxiv.org/pdf/2509.17393v3","We introduce transductive program synthesis, a new formulation of the program
+synthesis task that explicitly leverages test inputs during synthesis. While
+prior approaches to program synthesis--whether based on natural language
+descriptions or input-output examples--typically aim to generalize from
+training examples, they often struggle with robustness, especially in
+real-world settings where training examples are limited and test inputs involve
+various edge cases. To address this, we propose a novel framework that improves
+robustness by treating synthesis as an active learning over a finite hypothesis
+class defined by programs' outputs. We use an LLM to predict outputs for
+selected test inputs and eliminate inconsistent hypotheses, where the inputs
+are chosen via a greedy maximin algorithm to minimize the number of LLM queries
+required. We evaluate our approach on four benchmarks: Playgol, MBPP+, 1D-ARC,
+and programmatic world modeling on MiniGrid. We demonstrate that our method
+significantly improves program synthesis in both accuracy and efficiency. We
+release our code at https://github.com/klee972/SYNTRA."
+"Dataset Distillation via Curriculum Data Synthesis in Large Data Era","https://scispace.com/paper/http://arxiv.org/abs/2311.18838v2","2023","Preprint","","Zeyuan Yin
+Zhiqiang Shen","","http://arxiv.org/pdf/2311.18838v2","Dataset distillation or condensation aims to generate a smaller but
+representative subset from a large dataset, which allows a model to be trained
+more efficiently, meanwhile evaluating on the original testing data
+distribution to achieve decent performance. Previous decoupled methods like
+SRe$^2$L simply use a unified gradient update scheme for synthesizing data from
+Gaussian noise, while, we notice that the initial several update iterations
+will determine the final outline of synthesis, thus an improper gradient update
+strategy may dramatically affect the final generation quality. To address this,
+we introduce a simple yet effective global-to-local gradient refinement
+approach enabled by curriculum data augmentation ($\texttt{CDA}$) during data
+synthesis. The proposed framework achieves the current published highest
+accuracy on both large-scale ImageNet-1K and 21K with 63.2% under IPC (Images
+Per Class) 50 and 36.1% under IPC 20, using a regular input resolution of
+224$\times$224 with faster convergence speed and less synthetic time. The
+proposed model outperforms the current state-of-the-art methods like SRe$^2$L,
+TESLA, and MTT by more than 4% Top-1 accuracy on ImageNet-1K/21K and for the
+first time, reduces the gap to its full-data training counterparts to less than
+absolute 15%. Moreover, this work represents the inaugural success in dataset
+distillation on the larger-scale ImageNet-21K dataset under the standard
+224$\times$224 resolution. Our code and distilled ImageNet-21K dataset of 20
+IPC, 2K recovery budget are available at
+https://github.com/VILA-Lab/SRe2L/tree/main/CDA."
+"The Program Testing Ability of Large Language Models for Code","https://scispace.com/paper/http://arxiv.org/abs/2310.05727v1","2023","Preprint","","Weimin Xiong
+Yiwen Guo
+Hao Chen","","http://arxiv.org/pdf/2310.05727v1","Recent development of large language models (LLMs) for code like CodeX and
+CodeT5+ demonstrates tremendous promise in achieving code intelligence. Their
+ability of synthesizing code that completes a program for performing a
+pre-defined task has been intensively tested and verified on benchmark datasets
+including HumanEval and MBPP. Yet, evaluation of these LLMs from more
+perspectives (than just program synthesis) is also anticipated, considering
+their broad scope of applications in software engineering. In this paper, we
+explore the ability of LLMs for testing programs/code. By performing thorough
+analyses of recent LLMs for code in program testing, we show a series of
+intriguing properties of these models and demonstrate how program testing
+ability of LLMs can be improved. Following recent work which utilizes generated
+test cases to enhance program synthesis, we further leverage our findings in
+improving the quality of the synthesized programs and show +11.77% and +4.22%
+higher code pass rates on HumanEval+ comparing with the GPT-3.5-turbo baseline
+and the recent state-of-the-art, respectively."
+"Knowledge-Aware Artifact Image Synthesis with LLM-Enhanced Prompting and
+  Multi-Source Supervision","https://scispace.com/paper/http://arxiv.org/abs/2312.08056v1","2023","Preprint","","Shengguang Wu
+Zhenglun Chen
+Qi Su","","http://arxiv.org/pdf/2312.08056v1","Ancient artifacts are an important medium for cultural preservation and
+restoration. However, many physical copies of artifacts are either damaged or
+lost, leaving a blank space in archaeological and historical studies that calls
+for artifact image generation techniques. Despite the significant advancements
+in open-domain text-to-image synthesis, existing approaches fail to capture the
+important domain knowledge presented in the textual description, resulting in
+errors in recreated images such as incorrect shapes and patterns. In this
+paper, we propose a novel knowledge-aware artifact image synthesis approach
+that brings lost historical objects accurately into their visual forms. We use
+a pretrained diffusion model as backbone and introduce three key techniques to
+enhance the text-to-image generation framework: 1) we construct prompts with
+explicit archaeological knowledge elicited from large language models (LLMs);
+2) we incorporate additional textual guidance to correlated historical
+expertise in a contrastive manner; 3) we introduce further visual-semantic
+constraints on edge and perceptual features that enable our model to learn more
+intricate visual details of the artifacts. Compared to existing approaches, our
+proposed model produces higher-quality artifact images that align better with
+the implicit details and historical knowledge contained within written
+documents, thus achieving significant improvements across automatic metrics and
+in human evaluation. Our code and data are available at
+https://github.com/danielwusg/artifact_diffusion."
+"Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of
+  Large Language Models for Code Generation","https://scispace.com/paper/http://arxiv.org/abs/2305.01210v3","2023","Preprint","","Jiawei Liu
+Chunqiu Steven Xia
+Yuyao Wang
+Lingming Zhang","","http://arxiv.org/pdf/2305.01210v3","Program synthesis has been long studied with recent approaches focused on
+directly using the power of Large Language Models (LLMs) to generate code.
+Programming benchmarks, with curated synthesis problems and test-cases, are
+used to measure the performance of various LLMs on code synthesis. However,
+these test-cases can be limited in both quantity and quality for fully
+assessing the functional correctness of the generated code. Such limitation in
+the existing benchmarks begs the following question: In the era of LLMs, is the
+code generated really correct? To answer this, we propose EvalPlus -- a code
+synthesis evaluation framework to rigorously benchmark the functional
+correctness of LLM-synthesized code. EvalPlus augments a given evaluation
+dataset with large amounts of test-cases newly produced by an automatic test
+input generator, powered by both LLM- and mutation-based strategies. While
+EvalPlus is general, we extend the test-cases of the popular HumanEval
+benchmark by 80x to build HumanEval+. Our extensive evaluation across 26
+popular LLMs (e.g., GPT-4 and ChatGPT) demonstrates that HumanEval+ is able to
+catch significant amounts of previously undetected wrong code synthesized by
+LLMs, reducing the pass@k by up-to 19.3-28.9%. We also surprisingly found that
+test insufficiency can lead to mis-ranking. For example, both
+WizardCoder-CodeLlama and Phind-CodeLlama now outperform ChatGPT on HumanEval+,
+while none of them could on HumanEval. Our work not only indicates that prior
+popular code synthesis evaluation results do not accurately reflect the true
+performance of LLMs for code synthesis, but also opens up a new direction to
+improve such programming benchmarks through automated testing. We have
+open-sourced our tools, enhanced datasets as well as all LLM-generated code at
+https://github.com/evalplus/evalplus to facilitate and accelerate future
+LLM-for-code research."
+"VeriMind: Agentic LLM for Automated Verilog Generation with a Novel
+  Evaluation Metric","https://scispace.com/paper/http://arxiv.org/abs/2503.16514v3","2025","Preprint","","Bardia Nadimi
+Ghali Omar Boutaib
+Hao Zheng","","http://arxiv.org/pdf/2503.16514v3","Designing Verilog modules requires meticulous attention to correctness,
+efficiency, and adherence to design specifications. However, manually writing
+Verilog code remains a complex and time-consuming task that demands both expert
+knowledge and iterative refinement. Leveraging recent advancements in large
+language models (LLMs) and their structured text generation capabilities, we
+propose VeriMind, an agentic LLM framework for Verilog code generation that
+significantly automates and optimizes the synthesis process. Unlike traditional
+LLM-based code generators, VeriMind employs a structured reasoning approach:
+given a user-provided prompt describing design requirements, the system first
+formulates a detailed train of thought before the final Verilog code is
+generated. This multi-step methodology enhances interpretability, accuracy, and
+adaptability in hardware design. In addition, we introduce a novel evaluation
+metric-pass@ARC-which combines the conventional pass@k measure with Average
+Refinement Cycles (ARC) to capture both success rate and the efficiency of
+iterative refinement. Experimental results on diverse hardware design tasks
+demonstrated that our approach achieved up to $8.3\%$ improvement on pass@k
+metric and $8.1\%$ on pass@ARC metric. These findings underscore the
+transformative potential of agentic LLMs in automated hardware design, RTL
+development, and digital system synthesis."
+"PaD: Program-aided Distillation Can Teach Small Models Reasoning Better
+  than Chain-of-thought Fine-tuning","https://scispace.com/paper/http://arxiv.org/abs/2305.13888v2","2023","Preprint","","Xuekai Zhu
+Biqing Qi
+Kaiyan Zhang
+Xinwei Long
+Zhouhan Lin
+Bowen Zhou","","http://arxiv.org/pdf/2305.13888v2","While large language models (LLMs) excel in various natural language
+processing tasks, their huge size and the inaccessibility of parameters present
+challenges for practical deployment. Previous studies try to distill
+task-specific ability from LLMs to smaller models, using data synthesis and
+chain-of-thought (CoT) fine-tuning. However, synthetic CoT data often contains
+faulty reasoning, which deteriorates the quality of distillation, especially in
+reasoning capabilities. In this work, we propose Program-aided Distillation
+(PaD), which introduces reasoning programs to suppress the errors in distilled
+data, and thus achieves better distillation quality for reasoning tasks. In
+PaD, we utilize the reasoning program to substitute the CoT, allowing automated
+error checking of synthetic data. Further, through error injecting and further
+training, the small distilling model could iteratively self-refine the
+reasoning. Moreover, we conduct a step-wise beam search by step-by-step
+verifying to acquire more exact reasoning chains. We evaluate PaD on arithmetic
+reasoning, symbolic reasoning, and general ability. Experimental results
+demonstrate that smaller models using PaD can not only outperform certain
+LLMs~(e.g., LLaMA-1 13B) but also achieve strong improvement over baselines
+with a significantly smaller scale of parameters and data. The source code is
+publicly available at https://github.com/Xuekai-Zhu/pad."
+"Can Pre-trained Language Models be Used to Resolve Textual and Semantic
+  Merge Conflicts?","https://scispace.com/paper/http://arxiv.org/abs/2111.11904v1","2021","Preprint","","Jialu Zhang
+Todd Mytkowicz
+Mike Kaufman
+Ruzica Piskac
+Shuvendu K. Lahiri","","http://arxiv.org/pdf/2111.11904v1","Program merging is standard practice when developers integrate their
+individual changes to a common code base. When the merge algorithm fails, this
+is called a merge conflict. The conflict either manifests in textual merge
+conflicts where the merge fails to produce code, or semantic merge conflicts
+where the merged code results in compiler or test breaks. Resolving these
+conflicts for large code projects is expensive because it requires developers
+to manually identify the sources of conflict and correct them.
+  In this paper, we explore the feasibility of automatically repairing merge
+conflicts (both textual and semantic) using k-shot learning with large neural
+language models (LM) such as GPT-3. One of the challenges in leveraging such
+language models is to fit the examples and the queries within a small prompt
+(2048 tokens). We evaluate LMs and k-shot learning for two broad applications:
+(a) textual and semantic merge conflicts for a divergent fork Microsoft Edge,
+and (b) textual merge conflicts for a large number of JavaScript projects in
+GitHub. Our results are mixed: one one-hand, LMs provide the state-of-the-art
+(SOTA) performance on semantic merge conflict resolution for Edge compared to
+earlier symbolic approaches; on the other hand, LMs do not yet obviate the
+benefits of fine-tuning neural models (when sufficient data is available) or
+the design of special purpose domain-specific languages (DSL) for restricted
+patterns for program synthesis."
+"RLTF: Reinforcement Learning from Unit Test Feedback","https://scispace.com/paper/http://arxiv.org/abs/2307.04349v2","2023","Preprint","","Jiate Liu
+Yiqin Zhu
+Kaiwen Xiao
+Qiang Fu
+Xiao Han
+Wei Yang
+Deheng Ye","","http://arxiv.org/pdf/2307.04349v2","The goal of program synthesis, or code generation, is to generate executable
+code based on given descriptions. Recently, there has been an increasing number
+of studies employing reinforcement learning (RL) to improve the performance of
+large language models (LLMs) for code. However, current representative works
+either rely solely on offline frameworks, limiting the exploration of new
+sample spaces, or fall short in the utilization of unit test signals, not
+accounting for specific error locations within the code. To address these
+issues, we propose RLTF, i.e., Reinforcement Learning from Unit Test Feedback,
+a novel online RL framework with unit test feedback of multi-granularity for
+refining code LLMs. Our approach generates data in real-time during training
+and simultaneously utilizes fine-grained feedback signals to guide the model
+towards producing higher-quality code. Extensive experiments show that RLTF
+achieves state-of-the-art performance on the APPS and the MBPP benchmarks. Our
+code is available at: https://github.com/Zyq-scut/RLTF."
+"Large Language Models Synergize with Automated Machine Learning","https://scispace.com/paper/http://arxiv.org/abs/2405.03727v3","2024","Preprint","","Jinglue Xu
+Jialong Li
+Zhen Liu
+Nagar Anthel Venkatesh Suryanarayanan
+Guoyuan Zhou
+Jia Guo
+Hitoshi Iba
+Kenji Tei","","http://arxiv.org/pdf/2405.03727v3","Recently, program synthesis driven by large language models (LLMs) has become
+increasingly popular. However, program synthesis for machine learning (ML)
+tasks still poses significant challenges. This paper explores a novel form of
+program synthesis, targeting ML programs, by combining LLMs and automated
+machine learning (autoML). Specifically, our goal is to fully automate the
+generation and optimization of the code of the entire ML workflow, from data
+preparation to modeling and post-processing, utilizing only textual
+descriptions of the ML tasks. To manage the length and diversity of ML
+programs, we propose to break each ML program into smaller, manageable parts.
+Each part is generated separately by the LLM, with careful consideration of
+their compatibilities. To ensure compatibilities, we design a testing technique
+for ML programs. Unlike traditional program synthesis, which typically relies
+on binary evaluations (i.e., correct or incorrect), evaluating ML programs
+necessitates more than just binary judgments. Our approach automates the
+numerical evaluation and optimization of these programs, selecting the best
+candidates through autoML techniques. In experiments across various ML tasks,
+our method outperforms existing methods in 10 out of 12 tasks for generating ML
+programs. In addition, autoML significantly improves the performance of the
+generated ML programs. In experiments, given the textual task description, our
+method, Text-to-ML, generates the complete and optimized ML program in a fully
+autonomous process. The implementation of our method is available at
+https://github.com/JLX0/llm-automl."
+"APRIL: API Synthesis with Automatic Prompt Optimization and
+  Reinforcement Learning","https://scispace.com/paper/http://arxiv.org/abs/2509.25196v1","2025","Preprint","","Hua Zhong
+Shan Jiang
+Sarfraz Khurshid","","http://arxiv.org/pdf/2509.25196v1","APIs are central to modern software development, yet composing new APIs from
+large libraries is difficult due to the exponential search space; traditional
+component-based synthesis relies on costly exploration and hand-crafted
+specifications. While large language models (LLMs) can generate implementations
+from natural language, hallucinations and limited access to up-to-date
+contextual information often yield incorrect code. In this paper, we present
+APRIL, an approach that combines LLM-based synthesis with Automatic Prompt
+Optimization (APO) and Reinforcement Learning from Verifiable Rewards (RLVR):
+APO iteratively refines prompts for a frozen model, while RLVR fine-tunes the
+policy toward functional correctness, producing an efficient synthesis
+pipeline. Evaluated on 81 real-world APIs from widely used scientific Python
+libraries and benchmarked against instruction-tuned but unfine-tuned LLMs
+guided by expert prompts, APRIL achieves substantial improvements. These
+results indicate that integrating APO and RLVR provides a robust, scalable path
+for component-based API synthesis in large libraries."
+"TritonRL: Training LLMs to Think and Code Triton Without Cheating","https://scispace.com/paper/http://arxiv.org/abs/2510.17891v1","2025","Preprint","","Jiin Woo
+Shaowei Zhu
+Allen Nie
+Zhen Jia
+Yida Wang
+Youngsuk Park","","http://arxiv.org/pdf/2510.17891v1","With the rapid evolution of large language models (LLMs), the demand for
+automated, high-performance system kernels has emerged as a key enabler for
+accelerating development and deployment. We introduce TritonRL, a
+domain-specialized LLM for Triton kernel generation, trained with a novel
+training framework that enables robust and automated kernel synthesis. Unlike
+general-purpose programming languages, Triton kernel generation faces unique
+challenges due to data scarcity and incomplete evaluation criteria, vulnerable
+to reward hacking. Our approach addresses these challenges end-to-end by
+distilling Triton-specific knowledge through supervised fine-tuning on curated
+datasets, and further improving code quality via reinforcement learning (RL)
+with robust, verifiable rewards and hierarchical reward assignment. Our RL
+framework robustly detects reward hacking and guides both reasoning traces and
+code tokens through fine-grained verification and hierarchical reward
+decomposition, enabling the model to generate high-quality Triton kernels that
+can truly replace existing modules. With robust and fine-grained evaluation,
+our experiments on KernelBench demonstrate that TritonRL achieves
+state-of-the-art correctness and speedup, surpassing all other Triton-specific
+models and underscoring the effectiveness of our RL-based training paradigm."
+"Context-Adaptive Synthesis and Compression for Enhanced
+  Retrieval-Augmented Generation in Complex Domains","https://scispace.com/paper/http://arxiv.org/abs/2508.19357v1","2025","Preprint","","Peiran Zhou
+Junnan Zhu
+Yichen Shen
+Ruoxi Yu","","http://arxiv.org/pdf/2508.19357v1","Large Language Models (LLMs) excel in language tasks but are prone to
+hallucinations and outdated knowledge. Retrieval-Augmented Generation (RAG)
+mitigates these by grounding LLMs in external knowledge. However, in complex
+domains involving multiple, lengthy, or conflicting documents, traditional RAG
+suffers from information overload and inefficient synthesis, leading to
+inaccurate and untrustworthy answers. To address this, we propose CASC
+(Context-Adaptive Synthesis and Compression), a novel framework that
+intelligently processes retrieved contexts. CASC introduces a Context Analyzer
+& Synthesizer (CAS) module, powered by a fine-tuned smaller LLM, which performs
+key information extraction, cross-document consistency checking and conflict
+resolution, and question-oriented structured synthesis. This process transforms
+raw, scattered information into a highly condensed, structured, and
+semantically rich context, significantly reducing the token count and cognitive
+load for the final Reader LLM. We evaluate CASC on SciDocs-QA, a new
+challenging multi-document question answering dataset designed for complex
+scientific domains with inherent redundancies and conflicts. Our extensive
+experiments demonstrate that CASC consistently outperforms strong baselines."

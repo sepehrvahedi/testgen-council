@@ -1,0 +1,166 @@
+"Paper Title","Paper Link","Publication Year","Publication Type","Publication Title","Author Names","DOI","PDF Link","Snippet","Abstract"
+"Large language model-based agents for software engineering: A survey","https://scispace.com/paper/large-language-model-based-agents-for-software-engineering-a-5edi77w6grl0","2024","Journal Article","","Junwei Liu
+Kaixin Wang
+Yixuan Chen
+Xin Peng
+Zhenpeng Chen
+Lingming Zhang
+Yiling Lou","10.48550/arxiv.2409.02977","https://arxiv.org/pdf/2409.02977?","… recent advance in Large Language Models (LLMs) has shaped … challenges of multi-agent systems for software engineering. … However, given the diversity and complexity of the root …","The recent advance in Large Language Models (LLMs) has shaped a new paradigm of AI agents, i.e., LLM-based agents. Compared to standalone LLMs, LLM-based agents substantially extend the versatility and expertise of LLMs by enhancing LLMs with the capabilities of perceiving and utilizing external resources and tools. To date, LLM-based agents have been applied and shown remarkable effectiveness in Software Engineering (SE). The synergy between multiple agents and human interaction brings further promise in tackling complex real-world SE problems. In this work, we present a comprehensive and systematic survey on LLM-based agents for SE. We collect 106 papers and categorize them from two perspectives, i.e., the SE and agent perspectives. In addition, we discuss open challenges and future directions in this critical domain. The repository of this survey is at https://github.com/FudanSELab/Agent4SE-Paper-List. "
+"LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision, and the Road Ahead","https://scispace.com/paper/llm-based-multi-agent-systems-for-software-engineering-3nfzqoopnexw","2025","Journal Article","ACM Transactions on Software Engineering and Methodology","Junda He
+Christoph Treude
+David Lo","10.1145/3712003","https://arxiv.org/pdf/2404.04834","… of integrating Large Language Models into Multi-Agent (LMA) … A prominent multi-agent setup for code generation typically on … This analysis emphasizes both the agents’ strengths and …","Integrating Large Language Models (LLMs) into autonomous agents marks a significant shift in the research landscape by offering cognitive abilities that are competitive with human planning and reasoning. This paper explores the transformative potential of integrating Large Language Models into Multi-Agent (LMA) systems for addressing complex challenges in software engineering (SE). By leveraging the collaborative and specialized abilities of multiple agents, LMA systems enable autonomous problem-solving, improve robustness, and provide scalable solutions for managing the complexity of real-world software projects. In this paper, we conduct a systematic review of recent primary studies to map the current landscape of LMA applications across various stages of the software development lifecycle (SDLC). To illustrate current capabilities and limitations, we perform two case studies to demonstrate the effectiveness of state-of-the-art LMA frameworks. Additionally, we identify critical research gaps and propose a comprehensive research agenda focused on enhancing individual agent capabilities and optimizing agent synergy. Our work outlines a forward-looking vision for developing fully autonomous, scalable, and trustworthy LMA systems, laying the foundation for the evolution of Software Engineering 2.0. "
+"From llms to llm-based agents for software engineering: A survey of current, challenges and future","https://scispace.com/paper/from-llms-to-llm-based-agents-for-software-engineering-a-2fb63jbcpnef","2024","Journal Article","","Haolin Jin
+Li Huang
+Haipeng Cai
+Jun Yan
+Bo Li
+Huaming Chen","10.48550/arxiv.2408.02479","https://arxiv.org/pdf/2408.02479","… Abstract—With the rise of large language models (LLMs), … ACM Digital Library could further complement our search by … both single-agent and multi-agent systems. We will also covers …","With the rise of large language models (LLMs), researchers are increasingly exploring their applications in var ious vertical domains, such as software engineering. LLMs have achieved remarkable success in areas including code generation and vulnerability detection. However, they also exhibit numerous limitations and shortcomings. LLM-based agents, a novel tech nology with the potential for Artificial General Intelligence (AGI), combine LLMs as the core for decision-making and action-taking, addressing some of the inherent limitations of LLMs such as lack of autonomy and self-improvement. Despite numerous studies and surveys exploring the possibility of using LLMs in software engineering, it lacks a clear distinction between LLMs and LLM based agents. It is still in its early stage for a unified standard and benchmarking to qualify an LLM solution as an LLM-based agent in its domain. In this survey, we broadly investigate the current practice and solutions for LLMs and LLM-based agents for software engineering. In particular we summarise six key topics: requirement engineering, code generation, autonomous decision-making, software design, test generation, and software maintenance. We review and differentiate the work of LLMs and LLM-based agents from these six topics, examining their differences and similarities in tasks, benchmarks, and evaluation metrics. Finally, we discuss the models and benchmarks used, providing a comprehensive analysis of their applications and effectiveness in software engineering. We anticipate this work will shed some lights on pushing the boundaries of LLM-based agents in software engineering for future research. "
+"Multi-agent collaboration mechanisms: A survey of llms","https://scispace.com/paper/multi-agent-collaboration-mechanisms-a-survey-of-llms-gxsw03fw1w2m","2025","Journal Article","arXiv.org","Khanh-Tung Tran
+Dung Dao
+Minh-Duong Nguyen
+Quoc-Viet Pham
+Barry O’Sullivan
+Hoang D. Nguyen","10.48550/arxiv.2501.06322","https://arxiv.org/pdf/2501.06322","… 2.2 Large Language Models LLMs - driven by the … problem-solving, collective decision making, and complementary … diversity, cautioning against treating stand-alone LLMs as universal …",""
+"Large language model based multi-agents: A survey of progress and challenges","https://scispace.com/paper/large-language-model-based-multi-agents-a-survey-of-progress-4xiklwolkq","2024","Journal Article","arXiv.org","Taicheng Guo
+Xiuying Chen
+Yaqi Wang
+Ruidi Chang
+Shichao Pei
+Nitesh V. Chawla
+Olaf Wiest
+Xiangliang Zhang","10.48550/arxiv.2402.01680","https://arxiv.org/pdf/2402.01680","… Large Language Models (LLMs) have achieved remarkable … tial aspects of multi-agent systems based on LLMs, as well as … LLM-MA techniques and to complement existing surveys by …","Large Language Models (LLMs) have achieved remarkable success across a wide array of tasks. Due to the impressive planning and reasoning abilities of LLMs, they have been used as autonomous agents to do many tasks automatically. Recently, based on the development of using one LLM as a single planning or decision-making agent, LLM-based multi-agent systems have achieved considerable progress in complex problem-solving and world simulation. To provide the community with an overview of this dynamic field, we present this survey to offer an in-depth discussion on the essential aspects of multi-agent systems based on LLMs, as well as the challenges. Our goal is for readers to gain substantial insights on the following questions: What domains and environments do LLM-based multi-agents simulate? How are these agents profiled and how do they communicate? What mechanisms contribute to the growth of agents' capacities? For those interested in delving into this field of study, we also summarize the commonly used datasets or benchmarks for them to have convenient access. To keep researchers updated on the latest studies, we maintain an open-source GitHub repository, dedicated to outlining the research on LLM-based multi-agent systems."
+"Large Language Models-Based Agents in Software Development","https://scispace.com/paper/-9gGZ_GH7M4J","","","","AJ Asunmaa","","https://aaltodoc.aalto.fi/bitstreams/ab7865f2-2fbc-4a66-b161-82b9e61288fc/download","… strengths and weaknesses in three key phases of software … In this thesis context, single- and multi-agent models are … process: requirements engineering, code generation, and …",""
+"Merge, ensemble, and cooperate! a survey on collaborative strategies in the era of large language models","https://scispace.com/paper/merge-ensemble-and-cooperate-a-survey-on-collaborative-4jruy8g79z","2024","Journal Article","","Jinliang Lu
+Ziliang Pang
+Min Xiao
+Yaochen Zhu
+Rui Xia
+Jiajun Zhang","10.48550/arxiv.2407.06089","https://arxiv.org/pdf/2407.06089","… , LLMs trained on different corpora exhibit varying strengths and … of research can be traced back to studies on attribute-controlled text generation, which encourage language models to …","The remarkable success of Large Language Models (LLMs) has ushered natural language processing (NLP) research into a new era. Despite their diverse capabilities, LLMs trained on different corpora exhibit varying strengths and weaknesses, leading to challenges in maximizing their overall efficiency and versatility. To address these challenges, recent studies have explored collaborative strategies for LLMs. This paper provides a comprehensive overview of this emerging research area, highlighting the motivation behind such collaborations. Specifically, we categorize collaborative strategies into three primary approaches: Merging, Ensemble, and Cooperation. Merging involves integrating multiple LLMs in the parameter space. Ensemble combines the outputs of various LLMs. Cooperation} leverages different LLMs to allow full play to their diverse capabilities for specific tasks. We provide in-depth introductions to these methods from different perspectives and discuss their potential applications. Additionally, we outline future research directions, hoping this work will catalyze further studies on LLM collaborations and paving the way for advanced NLP applications. "
+"Large language models for software engineering: A systematic literature review","https://scispace.com/paper/large-language-models-for-software-engineering-a-systematic-1j69c9384z","2023","Preprint","","Xinyi Hou
+Yanjie Zhao
+Yue Liu
+Yang Zhou
+Kailong Wang
+Li Li
+Xiapu Luo
+David Lo
+John Grundy
+Haoyu Wang","10.48550/arxiv.2308.10620","https://arxiv.org/pdf/2308.10620","… , establishing a basis for text generation and understanding [295]. … the-art, pinpointing the key strengths, weaknesses, and gaps in … This study thus aims to answer the following research …","Large Language Models (LLMs) have significantly impacted numerous domains, including Software Engineering (SE). Many recent publications have explored LLMs applied to various SE tasks. Nevertheless, a comprehensive understanding of the application, effects, and possible limitations of LLMs on SE is still in its early stages. To bridge this gap, we conducted a systematic literature review on LLM4SE, with a particular focus on understanding how LLMs can be exploited to optimize processes and outcomes. We collect and analyze 229 research papers from 2017 to 2023 to answer four key research questions (RQs). In RQ1, we categorize different LLMs that have been employed in SE tasks, characterizing their distinctive features and uses. In RQ2, we analyze the methods used in data collection, preprocessing, and application highlighting the role of well-curated datasets for successful LLM for SE implementation. RQ3 investigates the strategies employed to optimize and evaluate the performance of LLMs in SE. Finally, RQ4 examines the specific SE tasks where LLMs have shown success to date, illustrating their practical contributions to the field. From the answers to these RQs, we discuss the current state-of-the-art and trends, identifying gaps in existing research, and flagging promising areas for future study. "
+"Software testing with large language models: Survey, landscape, and vision","https://scispace.com/paper/software-testing-with-large-language-models-survey-landscape-1e8o1s1vz4","2024","Journal Article","IEEE Transactions on Software Engineering","Junjie Wang
+Yuchao Huang
+Chunyang Chen
+Zhe Liu
+Song Wang
+Qing Wang","10.1109/tse.2024.3368208","https://arxiv.org/pdf/2307.07221","… as a supplementary source for collecting additional papers. … task and a generation task with LLM, then ensemble the prediction … LLMs with other techniques optimizes their strengths and …",""
+"Multi-Agent AI Collaboration: Advancing Software Engineering with Autonomous LLMs","https://scispace.com/paper/d8dCgiGeaRUJ","","","","I Zahid
+I Hussain","","https://www.researchgate.net/profile/Ijaz-Hussain-23/publication/388835227_Multi-Agent_AI_Collaboration_Advancing_Software_Engineering_with_Autonomous_LLMs/links/67a8fabd645ef274a478ae49/Multi-Agent-AI-Collaboration-Advancing-Software-Engineering-with-Autonomous-LLMs.pdf","… on code generation, debugging, project management, and software … This study concludes that multiagent AI systems are poised … With the advent of Large Language Models (LLMs), …",""
+"Agents in software engineering: Survey, landscape, and vision","https://scispace.com/paper/agents-in-software-engineering-survey-landscape-and-vision-olqq19h52l9g","2024","Journal Article","","Yanlin Wang
+Wanjun Zhong
+Yanxian Huang
+Ensheng Shi
+Min Yang
+Jiachi Chen
+Huijun Li
+Yuchi Ma
+Qianxiang Wang
+Zibin Zheng","10.48550/arxiv.2409.09030","https://arxiv.org/pdf/2409.09030?","… In recent years, Large Language Models (LLMs) have … The multi-agent collaboration process requires a large amount … Language Models to generate CoTs for code generation …","In recent years, Large Language Models (LLMs) have achieved remarkable success and have been widely used in various downstream tasks, especially in the tasks of the software engineering (SE) field. We find that many studies combining LLMs with SE have employed the concept of agents either explicitly or implicitly. However, there is a lack of an in-depth survey to sort out the development context of existing works, analyze how existing works combine the LLM-based agent technologies to optimize various tasks, and clarify the framework of LLM-based agents in SE. In this paper, we conduct the first survey of the studies on combining LLM-based agents with SE and present a framework of LLM-based agents in SE which includes three key modules: perception, memory, and action. We also summarize the current challenges in combining the two fields and propose future opportunities in response to existing challenges. We maintain a GitHub repository of the related papers at: https://github.com/DeepSoftwareAnalytics/Awesome-Agent4SE. "
+"Diversity empowers intelligence: Integrating expertise of software engineering agents","https://scispace.com/paper/diversity-empowers-intelligence-integrating-expertise-of-1o7imaudjbdd","2024","Journal Article","","Kexun Zhang
+Weiran Yao
+Zuxin Liu
+Yihao Feng
+Zhi‐Wei Liu
+Rithesh Murthy
+Tian Lan
+Lei Li
+Renze Lou
+Jiacheng Xu
+Pang Bo
+Yingbo Zhou
+Shelby Heinecke
+Silvio Savarese
+Huan Wang
+Caiming Xiong","10.48550/arxiv.2408.07060","https://arxiv.org/pdf/2408.07060?","… growing body of research on collaborative AI systems and … in large language models (LLMs) have transformed software … evaluation is easier than generation. DEIBASE thus serves as …","Large language model (LLM) agents have shown great potential in solving real-world software engineering (SWE) problems. The most advanced open-source SWE agent can resolve over 27% of real GitHub issues in SWE-Bench Lite. However, these sophisticated agent frameworks exhibit varying strengths, excelling in certain tasks while underperforming in others. To fully harness the diversity of these agents, we propose DEI (Diversity Empowered Intelligence), a framework that leverages their unique expertise. DEI functions as a meta-module atop existing SWE agent frameworks, managing agent collectives for enhanced problem-solving. Experimental results show that a DEI-guided committee of agents is able to surpass the best individual agent's performance by a large margin. For instance, a group of open-source SWE agents, with a maximum individual resolve rate of 27.3% on SWE-Bench Lite, can achieve a 34.3% resolve rate with DEI, making a 25% improvement and beating most closed-source solutions. Our best-performing group excels with a 55% resolve rate, securing the highest ranking on SWE-Bench Lite. Our findings contribute to the growing body of research on collaborative AI systems and their potential to solve complex software engineering challenges. "
+"Large language model agent: A survey on methodology, applications and challenges","https://scispace.com/paper/large-language-model-agent-a-survey-on-methodology-v2xrqrrlb0ml","2025","Journal Article","arXiv.org","Junyu Luo
+Weizhi Zhang
+Ye Yuan
+Yusheng Zhao
+Junwei Yang
+Yiyang Gu
+Bohan Wu
+Binqi Chen
+Ziyue Qiao
+Qingqing Long
+Rongcheng Tu
+Xiaoming Luo
+Wei Ju
+Zhiping Xiao
+Yifan Wang
+Mengxue Xiao
+Chenwu Liu
+Jingyang Yuan
+Shichang Zhang
+Yiqiao Jin
+Fan Zhang
+Xianhong Wu
+Hanqing Zhao
+Dacheng Tao
+Philip S. Yu
+Ming Zhang","10.48550/arxiv.2503.21460","https://arxiv.org/pdf/2503.21460?","… by revolutionary advancements in large language models. … 14 domains), complement static datasets and standardize tool … LLM-driven multi-agent systems to scientific research over the …",""
+"Exploring large language model based intelligent agents: Definitions, methods, and prospects","https://scispace.com/paper/exploring-large-language-model-based-intelligent-agents-4q4jcs8sjq","2024","Journal Article","arXiv.org","Yuheng Cheng
+Ceyao Zhang
+Zhengwen Zhang
+Xiangrui Meng
+Sirui Hong
+Wenhao Li
+Zihao Wang
+Zekai Wang
+Feng Yin
+Junhua Zhao
+Xiuqiang He","10.48550/arxiv.2401.03428","https://arxiv.org/pdf/2401.03428","… from recent progress in large language models (LLMs), LLM-… single-agent and multi-agent systems. It covers their definitions, … It can be posited that no supplementary training is requisite …","Intelligent agents stand out as a potential path toward artificial general intelligence (AGI). Thus, researchers have dedicated significant effort to diverse implementations for them. Benefiting from recent progress in large language models (LLMs), LLM-based agents that use universal natural language as an interface exhibit robust generalization capabilities across various applications -- from serving as autonomous general-purpose task assistants to applications in coding, social, and economic domains, LLM-based agents offer extensive exploration opportunities. This paper surveys current research to provide an in-depth overview of LLM-based intelligent agents within single-agent and multi-agent systems. It covers their definitions, research frameworks, and foundational components such as their composition, cognitive and planning methods, tool utilization, and responses to environmental feedback. We also delve into the mechanisms of deploying LLM-based agents in multi-agent systems, including multi-role collaboration, message passing, and strategies to alleviate communication issues between agents. The discussions also shed light on popular datasets and application scenarios. We conclude by envisioning prospects for LLM-based agents, considering the evolving landscape of AI and natural language processing."
+"Computational experiments meet large language model based agents: A survey and perspective","https://scispace.com/paper/computational-experiments-meet-large-language-model-based-3gsp2b7g9r","2024","Journal Article","arXiv.org","Qun Ma
+Xiao Xue
+Deyu Zhou
+Xiangning Yu
+Donghua Liu
+Xuwen Zhang
+Zihan Zhao
+Yifan Shen
+Peilin Ji
+Juanjuan Li
+Gang Wang
+Wanpeng Ma","10.48550/arxiv.2402.00262","https://arxiv.org/pdf/2402.00262","… , the integration of Large Language Models (LLMs) has been … Language to interact, including collaborative development of … with LLM-based Agent to complement each other. This can …","Computational experiments have emerged as a valuable method for studying complex systems, involving the algorithmization of counterfactuals. However, accurately representing real social systems in Agent-based Modeling (ABM) is challenging due to the diverse and intricate characteristics of humans, including bounded rationality and heterogeneity. To address this limitation, the integration of Large Language Models (LLMs) has been proposed, enabling agents to possess anthropomorphic abilities such as complex reasoning and autonomous learning. These agents, known as LLM-based Agent, offer the potential to enhance the anthropomorphism lacking in ABM. Nonetheless, the absence of explicit explainability in LLMs significantly hinders their application in the social sciences. Conversely, computational experiments excel in providing causal analysis of individual behaviors and complex phenomena. Thus, combining computational experiments with LLM-based Agent holds substantial research potential. This paper aims to present a comprehensive exploration of this fusion. Primarily, it outlines the historical development of agent structures and their evolution into artificial societies, emphasizing their importance in computational experiments. Then it elucidates the advantages that computational experiments and LLM-based Agents offer each other, considering the perspectives of LLM-based Agent for computational experiments and vice versa. Finally, this paper addresses the challenges and future trends in this research domain, offering guidance for subsequent related studies."
+"A survey on code generation with llm-based agents","https://scispace.com/paper/a-survey-on-code-generation-with-llm-based-agents-ud6w79v0z4mv","2025","Journal Article","arXiv.org","Yihong Dong
+Xue Jiang
+Jiaru Qian
+Tian Wang
+Kechi Zhang
+Zhi Jin
+Ge Li","10.48550/arxiv.2508.00083","https://arxiv.org/pdf/2508.00083?","… generation agents powered by large language models (LLMs… agents (covering both single-agent and multi-agent systems)… three complementary evaluation dimensions to study how …","Code generation agents powered by large language models (LLMs) are revolutionizing the software development paradigm. Distinct from previous code generation techniques, code generation agents are characterized by three core features. 1) Autonomy: the ability to independently manage the entire workflow, from task decomposition to coding and debugging. 2) Expanded task scope: capabilities that extend beyond generating code snippets to encompass the full software development lifecycle (SDLC). 3) Enhancement of engineering practicality: a shift in research emphasis from algorithmic innovation toward practical engineering challenges, such as system reliability, process management, and tool integration. This domain has recently witnessed rapid development and an explosion in research, demonstrating significant application potential. This paper presents a systematic survey of the field of LLM-based code generation agents. We trace the technology's developmental trajectory from its inception and systematically categorize its core techniques, including both single-agent and multi-agent architectures. Furthermore, this survey details the applications of LLM-based agents across the full SDLC, summarizes mainstream evaluation benchmarks and metrics, and catalogs representative tools. Finally, by analyzing the primary challenges, we identify and propose several foundational, long-term research directions for the future work of the field."
+"Trae agent: An llm-based agent for software engineering with test-time scaling","https://scispace.com/paper/wNl-NIdTw1wJ","","","","Y Xiong
+C Peng
+X Liu
+Trae Research Team","","https://arxiv.org/pdf/2507.23370?","… the rapid advancement of large language models (LLMs), … complementary strengths. This integration is expected to increase the diversity of candidates, thereby improving the ensemble …",""
+"A survey of large language models for code: Evolution, benchmarking, and future trends","https://scispace.com/paper/a-survey-of-large-language-models-for-code-evolution-271s255nqo","2023","Journal Article","arXiv.org","Zibin Zheng
+Kaiwen Ning
+Yanlin Wang
+Jingwen Zhang
+Dewu Zheng
+Mingxi Ye
+Jiachi Chen","10.48550/arxiv.2311.10372","https://arxiv.org/pdf/2311.10372","… large-scale pre-trained language models for code generation. … LLMs and complements the capabilities of existing Code … scientific collaborative effort dedicated to developing large code …","General large language models (LLMs), represented by ChatGPT, have demonstrated significant potential in tasks such as code generation in software engineering. This has led to the development of specialized LLMs for software engineering, known as Code LLMs. A considerable portion of Code LLMs is derived from general LLMs through model fine-tuning. As a result, Code LLMs are often updated frequently and their performance can be influenced by the base LLMs. However, there is currently a lack of systematic investigation into Code LLMs and their performance. In this study, we conduct a comprehensive survey and analysis of the types of Code LLMs and their differences in performance compared to general LLMs. We aim to address three questions: (1) What LLMs are specifically designed for software engineering tasks, and what is the relationship between these Code LLMs? (2) Do Code LLMs really outperform general LLMs in software engineering tasks? (3) Which LLMs are more proficient in different software engineering tasks? To answer these questions, we first collect relevant literature and work from five major databases and open-source communities, resulting in 134 works for analysis. Next, we categorize the Code LLMs based on their publishers and examine their relationships with general LLMs and among themselves. Furthermore, we investigate the performance differences between general LLMs and Code LLMs in various software engineering tasks to demonstrate the impact of base models and Code LLMs. Finally, we comprehensively maintained the performance of LLMs across multiple mainstream benchmarks to identify the best-performing LLMs for each software engineering task. Our research not only assists developers of Code LLMs in choosing base models for the development of more advanced LLMs but also provides insights for practitioners to better understand key improvement directions for Code LLMs."
+"Large language models empowered agent-based modeling and simulation: A survey and perspectives","https://scispace.com/paper/large-language-models-empowered-agent-based-modeling-and-2alj1dx3i6","2023","Journal Article","arXiv.org","Chen Gao
+Xiaochong Lan
+Nian Li
+Yuan Yuan
+Jingtao Ding
+Zhi Zhou
+Fengli Xu
+Yong Li","10.48550/arxiv.2312.11970","https://www.nature.com/articles/s41599-024-03611-3.pdf","… template and add more supplementary descriptions to construct … possess a powerful capability to simulate heterogeneous … social dynamics, enhancing collaborative problem-solving, etc.…","Agent-based modeling and simulation has evolved as a powerful tool for modeling complex systems, offering insights into emergent behaviors and interactions among diverse agents. Integrating large language models into agent-based modeling and simulation presents a promising avenue for enhancing simulation capabilities. This paper surveys the landscape of utilizing large language models in agent-based modeling and simulation, examining their challenges and promising future directions. In this survey, since this is an interdisciplinary field, we first introduce the background of agent-based modeling and simulation and large language model-empowered agents. We then discuss the motivation for applying large language models to agent-based simulation and systematically analyze the challenges in environment perception, human alignment, action generation, and evaluation. Most importantly, we provide a comprehensive overview of the recent works of large language model-empowered agent-based modeling and simulation in multiple scenarios, which can be divided into four domains: cyber, physical, social, and hybrid, covering simulation of both real-world and virtual environments. Finally, since this area is new and quickly evolving, we discuss the open problems and promising future directions."
+"Self-evolving multi-agent collaboration networks for software development","https://scispace.com/paper/self-evolving-multi-agent-collaboration-networks-for-3eouucz3wlh0","2024","Journal Article","","Hu Yue
+Yuanfang Cai
+Yi Du
+Xinyu Zhu
+Xiaowei Liu
+Zhiqiang Yu
+Y. Thomas Hou
+Shuo Tang
+Sixuan CHEN","10.48550/arxiv.2410.16946","https://arxiv.org/pdf/2410.16946?","… Given the diversity of real-world coding tasks, human design … agent as context, providing supplementary details to aid in … Swe-bench: Can language models resolve real-world github …","LLM-driven multi-agent collaboration (MAC) systems have demonstrated impressive capabilities in automatic software development at the function level. However, their heavy reliance on human design limits their adaptability to the diverse demands of real-world software development. To address this limitation, we introduce EvoMAC, a novel self-evolving paradigm for MAC networks. Inspired by traditional neural network training, EvoMAC obtains text-based environmental feedback by verifying the MAC network's output against a target proxy and leverages a novel textual backpropagation to update the network. To extend coding capabilities beyond function-level tasks to more challenging software-level development, we further propose rSDE-Bench, a requirement-oriented software development benchmark, which features complex and diverse software requirements along with automatic evaluation of requirement correctness. Our experiments show that: i) The automatic requirement-aware evaluation in rSDE-Bench closely aligns with human evaluations, validating its reliability as a software-level coding benchmark. ii) EvoMAC outperforms previous SOTA methods on both the software-level rSDE-Bench and the function-level HumanEval benchmarks, reflecting its superior coding capabilities. The benchmark can be downloaded at https://yuzhu-cai.github.io/rSDE-Bench/. "
