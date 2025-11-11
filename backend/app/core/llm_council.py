@@ -8,6 +8,7 @@ from typing import List, Dict, Any, Optional, Callable
 from datetime import datetime
 import time
 from loguru import logger
+import re
 
 from app.config import config
 from app.utils.exceptions import LLMError
@@ -44,25 +45,138 @@ class LLMCouncil:
         Returns:
             Cleaned content without code fences but preserving all valid Python code
         """
-        # Remove markdown code fence markers
+        # ✅ DON'T strip the content - preserve all whitespace
         cleaned = content
 
-        # If this chunk is ONLY whitespace or a language identifier, skip it
-        stripped = cleaned.strip().lower()
-        if not stripped or stripped in ["python", "py"]:
-            return ""
+        # Remove opening code fence if present
+        if cleaned.startswith("```python"):
+            cleaned = cleaned[9:]  # Remove "```python"
+        elif cleaned.startswith("```py"):
+            cleaned = cleaned[5:]  # Remove "```py"
+        elif cleaned.startswith("```"):
+            cleaned = cleaned[3:]  # Remove "```"
 
-        # If chunk starts with language identifier, remove it
-        if cleaned.lstrip().lower().startswith("python\n"):
-            cleaned = cleaned.lstrip()[7:]  # Remove "python\n"
-        elif cleaned.lstrip().lower().startswith("python "):
-            cleaned = cleaned.lstrip()[7:]  # Remove "python "
-        elif cleaned.lstrip().lower().startswith("py\n"):
-            cleaned = cleaned.lstrip()[3:]  # Remove "py\n"
-        elif cleaned.lstrip().lower().startswith("py "):
-            cleaned = cleaned.lstrip()[3:]  # Remove "py "
+        # Remove closing code fence if present
+        if cleaned.endswith("```"):
+            cleaned = cleaned[:-3]
+
+        # ✅ ONLY skip if chunk is JUST the language identifier (no newlines)
+        stripped = cleaned.strip().lower()
+        if stripped in ["python", "py", ""]:
+            # But keep the newlines that might follow
+            if cleaned and not cleaned.strip():
+                return cleaned  # This is whitespace, keep it
+            return ""  # This is just "python" or "py", skip it
 
         return cleaned
+
+    async def generate_tests_generic(
+            self,
+            function_context: str,
+            function_name: str,
+            models: Optional[List[str]] = None
+    ) -> List[Dict[str, Any]]:
+        """
+        Generate tests WITHOUT role personas (for Ablation 1)
+        Uses generic prompts across all models
+        """
+        start_time = time.time()
+
+        model_ids = models if models else list(config.LLM_MODELS.keys())
+
+        logger.info(f"Starting generic generation with {len(model_ids)} models")
+
+        tasks = []
+        for i, model_id in enumerate(model_ids):
+            task = self._generate_with_model_generic(
+                model_id=model_id,
+                function_context=function_context,
+                function_name=function_name,
+                model_index=i + 1,
+                total_models=len(model_ids)
+            )
+            tasks.append(task)
+
+        semaphore = asyncio.Semaphore(config.MAX_CONCURRENT_LLMS)
+
+        async def bounded_task(task):
+            async with semaphore:
+                return await task
+
+        results = await asyncio.gather(
+            *[bounded_task(task) for task in tasks],
+            return_exceptions=True
+        )
+
+        valid_results = []
+        for result in results:
+            if isinstance(result, Exception):
+                logger.error(f"Generic generation failed: {result}")
+            else:
+                valid_results.append(result)
+
+        duration = time.time() - start_time
+        logger.info(f"Generic generation completed in {duration:.2f}s")
+
+        return valid_results
+
+    async def _generate_with_model_generic(
+            self,
+            model_id: str,
+            function_context: str,
+            function_name: str,
+            model_index: int,
+            total_models: int
+    ) -> Dict[str, Any]:
+        """Generate with generic prompt (no role)"""
+
+        start_time = time.time()
+
+        try:
+            # Generic prompt without role persona
+            prompt = f"""Generate comprehensive pytest test cases for the function `{function_name}`.
+{function_context}
+
+**Requirements:**
+1. Output ONLY valid, runnable Python code
+2. Include ALL necessary imports
+3. Include the original function being tested
+4. Generate complete pytest test functions
+5. Cover positive cases, negative cases, boundary conditions, and edge cases
+6. Use descriptive test names
+7. Include docstrings
+8. Use appropriate assertions
+
+Generate a complete Python test file.
+"""
+            raw_output, tokens_used = await self._call_llm_api(
+                model_id=model_id,
+                role_id="generic",
+                prompt=prompt
+            )
+
+            tests = self._extract_tests(raw_output)
+
+            duration = time.time() - start_time
+
+            result = {
+                "model": model_id,
+                "role": "generic",
+                "tests": tests,
+                "raw_output": raw_output,
+                "tokens_used": tokens_used,
+                "duration_seconds": duration,
+                "timestamp": datetime.utcnow().isoformat()
+            }
+
+            logger.info(f"{model_id} (generic) generated {len(tests)} tests in {duration:.2f}s")
+
+            return result
+
+        except Exception as e:
+            logger.error(f"Generic generation failed for {model_id}: {e}", exc_info=True)
+            raise
+
 
     async def generate_tests_parallel(
             self,
@@ -352,7 +466,7 @@ Generate ONLY the Python code above. DO NOT include markdown code fences, explan
                 {"role": "user", "content": prompt}
             ],
             "temperature": 0.7,
-            "max_tokens": 4000,
+            # "max_tokens": 4000,
             "stream": True
         }
 
@@ -481,7 +595,24 @@ Generate ONLY the Python code above. DO NOT include markdown code fences, explan
         Returns the COMPLETE runnable code including imports and function definition,
         plus individual test functions for clustering.
         """
-        output = llm_output.strip()
+        initial_llm_output = llm_output
+
+        # ✅ Clean ONLY first and last lines
+        lines = llm_output.splitlines()
+
+        if len(lines) > 0:
+            # Remove ``` or ```python or python from FIRST line only
+            first_line = lines[0].strip()
+            if first_line in ['```', '```python', 'python']:
+                lines = lines[1:]
+
+        if len(lines) > 0:
+            # Remove ``` from LAST line only
+            last_line = lines[-1].strip()
+            if last_line == '```':
+                lines = lines[:-1]
+
+        output = '\n'.join(lines).strip()
 
         try:
             # Parse to validate it's proper Python
@@ -511,11 +642,11 @@ Generate ONLY the Python code above. DO NOT include markdown code fences, explan
             for test_func in test_functions:
                 # Create complete runnable test file
                 complete_test = f"""{imports_block}
-    
-    {function_block}
-    
-    {test_func}
-    """
+
+{function_block}
+
+{test_func}
+"""
                 complete_tests.append(complete_test)
 
             logger.info(f"Extracted {len(complete_tests)} complete test functions")
@@ -523,6 +654,7 @@ Generate ONLY the Python code above. DO NOT include markdown code fences, explan
 
         except SyntaxError as e:
             logger.error(f"LLM output is not valid Python: {e}")
+            logger.debug(f"Initial llm output: {initial_llm_output[:500]}...")
             logger.debug(f"Invalid output: {output[:500]}...")
             # Fallback to simple extraction
             return self._extract_tests_fallback(output)

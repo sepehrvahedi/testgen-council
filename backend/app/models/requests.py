@@ -2,8 +2,9 @@
 Pydantic request models for API validation
 """
 
+from typing import Optional, List
+
 from pydantic import BaseModel, Field, validator
-from typing import Optional, List, Dict, Any
 
 
 class TestGenerationRequest(BaseModel):
@@ -72,6 +73,12 @@ class TestGenerationRequest(BaseModel):
         example=True
     )
 
+    enable_mutation: bool = Field(
+        default=True,
+        description="Enable mutation testing (gold standard metric for test quality, can be slow)",
+        example=True
+    )
+
     stream_updates: bool = Field(
         default=True,
         description="Enable real-time streaming updates via SSE",
@@ -119,6 +126,7 @@ class TestGenerationRequest(BaseModel):
                 "eps": 0.3,
                 "min_samples": 2,
                 "enable_coverage": True,
+                "enable_mutation": True,
                 "stream_updates": True
             }
         }
@@ -130,7 +138,7 @@ class ConfigRequest(BaseModel):
     max_concurrent_llms: Optional[int] = Field(
         None,
         ge=1,
-        le=10,
+        le=12,
         description="Maximum concurrent LLM calls"
     )
 

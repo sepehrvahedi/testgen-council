@@ -2,9 +2,10 @@
 Pydantic response models for API responses
 """
 
-from pydantic import BaseModel, Field
-from typing import List, Dict, Any, Optional
 from datetime import datetime
+from typing import List, Dict, Any, Optional
+
+from pydantic import BaseModel, Field
 
 
 class ModelInfo(BaseModel):
@@ -68,17 +69,37 @@ class ClusterInfo(BaseModel):
     representative_test: Optional[str] = Field(None, description="Representative test")
     tests: List[str] = Field(..., description="Test functions in cluster")
 
-
 class CoverageResult(BaseModel):
     """Coverage analysis result"""
+    # ✅ Syntax validation
+    is_runnable: bool = Field(..., description="Whether the test code has valid Python syntax")
+    syntax_error: Optional[str] = Field(None, description="Syntax error message if any")
+
+    # Line coverage
     total_lines: int = Field(..., description="Total lines of code")
     covered_lines: int = Field(..., description="Covered lines")
     missing_lines: List[int] = Field(..., description="Missing line numbers")
-    coverage_percentage: float = Field(..., description="Coverage percentage")
+    coverage_percentage: float = Field(..., description="Line coverage percentage")
+
+    # Branch coverage (with detailed breakdown)
+    total_branches: int = Field(0, description="Total branches in code")
+    covered_branches: int = Field(0, description="Covered branches")
+    missing_branches: List[List[int]] = Field(default_factory=list, description="Missing branch line pairs")
+    branch_coverage_percentage: float = Field(0.0, description="Branch coverage percentage (100% if no branches)")
+    has_branches: bool = Field(False, description="Whether the code has any branches")  # ✅ ADD THIS LINE
+
+    # Test execution
     passed_tests: int = Field(..., description="Number of passed tests")
     failed_tests: int = Field(..., description="Number of failed tests")
     total_tests: int = Field(..., description="Total number of tests")
     success_rate: float = Field(..., description="Test success rate percentage")
+
+    # Quality metrics
+    quality_metrics: Optional[Dict[str, Any]] = Field(None, description="Test quality metrics")
+
+    # ✅ Mutation testing metrics
+    mutation_results: Optional[Dict[str, Any]] = Field(None, description="Mutation testing results")
+
 
 
 class Statistics(BaseModel):
