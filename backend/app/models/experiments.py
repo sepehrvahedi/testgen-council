@@ -97,7 +97,7 @@ class ExperimentConfig(BaseModel):
 
     # Mutation testing configuration
     enable_mutation: bool = Field(
-        default=True,
+        default=False,
         description="Enable mutation testing (gold standard metric, can be slow)"
     )
 
@@ -182,7 +182,7 @@ def get_new_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=False,  # ✅ No synthesis (direct output)
             enable_coverage=True,
-            enable_mutation=True
+            enable_mutation=False
         ),
 
         # ✅ Experiment 2: Multi-Agent (No Roles, No Clustering)
@@ -199,7 +199,7 @@ def get_new_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,  # ✅ Synthesis to merge outputs
             enable_coverage=True,
-            enable_mutation=True
+            enable_mutation=False
         ),
 
         # ✅ Experiment 3: Full System (Multi-Agent + Roles + Synthesis, No Clustering)
@@ -216,7 +216,7 @@ def get_new_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,  # ✅ Synthesis stage
             enable_coverage=True,
-            enable_mutation=True
+            enable_mutation=False
         ),
     ]
 
@@ -240,7 +240,7 @@ def get_legacy_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,
             enable_coverage=True,
-            enable_mutation=True
+            enable_mutation=False
         ),
 
         # Experiment 2: Ablation 1 - No Role Personas
@@ -257,7 +257,7 @@ def get_legacy_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,
             enable_coverage=True,
-            enable_mutation=True
+            enable_mutation=False
         ),
 
         # Experiment 3: Ablation 2 - Single Model
@@ -274,7 +274,7 @@ def get_legacy_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,
             enable_coverage=True,
-            enable_mutation=True
+            enable_mutation=False
         ),
 
         # Experiment 4: Ablation 3 - No Clustering
@@ -291,7 +291,7 @@ def get_legacy_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,
             enable_coverage=True,
-            enable_mutation=True
+            enable_mutation=False
         ),
 
         # Experiment 5: Ablation 4 - No Synthesis
@@ -308,7 +308,7 @@ def get_legacy_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=False,
             enable_coverage=True,
-            enable_mutation=True
+            enable_mutation=False
         ),
     ]
 
