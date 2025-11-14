@@ -53,7 +53,7 @@ class Config:
     def __init__(self, settings: Settings = None):
         self.settings = settings or Settings()
 
-        # ✅ ADDED: Validate API key is set
+        # ✅ Validate API key is set
         if not self.settings.OPENAI_API_KEY:
             raise ValueError(
                 "OPENAI_API_KEY is not set. "
@@ -78,10 +78,9 @@ class Config:
         # Synthesizer Model
         self.SYNTHESIS_MODEL = "gemini-2.0-flash"
 
-
         # LLM API Configuration
-        self.LLM_API_KEY = self.OPENAI_API_KEY  # ← ADD THIS LINE
-        self.LLM_API_BASES = {  # ← ADD THIS DICT
+        self.LLM_API_KEY = self.OPENAI_API_KEY
+        self.LLM_API_BASES = {
             "openai": self.OPENAI_BASE_URL,
             "anthropic": self.OPENAI_BASE_URL,
             "google": self.OPENAI_BASE_URL
@@ -124,122 +123,231 @@ class Config:
             }
         }
 
-        # Role-Based Test Generation Personas
+        # 🚀 ENHANCED Role-Based Test Generation Personas
+        # ================================================
+        # NEW STRATEGY: 6 highly specialized roles designed to:
+        # 1. Maximize line/branch coverage
+        # 2. Reduce duplication through focused mandates
+        # 3. Increase assertion density with explicit quality metrics
+        # 4. Generate diverse test categories
+
         self.ROLES = {
-            "qa_engineer": {
-                "name": "By-the-Book QA Engineer",
-                "philosophy": "Meticulous and systematic. Focuses on covering the function's explicit requirements.",
-                "focus_categories": ["positive", "boundary"],
+            # ========================================
+            # ROLE 1: Line Coverage Hunter
+            # ========================================
+            "coverage_hunter": {
+                "name": "Line Coverage Hunter",
+                "philosophy": "Test every line of code",
+                "focus_categories": ["positive", "edge_case"],
                 "icon": "🎯",
+                "color": "#13c2c2",
+                "prompt_persona": """You write tests to execute EVERY LINE of the function.
+
+**Task**: Create 3-4 tests that:
+1. Call the function with different inputs
+2. Make sure EVERY line runs at least once
+3. Test both if/else branches
+
+**Example**:
+```python
+def test_basic_case():
+    \"\"\"Tests lines 1-5\"\"\"
+    result = function(normal_input)
+    assert result == expected
+    
+def test_edge_case():
+    \"\"\"Tests lines 6-8 (error path)\"\"
+    result = function(edge_input)
+    assert result == expected_edge
+
+Generate simple tests that cover all lines."""
+            },
+
+            # ========================================
+            # ROLE 2: Assertion Booster
+            # ========================================
+            "assertion_booster": {
+                "name": "Assertion Booster",
+                "philosophy": "More checks = better tests",
+                "focus_categories": ["positive", "boundary"],
+                "icon": "✅",
                 "color": "#52c41a",
-                "prompt_persona": """You are a meticulous QA Engineer with 15 years of experience in software testing. Your primary goal is to verify that the function behaves exactly as described in its documentation.
+                "prompt_persona": """You add LOTS of checks to tests.
 
-YOUR MISSION:
-- Generate high-quality, standard tests that cover the core functionality
-- Focus on positive test cases (normal, expected usage)
-- Test boundary conditions explicitly mentioned in the specification
-- Ensure every part of the docstring's promise is tested
-- Write clear, maintainable tests that serve as documentation
+**Task**: Create 3-4 tests with MANY assertions:
+1. Check the return value
+2. Check the type: `assert isinstance(result, int)`
+3. Check the length: `assert len(result) > 0`
+4. Check properties: `assert result > 0`
 
-APPROACH:
-1. Read the function signature and docstring carefully
-2. Identify all promised behaviors
-3. Create tests for typical use cases
-4. Test boundary values (min, max, empty, single element)
-5. Verify return types and value ranges match specifications
+**Example**:
+```python
+def test_with_many_checks():
+    result = function(input)
+    assert result is not None  # Check 1
+    assert isinstance(result, list)  # Check 2
+    assert len(result) == 3  # Check 3
+    assert all(x > 0 for x in result)  # Check 4
+```
 
-Generate well-structured tests following pytest best practices."""
+Add 3-4 assertions per test."""
             },
 
-            "agent_of_chaos": {
-                "name": "Agent of Chaos",
-                "philosophy": "If it can break, I will find a way. Make the function fail.",
+            # ========================================
+            # ROLE 3: Error Finder
+            # ========================================
+            "error_finder": {
+                "name": "Error Finder",
+                "philosophy": "Break it with bad inputs",
                 "focus_categories": ["negative", "edge_case"],
-                "icon": "💥",
+                "icon": "❌",
                 "color": "#f5222d",
-                "prompt_persona": """You are a destructive tester known as the "Agent of Chaos". Your mission is to BREAK this function by any means necessary.
+                "prompt_persona": """You test with BAD inputs to find errors.
 
-YOUR MISSION:
-- Find every possible way the function can fail
-- Generate tests that SHOULD raise exceptions
-- Think about unexpected, malformed, or adversarial inputs
-- Test with wrong types, None values, empty data structures
-- Push the function beyond its limits
+**Task**: Create tests with wrong inputs:
 
-ATTACK VECTORS TO CONSIDER:
-1. Type violations (pass string when int expected, etc.)
-2. Null/None inputs where objects are expected
-3. Empty collections ([], {}, "")
-4. Extreme values (very large numbers, very long strings)
-5. Negative numbers where positive expected
-6. Zero division scenarios
-7. Invalid combinations of parameters
-8. Corrupted or malformed data structures
+**Bad Input Types**:
+```python
+def test_none_input():
+    with pytest.raises(TypeError):
+        function(None)
 
-Generate tests that you expect will raise specific exceptions (TypeError, ValueError, IndexError, ZeroDivisionError, etc.). Use pytest.raises() to verify these failures."""
+def test_empty_input():
+    with pytest.raises(ValueError):
+        function("")
+
+def test_negative_number():
+    with pytest.raises(ValueError):
+        function(-1)
+
+def test_huge_input():
+    with pytest.raises(ValueError):
+        function("A" * 10000)
+```
+
+Test with: None, empty, negative, too big."""
             },
 
-            "security_auditor": {
-                "name": "Paranoid Security Auditor",
-                "philosophy": "Trust nothing. Assume all input is hostile.",
+            # ========================================
+            # ROLE 4: Security Checker
+            # ========================================
+            "security_checker": {
+                "name": "Security Checker",
+                "philosophy": "Test dangerous inputs",
                 "focus_categories": ["security", "negative"],
                 "icon": "🔒",
                 "color": "#fa8c16",
-                "prompt_persona": """You are a cybersecurity expert and penetration tester. Your task is to find security vulnerabilities in this code.
+                "prompt_persona": """You test with DANGEROUS strings.
 
-YOUR MISSION:
-- Analyze the function for potential security flaws
-- Generate tests that attempt to exploit vulnerabilities
-- Think like an attacker trying to compromise the system
+**Task**: Create 3-4 tests with risky inputs:
 
-SECURITY CONCERNS TO TEST:
-1. **Injection Attacks**: SQL injection, command injection, code injection
-2. **Path Traversal**: Attempts to access files outside intended directory (../, absolute paths)
-3. **Buffer Overflow**: Oversized inputs that might cause issues
-4. **Format String Attacks**: Special characters in strings (%s, %d, {}, etc.)
-5. **Insecure Deserialization**: Malicious pickled objects or JSON
-6. **Input Validation Bypass**: Special characters, Unicode, null bytes
-7. **Resource Exhaustion**: Inputs that could cause infinite loops or memory issues
-8. **Data Leakage**: Can the function expose sensitive information?
+```python
+def test_sql_injection():
+    \"\"\"Test SQL injection blocked\"\"\"
+    result = function("admin' OR '1'='1")
+    assert "OR" not in result  # Injection blocked
 
-Generate security-focused tests. If the function has file operations, test path traversal. If it processes strings, test injection. If it handles numbers, test integer overflow. If no obvious vulnerabilities exist, test with security-minded inputs (special characters, scripts, oversized data)."""
+def test_path_traversal():
+    \"\"\"Test path traversal blocked\"\"\"
+    result = function("../../etc/passwd")
+    assert ".." not in result  # Traversal blocked
+
+def test_large_input():
+    \"\"\"Test oversized input handled\"\"\"
+    result = function("A" * 100000)
+    assert len(result) < 1000  # Truncated or rejected
+```
+
+Test: SQL injection, path traversal, huge strings."""
             },
 
-            "abstract_thinker": {
-                "name": "Abstract Thinker",
-                "philosophy": "Test the underlying properties and invariants, not just specific cases.",
-                "focus_categories": ["positive", "boundary", "edge_case"],
-                "icon": "🧩",
+            # ========================================
+            # ROLE 5: Property Tester
+            # ========================================
+            "property_tester": {
+                "name": "Property Tester",
+                "philosophy": "Test rules that always work",
+                "focus_categories": ["positive", "boundary"],
+                "icon": "🧮",
                 "color": "#722ed1",
-                "prompt_persona": """You are a computer scientist specializing in formal methods and property-based testing. Your goal is to verify the fundamental mathematical and logical properties of this function.
+                "prompt_persona": """You test RULES that must ALWAYS be true.
 
-YOUR MISSION:
-- Think beyond specific test cases to general properties
-- Identify invariants that must always hold
-- Create tests that verify logical consistency
-- Check mathematical properties and relationships
+**Task**: Create 2-3 tests for these rules:
 
-PROPERTIES TO CONSIDER:
-1. **Identity Properties**: f(x) with some operation returns x
-2. **Inverse Properties**: decode(encode(x)) == x
-3. **Idempotency**: f(f(x)) == f(x) for some functions
-4. **Commutativity**: Does order matter? f(a,b) == f(b,a)?
-5. **Associativity**: f(f(a,b),c) == f(a,f(b,c))?
-6. **Preservation Properties**: Input length = output length?
-7. **Boundary Properties**: For sorted output, output[i] <= output[i+1]
-8. **Type Invariants**: Output type consistent with specification?
-9. **Domain/Range Properties**: All outputs within valid range?
+1. **Same input = same output**:
+```python
+def test_consistent_output():
+    result1 = function(input)
+    result2 = function(input)
+    assert result1 == result2
+```
 
-Generate property-based tests. You may use standard pytest format or suggest hypothesis library tests. Focus on testing fundamental truths about the function's behavior rather than specific input-output pairs."""
+2. **Output type is always correct**:
+```python
+def test_type_always_correct():
+    for input in [test1, test2, test3]:
+        result = function(input)
+        assert isinstance(result, int)
+```
+
+3. **Output in valid range**:
+```python
+def test_output_in_range():
+    result = function(input)
+    assert 0 <= result <= 100
+```
+
+Test simple rules that NEVER break."""
+            },
+
+            # ========================================
+            # ROLE 6: Real Usage Tester
+            # ========================================
+            "usage_tester": {
+                "name": "Real Usage Tester",
+                "philosophy": "Test like users actually use it",
+                "focus_categories": ["positive", "integration"],
+                "icon": "👤",
+                "color": "#1890ff",
+                "prompt_persona": """You test REAL usage scenarios.
+
+**Task**: Create 2-3 tests showing normal usage:
+
+```python
+def test_typical_usage():
+    \"\"\"How users normally call this\"\"\"
+    result = function(typical_input)
+    assert result is not None
+    assert result == expected_normal
+
+def test_multi_step_usage():
+    \"\"\"Multiple calls in sequence\"\"\"
+    step1 = function(input1)
+    step2 = function(step1)
+    assert step2 == expected_final
+```
+
+Test realistic scenarios users actually do."""
             }
         }
 
-        # Model-Role Assignment Strategy
+        # 🎯 STRATEGIC MODEL-ROLE ASSIGNMENTS
+        # ====================================
+        # Each model gets a BALANCED set of roles to maximize diversity
+
         self.MODEL_ROLE_ASSIGNMENTS = {
-            "gemini-2.0-flash": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"],
-            "deepseek-chat": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"],
-            "qwen3-235b-a22b": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"]
-            # "qwen3-235b-a22b": []
+            "gemini-2.0-flash": [
+                "coverage_hunter",
+                "assertion_booster"
+            ],
+            "deepseek-chat": [
+                "error_finder",
+                "security_checker"
+            ],
+            "qwen3-235b-a22b": [
+                "property_tester",
+                "usage_tester"
+            ]
         }
 
         # Test categories
@@ -248,7 +356,8 @@ Generate property-based tests. You may use standard pytest format or suggest hyp
             "negative",    # Error cases
             "boundary",    # Edge values
             "edge_case",   # Unusual cases
-            "security"     # Security tests
+            "security",    # Security tests
+            "integration"  # NEW: Integration tests
         ]
 
         # Clustering configuration
@@ -287,7 +396,14 @@ Generate property-based tests. You may use standard pytest format or suggest hyp
                 "philosophy": role_data["philosophy"],
                 "icon": role_data["icon"],
                 "color": role_data["color"],
-                "focus_categories": role_data["focus_categories"]
+                "focus_categories": role_data["focus_categories"],
+                # ✅ NEW: Expose metrics to frontend
+                "coverage_target": role_data.get("coverage_target"),
+                "min_assertions": role_data.get("min_assertions_per_test"),
+                "min_tests": role_data.get("min_exception_tests") or
+                             role_data.get("min_security_tests") or
+                             role_data.get("min_property_tests") or
+                             role_data.get("min_integration_tests")
             }
             for role_id, role_data in self.ROLES.items()
         ]
