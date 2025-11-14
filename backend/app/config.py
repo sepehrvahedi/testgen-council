@@ -238,8 +238,8 @@ Generate property-based tests. You may use standard pytest format or suggest hyp
         self.MODEL_ROLE_ASSIGNMENTS = {
             "gemini-2.0-flash": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"],
             "deepseek-chat": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"],
-            # "qwen3-235b-a22b": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"]
-            "qwen3-235b-a22b": []
+            "qwen3-235b-a22b": ["qa_engineer", "abstract_thinker", "agent_of_chaos", "security_auditor"]
+            # "qwen3-235b-a22b": []
         }
 
         # Test categories
