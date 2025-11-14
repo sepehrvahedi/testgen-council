@@ -5,6 +5,7 @@ Two-phase synthesis: cluster-level → final unification
 """
 
 import asyncio
+import json
 from typing import List, Dict, Any, Optional
 
 import aiohttp
@@ -386,7 +387,7 @@ Generate the complete, final test file now:
 
                     if line.startswith("data: "):
                         try:
-                            import json
+
                             data = json.loads(line[6:])
 
                             if "choices" in data and len(data["choices"]) > 0:
