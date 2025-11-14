@@ -10,11 +10,17 @@ from pydantic import BaseModel, Field
 
 class ExperimentType(str, Enum):
     """Experiment configuration types"""
+    # ✅ NEW: No-clustering baseline experiments
+    SINGLE_MODEL_NO_CLUSTERING = "single_model_no_clustering"
+    MULTI_AGENT_NO_CLUSTERING = "multi_agent_no_clustering"
+    FULL_SYSTEM_NO_CLUSTERING = "full_system_no_clustering"  # Multi-agent + Roles + Synthesis
+
+    # ✅ LEGACY: Old experiments (kept for backward compatibility)
     FULL_SYSTEM = "full_system"
-    NO_ROLES = "no_roles"  # Ablation 1
-    SINGLE_MODEL = "single_model"  # Ablation 2
-    NO_CLUSTERING = "no_clustering"  # Ablation 3
-    NO_SYNTHESIS = "no_synthesis"  # Ablation 4
+    NO_ROLES = "no_roles"
+    SINGLE_MODEL = "single_model"
+    NO_CLUSTERING = "no_clustering"
+    NO_SYNTHESIS = "no_synthesis"
 
 
 class ExperimentConfig(BaseModel):
@@ -89,7 +95,7 @@ class ExperimentConfig(BaseModel):
         description="Enable coverage analysis"
     )
 
-    # ✅ NEW: Mutation testing configuration
+    # Mutation testing configuration
     enable_mutation: bool = Field(
         default=True,
         description="Enable mutation testing (gold standard metric, can be slow)"
@@ -104,7 +110,7 @@ class BatchResult(BaseModel):
     success: bool
     error_message: Optional[str] = None
 
-    # ✅ NEW: Syntax validation
+    # Syntax validation
     is_runnable: Optional[bool] = None
     syntax_error: Optional[str] = None
 
@@ -147,12 +153,77 @@ class BatchResult(BaseModel):
 
     # Full outputs
     final_tests_code: Optional[str] = None
-    cluster_details: Optional[str] = None  # JSON string
+    cluster_details: Optional[str] = None
 
 
+# ✅ NEW: Function to get new experiment configs (no clustering baseline)
+def get_new_experiment_configs() -> List[ExperimentConfig]:
+    """
+    Get the 3 new experiment configurations (no clustering baseline)
 
-def get_experiment_configs() -> List[ExperimentConfig]:
-    """Get all 5 experiment configurations"""
+    These experiments establish a new baseline without clustering:
+    1. Single Model (Gemini 2.0 Flash) - Simple baseline
+    2. Multi-Agent (All models, no roles) - Agent diversity
+    3. Full System (All models + Roles + Synthesis) - Our new approach
+    """
+
+    return [
+        # ✅ Experiment 1: Single Model Baseline (Simplest)
+        ExperimentConfig(
+            experiment_id="exp_new_1_single_model",
+            experiment_type=ExperimentType.SINGLE_MODEL_NO_CLUSTERING,
+            description="Baseline: Single model (Gemini 2.0 Flash) without any advanced features",
+            models=["gemini-2.0-flash"],  # Only one model
+            roles=[],  # No roles
+            use_role_personas=False,
+            enable_clustering=False,  # ✅ No clustering
+            clustering_method="vector",
+            eps=0.3,
+            min_samples=2,
+            enable_synthesis=False,  # ✅ No synthesis (direct output)
+            enable_coverage=True,
+            enable_mutation=True
+        ),
+
+        # ✅ Experiment 2: Multi-Agent (No Roles, No Clustering)
+        ExperimentConfig(
+            experiment_id="exp_new_2_multi_agent",
+            experiment_type=ExperimentType.MULTI_AGENT_NO_CLUSTERING,
+            description="Multi-agent diversity: All models without roles, with synthesis",
+            models=None,  # All models
+            roles=[],  # No roles (generic prompts)
+            use_role_personas=False,
+            enable_clustering=False,  # ✅ No clustering
+            clustering_method="vector",
+            eps=0.3,
+            min_samples=2,
+            enable_synthesis=True,  # ✅ Synthesis to merge outputs
+            enable_coverage=True,
+            enable_mutation=True
+        ),
+
+        # ✅ Experiment 3: Full System (Multi-Agent + Roles + Synthesis, No Clustering)
+        ExperimentConfig(
+            experiment_id="exp_new_3_full_system",
+            experiment_type=ExperimentType.FULL_SYSTEM_NO_CLUSTERING,
+            description="Full system: Multi-agent + Role prompting + Synthesis (no clustering)",
+            models=None,  # All models
+            roles=None,  # All roles
+            use_role_personas=True,  # ✅ Role-specific prompts
+            enable_clustering=False,  # ✅ No clustering
+            clustering_method="vector",
+            eps=0.3,
+            min_samples=2,
+            enable_synthesis=True,  # ✅ Synthesis stage
+            enable_coverage=True,
+            enable_mutation=True
+        ),
+    ]
+
+
+# ✅ LEGACY: Keep old experiments for backward compatibility
+def get_legacy_experiment_configs() -> List[ExperimentConfig]:
+    """Get all 5 legacy experiment configurations (with clustering)"""
 
     return [
         # Experiment 1: Full System (Baseline)
@@ -160,8 +231,8 @@ def get_experiment_configs() -> List[ExperimentConfig]:
             experiment_id="exp_1_full_system",
             experiment_type=ExperimentType.FULL_SYSTEM,
             description="Full system with all features enabled",
-            models=None,  # All models
-            roles=None,  # All roles
+            models=None,
+            roles=None,
             use_role_personas=True,
             enable_clustering=True,
             clustering_method="vector",
@@ -169,7 +240,7 @@ def get_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,
             enable_coverage=True,
-            enable_mutation=True  # ✅ NEW
+            enable_mutation=True
         ),
 
         # Experiment 2: Ablation 1 - No Role Personas
@@ -177,8 +248,8 @@ def get_experiment_configs() -> List[ExperimentConfig]:
             experiment_id="exp_2_no_roles",
             experiment_type=ExperimentType.NO_ROLES,
             description="Ablation 1: Generic prompts without role-specific personas",
-            models=None,  # All models
-            roles=[],  # Empty list = no roles (generic prompts)
+            models=None,
+            roles=[],
             use_role_personas=False,
             enable_clustering=True,
             clustering_method="vector",
@@ -186,7 +257,7 @@ def get_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,
             enable_coverage=True,
-            enable_mutation=True  # ✅ NEW
+            enable_mutation=True
         ),
 
         # Experiment 3: Ablation 2 - Single Model
@@ -203,7 +274,7 @@ def get_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=True,
             enable_coverage=True,
-            enable_mutation=True  # ✅ NEW
+            enable_mutation=True
         ),
 
         # Experiment 4: Ablation 3 - No Clustering
@@ -211,16 +282,16 @@ def get_experiment_configs() -> List[ExperimentConfig]:
             experiment_id="exp_4_no_clustering",
             experiment_type=ExperimentType.NO_CLUSTERING,
             description="Ablation 3: No clustering, all tests treated as one group",
-            models=None,  # All models
-            roles=None,  # All roles
+            models=None,
+            roles=None,
             use_role_personas=True,
             enable_clustering=False,
-            clustering_method="vector",  # Not used
+            clustering_method="vector",
             eps=0.3,
             min_samples=2,
             enable_synthesis=True,
             enable_coverage=True,
-            enable_mutation=True  # ✅ NEW
+            enable_mutation=True
         ),
 
         # Experiment 5: Ablation 4 - No Synthesis
@@ -228,8 +299,8 @@ def get_experiment_configs() -> List[ExperimentConfig]:
             experiment_id="exp_5_no_synthesis",
             experiment_type=ExperimentType.NO_SYNTHESIS,
             description="Ablation 4: Random selection instead of synthesis",
-            models=None,  # All models
-            roles=None,  # All roles
+            models=None,
+            roles=None,
             use_role_personas=True,
             enable_clustering=True,
             clustering_method="vector",
@@ -237,6 +308,25 @@ def get_experiment_configs() -> List[ExperimentConfig]:
             min_samples=2,
             enable_synthesis=False,
             enable_coverage=True,
-            enable_mutation=True  # ✅ NEW
+            enable_mutation=True
         ),
     ]
+
+
+# ✅ Combined function for all experiments
+def get_experiment_configs(include_legacy: bool = False) -> List[ExperimentConfig]:
+    """
+    Get experiment configurations
+
+    Args:
+        include_legacy: If True, include old clustering-based experiments
+
+    Returns:
+        List of experiment configurations
+    """
+    configs = get_new_experiment_configs()
+
+    if include_legacy:
+        configs.extend(get_legacy_experiment_configs())
+
+    return configs

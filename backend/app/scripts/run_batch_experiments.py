@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Batch Experiment Runner
-Run all 5 experiments on a CSV of Python functions
+Run experiments on a CSV of Python functions
 """
 
 import argparse
@@ -19,21 +19,27 @@ RESULTS_DIR = DATA_DIR / "results"
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from loguru import logger
-from app.models.experiments import get_experiment_configs
+from app.models.experiments import (
+    get_experiment_configs,
+    get_new_experiment_configs,
+    get_legacy_experiment_configs
+)
 from app.core.services.batch_testing_service import BatchTestingService
 
 
 async def run_all_experiments(
-        csv_filename: str,  # ✅ Changed from csv_path to csv_filename
-        max_concurrent: int = 3
+        csv_filename: str,
+        max_concurrent: int = 3,
+        use_legacy: bool = False,
+        use_new: bool = True
 ):
-    """Run all 5 experiments on the CSV"""
+    """Run experiments on the CSV"""
 
-    # ✅ Construct full paths
+    # Construct full paths
     csv_path = INPUT_DIR / csv_filename
     output_dir = RESULTS_DIR
 
-    # ✅ Ensure directories exist
+    # Ensure directories exist
     INPUT_DIR.mkdir(parents=True, exist_ok=True)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -44,15 +50,24 @@ async def run_all_experiments(
     logger.info(f"Input CSV: {csv_path}")
     logger.info(f"Output directory: {output_dir}")
     logger.info(f"Max concurrent: {max_concurrent}")
+    logger.info(f"Mode: {'NEW' if use_new else ''} {'LEGACY' if use_legacy else ''}")
 
-    # ✅ Validate CSV exists
+    # Validate CSV exists
     if not csv_path.exists():
         logger.error(f"Input CSV not found: {csv_path}")
         logger.info(f"Please place your CSV file in: {INPUT_DIR}")
         return
 
-    # Get all experiment configs
-    experiments = get_experiment_configs()
+    # Get experiment configs
+    if use_new and use_legacy:
+        experiments = get_experiment_configs(include_legacy=True)
+    elif use_new:
+        experiments = get_new_experiment_configs()
+    elif use_legacy:
+        experiments = get_legacy_experiment_configs()
+    else:
+        logger.error("Must specify --new or --legacy")
+        return
 
     logger.info(f"\nRunning {len(experiments)} experiments:")
     for exp in experiments:
@@ -107,17 +122,18 @@ async def run_all_experiments(
 
 
 async def run_single_experiment(
-        csv_filename: str,  # ✅ Changed from csv_path
+        csv_filename: str,
         experiment_id: str,
-        max_concurrent: int = 3
+        max_concurrent: int = 3,
+        use_legacy: bool = False
 ):
     """Run a single experiment"""
 
-    # ✅ Construct full paths
+    # Construct full paths
     csv_path = INPUT_DIR / csv_filename
     output_dir = RESULTS_DIR
 
-    # ✅ Ensure directories exist
+    # Ensure directories exist
     INPUT_DIR.mkdir(parents=True, exist_ok=True)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -125,14 +141,17 @@ async def run_single_experiment(
     logger.info(f"Input CSV: {csv_path}")
     logger.info(f"Output directory: {output_dir}")
 
-    # ✅ Validate CSV exists
+    # Validate CSV exists
     if not csv_path.exists():
         logger.error(f"Input CSV not found: {csv_path}")
         logger.info(f"Please place your CSV file in: {INPUT_DIR}")
         return
 
     # Get experiment config
-    all_experiments = {exp.experiment_id: exp for exp in get_experiment_configs()}
+    if use_legacy:
+        all_experiments = {exp.experiment_id: exp for exp in get_legacy_experiment_configs()}
+    else:
+        all_experiments = {exp.experiment_id: exp for exp in get_new_experiment_configs()}
 
     if experiment_id not in all_experiments:
         logger.error(f"Invalid experiment ID: {experiment_id}")
@@ -146,9 +165,9 @@ async def run_single_experiment(
 
     try:
         df = await service.process_csv_batch(
-            csv_path=str(csv_path),  # ✅ Convert Path to string
+            csv_path=str(csv_path),
             experiment_config=exp_config,
-            output_dir=str(output_dir),  # ✅ Convert Path to string
+            output_dir=str(output_dir),
             max_concurrent=max_concurrent
         )
         logger.info(f"✅ Experiment completed successfully")
@@ -164,25 +183,36 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=f"""
 Examples:
-  # Run all 5 experiments (CSV should be in app/data/input/)
-  python app/scripts/run_batch_experiments.py --csv functions.csv
+  # Run NEW experiments (no clustering baseline)
+  python app/scripts/run_batch_experiments.py --csv functions.csv --new
 
-  # Run single experiment
-  python app/scripts/run_batch_experiments.py --csv functions.csv --experiment exp_1_full_system
+  # Run LEGACY experiments (with clustering)
+  python app/scripts/run_batch_experiments.py --csv functions.csv --legacy
+
+  # Run ALL experiments (new + legacy)
+  python app/scripts/run_batch_experiments.py --csv functions.csv --new --legacy
+
+  # Run single NEW experiment
+  python app/scripts/run_batch_experiments.py --csv functions.csv --experiment exp_new_3_full_system --new
 
   # Increase concurrency
-  python app/scripts/run_batch_experiments.py --csv functions.csv --concurrent 5
+  python app/scripts/run_batch_experiments.py --csv functions.csv --new --concurrent 5
 
 Directory Structure:
   Input CSV:  {INPUT_DIR}/
   Results:    {RESULTS_DIR}/
 
-Available Experiments:
-  exp_1_full_system      - Full system (baseline)
-  exp_2_no_roles         - Ablation 1: No role personas
-  exp_3_single_model     - Ablation 2: Single model only
-  exp_4_no_clustering    - Ablation 3: No clustering
-  exp_5_no_synthesis     - Ablation 4: No synthesis
+NEW Experiments (No Clustering Baseline):
+  exp_new_1_single_model    - Single model (Gemini 2.0 Flash) baseline
+  exp_new_2_multi_agent     - Multi-agent without roles
+  exp_new_3_full_system     - Multi-agent + Roles + Synthesis (our approach)
+
+LEGACY Experiments (With Clustering):
+  exp_1_full_system         - Full system with clustering
+  exp_2_no_roles            - No role personas
+  exp_3_single_model        - Single model only
+  exp_4_no_clustering       - No clustering
+  exp_5_no_synthesis        - No synthesis
         """
     )
 
@@ -195,14 +225,8 @@ Available Experiments:
 
     parser.add_argument(
         '--experiment',
-        help='Run specific experiment (default: run all)',
-        choices=[
-            'exp_1_full_system',
-            'exp_2_no_roles',
-            'exp_3_single_model',
-            'exp_4_no_clustering',
-            'exp_5_no_synthesis'
-        ]
+        help='Run specific experiment',
+        metavar='EXP_ID'
     )
 
     parser.add_argument(
@@ -212,19 +236,38 @@ Available Experiments:
         help='Max concurrent function processing (default: 3)'
     )
 
+    parser.add_argument(
+        '--new',
+        action='store_true',
+        help='Run NEW experiments (no clustering baseline)'
+    )
+
+    parser.add_argument(
+        '--legacy',
+        action='store_true',
+        help='Run LEGACY experiments (with clustering)'
+    )
+
     args = parser.parse_args()
+
+    # Default to NEW experiments if neither flag is specified
+    if not args.new and not args.legacy:
+        args.new = True
 
     # Run experiments
     if args.experiment:
         asyncio.run(run_single_experiment(
             csv_filename=args.csv,
             experiment_id=args.experiment,
-            max_concurrent=args.concurrent
+            max_concurrent=args.concurrent,
+            use_legacy=args.legacy
         ))
     else:
         asyncio.run(run_all_experiments(
             csv_filename=args.csv,
-            max_concurrent=args.concurrent
+            max_concurrent=args.concurrent,
+            use_legacy=args.legacy,
+            use_new=args.new
         ))
 
 
