@@ -1,0 +1,1761 @@
+function_code,function_name
+"def quick_select(items: list, index: int):
+    """"""
+    >>> quick_select([2, 4, 5, 7, 899, 54, 32], 5)
+    54
+    >>> quick_select([2, 4, 5, 7, 899, 54, 32], 1)
+    4
+    >>> quick_select([5, 4, 3, 2], 2)
+    4
+    >>> quick_select([3, 5, 7, 10, 2, 12], 3)
+    7
+    """"""
+    # index = len(items) // 2 when trying to find the median
+    #   (value of index when items is sorted)
+
+    # invalid input
+    if index >= len(items) or index < 0:
+        return None
+
+    pivot = items[random.randint(0, len(items) - 1)]
+    count = 0
+    smaller, equal, larger = _partition(items, pivot)
+    count = len(equal)
+    m = len(smaller)
+
+    # index is the pivot
+    if m <= index < m + count:
+        return pivot
+    # must be in smaller
+    elif m > index:
+        return quick_select(smaller, index)
+    # must be in larger
+    else:
+        return quick_select(larger, index - (m + count))",quick_select
+"def check_bouncy(n: int) -> bool:
+    """"""
+    Returns True if number is bouncy, False otherwise
+    >>> check_bouncy(6789)
+    False
+    >>> check_bouncy(-12345)
+    False
+    >>> check_bouncy(0)
+    False
+    >>> check_bouncy(6.74)
+    Traceback (most recent call last):
+        ...
+    ValueError: check_bouncy() accepts only integer arguments
+    >>> check_bouncy(132475)
+    True
+    >>> check_bouncy(34)
+    False
+    >>> check_bouncy(341)
+    True
+    >>> check_bouncy(47)
+    False
+    >>> check_bouncy(-12.54)
+    Traceback (most recent call last):
+        ...
+    ValueError: check_bouncy() accepts only integer arguments
+    >>> check_bouncy(-6548)
+    True
+    """"""
+    if not isinstance(n, int):
+        raise ValueError(""check_bouncy() accepts only integer arguments"")
+    str_n = str(n)
+    sorted_str_n = """".join(sorted(str_n))
+    return str_n not in {sorted_str_n, sorted_str_n[::-1]}",check_bouncy
+"def bitap_string_match(text: str, pattern: str) -> int:
+    """"""
+    Retrieves the index of the first occurrence of pattern in text.
+
+    Args:
+        text: A string consisting only of lowercase alphabetical characters.
+        pattern: A string consisting only of lowercase alphabetical characters.
+
+    Returns:
+        int: The index where pattern first occurs. Return -1  if not found.
+
+    >>> bitap_string_match('abdabababc', 'ababc')
+    5
+    >>> bitap_string_match('aaaaaaaaaaaaaaaaaa', 'a')
+    0
+    >>> bitap_string_match('zxywsijdfosdfnso', 'zxywsijdfosdfnso')
+    0
+    >>> bitap_string_match('abdabababc', '')
+    0
+    >>> bitap_string_match('abdabababc', 'c')
+    9
+    >>> bitap_string_match('abdabababc', 'fofosdfo')
+    -1
+    >>> bitap_string_match('abdab', 'fofosdfo')
+    -1
+    """"""
+    if not pattern:
+        return 0
+    m = len(pattern)
+    if m > len(text):
+        return -1
+
+    # Initial state of bit string 1110
+    state = ~1
+    # Bit = 0 if character appears at index, and 1 otherwise
+    pattern_mask: list[int] = [~0] * 27  # 1111
+
+    for i, char in enumerate(pattern):
+        # For the pattern mask for this character, set the bit to 0 for each i
+        # the character appears.
+        pattern_index: int = ord(char) - ord(""a"")
+        pattern_mask[pattern_index] &= ~(1 << i)
+
+    for i, char in enumerate(text):
+        text_index = ord(char) - ord(""a"")
+        # If this character does not appear in pattern, it's pattern mask is 1111.
+        # Performing a bitwise OR between state and 1111 will reset the state to 1111
+        # and start searching the start of pattern again.
+        state |= pattern_mask[text_index]
+        state <<= 1
+
+        # If the mth bit (counting right to left) of the state is 0, then we have
+        # found pattern in text
+        if (state & (1 << m)) == 0:
+            return i - m + 1
+
+    return -1",bitap_string_match
+"def arithmetic_mean(series: list) -> float:
+    """"""
+    return the arithmetic mean of series
+
+    >>> arithmetic_mean([2, 4, 6])
+    4.0
+    >>> arithmetic_mean([3, 6, 9, 12])
+    7.5
+    >>> arithmetic_mean(4)
+    Traceback (most recent call last):
+        ...
+    ValueError: Input series is not valid, valid series - [2, 4, 6]
+    >>> arithmetic_mean([4, 8, 1])
+    4.333333333333333
+    >>> arithmetic_mean([1, 2, 3])
+    2.0
+    >>> arithmetic_mean([])
+    Traceback (most recent call last):
+        ...
+    ValueError: Input list must be a non empty list
+
+    """"""
+    if not isinstance(series, list):
+        raise ValueError(""Input series is not valid, valid series - [2, 4, 6]"")
+    if len(series) == 0:
+        raise ValueError(""Input list must be a non empty list"")
+    answer = 0
+    for val in series:
+        answer += val
+    return answer / len(series)",arithmetic_mean
+"def horizontal_distance(init_velocity: float, angle: float) -> float:
+    r""""""
+    Returns the horizontal distance that the object cover
+
+    Formula:
+        .. math::
+            \frac{v_0^2 \cdot \sin(2 \alpha)}{g}
+
+            v_0 - \text{initial velocity}
+
+            \alpha - \text{angle}
+
+    >>> horizontal_distance(30, 45)
+    91.77
+    >>> horizontal_distance(100, 78)
+    414.76
+    >>> horizontal_distance(-1, 20)
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid velocity. Should be a positive number.
+    >>> horizontal_distance(30, -20)
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid angle. Range is 1-90 degrees.
+    """"""
+    check_args(init_velocity, angle)
+    radians = deg_to_rad(2 * angle)
+    return round(init_velocity**2 * sin(radians) / g, 2)",horizontal_distance
+"def breadth_first_search(graph: list, source: int, sink: int, parents: list) -> bool:
+    """"""
+    This function returns True if there is a node that has not iterated.
+
+    Args:
+        graph: Adjacency matrix of graph
+        source: Source
+        sink: Sink
+        parents: Parent list
+
+    Returns:
+        True if there is a node that has not iterated.
+
+    >>> breadth_first_search(graph, 0, 5, [-1, -1, -1, -1, -1, -1])
+    True
+    >>> breadth_first_search(graph, 0, 6, [-1, -1, -1, -1, -1, -1])
+    Traceback (most recent call last):
+        ...
+    IndexError: list index out of range
+    """"""
+    visited = [False] * len(graph)  # Mark all nodes as not visited
+    queue = []  # breadth-first search queue
+
+    # Source node
+    queue.append(source)
+    visited[source] = True
+
+    while queue:
+        u = queue.pop(0)  # Pop the front node
+        # Traverse all adjacent nodes of u
+        for ind, node in enumerate(graph[u]):
+            if visited[ind] is False and node > 0:
+                queue.append(ind)
+                visited[ind] = True
+                parents[ind] = u
+    return visited[sink]",breadth_first_search
+"def depth_first_search(grid: list[list[int]], row: int, col: int, visit: set) -> int:
+    """"""
+    Recursive Backtracking Depth First Search Algorithm
+
+    Starting from top left of a matrix, count the number of
+    paths that can reach the bottom right of a matrix.
+    1 represents a block (inaccessible)
+    0 represents a valid space (accessible)
+
+    0  0  0  0
+    1  1  0  0
+    0  0  0  1
+    0  1  0  0
+    >>> grid = [[0, 0, 0, 0], [1, 1, 0, 0], [0, 0, 0, 1], [0, 1, 0, 0]]
+    >>> depth_first_search(grid, 0, 0, set())
+    2
+
+    0  0  0  0  0
+    0  1  1  1  0
+    0  1  1  1  0
+    0  0  0  0  0
+    >>> grid = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0]]
+    >>> depth_first_search(grid, 0, 0, set())
+    2
+    """"""
+    row_length, col_length = len(grid), len(grid[0])
+    if (
+        min(row, col) < 0
+        or row == row_length
+        or col == col_length
+        or (row, col) in visit
+        or grid[row][col] == 1
+    ):
+        return 0
+    if row == row_length - 1 and col == col_length - 1:
+        return 1
+
+    visit.add((row, col))
+
+    count = 0
+    count += depth_first_search(grid, row + 1, col, visit)
+    count += depth_first_search(grid, row - 1, col, visit)
+    count += depth_first_search(grid, row, col + 1, visit)
+    count += depth_first_search(grid, row, col - 1, visit)
+
+    visit.remove((row, col))
+    return count",depth_first_search
+"def rms_speed_of_molecule(temperature: float, molar_mass: float) -> float:
+    """"""
+    >>> rms_speed_of_molecule(100, 2)
+    35.315279554323226
+    >>> rms_speed_of_molecule(273, 12)
+    23.821458421977443
+    """"""
+    if temperature < 0:
+        raise Exception(""Temperature cannot be less than 0 K"")
+    if molar_mass <= 0:
+        raise Exception(""Molar mass cannot be less than or equal to 0 kg/mol"")
+    else:
+        return (3 * UNIVERSAL_GAS_CONSTANT * temperature / molar_mass) ** 0.5",rms_speed_of_molecule
+"def median_filter(gray_img, mask=3):
+    """"""
+    :param gray_img: gray image
+    :param mask: mask size
+    :return: image with median filter
+    """"""
+    # set image borders
+    bd = int(mask / 2)
+    # copy image size
+    median_img = zeros_like(gray_img)
+    for i in range(bd, gray_img.shape[0] - bd):
+        for j in range(bd, gray_img.shape[1] - bd):
+            # get mask according with mask
+            kernel = ravel(gray_img[i - bd : i + bd + 1, j - bd : j + bd + 1])
+            # calculate mask median
+            median = sort(kernel)[int8(divide((multiply(mask, mask)), 2) + 1)]
+            median_img[i, j] = median
+    return median_img",median_filter
+"def vol_spheres_union(
+    radius_1: float, radius_2: float, centers_distance: float
+) -> float:
+    r""""""
+    Calculate the volume of the union of two spheres that possibly intersect.
+
+    It is the sum of sphere :math:`A` and sphere :math:`B` minus their intersection.
+    First, it calculates the volumes :math:`(v_1, v_2)` of the spheres,
+    then the volume of the intersection :math:`i` and
+    it returns the sum :math:`v_1 + v_2 - i`.
+    If `centers_distance` is 0 then it returns the volume of the larger sphere
+
+    :return: ``vol_sphere`` (:math:`radius_1`) + ``vol_sphere`` (:math:`radius_2`)
+             - ``vol_spheres_intersect``
+             (:math:`radius_1`, :math:`radius_2`, :math:`centers\_distance`)
+
+    >>> vol_spheres_union(2, 2, 1)
+    45.814892864851146
+    >>> vol_spheres_union(1.56, 2.2, 1.4)
+    48.77802773671288
+    >>> vol_spheres_union(0, 2, 1)
+    Traceback (most recent call last):
+        ...
+    ValueError: vol_spheres_union() only accepts non-negative values, non-zero radius
+    >>> vol_spheres_union('1.56', '2.2', '1.4')
+    Traceback (most recent call last):
+        ...
+    TypeError: '<=' not supported between instances of 'str' and 'int'
+    >>> vol_spheres_union(1, None, 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+    """"""
+
+    if radius_1 <= 0 or radius_2 <= 0 or centers_distance < 0:
+        raise ValueError(
+            ""vol_spheres_union() only accepts non-negative values, non-zero radius""
+        )
+
+    if centers_distance == 0:
+        return vol_sphere(max(radius_1, radius_2))
+
+    return (
+        vol_sphere(radius_1)
+        + vol_sphere(radius_2)
+        - vol_spheres_intersect(radius_1, radius_2, centers_distance)
+    )",vol_spheres_union
+"def solution():
+    """"""
+    Finds the maximum total in a triangle as described by the problem statement
+    above.
+
+    >>> solution()
+    1074
+    """"""
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    triangle = os.path.join(script_dir, ""triangle.txt"")
+
+    with open(triangle) as f:
+        triangle = f.readlines()
+
+    a = [[int(y) for y in x.rstrip(""\r\n"").split("" "")] for x in triangle]
+
+    for i in range(1, len(a)):
+        for j in range(len(a[i])):
+            number1 = a[i - 1][j] if j != len(a[i - 1]) else 0
+            number2 = a[i - 1][j - 1] if j > 0 else 0
+            a[i][j] += max(number1, number2)
+    return max(a[-1])",solution
+"def base32_decode(data: bytes) -> bytes:
+    """"""
+    >>> base32_decode(b'JBSWY3DPEBLW64TMMQQQ====')
+    b'Hello World!'
+    >>> base32_decode(b'GEZDGNBVGY======')
+    b'123456'
+    >>> base32_decode(b'ONXW2ZJANRXW4ZZAMNXW24DMMV4CA43UOJUW4ZY=')
+    b'some long complex string'
+    """"""
+    binary_chunks = """".join(
+        bin(B32_CHARSET.index(_d))[2:].zfill(5)
+        for _d in data.decode(""utf-8"").strip(""="")
+    )
+    binary_data = list(map("""".join, zip(*[iter(binary_chunks)] * 8)))
+    return bytes("""".join([chr(int(_d, 2)) for _d in binary_data]), ""utf-8"")",base32_decode
+"def max_difference(a: list[int]) -> tuple[int, int]:
+    """"""
+    We are given an array A[1..n] of integers, n >= 1. We want to
+    find a pair of indices (i, j) such that
+    1 <= i <= j <= n and A[j] - A[i] is as large as possible.
+
+    Explanation:
+    https://www.geeksforgeeks.org/maximum-difference-between-two-elements/
+
+    >>> max_difference([5, 11, 2, 1, 7, 9, 0, 7])
+    (1, 9)
+    """"""
+    # base case
+    if len(a) == 1:
+        return a[0], a[0]
+    else:
+        # split A into half.
+        first = a[: len(a) // 2]
+        second = a[len(a) // 2 :]
+
+        # 2 sub problems, 1/2 of original size.
+        small1, big1 = max_difference(first)
+        small2, big2 = max_difference(second)
+
+        # get min of first and max of second
+        # linear time
+        min_first = min(first)
+        max_second = max(second)
+
+        # 3 cases, either (small1, big1),
+        # (min_first, max_second), (small2, big2)
+        # constant comparisons
+        if big2 - small2 > max_second - min_first and big2 - small2 > big1 - small1:
+            return small2, big2
+        elif big1 - small1 > max_second - min_first:
+            return small1, big1
+        else:
+            return min_first, max_second",max_difference
+"def run_maze(
+    maze: list[list[int]],
+    i: int,
+    j: int,
+    destination_row: int,
+    destination_column: int,
+    solutions: list[list[int]],
+) -> bool:
+    """"""
+    This method is recursive starting from (i, j) and going in one of four directions:
+    up, down, left, right.
+    If a path is found to destination it returns True otherwise it returns False.
+    Parameters
+        maze: A two dimensional matrix of zeros and ones.
+        i, j : coordinates of matrix
+        solutions: A two dimensional matrix of solutions.
+    Returns:
+        Boolean if path is found True, Otherwise False.
+    """"""
+    size = len(maze)
+    # Final check point.
+    if i == destination_row and j == destination_column and maze[i][j] == 0:
+        solutions[i][j] = 0
+        return True
+
+    lower_flag = (not i < 0) and (not j < 0)  # Check lower bounds
+    upper_flag = (i < size) and (j < size)  # Check upper bounds
+
+    if lower_flag and upper_flag:
+        # check for already visited and block points.
+        block_flag = (solutions[i][j]) and (not maze[i][j])
+        if block_flag:
+            # check visited
+            solutions[i][j] = 0
+
+            # check for directions
+            if (
+                run_maze(maze, i + 1, j, destination_row, destination_column, solutions)
+                or run_maze(
+                    maze, i, j + 1, destination_row, destination_column, solutions
+                )
+                or run_maze(
+                    maze, i - 1, j, destination_row, destination_column, solutions
+                )
+                or run_maze(
+                    maze, i, j - 1, destination_row, destination_column, solutions
+                )
+            ):
+                return True
+
+            solutions[i][j] = 1
+            return False
+    return False",run_maze
+"def simplify_fraction(numerator, denominator):
+    """"""
+    input: two integer 'numerator' and 'denominator'
+    assumes: 'denominator' != 0
+    returns: a tuple with simplify numerator and denominator.
+
+    >>> simplify_fraction(10, 20)
+    (1, 2)
+    >>> simplify_fraction(10, -1)
+    (10, -1)
+    >>> simplify_fraction(""test"",""test"")
+    Traceback (most recent call last):
+        ...
+    AssertionError: The arguments must been from type int and 'denominator' != 0
+    """"""
+
+    # precondition
+    assert (
+        isinstance(numerator, int)
+        and isinstance(denominator, int)
+        and (denominator != 0)
+    ), ""The arguments must been from type int and 'denominator' != 0""
+
+    # build the greatest common divisor of numerator and denominator.
+    gcd_of_fraction = gcd_by_iterative(abs(numerator), abs(denominator))
+
+    # precondition
+    assert (
+        isinstance(gcd_of_fraction, int)
+        and (numerator % gcd_of_fraction == 0)
+        and (denominator % gcd_of_fraction == 0)
+    ), ""Error in function gcd_by_iterative(...,...)""
+
+    return (numerator // gcd_of_fraction, denominator // gcd_of_fraction)",simplify_fraction
+"def calculate_turn_around_time(
+    process_name: list, arrival_time: list, burst_time: list, no_of_process: int
+) -> list:
+    """"""
+    Calculate the turn around time of each processes
+
+    Return: The turn around time time for each process.
+    >>> calculate_turn_around_time([""A"", ""B"", ""C""], [3, 5, 8], [2, 4, 6], 3)
+    [2, 4, 7]
+    >>> calculate_turn_around_time([""A"", ""B"", ""C""], [0, 2, 4], [3, 5, 7], 3)
+    [3, 6, 11]
+    """"""
+
+    current_time = 0
+    # Number of processes finished
+    finished_process_count = 0
+    # Displays the finished process.
+    # If it is 0, the performance is completed if it is 1, before the performance.
+    finished_process = [0] * no_of_process
+    # List to include calculation results
+    turn_around_time = [0] * no_of_process
+
+    # Sort by arrival time.
+    burst_time = [burst_time[i] for i in np.argsort(arrival_time)]
+    process_name = [process_name[i] for i in np.argsort(arrival_time)]
+    arrival_time.sort()
+
+    while no_of_process > finished_process_count:
+        """"""
+        If the current time is less than the arrival time of
+        the process that arrives first among the processes that have not been performed,
+        change the current time.
+        """"""
+        i = 0
+        while finished_process[i] == 1:
+            i += 1
+        current_time = max(current_time, arrival_time[i])
+
+        response_ratio = 0
+        # Index showing the location of the process being performed
+        loc = 0
+        # Saves the current response ratio.
+        temp = 0
+        for i in range(no_of_process):
+            if finished_process[i] == 0 and arrival_time[i] <= current_time:
+                temp = (burst_time[i] + (current_time - arrival_time[i])) / burst_time[
+                    i
+                ]
+            if response_ratio < temp:
+                response_ratio = temp
+                loc = i
+
+        # Calculate the turn around time
+        turn_around_time[loc] = current_time + burst_time[loc] - arrival_time[loc]
+        current_time += burst_time[loc]
+        # Indicates that the process has been performed.
+        finished_process[loc] = 1
+        # Increase finished_process_count by 1
+        finished_process_count += 1
+
+    return turn_around_time",calculate_turn_around_time
+"def bfs_shortest_path(graph: dict, start, goal) -> list[str]:
+    """"""Find the shortest path between `start` and `goal` nodes.
+    Args:
+        graph (dict): node/list of neighboring nodes key/value pairs.
+        start: start node.
+        goal: target node.
+    Returns:
+        Shortest path between `start` and `goal` nodes as a string of nodes.
+        'Not found' string if no path found.
+    Example:
+        >>> bfs_shortest_path(demo_graph, ""G"", ""D"")
+        ['G', 'C', 'A', 'B', 'D']
+        >>> bfs_shortest_path(demo_graph, ""G"", ""G"")
+        ['G']
+        >>> bfs_shortest_path(demo_graph, ""G"", ""Unknown"")
+        []
+    """"""
+    # keep track of explored nodes
+    explored = set()
+    # keep track of all the paths to be checked
+    queue = deque([[start]])
+
+    # return path if start is goal
+    if start == goal:
+        return [start]
+
+    # keeps looping until all possible paths have been checked
+    while queue:
+        # pop the first path from the queue
+        path = queue.popleft()
+        # get the last node from the path
+        node = path[-1]
+        if node not in explored:
+            neighbours = graph[node]
+            # go through all neighbour nodes, construct a new path and
+            # push it into the queue
+            for neighbour in neighbours:
+                new_path = list(path)
+                new_path.append(neighbour)
+                queue.append(new_path)
+                # return path if neighbour is goal
+                if neighbour == goal:
+                    return new_path
+
+            # mark node as explored
+            explored.add(node)
+
+    # in case there's no path between the 2 nodes
+    return []",bfs_shortest_path
+"def gravitational_law(
+    force: float, mass_1: float, mass_2: float, distance: float
+) -> dict[str, float]:
+    """"""
+    Input Parameters
+    ----------------
+    force : magnitude in Newtons
+
+    mass_1 : mass in Kilograms
+
+    mass_2 : mass in Kilograms
+
+    distance : distance in Meters
+
+    Returns
+    -------
+    result : dict name, value pair of the parameter having Zero as it's value
+
+    Returns the value of one of the parameters specified as 0, provided the values of
+    other parameters are given.
+    >>> gravitational_law(force=0, mass_1=5, mass_2=10, distance=20)
+    {'force': 8.342875e-12}
+
+    >>> gravitational_law(force=7367.382, mass_1=0, mass_2=74, distance=3048)
+    {'mass_1': 1.385816317292268e+19}
+
+    >>> gravitational_law(force=36337.283, mass_1=0, mass_2=0, distance=35584)
+    Traceback (most recent call last):
+        ...
+    ValueError: One and only one argument must be 0
+
+    >>> gravitational_law(force=36337.283, mass_1=-674, mass_2=0, distance=35584)
+    Traceback (most recent call last):
+        ...
+    ValueError: Mass can not be negative
+
+    >>> gravitational_law(force=-847938e12, mass_1=674, mass_2=0, distance=9374)
+    Traceback (most recent call last):
+        ...
+    ValueError: Gravitational force can not be negative
+    """"""
+
+    product_of_mass = mass_1 * mass_2
+
+    if (force, mass_1, mass_2, distance).count(0) != 1:
+        raise ValueError(""One and only one argument must be 0"")
+    if force < 0:
+        raise ValueError(""Gravitational force can not be negative"")
+    if distance < 0:
+        raise ValueError(""Distance can not be negative"")
+    if mass_1 < 0 or mass_2 < 0:
+        raise ValueError(""Mass can not be negative"")
+    if force == 0:
+        force = GRAVITATIONAL_CONSTANT * product_of_mass / (distance**2)
+        return {""force"": force}
+    elif mass_1 == 0:
+        mass_1 = (force) * (distance**2) / (GRAVITATIONAL_CONSTANT * mass_2)
+        return {""mass_1"": mass_1}
+    elif mass_2 == 0:
+        mass_2 = (force) * (distance**2) / (GRAVITATIONAL_CONSTANT * mass_1)
+        return {""mass_2"": mass_2}
+    elif distance == 0:
+        distance = (GRAVITATIONAL_CONSTANT * product_of_mass / (force)) ** 0.5
+        return {""distance"": distance}
+    raise ValueError(""One and only one argument must be 0"")",gravitational_law
+"def test_tree_traversal() -> bool:
+    """"""Tests the three different tree traversal functions.""""""
+    tree = RedBlackTree(0)
+    tree = tree.insert(-16)
+    tree.insert(16)
+    tree.insert(8)
+    tree.insert(24)
+    tree.insert(20)
+    tree.insert(22)
+    if list(tree.inorder_traverse()) != [-16, 0, 8, 16, 20, 22, 24]:
+        return False
+    if list(tree.preorder_traverse()) != [0, -16, 16, 8, 22, 20, 24]:
+        return False
+    return list(tree.postorder_traverse()) == [-16, 8, 20, 24, 22, 16, 0]",test_tree_traversal
+"def min_distance_up_bottom(word1: str, word2: str) -> int:
+    """"""
+    >>> min_distance_up_bottom(""intention"", ""execution"")
+    5
+    >>> min_distance_up_bottom(""intention"", """")
+    9
+    >>> min_distance_up_bottom("""", """")
+    0
+    >>> min_distance_up_bottom(""zooicoarchaeologist"", ""zoologist"")
+    10
+    """"""
+    len_word1 = len(word1)
+    len_word2 = len(word2)
+
+    @functools.cache
+    def min_distance(index1: int, index2: int) -> int:
+        # if first word index overflows - delete all from the second word
+        if index1 >= len_word1:
+            return len_word2 - index2
+        # if second word index overflows - delete all from the first word
+        if index2 >= len_word2:
+            return len_word1 - index1
+        diff = int(word1[index1] != word2[index2])  # current letters not identical
+        return min(
+            1 + min_distance(index1 + 1, index2),
+            1 + min_distance(index1, index2 + 1),
+            diff + min_distance(index1 + 1, index2 + 1),
+        )
+
+    return min_distance(0, 0)",min_distance_up_bottom
+"def modular_division(a: int, b: int, n: int) -> int:
+    """"""
+    Modular Division :
+    An efficient algorithm for dividing b by a modulo n.
+
+    GCD ( Greatest Common Divisor ) or HCF ( Highest Common Factor )
+
+    Given three integers a, b, and n, such that gcd(a,n)=1 and n>1, the algorithm should
+    return an integer x such that 0≤x≤n-1, and  b/a=x(modn) (that is, b=ax(modn)).
+
+    Theorem:
+    a has a multiplicative inverse modulo n iff gcd(a,n) = 1
+
+
+    This find x = b*a^(-1) mod n
+    Uses ExtendedEuclid to find the inverse of a
+
+    >>> modular_division(4,8,5)
+    2
+
+    >>> modular_division(3,8,5)
+    1
+
+    >>> modular_division(4, 11, 5)
+    4
+
+    """"""
+    assert n > 1
+    assert a > 0
+    assert greatest_common_divisor(a, n) == 1
+    (_d, _t, s) = extended_gcd(n, a)  # Implemented below
+    x = (b * s) % n
+    return x",modular_division
+"def get_frequency_order(message: str) -> str:
+    """"""
+    Get the frequency order of the letters in the given string
+    >>> get_frequency_order('Hello World')
+    'LOWDRHEZQXJKVBPYGFMUCSNIAT'
+    >>> get_frequency_order('Hello@')
+    'LHOEZQXJKVBPYGFWMUCDRSNIAT'
+    >>> get_frequency_order('h')
+    'HZQXJKVBPYGFWMUCLDRSNIOATE'
+    """"""
+    letter_to_freq = get_letter_count(message)
+    freq_to_letter: dict[int, list[str]] = {
+        freq: [] for letter, freq in letter_to_freq.items()
+    }
+    for letter in LETTERS:
+        freq_to_letter[letter_to_freq[letter]].append(letter)
+
+    freq_to_letter_str: dict[int, str] = {}
+
+    for freq in freq_to_letter:  # noqa: PLC0206
+        freq_to_letter[freq].sort(key=ETAOIN.find, reverse=True)
+        freq_to_letter_str[freq] = """".join(freq_to_letter[freq])
+
+    freq_pairs = list(freq_to_letter_str.items())
+    freq_pairs.sort(key=get_item_at_index_zero, reverse=True)
+
+    freq_order: list[str] = [freq_pair[1] for freq_pair in freq_pairs]
+
+    return """".join(freq_order)",get_frequency_order
+"def prime_factors(n: int) -> list:
+    """"""Find Prime Factors.
+    >>> prime_factors(100)
+    [2, 2, 5, 5]
+    >>> prime_factors(0)
+    Traceback (most recent call last):
+        ...
+    ValueError: Only positive integers have prime factors
+    >>> prime_factors(-10)
+    Traceback (most recent call last):
+        ...
+    ValueError: Only positive integers have prime factors
+    """"""
+    if n <= 0:
+        raise ValueError(""Only positive integers have prime factors"")
+    pf = []
+    while n % 2 == 0:
+        pf.append(2)
+        n = int(n / 2)
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        while n % i == 0:
+            pf.append(i)
+            n = int(n / i)
+    if n > 2:
+        pf.append(n)
+    return pf",prime_factors
+"def vol_icosahedron(tri_side: float) -> float:
+    """"""
+    | Calculate the Volume of an Icosahedron.
+    | Wikipedia reference: https://en.wikipedia.org/wiki/Regular_icosahedron
+
+    >>> from math import isclose
+    >>> isclose(vol_icosahedron(2.5), 34.088984228514256)
+    True
+    >>> isclose(vol_icosahedron(10), 2181.694990624912374)
+    True
+    >>> isclose(vol_icosahedron(5), 272.711873828114047)
+    True
+    >>> isclose(vol_icosahedron(3.49), 92.740688412033628)
+    True
+    >>> vol_icosahedron(0)
+    0.0
+    >>> vol_icosahedron(-1)
+    Traceback (most recent call last):
+        ...
+    ValueError: vol_icosahedron() only accepts non-negative values
+    >>> vol_icosahedron(-0.2)
+    Traceback (most recent call last):
+        ...
+    ValueError: vol_icosahedron() only accepts non-negative values
+    """"""
+    if tri_side < 0:
+        raise ValueError(""vol_icosahedron() only accepts non-negative values"")
+    return tri_side**3 * (3 + 5**0.5) * 5 / 12",vol_icosahedron
+"def is_palindrome(n: int) -> bool:
+    """"""
+    Check if an integer is palindromic.
+    >>> is_palindrome(12521)
+    True
+    >>> is_palindrome(12522)
+    False
+    >>> is_palindrome(12210)
+    False
+    """"""
+    if n % 10 == 0:
+        return False
+    s = str(n)
+    return s == s[::-1]",is_palindrome
+"def check(binary: list[str]) -> list[str]:
+    """"""
+    >>> check(['0.00.01.5'])
+    ['0.00.01.5']
+    """"""
+    pi = []
+    while True:
+        check1 = [""$""] * len(binary)
+        temp = []
+        for i in range(len(binary)):
+            for j in range(i + 1, len(binary)):
+                k = compare_string(binary[i], binary[j])
+                if k is False:
+                    check1[i] = ""*""
+                    check1[j] = ""*""
+                    temp.append(""X"")
+        for i in range(len(binary)):
+            if check1[i] == ""$"":
+                pi.append(binary[i])
+        if len(temp) == 0:
+            return pi
+        binary = list(set(temp))",check
+"def main() -> None:
+    r""""""
+    Mirror binary trees with the given root and returns the root
+
+    >>> tree = make_tree_nine()
+    >>> tuple(tree)
+    (7, 4, 8, 2, 5, 9, 1, 3, 6)
+    >>> tuple(tree.mirror())
+    (6, 3, 1, 9, 5, 2, 8, 4, 7)
+
+    nine_tree::
+
+            1
+           / \
+          2   3
+         / \   \
+        4   5   6
+       / \   \
+      7   8   9
+
+    The mirrored tree looks like this::
+
+          1
+         / \
+        3   2
+       /   / \
+      6   5   4
+         /   / \
+        9   8   7
+    """"""
+    trees = {""zero"": Node(0), ""seven"": make_tree_seven(), ""nine"": make_tree_nine()}
+    for name, tree in trees.items():
+        print(f""      The {name} tree: {tuple(tree)}"")
+        # (0,)
+        # (4, 2, 5, 1, 6, 3, 7)
+        # (7, 4, 8, 2, 5, 9, 1, 3, 6)
+        print(f""Mirror of {name} tree: {tuple(tree.mirror())}"")",main
+"def avg_speed_of_molecule(temperature: float, molar_mass: float) -> float:
+    """"""
+    Takes the temperature (in K) and molar mass (in kg/mol) of a gas
+    and returns the average speed of a molecule in the gas (in m/s).
+
+    Examples:
+
+    >>> avg_speed_of_molecule(273, 0.028) # nitrogen at 273 K
+    454.3488755062257
+    >>> avg_speed_of_molecule(300, 0.032) # oxygen at 300 K
+    445.5257273433045
+    >>> avg_speed_of_molecule(-273, 0.028) # invalid temperature
+    Traceback (most recent call last):
+        ...
+    Exception: Absolute temperature cannot be less than 0 K
+    >>> avg_speed_of_molecule(273, 0) # invalid molar mass
+    Traceback (most recent call last):
+        ...
+    Exception: Molar mass should be greater than 0 kg/mol
+    """"""
+
+    if temperature < 0:
+        raise Exception(""Absolute temperature cannot be less than 0 K"")
+    if molar_mass <= 0:
+        raise Exception(""Molar mass should be greater than 0 kg/mol"")
+    return (8 * R * temperature / (pi * molar_mass)) ** 0.5",avg_speed_of_molecule
+"def get_squares(n: int) -> list[int]:
+    """"""
+    >>> get_squares(0)
+    []
+    >>> get_squares(1)
+    [0]
+    >>> get_squares(2)
+    [0, 1]
+    >>> get_squares(3)
+    [0, 1, 4]
+    >>> get_squares(4)
+    [0, 1, 4, 9]
+    """"""
+    return [number * number for number in range(n)]",get_squares
+"def benchmark(input_str: str = """") -> None:
+    """"""
+    Benchmark code for comparing above 2 functions
+    """"""
+    print(""\nFor string = "", input_str, "":"")
+    print(
+        ""> can_string_be_rearranged_as_palindrome_counter()"",
+        ""\tans ="",
+        can_string_be_rearranged_as_palindrome_counter(input_str),
+        ""\ttime ="",
+        timeit(
+            ""z.can_string_be_rearranged_as_palindrome_counter(z.check_str)"",
+            setup=""import __main__ as z"",
+        ),
+        ""seconds"",
+    )
+    print(
+        ""> can_string_be_rearranged_as_palindrome()"",
+        ""\tans ="",
+        can_string_be_rearranged_as_palindrome(input_str),
+        ""\ttime ="",
+        timeit(
+            ""z.can_string_be_rearranged_as_palindrome(z.check_str)"",
+            setup=""import __main__ as z"",
+        ),
+        ""seconds"",
+    )",benchmark
+"def inverse_of_matrix(matrix: list[list[float]]) -> list[list[float]]:
+    """"""
+    A matrix multiplied with its inverse gives the identity matrix.
+    This function finds the inverse of a 2x2 and 3x3 matrix.
+    If the determinant of a matrix is 0, its inverse does not exist.
+
+    Sources for fixing inaccurate float arithmetic:
+    https://stackoverflow.com/questions/6563058/how-do-i-use-accurate-float-arithmetic-in-python
+    https://docs.python.org/3/library/decimal.html
+
+    Doctests for 2x2
+    >>> inverse_of_matrix([[2, 5], [2, 0]])
+    [[0.0, 0.5], [0.2, -0.2]]
+    >>> inverse_of_matrix([[2.5, 5], [1, 2]])
+    Traceback (most recent call last):
+        ...
+    ValueError: This matrix has no inverse.
+    >>> inverse_of_matrix([[12, -16], [-9, 0]])
+    [[0.0, -0.1111111111111111], [-0.0625, -0.08333333333333333]]
+    >>> inverse_of_matrix([[12, 3], [16, 8]])
+    [[0.16666666666666666, -0.0625], [-0.3333333333333333, 0.25]]
+    >>> inverse_of_matrix([[10, 5], [3, 2.5]])
+    [[0.25, -0.5], [-0.3, 1.0]]
+
+    Doctests for 3x3
+    >>> inverse_of_matrix([[2, 5, 7], [2, 0, 1], [1, 2, 3]])
+    [[2.0, 5.0, -4.0], [1.0, 1.0, -1.0], [-5.0, -12.0, 10.0]]
+    >>> inverse_of_matrix([[1, 2, 2], [1, 2, 2], [3, 2, -1]])
+    Traceback (most recent call last):
+        ...
+    ValueError: This matrix has no inverse.
+
+    >>> inverse_of_matrix([[],[]])
+    Traceback (most recent call last):
+        ...
+    ValueError: Please provide a matrix of size 2x2 or 3x3.
+
+    >>> inverse_of_matrix([[1, 2], [3, 4], [5, 6]])
+    Traceback (most recent call last):
+        ...
+    ValueError: Please provide a matrix of size 2x2 or 3x3.
+
+    >>> inverse_of_matrix([[1, 2, 1], [0,3, 4]])
+    Traceback (most recent call last):
+        ...
+    ValueError: Please provide a matrix of size 2x2 or 3x3.
+
+    >>> inverse_of_matrix([[1, 2, 3], [7, 8, 9], [7, 8, 9]])
+    Traceback (most recent call last):
+        ...
+    ValueError: This matrix has no inverse.
+
+    >>> inverse_of_matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+    [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
+    """"""
+
+    d = Decimal
+
+    # Check if the provided matrix has 2 rows and 2 columns
+    # since this implementation only works for 2x2 matrices
+    if len(matrix) == 2 and len(matrix[0]) == 2 and len(matrix[1]) == 2:
+        # Calculate the determinant of the matrix
+        determinant = float(
+            d(matrix[0][0]) * d(matrix[1][1]) - d(matrix[1][0]) * d(matrix[0][1])
+        )
+        if determinant == 0:
+            raise ValueError(""This matrix has no inverse."")
+
+        # Creates a copy of the matrix with swapped positions of the elements
+        swapped_matrix = [[0.0, 0.0], [0.0, 0.0]]
+        swapped_matrix[0][0], swapped_matrix[1][1] = matrix[1][1], matrix[0][0]
+        swapped_matrix[1][0], swapped_matrix[0][1] = -matrix[1][0], -matrix[0][1]
+
+        # Calculate the inverse of the matrix
+        return [
+            [(float(d(n)) / determinant) or 0.0 for n in row] for row in swapped_matrix
+        ]
+    elif (
+        len(matrix) == 3
+        and len(matrix[0]) == 3
+        and len(matrix[1]) == 3
+        and len(matrix[2]) == 3
+    ):
+        # Calculate the determinant of the matrix using Sarrus rule
+        determinant = float(
+            (
+                (d(matrix[0][0]) * d(matrix[1][1]) * d(matrix[2][2]))
+                + (d(matrix[0][1]) * d(matrix[1][2]) * d(matrix[2][0]))
+                + (d(matrix[0][2]) * d(matrix[1][0]) * d(matrix[2][1]))
+            )
+            - (
+                (d(matrix[0][2]) * d(matrix[1][1]) * d(matrix[2][0]))
+                + (d(matrix[0][1]) * d(matrix[1][0]) * d(matrix[2][2]))
+                + (d(matrix[0][0]) * d(matrix[1][2]) * d(matrix[2][1]))
+            )
+        )
+        if determinant == 0:
+            raise ValueError(""This matrix has no inverse."")
+
+        # Creating cofactor matrix
+        cofactor_matrix = [
+            [d(0.0), d(0.0), d(0.0)],
+            [d(0.0), d(0.0), d(0.0)],
+            [d(0.0), d(0.0), d(0.0)],
+        ]
+        cofactor_matrix[0][0] = (d(matrix[1][1]) * d(matrix[2][2])) - (
+            d(matrix[1][2]) * d(matrix[2][1])
+        )
+        cofactor_matrix[0][1] = -(
+            (d(matrix[1][0]) * d(matrix[2][2])) - (d(matrix[1][2]) * d(matrix[2][0]))
+        )
+        cofactor_matrix[0][2] = (d(matrix[1][0]) * d(matrix[2][1])) - (
+            d(matrix[1][1]) * d(matrix[2][0])
+        )
+        cofactor_matrix[1][0] = -(
+            (d(matrix[0][1]) * d(matrix[2][2])) - (d(matrix[0][2]) * d(matrix[2][1]))
+        )
+        cofactor_matrix[1][1] = (d(matrix[0][0]) * d(matrix[2][2])) - (
+            d(matrix[0][2]) * d(matrix[2][0])
+        )
+        cofactor_matrix[1][2] = -(
+            (d(matrix[0][0]) * d(matrix[2][1])) - (d(matrix[0][1]) * d(matrix[2][0]))
+        )
+        cofactor_matrix[2][0] = (d(matrix[0][1]) * d(matrix[1][2])) - (
+            d(matrix[0][2]) * d(matrix[1][1])
+        )
+        cofactor_matrix[2][1] = -(
+            (d(matrix[0][0]) * d(matrix[1][2])) - (d(matrix[0][2]) * d(matrix[1][0]))
+        )
+        cofactor_matrix[2][2] = (d(matrix[0][0]) * d(matrix[1][1])) - (
+            d(matrix[0][1]) * d(matrix[1][0])
+        )
+
+        # Transpose the cofactor matrix (Adjoint matrix)
+        adjoint_matrix = array(cofactor_matrix)
+        for i in range(3):
+            for j in range(3):
+                adjoint_matrix[i][j] = cofactor_matrix[j][i]
+
+        # Inverse of the matrix using the formula (1/determinant) * adjoint matrix
+        inverse_matrix = array(cofactor_matrix)
+        for i in range(3):
+            for j in range(3):
+                inverse_matrix[i][j] /= d(determinant)
+
+        # Calculate the inverse of the matrix
+        return [[float(d(n)) or 0.0 for n in row] for row in inverse_matrix]
+    raise ValueError(""Please provide a matrix of size 2x2 or 3x3."")",inverse_of_matrix
+"def calculate_prob(text: str) -> None:
+    """"""
+    This method takes path and two dict as argument
+    and than calculates entropy of them.
+    :param dict:
+    :param dict:
+    :return: Prints
+    1) Entropy of information based on 1 alphabet
+    2) Entropy of information based on couples of 2 alphabet
+    3) print Entropy of H(X n|Xn-1)
+
+    Text from random books. Also, random quotes.
+    >>> text = (""Behind Winston's back the voice ""
+    ...         ""from the telescreen was still ""
+    ...         ""babbling and the overfulfilment"")
+    >>> calculate_prob(text)
+    4.0
+    6.0
+    2.0
+
+    >>> text = (""The Ministry of Truth—Minitrue, in Newspeak [Newspeak was the official""
+    ...         ""face in elegant lettering, the three"")
+    >>> calculate_prob(text)
+    4.0
+    5.0
+    1.0
+    >>> text = (""Had repulsive dashwoods suspicion sincerity but advantage now him. ""
+    ...         ""Remark easily garret nor nay.  Civil those mrs enjoy shy fat merry. ""
+    ...         ""You greatest jointure saw horrible. He private he on be imagine ""
+    ...         ""suppose. Fertile beloved evident through no service elderly is. Blind ""
+    ...         ""there if every no so at. Own neglected you preferred way sincerity ""
+    ...         ""delivered his attempted. To of message cottage windows do besides ""
+    ...         ""against uncivil.  Delightful unreserved impossible few estimating ""
+    ...         ""men favourable see entreaties. She propriety immediate was improving. ""
+    ...         ""He or entrance humoured likewise moderate. Much nor game son say ""
+    ...         ""feel. Fat make met can must form into gate. Me we offending prevailed ""
+    ...         ""discovery."")
+    >>> calculate_prob(text)
+    4.0
+    7.0
+    3.0
+    """"""
+    single_char_strings, two_char_strings = analyze_text(text)
+    my_alphas = list("" "" + ascii_lowercase)
+    # what is our total sum of probabilities.
+    all_sum = sum(single_char_strings.values())
+
+    # one length string
+    my_fir_sum = 0
+    # for each alpha we go in our dict and if it is in it we calculate entropy
+    for ch in my_alphas:
+        if ch in single_char_strings:
+            my_str = single_char_strings[ch]
+            prob = my_str / all_sum
+            my_fir_sum += prob * math.log2(prob)  # entropy formula.
+
+    # print entropy
+    print(f""{round(-1 * my_fir_sum):.1f}"")
+
+    # two len string
+    all_sum = sum(two_char_strings.values())
+    my_sec_sum = 0
+    # for each alpha (two in size) calculate entropy.
+    for ch0 in my_alphas:
+        for ch1 in my_alphas:
+            sequence = ch0 + ch1
+            if sequence in two_char_strings:
+                my_str = two_char_strings[sequence]
+                prob = int(my_str) / all_sum
+                my_sec_sum += prob * math.log2(prob)
+
+    # print second entropy
+    print(f""{round(-1 * my_sec_sum):.1f}"")
+
+    # print the difference between them
+    print(f""{round((-1 * my_sec_sum) - (-1 * my_fir_sum)):.1f}"")",calculate_prob
+"def carrier_concentration(
+    electron_conc: float,
+    hole_conc: float,
+    intrinsic_conc: float,
+) -> tuple:
+    """"""
+    This function can calculate any one of the three -
+    1. Electron Concentration
+    2, Hole Concentration
+    3. Intrinsic Concentration
+    given the other two.
+    Examples -
+    >>> carrier_concentration(electron_conc=25, hole_conc=100, intrinsic_conc=0)
+    ('intrinsic_conc', 50.0)
+    >>> carrier_concentration(electron_conc=0, hole_conc=1600, intrinsic_conc=200)
+    ('electron_conc', 25.0)
+    >>> carrier_concentration(electron_conc=1000, hole_conc=0, intrinsic_conc=1200)
+    ('hole_conc', 1440.0)
+    >>> carrier_concentration(electron_conc=1000, hole_conc=400, intrinsic_conc=1200)
+    Traceback (most recent call last):
+        ...
+    ValueError: You cannot supply more or less than 2 values
+    >>> carrier_concentration(electron_conc=-1000, hole_conc=0, intrinsic_conc=1200)
+    Traceback (most recent call last):
+        ...
+    ValueError: Electron concentration cannot be negative in a semiconductor
+    >>> carrier_concentration(electron_conc=0, hole_conc=-400, intrinsic_conc=1200)
+    Traceback (most recent call last):
+        ...
+    ValueError: Hole concentration cannot be negative in a semiconductor
+    >>> carrier_concentration(electron_conc=0, hole_conc=400, intrinsic_conc=-1200)
+    Traceback (most recent call last):
+        ...
+    ValueError: Intrinsic concentration cannot be negative in a semiconductor
+    """"""
+    if (electron_conc, hole_conc, intrinsic_conc).count(0) != 1:
+        raise ValueError(""You cannot supply more or less than 2 values"")
+    elif electron_conc < 0:
+        raise ValueError(""Electron concentration cannot be negative in a semiconductor"")
+    elif hole_conc < 0:
+        raise ValueError(""Hole concentration cannot be negative in a semiconductor"")
+    elif intrinsic_conc < 0:
+        raise ValueError(
+            ""Intrinsic concentration cannot be negative in a semiconductor""
+        )
+    elif electron_conc == 0:
+        return (
+            ""electron_conc"",
+            intrinsic_conc**2 / hole_conc,
+        )
+    elif hole_conc == 0:
+        return (
+            ""hole_conc"",
+            intrinsic_conc**2 / electron_conc,
+        )
+    elif intrinsic_conc == 0:
+        return (
+            ""intrinsic_conc"",
+            (electron_conc * hole_conc) ** 0.5,
+        )
+    else:
+        return (-1, -1)",carrier_concentration
+"def res(x, y):
+    """"""
+    Reduces large number to a more manageable number
+    >>> res(5, 7)
+    4.892790030352132
+    >>> res(0, 5)
+    0
+    >>> res(3, 0)
+    1
+    >>> res(-1, 5)
+    Traceback (most recent call last):
+    ...
+    ValueError: math domain error
+    """"""
+    if 0 not in (x, y):
+        # We use the relation x^y = y*log10(x), where 10 is the base.
+        return y * math.log10(x)
+    elif x == 0:  # 0 raised to any number is 0
+        return 0
+    elif y == 0:
+        return 1  # any number raised to 0 is 1
+    raise AssertionError(""This should never happen"")",res
+"def mbd(predict, actual):
+    """"""
+    This value is Negative, if the model underpredicts,
+    positive, if it overpredicts.
+
+    Example(rounded for precision):
+
+    Here the model overpredicts
+    >>> actual = [1,2,3];predict = [2,3,4]
+    >>> float(np.around(mbd(predict,actual),decimals = 2))
+    50.0
+
+    Here the model underpredicts
+    >>> actual = [1,2,3];predict = [0,1,1]
+    >>> float(np.around(mbd(predict,actual),decimals = 2))
+    -66.67
+    """"""
+    predict = np.array(predict)
+    actual = np.array(actual)
+
+    difference = predict - actual
+    numerator = np.sum(difference) / len(predict)
+    denumerator = np.sum(actual) / len(predict)
+    # print(numerator, denumerator)
+    score = float(numerator) / denumerator * 100
+
+    return score",mbd
+"def get_color_coded_rgb(distance: float) -> tuple:
+    """"""
+    Color-coding taking the relative distance into account. The Mandelbrot set
+    is black.
+
+    >>> get_color_coded_rgb(0)
+    (255, 0, 0)
+    >>> get_color_coded_rgb(0.5)
+    (0, 255, 255)
+    >>> get_color_coded_rgb(1)
+    (0, 0, 0)
+    """"""
+    if distance == 1:
+        return (0, 0, 0)
+    else:
+        return tuple(round(i * 255) for i in colorsys.hsv_to_rgb(distance, 1, 1))",get_color_coded_rgb
+"def collect_dataset():
+    """"""Collect dataset of CSGO
+    The dataset contains ADR vs Rating of a Player
+    :return : dataset obtained from the link, as matrix
+    """"""
+    response = httpx.get(
+        ""https://raw.githubusercontent.com/yashLadha/The_Math_of_Intelligence/""
+        ""master/Week1/ADRvsRating.csv"",
+        timeout=10,
+    )
+    lines = response.text.splitlines()
+    data = []
+    for item in lines:
+        item = item.split("","")
+        data.append(item)
+    data.pop(0)  # This is for removing the labels from the list
+    dataset = np.matrix(data)
+    return dataset",collect_dataset
+"def word_break(input_string: str, word_dict: set[str]) -> bool:
+    """"""
+    Determines if the input string can be segmented into a sequence of
+    valid dictionary words using backtracking.
+
+    Parameters:
+    input_string (str): The input string to segment.
+    word_dict (set[str]): The set of valid words.
+
+    Returns:
+    bool: True if the string can be segmented into valid words, otherwise False.
+
+    Example:
+    >>> word_break(""leetcode"", {""leet"", ""code""})
+    True
+
+    >>> word_break(""applepenapple"", {""apple"", ""pen""})
+    True
+
+    >>> word_break(""catsandog"", {""cats"", ""dog"", ""sand"", ""and"", ""cat""})
+    False
+    """"""
+
+    return backtrack(input_string, word_dict, 0)",word_break
+"def normalization(data: list, ndigits: int = 3) -> list:
+    """"""
+    Return a normalized list of values.
+
+    @params: data, a list of values to normalize
+    @returns: a list of normalized values (rounded to ndigits decimal places)
+    @examples:
+    >>> normalization([2, 7, 10, 20, 30, 50])
+    [0.0, 0.104, 0.167, 0.375, 0.583, 1.0]
+    >>> normalization([5, 10, 15, 20, 25])
+    [0.0, 0.25, 0.5, 0.75, 1.0]
+    """"""
+    # variables for calculation
+    x_min = min(data)
+    x_max = max(data)
+    # normalize data
+    return [round((x - x_min) / (x_max - x_min), ndigits) for x in data]",normalization
+"def num_digits_faster(n: int) -> int:
+    """"""
+    Find the number of digits in a number.
+    abs() is used for negative numbers
+
+    >>> num_digits_faster(12345)
+    5
+    >>> num_digits_faster(123)
+    3
+    >>> num_digits_faster(0)
+    1
+    >>> num_digits_faster(-1)
+    1
+    >>> num_digits_faster(-123456)
+    6
+    >>> num_digits('123')  # Raises a TypeError for non-integer input
+    Traceback (most recent call last):
+        ...
+    TypeError: Input must be an integer
+    """"""
+
+    if not isinstance(n, int):
+        raise TypeError(""Input must be an integer"")
+
+    return len(str(abs(n)))",num_digits_faster
+"def dna(dna: str) -> str:
+    """"""
+    https://en.wikipedia.org/wiki/DNA
+    Returns the second side of a DNA strand
+
+    >>> dna(""GCTA"")
+    'CGAT'
+    >>> dna(""ATGC"")
+    'TACG'
+    >>> dna(""CTGA"")
+    'GACT'
+    >>> dna(""GFGG"")
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid Strand
+    """"""
+
+    if len(re.findall(""[ATCG]"", dna)) != len(dna):
+        raise ValueError(""Invalid Strand"")
+
+    return dna.translate(dna.maketrans(""ATCG"", ""TAGC""))",dna
+"def base16_decode(data: str) -> bytes:
+    """"""
+    Decodes the given base16 encoded data into bytes.
+
+    >>> base16_decode('48656C6C6F20576F726C6421')
+    b'Hello World!'
+    >>> base16_decode('48454C4C4F20574F524C4421')
+    b'HELLO WORLD!'
+    >>> base16_decode('')
+    b''
+    >>> base16_decode('486')
+    Traceback (most recent call last):
+      ...
+    ValueError: Base16 encoded data is invalid:
+    Data does not have an even number of hex digits.
+    >>> base16_decode('48656c6c6f20576f726c6421')
+    Traceback (most recent call last):
+      ...
+    ValueError: Base16 encoded data is invalid:
+    Data is not uppercase hex or it contains invalid characters.
+    >>> base16_decode('This is not base64 encoded data.')
+    Traceback (most recent call last):
+      ...
+    ValueError: Base16 encoded data is invalid:
+    Data is not uppercase hex or it contains invalid characters.
+    """"""
+    # Check data validity, following RFC3548
+    # https://www.ietf.org/rfc/rfc3548.txt
+    if (len(data) % 2) != 0:
+        raise ValueError(
+            """"""Base16 encoded data is invalid:
+Data does not have an even number of hex digits.""""""
+        )
+    # Check the character set - the standard base16 alphabet
+    # is uppercase according to RFC3548 section 6
+    if not set(data) <= set(""0123456789ABCDEF""):
+        raise ValueError(
+            """"""Base16 encoded data is invalid:
+Data is not uppercase hex or it contains invalid characters.""""""
+        )
+    # For every two hexadecimal digits (= a byte), turn it into an integer.
+    # Then, string the result together into bytes, and return it.
+    return bytes(int(data[i] + data[i + 1], 16) for i in range(0, len(data), 2))",base16_decode
+"def digital_differential_analyzer_line(
+    p1: tuple[int, int], p2: tuple[int, int]
+) -> list[tuple[int, int]]:
+    """"""
+    Draws a line between two points using the DDA algorithm.
+
+    Args:
+    - p1: Coordinates of the starting point.
+    - p2: Coordinates of the ending point.
+    Returns:
+    - List of coordinate points that form the line.
+
+    >>> digital_differential_analyzer_line((1, 1), (4, 4))
+    [(2, 2), (3, 3), (4, 4)]
+    """"""
+    x1, y1 = p1
+    x2, y2 = p2
+    dx = x2 - x1
+    dy = y2 - y1
+    steps = max(abs(dx), abs(dy))
+    x_increment = dx / float(steps)
+    y_increment = dy / float(steps)
+    coordinates = []
+    x: float = x1
+    y: float = y1
+    for _ in range(steps):
+        x += x_increment
+        y += y_increment
+        coordinates.append((round(x), round(y)))
+    return coordinates",digital_differential_analyzer_line
+"def test_circular_linked_list() -> None:
+    """"""
+    Test cases for the CircularLinkedList class.
+    >>> test_circular_linked_list()
+    """"""
+    circular_linked_list = CircularLinkedList()
+    assert len(circular_linked_list) == 0
+    assert circular_linked_list.is_empty() is True
+    assert str(circular_linked_list) == """"
+
+    try:
+        circular_linked_list.delete_front()
+        raise AssertionError  # This should not happen
+    except IndexError:
+        assert True  # This should happen
+
+    try:
+        circular_linked_list.delete_tail()
+        raise AssertionError  # This should not happen
+    except IndexError:
+        assert True  # This should happen
+
+    try:
+        circular_linked_list.delete_nth(-1)
+        raise AssertionError
+    except IndexError:
+        assert True
+
+    try:
+        circular_linked_list.delete_nth(0)
+        raise AssertionError
+    except IndexError:
+        assert True
+
+    assert circular_linked_list.is_empty() is True
+    for i in range(5):
+        assert len(circular_linked_list) == i
+        circular_linked_list.insert_nth(i, i + 1)
+    assert str(circular_linked_list) == ""->"".join(str(i) for i in range(1, 6))
+
+    circular_linked_list.insert_tail(6)
+    assert str(circular_linked_list) == ""->"".join(str(i) for i in range(1, 7))
+    circular_linked_list.insert_head(0)
+    assert str(circular_linked_list) == ""->"".join(str(i) for i in range(7))
+
+    assert circular_linked_list.delete_front() == 0
+    assert circular_linked_list.delete_tail() == 6
+    assert str(circular_linked_list) == ""->"".join(str(i) for i in range(1, 6))
+    assert circular_linked_list.delete_nth(2) == 3
+
+    circular_linked_list.insert_nth(2, 3)
+    assert str(circular_linked_list) == ""->"".join(str(i) for i in range(1, 6))
+
+    assert circular_linked_list.is_empty() is False",test_circular_linked_list
+"def beta(velocity: float) -> float:
+    """"""
+    Calculates β = v/c, the given velocity as a fraction of c
+    >>> beta(c)
+    1.0
+    >>> beta(199792458)
+    0.666435904801848
+    >>> beta(1e5)
+    0.00033356409519815205
+    >>> beta(0.2)
+    Traceback (most recent call last):
+      ...
+    ValueError: Speed must be greater than or equal to 1!
+    """"""
+    if velocity > c:
+        raise ValueError(""Speed must not exceed light speed 299,792,458 [m/s]!"")
+    elif velocity < 1:
+        # Usually the speed should be much higher than 1 (c order of magnitude)
+        raise ValueError(""Speed must be greater than or equal to 1!"")
+
+    return velocity / c",beta
+"def max_tasks(tasks_info: list[tuple[int, int]]) -> list[int]:
+    """"""
+    Create a list of Task objects that are sorted so the highest rewards come first.
+    Return a list of those task ids that can be completed before i becomes too high.
+    >>> max_tasks([(4, 20), (1, 10), (1, 40), (1, 30)])
+    [2, 0]
+    >>> max_tasks([(1, 10), (2, 20), (3, 30), (2, 40)])
+    [3, 2]
+    >>> max_tasks([(9, 10)])
+    [0]
+    >>> max_tasks([(-9, 10)])
+    []
+    >>> max_tasks([])
+    []
+    >>> max_tasks([(0, 10), (0, 20), (0, 30), (0, 40)])
+    []
+    >>> max_tasks([(-1, 10), (-2, 20), (-3, 30), (-4, 40)])
+    []
+    """"""
+    tasks = sorted(
+        (
+            Task(task_id, deadline, reward)
+            for task_id, (deadline, reward) in enumerate(tasks_info)
+        ),
+        key=attrgetter(""reward""),
+        reverse=True,
+    )
+    return [task.task_id for i, task in enumerate(tasks, start=1) if task.deadline >= i]",max_tasks
+"def search(list_data: list, key: int, left: int = 0, right: int = 0) -> int:
+    """"""
+    Iterate through the array to find the index of key using recursion.
+    :param list_data: the list to be searched
+    :param key: the key to be searched
+    :param left: the index of first element
+    :param right: the index of last element
+    :return: the index of key value if found, -1 otherwise.
+
+    >>> search(list(range(0, 11)), 5)
+    5
+    >>> search([1, 2, 4, 5, 3], 4)
+    2
+    >>> search([1, 2, 4, 5, 3], 6)
+    -1
+    >>> search([5], 5)
+    0
+    >>> search([], 1)
+    -1
+    """"""
+    right = right or len(list_data) - 1
+    if left > right:
+        return -1
+    elif list_data[left] == key:
+        return left
+    elif list_data[right] == key:
+        return right
+    else:
+        return search(list_data, key, left + 1, right - 1)",search
+"def juggler_sequence(number: int) -> list[int]:
+    """"""
+    >>> juggler_sequence(0)
+    Traceback (most recent call last):
+        ...
+    ValueError: Input value of [number=0] must be a positive integer
+    >>> juggler_sequence(1)
+    [1]
+    >>> juggler_sequence(2)
+    [2, 1]
+    >>> juggler_sequence(3)
+    [3, 5, 11, 36, 6, 2, 1]
+    >>> juggler_sequence(5)
+    [5, 11, 36, 6, 2, 1]
+    >>> juggler_sequence(10)
+    [10, 3, 5, 11, 36, 6, 2, 1]
+    >>> juggler_sequence(25)
+    [25, 125, 1397, 52214, 228, 15, 58, 7, 18, 4, 2, 1]
+    >>> juggler_sequence(6.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: Input value of [number=6.0] must be an integer
+    >>> juggler_sequence(-1)
+    Traceback (most recent call last):
+        ...
+    ValueError: Input value of [number=-1] must be a positive integer
+    """"""
+    if not isinstance(number, int):
+        msg = f""Input value of [number={number}] must be an integer""
+        raise TypeError(msg)
+    if number < 1:
+        msg = f""Input value of [number={number}] must be a positive integer""
+        raise ValueError(msg)
+    sequence = [number]
+    while number != 1:
+        if number % 2 == 0:
+            number = math.floor(math.sqrt(number))
+        else:
+            number = math.floor(
+                math.sqrt(number) * math.sqrt(number) * math.sqrt(number)
+            )
+        sequence.append(number)
+    return sequence",juggler_sequence
+"def get_squarefrees(unique_coefficients: set[int]) -> set[int]:
+    """"""
+    Calculates the squarefree numbers inside unique_coefficients.
+
+    Based on the definition of a non-squarefree number, then any non-squarefree
+    n can be decomposed as n = p*p*r, where p is positive prime number and r
+    is a positive integer.
+
+    Under the previous formula, any coefficient that is lower than p*p is
+    squarefree as r cannot be negative. On the contrary, if any r exists such
+    that n = p*p*r, then the number is non-squarefree.
+
+    >>> get_squarefrees({1})
+    {1}
+    >>> get_squarefrees({1, 2})
+    {1, 2}
+    >>> get_squarefrees({1, 2, 3, 4, 5, 6, 7, 35, 10, 15, 20, 21})
+    {1, 2, 3, 5, 6, 7, 35, 10, 15, 21}
+    """"""
+
+    non_squarefrees = set()
+    for number in unique_coefficients:
+        divisor = 2
+        copy_number = number
+        while divisor**2 <= copy_number:
+            multiplicity = 0
+            while copy_number % divisor == 0:
+                copy_number //= divisor
+                multiplicity += 1
+            if multiplicity >= 2:
+                non_squarefrees.add(number)
+                break
+            divisor += 1
+
+    return unique_coefficients.difference(non_squarefrees)",get_squarefrees
+"def reformat_hex(i: int) -> bytes:
+    """"""
+    Converts the given non-negative integer to hex string.
+
+    Example: Suppose the input is the following:
+        i = 1234
+
+        The input is 0x000004d2 in hex, so the little-endian hex string is
+        ""d2040000"".
+
+    Arguments:
+        i {[int]} -- [integer]
+
+    Raises:
+        ValueError -- [input is negative]
+
+    Returns:
+        8-char little-endian hex string
+
+    >>> reformat_hex(1234)
+    b'd2040000'
+    >>> reformat_hex(666)
+    b'9a020000'
+    >>> reformat_hex(0)
+    b'00000000'
+    >>> reformat_hex(1234567890)
+    b'd2029649'
+    >>> reformat_hex(1234567890987654321)
+    b'b11c6cb1'
+    >>> reformat_hex(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: Input must be non-negative
+    """"""
+    if i < 0:
+        raise ValueError(""Input must be non-negative"")
+
+    hex_rep = format(i, ""08x"")[-8:]
+    little_endian_hex = b""""
+    for j in [3, 2, 1, 0]:
+        little_endian_hex += hex_rep[2 * j : 2 * j + 2].encode(""utf-8"")
+    return little_endian_hex",reformat_hex

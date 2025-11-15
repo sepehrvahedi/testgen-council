@@ -1,0 +1,124 @@
+function_code,function_name
+"def quick_select(items: list, index: int):
+    """"""
+    >>> quick_select([2, 4, 5, 7, 899, 54, 32], 5)
+    54
+    >>> quick_select([2, 4, 5, 7, 899, 54, 32], 1)
+    4
+    >>> quick_select([5, 4, 3, 2], 2)
+    4
+    >>> quick_select([3, 5, 7, 10, 2, 12], 3)
+    7
+    """"""
+    # index = len(items) // 2 when trying to find the median
+    #   (value of index when items is sorted)
+
+    # invalid input
+    if index >= len(items) or index < 0:
+        return None
+
+    pivot = items[random.randint(0, len(items) - 1)]
+    count = 0
+    smaller, equal, larger = _partition(items, pivot)
+    count = len(equal)
+    m = len(smaller)
+
+    # index is the pivot
+    if m <= index < m + count:
+        return pivot
+    # must be in smaller
+    elif m > index:
+        return quick_select(smaller, index)
+    # must be in larger
+    else:
+        return quick_select(larger, index - (m + count))",quick_select
+"def check_bouncy(n: int) -> bool:
+    """"""
+    Returns True if number is bouncy, False otherwise
+    >>> check_bouncy(6789)
+    False
+    >>> check_bouncy(-12345)
+    False
+    >>> check_bouncy(0)
+    False
+    >>> check_bouncy(6.74)
+    Traceback (most recent call last):
+        ...
+    ValueError: check_bouncy() accepts only integer arguments
+    >>> check_bouncy(132475)
+    True
+    >>> check_bouncy(34)
+    False
+    >>> check_bouncy(341)
+    True
+    >>> check_bouncy(47)
+    False
+    >>> check_bouncy(-12.54)
+    Traceback (most recent call last):
+        ...
+    ValueError: check_bouncy() accepts only integer arguments
+    >>> check_bouncy(-6548)
+    True
+    """"""
+    if not isinstance(n, int):
+        raise ValueError(""check_bouncy() accepts only integer arguments"")
+    str_n = str(n)
+    sorted_str_n = """".join(sorted(str_n))
+    return str_n not in {sorted_str_n, sorted_str_n[::-1]}",check_bouncy
+"def bitap_string_match(text: str, pattern: str) -> int:
+    """"""
+    Retrieves the index of the first occurrence of pattern in text.
+
+    Args:
+        text: A string consisting only of lowercase alphabetical characters.
+        pattern: A string consisting only of lowercase alphabetical characters.
+
+    Returns:
+        int: The index where pattern first occurs. Return -1  if not found.
+
+    >>> bitap_string_match('abdabababc', 'ababc')
+    5
+    >>> bitap_string_match('aaaaaaaaaaaaaaaaaa', 'a')
+    0
+    >>> bitap_string_match('zxywsijdfosdfnso', 'zxywsijdfosdfnso')
+    0
+    >>> bitap_string_match('abdabababc', '')
+    0
+    >>> bitap_string_match('abdabababc', 'c')
+    9
+    >>> bitap_string_match('abdabababc', 'fofosdfo')
+    -1
+    >>> bitap_string_match('abdab', 'fofosdfo')
+    -1
+    """"""
+    if not pattern:
+        return 0
+    m = len(pattern)
+    if m > len(text):
+        return -1
+
+    # Initial state of bit string 1110
+    state = ~1
+    # Bit = 0 if character appears at index, and 1 otherwise
+    pattern_mask: list[int] = [~0] * 27  # 1111
+
+    for i, char in enumerate(pattern):
+        # For the pattern mask for this character, set the bit to 0 for each i
+        # the character appears.
+        pattern_index: int = ord(char) - ord(""a"")
+        pattern_mask[pattern_index] &= ~(1 << i)
+
+    for i, char in enumerate(text):
+        text_index = ord(char) - ord(""a"")
+        # If this character does not appear in pattern, it's pattern mask is 1111.
+        # Performing a bitwise OR between state and 1111 will reset the state to 1111
+        # and start searching the start of pattern again.
+        state |= pattern_mask[text_index]
+        state <<= 1
+
+        # If the mth bit (counting right to left) of the state is 0, then we have
+        # found pattern in text
+        if (state & (1 << m)) == 0:
+            return i - m + 1
+
+    return -1",bitap_string_match

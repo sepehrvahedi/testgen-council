@@ -1,0 +1,265 @@
+function_code,function_name,prompt,task_id,tests_count
+"def return_sum(dict):
+  sum = 0
+  for i in dict.values():
+    sum = sum + i
+  return sum",return_sum,Write function to find the sum of all items in the given dictionary.,796,3
+"def even_Power_Sum(n): 
+    sum = 0; 
+    for i in range(1,n+1): 
+        j = 2*i; 
+        sum = sum + (j*j*j*j*j); 
+    return sum; ",even_Power_Sum,Write a python function that takes in an integer n and finds the sum of the first n even natural numbers that are raised to the fifth power.,271,3
+"def max_product(arr):   
+  n = len(arr)
+  mpis = arr[:]
+  for i in range(n): 
+    current_prod = arr[i]
+    j = i + 1
+    while j < n:
+      if arr[j-1] > arr[j]: 
+        break
+      current_prod *= arr[j]
+      if current_prod > mpis[j]:
+        mpis[j] = current_prod 
+      j = j + 1
+  return max(mpis)",max_product,Write a function to find the maximum product formed by multiplying numbers of an increasing subsequence of that array.,468,3
+"def max_length(list1):
+    max_length = max(len(x) for x in  list1 )  
+    max_list = max((x) for x in   list1)
+    return(max_length, max_list)",max_length,Write a function to find the list of maximum length in a list of lists.,290,3
+"def circle_circumference(r):
+  perimeter=2*3.1415*r
+  return perimeter",circle_circumference,Write a function to find the circumference of a circle.,139,3
+"def odd_num_sum(n) : 
+    j = 0
+    sm = 0
+    for i in range(1,n + 1) : 
+        j = (2*i-1) 
+        sm = sm + (j*j*j*j)   
+    return sm ",odd_num_sum,Write a python function to find the sum of fourth power of first n odd natural numbers.,770,3
+"def square_perimeter(a):
+  perimeter=4*a
+  return perimeter",square_perimeter,Write a function that returns the perimeter of a square given its side length as input.,17,3
+"def first_repeated_char(str1):
+  for index,c in enumerate(str1):
+    if str1[:index+1].count(c) > 1:
+      return c",first_repeated_char,Write a python function to find the first repeated character in a given string.,602,3
+"def multiply_elements(test_tup):
+  res = tuple(i * j for i, j in zip(test_tup, test_tup[1:]))
+  return (res) ",multiply_elements,"Write a function that takes as input a tuple of numbers (t_1,...,t_{N+1}) and returns a tuple of length N where the i-th element of the tuple is equal to t_i * t_{i+1}.",726,4
+"import re
+def remove_parenthesis(items):
+ for item in items:
+    return (re.sub(r"" ?\([^)]+\)"", """", item))",remove_parenthesis,Write a function to remove the parenthesis and what is inbetween them from a string.,640,3
+"def string_to_list(string): 
+    lst = list(string.split("" "")) 
+    return lst",string_to_list,Write a function to convert a string to a list of strings split on the space character.,118,3
+"def kth_element(arr, k):
+  n = len(arr)
+  for i in range(n):
+    for j in range(0, n-i-1):
+      if arr[j] > arr[j+1]:
+        arr[j], arr[j+1] == arr[j+1], arr[j]
+  return arr[k-1]",kth_element,Write a function to find the kth element in the given array using 1-based indexing.,101,3
+"import re
+def remove_lowercase(str1):
+ return re.sub('[a-z]', '', str1)",remove_lowercase,Write a function to remove lowercase substrings from a given string.,478,3
+"def lateralsurface_cube(l):
+  LSA = 4 * (l * l)
+  return LSA",lateralsurface_cube,Write a function to find the lateral surface area of a cube given its side length.,266,3
+"def max_val(listval):
+     max_val = max(i for i in listval if isinstance(i, int)) 
+     return(max_val)",max_val,Write a function to find the maximum value in a given heterogeneous list.,294,3
+"def comb_sort(nums):
+    shrink_fact = 1.3
+    gaps = len(nums)
+    swapped = True
+    i = 0
+    while gaps > 1 or swapped:
+        gaps = int(float(gaps) / shrink_fact)
+        swapped = False
+        i = 0
+        while gaps + i < len(nums):
+            if nums[i] > nums[i+gaps]:
+                nums[i], nums[i+gaps] = nums[i+gaps], nums[i]
+                swapped = True
+            i += 1
+    return nums",comb_sort,Write a function to sort a list of elements.,71,3
+"def closest_num(N):
+  return (N - 1)",closest_num,Write a function to find the closest smaller number than n.,89,3
+"def find_sum(arr): 
+    arr.sort() 
+    sum = arr[0] 
+    for i in range(len(arr)-1): 
+        if (arr[i] != arr[i+1]): 
+            sum = sum + arr[i+1]   
+    return sum",find_sum,Write a python function to find the sum of non-repeated elements in a given list.,777,3
+"def split_Arr(l, n):
+  return l[n:] + l[:n]",split_Arr,Write a python function to split a list at the nth eelment and add the first part to the end.,586,3
+"def count_samepair(list1,list2,list3):
+    result = sum(m == n == o for m, n, o in zip(list1,list2,list3))
+    return result",count_samepair,Write a function to count number items that are identical in the same position of three given lists.,142,3
+"import heapq as hq
+def heap_queue_largest(nums,n):
+  largest_nums = hq.nlargest(n, nums)
+  return largest_nums",heap_queue_largest,"Write a function to find the n largest integers from a given list of numbers, returned in descending order.",4,3
+"def highest_Power_of_2(n): 
+    res = 0 
+    for i in range(n, 0, -1): 
+        if ((i & (i - 1)) == 0): 
+            res = i 
+            break 
+    return res ",highest_Power_of_2,Write a python function to find the highest power of 2 that is less than or equal to n.,388,3
+"def test_three_equal(x,y,z):
+  result = set([x,y,z])
+  if len(result)==3:
+    return 0
+  else:
+    return 4-len(result)",test_three_equal,Write a python function to count the number of equal numbers from three given integers.,801,3
+"def max_sub_array_sum_repeated(a, n, k): 
+	max_so_far = -2147483648
+	max_ending_here = 0
+	for i in range(n*k): 
+		max_ending_here = max_ending_here + a[i%n] 
+		if (max_so_far < max_ending_here): 
+			max_so_far = max_ending_here 
+		if (max_ending_here < 0): 
+			max_ending_here = 0
+	return max_so_far",max_sub_array_sum_repeated,Write a function to find the largest sum of a contiguous array in the modified array which is formed by repeating the given array k times.,286,3
+"def count_integer(list1):
+    ctr = 0
+    for i in list1:
+        if isinstance(i, int):
+            ctr = ctr + 1
+    return ctr",count_integer,Write a python function that returns the number of integer elements in a given list.,253,3
+"def sum_average(number):
+ total = 0
+ for value in range(1, number + 1):
+    total = total + value
+ average = total / number
+ return (total,average)",sum_average,Write a function to find sum and average of first n natural numbers.,599,3
+"def difference(n) :  
+    S = (n*(n + 1))//2;  
+    res = S*(S-1);  
+    return res;  ",difference,Write a python function to find the difference between the sum of cubes of the first n natural numbers and the sum of the first n natural numbers.,555,3
+"def Extract(lst): 
+    return [item[0] for item in lst] ",Extract,Write a python function to get the first element of each sublist.,460,3
+"def square_Sum(n):  
+    return int(2*n*(n+1)*(2*n+1)/3)",square_Sum,Write a python function takes in an integer n and returns the sum of squares of first n even natural numbers.,287,3
+"import math  
+def next_Perfect_Square(N): 
+    nextN = math.floor(math.sqrt(N)) + 1
+    return nextN * nextN ",next_Perfect_Square,Write a python function to find the next perfect square greater than a given number.,244,3
+"def find_Average_Of_Cube(n):  
+    sum = 0
+    for i in range(1, n + 1): 
+        sum += i * i * i  
+    return round(sum / n, 6) ",find_Average_Of_Cube,Write a python function to find the average of cubes of first n natural numbers.,422,3
+"def find_first_occurrence(A, x):
+    (left, right) = (0, len(A) - 1)
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if x == A[mid]:
+            result = mid
+            right = mid - 1
+        elif x < A[mid]:
+            right = mid - 1
+        else:
+            left = mid + 1
+    return result",find_first_occurrence,Write a function to find the index of the first occurrence of a given number in a sorted array.,733,3
+"def is_decimal(num):
+    import re
+    dnumre = re.compile(r""""""^[0-9]+(\.[0-9]{1,2})?$"""""")
+    result = dnumre.search(num)
+    return bool(result)",is_decimal,Write a function to check whether a given string is a decimal number with a precision of 2.,759,5
+"import math 
+def sumofFactors(n) : 
+    if (n % 2 != 0) : 
+        return 0
+    res = 1
+    for i in range(2, (int)(math.sqrt(n)) + 1) :    
+        count = 0
+        curr_sum = 1
+        curr_term = 1
+        while (n % i == 0) : 
+            count= count + 1
+            n = n // i 
+            if (i == 2 and count == 1) : 
+                curr_sum = 0
+            curr_term = curr_term * i 
+            curr_sum = curr_sum + curr_term 
+        res = res * curr_sum  
+    if (n >= 2) : 
+        res = res * (1 + n) 
+    return res",sumofFactors,Write a python function to find the sum of even factors of a number.,453,3
+"def is_num_decagonal(n): 
+	return 4 * n * n - 3 * n ",is_num_decagonal,Write a function to find the nth decagonal number.,279,3
+"def sub_list(nums1,nums2):
+  result = map(lambda x, y: x - y, nums1, nums2)
+  return list(result)",sub_list,Write a function to subtract two lists element-wise.,282,3
+"def find_Odd_Pair(A,N) : 
+    oddPair = 0
+    for i in range(0,N) :  
+        for j in range(i+1,N) :  
+            if ((A[i] ^ A[j]) % 2 != 0):  
+                oddPair+=1  
+    return oddPair  ",find_Odd_Pair,Write a python function to count the number of pairs whose xor value is odd.,556,3
+"def count(lst):   
+    return sum(lst) ",count,Write a python function to count true booleans in the given list.,105,3
+"def extract_freq(test_list):
+  res = len(list(set(tuple(sorted(sub)) for sub in test_list)))
+  return (res)",extract_freq,Write a function to extract the number of unique tuples in the given list.,400,3
+"def odd_values_string(str):
+  result = """" 
+  for i in range(len(str)):
+    if i % 2 == 0:
+      result = result + str[i]
+  return result",odd_values_string,Write a python function to remove the characters which have odd index values of a given string.,226,4
+"def unique_sublists(list1):
+    result ={}
+    for l in  list1: 
+        result.setdefault(tuple(l), list()).append(1) 
+    for a, b in result.items(): 
+        result[a] = sum(b)
+    return result",unique_sublists,Write a function to count lists within a list. The function should return a dictionary where every list is converted to a tuple and the value of such tuple is the number of its occurencies in the original list.,758,4
+"def check_element(list,element):
+  check_element=all(v== element for v in list)
+  return check_element",check_element,Write a function that takes in a list and element and checks whether all items in the list are equal to the given element.,284,3
+"import re
+def extract_values(text):
+ return (re.findall(r'""(.*?)""', text))",extract_values,Write a function to extract values between quotation marks from a string.,563,3
+"import re
+def change_date_format(dt):
+        return re.sub(r'(\d{4})-(\d{1,2})-(\d{1,2})', '\\3-\\2-\\1', dt)",change_date_format,Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format.,427,3
+"def find_First_Missing(array,start=0,end=None):
+    if end is None:
+      end = len(array) - 1   
+    if (start > end): 
+        return end + 1
+    if (start != array[start]): 
+        return start; 
+    mid = int((start + end) / 2) 
+    if (array[mid] == mid): 
+        return find_First_Missing(array,mid+1,end) 
+    return find_First_Missing(array,start,mid) ",find_First_Missing,Write a python function to find the smallest missing number from a sorted list of natural numbers.,627,3
+"import collections as ct
+def merge_dictionaries_three(dict1,dict2, dict3):
+    merged_dict = dict(ct.ChainMap({},dict1,dict2,dict3))
+    return merged_dict",merge_dictionaries_three,Write a function to merge three dictionaries into a single dictionary.,87,3
+"import math
+def surfacearea_sphere(r):
+  surfacearea=4*math.pi*r*r
+  return surfacearea",surfacearea_sphere,Write a function to find the surface area of a sphere.,85,3
+"def toggle_string(string):
+ string1 = string.swapcase()
+ return string1",toggle_string,Write a function to toggle the case of all characters in a string.,557,3
+"def find_substring(str1, sub_str):
+   if any(sub_str in s for s in str1):
+       return True
+   return False",find_substring,Write a function to check if a string is present as a substring in a given list of string values.,91,3
+"def dict_depth(d):
+    if isinstance(d, dict):
+        return 1 + (max(map(dict_depth, d.values())) if d else 0)
+    return 0",dict_depth,Write a function to find the depth of a dictionary.,301,3
