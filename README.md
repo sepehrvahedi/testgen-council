@@ -6,19 +6,18 @@ TestGen Council uses multiple AI models working in different testing roles to ge
 
 ---
 
-## 🌐 Live Demo
+## 📊 Results (BSc thesis)
 
-**Try it now at [testcouncil.com](https://testcouncil.com)** 🚀
+Evaluated on **135 functions** from HumanEval, MBPP and an algorithms benchmark:
 
-Experience the power of multi-model AI test generation without any setup:
+| Metric | TestCouncil |
+|:--|:--|
+| Average line coverage | **84.6%** |
+| Average branch coverage | **92.5%** |
+| Gain over each single-model baseline | **+36 to +46** line-coverage points (p < 0.001) |
+| Redundant tests removed by the synthesis step | **~85%** |
 
-1. **Paste your code** in the editor
-2. **Select AI models** (Gemini, DeepSeek, Qwen, Claude, etc.)
-3. **Choose testing roles** (QA Engineer, Agent of Chaos, Security Auditor, Abstract Thinker)
-4. **Watch in real-time** as tests are generated, clustered, and synthesized
-5. **View coverage analysis** and download your test suite
-
-> **Note:** The demo uses shared API resources. For production use or high-volume testing, consider deploying your own instance using the instructions below.
+Ablations show that **model diversity**, not role-based prompting, drives the improvement: adding roles changes line coverage by only −2.7 to +2.4 points (p > 0.05).
 
 ---
 
