@@ -5,6 +5,7 @@ Code coverage analyzer using pytest and coverage.py
 import json
 import ast
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -266,7 +267,7 @@ class CoverageAnalyzer:
 
         # Build pytest command WITH BRANCH COVERAGE
         cmd = [
-            "python", "-m", "pytest",
+            sys.executable, "-m", "pytest",
             str(test_file),
             f"--cov={source_file.stem}",
             "--cov-branch",

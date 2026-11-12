@@ -453,6 +453,10 @@ Generate ONLY the Python code above. DO NOT include markdown code fences, explan
         if not api_base:
             raise LLMError(f"No API base configured for provider: {model_config['provider']}")
 
+        if not config.LLM_API_KEY or not api_base:
+            raise LLMError("OPENAI_API_KEY and OPENAI_BASE_URL are not set. "
+                           "Copy backend/app/.env.example to backend/.env and fill them in.")
+
         # Build request
         headers = {
             "Content-Type": "application/json",
@@ -596,6 +600,12 @@ Generate ONLY the Python code above. DO NOT include markdown code fences, explan
         plus individual test functions for clustering.
         """
         initial_llm_output = llm_output
+
+        # Models often wrap the code in prose ("Here are the tests: ```python ... ```").
+        # When there are fenced blocks, the code is what is inside them.
+        fenced = re.findall(r"```(?:python|py)?[ \t]*\n(.*?)```", llm_output, re.S)
+        if fenced:
+            llm_output = "\n\n".join(block.strip("\n") for block in fenced)
 
         # ✅ Clean ONLY first and last lines
         lines = llm_output.splitlines()

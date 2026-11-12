@@ -4,6 +4,7 @@ Gold standard for test quality measurement
 """
 
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -102,7 +103,7 @@ runner=python -m pytest -x --tb=short -p no:warnings
             "mutmut",
             "run",
             "--paths-to-mutate", str(source_file),
-            "--runner", "python -m pytest -x --tb=short -p no:warnings",
+            "--runner", f"{sys.executable} -m pytest -x --tb=short -p no:warnings",
             "--no-progress"
         ]
 

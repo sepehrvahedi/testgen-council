@@ -9,3 +9,7 @@
 /notebooks/test_output/.coverage
 /notebooks/test_results/.ipynb_checkpoints/
 /notebooks/test_results/.coverage
+
+*.iml
+.pytest_cache/
+__pycache__/

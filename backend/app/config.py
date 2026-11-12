@@ -15,11 +15,11 @@ class Settings(BaseSettings):
     # API Configuration
     OPENAI_API_KEY: str = Field(
         default="",
-        description="OpenAI API Key"
+        description="API key for the OpenAI-compatible endpoint (required to generate tests)"
     )
     OPENAI_BASE_URL: str = Field(
-        default="https://api.gapgpt.app/v1",
-        description="OpenAI API Base URL"
+        default="",
+        description="Base URL of an OpenAI-compatible endpoint that serves all the council models"
     )
 
     # Server Configuration
@@ -29,11 +29,7 @@ class Settings(BaseSettings):
     CORS_ORIGINS: List[str] = Field(
         default=[
             "http://localhost:3000",
-            "http://localhost:5173",
-            "http://testcouncil.com",
-            "https://testcouncil.com",
-            "http://www.testcouncil.com",
-            "https://www.testcouncil.com"
+            "http://localhost:5173"
         ],
         description="Allowed CORS origins"
     )
@@ -52,14 +48,6 @@ class Config:
 
     def __init__(self, settings: Settings = None):
         self.settings = settings or Settings()
-
-        # ✅ Validate API key is set
-        if not self.settings.OPENAI_API_KEY:
-            raise ValueError(
-                "OPENAI_API_KEY is not set. "
-                "Please create a .env file with your API key. "
-                "See .env.example for reference."
-            )
 
         # API Keys
         self.OPENAI_API_KEY = self.settings.OPENAI_API_KEY
